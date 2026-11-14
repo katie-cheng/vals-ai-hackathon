@@ -7,16 +7,19 @@ from typing import Any, Iterator
 
 
 class EventLog:
-    """Append-only JSONL event log. Every state change in a season goes through emit()."""
+    """Append-only JSONL event log (one season per file; opening truncates). Every state change goes through emit()."""
 
     def __init__(self, path: str | Path | None = None, clock=time.time):
         self.path = Path(path) if path else None
-        self._fh = self.path.open("a", encoding="utf-8") if self.path else None
+        self._fh = self.path.open("w", encoding="utf-8") if self.path else None
         self._clock = clock
         self.events: list[dict[str, Any]] = []
         self.seq = 0
 
     def emit(self, type: str, **data: Any) -> dict[str, Any]:
+        clash = {"seq", "ts", "type"} & data.keys()
+        if clash:
+            raise ValueError(f"reserved event keys: {sorted(clash)}")
         self.seq += 1
         event = {"seq": self.seq, "ts": self._clock(), "type": type, **data}
         self.events.append(event)

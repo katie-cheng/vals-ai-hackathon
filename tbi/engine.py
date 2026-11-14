@@ -181,8 +181,8 @@ class Season:
                 loser = lowest[0]
                 reason = "winning_tribe"
             tribes = self.tribes()
-            self.immune = sorted(n for g in winning for n in tribes[g])
-            self._losing_tribes = [g for g in group_scores if g not in winning]
+            self.immune = sorted(n for g, names in tribes.items() if g != loser for n in names)
+            self._losing_tribes = [loser]
         self.log.emit("immunity", round=self.round, immune=self.immune, reason=reason)
 
     # ----- model calls ---------------------------------------------------
@@ -297,7 +297,7 @@ class Season:
     def post(self, channel: str, player: Player, text: str, turn: int) -> None:
         m = self.social.post(self.round, channel, player.name, text)
         ch = self.social.channels[channel]
-        self.log.emit("message", round=self.round, turn=turn, seq=m.seq, channel=channel, kind=ch.kind, sender=player.name, recipients=sorted(ch.members), text=text)
+        self.log.emit("message", round=self.round, turn=turn, message_seq=m.seq, channel=channel, kind=ch.kind, sender=player.name, recipients=sorted(ch.members), text=text)
 
     # ----- tribal council ------------------------------------------------
     def tribal_council(self, group_scores: dict[str, float]) -> None:
@@ -360,7 +360,7 @@ class Season:
             parsed = self.ask(player, "plea", prompts.plea_instruction(state), state, {})
             text = str((parsed or {}).get("text", "")).strip() or f"{name} rests their case."
             m = self.social.post(self.round, "jury", name, text)
-            self.log.emit("plea", round=self.round, seq=m.seq, player=name, text=text)
+            self.log.emit("plea", round=self.round, message_seq=m.seq, player=name, text=text)
         votes: dict[str, str] = {}
         for j in jurors:
             juror = self.by_name[j]
