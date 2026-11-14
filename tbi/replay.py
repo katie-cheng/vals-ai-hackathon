@@ -20,6 +20,7 @@ def rebuild(events: list[dict[str, Any]]) -> dict[str, Any]:
         "messages": 0,
         "cost_usd": 0.0,
         "finished": False,
+        "status": None,
     }
     current: dict[str, Any] | None = None
     for e in events:
@@ -55,7 +56,8 @@ def rebuild(events: list[dict[str, Any]]) -> dict[str, Any]:
         elif t == "model_call":
             state["cost_usd"] += e.get("cost_usd", 0.0)
         elif t == "season_end":
-            state["finished"] = True
+            state["status"] = e.get("status", "finished")
+            state["finished"] = state["status"] == "finished"
     return state
 
 
