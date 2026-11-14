@@ -35,8 +35,6 @@ def system_prompt(cfg: Any, player: Any, state: dict[str, Any]) -> str:
         lines.append("Eliminated so far (in order): " + ", ".join(state["eliminated"]))
     if state.get("channels"):
         lines.append("Channels you can post to: " + ", ".join(state["channels"]))
-    lines.append("")
-    lines.append("Your private notes:\n" + (state.get("notes") or "(empty)"))
     return "\n".join(lines)
 
 

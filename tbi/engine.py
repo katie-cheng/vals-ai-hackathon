@@ -210,6 +210,7 @@ class Season:
             kind=kind,
             meta=meta,
             params=player.params,
+            notes=state.get("notes", ""),
         )
         try:
             completion = self.client.complete(req)

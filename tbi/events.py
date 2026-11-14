@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import time
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any, Callable, Iterator
 
 
 class EventLog:
@@ -15,6 +15,10 @@ class EventLog:
         self._clock = clock
         self.events: list[dict[str, Any]] = []
         self.seq = 0
+        self.listeners: list[Callable[[dict[str, Any]], None]] = []
+
+    def subscribe(self, fn: Callable[[dict[str, Any]], None]) -> None:
+        self.listeners.append(fn)
 
     def emit(self, type: str, **data: Any) -> dict[str, Any]:
         clash = {"seq", "ts", "type"} & data.keys()
@@ -26,6 +30,8 @@ class EventLog:
         if self._fh:
             self._fh.write(json.dumps(event, sort_keys=True, default=str) + "\n")
             self._fh.flush()
+        for fn in self.listeners:
+            fn(event)
         return event
 
     def close(self) -> None:

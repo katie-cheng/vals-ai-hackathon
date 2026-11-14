@@ -45,8 +45,66 @@ Every draw, score, message, notes update, vote, elimination and model call is on
 `tbi.replay.rebuild` reconstructs the season from the log alone, and two runs with the same seed
 and the mock model produce byte-identical logs (modulo timestamps).
 
-## Valkyrie
-Real challenges run on [Valkyrie](https://docs.valkyrie.vals.ai): each challenge's sampled items
-are pushed as a Harbor dataset and one run is started per contestant (individual stage) or per
-tribe (tribe stage, via a multi-model "tribe agent"). Adapters land after the benchmark shortlist
-is approved.
+## Distributed mode: one sandbox per contestant (Valkyrie)
+
+Valkyrie provides sandboxes, secrets, time limits and grading; it has no agent-to-agent
+messaging, so the game runs through a small **hub** that every sandbox talks to over HTTP.
+
+```
+ Valkyrie run (dataset tbi/<season>: one Harbor task per contestant)
+ ┌─ sandbox Ada ──┐  ┌─ sandbox Bao ──┐        ┌─ sandbox Lior ─┐
+ │ tbi-agent      │  │ tbi-agent      │  ...   │ tbi-agent      │   each: own notes file,
+ │ model: claude  │  │ model: gpt     │        │ model: gemini  │   calls its own model
+ └───────┬────────┘  └───────┬────────┘        └───────┬────────┘
+         │ register / inbox (long-poll) / act / send   │
+         └───────────────────┬─────────────────────────┘
+                   ┌─────────▼──────────┐
+                   │ tbi hub            │  Season engine (same code as offline mode)
+                   │ node per player    │  channel membership enforced server-side
+                   │ JSONL event log    │  GET /seasons/<id>/events for spectators
+                   └────────────────────┘
+```
+
+* `tbi/hub.py` — FastAPI app. `SeasonRuntime` runs the engine in a thread; `HubClient` is the
+  `ModelClient` that parks each turn on the player's node and waits for the agent's reply
+  (timeout → pass / random vote, logged as `turn_timeout`). Messages are fanned out to
+  recipients' inboxes as they are posted. Nodes authenticate with a per-node token issued at
+  registration; registration needs the season's join token.
+* `tbi/agent.py` — `tbi-agent`, the contestant process. Pluggable `Policy` (`LLMPolicy` via
+  LiteLLM, `MockPolicy` for tests); keeps `notes.md`, `transcript.jsonl`, `summary.json`.
+* `tbi/harbor.py` — writes the Harbor dataset: `instruction.md` carries the hub coordinates,
+  `tests/test.sh` fetches the player's final placement from the hub and writes the reward
+  (winner 1.0 … first out 0.0). Valkyrie run results therefore *are* the season standings.
+* `agents/tbi-contestant/` — the Valkyrie agent package (`contract.yaml`, `setup.sh`).
+* `deploy/modal_hub.py` — hub as a single always-on Modal web endpoint.
+
+### Local dry run (no API keys)
+```bash
+uv run tbi hub --port 8000 --admin-key adm &
+TBI_JOIN_TOKEN=jt uv run tbi season-create configs/mock_season.yaml --hub http://127.0.0.1:8000 --admin-key adm
+for p in Ada Bao Cleo Dev Eli Fay Gus Hana Ivo Jun Kai Lior; do
+  TBI_JOIN_TOKEN=jt uv run tbi-agent --hub http://127.0.0.1:8000 --season mock-s1 --player $p --policy mock &
+done
+uv run tbi fetch-log --hub http://127.0.0.1:8000 mock-s1 && uv run tbi recap runs/mock-s1.jsonl
+```
+
+### Real season on Valkyrie
+```bash
+modal secret create tbi-hub TBI_ADMIN_KEY=<random>
+modal deploy deploy/modal_hub.py                      # -> https://<ws>--tbi-hub-web.modal.run
+uv run tbi season-create configs/<season>.yaml --hub $HUB --admin-key $TBI_ADMIN_KEY --join-token $JOIN
+valkyrie secret set tbi-join-token                    # paste $JOIN
+bash agents/tbi-contestant/build.sh && valkyrie agent push agents/tbi-contestant
+uv run tbi harbor-dataset configs/<season>.yaml --hub $HUB --out tasks/<season>
+valkyrie dataset push tbi/<season> tasks/<season> --tag v1
+valkyrie run start --agent tbi-contestant --dataset tbi/<season>@v1 --provider modal \
+  --concurrency 18 -s ANTHROPIC_API_KEY anthropic-api-key -s OPENAI_API_KEY openai-api-key --connect
+```
+Concurrency must be at least the number of contestants: the season starts when every node has
+registered. Each contestant's model comes from the season YAML (Valkyrie's `--model` is run-wide;
+pass it only to override every seat).
+
+Node API (all under `/seasons/{id}/nodes/{player}`, header `X-Node-Token`): `POST register`,
+`GET inbox?wait=` (turn requests, messages, elimination, season end), `POST act`,
+`POST send` (a message during your open social turn), `GET messages`. Spectators:
+`GET /seasons/{id}`, `GET /seasons/{id}/events?since=`, `GET /seasons/{id}/placements/{player}`.

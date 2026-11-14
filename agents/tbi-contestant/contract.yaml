@@ -1,0 +1,27 @@
+name: tbi-contestant
+install_cmd: bash setup.sh
+run_cmd: >-
+  tbi-agent --instruction "{problem_statement_path}" --player "{task_id}"
+  --model "{model}" --out /logs/tbi-agent
+final_output: /logs/tbi-agent
+# Map every provider key your season's models need; add more with `-s ENV secret` on `valkyrie run start`.
+secrets:
+  TBI_JOIN_TOKEN: tbi-join-token
+  ANTHROPIC_API_KEY: anthropic-api-key
+  OPENAI_API_KEY: openai-api-key
+defaults:
+  model:
+    type: str
+    required: false
+    default: ""
+    description: Override the model the season config assigns to this contestant (empty = hub assignment)
+output_artifacts:
+  - path: artifacts/summary.json
+    source: /logs/tbi-agent/summary.json
+    required: false
+  - path: artifacts/notes.md
+    source: /logs/tbi-agent/notes.md
+    required: false
+  - path: artifacts/transcript.jsonl
+    source: /logs/tbi-agent/transcript.jsonl
+    required: false

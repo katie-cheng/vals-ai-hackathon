@@ -20,6 +20,13 @@ class ModelRequest:
     kind: str  # "social" | "vote" | "jury" | "plea"
     meta: dict[str, Any] = field(default_factory=dict)
     params: dict[str, Any] = field(default_factory=dict)
+    notes: str = ""
+
+
+def full_system(request: "ModelRequest", notes: str | None = None) -> str:
+    """System prompt plus the player's private notes (the agent may supply its own copy)."""
+    n = request.notes if notes is None else notes
+    return request.system + "\n\nYour private notes:\n" + (n or "(empty)")
 
 
 @dataclass
@@ -118,7 +125,7 @@ class LiteLLMClient:
     def complete(self, request: ModelRequest) -> Completion:
         import litellm
 
-        messages = [{"role": "system", "content": request.system}, *request.messages]
+        messages = [{"role": "system", "content": full_system(request)}, *request.messages]
         params = {**self.default_params, **request.params}
         last_err: Exception | None = None
         for _ in range(self.retries + 1):
