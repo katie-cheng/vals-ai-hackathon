@@ -172,14 +172,13 @@ class Season:
             self.immune = [self.rng.choice(winners)] if len(winners) > 1 else winners
             reason = "top_individual_score" + ("_tiebreak_random" if len(winners) > 1 else "")
         else:
-            top = max(group_scores.values())
-            winning = sorted(g for g, s in group_scores.items() if s == top)
-            losing = [g for g in group_scores if g not in winning]
-            if not losing:  # all tribes tied: seeded coin flip picks the loser
-                loser = self.rng.choice(winning)
-                winning = [g for g in winning if g != loser]
+            low = min(group_scores.values())
+            lowest = sorted(g for g, s in group_scores.items() if s == low)
+            if len(lowest) > 1:  # tied for last: seeded coin flip picks the loser
+                loser = self.rng.choice(lowest)
                 reason = "tribe_tie_random"
             else:
+                loser = lowest[0]
                 reason = "winning_tribe"
             tribes = self.tribes()
             self.immune = sorted(n for g in winning for n in tribes[g])
