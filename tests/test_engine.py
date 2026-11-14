@@ -216,3 +216,52 @@ def test_invalid_model_output_falls_back_gracefully():
     summary = s.run()
     assert summary["winner"] is not None
     assert events_of(s, "parse_error") and events_of(s, "invalid_vote")
+
+
+def test_group_action_with_null_members_is_invalid_not_fatal(cfg):
+    from tbi.models import Completion
+
+    class NullMembers:
+        def complete(self, request):
+            if request.kind == "social":
+                return Completion(text='{"action": "group", "group": "x", "members": null, "text": "hi", "notes": ""}')
+            return Completion(text='{"vote": "' + request.meta.get("candidates", ["?"])[0] + '"}')
+
+    s = Season(cfg, client=NullMembers(), log=EventLog())
+    s.run()
+    assert s.winner is not None
+    assert any(e["type"] == "invalid_action" for e in s.log.events)
+
+
+def test_three_tribes_only_lowest_tribe_votes():
+    cfg = make_cfg(12, num_tribes=3)
+    s = Season(cfg, client=MockModel(seed=1), log=EventLog())
+    s.run()
+    starts = [e for e in s.log.events if e["type"] == "council_start" and e["round"] == 1]
+    tribes = s.log.events[0]["tribes"]
+    voters = set(starts[0]["voters"])
+    assert any(voters == set(members) for members in tribes.values())
+
+
+def test_event_seq_is_strictly_increasing_and_message_seq_separate(cfg):
+    s = Season(cfg, client=MockModel(seed=1), log=EventLog())
+    s.run()
+    seqs = [e["seq"] for e in s.log.events]
+    assert seqs == list(range(1, len(seqs) + 1))
+    assert all("message_seq" in e for e in s.log.events if e["type"] == "message")
+
+
+def test_aborted_season_replays_as_unfinished(cfg):
+    cfg.cost_cap_usd = 0.01
+    s = Season(cfg, client=MockModel(seed=1, cost_per_call=0.01), log=EventLog())
+    s.run()
+    rebuilt = rebuild(s.log.events)
+    assert rebuilt["status"] == "aborted" and not rebuilt["finished"] and rebuilt["winner"] is None
+
+
+def test_log_file_is_fresh_per_season(cfg, tmp_path):
+    path = tmp_path / "s.jsonl"
+    for _ in range(2):
+        Season(cfg, client=MockModel(seed=1), log=EventLog(path)).run()
+    events = EventLog.read(path)
+    assert sum(e["type"] == "season_start" for e in events) == 1
