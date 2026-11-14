@@ -103,10 +103,17 @@ class MockModel:
 class LiteLLMClient:
     """Provider-agnostic client via LiteLLM (OpenRouter, Anthropic, OpenAI, ... by model prefix)."""
 
-    def __init__(self, default_params: dict[str, Any] | None = None, timeout: float = 120.0, retries: int = 2):
+    def __init__(
+        self,
+        default_params: dict[str, Any] | None = None,
+        timeout: float = 120.0,
+        retries: int = 2,
+        fallback_usd_per_1k_tokens: float = 0.02,
+    ):
         self.default_params = default_params or {}
         self.timeout = timeout
         self.retries = retries
+        self.fallback_usd_per_1k_tokens = fallback_usd_per_1k_tokens
 
     def complete(self, request: ModelRequest) -> Completion:
         import litellm
@@ -130,16 +137,13 @@ class LiteLLMClient:
             raise RuntimeError(f"model call failed for {request.player} ({request.model}): {last_err}")
         text = resp.choices[0].message.content or ""
         usage = getattr(resp, "usage", None)
+        prompt_tokens = getattr(usage, "prompt_tokens", 0) or 0
+        completion_tokens = getattr(usage, "completion_tokens", 0) or 0
         try:
             cost = float(litellm.completion_cost(completion_response=resp))
-        except Exception:  # noqa: BLE001 - unknown pricing is not fatal
-            cost = 0.0
-        return Completion(
-            text=text,
-            prompt_tokens=getattr(usage, "prompt_tokens", 0) or 0,
-            completion_tokens=getattr(usage, "completion_tokens", 0) or 0,
-            cost_usd=cost,
-        )
+        except Exception:  # noqa: BLE001 - unknown pricing: charge a conservative estimate so the cap still binds
+            cost = (prompt_tokens + completion_tokens) / 1000 * self.fallback_usd_per_1k_tokens
+        return Completion(text=text, prompt_tokens=prompt_tokens, completion_tokens=completion_tokens, cost_usd=cost)
 
 
 def extract_json(text: str) -> dict[str, Any] | None:
@@ -172,5 +176,9 @@ def make_client(spec: dict[str, Any], seed: int) -> ModelClient:
     if kind == "mock":
         return MockModel(seed=seed, cost_per_call=float(spec.get("cost_per_call", 0.0)))
     if kind == "litellm":
-        return LiteLLMClient(default_params=spec.get("params"), timeout=float(spec.get("timeout", 120)))
+        return LiteLLMClient(
+            default_params=spec.get("params"),
+            timeout=float(spec.get("timeout", 120)),
+            fallback_usd_per_1k_tokens=float(spec.get("fallback_usd_per_1k_tokens", 0.02)),
+        )
     raise ValueError(f"unknown model client type: {kind}")
