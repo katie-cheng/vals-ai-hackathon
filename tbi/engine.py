@@ -281,7 +281,8 @@ class Season:
             gid = gid if gid.startswith("group:") else f"group:{gid}"
             ch = self.social.channels.get(gid)
             if ch is None:
-                members = [m for m in parsed.get("members", []) if isinstance(m, str) and m in scope]
+                raw_members = parsed.get("members") or []
+                members = [m for m in raw_members if isinstance(m, str) and m in scope] if isinstance(raw_members, list) else []
                 if not members:
                     return invalid("new group needs valid members")
                 ch = self.social.add_channel(gid, "group", [player.name, *members], creator=player.name)
