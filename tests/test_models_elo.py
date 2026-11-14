@@ -31,3 +31,11 @@ def test_elo_winner_gains_and_loser_drops():
 def test_elo_same_model_contestants_do_not_play_each_other():
     r = update_from_placements({}, {"A": 1, "B": 2}, {"A": "m", "B": "m"})
     assert r.get("m", 1000) == 1000 or "m" not in r
+
+
+def test_extract_json_handles_braces_inside_strings():
+    assert extract_json('{"action": "channel", "text": "alliance {A, B} vs }C{"}') == {
+        "action": "channel",
+        "text": "alliance {A, B} vs }C{",
+    }
+    assert extract_json('prefix {not json} then {"vote": "Bao"}') == {"vote": "Bao"}

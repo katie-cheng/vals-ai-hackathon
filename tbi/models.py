@@ -153,21 +153,15 @@ def extract_json(text: str) -> dict[str, Any] | None:
         text = text.strip("`")
         if text.startswith("json"):
             text = text[4:]
+    decoder = json.JSONDecoder()
     start = text.find("{")
     while start != -1:
-        depth = 0
-        for i in range(start, len(text)):
-            if text[i] == "{":
-                depth += 1
-            elif text[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    try:
-                        obj = json.loads(text[start : i + 1])
-                        return obj if isinstance(obj, dict) else None
-                    except json.JSONDecodeError:
-                        break
-        start = text.find("{", start + 1)
+        try:
+            obj, _ = decoder.raw_decode(text, start)
+        except json.JSONDecodeError:
+            start = text.find("{", start + 1)
+            continue
+        return obj if isinstance(obj, dict) else None
     return None
 
 
