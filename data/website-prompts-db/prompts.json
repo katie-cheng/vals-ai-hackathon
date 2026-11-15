@@ -1,0 +1,543 @@
+{
+  "system_prompt": "You are a senior front-end engineer and visual designer. Your job is to turn the user's request into a single, complete HTML file that will be rendered directly inside a sandboxed iframe, with no build step and no other files.\n\nOutput format:\nReturn ONLY the HTML document, starting with <!DOCTYPE html> and ending with </html>. Do not add explanations, comments to the user, or markdown code fences.\n\nTechnical requirements:\n1. Everything lives in one file: CSS in <style> tags, JavaScript in <script> tags.\n2. Use plain HTML, CSS, and JavaScript. You may load libraries from a CDN when they improve the result: Tailwind CSS for styling; Three.js, React Three Fiber, drei, @react-three/postprocessing, and @react-three/cannon for 3D; D3 and Recharts for data visualization.\n3. Include every script tag, import map, or module import a library needs to run. If you use React-based libraries, load React and set up the imports so the page works without a bundler.\n4. Do not reference local files or images that may not exist. Draw visuals with inline SVG, CSS gradients, or canvas instead.\n5. The page must load without console errors, and every button, link, form, tab, filter, and toggle you include must do something.\n\nDesign requirements:\n6. Choose a visual direction that fits the subject (colors, typography, spacing, tone) rather than using the same generic template for every request.\n7. Build a clear visual hierarchy with readable type, consistent spacing, and sufficient color contrast.\n8. Make the layout fully responsive, from a 360px phone screen to a wide desktop, with touch-friendly controls on mobile.\n9. Add polish where it helps: hover and focus states, smooth transitions, and scroll or entrance animations. Keep motion purposeful and respect prefers-reduced-motion.\n10. Use semantic HTML, labels on form fields, and alt text or aria-labels where needed.\n\nContent requirements:\n11. Follow every specific detail the user gives (names, text, addresses, numbers, sections, colors) exactly as written.\n12. When the request is short or vague, make sensible decisions yourself and deliver a complete, multi-section site instead of asking questions.\n13. Write realistic, specific copy and sample data that fit the subject. Never use lorem ipsum or empty placeholder sections.\n14. If the request describes a feature for an existing product, build a self-contained version of the surrounding interface so the feature can be seen and used in context.\n15. Forms and data should work on the client only: validate input, show a success or result state, and use in-memory state or localStorage instead of a real backend.\n\nAim for something that looks and behaves like a finished, shipped product.",
+  "template": "Create a website for **[name]**, a **[type of business or person]**. The style should be **[mood/look]**. Include these sections: **[list]**. Key details to show: **[address, hours, prices, stats, etc.]**. Interactive elements: **[forms, filters, toggles, etc.]**.",
+  "prompts": [
+    {
+      "id": 1,
+      "task_id": "01-wedding-photographer-portfolio",
+      "category": "Portfolios and personal",
+      "title": "Lena Okafor wedding photography portfolio",
+      "entity": "Lena Okafor",
+      "prompt": "A portfolio website for a wedding photographer named Lena Okafor. It should feel calm and editorial, with a full-screen gallery, an about section, three pricing packages, and a contact form.",
+      "word_count": 30,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Calm, editorial visual style",
+        "Full-screen gallery",
+        "About section",
+        "Three pricing packages",
+        "Contact form"
+      ]
+    },
+    {
+      "id": 2,
+      "task_id": "02-developer-portfolio-3d",
+      "category": "Portfolios and personal",
+      "title": "Developer portfolio with Three.js hero",
+      "entity": null,
+      "prompt": "Build me a developer portfolio with a 3D hero using Three.js, something like floating geometric shapes that react to the mouse. Sections: About, Projects (6 cards with tags and hover effects), Skills, Experience timeline, Contact. Dark theme with one accent color.",
+      "word_count": 41,
+      "specificity": "moderate",
+      "libraries": [
+        "Three.js"
+      ],
+      "requirements": [
+        "Three.js 3D hero of floating geometric shapes",
+        "Shapes react to mouse",
+        "About section",
+        "Projects section with 6 cards with tags and hover effects",
+        "Skills section",
+        "Experience timeline",
+        "Contact section",
+        "Dark theme with one accent color"
+      ]
+    },
+    {
+      "id": 3,
+      "task_id": "03-printable-resume",
+      "category": "Portfolios and personal",
+      "title": "Daniel Reyes printable resume",
+      "entity": "Daniel Reyes",
+      "prompt": "I need a one-page resume site I can also print. Name: Daniel Reyes, Senior Product Designer, 8 years of experience. Include a summary, work history with 3 roles, skills, education, and a \"Download PDF\" button that triggers the print dialog with a clean print stylesheet.",
+      "word_count": 45,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Name Daniel Reyes",
+        "Title Senior Product Designer",
+        "8 years of experience",
+        "Summary",
+        "Work history with 3 roles",
+        "Skills",
+        "Education",
+        "\"Download PDF\" button opens print dialog",
+        "Clean print stylesheet"
+      ]
+    },
+    {
+      "id": 4,
+      "task_id": "04-birthday-surprise",
+      "category": "Portfolios and personal",
+      "title": "\"For Maya, 25\" birthday surprise",
+      "entity": "Maya",
+      "prompt": "A birthday surprise website titled \"For Maya, 25\" with a countdown, a scrolling timeline of memories with placeholder photos, a section of reasons she's loved, and confetti when you click the cake at the end.",
+      "word_count": 35,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Title \"For Maya, 25\"",
+        "Countdown",
+        "Scrolling timeline of memories with placeholder photos",
+        "Section of reasons she's loved",
+        "Clickable cake at the end triggers confetti"
+      ]
+    },
+    {
+      "id": 5,
+      "task_id": "05-cat-website",
+      "category": "Portfolios and personal",
+      "title": "Website for my cat",
+      "entity": null,
+      "prompt": "make a website for my cat",
+      "word_count": 6,
+      "specificity": "vague",
+      "libraries": [],
+      "requirements": [
+        "Complete multi-section site about a cat despite vague request"
+      ]
+    },
+    {
+      "id": 6,
+      "task_id": "06-corporate-law-firm",
+      "category": "Company and local business",
+      "title": "Halden & Pryce law firm",
+      "entity": "Halden & Pryce",
+      "prompt": "Create a website for Halden & Pryce, a boutique corporate law firm. It needs to look trustworthy and premium, with practice areas, attorney profiles, case results in numbers, client testimonials, and a consultation request form.",
+      "word_count": 35,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Trustworthy, premium look",
+        "Practice areas",
+        "Attorney profiles",
+        "Case results in numbers",
+        "Client testimonials",
+        "Consultation request form"
+      ]
+    },
+    {
+      "id": 7,
+      "task_id": "07-indian-restaurant",
+      "category": "Company and local business",
+      "title": "Saffron Courtyard restaurant",
+      "entity": "Saffron Courtyard",
+      "prompt": "Create a website for Saffron Courtyard, a North Indian restaurant at 42 Lakeview Road, Indiranagar, Bengaluru 560038, phone 080 5550 0142. Show a 4.7-star rating from 1,204 reviews, hours 12 pm to 11:30 pm daily, a menu with Starters, Tandoor, Curries, Biryani and Desserts with prices in rupees, a table reservation form, a photo gallery, and a map section for directions.",
+      "word_count": 61,
+      "specificity": "heavy",
+      "libraries": [],
+      "requirements": [
+        "Address 42 Lakeview Road, Indiranagar, Bengaluru 560038",
+        "Phone 080 5550 0142",
+        "4.7-star rating from 1,204 reviews",
+        "Hours 12 pm to 11:30 pm daily",
+        "Menu with Starters, Tandoor, Curries, Biryani and Desserts",
+        "Menu prices in rupees",
+        "Table reservation form",
+        "Photo gallery",
+        "Map section for directions"
+      ]
+    },
+    {
+      "id": 8,
+      "task_id": "08-dental-clinic",
+      "category": "Company and local business",
+      "title": "BrightSmile Dental Clinic",
+      "entity": "BrightSmile Dental Clinic",
+      "prompt": "Website for BrightSmile Dental Clinic. Include services (cleaning, whitening, braces, implants, root canal, pediatric dentistry), a doctors section with 3 dentists, insurance accepted, opening hours Monday to Saturday 9 am to 7 pm, a review summary highlighting gentle staff and short wait times, and an appointment booking form that validates input and shows a confirmation.",
+      "word_count": 55,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Services: cleaning, whitening, braces, implants, root canal, pediatric dentistry",
+        "Doctors section with 3 dentists",
+        "Insurance accepted",
+        "Hours Monday to Saturday 9 am to 7 pm",
+        "Review summary highlighting gentle staff and short wait times",
+        "Appointment booking form validates input",
+        "Booking form shows confirmation"
+      ]
+    },
+    {
+      "id": 9,
+      "task_id": "09-real-estate-listings",
+      "category": "Company and local business",
+      "title": "Northgate Homes listings",
+      "entity": "Northgate Homes",
+      "prompt": "A real estate listings page for a fictional agency called Northgate Homes. Show 12 property cards with price, beds, baths and area, and working filters for price range, bedrooms and property type. Clicking a card opens a modal with details and a mortgage estimate.",
+      "word_count": 44,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "12 property cards",
+        "Cards show price, beds, baths and area",
+        "Working price range filter",
+        "Working bedrooms filter",
+        "Working property type filter",
+        "Clicking a card opens a details modal",
+        "Modal includes mortgage estimate"
+      ]
+    },
+    {
+      "id": 10,
+      "task_id": "10-logistics-homepage",
+      "category": "Company and local business",
+      "title": "Kestrel Freight corporate homepage",
+      "entity": "Kestrel Freight",
+      "prompt": "We are a small logistics company called Kestrel Freight. Build a corporate homepage with a shipment tracking input that returns a fake status timeline, a services grid, a map-style coverage section drawn in SVG, key stats that count up on scroll, and a quote request form.",
+      "word_count": 46,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Shipment tracking input returns fake status timeline",
+        "Services grid",
+        "Map-style coverage section drawn in SVG",
+        "Key stats count up on scroll",
+        "Quote request form"
+      ]
+    },
+    {
+      "id": 11,
+      "task_id": "11-saas-invoicing-landing",
+      "category": "Landing pages and marketing",
+      "title": "Tallybook SaaS landing page",
+      "entity": "Tallybook",
+      "prompt": "SaaS landing page for \"Tallybook\", an invoicing tool for freelancers. Hero with a product mockup built in HTML/CSS, a logo strip of made-up customers, 3 feature sections, a pricing table with a monthly/yearly toggle that updates prices, FAQ accordion, and footer.",
+      "word_count": 41,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Hero with product mockup built in HTML/CSS",
+        "Logo strip of made-up customers",
+        "3 feature sections",
+        "Pricing table",
+        "Monthly/yearly toggle updates prices",
+        "FAQ accordion",
+        "Footer"
+      ]
+    },
+    {
+      "id": 12,
+      "task_id": "12-meditation-app-landing",
+      "category": "Landing pages and marketing",
+      "title": "Stillwater meditation app landing page",
+      "entity": "Stillwater",
+      "prompt": "Landing page for a meditation mobile app called Stillwater. Soft gradients, a phone mockup showing the app screen in pure CSS, a breathing animation people can follow, feature highlights, testimonials, and app store buttons.",
+      "word_count": 34,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Soft gradients",
+        "Phone mockup of app screen in pure CSS",
+        "Followable breathing animation",
+        "Feature highlights",
+        "Testimonials",
+        "App store buttons"
+      ]
+    },
+    {
+      "id": 13,
+      "task_id": "13-developer-conference",
+      "category": "Landing pages and marketing",
+      "title": "DevSummit Lisbon 2027 conference",
+      "entity": "DevSummit Lisbon 2027",
+      "prompt": "A conference website for \"DevSummit Lisbon 2027\", a 3-day developer conference. Countdown to the event, speaker grid, a schedule with tabs for each day and track filters, ticket tiers, venue info, and sponsors.",
+      "word_count": 33,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "3-day developer conference",
+        "Countdown to the event",
+        "Speaker grid",
+        "Schedule with tabs for each day",
+        "Schedule track filters",
+        "Ticket tiers",
+        "Venue info",
+        "Sponsors"
+      ]
+    },
+    {
+      "id": 14,
+      "task_id": "14-nonprofit-donation",
+      "category": "Landing pages and marketing",
+      "title": "Clean Rivers Trust donation page",
+      "entity": "Clean Rivers Trust",
+      "prompt": "A donation page for a nonprofit called Clean Rivers Trust. Tell the story with scroll animations, show a progress bar toward a $250,000 goal, preset donation amounts plus a custom one, a monthly-giving toggle, and an impact section that changes its text based on the amount selected.",
+      "word_count": 47,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Story told with scroll animations",
+        "Progress bar toward $250,000 goal",
+        "Preset donation amounts",
+        "Custom donation amount",
+        "Monthly-giving toggle",
+        "Impact section text changes with selected amount"
+      ]
+    },
+    {
+      "id": 15,
+      "task_id": "15-wedding-invitation",
+      "category": "Landing pages and marketing",
+      "title": "Aarav & Sofia wedding invitation",
+      "entity": "Aarav & Sofia",
+      "prompt": "A wedding invitation site for Aarav & Sofia, 14 February 2027, in Udaipur. Elegant and romantic, with their story, event schedule (Mehendi, Sangeet, Wedding, Reception), venue and travel info, a live countdown, and an RSVP form with meal preference.",
+      "word_count": 39,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Couple Aarav & Sofia",
+        "Date 14 February 2027",
+        "Location Udaipur",
+        "Elegant, romantic style",
+        "Their story",
+        "Event schedule: Mehendi, Sangeet, Wedding, Reception",
+        "Venue and travel info",
+        "Live countdown",
+        "RSVP form with meal preference"
+      ]
+    },
+    {
+      "id": 16,
+      "task_id": "16-travel-site-rebuild",
+      "category": "Rebuild-style, heavily specified",
+      "title": "Wayfarely travel homepage rebuild",
+      "entity": "Wayfarely",
+      "prompt": "I'm practicing for my front-end class by rebuilding a travel site homepage for a fictional company called Wayfarely, as one HTML file. Here's what I want: - Thin dark promo bar at the top with \"Summer sale: up to 30% off select stays\" and a close button that hides it - White nav with a small orange compass logo and \"wayfarely\" wordmark on the left, links for Stays, Flights, Cars, Packages and Deals, and a \"Sign in\" button on the right - Hero with a soft sky gradient, headline \"Where to next?\" and a search card with tabs for Stays and Flights, destination input, two date fields and a guests dropdown - A row of 4 destination cards below using CSS gradients instead of photos - No image files, everything in SVG or CSS",
+      "word_count": 134,
+      "specificity": "heavy",
+      "libraries": [],
+      "requirements": [
+        "Thin dark promo bar with \"Summer sale: up to 30% off select stays\"",
+        "Promo bar close button hides it",
+        "White nav with small orange compass logo",
+        "\"wayfarely\" wordmark on the left",
+        "Nav links: Stays, Flights, Cars, Packages, Deals",
+        "\"Sign in\" button on the right",
+        "Hero with soft sky gradient",
+        "Headline \"Where to next?\"",
+        "Search card with Stays and Flights tabs",
+        "Destination input, two date fields and guests dropdown",
+        "Row of 4 destination cards using CSS gradients",
+        "No image files; everything SVG or CSS"
+      ]
+    },
+    {
+      "id": 17,
+      "task_id": "17-news-magazine-rebuild",
+      "category": "Rebuild-style, heavily specified",
+      "title": "The Meridian Post front page rebuild",
+      "entity": "The Meridian Post",
+      "prompt": "Rebuild a news magazine front page for a made-up publication called The Meridian Post. Top bar with today's date and a subscribe button, a centered serif masthead, a category nav, one large lead story with two smaller stories beside it, a \"Most Read\" numbered list in a sidebar, an opinion row with author avatars drawn in SVG, and a newsletter signup in the footer. It should reflow nicely to a single column on mobile.",
+      "word_count": 74,
+      "specificity": "heavy",
+      "libraries": [],
+      "requirements": [
+        "Top bar with today's date",
+        "Subscribe button",
+        "Centered serif masthead",
+        "Category nav",
+        "One large lead story with two smaller stories beside it",
+        "\"Most Read\" numbered list in sidebar",
+        "Opinion row with SVG author avatars",
+        "Newsletter signup in footer",
+        "Reflows to single column on mobile"
+      ]
+    },
+    {
+      "id": 18,
+      "task_id": "18-sales-dashboard",
+      "category": "Dashboards and data",
+      "title": "Recharts sales analytics dashboard",
+      "entity": null,
+      "prompt": "Build a sales analytics dashboard using Recharts. Include KPI cards for revenue, orders, conversion rate and average order value, a revenue line chart with a 7d/30d/90d switch, a bar chart of sales by category, a donut chart of traffic sources, and a sortable table of recent orders. Use realistic mock data and a collapsible sidebar.",
+      "word_count": 55,
+      "specificity": "moderate",
+      "libraries": [
+        "Recharts"
+      ],
+      "requirements": [
+        "Uses Recharts",
+        "KPI cards: revenue, orders, conversion rate, average order value",
+        "Revenue line chart",
+        "7d/30d/90d switch",
+        "Bar chart of sales by category",
+        "Donut chart of traffic sources",
+        "Sortable recent orders table",
+        "Realistic mock data",
+        "Collapsible sidebar"
+      ]
+    },
+    {
+      "id": 19,
+      "task_id": "19-supplier-risk-assessment",
+      "category": "Dashboards and data",
+      "title": "Supplier Selection risk assessment panel",
+      "entity": "AI-Assisted Supplier Selection",
+      "prompt": "After the supplier scoring step, add a \"Risk Assessment\" panel that asks users about their sourcing setup. The inputs should include: 1. Sourcing country 2. Component category 3. Annual order volume 4. Lead time tolerance 5. Compliance requirements. Make sure this is integrated into the existing dashboard for our AI-Assisted Supplier Selection tool and outputs a ranked list of suppliers with a risk score and a short explanation for each.",
+      "word_count": 70,
+      "specificity": "heavy",
+      "libraries": [],
+      "requirements": [
+        "Risk Assessment panel after supplier scoring step",
+        "Input: sourcing country",
+        "Input: component category",
+        "Input: annual order volume",
+        "Input: lead time tolerance",
+        "Input: compliance requirements",
+        "Integrated into surrounding supplier selection dashboard",
+        "Outputs ranked list of suppliers",
+        "Each supplier has a risk score",
+        "Each supplier has a short explanation"
+      ]
+    },
+    {
+      "id": 20,
+      "task_id": "20-bike-share-d3",
+      "category": "Dashboards and data",
+      "title": "D3 bike-share trips visualization",
+      "entity": null,
+      "prompt": "Create an interactive D3 visualization that explains how a city's bike-share trips change over a day. Use generated data for 20 stations, an hour slider with a play button, circles sized by trip volume on an abstract map, and a linked bar chart showing the busiest stations for the selected hour.",
+      "word_count": 51,
+      "specificity": "moderate",
+      "libraries": [
+        "D3"
+      ],
+      "requirements": [
+        "Uses D3",
+        "Generated data for 20 stations",
+        "Hour slider",
+        "Play button animates hours",
+        "Circles sized by trip volume on abstract map",
+        "Linked bar chart of busiest stations for selected hour"
+      ]
+    },
+    {
+      "id": 21,
+      "task_id": "21-finance-tracker",
+      "category": "Dashboards and data",
+      "title": "Personal finance tracker",
+      "entity": null,
+      "prompt": "A personal finance tracker. I should be able to add income and expenses with a category and date, see my balance update, view a monthly spending breakdown chart, set a budget per category with warnings when I go over, and have everything saved in localStorage.",
+      "word_count": 45,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Add income and expenses",
+        "Entries have category and date",
+        "Balance updates",
+        "Monthly spending breakdown chart",
+        "Budget per category",
+        "Warnings when over budget",
+        "Everything saved in localStorage"
+      ]
+    },
+    {
+      "id": 22,
+      "task_id": "22-sneaker-configurator-3d",
+      "category": "Interactive apps, 3D, and games",
+      "title": "Aero One Three.js sneaker configurator",
+      "entity": "Aero One",
+      "prompt": "Build a 3D product configurator for a fictional sneaker called the Aero One using Three.js. Since there are no model files, build a stylized shoe from primitive shapes. Let users orbit the camera, change colors for the sole, body and laces from swatches, and see the price update in a side panel with an \"Add to cart\" button.",
+      "word_count": 58,
+      "specificity": "moderate",
+      "libraries": [
+        "Three.js"
+      ],
+      "requirements": [
+        "Uses Three.js",
+        "Stylized shoe built from primitive shapes",
+        "Orbit camera controls",
+        "Color swatches for sole",
+        "Color swatches for body",
+        "Color swatches for laces",
+        "Side panel price updates",
+        "\"Add to cart\" button"
+      ]
+    },
+    {
+      "id": 23,
+      "task_id": "23-kanban-board",
+      "category": "Interactive apps, 3D, and games",
+      "title": "Kanban board app",
+      "entity": null,
+      "prompt": "A kanban board app like a simple project tool. Three default columns (To Do, In Progress, Done), add/edit/delete cards, drag and drop between columns, colored labels, a search box that filters cards, and a dark mode toggle.",
+      "word_count": 37,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Default columns To Do, In Progress, Done",
+        "Add cards",
+        "Edit cards",
+        "Delete cards",
+        "Drag and drop between columns",
+        "Colored labels",
+        "Search box filters cards",
+        "Dark mode toggle"
+      ]
+    },
+    {
+      "id": 24,
+      "task_id": "24-typing-speed-test",
+      "category": "Interactive apps, 3D, and games",
+      "title": "Typing speed test game",
+      "entity": null,
+      "prompt": "Make a typing speed test game. Show a random paragraph, highlight correct and incorrect characters as I type, a 60-second timer, live WPM and accuracy, a results screen with a chart of my WPM over time, and a local leaderboard of my best scores.",
+      "word_count": 44,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Random paragraph",
+        "Highlights correct and incorrect characters",
+        "60-second timer",
+        "Live WPM",
+        "Live accuracy",
+        "Results screen with WPM-over-time chart",
+        "Local leaderboard of best scores"
+      ]
+    },
+    {
+      "id": 25,
+      "task_id": "25-candle-store",
+      "category": "Interactive apps, 3D, and games",
+      "title": "Ember & Oak candle store",
+      "entity": "Ember & Oak",
+      "prompt": "An online store page for a small candle brand called Ember & Oak. Product grid with 8 candles, filter by scent family, quick-view modal, a slide-out cart with quantity controls and a running total, a free-shipping progress bar at $50, and a checkout form that validates but doesn't submit anywhere.",
+      "word_count": 50,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Product grid with 8 candles",
+        "Filter by scent family",
+        "Quick-view modal",
+        "Slide-out cart",
+        "Cart quantity controls",
+        "Running total",
+        "Free-shipping progress bar at $50",
+        "Checkout form validates without submitting"
+      ]
+    },
+    {
+      "id": 26,
+      "task_id": "26-generic-small-business",
+      "category": "General",
+      "title": "Generic small business website",
+      "entity": null,
+      "prompt": "Create a modern, professional website for a small business. Include a navigation bar, a hero section with a headline and call-to-action button, an about section, a services or features section, customer testimonials, a contact form, and a footer with social links. It should be fully responsive and have smooth animations.",
+      "word_count": 50,
+      "specificity": "moderate",
+      "libraries": [],
+      "requirements": [
+        "Navigation bar",
+        "Hero with headline and call-to-action button",
+        "About section",
+        "Services or features section",
+        "Customer testimonials",
+        "Contact form",
+        "Footer with social links",
+        "Fully responsive",
+        "Smooth animations"
+      ]
+    }
+  ]
+}

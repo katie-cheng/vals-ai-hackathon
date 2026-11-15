@@ -1,0 +1,11 @@
+data/snapshots/yc/
+__pycache__/
+data/snapshots/ai/
+.env
+.modal.toml
+logs/
+data/models/*.pkl
+data/models/*.npz
+data/snapshots/web/
+data/snapshots/dev/
+reports/

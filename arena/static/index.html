@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slop Arena</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header class="top"><h1>Slop Arena</h1><span class="muted">Which site is sloppier?</span>
+<nav><span id="who"></span><span id="count" class="mono"></span>
+<select id="view" aria-label="View"><option value="desktop">Desktop</option><option value="mobile">Mobile</option></select>
+<a href="/results">Results</a><a href="https://app.devin.ai/sessions/3dc261cee00b4a5ea9c21e19dc95ff29" target="_blank" rel="noopener">Request changes</a></nav></header>
+<div id="gate" hidden><h2>Your name</h2><p class="muted">Votes are stored under this name. Sites are shown blind: no model names. Judge slop (generic, templated, decorative-without-purpose, fake content), not whether you like the subject.</p>
+<form id="gateform"><input id="name" required autocomplete="name" placeholder="e.g. Ali"><button class="primary">Start</button></form></div>
+<div id="arena" hidden>
+<details id="brief" hidden><summary>Both sites were built from the same brief</summary><pre id="brieftext"></pre></details>
+<div class="panes">
+<section class="pane"><div class="pane-head"><strong>A</strong><a id="liveA" target="_blank" rel="noopener">Open live</a>
+<button class="remove" data-side="A" title="Remove this site from the arena and from all results">Stop showing</button>
+<label>Ship as-is? <select id="shipA"><option value="">–</option><option>yes</option><option>no</option></select></label></div>
+<div class="shot" id="shotA"><img id="imgA" alt="Site A screenshot"></div></section>
+<section class="pane"><div class="pane-head"><strong>B</strong><a id="liveB" target="_blank" rel="noopener">Open live</a>
+<button class="remove" data-side="B" title="Remove this site from the arena and from all results">Stop showing</button>
+<label>Ship as-is? <select id="shipB"><option value="">–</option><option>yes</option><option>no</option></select></label></div>
+<div class="shot" id="shotB"><img id="imgB" alt="Site B screenshot"></div></section>
+</div>
+<footer class="controls">
+<button class="choice" data-c="left">A is sloppier <kbd>1</kbd></button>
+<button class="choice" data-c="right">B is sloppier <kbd>2</kbd></button>
+<button class="choice" data-c="both">Both slop <kbd>3</kbd></button>
+<button class="choice" data-c="neither">Neither slop <kbd>4</kbd></button>
+<input id="reason" placeholder="Why? (optional)">
+<button data-c="skip">Skip <kbd>S</kbd></button>
+</footer></div>
+<div id="toast"></div>
+<script src="/static/app.js"></script></body></html>

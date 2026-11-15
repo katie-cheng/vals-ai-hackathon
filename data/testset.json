@@ -1,0 +1,930 @@
+{
+ "sites": {
+  "S09": {
+   "type": "game",
+   "source": "arena"
+  },
+  "S10": {
+   "type": "game",
+   "source": "arena"
+  },
+  "S11": {
+   "type": "game",
+   "source": "arena"
+  },
+  "S12": {
+   "type": "app_ui",
+   "source": "arena"
+  },
+  "S17": {
+   "type": "local",
+   "source": "arena"
+  },
+  "S18": {
+   "type": "local",
+   "source": "arena"
+  },
+  "S19": {
+   "type": "consumer_app",
+   "source": "arena"
+  },
+  "S20": {
+   "type": "consumer_app",
+   "source": "arena"
+  },
+  "S27": {
+   "type": "local",
+   "source": "arena"
+  },
+  "S28": {
+   "type": "local",
+   "source": "arena"
+  },
+  "ai-lovable-templates-cozy-kindle-cloud": {
+   "type": "content",
+   "source": "lovable"
+  },
+  "ai-lovable-templates-okr-goal-tracker-template-a5f1c837": {
+   "type": "app_ui",
+   "source": "lovable"
+  },
+  "ai-lovable-templates-reflection-journal-be553245": {
+   "type": "content",
+   "source": "lovable"
+  },
+  "ai-lovable-templates-resume-website-template": {
+   "type": "portfolio",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-barelink": {
+   "type": "app_ui",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-cryptoculture": {
+   "type": "landing",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-jaswanths-quest": {
+   "type": "portfolio",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-my-poke-creator": {
+   "type": "game",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-pingstore": {
+   "type": "ecommerce",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace": {
+   "type": "landing",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-renamify": {
+   "type": "consumer_app",
+   "source": "lovable"
+  },
+  "ai-madewithlovable-the-wise-compass": {
+   "type": "ecommerce",
+   "source": "lovable"
+  },
+  "web-curated-top-apple-com": {
+   "type": "consumer_app",
+   "source": "curated-top"
+  },
+  "web-curated-top-arc-net": {
+   "type": "consumer_app",
+   "source": "curated-top"
+  },
+  "web-curated-top-compass-com": {
+   "type": "local",
+   "source": "curated-top"
+  },
+  "web-curated-top-everlane-com": {
+   "type": "ecommerce",
+   "source": "curated-top"
+  },
+  "web-curated-top-excalidraw-com": {
+   "type": "app_ui",
+   "source": "curated-top"
+  },
+  "web-curated-top-glossier-com": {
+   "type": "ecommerce",
+   "source": "curated-top"
+  },
+  "web-curated-top-google-com-maps": {
+   "type": "app_ui",
+   "source": "curated-top"
+  },
+  "web-curated-top-joshwcomeau-com": {
+   "type": "portfolio",
+   "source": "curated-top"
+  },
+  "web-curated-top-khanacademy-org": {
+   "type": "content",
+   "source": "curated-top"
+  },
+  "web-curated-top-leerob-com": {
+   "type": "portfolio",
+   "source": "curated-top"
+  },
+  "web-curated-top-nintendo-com": {
+   "type": "game",
+   "source": "curated-top"
+  },
+  "web-curated-top-nytimes-com": {
+   "type": "content",
+   "source": "curated-top"
+  },
+  "web-curated-top-playstation-com": {
+   "type": "game",
+   "source": "curated-top"
+  },
+  "web-curated-top-starbucks-com": {
+   "type": "local",
+   "source": "curated-top"
+  },
+  "web-curated-top-supabase-com": {
+   "type": "landing",
+   "source": "curated-top"
+  },
+  "web-curated-top-wise-com": {
+   "type": "landing",
+   "source": "curated-top"
+  },
+  "web-osm-local-abberley-ie": {
+   "type": "local",
+   "source": "osm-local"
+  },
+  "web-osm-local-aeglelight-com": {
+   "type": "local",
+   "source": "osm-local"
+  },
+  "web-osm-local-jamesherren-com": {
+   "type": "ecommerce",
+   "source": "osm-local"
+  },
+  "web-osm-local-ocab-com-au": {
+   "type": "ecommerce",
+   "source": "osm-local"
+  },
+  "web-personal-sites-hidde-blog": {
+   "type": "portfolio",
+   "source": "personal-sites"
+  },
+  "web-personal-sites-karthikeyankc-com": {
+   "type": "portfolio",
+   "source": "personal-sites"
+  },
+  "ycc-abel-police": {
+   "type": "landing",
+   "source": "yc-current"
+  },
+  "ycc-alex-com": {
+   "type": "landing",
+   "source": "yc-current"
+  },
+  "ycc-educato": {
+   "type": "consumer_app",
+   "source": "yc-current"
+  },
+  "ycc-flowmanual": {
+   "type": "app_ui",
+   "source": "yc-current"
+  },
+  "ycc-general-learning": {
+   "type": "content",
+   "source": "yc-current"
+  },
+  "ycc-labric": {
+   "type": "app_ui",
+   "source": "yc-current"
+  },
+  "ycc-mathos": {
+   "type": "content",
+   "source": "yc-current"
+  },
+  "ycc-panels": {
+   "type": "landing",
+   "source": "yc-current"
+  },
+  "ycc-useforward": {
+   "type": "landing",
+   "source": "yc-current"
+  },
+  "ycc-youlearn": {
+   "type": "consumer_app",
+   "source": "yc-current"
+  },
+  "ycp-artifact": {
+   "type": "content",
+   "source": "yc-pre2022"
+  },
+  "ycp-lus-brands": {
+   "type": "ecommerce",
+   "source": "yc-pre2022"
+  },
+  "ycp-north": {
+   "type": "landing",
+   "source": "yc-pre2022"
+  },
+  "ycp-opencurriculum": {
+   "type": "content",
+   "source": "yc-pre2022"
+  },
+  "ycp-orchata": {
+   "type": "ecommerce",
+   "source": "yc-pre2022"
+  },
+  "ycp-text-blaze": {
+   "type": "consumer_app",
+   "source": "yc-pre2022"
+  },
+  "ycp-unnyhog": {
+   "type": "game",
+   "source": "yc-pre2022"
+  },
+  "ycp-weav": {
+   "type": "landing",
+   "source": "yc-pre2022"
+  }
+ },
+ "pairs": [
+  [
+   "S09",
+   "S10"
+  ],
+  [
+   "S09",
+   "web-curated-top-nintendo-com"
+  ],
+  [
+   "S09",
+   "web-curated-top-playstation-com"
+  ],
+  [
+   "S09",
+   "ycc-mathos"
+  ],
+  [
+   "S09",
+   "ycp-text-blaze"
+  ],
+  [
+   "S10",
+   "web-curated-top-leerob-com"
+  ],
+  [
+   "S10",
+   "web-curated-top-playstation-com"
+  ],
+  [
+   "S10",
+   "web-curated-top-supabase-com"
+  ],
+  [
+   "S10",
+   "ycc-abel-police"
+  ],
+  [
+   "S11",
+   "S12"
+  ],
+  [
+   "S11",
+   "S19"
+  ],
+  [
+   "S11",
+   "ai-madewithlovable-my-poke-creator"
+  ],
+  [
+   "S11",
+   "web-curated-top-playstation-com"
+  ],
+  [
+   "S11",
+   "web-osm-local-ocab-com-au"
+  ],
+  [
+   "S11",
+   "ycp-unnyhog"
+  ],
+  [
+   "S12",
+   "ai-madewithlovable-barelink"
+  ],
+  [
+   "S12",
+   "web-curated-top-excalidraw-com"
+  ],
+  [
+   "S12",
+   "ycc-flowmanual"
+  ],
+  [
+   "S12",
+   "ycp-lus-brands"
+  ],
+  [
+   "S17",
+   "S18"
+  ],
+  [
+   "S17",
+   "S28"
+  ],
+  [
+   "S17",
+   "web-curated-top-compass-com"
+  ],
+  [
+   "S17",
+   "web-curated-top-starbucks-com"
+  ],
+  [
+   "S17",
+   "ycp-weav"
+  ],
+  [
+   "S18",
+   "S27"
+  ],
+  [
+   "S18",
+   "web-curated-top-compass-com"
+  ],
+  [
+   "S18",
+   "web-curated-top-khanacademy-org"
+  ],
+  [
+   "S18",
+   "web-osm-local-aeglelight-com"
+  ],
+  [
+   "S19",
+   "S20"
+  ],
+  [
+   "S19",
+   "web-curated-top-apple-com"
+  ],
+  [
+   "S19",
+   "web-curated-top-arc-net"
+  ],
+  [
+   "S19",
+   "web-osm-local-ocab-com-au"
+  ],
+  [
+   "S19",
+   "ycc-educato"
+  ],
+  [
+   "S19",
+   "ycc-youlearn"
+  ],
+  [
+   "S20",
+   "ai-lovable-templates-resume-website-template"
+  ],
+  [
+   "S20",
+   "ai-madewithlovable-renamify"
+  ],
+  [
+   "S20",
+   "web-curated-top-apple-com"
+  ],
+  [
+   "S20",
+   "web-curated-top-wise-com"
+  ],
+  [
+   "S20",
+   "ycp-north"
+  ],
+  [
+   "S20",
+   "ycp-text-blaze"
+  ],
+  [
+   "S27",
+   "S28"
+  ],
+  [
+   "S27",
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace"
+  ],
+  [
+   "S27",
+   "web-curated-top-compass-com"
+  ],
+  [
+   "S27",
+   "web-curated-top-starbucks-com"
+  ],
+  [
+   "S27",
+   "web-osm-local-abberley-ie"
+  ],
+  [
+   "S28",
+   "ai-lovable-templates-okr-goal-tracker-template-a5f1c837"
+  ],
+  [
+   "S28",
+   "ai-madewithlovable-my-poke-creator"
+  ],
+  [
+   "S28",
+   "web-curated-top-starbucks-com"
+  ],
+  [
+   "S28",
+   "web-curated-top-wise-com"
+  ],
+  [
+   "S28",
+   "web-osm-local-abberley-ie"
+  ],
+  [
+   "S28",
+   "web-osm-local-aeglelight-com"
+  ],
+  [
+   "ai-lovable-templates-cozy-kindle-cloud",
+   "ai-madewithlovable-jaswanths-quest"
+  ],
+  [
+   "ai-lovable-templates-cozy-kindle-cloud",
+   "ycp-artifact"
+  ],
+  [
+   "ai-lovable-templates-cozy-kindle-cloud",
+   "ycp-opencurriculum"
+  ],
+  [
+   "ai-lovable-templates-cozy-kindle-cloud",
+   "ycp-unnyhog"
+  ],
+  [
+   "ai-lovable-templates-okr-goal-tracker-template-a5f1c837",
+   "web-curated-top-excalidraw-com"
+  ],
+  [
+   "ai-lovable-templates-okr-goal-tracker-template-a5f1c837",
+   "web-curated-top-google-com-maps"
+  ],
+  [
+   "ai-lovable-templates-okr-goal-tracker-template-a5f1c837",
+   "web-personal-sites-hidde-blog"
+  ],
+  [
+   "ai-lovable-templates-okr-goal-tracker-template-a5f1c837",
+   "ycc-flowmanual"
+  ],
+  [
+   "ai-lovable-templates-okr-goal-tracker-template-a5f1c837",
+   "ycc-labric"
+  ],
+  [
+   "ai-lovable-templates-reflection-journal-be553245",
+   "web-curated-top-khanacademy-org"
+  ],
+  [
+   "ai-lovable-templates-reflection-journal-be553245",
+   "web-curated-top-nytimes-com"
+  ],
+  [
+   "ai-lovable-templates-reflection-journal-be553245",
+   "ycc-mathos"
+  ],
+  [
+   "ai-lovable-templates-reflection-journal-be553245",
+   "ycp-weav"
+  ],
+  [
+   "ai-lovable-templates-resume-website-template",
+   "ai-madewithlovable-jaswanths-quest"
+  ],
+  [
+   "ai-lovable-templates-resume-website-template",
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace"
+  ],
+  [
+   "ai-lovable-templates-resume-website-template",
+   "web-curated-top-joshwcomeau-com"
+  ],
+  [
+   "ai-lovable-templates-resume-website-template",
+   "web-personal-sites-hidde-blog"
+  ],
+  [
+   "ai-madewithlovable-barelink",
+   "web-curated-top-arc-net"
+  ],
+  [
+   "ai-madewithlovable-barelink",
+   "web-curated-top-everlane-com"
+  ],
+  [
+   "ai-madewithlovable-barelink",
+   "web-curated-top-google-com-maps"
+  ],
+  [
+   "ai-madewithlovable-barelink",
+   "ycc-flowmanual"
+  ],
+  [
+   "ai-madewithlovable-cryptoculture",
+   "web-curated-top-apple-com"
+  ],
+  [
+   "ai-madewithlovable-cryptoculture",
+   "web-curated-top-supabase-com"
+  ],
+  [
+   "ai-madewithlovable-cryptoculture",
+   "ycc-educato"
+  ],
+  [
+   "ai-madewithlovable-cryptoculture",
+   "ycc-useforward"
+  ],
+  [
+   "ai-madewithlovable-cryptoculture",
+   "ycp-weav"
+  ],
+  [
+   "ai-madewithlovable-jaswanths-quest",
+   "web-curated-top-khanacademy-org"
+  ],
+  [
+   "ai-madewithlovable-jaswanths-quest",
+   "web-curated-top-leerob-com"
+  ],
+  [
+   "ai-madewithlovable-jaswanths-quest",
+   "web-personal-sites-hidde-blog"
+  ],
+  [
+   "ai-madewithlovable-jaswanths-quest",
+   "ycc-alex-com"
+  ],
+  [
+   "ai-madewithlovable-jaswanths-quest",
+   "ycc-panels"
+  ],
+  [
+   "ai-madewithlovable-my-poke-creator",
+   "web-curated-top-nintendo-com"
+  ],
+  [
+   "ai-madewithlovable-my-poke-creator",
+   "ycc-abel-police"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "ai-madewithlovable-the-wise-compass"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "web-curated-top-everlane-com"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "web-curated-top-nytimes-com"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "web-curated-top-starbucks-com"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "web-osm-local-aeglelight-com"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "ycp-lus-brands"
+  ],
+  [
+   "ai-madewithlovable-pingstore",
+   "ycp-orchata"
+  ],
+  [
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace",
+   "ai-madewithlovable-renamify"
+  ],
+  [
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace",
+   "web-curated-top-everlane-com"
+  ],
+  [
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace",
+   "ycc-alex-com"
+  ],
+  [
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace",
+   "ycp-north"
+  ],
+  [
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace",
+   "ycp-text-blaze"
+  ],
+  [
+   "ai-madewithlovable-plan-provider-pro-retirement-plan-marketplace",
+   "ycp-weav"
+  ],
+  [
+   "ai-madewithlovable-renamify",
+   "web-curated-top-arc-net"
+  ],
+  [
+   "ai-madewithlovable-renamify",
+   "ycc-abel-police"
+  ],
+  [
+   "ai-madewithlovable-renamify",
+   "ycc-youlearn"
+  ],
+  [
+   "ai-madewithlovable-the-wise-compass",
+   "web-curated-top-glossier-com"
+  ],
+  [
+   "ai-madewithlovable-the-wise-compass",
+   "web-curated-top-playstation-com"
+  ],
+  [
+   "ai-madewithlovable-the-wise-compass",
+   "web-osm-local-abberley-ie"
+  ],
+  [
+   "ai-madewithlovable-the-wise-compass",
+   "web-osm-local-ocab-com-au"
+  ],
+  [
+   "ai-madewithlovable-the-wise-compass",
+   "ycc-flowmanual"
+  ],
+  [
+   "web-curated-top-apple-com",
+   "ycc-youlearn"
+  ],
+  [
+   "web-curated-top-apple-com",
+   "ycp-opencurriculum"
+  ],
+  [
+   "web-curated-top-apple-com",
+   "ycp-text-blaze"
+  ],
+  [
+   "web-curated-top-arc-net",
+   "ycc-educato"
+  ],
+  [
+   "web-curated-top-compass-com",
+   "web-curated-top-starbucks-com"
+  ],
+  [
+   "web-curated-top-compass-com",
+   "ycc-youlearn"
+  ],
+  [
+   "web-curated-top-everlane-com",
+   "web-curated-top-glossier-com"
+  ],
+  [
+   "web-curated-top-everlane-com",
+   "web-osm-local-jamesherren-com"
+  ],
+  [
+   "web-curated-top-everlane-com",
+   "web-osm-local-ocab-com-au"
+  ],
+  [
+   "web-curated-top-excalidraw-com",
+   "web-curated-top-google-com-maps"
+  ],
+  [
+   "web-curated-top-excalidraw-com",
+   "ycc-labric"
+  ],
+  [
+   "web-curated-top-excalidraw-com",
+   "ycp-north"
+  ],
+  [
+   "web-curated-top-excalidraw-com",
+   "ycp-opencurriculum"
+  ],
+  [
+   "web-curated-top-glossier-com",
+   "web-curated-top-nintendo-com"
+  ],
+  [
+   "web-curated-top-glossier-com",
+   "web-osm-local-jamesherren-com"
+  ],
+  [
+   "web-curated-top-google-com-maps",
+   "web-curated-top-wise-com"
+  ],
+  [
+   "web-curated-top-google-com-maps",
+   "ycc-labric"
+  ],
+  [
+   "web-curated-top-joshwcomeau-com",
+   "web-personal-sites-hidde-blog"
+  ],
+  [
+   "web-curated-top-joshwcomeau-com",
+   "web-personal-sites-karthikeyankc-com"
+  ],
+  [
+   "web-curated-top-joshwcomeau-com",
+   "ycc-abel-police"
+  ],
+  [
+   "web-curated-top-joshwcomeau-com",
+   "ycc-panels"
+  ],
+  [
+   "web-curated-top-joshwcomeau-com",
+   "ycp-artifact"
+  ],
+  [
+   "web-curated-top-khanacademy-org",
+   "web-curated-top-nintendo-com"
+  ],
+  [
+   "web-curated-top-khanacademy-org",
+   "ycc-abel-police"
+  ],
+  [
+   "web-curated-top-khanacademy-org",
+   "ycc-general-learning"
+  ],
+  [
+   "web-curated-top-khanacademy-org",
+   "ycc-mathos"
+  ],
+  [
+   "web-curated-top-khanacademy-org",
+   "ycp-artifact"
+  ],
+  [
+   "web-curated-top-leerob-com",
+   "web-osm-local-abberley-ie"
+  ],
+  [
+   "web-curated-top-leerob-com",
+   "web-personal-sites-karthikeyankc-com"
+  ],
+  [
+   "web-curated-top-leerob-com",
+   "ycc-panels"
+  ],
+  [
+   "web-curated-top-nintendo-com",
+   "ycc-flowmanual"
+  ],
+  [
+   "web-curated-top-nintendo-com",
+   "ycp-unnyhog"
+  ],
+  [
+   "web-curated-top-nytimes-com",
+   "ycc-general-learning"
+  ],
+  [
+   "web-curated-top-nytimes-com",
+   "ycc-mathos"
+  ],
+  [
+   "web-curated-top-supabase-com",
+   "web-curated-top-wise-com"
+  ],
+  [
+   "web-curated-top-supabase-com",
+   "ycc-alex-com"
+  ],
+  [
+   "web-curated-top-supabase-com",
+   "ycp-north"
+  ],
+  [
+   "web-curated-top-wise-com",
+   "ycc-alex-com"
+  ],
+  [
+   "web-curated-top-wise-com",
+   "ycc-useforward"
+  ],
+  [
+   "web-curated-top-wise-com",
+   "ycc-youlearn"
+  ],
+  [
+   "web-curated-top-wise-com",
+   "ycp-north"
+  ],
+  [
+   "web-osm-local-abberley-ie",
+   "web-osm-local-aeglelight-com"
+  ],
+  [
+   "web-osm-local-abberley-ie",
+   "ycc-flowmanual"
+  ],
+  [
+   "web-osm-local-abberley-ie",
+   "ycc-useforward"
+  ],
+  [
+   "web-osm-local-aeglelight-com",
+   "ycp-orchata"
+  ],
+  [
+   "web-osm-local-jamesherren-com",
+   "ycc-panels"
+  ],
+  [
+   "web-osm-local-jamesherren-com",
+   "ycp-lus-brands"
+  ],
+  [
+   "web-osm-local-ocab-com-au",
+   "ycp-orchata"
+  ],
+  [
+   "web-personal-sites-karthikeyankc-com",
+   "ycc-panels"
+  ],
+  [
+   "web-personal-sites-karthikeyankc-com",
+   "ycc-youlearn"
+  ],
+  [
+   "ycc-alex-com",
+   "ycp-weav"
+  ],
+  [
+   "ycc-educato",
+   "ycp-text-blaze"
+  ],
+  [
+   "ycc-flowmanual",
+   "ycc-labric"
+  ],
+  [
+   "ycc-flowmanual",
+   "ycp-orchata"
+  ],
+  [
+   "ycc-general-learning",
+   "ycc-labric"
+  ],
+  [
+   "ycc-general-learning",
+   "ycc-youlearn"
+  ],
+  [
+   "ycc-general-learning",
+   "ycp-artifact"
+  ],
+  [
+   "ycc-general-learning",
+   "ycp-opencurriculum"
+  ],
+  [
+   "ycc-mathos",
+   "ycp-opencurriculum"
+  ],
+  [
+   "ycc-panels",
+   "ycp-artifact"
+  ],
+  [
+   "ycc-useforward",
+   "ycp-weav"
+  ],
+  [
+   "ycc-youlearn",
+   "ycp-text-blaze"
+  ],
+  [
+   "ycc-youlearn",
+   "ycp-weav"
+  ],
+  [
+   "ycp-lus-brands",
+   "ycp-orchata"
+  ]
+ ]
+}
