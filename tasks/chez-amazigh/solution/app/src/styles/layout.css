@@ -1,0 +1,262 @@
+.skip-link {
+  position: absolute;
+  inset-inline-start: 16px;
+  top: -60px;
+  background: var(--brown);
+  color: var(--cream);
+  padding: 8px 14px;
+  z-index: 60;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(247, 241, 231, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  width: var(--page);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 76px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-inline-end: auto;
+}
+
+.brand-mark {
+  font-size: 28px;
+  line-height: 1;
+  color: var(--terracotta);
+}
+
+.brand-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 10px;
+  margin-inline-end: -10px;
+  cursor: pointer;
+  color: var(--brown);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  font-size: 15px;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  border-bottom-color: var(--terracotta);
+}
+
+.site-nav .nav-home,
+.site-nav .nav-lang {
+  display: none;
+}
+
+.nav-reserve a {
+  color: var(--terracotta-dark);
+  font-weight: 500;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 2px;
+}
+
+.lang-switch button {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 6px 7px;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--brown-soft);
+}
+
+.lang-switch button.is-current {
+  color: var(--brown);
+  border-bottom-color: var(--brown);
+}
+
+.lang-switch button:lang(ar) {
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+
+main {
+  display: block;
+  min-height: 60vh;
+}
+
+.section {
+  width: var(--page);
+  margin-inline: auto;
+  padding-block: var(--space);
+}
+
+.section-title {
+  margin-bottom: 40px;
+}
+
+.band-olive {
+  background: var(--olive);
+  color: var(--cream);
+}
+
+.band-sand {
+  background: var(--sand);
+}
+
+.band-terracotta {
+  background: var(--terracotta-dark);
+  color: var(--cream);
+}
+
+.site-footer {
+  background: var(--brown);
+  color: var(--cream);
+  padding-block: 72px 32px;
+  font-size: 15px;
+}
+
+.footer-inner {
+  width: var(--page);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.site-footer a {
+  text-decoration-color: rgba(247, 241, 231, 0.4);
+}
+
+.footer-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.footer-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sand);
+  margin-bottom: 14px;
+}
+
+.footer-note {
+  margin-top: 16px;
+  color: rgba(247, 241, 231, 0.75);
+}
+
+.footer-legal {
+  width: var(--page);
+  margin: 56px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(247, 241, 231, 0.18);
+  color: rgba(247, 241, 231, 0.7);
+  max-width: none;
+}
+
+@media (max-width: 1239px) {
+  .menu-toggle {
+    display: block;
+    order: 3;
+  }
+  .header-lang {
+    display: none;
+  }
+  .site-nav {
+    position: fixed;
+    inset: 76px 0 0;
+    background: var(--cream);
+    padding: 32px var(--gutter) 48px;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s;
+  }
+  .site-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .site-nav .nav-home {
+    display: block;
+  }
+  .site-nav a {
+    font-family: var(--serif);
+    font-size: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-nav .nav-lang {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    min-height: 64px;
+  }
+  .site-nav {
+    inset: 64px 0 0;
+  }
+  .brand-name {
+    font-size: 21px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
