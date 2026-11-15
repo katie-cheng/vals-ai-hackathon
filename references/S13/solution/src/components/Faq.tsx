@@ -48,7 +48,7 @@ function Faq() {
                         duration: DUR.base,
                         ease: EASE,
                       }}
-                      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors ${u ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-[var(--raised)] text-cyan-200"}`}
+                      className={`grid h-11 w-11 shrink-0 place-items-center rounded-full transition-colors ${u ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-[var(--raised)] text-cyan-200"}`}
                     >
                       <Plus className="h-4 w-4" strokeWidth={2.25} />
                     </motion.span>

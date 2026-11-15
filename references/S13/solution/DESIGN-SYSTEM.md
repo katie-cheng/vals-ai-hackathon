@@ -8,7 +8,7 @@ Tokens live in `src/index.css` (`@theme` and `@layer components`) and `src/lib/a
 - Uppercase only in the hero service ribbon and in small meta labels (Before/After chips, footer column heads, price item names).
 
 ## Colour
-- Background `abyss` #04141f, flat. No gradients (R41).
+- Background `abyss` #04141f, flat. No gradients (R41), except the hero video vignette (R46).
 - Grain (R42): a fine 110px SVG film grain, only on selected surfaces: `.grain` on Services, Process, Areas, the hero service ribbon and the footer; `.grain-light` on the light Results and Pricing sections. Why us, FAQ and Quote stay flat.
 - Raised fill (R42): anything sitting on a background (header bar, panels, inputs, chips, secondary and icon buttons) uses `--raised` rgb(12 33 45 / 0.92), hover `--raised-hover`, so it covers the grain and reads as layered above it.
 - Accent `cyan-300` #93bcc6 (muted sea-glass). Hover accent `cyan-200`.
@@ -34,3 +34,9 @@ Tokens live in `src/index.css` (`@theme` and `@layer components`) and `src/lib/a
 - Framer Motion: `DUR.base` 0.4s for state changes (accordion, carousel, menu, form steps); `DUR.slow` 0.6s for opacity-only entrances; `DUR.draw` 1.2s for the map outline.
 - Continuous motion only in the hero video, the service ribbon marquee and the loader ring. All of it stops under `prefers-reduced-motion`.
 - Loader (R39): a text-free ring, shown for at most 400ms, then the page fades in.
+
+## Balance (R44)
+- Sibling boxes (chips, options, cards, buttons in a group) share width, height and padding; groups sit on equal-column grids.
+- Every circular control is 44px. Square chips that pair (Before/After) share one fixed size.
+- Illustrations and the map sit directly on the background, not in frames (R45).
+- Check: `python3 verification/tools/box_audit.py 1440` must print only the `squares` summary.

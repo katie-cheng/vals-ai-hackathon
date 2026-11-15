@@ -114,10 +114,10 @@ function ComparisonSlider({ active: a }) {
           </AnimatePresence>
         </div>
       </div>
-      <span className="absolute left-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-white">
+      <span className="absolute left-4 top-4 z-20 inline-flex h-8 w-[5.5rem] items-center justify-center rounded-md border border-white/25 bg-black/60 text-[11px] font-medium uppercase tracking-[0.08em] text-white">
         Before
       </span>
-      <span className="absolute right-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-white">
+      <span className="absolute right-4 top-4 z-20 inline-flex h-8 w-[5.5rem] items-center justify-center rounded-md border border-white/25 bg-black/60 text-[11px] font-medium uppercase tracking-[0.08em] text-white">
         After
       </span>
       <div
@@ -128,7 +128,7 @@ function ComparisonSlider({ active: a }) {
         aria-hidden
       >
         <div className="absolute inset-y-0 -left-px w-[2px] bg-white/80" />
-        <div className="absolute top-1/2 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-md border border-white/25 bg-black/60 text-white">
+        <div className="absolute top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-black/60 text-white">
           <ChevronsLeftRight className="h-5 w-5" strokeWidth={2} />
         </div>
       </div>

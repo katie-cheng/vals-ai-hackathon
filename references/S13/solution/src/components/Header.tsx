@@ -152,14 +152,14 @@ function Header() {
             <div className="flex items-center gap-2.5">
               <a
                 href={SITE.phoneHref}
-                className="btn btn-secondary hidden shrink-0 md:flex"
+                className="btn btn-secondary hidden min-w-[9.5rem] shrink-0 md:flex"
               >
                 {SITE.phoneDisplay}
               </a>
               <div>
                 <a
                   href="#quote"
-                  className="btn btn-primary group hidden shrink-0 sm:inline-flex"
+                  className="btn btn-primary group hidden min-w-[9.5rem] shrink-0 sm:inline-flex"
                 >
                   Get a free quote
                 </a>

@@ -256,5 +256,23 @@
   "sent_at": "2026-11-15T01:03-08:00",
   "element": "service-town chips",
   "comment": "make sure all square elements are aligned in a grid"
+ },
+ {
+  "rid": "R44",
+  "sent_at": "2026-11-15T01:04-08:00",
+  "element": "square/box elements (general)",
+  "comment": "this should be a general rule - if anything is shaped like a square, they should be balanced visually"
+ },
+ {
+  "rid": "R45",
+  "sent_at": "2026-11-15T01:04-08:00",
+  "element": "service-area map",
+  "comment": "the map doesnt need to be in a box"
+ },
+ {
+  "rid": "R46",
+  "sent_at": "2026-11-15T01:05-08:00",
+  "element": "hero video vignette",
+  "comment": "the hero graphic can have more vignette"
  }
 ]

@@ -52,7 +52,8 @@ function Hero() {
               preload="auto"
             />
           </div>
-          <div className="absolute inset-0 bg-[#04141f]/60" />
+          <div className="absolute inset-0 bg-[#04141f]/45" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_70%_at_50%_45%,transparent_30%,rgb(4_20_31/0.92)_100%)]" />
         </div>
         <motion.div
           className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pb-12 pt-28 sm:px-10 lg:px-24 lg:pb-16 lg:pt-28"

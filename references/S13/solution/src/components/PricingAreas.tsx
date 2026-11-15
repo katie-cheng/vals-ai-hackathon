@@ -92,12 +92,12 @@ function PricingAreas() {
                     className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-cyan-400 transition-transform group-hover:scale-x-100"
                     aria-hidden
                   />
-                  <p className="mt-4 text-[12px] font-medium uppercase tracking-[0.08em] text-slate-500">
+                  <p className="min-h-[2.75em] text-[12px] lg:min-h-[4.1em] xl:min-h-[2.75em] font-medium uppercase leading-snug tracking-[0.08em] text-slate-500">
                     {l.label}
                   </p>
-                  <p className="mt-1 text-4xl font-medium tracking-tight text-[#04141f]">
+                  <p className="mt-2 flex items-baseline gap-1.5 whitespace-nowrap text-4xl font-medium tracking-tight text-[#04141f]">
                     {l.display_price}
-                    <span className="ml-1.5 align-middle text-[13px] font-medium text-slate-400">
+                    <span className="text-[13px] font-medium tracking-normal text-slate-400">
                       {l.unit}
                     </span>
                   </p>
@@ -115,7 +115,7 @@ function PricingAreas() {
         </div>
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 lg:px-24 grid-12 split-7-5 lg:items-center">
           <Reveal className="relative order-2 lg:order-1">
-            <div className="glass relative overflow-hidden rounded-lg p-4 sm:p-6">
+            <div className="relative">
               <div className="relative">
                 <svg
                   viewBox="40 20 620 440"
