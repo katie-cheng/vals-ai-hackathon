@@ -25,6 +25,51 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Responsive breakage (nav/button/phone text wrapping), overlapping elements on scroll, marquee not full width, empty components, duplicated CTAs | katie | ~10 | mostly yes: multi-viewport render, line counts, bbox overlap while scrolling, empty-box and duplicate-text checks |
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
+## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 46 labels (R1–R46, SlopLabel ids 461–506) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+
+| Pattern | Labels | Mechanical? |
+|---|---|---|
+| Headings too large/heavy relative to their subtitle; whole phrases emphasised | R1, R13 | yes: heading/subtitle font-size ratio and weight; share of text ≥600 weight |
+| Any gradient or glow at all (backgrounds, logo tile, map halo), not just text/corner glows | R3, R6 | yes: `background-image` gradient, coloured `box-shadow`/`filter: blur`/`drop-shadow` |
+| Small uppercase labels anywhere (scroll cue, logo sub-line, marquee), not only eyebrows | R4, R6 | yes: caps text ≤14px or letter-spacing>0 |
+| Useless helper text ("Scroll to explore") | R5 | yes: text regex |
+| Bold, over-padded buttons | R7 | yes: button font-weight ≥600, padding vs font size |
+| Text shadow / outlined decorative background text | R8 | yes: `text-shadow`, `-webkit-text-stroke` |
+| Heavy decorative icon use (icon next to every label, button, chip) | R9 | yes: icon count per section / per CTA |
+| Duplicate CTAs to the same destination | R10 | yes: count links per `href` |
+| Animated control misaligned in a state change (FAQ + → × off-centre) | R11 | yes: icon/container centre offset after toggling |
+| Excessive corner rounding everywhere (beyond pills) | R12 | yes: radius ≥ 12px on cards/buttons |
+| Heavy, stacked animation (preloader, smooth-scroll hijack, particles, parallax, magnetic/tilt, per-word reveals, looping effects) | R14 | partly: count of infinite animations, rAF canvases, scroll-linked transforms |
+| Calibration (R18): after R3/R4 stripped every gradient and caps label, the page read as unpolished. Subtle functional gradients (image-to-section fades, faint tonal bands) and a few small-caps meta labels are fine; the slop is decorative glows/gradient text and caps eyebrows on every section | R18 | thresholds, not presence |
+| Paired labels styled inconsistently (Before vs After), blurred overlays | R15 |
+| Light page background exposed on overscroll of a dark site | R16 | yes: `html` background vs body; `overscroll-behavior` | yes: sibling label style diff; `backdrop-filter` |
+| Neon accent palette (saturated cyan on navy) | R19 | yes: accent colour saturation/lightness |
+| Cramped side padding (content close to viewport edges) | R20, R33 | yes: container padding / content inset at each width |
+| Characterful/wide grotesk body font where a neutral sans (Inter-like) reads more professional | R21 | partly: computed body font-family vs a neutral-sans allowlist; taste call otherwise |
+| Redundant navigation: pill/tab row plus prev/next arrows for the same carousel | R22 | yes: a tab/pill group and prev/next buttons controlling the same panel |
+| Inconsistent layout grid: every section picks its own column ratio, gutter and alignment | R23 | yes: column edges and gutters across sections should snap to one shared grid |
+| Logo is a stock icon (e.g. Lucide droplet) in a filled rounded tile rather than a designed mark | R24 | partly: logo svg matches an icon-library glyph |
+| Same point repeated across sections (service list in hero copy + chips + section; "free estimate" and contact details in every section) | R26 | partly: repeated-phrase / n-gram overlap across sections |
+| Oversized vertical spacing: hero taller than the viewport with little in it, and large gaps between a section title and its content | R34, R35 | yes: hero height > viewport while content fills < ~50%; title-block margin-bottom > ~1.5× heading font-size |
+| Icon reduction has limits: a directional arrow on the single primary CTA is fine (contrast with R9 decorative icons) | R37 | partial: count icons per CTA; flag only non-directional or repeated ones |
+| No coherent design system: many distinct border-radius values, button paddings, surface styles and transition durations across one page | R38 | yes: count distinct computed border-radius / transition-duration / button padding values across visible elements |
+| Loaders are fine when minimal: no text/branding, simple ring, very short, fades into the page (contrast with S13 #-era branded preloaders cut in R14) | R39 | yes: loader overlay visible > ~600ms, or contains text |
+| Zigzag/alternating timeline: half the width empty per row and right-aligned body text on the left cards | R40 | yes: timeline items alternating columns, or text-align:right on multi-line paragraphs |
+| Card-for-everything: every list item boxed in a bordered/filled card; plain text with dividers reads cleaner. Texture (grain) preferred over gradients for depth | R41 | yes: count sibling elements with border+background+radius holding only a heading and a paragraph |
+| Texture applied everywhere / too coarse; translucent panels letting background texture bleed through so nothing reads as layered | R42 | partly: grain tile size and coverage share; panels over textured backgrounds with fill alpha < ~0.85 |
+| Ragged chip/tag clouds: bordered boxes of content width wrapping in uneven rows instead of an aligned grid | R43 | yes: sibling bordered boxes in a wrapping row with differing widths / unaligned left edges across rows |
+| Unbalanced boxes: paired/sibling square elements with different sizes or padding (e.g. BEFORE vs AFTER chips, 36px vs 44px circular buttons) | R44 | yes: group bordered/filled siblings; flag width/height/padding spread > 2px; flag circular controls of differing diameters (see `box_audit.py`) |
+| Framing everything: maps/illustrations put in a bordered panel for no reason | R45 | partly: bordered container whose only child is an svg/canvas/img illustration |
+| Flat overlay on hero media reads cheap; a vignette (darker edges, clear centre) focuses the image while keeping text legible | R46 | partly: hero media overlay with uniform alpha and no radial falloff |
+| Dark/colour overlay tinting content photos (product imagery should show true colour) | R31 | yes: semi-opaque element stacked over an img with no text on it |
+| Hierarchy from heavy weights instead of contrast: large titles should be light (thin sans), with weight kept for small UI text (extends R1/R13) | R30, R32, R36 | yes: computed font-weight of large headings vs body; a regular-weight serif for the hero and section titles is fine (R32, R36) |
+| Flat everything reads unfinished: very subtle tonal background gradients are fine; the slop is glow, gradient text and saturated blobs (refines R3/R18) | R29 | yes: flag gradients by colour distance between stops and by text/blob use, not gradients as such |
+| Exception: uppercase + icons are acceptable in a decorative service ribbon (the "no small caps / fewer icons" rules apply to labels and content, not this band) | R28 | scope note for the eyebrow and icon checks |
+| Media placeholder that differs from the media (a still photo that swaps to an unrelated video) | R27 | yes: compare the poster/placeholder to the video's first frame |
+| Layout shift on load/reload (font swap reflow, slide-in entrances, late state restyle, media without reserved space) | R25 | yes: CLS via PerformanceObserver, plus element movement during the first seconds |
+| Hero image missing on first paint (waits for JS/video poster) | R17 | yes: hero image request start and paint time vs first contentful paint |
+
 ## Other observations
 - Both salon sites (S03 gpt-6-astra-max, S04 kimi-k3.1-pro) independently chose Inter + Cormorant Garamond italic accents and 9–10px caps eyebrows: cross-model convergence.
 - Arena: in both fully labeled pairs (S01 vs S02, S03 vs S04) the arena loser has more labels. n=2, and label counts reflect annotator effort, so not evidence yet.

@@ -1,0 +1,1 @@
+261 262 263 264 270 274 287  : labels whose original element no longer exists in the rebuild (removed by a fix), so no crop was taken
