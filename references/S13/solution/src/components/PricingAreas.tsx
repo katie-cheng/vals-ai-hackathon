@@ -242,12 +242,12 @@ function PricingAreas() {
               <p className="mb-3 mt-8 text-[14px] font-semibold text-sky-100/80">
                 Representative service towns
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {towns.map((l) => (
                   <button
                     key={l.id}
                     onClick={() => i(l.name)}
-                    className={`option ${a === l.name ? "option-active" : ""}`}
+                    className={`option w-full ${a === l.name ? "option-active" : ""}`}
                   >
                     {l.name}
                   </button>

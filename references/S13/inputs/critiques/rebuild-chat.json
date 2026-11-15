@@ -250,5 +250,11 @@
   "sent_at": "2026-11-15T01:00-08:00",
   "element": "grain texture",
   "comment": "grain should be used on selective elements not just backgrounds. if its used on backgrounds then anything above it should not have grain and should look like its above it (very slightly transparent/opaque) / also the grain is a bit big"
+ },
+ {
+  "rid": "R43",
+  "sent_at": "2026-11-15T01:03-08:00",
+  "element": "service-town chips",
+  "comment": "make sure all square elements are aligned in a grid"
  }
 ]

@@ -497,13 +497,13 @@ function Quote() {
                     <p className="mb-3 text-[12.5px] text-sky-200/55">
                       Select all that apply.
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid auto-rows-fr gap-2 sm:grid-cols-2">
                       {quoteOptions.map((O) => {
                         const G = a.services.includes(O);
                         return (
                           <motion.label
                             key={O}
-                            className={`option cursor-pointer ${G ? "option-active" : ""}`}
+                            className={`option h-full w-full cursor-pointer ${G ? "option-active" : ""}`}
                           >
                             <input
                               type="checkbox"
@@ -594,7 +594,7 @@ function Quote() {
                                 preferredContact: O.v,
                               }))
                             }
-                            className={`option justify-center ${a.preferredContact === O.v ? "option-active" : ""}`}
+                            className={`option justify-center whitespace-nowrap px-2 ${a.preferredContact === O.v ? "option-active" : ""}`}
                             aria-pressed={a.preferredContact === O.v}
                           > {O.t}
                           </button>

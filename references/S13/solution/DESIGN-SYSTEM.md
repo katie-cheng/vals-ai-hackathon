@@ -24,7 +24,7 @@ Tokens live in `src/index.css` (`@theme` and `@layer components`) and `src/lib/a
 ## Components
 - `.btn` + `.btn-primary` (filled accent) or `.btn-secondary` (outlined). `.btn-lg` for the hero CTA, the form submit and the mobile menu.
 - `.icon-btn`: 44px circular icon button (carousel arrows, menu, share, back to top). `.icon-btn-solid` on light sections.
-- `.option` / `.option-active`: selectable chips (services in the form, preferred contact, map towns).
+- `.option` / `.option-active`: selectable chips (services in the form, preferred contact, map towns). Groups of options always sit in an equal-column grid, never a ragged `flex-wrap` row (R43).
 - `.surface`: functional frame (service carousel) with border `white/10`, radius 10px, `--raised` fill.
 - Lists of content (Why us, Process steps, FAQ, contact links) are plain text separated by `white/10` hairline dividers, not cards (R41).
 
