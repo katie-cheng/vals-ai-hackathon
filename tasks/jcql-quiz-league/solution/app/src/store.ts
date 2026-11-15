@@ -39,9 +39,20 @@ function sampleLeague(): League {
   };
 }
 
+function isChange(c: unknown): c is Change {
+  const x = c as Change;
+  return !!x && typeof x.teamId === "string" && Number.isFinite(x.delta) && Number.isFinite(x.at);
+}
+
 function isLeague(x: unknown): x is League {
   const l = x as League;
-  return !!l && Array.isArray(l.teams) && l.teams.every((t) => typeof t.id === "string" && typeof t.name === "string" && Number.isFinite(t.score));
+  return (
+    !!l &&
+    Array.isArray(l.teams) &&
+    l.teams.every((t) => !!t && typeof t.id === "string" && typeof t.name === "string" && typeof t.logo === "string" && Number.isFinite(t.score)) &&
+    (l.round === undefined || typeof l.round === "string") &&
+    (l.lastChange == null || isChange(l.lastChange))
+  );
 }
 
 function read(): League {
