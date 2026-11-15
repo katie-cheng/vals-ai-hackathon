@@ -144,7 +144,7 @@ function Services() {
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10 lg:px-24">
-        <div className="mb-14 max-w-3xl sm:mb-20">
+        <div className="mb-8 max-w-3xl sm:mb-10">
           <SplitWords
             text="The right clean for every part of your home."
             as="h2"

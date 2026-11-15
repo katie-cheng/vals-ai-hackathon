@@ -167,7 +167,7 @@ function BeforeAfter() {
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10 lg:px-24">
-        <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-8 flex flex-col gap-6 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <SplitWords
               text="See what a thorough clean changes."

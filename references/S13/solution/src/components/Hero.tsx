@@ -27,7 +27,7 @@ function Hero() {
   return (
       <section
         id="top"
-        className="relative flex min-h-[108svh] flex-col overflow-hidden"
+        className="relative flex min-h-[max(76svh,560px)] flex-col overflow-hidden"
       >
         <div
           className="absolute inset-0"
@@ -56,7 +56,7 @@ function Hero() {
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#04141f]" />
         </div>
         <motion.div
-          className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pt-36 sm:px-10 lg:px-24 lg:pt-40"
+          className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pb-12 pt-28 sm:px-10 lg:px-24 lg:pb-16 lg:pt-28"
         >
           <h1 className="max-w-4xl text-[11vw] font-light leading-[1.02] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.4rem]">
             <HeroWords text="Connecticut," delay={0.14} className="block" />

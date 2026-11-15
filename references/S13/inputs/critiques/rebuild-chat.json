@@ -196,5 +196,17 @@
   "sent_at": "2026-11-15T00:46-08:00",
   "element": "page container",
   "comment": "since there is less content increase the gutters on left and right of the site even more so content is narrower"
+ },
+ {
+  "rid": "R34",
+  "sent_at": "2026-11-15T00:48-08:00",
+  "element": "hero section",
+  "comment": "the hero is a bit tall now that there is less content on it, condense it a bit more"
+ },
+ {
+  "rid": "R35",
+  "sent_at": "2026-11-15T00:48-08:00",
+  "element": "section title blocks",
+  "comment": "there is a bit too much spacing between titles and the content below it"
  }
 ]

@@ -50,7 +50,7 @@ function PricingAreas() {
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
         <div className="relative mx-auto max-w-6xl px-6 sm:px-10 lg:px-24">
-          <div className="mb-12 grid gap-10 grid-12 split-5-7 lg:items-end">
+          <div className="mb-8 grid gap-10 grid-12 split-5-7 lg:items-end">
             <div>
               <SplitWords
                 text="Clear prices for window work."
