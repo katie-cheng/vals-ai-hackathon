@@ -247,7 +247,9 @@ async function grade(url, out) {
   }
 
   const d = views.desktop;
-  const gate = d.ok && d.facts.text.length >= 200 && d.facts.height >= 600 ? 1 : 0;
+  // Games and apps may open on a short start screen, so a task can lower the minimum.
+  const { minText = 200, minHeight = 600 } = task.GATE || {};
+  const gate = d.ok && d.facts.text.length >= minText && d.facts.height >= minHeight ? 1 : 0;
   const taskReqs = gate ? task.requirements(views) : [];
   const baseReqs = gate ? baseline(views) : [];
   const rendered = Object.keys(VIEWPORTS).filter((v) => views[v].ok);
