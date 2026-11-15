@@ -1,0 +1,2782 @@
+diff --git a/PLAN.md b/PLAN.md
+new file mode 100644
+index 0000000..f064b04
+--- /dev/null
++++ b/PLAN.md
+@@ -0,0 +1,28 @@
++# S30 fix plan
++
++Each S30 label in `../inputs/critiques/CRITIQUES.md` (59, all by Aidan) maps to one fix group below. Labels that describe the same
++pattern are grouped, and a group is applied everywhere the pattern occurs, not only on the labelled element ("would remove elements of
++this pattern entirely"). Anything not named here stays as it is in `../inputs/live-app` (routes, layout, copy, assets, animation).
++
++**[A]** marks an interpretation Aidan can overrule.
++
++| Group | Labels | Change | Files |
++| --- | --- | --- | --- |
++| F1 | #188 #238 #240 #248 #267 #269 #286 #290 #293 #295 #298 #302 #309 #312 #313 #335 #337 #341 #343 #353 #354 #355 #359 | Delete `SectionTag` (pill, pulsing dot, 11px tracked uppercase) from every page and remove the component. The heading that follows already names each section. | motion.tsx, all pages |
++| F2 | #171 #311 #358 | Nav: logo is plain "kora" (no green dot, no second font); the mobile menu drops its `01`–`06` mono prefixes. #311 and #358 have no comment and are read as part of #171. **[A]** | Nav.tsx |
++| F3 | #183 #257 | Hero: "machines." uses the headline font (no Instrument Serif italic) and sits on the same line as "revenue" at desktop width. `serif-accent` is removed site-wide so no other heading mixes fonts. #257 has no comment. | Home.tsx, all pages |
++| F4 | #211 #213 #215 #216 | Case-study meta "LEDGERLY · 2025" becomes "Ledgerly, 2025". | Work.tsx |
++| F5 | #224 #249 #275 #282 #305 #333 #339 | Remove the "Free 30-min call · No pitch · Actionable teardown" line under every CTA. | shared.tsx |
++| F6 | #231 #252 #276 #283 #303 | Remove the `CTASection` subtitle (the `copy` prop, incl. "We took X from stuck to scaling"); "Want results like this?" moves down into the space. | shared.tsx, Work.tsx, pages |
++| F7 | #217 | Remove the CTA gradient glow and dot grid; also every blurred decorative glow in page heroes. | shared.tsx, all pages |
++| F8 | #232 #236 #278 #357 #360 | Remove the footer "Booking Q1 2027 — 3 spots left" pill. #236 has no comment. | Footer.tsx |
++| F9 | #233 #234 | Remove the footer tagline; hello@kora.agency sits under the logo. #234 has no comment. | Footer.tsx |
++| F10 | #299 #300 #301 | Service tags on case studies use the body font weight and size like the rest of the site. | Work.tsx |
++| F11 | #316 #324 #326 | Pricing comparison cards use `rounded-[22px]`, the radius of the "Talk me through the math" pill. | Pricing.tsx |
++| F12 | #343 | About: wider gap between the story image and "Our story", and no parallax shift, so the image never overlaps the text. | About.tsx |
++| F13 | #348 | About: remove the floating "6+ years compounding client growth" card and its float animation. | About.tsx, index.css |
++| F14 | #224 #231 #232 #233 #252 #276 #303 (em dash and `·` parts) | No `·` or em dash anywhere in visible copy or UI: paired dashes become parentheses or commas, `Phase 1 — X` becomes `Phase 1: X`. | content.tsx, all pages |
++| F15 | #188 #224 #249 (monofont parts) | No tracked-uppercase micro-labels anywhere: remaining small labels become sentence case at normal tracking. | all pages |
++
++Follow-up from Aidan in chat after the first pass: "Make the font a bit thinner". Every weight drops one step
++(800 to 700, 700 to 600, 600 to 500).
+diff --git a/index.html b/index.html
+index c5c7e71..2150c61 100644
+--- a/index.html
++++ b/index.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8" />
+     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <title>Kora | Growth Agency</title>
++    <title>Kora Growth Consultancy</title>
+   </head>
+   <body>
+     <div id="root"></div>
+diff --git a/src/components/Footer.tsx b/src/components/Footer.tsx
+index a232539..ba0f9e3 100644
+--- a/src/components/Footer.tsx
++++ b/src/components/Footer.tsx
+@@ -83,18 +83,12 @@ export function Footer() {
+       <div className="container-x relative pt-20 pb-4 sm:pt-28">
+         <div className="flex flex-col items-start justify-between gap-8 border-b border-cream-50/10 pb-12 lg:flex-row lg:items-end">
+           <div className="max-w-2xl">
+-            <Reveal y={20}>
+-              <span className="inline-flex items-center gap-2 rounded-full border border-cream-50/15 bg-cream-50/5 px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] text-mint-200 uppercase">
+-                <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-mint-300" />
+-                Booking Q1 2027 — 3 spots left
+-              </span>
+-            </Reveal>
+-            <SplitText text="Let's grow something worth talking about." as="h2" className="display-md mt-6" />
++            <SplitText text="Let's grow something worth talking about." as="h2" className="display-md" />
+           </div>
+           <Reveal delay={0.2}>
+             <Link
+               to="/contact"
+-              className="group inline-flex items-center gap-3 rounded-full bg-cream-50 px-7 py-4 text-sm font-extrabold text-pine-950 transition-colors duration-300 hover:bg-mint-300"
++              className="group inline-flex items-center gap-3 rounded-full bg-cream-50 px-7 py-4 text-sm font-bold text-pine-950 transition-colors duration-300 hover:bg-mint-300"
+             >
+               Book your growth call
+               <span className="grid h-7 w-7 place-items-center rounded-full bg-pine-950 text-cream-50 transition-transform duration-300 group-hover:rotate-45">
+@@ -107,13 +101,9 @@ export function Footer() {
+       <div className="container-x relative grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+         <div>
+           <Logo dark={!0} />
+-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream-50/55">
+-            A growth consultancy for ambitious teams. Strategy, creative, and RevOps — built to book calls and
+-            compound revenue.
+-          </p>
+           <a
+             href="mailto:hello@kora.agency"
+-            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-mint-300 transition-colors hover:text-cream-50"
++            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-mint-300 transition-colors hover:text-cream-50"
+           >
+             {"hello@kora.agency "}
+             <ArrowRight className="h-4 w-4" />
+@@ -121,7 +111,7 @@ export function Footer() {
+         </div>
+         {footerColumns.map((s) => (
+           <div key={s.title}>
+-            <h4 className="text-[11px] font-extrabold tracking-[0.2em] text-cream-50/40 uppercase">
++            <h4 className="text-xs font-bold text-cream-50/40">
+               {s.title}
+             </h4>
+             <ul className="mt-5 space-y-3">
+@@ -129,7 +119,7 @@ export function Footer() {
+                 <li key={n.label}>
+                   <Link
+                     to={n.to}
+-                    className="nav-link text-[15px] font-semibold text-cream-50/75 transition-colors hover:text-cream-50"
++                    className="nav-link text-[15px] font-medium text-cream-50/75 transition-colors hover:text-cream-50"
+                   >
+                     {n.label}
+                   </Link>
+@@ -139,7 +129,7 @@ export function Footer() {
+           </div>
+         ))}
+       </div>
+-      <div className="container-x relative flex flex-col items-start justify-between gap-4 border-t border-cream-50/10 py-7 text-xs font-semibold text-cream-50/45 sm:flex-row sm:items-center">
++      <div className="container-x relative flex flex-col items-start justify-between gap-4 border-t border-cream-50/10 py-7 text-xs font-medium text-cream-50/45 sm:flex-row sm:items-center">
+         <span>© 2026 Kora Growth Consultancy. All rights reserved.</span>
+         <div className="flex items-center gap-6">
+           <span>Privacy</span>
+@@ -160,7 +150,7 @@ export function Footer() {
+       </div>
+       <div className="pointer-events-none relative select-none overflow-hidden" aria-hidden={!0}>
+         <div className="container-x">
+-          <div className="text-outline-cream -mb-[0.23em] text-center text-[24vw] leading-none font-extrabold tracking-tight lg:text-[19rem]">
++          <div className="text-outline-cream -mb-[0.23em] text-center text-[24vw] leading-none font-bold tracking-tight lg:text-[19rem]">
+             kora
+           </div>
+         </div>
+diff --git a/src/components/Nav.tsx b/src/components/Nav.tsx
+index b1a025d..114e7f8 100644
+--- a/src/components/Nav.tsx
++++ b/src/components/Nav.tsx
+@@ -47,8 +47,8 @@ export function Logo({ dark: s = !1, compact: n = !1 }) {
+         </svg>
+       </span>
+       {!n && (
+-        <span className={`text-xl font-extrabold tracking-tight ${s ? "text-cream-50" : "text-ink-900"}`}>
+-          kora<span className="text-pine-500">.</span>
++        <span className={`text-xl font-bold tracking-tight ${s ? "text-cream-50" : "text-ink-900"}`}>
++          kora
+         </span>
+       )}
+     </Link>
+@@ -113,7 +113,7 @@ export function Nav() {
+                   key={m.to}
+                   to={m.to}
+                   className={({ isActive: g }) =>
+-                    `nav-link text-[13.5px] font-bold tracking-wide transition-colors ${g ? "active text-pine-700" : "text-ink-900/70 hover:text-ink-900"}`
++                    `nav-link text-[13.5px] font-semibold tracking-wide transition-colors ${g ? "active text-pine-700" : "text-ink-900/70 hover:text-ink-900"}`
+                   }
+                 >
+                   {m.label}
+@@ -124,7 +124,7 @@ export function Nav() {
+               <Magnetic strength={0.25} className="hidden sm:block">
+                 <Link
+                   to="/contact"
+-                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink-900 px-5 py-2.5 text-[13.5px] font-bold text-cream-50"
++                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink-900 px-5 py-2.5 text-[13.5px] font-semibold text-cream-50"
+                 >
+                   <span className="absolute inset-0 translate-y-full rounded-full bg-pine-600 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+                   <span className="relative">Book a call</span>
+@@ -199,10 +199,9 @@ export function Nav() {
+                       <NavLink
+                         to={m.to}
+                         className={({ isActive: x }) =>
+-                          `group flex items-baseline gap-4 py-1.5 text-5xl font-extrabold tracking-tight sm:text-6xl ${x ? "text-mint-300" : "text-cream-50"}`
++                          `group flex items-baseline gap-4 py-1.5 text-5xl font-bold tracking-tight sm:text-6xl ${x ? "text-mint-300" : "text-cream-50"}`
+                         }
+                       >
+-                        <span className="text-sm font-bold text-cream-50/40">0{g + 1}</span>
+                         <span className="transition-transform duration-500 group-hover:translate-x-3">
+                           {m.label}
+                         </span>
+@@ -228,7 +227,7 @@ export function Nav() {
+                 >
+                   <Link
+                     to="/contact"
+-                    className="inline-flex items-center gap-2 rounded-full bg-mint-300 px-7 py-3.5 text-sm font-extrabold text-pine-950"
++                    className="inline-flex items-center gap-2 rounded-full bg-mint-300 px-7 py-3.5 text-sm font-bold text-pine-950"
+                   >
+                     {"Book a call "}
+                     <ArrowUpRight className="h-4 w-4" />
+@@ -245,7 +244,7 @@ export function Nav() {
+                 transition={{
+                   delay: 0.6,
+                 }}
+-                className="relative flex items-center justify-between border-t border-cream-50/10 px-6 py-5 text-xs font-semibold text-cream-50/50 sm:px-10"
++                className="relative flex items-center justify-between border-t border-cream-50/10 px-6 py-5 text-xs font-medium text-cream-50/50 sm:px-10"
+               >
+                 <span>hello@kora.agency</span>
+                 <span>© 2026 Kora</span>
+diff --git a/src/components/PageTransition.tsx b/src/components/PageTransition.tsx
+index 30b3635..49d738f 100644
+--- a/src/components/PageTransition.tsx
++++ b/src/components/PageTransition.tsx
+@@ -37,7 +37,7 @@ export function PageTransition({ children: s }) {
+             ease: HE,
+           }}
+         >
+-          <span className="text-2xl font-extrabold tracking-tight text-cream-50">
++          <span className="text-2xl font-bold tracking-tight text-cream-50">
+             kora<span className="text-mint-300">.</span>
+           </span>
+         </motion.div>
+diff --git a/src/components/Preloader.tsx b/src/components/Preloader.tsx
+index 575a959..5e48661 100644
+--- a/src/components/Preloader.tsx
++++ b/src/components/Preloader.tsx
+@@ -50,12 +50,12 @@ export function Preloader({ done: s }) {
+               duration: 0.4,
+               ease: EASE,
+             }}
+-            className="relative text-sm font-bold tracking-[0.3em] text-mint-300 uppercase"
++            className="relative text-sm font-semibold text-mint-300"
+           >
+             {preloaderWords[r]}
+           </motion.span>
+         </AnimatePresence>
+-        <div className="relative mt-4 text-7xl font-extrabold tracking-tight tabular-nums sm:text-8xl">
++        <div className="relative mt-4 text-7xl font-bold tracking-tight tabular-nums sm:text-8xl">
+           {n}
+           <span className="text-mint-300">%</span>
+         </div>
+@@ -67,7 +67,7 @@ export function Preloader({ done: s }) {
+             }}
+           />
+         </div>
+-        <span className="relative mt-6 text-xl font-extrabold">
++        <span className="relative mt-6 text-xl font-bold">
+           kora<span className="text-mint-300">.</span>
+         </span>
+       </motion.div>
+diff --git a/src/components/motion.tsx b/src/components/motion.tsx
+index 8c14938..755d781 100644
+--- a/src/components/motion.tsx
++++ b/src/components/motion.tsx
+@@ -263,15 +263,3 @@ export function ParallaxImage({ src: s, alt: n, className: l, imgClassName: r })
+     </motion.div>
+   );
+ }
+-export function SectionTag({ children: s, dark: n = !1 }) {
+-  return (
+-    <Reveal y={20}>
+-      <span
+-        className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase ${n ? "border-cream-50/20 bg-cream-50/5 text-mint-200" : "border-ink-900/15 bg-white/70 text-pine-700"}`}
+-      >
+-        <span className={`h-1.5 w-1.5 rounded-full animate-pulse-dot ${n ? "bg-mint-300" : "bg-pine-600"}`} />
+-        {s}
+-      </span>
+-    </Reveal>
+-  );
+-}
+diff --git a/src/components/shared.tsx b/src/components/shared.tsx
+index 9074377..908d568 100644
+--- a/src/components/shared.tsx
++++ b/src/components/shared.tsx
+@@ -22,35 +22,28 @@ export function ScrollProgress() {
+ }
+ export function CTASection({
+   title: s = "Ready to turn growth into a system?",
+-  copy: n = "Book a free 30-minute growth call. We'll tear down your funnel live and hand you three moves you can ship this month — whether you hire us or not.",
+ }) {
+   return (
+     <section className="container-x pb-24">
+       <Reveal>
+-        <div className="relative overflow-hidden rounded-[2rem] bg-ink-900 px-6 py-14 text-center text-cream-50 sm:px-12 sm:py-20">
+-          <div className="dot-grid absolute inset-0 opacity-70" />
+-          <div className="absolute -top-32 left-1/2 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-pine-600/40 blur-[100px]" />
++        <div className="relative overflow-hidden rounded-[2rem] bg-ink-900 px-6 py-16 text-center text-cream-50 sm:px-12 sm:py-24">
+           <div className="relative mx-auto max-w-2xl">
+             <SplitText text={s} as="h2" className="display-md" />
+-            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream-50/65">{n}</p>
+             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+               <Link
+                 to="/contact"
+-                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-extrabold text-ink-900 transition-colors duration-300 hover:bg-mint-300"
++                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-bold text-ink-900 transition-colors duration-300 hover:bg-mint-300"
+               >
+                 Book your free call
+                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+               </Link>
+               <Link
+                 to="/work"
+-                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-extrabold text-cream-50 transition-colors duration-300 hover:border-cream-50/60"
++                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-bold text-cream-50 transition-colors duration-300 hover:border-cream-50/60"
+               >
+                 See our results
+               </Link>
+             </div>
+-            <p className="mt-6 text-xs font-semibold text-cream-50/40">
+-              Free 30-min call · No pitch · Actionable teardown
+-            </p>
+           </div>
+         </div>
+       </Reveal>
+diff --git a/src/data/content.tsx b/src/data/content.tsx
+index 86ecc0f..78e33e5 100644
+--- a/src/data/content.tsx
++++ b/src/data/content.tsx
+@@ -20,7 +20,7 @@ export const services = [
+       icon: Compass,
+       image: "/images/insight-1.jpg",
+       description: [
+-        "Most teams don't have a growth problem — they have a focus problem. Ten channels, three ICPs, and no shared definition of what good looks like. Our growth strategy engagement replaces noise with a single, sequenced plan the whole company can rally behind.",
++        "Most teams don't have a growth problem, they have a focus problem. Ten channels, three ICPs, and no shared definition of what good looks like. Our growth strategy engagement replaces noise with a single, sequenced plan the whole company can rally behind.",
+         "We audit your funnel end-to-end, size every opportunity against effort, then hand you a quarter-by-quarter roadmap with owners, budgets, and targets. You leave knowing exactly what to do, in what order, and why.",
+       ],
+       outcomes: [
+@@ -77,7 +77,7 @@ export const services = [
+       image: "/images/case-ledger.jpg",
+       description: [
+         "Growth breaks operations before it breaks anything else. Leads rot in spreadsheets, marketing and sales argue about attribution, and nobody trusts the dashboard. RevOps fixes the plumbing so every new dollar of pipeline actually converts.",
+-        "We design your lifecycle stages, rebuild your CRM, automate the busywork, and install one source of truth for reporting — then train your team to run it without us.",
++        "We design your lifecycle stages, rebuild your CRM, automate the busywork, and install one source of truth for reporting, then train your team to run it without us.",
+       ],
+       outcomes: [
+         {
+@@ -116,7 +116,7 @@ export const services = [
+         },
+         {
+           title: "Build",
+-          desc: "CRM rebuild, automations, and dashboards — tested with real deals.",
++          desc: "CRM rebuild, automations, and dashboards, tested with real deals.",
+         },
+         {
+           title: "Embed",
+@@ -127,12 +127,12 @@ export const services = [
+     {
+       slug: "brand-positioning",
+       name: "Brand & Positioning",
+-      tagline: "Say the thing only you can say — and make the market believe it.",
++      tagline: "Say the thing only you can say, and make the market believe it.",
+       icon: FingerprintPattern,
+       image: "/images/insight-2.jpg",
+       description: [
+         "Vague positioning sounds like every other firm in your space. Kora fixes this with messaging built around credibility and conversion: sharp category framing, proof-led narratives, and a visual identity that looks like the outcome you sell.",
+-        "The result is a brand your sales team actually uses — one-pagers, decks, and a homepage that turn skeptics into booked calls.",
++        "The result is a brand your sales team actually uses, one-pagers, decks, and a homepage that turn skeptics into booked calls.",
+       ],
+       outcomes: [
+         {
+@@ -176,7 +176,7 @@ export const services = [
+         },
+         {
+           title: "Launch",
+-          desc: "Rollout plan across site, sales, and social — with measurement.",
++          desc: "Rollout plan across site, sales, and social, with measurement.",
+         },
+       ],
+     },
+@@ -187,7 +187,7 @@ export const services = [
+       icon: TrendingUp,
+       image: "/images/insight-3.jpg",
+       description: [
+-        "Ad platforms reward advertisers who feed them creative volume and clean data. We run performance marketing as an experimentation engine: structured testing roadmaps, creator-grade creative sprints, and budgets that follow payback — not last-click ROAS.",
++        "Ad platforms reward advertisers who feed them creative volume and clean data. We run performance marketing as an experimentation engine: structured testing roadmaps, creator-grade creative sprints, and budgets that follow payback, not last-click ROAS.",
+         "Every account gets a growth model that ties spend to pipeline and revenue, so finance finally stops asking what marketing actually does.",
+       ],
+       outcomes: [
+@@ -232,7 +232,7 @@ export const services = [
+         },
+         {
+           title: "Compound",
+-          desc: "Learnings feed landing pages, email, and organic — the whole funnel.",
++          desc: "Learnings feed landing pages, email, and organic, the whole funnel.",
+         },
+       ],
+     },
+@@ -299,7 +299,7 @@ export const services = [
+       icon: ChartColumn,
+       image: "/images/case-atlas.jpg",
+       description: [
+-        "Teams that test win. Teams that argue about button colours lose. We install an experimentation operating system — tracking you can trust, a prioritised backlog, and a weekly cadence that ships learnings, not just tickets.",
++        "Teams that test win. Teams that argue about button colours lose. We install an experimentation operating system, tracking you can trust, a prioritised backlog, and a weekly cadence that ships learnings, not just tickets.",
+         "CRO, lifecycle, pricing, onboarding: every surface becomes a surface for compounding gains.",
+       ],
+       outcomes: [
+@@ -355,7 +355,7 @@ export const services = [
+       industry: "SaaS",
+       title: "From stalled pipeline to 3.2× qualified demos in two quarters",
+       excerpt:
+-        "A Series B infrastructure platform with a great product and an invisible pipeline. We rebuilt positioning, demand, and the demo motion — then watched the calendar fill.",
++        "A Series B infrastructure platform with a great product and an invisible pipeline. We rebuilt positioning, demand, and the demo motion, then watched the calendar fill.",
+       image: "/images/case-nova.jpg",
+       year: "2026",
+       duration: "6 months",
+@@ -381,7 +381,7 @@ export const services = [
+         },
+       ],
+       challenge: [
+-        "Nova Cloud had raised a strong Series B on the back of founder-led sales — then hit a wall. The pipeline was lumpy, demos converted at 11%, and every deal depended on the CEO joining the call.",
++        "Nova Cloud had raised a strong Series B on the back of founder-led sales, then hit a wall. The pipeline was lumpy, demos converted at 11%, and every deal depended on the CEO joining the call.",
+         "Worse, the market lumped them in with three cheaper competitors. Prospects arrived price-shopping instead of problem-solving, and the sales cycle dragged past 90 days.",
+       ],
+       approach: [
+@@ -399,11 +399,11 @@ export const services = [
+         },
+       ],
+       results: [
+-        "Within two quarters, qualified demos were up 3.2× and the sales cycle had compressed to 54 days. The CEO stepped out of deals entirely — close rates went up anyway.",
++        "Within two quarters, qualified demos were up 3.2× and the sales cycle had compressed to 54 days. The CEO stepped out of deals entirely, close rates went up anyway.",
+         "Nova closed their two largest logos to date off the new motion and carried the playbook into their Series C narrative.",
+       ],
+       quote: {
+-        text: "Kora didn't give us a deck. They gave us a machine — positioning, pipeline, and a sales motion our team actually runs.",
++        text: "Kora didn't give us a deck. They gave us a machine, positioning, pipeline, and a sales motion our team actually runs.",
+         author: "Priya Raman",
+         role: "CEO, Nova Cloud",
+       },
+@@ -412,7 +412,7 @@ export const services = [
+       slug: "ledgerly",
+       client: "Ledgerly",
+       industry: "Fintech",
+-      title: "Repositioning a fintech for enterprise — and doubling ACV",
++      title: "Repositioning a fintech for enterprise, and doubling ACV",
+       excerpt:
+         "Ledgerly was winning SMBs and losing every enterprise deal to incumbents. We rebuilt trust signals, the enterprise motion, and RevOps to match.",
+       image: "/images/case-ledger.jpg",
+@@ -440,7 +440,7 @@ export const services = [
+       ],
+       challenge: [
+         "Ledgerly's product was enterprise-ready but their go-to-market wasn't. Security reviews stalled deals, the CRM was a graveyard of dead opportunities, and enterprise buyers simply didn't take them seriously.",
+-        "The team needed more than a rebrand — they needed an enterprise-grade operating system for trust, process, and proof.",
++        "The team needed more than a rebrand, they needed an enterprise-grade operating system for trust, process, and proof.",
+       ],
+       approach: [
+         {
+@@ -499,17 +499,17 @@ export const services = [
+         },
+       ],
+       challenge: [
+-        "Bloom & Co had product-market fit and a cult following — but 80% of revenue came from a single paid social channel, and CAC had doubled in 18 months. Every attempt to scale spend just bought more expensive customers.",
++        "Bloom & Co had product-market fit and a cult following, but 80% of revenue came from a single paid social channel, and CAC had doubled in 18 months. Every attempt to scale spend just bought more expensive customers.",
+         "Meanwhile, retention was an afterthought: no lifecycle program, no subscription push, and a leaky post-purchase experience.",
+       ],
+       approach: [
+         {
+           title: "Diversify acquisition",
+-          desc: "We launched search, creator whitelisting, and a retail-partnership funnel — taking paid social from 80% to 45% of new customers.",
++          desc: "We launched search, creator whitelisting, and a retail-partnership funnel, taking paid social from 80% to 45% of new customers.",
+         },
+         {
+           title: "Turn retention into a channel",
+-          desc: "Full lifecycle rebuild: welcome, post-purchase, replenishment, and winback — plus a subscription program that now drives 22% of revenue.",
++          desc: "Full lifecycle rebuild: welcome, post-purchase, replenishment, and winback, plus a subscription program that now drives 22% of revenue.",
+         },
+         {
+           title: "Experiment relentlessly",
+@@ -518,7 +518,7 @@ export const services = [
+       ],
+       results: [
+         "Bloom crossed $10M run-rate in nine months while holding 3.8× blended ROAS. Repeat rate climbed 57%, and the brand is no longer hostage to a single algorithm.",
+-        "The experimentation program still runs today — now staffed entirely by Bloom's in-house team, trained by Kora.",
++        "The experimentation program still runs today, now staffed entirely by Bloom's in-house team, trained by Kora.",
+       ],
+       quote: {
+         text: "They scaled us past $10M and made us dangerous enough to keep going without them. That's the highest compliment I can give an agency.",
+@@ -565,7 +565,7 @@ export const services = [
+       approach: [
+         {
+           title: "Find the wedge",
+-          desc: "We identified mid-market shippers frustrated by opaque pricing — and made transparent, educational content the spearhead.",
++          desc: "We identified mid-market shippers frustrated by opaque pricing, and made transparent, educational content the spearhead.",
+         },
+         {
+           title: "Build the engine",
+@@ -597,7 +597,7 @@ export const services = [
+     {
+       name: "Jonas Weber",
+       role: "Head of Growth Strategy",
+-      bio: "Former management consultant turned operator. Jonas builds the roadmaps — sequenced, costed, and board-ready.",
++      bio: "Former management consultant turned operator. Jonas builds the roadmaps, sequenced, costed, and board-ready.",
+       image: "/images/team-2.jpg",
+     },
+     {
+@@ -619,7 +619,7 @@ export const services = [
+       title: "The 90-day growth roadmap we run with every client",
+       category: "Strategy",
+       excerpt:
+-        "Diagnose, prioritise, sequence, activate. The exact operating cadence behind 120+ engagements — and how to steal it.",
++        "Diagnose, prioritise, sequence, activate. The exact operating cadence behind 120+ engagements, and how to steal it.",
+       image: "/images/insight-1.jpg",
+       date: "Oct 28, 2026",
+       readTime: "8 min read",
+@@ -630,7 +630,7 @@ export const services = [
+       body: [
+         {
+           type: "p",
+-          text: "Every engagement at Kora starts the same way: a blank whiteboard, a skeptical executive team, and a funnel full of leaks. And every engagement runs on the same 90-day cadence. Not because we're lazy — because it works.",
++          text: "Every engagement at Kora starts the same way: a blank whiteboard, a skeptical executive team, and a funnel full of leaks. And every engagement runs on the same 90-day cadence. Not because we're lazy, because it works.",
+         },
+         {
+           type: "p",
+@@ -638,7 +638,7 @@ export const services = [
+         },
+         {
+           type: "h2",
+-          text: "Phase 1 — Diagnose (weeks 1–2)",
++          text: "Phase 1: Diagnose (weeks 1–2)",
+         },
+         {
+           type: "p",
+@@ -646,11 +646,11 @@ export const services = [
+         },
+         {
+           type: "quote",
+-          text: "Most teams don't have a growth problem — they have twelve small leaks they never ranked.",
++          text: "Most teams don't have a growth problem, they have twelve small leaks they never ranked.",
+         },
+         {
+           type: "h2",
+-          text: "Phase 2 — Prioritise (week 3)",
++          text: "Phase 2: Prioritise (week 3)",
+         },
+         {
+           type: "p",
+@@ -658,15 +658,15 @@ export const services = [
+         },
+         {
+           type: "h2",
+-          text: "Phase 3 — Sequence (week 4)",
++          text: "Phase 3: Sequence (week 4)",
+         },
+         {
+           type: "p",
+-          text: "Winners become a week-by-week plan with owners, budgets, and targets. Nothing ships 'when we get to it' — everything has a date and a name attached.",
++          text: "Winners become a week-by-week plan with owners, budgets, and targets. Nothing ships 'when we get to it', everything has a date and a name attached.",
+         },
+         {
+           type: "h2",
+-          text: "Phase 4 — Activate (weeks 5–12)",
++          text: "Phase 4: Activate (weeks 5–12)",
+         },
+         {
+           type: "list",
+@@ -679,7 +679,7 @@ export const services = [
+         },
+         {
+           type: "p",
+-          text: "Steal the cadence. Run it for one quarter. If your pipeline doesn't move, we'll be shocked — and we'd love to hear why.",
++          text: "Steal the cadence. Run it for one quarter. If your pipeline doesn't move, we'll be shocked, and we'd love to hear why.",
+         },
+       ],
+     },
+@@ -703,7 +703,7 @@ export const services = [
+         },
+         {
+           type: "p",
+-          text: "Vague positioning forces every prospect to do the differentiation work themselves. Most won't bother — they'll shortlist on price, and you'll lose to whoever discounts hardest.",
++          text: "Vague positioning forces every prospect to do the differentiation work themselves. Most won't bother, they'll shortlist on price, and you'll lose to whoever discounts hardest.",
+         },
+         {
+           type: "h2",
+@@ -727,11 +727,11 @@ export const services = [
+         },
+         {
+           type: "p",
+-          text: "Great positioning doesn't start with what you do. It starts with the expensive problem you solve — named in the customer's words, quantified in their math, and framed so competitors can't claim it without lying.",
++          text: "Great positioning doesn't start with what you do. It starts with the expensive problem you solve, named in the customer's words, quantified in their math, and framed so competitors can't claim it without lying.",
+         },
+         {
+           type: "p",
+-          text: "Do that work once, properly, and every downstream motion — demand, sales, retention — gets easier. Skip it, and you'll pay the tax on every deal forever.",
++          text: "Do that work once, properly, and every downstream motion (demand, sales, retention) gets easier. Skip it, and you'll pay the tax on every deal forever.",
+         },
+       ],
+     },
+@@ -740,7 +740,7 @@ export const services = [
+       title: "CAC is up. Here's the channel mix that still works",
+       category: "Marketing",
+       excerpt:
+-        "Paid social got expensive. Search got crowded. The winners in 2026 run a portfolio — here's ours.",
++        "Paid social got expensive. Search got crowded. The winners in 2026 run a portfolio, here's ours.",
+       image: "/images/insight-3.jpg",
+       date: "Sep 30, 2026",
+       readTime: "7 min read",
+@@ -751,7 +751,7 @@ export const services = [
+       body: [
+         {
+           type: "p",
+-          text: "Blended CAC is up across nearly every account we manage. The brands still growing aren't finding a magic channel — they're running a disciplined portfolio where no single source owns more than 40% of pipeline.",
++          text: "Blended CAC is up across nearly every account we manage. The brands still growing aren't finding a magic channel, they're running a disciplined portfolio where no single source owns more than 40% of pipeline.",
+         },
+         {
+           type: "h2",
+@@ -776,11 +776,11 @@ export const services = [
+         },
+         {
+           type: "p",
+-          text: "We start with unit economics, not benchmarks. Payback targets set the budget envelope per channel; creative testing velocity decides who earns more. Kill/scale reviews run every two weeks — no sacred cows, no annual plans gathering dust.",
++          text: "We start with unit economics, not benchmarks. Payback targets set the budget envelope per channel; creative testing velocity decides who earns more. Kill/scale reviews run every two weeks, no sacred cows, no annual plans gathering dust.",
+         },
+         {
+           type: "p",
+-          text: "The mix will keep shifting. The operating system — model, test, scale, compound — doesn't have to.",
++          text: "The mix will keep shifting. The operating system (model, test, scale, compound) doesn't have to.",
+         },
+       ],
+     },
+@@ -799,7 +799,7 @@ export const services = [
+       body: [
+         {
+           type: "p",
+-          text: "The average scale-up we audit runs 14 revenue tools and trusts zero dashboards. The fix is rarely another purchase — it's subtraction, then wiring.",
++          text: "The average scale-up we audit runs 14 revenue tools and trusts zero dashboards. The fix is rarely another purchase, it's subtraction, then wiring.",
+         },
+         {
+           type: "h2",
+@@ -808,7 +808,7 @@ export const services = [
+         {
+           type: "list",
+           items: [
+-            "CRM as the system of record — clean stages, enforced SLAs",
++            "CRM as the system of record, clean stages, enforced SLAs",
+             "Enrichment + routing so every lead lands in the right hands fast",
+             "Sequencing for outbound and speed-to-lead automation",
+             "Conversation intelligence for coaching and win/loss truth",
+@@ -845,11 +845,11 @@ export const services = [
+       body: [
+         {
+           type: "p",
+-          text: "Founder-led sales works because founders carry three unfair advantages: total product knowledge, instant credibility, and the authority to promise things. Reps have none of these — so handing them a quota and a deck is a setup for failure.",
++          text: "Founder-led sales works because founders carry three unfair advantages: total product knowledge, instant credibility, and the authority to promise things. Reps have none of these, so handing them a quota and a deck is a setup for failure.",
+         },
+         {
+           type: "h2",
+-          text: "Step 1 — Shadow before you script",
++          text: "Step 1: Shadow before you script",
+         },
+         {
+           type: "p",
+@@ -857,7 +857,7 @@ export const services = [
+         },
+         {
+           type: "h2",
+-          text: "Step 2 — Codify the motion",
++          text: "Step 2: Codify the motion",
+         },
+         {
+           type: "list",
+@@ -874,11 +874,11 @@ export const services = [
+         },
+         {
+           type: "h2",
+-          text: "Step 3 — Coach weekly, measure honestly",
++          text: "Step 3: Coach weekly, measure honestly",
+         },
+         {
+           type: "p",
+-          text: "Call reviews, role-plays, and stage-conversion dashboards. Within a quarter, the founder should be optional on deals — within two, absent. That's the test.",
++          text: "Call reviews, role-plays, and stage-conversion dashboards. Within a quarter, the founder should be optional on deals, within two, absent. That's the test.",
+         },
+       ],
+     },
+@@ -887,7 +887,7 @@ export const services = [
+       title: "Experimentation cadence: how we ship 12 tests a quarter",
+       category: "Analytics",
+       excerpt:
+-        "Velocity beats genius. The operating system behind our testing programs — backlog, rituals, and readouts.",
++        "Velocity beats genius. The operating system behind our testing programs, backlog, rituals, and readouts.",
+       image: "/images/about-team.jpg",
+       date: "Aug 08, 2026",
+       readTime: "6 min read",
+@@ -898,7 +898,7 @@ export const services = [
+       body: [
+         {
+           type: "p",
+-          text: "Most teams run three tests a year and call it CRO. Our clients ship twelve a quarter — not because they're bigger, but because they run a system. Here's the system.",
++          text: "Most teams run three tests a year and call it CRO. Our clients ship twelve a quarter, not because they're bigger, but because they run a system. Here's the system.",
+         },
+         {
+           type: "h2",
+@@ -906,7 +906,7 @@ export const services = [
+         },
+         {
+           type: "p",
+-          text: "Every idea enters one backlog, scored ICE: impact, confidence, ease. Research — session replays, surveys, support tickets — feeds it monthly. Opinions are welcome; they just score low on confidence.",
++          text: "Every idea enters one backlog, scored ICE: impact, confidence, ease. Research (session replays, surveys, support tickets) feeds it monthly. Opinions are welcome; they just score low on confidence.",
+         },
+         {
+           type: "h2",
+@@ -917,7 +917,7 @@ export const services = [
+           items: [
+             "Monday: prioritise the week's ships",
+             "Wednesday: review live tests, no peeking at losers early",
+-            "Friday: readout — ship, kill, or iterate, documented in the library",
++            "Friday: readout, ship, kill, or iterate, documented in the library",
+           ],
+         },
+         {
+@@ -930,7 +930,7 @@ export const services = [
+         },
+         {
+           type: "p",
+-          text: "Winners ship to 100% and get applied across surfaces — PDP learnings inform checkout, checkout learnings inform onboarding. That's how 12 tests a quarter becomes 18% conversion lift a year.",
++          text: "Winners ship to 100% and get applied across surfaces, PDP learnings inform checkout, checkout learnings inform onboarding. That's how 12 tests a quarter becomes 18% conversion lift a year.",
+         },
+       ],
+     },
+@@ -957,7 +957,7 @@ export const services = [
+     {
+       name: "Growth Partner",
+       badge: "Most popular",
+-      blurb: "Your embedded growth team — strategy, execution, and experiments, every week.",
++      blurb: "Your embedded growth team, strategy, execution, and experiments, every week.",
+       monthly: 6500,
+       unit: "/month",
+       cta: "Become a Partner",
+@@ -978,7 +978,7 @@ export const services = [
+     {
+       name: "Embedded Team",
+       badge: "For scale-ups",
+-      blurb: "A full pod inside your org — for teams spending $100k+/mo or rebuilding GTM.",
++      blurb: "A full pod inside your org, for teams spending $100k+/mo or rebuilding GTM.",
+       monthly: 12e3,
+       unit: "/month",
+       cta: "Build my pod",
+@@ -999,7 +999,7 @@ export const services = [
+   testimonials = [
+     {
+       quote:
+-        "Kora didn't give us a deck. They gave us a machine — positioning, pipeline, and a sales motion our team actually runs.",
++        "Kora didn't give us a deck. They gave us a machine, positioning, pipeline, and a sales motion our team actually runs.",
+       name: "Priya Raman",
+       role: "CEO, Nova Cloud",
+       metric: "3.2×",
+@@ -1032,15 +1032,15 @@ export const services = [
+   faqs = [
+     {
+       q: "How fast will we see results?",
+-      a: "Quick wins typically land in the first 30 days — messaging fixes, routing, obvious funnel leaks. Compounding results build over 90 days as experiments stack. We set explicit 30/60/90 targets in week one, and report against them weekly.",
++      a: "Quick wins typically land in the first 30 days, messaging fixes, routing, obvious funnel leaks. Compounding results build over 90 days as experiments stack. We set explicit 30/60/90 targets in week one, and report against them weekly.",
+     },
+     {
+       q: "Who will actually work on our account?",
+-      a: "A partner leads every engagement, backed by dedicated specialists — never handed to juniors. You'll know everyone's name, and you'll talk to them weekly. Our strategists run a maximum of four accounts each.",
++      a: "A partner leads every engagement, backed by dedicated specialists, never handed to juniors. You'll know everyone's name, and you'll talk to them weekly. Our strategists run a maximum of four accounts each.",
+     },
+     {
+       q: "How is this different from hiring in-house?",
+-      a: "A senior growth hire costs $150k+ and takes six months to ramp — and they're still one person. A Kora pod gives you strategy, creative, RevOps, and analytics from week one, with 120+ engagements of pattern recognition. Many clients later hire in-house with our help.",
++      a: "A senior growth hire costs $150k+ and takes six months to ramp, and they're still one person. A Kora pod gives you strategy, creative, RevOps, and analytics from week one, with 120+ engagements of pattern recognition. Many clients later hire in-house with our help.",
+     },
+     {
+       q: "What do you need from our team?",
+@@ -1048,11 +1048,11 @@ export const services = [
+     },
+     {
+       q: "Do you require long-term contracts?",
+-      a: "No. Growth Sprint is a fixed 3-week engagement. Retainers run month-to-month after an initial 90 days — the minimum window to prove compounding results. You can pause or cancel with 30 days notice.",
++      a: "No. Growth Sprint is a fixed 3-week engagement. Retainers run month-to-month after an initial 90 days, the minimum window to prove compounding results. You can pause or cancel with 30 days notice.",
+     },
+     {
+       q: "What if it doesn't work?",
+-      a: "Every engagement starts with a diagnostic. If we don't find at least 3× our fee in addressable opportunity, we'll tell you — and refund the Sprint in full. In six years, we've issued that refund twice.",
++      a: "Every engagement starts with a diagnostic. If we don't find at least 3× our fee in addressable opportunity, we'll tell you, and refund the Sprint in full. In six years, we've issued that refund twice.",
+     },
+   ],
+   clientLogos = [
+@@ -1093,7 +1093,7 @@ export const services = [
+     {
+       n: "01",
+       title: "Diagnose",
+-      desc: "Stakeholder interviews, data deep-dives, and a ruthless audit of every funnel stage. We find where revenue is actually leaking — and size the prize.",
++      desc: "Stakeholder interviews, data deep-dives, and a ruthless audit of every funnel stage. We find where revenue is actually leaking, and size the prize.",
+       tags: ["Funnel audit", "Data teardown", "Leak map"],
+     },
+     {
+@@ -1105,13 +1105,13 @@ export const services = [
+     {
+       n: "03",
+       title: "Activate",
+-      desc: "Weekly sprints with your team — shipping experiments, creative, and fixes. Kill/scale decisions every two weeks. No 60-page decks gathering dust.",
++      desc: "Weekly sprints with your team, shipping experiments, creative, and fixes. Kill/scale decisions every two weeks. No 60-page decks gathering dust.",
+       tags: ["Weekly sprints", "Experiments", "Reporting"],
+     },
+     {
+       n: "04",
+       title: "Compound",
+-      desc: "Winners scale, learnings bank into your playbook, and your team learns to run the machine. We make ourselves optional — that's the point.",
++      desc: "Winners scale, learnings bank into your playbook, and your team learns to run the machine. We make ourselves optional, that's the point.",
+       tags: ["Scale winners", "Playbooks", "Handoff"],
+     },
+   ],
+@@ -1119,7 +1119,7 @@ export const services = [
+     {
+       icon: Lightbulb,
+       title: "Outcomes over output",
+-      desc: "Nobody ever grew from a 60-page deck. We measure ourselves on pipeline, revenue, and retention — the numbers that survive a board meeting.",
++      desc: "Nobody ever grew from a 60-page deck. We measure ourselves on pipeline, revenue, and retention, the numbers that survive a board meeting.",
+     },
+     {
+       icon: ShieldCheck,
+@@ -1156,11 +1156,11 @@ export const services = [
+     {
+       year: "2025",
+       title: "120+ engagements, $240M pipeline",
+-      desc: "Kora crosses 120 engagements with a 94% retention rate — and a waitlist for the first time.",
++      desc: "Kora crosses 120 engagements with a 94% retention rate, and a waitlist for the first time.",
+     },
+     {
+       year: "2026",
+       title: "The consultancy that compounds",
+-      desc: "Today: 24 senior specialists, six practices, and one obsession — growth you can measure.",
++      desc: "Today: 24 senior specialists, six practices, and one obsession, growth you can measure.",
+     },
+   ];
+diff --git a/src/index.css b/src/index.css
+index 02b7daf..992d08e 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -24,16 +24,8 @@
+   --color-mint-200: #d7e7cb;
+   --color-mint-300: #bcd8a9;
+   --color-gold-400: #c9a227;
+-
+-  --animate-float-soft: float-soft 5s ease-in-out infinite;
+   --animate-spin-slow: spin-slow 14s linear infinite;
+-  --animate-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
+-  --animate-pulse-dot: pulse-dot 1.6s ease-in-out infinite;
+-
+-  @keyframes float-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+   @keyframes spin-slow { to { transform: rotate(360deg); } }
+-  @keyframes scroll-dot { 0% { opacity: 1; transform: translateY(0); } 70% { opacity: 0; transform: translateY(14px); } 100% { opacity: 0; transform: translateY(0); } }
+-  @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(1.6); } }
+ }
+ 
+ @layer base {
+@@ -54,9 +46,9 @@
+   .container-x { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+   @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+   .section-pad { padding-block: clamp(4.5rem, 9vw, 8.5rem); }
+-  .display-xl { letter-spacing: -0.035em; font-size: clamp(2.9rem, 8.5vw, 7.5rem); font-weight: 800; line-height: 0.98; }
+-  .display-lg { letter-spacing: -0.03em; font-size: clamp(2.4rem, 6vw, 5.25rem); font-weight: 800; line-height: 1; }
+-  .display-md { letter-spacing: -0.025em; font-size: clamp(2rem, 4.6vw, 3.75rem); font-weight: 800; line-height: 1.02; }
++  .display-xl { letter-spacing: -0.035em; font-size: clamp(2.9rem, 8.5vw, 7.5rem); font-weight: 700; line-height: 0.98; }
++  .display-lg { letter-spacing: -0.03em; font-size: clamp(2.4rem, 6vw, 5.25rem); font-weight: 700; line-height: 1; }
++  .display-md { letter-spacing: -0.025em; font-size: clamp(2rem, 4.6vw, 3.75rem); font-weight: 700; line-height: 1.02; }
+   .serif-accent { font-family: var(--font-serif); letter-spacing: -0.01em; font-style: italic; font-weight: 400; }
+   .marquee-track { width: max-content; animation: marquee-x linear infinite; display: flex; }
+   .marquee-paused:hover .marquee-track { animation-play-state: paused; }
+@@ -89,5 +81,5 @@
+ @keyframes marquee-x { 0% { transform: translate(0); } 100% { transform: translate(-50%); } }
+ 
+ @media (prefers-reduced-motion: reduce) {
+-  .marquee-track, .animate-float-soft, .animate-spin-slow, .animate-scroll-dot { animation: none; }
++  .marquee-track, .animate-spin-slow { animation: none; }
+ }
+diff --git a/src/pages/About.tsx b/src/pages/About.tsx
+index 59d5930..b93508f 100644
+--- a/src/pages/About.tsx
++++ b/src/pages/About.tsx
+@@ -4,7 +4,6 @@ import {
+   CountUp,
+   ParallaxImage,
+   Reveal,
+-  SectionTag,
+   SplitText,
+   Stagger,
+   StaggerItem,
+@@ -25,8 +24,6 @@ function AboutChapter({ tag: s, title: n, copy: l }) {
+   return (
+     <section ref={r} className="relative overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-20">
+       <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
+-      <div className="absolute -top-40 right-[-10%] h-96 w-96 rounded-full bg-mint-200/50 blur-[120px]" />
+-      <div className="absolute top-20 left-[-10%] h-72 w-72 rounded-full bg-cream-200/70 blur-[100px]" />
+       <motion.div
+         style={{
+           y: f,
+@@ -34,7 +31,6 @@ function AboutChapter({ tag: s, title: n, copy: l }) {
+         }}
+         className="container-x relative"
+       >
+-        <SectionTag>{s}</SectionTag>
+         <SplitText text={n} as="h1" className="display-lg mt-6 max-w-4xl" />
+         <Reveal delay={0.25}>
+           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">{l}</p>
+@@ -55,42 +51,22 @@ export function About() {
+       <AboutChapter
+         tag="About Kora"
+         title="A consultancy built for the revenue-obsessed."
+-        copy="We started Kora because growth advice was broken: agencies sold hours, consultants sold decks, and nobody owned the number. So we built the firm we always wanted to hire."
+       />
+       <section className="container-x pb-24">
+-        <div className="grid items-center gap-10 lg:grid-cols-2">
++        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+           <div ref={s} className="relative">
+-            <motion.div
+-              style={{
+-                y: l,
+-              }}
+-            >
+-              <ParallaxImage
++            <ParallaxImage
+                 src="/images/about-office.jpg"
+                 alt="Inside the Kora studio"
+                 className="aspect-[4/5] sm:aspect-[5/5]"
+               />
+-            </motion.div>
+-            <Reveal delay={0.3} className="absolute -right-3 -bottom-8 sm:-right-6">
+-              <div className="animate-float-soft rounded-3xl bg-ink-900 p-6 text-cream-50 shadow-2xl sm:p-8">
+-                <p className="text-4xl font-extrabold text-mint-300 tabular-nums sm:text-5xl">
+-                  <CountUp value={6} suffix="+" />
+-                </p>
+-                <p className="mt-1 text-xs font-bold text-cream-50/60">
+-                  years compounding
+-                  <br />
+-                  client growth
+-                </p>
+-              </div>
+-            </Reveal>
+           </div>
+           <div>
+-            <SectionTag>Our story</SectionTag>
+             <SplitText text="Founded on a frustration." as="h2" className="display-md mt-5" />
+             <Reveal delay={0.15}>
+               <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink-500">
+                 <p>
+-                  In 2019, our founders sat on opposite sides of the same broken table — one in strategy
++                  In 2019, our founders sat on opposite sides of the same broken table, one in strategy
+                   consulting, one in performance agencies. Both watched great advice die in handoffs: the
+                   strategists never shipped, the agencies never thought.
+                 </p>
+@@ -100,7 +76,7 @@ export function About() {
+                   }
+                 </p>
+                 <p>
+-                  Six years and 120+ engagements later, the model hasn't changed — it's just gotten sharper.
++                  Six years and 120+ engagements later, the model hasn't changed, it's just gotten sharper.
+                   And our clients' boards have noticed.
+                 </p>
+               </div>
+@@ -109,7 +85,7 @@ export function About() {
+               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-ink-900/10 pt-8">
+                 {stats.slice(0, 3).map((r) => (
+                   <div key={r.label}>
+-                    <p className="text-2xl font-extrabold tabular-nums sm:text-3xl">
++                    <p className="text-2xl font-bold tabular-nums sm:text-3xl">
+                       <CountUp
+                         value={r.value}
+                         decimals={r.decimals ?? 0}
+@@ -117,7 +93,7 @@ export function About() {
+                         suffix={r.suffix ?? ""}
+                       />
+                     </p>
+-                    <p className="mt-1 text-[11px] leading-snug font-semibold text-ink-500">{r.label}</p>
++                    <p className="mt-1 text-[11px] leading-snug font-medium text-ink-500">{r.label}</p>
+                   </div>
+                 ))}
+               </div>
+@@ -133,7 +109,6 @@ export function About() {
+       >
+         <div className="container-x">
+           <div className="mx-auto max-w-2xl text-center">
+-            <SectionTag dark={!0}>What we believe</SectionTag>
+             <SplitText text="Values that survive contact with revenue." as="h2" className="display-md mt-5" />
+           </div>
+           <Stagger className="mt-12 grid gap-5 sm:grid-cols-2" gap={0.1}>
+@@ -143,7 +118,7 @@ export function About() {
+                   <span className="grid h-13 w-13 place-items-center rounded-2xl bg-mint-300 p-3.5 text-pine-950 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110">
+                     <r.icon className="h-6 w-6" />
+                   </span>
+-                  <h3 className="mt-6 text-xl font-extrabold sm:text-2xl">{r.title}</h3>
++                  <h3 className="mt-6 text-xl font-bold sm:text-2xl">{r.title}</h3>
+                   <p className="mt-3 text-[14.5px] leading-relaxed text-cream-50/60">{r.desc}</p>
+                 </div>
+               </StaggerItem>
+@@ -154,11 +129,10 @@ export function About() {
+       <section className="container-x section-pad">
+         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+           <div className="lg:sticky lg:top-28 lg:self-start">
+-            <SectionTag>The journey</SectionTag>
+             <SplitText text="Six years of compounding." as="h2" className="display-md mt-5" />
+             <Reveal delay={0.15}>
+               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-500">
+-                From two laptops to a 24-person senior team — every chapter taught us something we now install
++                From two laptops to a 24-person senior team, every chapter taught us something we now install
+                 in our clients.
+               </p>
+             </Reveal>
+@@ -167,11 +141,11 @@ export function About() {
+             {timeline.map((r, d) => (
+               <Reveal key={r.year} delay={d * 0.03}>
+                 <div className="group flex gap-6 border-b border-ink-900/10 py-7 transition-colors first:border-t hover:bg-white/50 sm:gap-10">
+-                  <span className="w-16 shrink-0 text-2xl font-extrabold text-pine-700 tabular-nums sm:text-3xl">
++                  <span className="w-16 shrink-0 text-2xl font-bold text-pine-700 tabular-nums sm:text-3xl">
+                     {r.year}
+                   </span>
+                   <div>
+-                    <h3 className="text-lg font-extrabold tracking-tight transition-transform duration-300 group-hover:translate-x-1 sm:text-xl">
++                    <h3 className="text-lg font-bold tracking-tight transition-transform duration-300 group-hover:translate-x-1 sm:text-xl">
+                       {r.title}
+                     </h3>
+                     <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-500">{r.desc}</p>
+@@ -185,7 +159,6 @@ export function About() {
+       <section className="container-x pb-24">
+         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+           <div>
+-            <SectionTag>The partners</SectionTag>
+             <SplitText text="Senior only. No exceptions." as="h2" className="display-md mt-5 max-w-xl" />
+           </div>
+           <Reveal delay={0.15}>
+@@ -207,10 +180,10 @@ export function About() {
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" />
+                 <div className="absolute inset-x-0 bottom-0 p-6">
+-                  <p className="text-[11px] font-extrabold tracking-[0.18em] text-mint-300 uppercase">
++                  <p className="text-xs font-bold text-mint-300">
+                     {r.role}
+                   </p>
+-                  <h3 className="mt-1 text-2xl font-extrabold tracking-tight text-cream-50">{r.name}</h3>
++                  <h3 className="mt-1 text-2xl font-bold tracking-tight text-cream-50">{r.name}</h3>
+                   <div className="grid grid-rows-[0fr] transition-all duration-500 group-hover:grid-rows-[1fr]">
+                     <p className="overflow-hidden text-[13px] leading-relaxed text-cream-50/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                       <span className="block pt-2">{r.bio}</span>
+@@ -225,7 +198,7 @@ export function About() {
+           <div className="mt-10 text-center">
+             <Link
+               to="/contact"
+-              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-7 py-3.5 text-sm font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
++              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-7 py-3.5 text-sm font-bold text-cream-50 transition-colors hover:bg-pine-700"
+             >
+               Work with this team
+               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+diff --git a/src/pages/Contact.tsx b/src/pages/Contact.tsx
+index e928f6e..d6953f9 100644
+--- a/src/pages/Contact.tsx
++++ b/src/pages/Contact.tsx
+@@ -1,6 +1,6 @@
+ import { useRef, useState } from "react";
+ import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+-import { EASE, Reveal, SectionTag, SplitText, Stagger, StaggerItem } from "../components/motion";
++import { EASE, Reveal, SplitText, Stagger, StaggerItem } from "../components/motion";
+ import { ArrowUpRight, AtSign, CalendarCheck, Check, Clock, LoaderCircle, MapPin } from "lucide-react";
+ 
+ const contactSteps = ["Your details", "Your goals", "Schedule"],
+@@ -85,7 +85,6 @@ export function Contact() {
+     <>
+       <section ref={g} className="relative overflow-hidden pt-36 pb-12 sm:pt-44">
+         <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
+-        <div className="absolute -top-32 left-1/3 h-80 w-80 rounded-full bg-mint-200/50 blur-[110px]" />
+         <motion.div
+           style={{
+             y,
+@@ -93,7 +92,6 @@ export function Contact() {
+           }}
+           className="container-x relative"
+         >
+-          <SectionTag>Contact</SectionTag>
+           <SplitText text="Book your free growth call." as="h1" className="display-lg mt-6 max-w-4xl" />
+           <Reveal delay={0.25}>
+             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
+@@ -110,7 +108,7 @@ export function Contact() {
+               <div className="relative overflow-hidden rounded-[1.75rem] bg-pine-800 p-8 text-cream-50">
+                 <div className="dot-grid absolute inset-0 opacity-60" />
+                 <div className="relative">
+-                  <p className="text-xs font-extrabold tracking-[0.2em] text-mint-300 uppercase">
++                  <p className="text-xs font-bold text-mint-300">
+                     What happens next
+                   </p>
+                   <ul className="mt-5 flex flex-col gap-4">
+@@ -118,7 +116,7 @@ export function Contact() {
+                       {
+                         icon: AtSign,
+                         t: "We reply within 24 hours",
+-                        d: "A partner — not a bot — confirms your slot.",
++                        d: "A partner (not a bot) confirms your slot.",
+                       },
+                       {
+                         icon: CalendarCheck,
+@@ -136,7 +134,7 @@ export function Contact() {
+                           <R.icon className="h-5 w-5 text-mint-300" />
+                         </span>
+                         <div>
+-                          <p className="text-sm font-extrabold">
++                          <p className="text-sm font-bold">
+                             <span className="mr-2 text-mint-300">0{V + 1}</span>
+                             {R.t}
+                           </p>
+@@ -150,12 +148,12 @@ export function Contact() {
+             </StaggerItem>
+             <StaggerItem>
+               <div className="rounded-[1.75rem] border border-ink-900/10 bg-white/70 p-8">
+-                <p className="text-xs font-extrabold tracking-[0.2em] text-ink-400 uppercase">
++                <p className="text-xs font-bold text-ink-400">
+                   Prefer email or foot traffic?
+                 </p>
+                 <a
+                   href="mailto:hello@kora.agency"
+-                  className="mt-3 block text-xl font-extrabold text-pine-800 transition-colors hover:text-pine-600"
++                  className="mt-3 block text-xl font-bold text-pine-800 transition-colors hover:text-pine-600"
+                 >
+                   hello@kora.agency
+                 </a>
+@@ -167,7 +165,7 @@ export function Contact() {
+                 </p>
+                 <p className="mt-3 flex items-center gap-2 text-sm text-ink-500">
+                   <Clock className="h-4 w-4 text-pine-700" />
+-                  {" Mon–Fri · 9:00–18:00 ET"}
++                  {" Mon–Fri, 9:00–18:00 ET"}
+                 </p>
+               </div>
+             </StaggerItem>
+@@ -213,7 +211,7 @@ export function Contact() {
+                     <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-ink-500">
+                       {"Thanks "}
+                       {l.name.split(" ")[0] || "there"}
+-                      {" — your slot"}
++                      {", your slot"}
+                       {l.slot ? (
+                         <>
+                           {" on "}
+@@ -229,7 +227,7 @@ export function Contact() {
+                       onClick={() => {
+                         (m("idle"), n(0), r(emptyForm));
+                       }}
+-                      className="mt-8 rounded-full border border-ink-900/15 px-6 py-3 text-sm font-extrabold transition-colors hover:bg-ink-900 hover:text-cream-50"
++                      className="mt-8 rounded-full border border-ink-900/15 px-6 py-3 text-sm font-bold transition-colors hover:bg-ink-900 hover:text-cream-50"
+                     >
+                       Book another call
+                     </button>
+@@ -252,12 +250,12 @@ export function Contact() {
+                           <button
+                             type="button"
+                             onClick={() => V < s && n(V)}
+-                            className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-xs font-extrabold transition-all ${V < s ? "bg-pine-700 text-cream-50" : V === s ? "bg-ink-900 text-cream-50" : "bg-cream-100 text-ink-400"}`}
++                            className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-xs font-bold transition-all ${V < s ? "bg-pine-700 text-cream-50" : V === s ? "bg-ink-900 text-cream-50" : "bg-cream-100 text-ink-400"}`}
+                           >
+                             {V < s ? <Check className="h-4 w-4" strokeWidth={3} /> : V + 1}
+                           </button>
+                           <span
+-                            className={`hidden text-xs font-extrabold sm:block ${V === s ? "text-ink-900" : "text-ink-400"}`}
++                            className={`hidden text-xs font-bold sm:block ${V === s ? "text-ink-900" : "text-ink-400"}`}
+                           >
+                             {R}
+                           </span>
+@@ -299,10 +297,10 @@ export function Contact() {
+                           }}
+                           className="mt-8 flex flex-col gap-4"
+                         >
+-                          <h2 className="text-2xl font-extrabold tracking-tight">First, the basics.</h2>
++                          <h2 className="text-2xl font-bold tracking-tight">First, the basics.</h2>
+                           <div className="grid gap-4 sm:grid-cols-2">
+                             <label className="block">
+-                              <span className="mb-1.5 block text-xs font-extrabold tracking-wide text-ink-500 uppercase">
++                              <span className="mb-1.5 block text-xs font-bold text-ink-500">
+                                 Full name *
+                               </span>
+                               <input
+@@ -312,13 +310,13 @@ export function Contact() {
+                                 onChange={(R) => S("name", R.target.value)}
+                               />
+                               {d.name && (
+-                                <span className="mt-1 block text-xs font-bold text-red-700">
++                                <span className="mt-1 block text-xs font-semibold text-red-700">
+                                   Please enter your name.
+                                 </span>
+                               )}
+                             </label>
+                             <label className="block">
+-                              <span className="mb-1.5 block text-xs font-extrabold tracking-wide text-ink-500 uppercase">
++                              <span className="mb-1.5 block text-xs font-bold text-ink-500">
+                                 Work email *
+                               </span>
+                               <input
+@@ -329,14 +327,14 @@ export function Contact() {
+                                 onChange={(R) => S("email", R.target.value)}
+                               />
+                               {d.email && (
+-                                <span className="mt-1 block text-xs font-bold text-red-700">
++                                <span className="mt-1 block text-xs font-semibold text-red-700">
+                                   That email doesn't look right.
+                                 </span>
+                               )}
+                             </label>
+                           </div>
+                           <label className="block">
+-                            <span className="mb-1.5 block text-xs font-extrabold tracking-wide text-ink-500 uppercase">
++                            <span className="mb-1.5 block text-xs font-bold text-ink-500">
+                               Company *
+                             </span>
+                             <input
+@@ -346,13 +344,13 @@ export function Contact() {
+                               onChange={(R) => S("company", R.target.value)}
+                             />
+                             {d.company && (
+-                              <span className="mt-1 block text-xs font-bold text-red-700">
++                              <span className="mt-1 block text-xs font-semibold text-red-700">
+                                 Please enter your company.
+                               </span>
+                             )}
+                           </label>
+                           <label className="block">
+-                            <span className="mb-1.5 block text-xs font-extrabold tracking-wide text-ink-500 uppercase">
++                            <span className="mb-1.5 block text-xs font-bold text-ink-500">
+                               {"What's the #1 growth challenge? "}
+                               <span className="text-ink-400 normal-case">(optional)</span>
+                             </span>
+@@ -387,9 +385,9 @@ export function Contact() {
+                           }}
+                           className="mt-8 flex flex-col gap-6"
+                         >
+-                          <h2 className="text-2xl font-extrabold tracking-tight">Where should we aim?</h2>
++                          <h2 className="text-2xl font-bold tracking-tight">Where should we aim?</h2>
+                           <div>
+-                            <span className="mb-2 block text-xs font-extrabold tracking-wide text-ink-500 uppercase">
++                            <span className="mb-2 block text-xs font-bold text-ink-500">
+                               Monthly growth budget *
+                             </span>
+                             <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+@@ -398,20 +396,20 @@ export function Contact() {
+                                   key={R}
+                                   type="button"
+                                   onClick={() => S("revenue", R)}
+-                                  className={`rounded-2xl border-2 px-3 py-3.5 text-[13px] font-extrabold transition-all ${l.revenue === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.revenue ? "border-red-400" : ""}`}`}
++                                  className={`rounded-2xl border-2 px-3 py-3.5 text-[13px] font-bold transition-all ${l.revenue === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.revenue ? "border-red-400" : ""}`}`}
+                                 >
+                                   {R}
+                                 </button>
+                               ))}
+                             </div>
+                             {d.revenue && (
+-                              <span className="mt-1 block text-xs font-bold text-red-700">
++                              <span className="mt-1 block text-xs font-semibold text-red-700">
+                                 Pick the closest range.
+                               </span>
+                             )}
+                           </div>
+                           <div>
+-                            <span className="mb-2 block text-xs font-extrabold tracking-wide text-ink-500 uppercase">
++                            <span className="mb-2 block text-xs font-bold text-ink-500">
+                               What do you need help with? *
+                             </span>
+                             <div className="flex flex-wrap gap-2.5">
+@@ -422,7 +420,7 @@ export function Contact() {
+                                     key={R}
+                                     type="button"
+                                     onClick={() => T(R)}
+-                                    className={`rounded-full border-2 px-4 py-2.5 text-[13px] font-extrabold transition-all ${V ? "border-ink-900 bg-ink-900 text-cream-50" : `border-ink-900/12 bg-cream-50 text-ink-600 hover:border-ink-900/40 ${d.services ? "border-red-400" : ""}`}`}
++                                    className={`rounded-full border-2 px-4 py-2.5 text-[13px] font-bold transition-all ${V ? "border-ink-900 bg-ink-900 text-cream-50" : `border-ink-900/12 bg-cream-50 text-ink-600 hover:border-ink-900/40 ${d.services ? "border-red-400" : ""}`}`}
+                                   >
+                                     {V ? "✓ " : "+ "}
+                                     {R}
+@@ -431,7 +429,7 @@ export function Contact() {
+                               })}
+                             </div>
+                             {d.services && (
+-                              <span className="mt-1 block text-xs font-bold text-red-700">
++                              <span className="mt-1 block text-xs font-semibold text-red-700">
+                                 Choose at least one.
+                               </span>
+                             )}
+@@ -459,7 +457,7 @@ export function Contact() {
+                           }}
+                           className="mt-8 flex flex-col gap-6"
+                         >
+-                          <h2 className="text-2xl font-extrabold tracking-tight">Pick your slot.</h2>
++                          <h2 className="text-2xl font-bold tracking-tight">Pick your slot.</h2>
+                           <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                             {contactE.map((R) => (
+                               <button
+@@ -468,25 +466,25 @@ export function Contact() {
+                                 onClick={() => {
+                                   S("slot", R);
+                                 }}
+-                                className={`rounded-2xl border-2 px-3 py-4 text-sm font-extrabold transition-all ${l.slot === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.slot ? "border-red-400" : ""}`}`}
++                                className={`rounded-2xl border-2 px-3 py-4 text-sm font-bold transition-all ${l.slot === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.slot ? "border-red-400" : ""}`}`}
+                               >
+                                 {R}
+                               </button>
+                             ))}
+                           </div>
+                           {d.slot && (
+-                            <span className="-mt-3 block text-xs font-bold text-red-700">
++                            <span className="-mt-3 block text-xs font-semibold text-red-700">
+                               Pick a time that suits you.
+                             </span>
+                           )}
+                           <div className="rounded-2xl bg-cream-100/70 p-5 text-sm leading-relaxed text-ink-600">
+-                            <strong className="text-ink-900">Your booking summary:</strong> {l.name || "—"}
+-                            {" · "}
+-                            {l.company || "—"}
+-                            {" · "}
+-                            {l.revenue || "—"}
+-                            {" · "}
+-                            {l.services.join(", ") || "—"}
++                            <strong className="text-ink-900">Your booking summary:</strong> {l.name || ", "}
++                            {", "}
++                            {l.company || ", "}
++                            {", "}
++                            {l.revenue || ", "}
++                            {", "}
++                            {l.services.join(", ") || ", "}
+                           </div>
+                           {h === "error" && (
+                             <motion.p
+@@ -498,9 +496,9 @@ export function Contact() {
+                                 opacity: 1,
+                                 y: 0,
+                               }}
+-                              className="rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700"
++                              className="rounded-2xl bg-red-50 p-4 text-sm font-semibold text-red-700"
+                             >
+-                              Something went wrong sending your booking. Please try again — your details are
++                              Something went wrong sending your booking. Please try again, your details are
+                               saved.
+                             </motion.p>
+                           )}
+@@ -512,17 +510,17 @@ export function Contact() {
+                         <button
+                           type="button"
+                           onClick={() => n(s - 1)}
+-                          className="rounded-full border border-ink-900/15 px-6 py-3.5 text-sm font-extrabold transition-colors hover:bg-cream-100"
++                          className="rounded-full border border-ink-900/15 px-6 py-3.5 text-sm font-bold transition-colors hover:bg-cream-100"
+                         >
+                           Back
+                         </button>
+                       ) : (
+-                        <span className="text-xs font-semibold text-ink-400">Step 1 of 3</span>
++                        <span className="text-xs font-medium text-ink-400">Step 1 of 3</span>
+                       )}
+                       <button
+                         type="submit"
+                         disabled={h === "sending"}
+-                        className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-8 py-3.5 text-sm font-extrabold text-cream-50 transition-all hover:bg-pine-700 disabled:opacity-70"
++                        className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-8 py-3.5 text-sm font-bold text-cream-50 transition-all hover:bg-pine-700 disabled:opacity-70"
+                       >
+                         {h === "sending" ? (
+                           <>
+@@ -542,7 +540,7 @@ export function Contact() {
+                         )}
+                       </button>
+                     </div>
+-                    <p className="mt-5 text-center text-xs font-semibold text-ink-400">
++                    <p className="mt-5 text-center text-xs font-medium text-ink-400">
+                       No spam, no nurture sequences. Just one useful call.
+                     </p>
+                   </motion.form>
+diff --git a/src/pages/Home.tsx b/src/pages/Home.tsx
+index 9c467c0..6fa3d2f 100644
+--- a/src/pages/Home.tsx
++++ b/src/pages/Home.tsx
+@@ -6,7 +6,6 @@ import {
+   Magnetic,
+   ParallaxImage,
+   Reveal,
+-  SectionTag,
+   SplitText,
+   Stagger,
+   StaggerItem,
+@@ -90,41 +89,18 @@ function HomeHero() {
+         }}
+         className="container-x relative z-10 pb-16 text-center sm:pb-20"
+       >
+-        <motion.div
+-          initial={{
+-            opacity: 0,
+-            y: 24,
+-          }}
+-          animate={{
+-            opacity: 1,
+-            y: 0,
+-          }}
+-          transition={{
+-            duration: 0.9,
+-            delay: 0.35,
+-            ease: EASE,
+-          }}
+-        >
+-          <span className="inline-flex items-center gap-2.5 rounded-full border border-cream-50/25 bg-ink-950/30 px-4 py-2 text-[11px] font-bold tracking-[0.16em] text-cream-50 uppercase backdrop-blur-md">
+-            <span className="relative flex h-2 w-2">
+-              <span className="absolute h-full w-full animate-ping rounded-full bg-mint-300 opacity-70" />
+-              <span className="h-2 w-2 rounded-full bg-mint-300" />
+-            </span>
+-            Growth consultancy · Est. 2019
+-          </span>
+-        </motion.div>
+         <h1
+-          className="display-xl mx-auto mt-6 max-w-5xl text-cream-50"
++          className="display-xl mx-auto max-w-6xl text-cream-50 lg:!text-[6.25rem]"
+           aria-label="We turn ambitious teams into revenue machines"
+         >
+           <SplitText text="We turn ambitious" as="span" className="block" delay={0.5} once={!1} />
+           <SplitText text="teams into" as="span" className="block" delay={0.62} once={!1} />
+           <span className="block">
+-            <SplitText text="revenue" as="span" delay={0.74} once={!1} />
++            <SplitText text="revenue" as="span" delay={0.74} once={!1} />{" "}
+             <SplitText
+               text="machines."
+               as="span"
+-              className="serif-accent text-mint-300"
++              className="text-mint-300"
+               delay={0.82}
+               once={!1}
+             />
+@@ -146,7 +122,7 @@ function HomeHero() {
+           }}
+           className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed font-medium text-cream-50/75 sm:text-base"
+         >
+-          Kora is the growth consultancy behind 120+ breakouts — strategy, creative, and RevOps engineered to
++          Kora is the growth consultancy behind 120+ breakouts, strategy, creative, and RevOps engineered to
+           book calls and compound revenue.
+         </motion.p>
+         <motion.div
+@@ -168,7 +144,7 @@ function HomeHero() {
+           <Magnetic>
+             <Link
+               to="/contact"
+-              className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-8 py-4 text-sm font-extrabold text-ink-900 transition-colors duration-300 hover:bg-mint-300"
++              className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-8 py-4 text-sm font-bold text-ink-900 transition-colors duration-300 hover:bg-mint-300"
+             >
+               Book your free growth call
+               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+@@ -177,7 +153,7 @@ function HomeHero() {
+           <Magnetic>
+             <Link
+               to="/work"
+-              className="inline-flex items-center gap-2 rounded-full border border-cream-50/30 bg-cream-50/5 px-8 py-4 text-sm font-extrabold text-cream-50 backdrop-blur-md transition-colors duration-300 hover:border-cream-50/70"
++              className="inline-flex items-center gap-2 rounded-full border border-cream-50/30 bg-cream-50/5 px-8 py-4 text-sm font-bold text-cream-50 backdrop-blur-md transition-colors duration-300 hover:border-cream-50/70"
+             >
+               {"See our results "}
+               <ArrowRight className="h-4 w-4" />
+@@ -217,26 +193,8 @@ function HomeHero() {
+                 <Star key={v} className="h-3.5 w-3.5 fill-current" />
+               ))}
+             </div>
+-            <p className="mt-1 text-xs font-semibold">Trusted by 120+ growth-stage teams</p>
+-          </div>
+-        </motion.div>
+-        <motion.div
+-          initial={{
+-            opacity: 0,
+-          }}
+-          animate={{
+-            opacity: 1,
+-          }}
+-          transition={{
+-            delay: 2,
+-            duration: 1,
+-          }}
+-          className="mx-auto mt-12 flex w-max flex-col items-center gap-2 text-cream-50/60"
+-        >
+-          <div className="flex h-10 w-6 justify-center rounded-full border border-cream-50/30 pt-2">
+-            <div className="h-2 w-1 animate-scroll-dot rounded-full bg-cream-50" />
++            <p className="mt-1 text-xs font-medium">Trusted by 120+ growth-stage teams</p>
+           </div>
+-          <span className="text-[10px] font-bold tracking-[0.25em] uppercase">Scroll</span>
+         </motion.div>
+       </motion.div>
+       <div className="absolute inset-x-0 bottom-0 z-10">
+@@ -251,7 +209,7 @@ function HomeLogos() {
+   return (
+     <section className="border-b border-ink-900/8 py-10">
+       <Reveal y={20}>
+-        <p className="text-center text-[11px] font-extrabold tracking-[0.25em] text-ink-500 uppercase">
++        <p className="text-center text-xs font-bold text-ink-500">
+           Powering growth for category leaders
+         </p>
+       </Reveal>
+@@ -265,7 +223,7 @@ function HomeLogos() {
+           {[...clientLogos, ...clientLogos].map((s, n) => (
+             <span
+               key={n}
+-              className="flex shrink-0 items-center gap-3 text-xl font-extrabold tracking-tight whitespace-nowrap text-ink-900/35 transition-colors hover:text-ink-900"
++              className="flex shrink-0 items-center gap-3 text-xl font-bold tracking-tight whitespace-nowrap text-ink-900/35 transition-colors hover:text-ink-900"
+             >
+               <span className="h-2 w-2 rounded-full bg-pine-600/50" />
+               {s}
+@@ -284,12 +242,11 @@ function HomeA8() {
+     }),
+     l = [
+       "Most agencies sell deliverables.",
+-      "We sell outcomes — pipeline, revenue, and growth you can measure in the boardroom.",
++      "We sell outcomes, pipeline, revenue, and growth you can measure in the boardroom.",
+     ];
+   return (
+     <section ref={s} className="container-x section-pad max-w-4xl text-center">
+-      <SectionTag>Why Kora</SectionTag>
+-      <div className="mt-6 text-3xl leading-[1.25] font-extrabold tracking-tight text-ink-900 sm:text-5xl sm:leading-[1.15]">
++      <div className="mt-6 text-3xl leading-[1.25] font-bold tracking-tight text-ink-900 sm:text-5xl sm:leading-[1.15]">
+         {l.map((r, d) => (
+           <p key={d} className={d === 1 ? "mt-2" : ""}>
+             {r.split(" ").map((f, h, m) => {
+@@ -311,7 +268,7 @@ function HomeA8() {
+       <Reveal delay={0.1}>
+         <Link
+           to="/about"
+-          className="group mt-8 inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
++          className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-pine-700"
+         >
+           More about our story
+           <span className="grid h-8 w-8 place-items-center rounded-full bg-pine-700 text-cream-50 transition-transform duration-300 group-hover:translate-x-1">
+@@ -348,18 +305,17 @@ function HomeN8() {
+       <div className="container-x">
+         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+           <div>
+-            <SectionTag dark={!0}>What we do</SectionTag>
+             <SplitText text="Everything growth needs." as="h2" className="display-md mt-5 max-w-xl" />
+             <SplitText
+               text="Nothing it doesn't."
+               as="h2"
+-              className="display-md serif-accent max-w-xl text-mint-300"
++              className="display-md max-w-xl text-mint-300"
+               delay={0.12}
+             />
+           </div>
+           <Reveal delay={0.15}>
+             <p className="max-w-sm text-[15px] leading-relaxed text-cream-50/60">
+-              Six practices, one team, zero handoff hell. Hover to explore — every engagement blends the
++              Six practices, one team, zero handoff hell. Hover to explore, every engagement blends the
+               practices your funnel actually needs.
+             </p>
+           </Reveal>
+@@ -379,13 +335,13 @@ function HomeN8() {
+                     className="group flex w-full items-center gap-5 py-5 text-left"
+                   >
+                     <span
+-                      className={`text-xs font-extrabold tabular-nums transition-colors ${d ? "text-mint-300" : "text-cream-50/30"}`}
++                      className={`text-xs font-bold tabular-nums transition-colors ${d ? "text-mint-300" : "text-cream-50/30"}`}
+                     >
+                       0{r + 1}
+                     </span>
+                     <span className="flex-1">
+                       <span
+-                        className={`block text-xl font-extrabold tracking-tight transition-all duration-300 sm:text-2xl ${d ? "translate-x-1 text-cream-50" : "text-cream-50/55 group-hover:text-cream-50/85"}`}
++                        className={`block text-xl font-bold tracking-tight transition-all duration-300 sm:text-2xl ${d ? "translate-x-1 text-cream-50" : "text-cream-50/55 group-hover:text-cream-50/85"}`}
+                       >
+                         {l.name}
+                       </span>
+@@ -415,7 +371,7 @@ function HomeN8() {
+                             </span>
+                             <Link
+                               to={`/services/${l.slug}`}
+-                              className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-extrabold text-mint-300"
++                              className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-mint-300"
+                               onClick={(f) => f.stopPropagation()}
+                             >
+                               {"Explore service "}
+@@ -481,12 +437,12 @@ function HomeN8() {
+                       transition={{
+                         duration: 0.4,
+                       }}
+-                      className="text-lg font-extrabold"
++                      className="text-lg font-bold"
+                     >
+                       {services[s].name}
+                     </motion.p>
+                   </AnimatePresence>
+-                  <p className="text-xs font-semibold text-cream-50/60">
++                  <p className="text-xs font-medium text-cream-50/60">
+                     0{s + 1}
+                     {" / 06"}
+                   </p>
+@@ -516,7 +472,7 @@ function HomeI8() {
+             delay={n * 0.08}
+             className={`text-center ${n > 0 ? "lg:border-l lg:border-ink-900/10" : ""}`}
+           >
+-            <div className="text-4xl font-extrabold tracking-tight text-ink-900 tabular-nums sm:text-5xl">
++            <div className="text-4xl font-bold tracking-tight text-ink-900 tabular-nums sm:text-5xl">
+               <CountUp
+                 value={s.value}
+                 decimals={s.decimals ?? 0}
+@@ -524,7 +480,7 @@ function HomeI8() {
+                 suffix={s.suffix ?? ""}
+               />
+             </div>
+-            <p className="mx-auto mt-2 max-w-[12rem] text-[13px] leading-snug font-semibold text-ink-500">
++            <p className="mx-auto mt-2 max-w-[12rem] text-[13px] leading-snug font-medium text-ink-500">
+               {s.label}
+             </p>
+           </Reveal>
+@@ -543,7 +499,6 @@ function HomeL8() {
+     <section className="container-x section-pad">
+       <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
+         <div className="lg:sticky lg:top-28 lg:self-start">
+-          <SectionTag>How we work</SectionTag>
+           <SplitText text="A process built for momentum." as="h2" className="display-md mt-5" />
+           <Reveal delay={0.15}>
+             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-500">
+@@ -554,7 +509,7 @@ function HomeL8() {
+           <Reveal delay={0.25}>
+             <Link
+               to="/contact"
+-              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
++              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-bold text-cream-50 transition-colors hover:bg-pine-700"
+             >
+               Start with a diagnosis
+               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+@@ -577,18 +532,18 @@ function HomeL8() {
+                     <span className="h-3 w-3 rounded-full border-[3px] border-cream-50 bg-pine-600 ring-2 ring-pine-600/30" />
+                   </span>
+                   <div className="flex items-start justify-between gap-4">
+-                    <span className="text-xs font-extrabold tracking-[0.2em] text-pine-600">{r.n}</span>
+-                    <span className="text-4xl font-extrabold text-ink-900/8 transition-colors duration-500 group-hover:text-pine-600/20 sm:text-5xl">
++                    <span className="text-xs font-bold tracking-[0.2em] text-pine-600">{r.n}</span>
++                    <span className="text-4xl font-bold text-ink-900/8 transition-colors duration-500 group-hover:text-pine-600/20 sm:text-5xl">
+                       {r.n}
+                     </span>
+                   </div>
+-                  <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">{r.title}</h3>
++                  <h3 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{r.title}</h3>
+                   <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-500">{r.desc}</p>
+                   <div className="mt-5 flex flex-wrap gap-2">
+                     {r.tags.map((f) => (
+                       <span
+                         key={f}
+-                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-bold text-ink-700"
++                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-ink-700"
+                       >
+                         {f}
+                       </span>
+@@ -615,13 +570,12 @@ function HomeCases() {
+       <div className="container-x">
+         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+           <div>
+-            <SectionTag>Selected work</SectionTag>
+             <SplitText text="Proof, not promises." as="h2" className="display-lg mt-5" />
+           </div>
+           <Reveal delay={0.15}>
+             <Link
+               to="/work"
+-              className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
++              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
+             >
+               View all case studies
+               <span className="grid h-9 w-9 place-items-center rounded-full border border-pine-700/30 transition-all duration-300 group-hover:bg-pine-700 group-hover:text-cream-50">
+@@ -644,21 +598,21 @@ function HomeCases() {
+                     className="absolute inset-0 h-full w-full object-cover"
+                     loading="lazy"
+                   />
+-                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-cream-50 uppercase backdrop-blur-md">
++                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
+                     {n.industry}
+                   </span>
+                 </div>
+                 <div className="flex flex-col justify-center p-7 sm:p-10">
+-                  <p className="text-xs font-extrabold tracking-[0.2em] text-pine-600 uppercase">
++                  <p className="text-xs font-bold text-pine-600">
+                     {n.client}
+                   </p>
+-                  <h3 className="mt-3 text-2xl leading-tight font-extrabold tracking-tight sm:text-[2rem]">
++                  <h3 className="mt-3 text-2xl leading-tight font-bold tracking-tight sm:text-[2rem]">
+                     {n.title}
+                   </h3>
+                   <div className="mt-6 grid grid-cols-3 gap-4 border-t border-ink-900/10 pt-6">
+                     {n.metrics.map((r) => (
+                       <div key={r.label}>
+-                        <div className="text-xl font-extrabold tracking-tight text-ink-900 tabular-nums sm:text-2xl">
++                        <div className="text-xl font-bold tracking-tight text-ink-900 tabular-nums sm:text-2xl">
+                           <CountUp
+                             value={r.value}
+                             decimals={r.decimals ?? 0}
+@@ -666,11 +620,11 @@ function HomeCases() {
+                             suffix={r.suffix ?? ""}
+                           />
+                         </div>
+-                        <p className="mt-1 text-[11px] leading-snug font-semibold text-ink-500">{r.label}</p>
++                        <p className="mt-1 text-[11px] leading-snug font-medium text-ink-500">{r.label}</p>
+                       </div>
+                     ))}
+                   </div>
+-                  <span className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-ink-900">
++                  <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-ink-900">
+                     Read case study
+                     <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-900 text-cream-50 transition-all duration-300 group-hover:bg-pine-600">
+                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+@@ -700,7 +654,6 @@ function HomeO8() {
+     <section className="container-x section-pad">
+       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+         <div>
+-          <SectionTag>Client love</SectionTag>
+           <SplitText text="Teams that trusted the process." as="h2" className="display-md mt-5" />
+           <Reveal delay={0.2}>
+             <div className="mt-8 flex gap-3">
+@@ -760,15 +713,15 @@ function HomeO8() {
+               }}
+               className="relative flex h-full min-h-[20rem] flex-col justify-between gap-8 sm:min-h-[18rem]"
+             >
+-              <blockquote className="text-xl leading-snug font-bold sm:text-2xl">“{f.quote}”</blockquote>
++              <blockquote className="text-xl leading-snug font-semibold sm:text-2xl">“{f.quote}”</blockquote>
+               <figcaption className="flex items-end justify-between gap-6 border-t border-cream-50/15 pt-6">
+                 <div>
+-                  <p className="font-extrabold">{f.name}</p>
++                  <p className="font-bold">{f.name}</p>
+                   <p className="mt-1 text-sm text-cream-50/60">{f.role}</p>
+                 </div>
+                 <div className="text-right">
+-                  <p className="text-4xl font-extrabold text-mint-300 tabular-nums">{f.metric}</p>
+-                  <p className="mt-1 text-xs font-semibold text-cream-50/60">{f.metricLabel}</p>
++                  <p className="text-4xl font-bold text-mint-300 tabular-nums">{f.metric}</p>
++                  <p className="mt-1 text-xs font-medium text-cream-50/60">{f.metricLabel}</p>
+                 </div>
+               </figcaption>
+             </motion.figure>
+@@ -783,7 +736,6 @@ function HomeC8() {
+   return (
+     <section className="container-x section-pad !pt-0">
+       <div className="text-center">
+-        <SectionTag>Pricing</SectionTag>
+         <SplitText
+           text="Honest pricing, serious returns."
+           as="h2"
+@@ -798,7 +750,7 @@ function HomeC8() {
+                 <button
+                   key={l}
+                   onClick={() => n(d)}
+-                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-extrabold transition-colors ${f ? "text-cream-50" : "text-ink-500"}`}
++                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${f ? "text-cream-50" : "text-ink-500"}`}
+                 >
+                   {f && (
+                     <motion.span
+@@ -824,11 +776,11 @@ function HomeC8() {
+               className={`relative flex h-full flex-col rounded-[1.75rem] p-7 transition-all duration-500 hover:-translate-y-2 sm:p-8 ${l.featured ? "bg-ink-900 text-cream-50 shadow-[0_30px_80px_-24px_rgba(14,16,14,0.5)]" : "border border-ink-900/10 bg-white/80 hover:shadow-[0_30px_70px_-28px_rgba(14,16,14,0.35)]"}`}
+             >
+               {l.featured && (
+-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-pine-600 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.12em] whitespace-nowrap text-cream-50 uppercase">
++                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-pine-600 px-4 py-1.5 text-xs font-bold whitespace-nowrap text-cream-50">
+                   {l.badge}
+                 </span>
+               )}
+-              <h3 className="text-xl font-extrabold">{l.name}</h3>
++              <h3 className="text-xl font-bold">{l.name}</h3>
+               <p
+                 className={`mt-2 min-h-12 text-sm leading-relaxed ${l.featured ? "text-cream-50/60" : "text-ink-500"}`}
+               >
+@@ -856,21 +808,21 @@ function HomeC8() {
+                           duration: 0.35,
+                           ease: EASE,
+                         }}
+-                        className="text-5xl font-extrabold tracking-tight tabular-nums"
++                        className="text-5xl font-bold tracking-tight tabular-nums"
+                       >
+                         ${s ? Math.round(l.monthly * 0.85).toLocaleString() : l.monthly.toLocaleString()}
+                       </motion.span>
+                     </AnimatePresence>
+-                    <span className={`text-sm font-bold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
++                    <span className={`text-sm font-semibold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
+                       {l.unit}
+                     </span>
+                   </>
+                 ) : (
+                   <>
+-                    <span className="text-5xl font-extrabold tracking-tight tabular-nums">
++                    <span className="text-5xl font-bold tracking-tight tabular-nums">
+                       ${l.oneTime?.toLocaleString()}
+                     </span>
+-                    <span className={`text-sm font-bold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
++                    <span className={`text-sm font-semibold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
+                       {l.unit}
+                     </span>
+                   </>
+@@ -878,7 +830,7 @@ function HomeC8() {
+               </div>
+               <ul className="mt-6 flex flex-col gap-2.5">
+                 {l.benefits.slice(0, 6).map((r) => (
+-                  <li key={r} className="flex items-start gap-2.5 text-[13.5px] font-semibold">
++                  <li key={r} className="flex items-start gap-2.5 text-[13.5px] font-medium">
+                     <span
+                       className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${l.featured ? "bg-mint-300/20 text-mint-300" : "bg-pine-700/10 text-pine-700"}`}
+                     >
+@@ -890,7 +842,7 @@ function HomeC8() {
+               </ul>
+               <Link
+                 to="/pricing"
+-                className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-extrabold transition-all duration-300 ${l.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
++                className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold transition-all duration-300 ${l.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
+               >
+                 {l.cta} <ArrowUpRight className="h-4 w-4" />
+               </Link>
+@@ -907,11 +859,10 @@ function HomeU8() {
+     <section className="container-x pb-24">
+       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+         <div className="lg:sticky lg:top-28 lg:self-start">
+-          <SectionTag>FAQ</SectionTag>
+           <SplitText text="Questions? Good. We like those." as="h2" className="display-md mt-5" />
+           <Reveal delay={0.15}>
+             <p className="mt-5 text-[15px] leading-relaxed text-ink-500">
+-              Still curious? Bring your hardest question to a free growth call — we'll answer it live.
++              Still curious? Bring your hardest question to a free growth call, we'll answer it live.
+             </p>
+           </Reveal>
+         </div>
+@@ -927,7 +878,7 @@ function HomeU8() {
+                     onClick={() => n(d ? -1 : r)}
+                     className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
+                   >
+-                    <span className="text-[15px] font-extrabold sm:text-base">{l.q}</span>
++                    <span className="text-[15px] font-bold sm:text-base">{l.q}</span>
+                     <span
+                       className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-500 ${d ? "rotate-180 bg-pine-700 text-cream-50" : "bg-cream-100 text-ink-900"}`}
+                     >
+@@ -973,13 +924,12 @@ function HomeD8() {
+     <section className="container-x pb-24">
+       <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+         <div>
+-          <SectionTag>Insights</SectionTag>
+           <SplitText text="Thinking that ships." as="h2" className="display-md mt-5" />
+         </div>
+         <Reveal delay={0.15}>
+           <Link
+             to="/insights"
+-            className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
++            className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
+           >
+             All articles
+             <span className="grid h-9 w-9 place-items-center rounded-full border border-pine-700/30 transition-all duration-300 group-hover:bg-pine-700 group-hover:text-cream-50">
+@@ -997,21 +947,21 @@ function HomeD8() {
+             >
+               <div className="relative h-52 overflow-hidden">
+                 <img src={s.image} alt={s.title} className="h-full w-full object-cover" loading="lazy" />
+-                <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-[11px] font-extrabold tracking-[0.1em] text-pine-800 uppercase backdrop-blur">
++                <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-xs font-bold text-pine-800 backdrop-blur">
+                   {s.category}
+                 </span>
+               </div>
+               <div className="flex flex-1 flex-col p-6">
+-                <p className="text-xs font-bold text-ink-400">
++                <p className="text-xs font-semibold text-ink-400">
+                   {s.date}
+-                  {" · "}
++                  {", "}
+                   {s.readTime}
+                 </p>
+-                <h3 className="mt-2 text-lg leading-snug font-extrabold tracking-tight transition-colors group-hover:text-pine-700">
++                <h3 className="mt-2 text-lg leading-snug font-bold tracking-tight transition-colors group-hover:text-pine-700">
+                   {s.title}
+                 </h3>
+                 <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{s.excerpt}</p>
+-                <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-extrabold text-ink-900">
++                <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-bold text-ink-900">
+                   {"Read article "}
+                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                 </span>
+@@ -1036,7 +986,7 @@ function HomeMarquee() {
+         {[...s, ...s, ...s, ...s].map((n, l) => (
+           <span
+             key={l}
+-            className="flex shrink-0 items-center gap-10 text-3xl font-extrabold tracking-tight whitespace-nowrap text-cream-50 sm:text-4xl"
++            className="flex shrink-0 items-center gap-10 text-3xl font-bold tracking-tight whitespace-nowrap text-cream-50 sm:text-4xl"
+           >
+             {n}
+             <ArrowUpRight className="h-8 w-8 text-mint-300 transition-transform duration-300 group-hover:rotate-45" />
+@@ -1096,7 +1046,7 @@ export function HomeC1() {
+               >
+                 <Link
+                   to="/about"
+-                  className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-extrabold text-ink-900 transition-colors hover:bg-mint-300"
++                  className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-bold text-ink-900 transition-colors hover:bg-mint-300"
+                 >
+                   {"Meet the team "}
+                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+diff --git a/src/pages/Insights.tsx b/src/pages/Insights.tsx
+index 140dc09..ea77b26 100644
+--- a/src/pages/Insights.tsx
++++ b/src/pages/Insights.tsx
+@@ -1,7 +1,7 @@
+ import { insights } from "../data/content";
+ import { useRef, useState } from "react";
+ import { motion, useScroll, useTransform } from "motion/react";
+-import { Reveal, SectionTag, SplitText, Stagger, StaggerItem } from "../components/motion";
++import { Reveal, SplitText, Stagger, StaggerItem } from "../components/motion";
+ import { Link, Navigate, useParams } from "react-router-dom";
+ import { ArrowLeft, ArrowRight, ArrowUpRight, Clock } from "lucide-react";
+ import { CTASection } from "../components/shared";
+@@ -22,7 +22,6 @@ export function Insights() {
+     <>
+       <section ref={l} className="relative overflow-hidden pt-36 pb-10 sm:pt-44">
+         <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
+-        <div className="absolute -top-32 right-1/3 h-80 w-80 rounded-full bg-mint-200/50 blur-[110px]" />
+         <motion.div
+           style={{
+             y: d,
+@@ -30,11 +29,10 @@ export function Insights() {
+           }}
+           className="container-x relative"
+         >
+-          <SectionTag>Insights</SectionTag>
+           <SplitText text="Thinking that ships revenue." as="h1" className="display-lg mt-6 max-w-4xl" />
+           <Reveal delay={0.25}>
+             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
+-              Playbooks, teardowns, and honest opinions from 120+ engagements. No fluff — every article ends
++              Playbooks, teardowns, and honest opinions from 120+ engagements. No fluff, every article ends
+               with something you can ship.
+             </p>
+           </Reveal>
+@@ -44,7 +42,7 @@ export function Insights() {
+                 <button
+                   key={x}
+                   onClick={() => n(x)}
+-                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-extrabold transition-colors ${s === x ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
++                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${s === x ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
+                 >
+                   {s === x && (
+                     <motion.span
+@@ -72,22 +70,22 @@ export function Insights() {
+             >
+               <div className="relative min-h-72 overflow-hidden lg:min-h-[26rem]">
+                 <img src={m.image} alt={m.title} className="absolute inset-0 h-full w-full object-cover" />
+-                <span className="absolute top-5 left-5 rounded-full bg-cream-50 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-pine-900 uppercase">
+-                  {"Featured · "}
++                <span className="absolute top-5 left-5 rounded-full bg-cream-50 px-4 py-1.5 text-xs font-bold text-pine-900">
++                  {"Featured: "}
+                   {m.category}
+                 </span>
+               </div>
+               <div className="flex flex-col justify-center p-7 sm:p-12">
+-                <p className="flex items-center gap-2 text-xs font-bold text-cream-50/50">
+-                  {m.date} <span>·</span> <Clock className="h-3.5 w-3.5" /> {m.readTime}
++                <p className="flex items-center gap-2 text-xs font-semibold text-cream-50/50">
++                  {m.date} <Clock className="h-3.5 w-3.5" /> {m.readTime}
+                 </p>
+-                <h2 className="mt-3 text-2xl leading-tight font-extrabold tracking-tight sm:text-4xl">
++                <h2 className="mt-3 text-2xl leading-tight font-bold tracking-tight sm:text-4xl">
+                   {m.title}
+                 </h2>
+                 <p className="mt-4 text-[15px] leading-relaxed text-cream-50/65">{m.excerpt}</p>
+                 <div className="mt-6 flex items-center justify-between border-t border-cream-50/15 pt-6">
+                   <div>
+-                    <p className="text-sm font-extrabold">{m.author.name}</p>
++                    <p className="text-sm font-bold">{m.author.name}</p>
+                     <p className="text-xs text-cream-50/50">{m.author.role}</p>
+                   </div>
+                   <span className="grid h-12 w-12 place-items-center rounded-full bg-cream-50 text-ink-900 transition-transform duration-300 group-hover:scale-110">
+@@ -124,21 +122,21 @@ export function Insights() {
+               >
+                 <div className="relative h-52 overflow-hidden">
+                   <img src={x.image} alt={x.title} className="h-full w-full object-cover" loading="lazy" />
+-                  <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-[11px] font-extrabold tracking-[0.1em] text-pine-800 uppercase backdrop-blur">
++                  <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-xs font-bold text-pine-800 backdrop-blur">
+                     {x.category}
+                   </span>
+                 </div>
+                 <div className="flex flex-1 flex-col p-6">
+-                  <p className="text-xs font-bold text-ink-400">
++                  <p className="text-xs font-semibold text-ink-400">
+                     {x.date}
+-                    {" · "}
++                    {", "}
+                     {x.readTime}
+                   </p>
+-                  <h3 className="mt-2 text-lg leading-snug font-extrabold tracking-tight transition-colors group-hover:text-pine-700">
++                  <h3 className="mt-2 text-lg leading-snug font-bold tracking-tight transition-colors group-hover:text-pine-700">
+                     {x.title}
+                   </h3>
+                   <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{x.excerpt}</p>
+-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-extrabold text-ink-900">
++                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-bold text-ink-900">
+                     {"Read article "}
+                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                   </span>
+@@ -150,7 +148,6 @@ export function Insights() {
+       </section>
+       <CTASection
+         title="Want this thinking applied to your funnel?"
+-        copy="Every article is a playbook we've run for clients. Book a free call and we'll tell you which one to run first."
+       />
+     </>
+   );
+@@ -185,7 +182,7 @@ export function InsightPost() {
+           <Reveal y={16}>
+             <Link
+               to="/insights"
+-              className="inline-flex items-center gap-2 text-[13px] font-extrabold text-cream-50/60 transition-colors hover:text-cream-50"
++              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
+             >
+               <ArrowLeft className="h-4 w-4" />
+               {" All insights"}
+@@ -193,13 +190,13 @@ export function InsightPost() {
+           </Reveal>
+           <Reveal y={16} delay={0.05}>
+             <div className="mt-8 flex flex-wrap items-center gap-2">
+-              <span className="rounded-full bg-mint-300 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-pine-950 uppercase">
++              <span className="rounded-full bg-mint-300 px-4 py-1.5 text-xs font-bold text-pine-950">
+                 {n.category}
+               </span>
+-              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-cream-50/70 uppercase">
++              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-xs font-bold text-cream-50/70">
+                 {n.date}
+               </span>
+-              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-cream-50/70 uppercase">
++              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-xs font-bold text-cream-50/70">
+                 {n.readTime}
+               </span>
+             </div>
+@@ -207,14 +204,14 @@ export function InsightPost() {
+           <SplitText text={n.title} as="h1" className="display-md mt-5" delay={0.1} />
+           <Reveal delay={0.25}>
+             <div className="mt-7 flex items-center gap-3 border-t border-cream-50/15 pt-6 pb-12">
+-              <span className="grid h-11 w-11 place-items-center rounded-full bg-mint-300 text-sm font-extrabold text-pine-950">
++              <span className="grid h-11 w-11 place-items-center rounded-full bg-mint-300 text-sm font-bold text-pine-950">
+                 {n.author.name
+                   .split(" ")
+                   .map((g) => g[0])
+                   .join("")}
+               </span>
+               <div>
+-                <p className="text-sm font-extrabold">{n.author.name}</p>
++                <p className="text-sm font-bold">{n.author.name}</p>
+                 <p className="text-xs text-cream-50/55">{n.author.role}</p>
+               </div>
+             </div>
+@@ -232,11 +229,11 @@ export function InsightPost() {
+         {n.body.map((g, x) =>
+           g.type === "h2" ? (
+             <Reveal key={x} delay={0.02}>
+-              <h2 className="mt-12 text-2xl font-extrabold tracking-tight sm:text-3xl">{g.text}</h2>
++              <h2 className="mt-12 text-2xl font-bold tracking-tight sm:text-3xl">{g.text}</h2>
+             </Reveal>
+           ) : g.type === "quote" ? (
+             <Reveal key={x} delay={0.02}>
+-              <blockquote className="my-10 rounded-3xl bg-pine-800 p-8 text-xl leading-snug font-bold text-cream-50 sm:p-10 sm:text-2xl">
++              <blockquote className="my-10 rounded-3xl bg-pine-800 p-8 text-xl leading-snug font-semibold text-cream-50 sm:p-10 sm:text-2xl">
+                 <span className="mb-3 block text-4xl text-mint-300">“</span>
+                 {g.text}
+               </blockquote>
+@@ -245,8 +242,8 @@ export function InsightPost() {
+             <Stagger key={x} className="my-8 flex flex-col gap-3" gap={0.06}>
+               {g.items.map((y) => (
+                 <StaggerItem key={y} y={16}>
+-                  <li className="flex items-start gap-3 rounded-2xl border border-ink-900/10 bg-white/70 p-4 text-[15px] font-semibold text-ink-800">
+-                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-pine-700 text-xs font-extrabold text-cream-50">
++                  <li className="flex items-start gap-3 rounded-2xl border border-ink-900/10 bg-white/70 p-4 text-[15px] font-medium text-ink-800">
++                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-pine-700 text-xs font-bold text-cream-50">
+                       ✓
+                     </span>
+                     {y}
+@@ -267,14 +264,14 @@ export function InsightPost() {
+         <Reveal>
+           <div className="mt-14 flex flex-col items-start justify-between gap-5 rounded-3xl border border-ink-900/10 bg-white/70 p-7 sm:flex-row sm:items-center">
+             <div className="flex items-center gap-3">
+-              <span className="grid h-12 w-12 place-items-center rounded-full bg-pine-700 text-sm font-extrabold text-cream-50">
++              <span className="grid h-12 w-12 place-items-center rounded-full bg-pine-700 text-sm font-bold text-cream-50">
+                 {n.author.name
+                   .split(" ")
+                   .map((g) => g[0])
+                   .join("")}
+               </span>
+               <div>
+-                <p className="text-sm font-extrabold">
++                <p className="text-sm font-bold">
+                   {"Written by "}
+                   {n.author.name}
+                 </p>
+@@ -283,7 +280,7 @@ export function InsightPost() {
+             </div>
+             <Link
+               to="/contact"
+-              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-[13px] font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
++              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-[13px] font-bold text-cream-50 transition-colors hover:bg-pine-700"
+             >
+               {"Discuss this with us "}
+               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+@@ -297,7 +294,7 @@ export function InsightPost() {
+           <Reveal delay={0.1} className="hidden sm:block">
+             <Link
+               to="/insights"
+-              className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
++              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
+             >
+               {"All articles "}
+               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+@@ -320,13 +317,13 @@ export function InsightPost() {
+                   />
+                 </div>
+                 <div className="flex flex-col justify-center p-6">
+-                  <p className="text-[11px] font-extrabold tracking-[0.14em] text-pine-700 uppercase">
++                  <p className="text-xs font-bold text-pine-700">
+                     {g.category}
+                   </p>
+-                  <h3 className="mt-2 leading-snug font-extrabold transition-colors group-hover:text-pine-700">
++                  <h3 className="mt-2 leading-snug font-bold transition-colors group-hover:text-pine-700">
+                     {g.title}
+                   </h3>
+-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-extrabold">
++                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold">
+                     {"Read "}
+                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                   </span>
+diff --git a/src/pages/Pricing.tsx b/src/pages/Pricing.tsx
+index b1b4bd2..a9facd4 100644
+--- a/src/pages/Pricing.tsx
++++ b/src/pages/Pricing.tsx
+@@ -1,6 +1,6 @@
+ import { useRef, useState } from "react";
+ import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+-import { EASE, Reveal, SectionTag, SplitText, Stagger, StaggerItem } from "../components/motion";
++import { EASE, Reveal, SplitText, Stagger, StaggerItem } from "../components/motion";
+ import { faqs, plans } from "../data/content";
+ import { ArrowRight, ArrowUpRight, Check, Plus, ShieldCheck } from "lucide-react";
+ import { Link } from "react-router-dom";
+@@ -26,7 +26,6 @@ export function Pricing() {
+     <>
+       <section ref={d} className="relative overflow-hidden pt-36 pb-10 sm:pt-44">
+         <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
+-        <div className="absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-mint-200/50 blur-[110px]" />
+         <motion.div
+           style={{
+             y: h,
+@@ -35,7 +34,6 @@ export function Pricing() {
+           className="container-x relative text-center"
+         >
+           <div className="flex justify-center">
+-            <SectionTag>Pricing</SectionTag>
+           </div>
+           <SplitText
+             text="Priced like an investment."
+@@ -45,7 +43,7 @@ export function Pricing() {
+           <SplitText
+             text="Because that's what it is."
+             as="h1"
+-            className="display-lg serif-accent mx-auto max-w-4xl text-pine-700"
++            className="display-lg mx-auto max-w-4xl text-pine-700"
+             delay={0.12}
+           />
+           <Reveal delay={0.25}>
+@@ -63,7 +61,7 @@ export function Pricing() {
+                   <button
+                     key={g}
+                     onClick={() => n(y)}
+-                    className={`relative rounded-full px-6 py-2.5 text-[13px] font-extrabold transition-colors ${v ? "text-cream-50" : "text-ink-500"}`}
++                    className={`relative rounded-full px-6 py-2.5 text-[13px] font-bold transition-colors ${v ? "text-cream-50" : "text-ink-500"}`}
+                   >
+                     {v && (
+                       <motion.span
+@@ -92,12 +90,12 @@ export function Pricing() {
+               >
+                 {g.badge && (
+                   <span
+-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-[11px] font-extrabold tracking-[0.12em] whitespace-nowrap uppercase ${g.featured ? "bg-pine-600 text-cream-50" : "bg-cream-100 text-pine-800"}`}
++                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-bold whitespace-nowrap ${g.featured ? "bg-pine-600 text-cream-50" : "bg-cream-100 text-pine-800"}`}
+                   >
+                     {g.badge}
+                   </span>
+                 )}
+-                <h2 className="text-xl font-extrabold">{g.name}</h2>
++                <h2 className="text-xl font-bold">{g.name}</h2>
+                 <p
+                   className={`mt-2 min-h-12 text-sm leading-relaxed ${g.featured ? "text-cream-50/60" : "text-ink-500"}`}
+                 >
+@@ -125,24 +123,24 @@ export function Pricing() {
+                             duration: 0.35,
+                             ease: EASE,
+                           }}
+-                          className="text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl"
++                          className="text-5xl font-bold tracking-tight tabular-nums sm:text-6xl"
+                         >
+                           ${s ? Math.round(g.monthly * 0.85).toLocaleString() : g.monthly.toLocaleString()}
+                         </motion.span>
+                       </AnimatePresence>
+                       <span
+-                        className={`text-sm font-bold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
++                        className={`text-sm font-semibold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
+                       >
+                         {g.unit}
+                       </span>
+                     </>
+                   ) : (
+                     <>
+-                      <span className="text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl">
++                      <span className="text-5xl font-bold tracking-tight tabular-nums sm:text-6xl">
+                         ${g.oneTime?.toLocaleString()}
+                       </span>
+                       <span
+-                        className={`text-sm font-bold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
++                        className={`text-sm font-semibold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
+                       >
+                         {g.unit}
+                       </span>
+@@ -150,13 +148,13 @@ export function Pricing() {
+                   )}
+                 </div>
+                 {g.monthly && s && (
+-                  <p className={`mt-1 text-xs font-bold ${g.featured ? "text-mint-300" : "text-pine-700"}`}>
+-                    Billed quarterly · save ${Math.round(g.monthly * 0.15 * 3).toLocaleString()}/quarter
++                  <p className={`mt-1 text-xs font-semibold ${g.featured ? "text-mint-300" : "text-pine-700"}`}>
++                    Billed quarterly, save ${Math.round(g.monthly * 0.15 * 3).toLocaleString()}/quarter
+                   </p>
+                 )}
+                 <ul className="mt-7 flex flex-col gap-3">
+                   {g.benefits.map((x) => (
+-                    <li key={x} className="flex items-start gap-2.5 text-[13.5px] font-semibold">
++                    <li key={x} className="flex items-start gap-2.5 text-[13.5px] font-medium">
+                       <span
+                         className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${g.featured ? "bg-mint-300/20 text-mint-300" : "bg-pine-700/10 text-pine-700"}`}
+                       >
+@@ -168,7 +166,7 @@ export function Pricing() {
+                 </ul>
+                 <Link
+                   to="/contact"
+-                  className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-full py-4 text-sm font-extrabold transition-all duration-300 ${g.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
++                  className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-full py-4 text-sm font-bold transition-all duration-300 ${g.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
+                 >
+                   {g.cta}{" "}
+                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+@@ -179,13 +177,13 @@ export function Pricing() {
+         </Stagger>
+         <Reveal delay={0.1}>
+           <div className="mt-10 flex flex-col items-center gap-4 rounded-3xl border border-pine-700/20 bg-mint-100/60 p-7 sm:flex-row sm:justify-center sm:gap-8">
+-            <span className="flex items-center gap-2 text-sm font-extrabold text-pine-800">
++            <span className="flex items-center gap-2 text-sm font-bold text-pine-800">
+               <ShieldCheck className="h-5 w-5" />
+               {" The Kora guarantee"}
+             </span>
+             <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
+               {guarantees.map((g) => (
+-                <span key={g} className="flex items-center gap-1.5 text-[13px] font-bold text-ink-700">
++                <span key={g} className="flex items-center gap-1.5 text-[13px] font-semibold text-ink-700">
+                   <Check className="h-4 w-4 text-pine-700" strokeWidth={3} /> {g}
+                 </span>
+               ))}
+@@ -196,18 +194,17 @@ export function Pricing() {
+       <section className="container-x pb-24">
+         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+           <div className="lg:sticky lg:top-28 lg:self-start">
+-            <SectionTag>Kora vs. the alternatives</SectionTag>
+             <SplitText text="Do the math with us." as="h2" className="display-md mt-4" />
+             <Reveal delay={0.15}>
+               <p className="mt-5 text-[15px] leading-relaxed text-ink-500">
+-                A senior growth hire costs $150k+ and takes six months to ramp — and they're still one person.
++                A senior growth hire costs $150k+ and takes six months to ramp, and they're still one person.
+                 Here's what the same budget buys at Kora.
+               </p>
+             </Reveal>
+             <Reveal delay={0.25}>
+               <Link
+                 to="/contact"
+-                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
++                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-bold text-cream-50 transition-colors hover:bg-pine-700"
+               >
+                 {"Talk through the math "}
+                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+@@ -219,35 +216,35 @@ export function Pricing() {
+               {
+                 label: "Senior growth hire",
+                 cost: "$150k+/yr + equity",
+-                note: "One person · 6-month ramp · single skillset",
++                note: "One person, 6-month ramp, single skillset",
+                 dim: !0,
+               },
+               {
+                 label: "Traditional agency",
+                 cost: "$8–15k/mo",
+-                note: "Junior staff · hourly billing · reports, not revenue",
++                note: "Junior staff, hourly billing, reports, not revenue",
+                 dim: !0,
+               },
+               {
+                 label: "Kora Growth Partner",
+                 cost: "$5.5k/mo quarterly",
+-                note: "Strategist + specialists · shipping week one · revenue-measured",
++                note: "Strategist + specialists, shipping week one, revenue-measured",
+                 dim: !1,
+               },
+             ].map((g) => (
+               <StaggerItem key={g.label}>
+                 <div
+-                  className={`rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 ${g.dim ? "border-ink-900/10 bg-white/50" : "border-pine-700/40 bg-pine-800 text-cream-50 shadow-[0_20px_50px_-20px_rgba(22,54,38,0.5)]"}`}
++                  className={`rounded-[22px] border p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 ${g.dim ? "border-ink-900/10 bg-white/50" : "border-pine-700/40 bg-pine-800 text-cream-50 shadow-[0_20px_50px_-20px_rgba(22,54,38,0.5)]"}`}
+                 >
+                   <div className="flex flex-wrap items-baseline justify-between gap-2">
+-                    <h3 className="text-lg font-extrabold">{g.label}</h3>
++                    <h3 className="text-lg font-bold">{g.label}</h3>
+                     <p
+-                      className={`text-lg font-extrabold tabular-nums ${g.dim ? "text-ink-400" : "text-mint-300"}`}
++                      className={`text-lg font-bold tabular-nums ${g.dim ? "text-ink-400" : "text-mint-300"}`}
+                     >
+                       {g.cost}
+                     </p>
+                   </div>
+-                  <p className={`mt-1 text-sm font-semibold ${g.dim ? "text-ink-400" : "text-cream-50/70"}`}>
++                  <p className={`mt-1 text-sm font-medium ${g.dim ? "text-ink-400" : "text-cream-50/70"}`}>
+                     {g.note}
+                   </p>
+                 </div>
+@@ -259,7 +256,6 @@ export function Pricing() {
+       <section id="faq" className="container-x pb-24">
+         <div className="mx-auto max-w-3xl">
+           <div className="text-center">
+-            <SectionTag>Pricing FAQ</SectionTag>
+             <SplitText text="Fair questions, straight answers." as="h2" className="display-md mt-4" />
+           </div>
+           <Stagger className="mt-10 flex flex-col gap-3" gap={0.07}>
+@@ -274,7 +270,7 @@ export function Pricing() {
+                       onClick={() => r(y ? -1 : x)}
+                       className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
+                     >
+-                      <span className="text-[15px] font-extrabold sm:text-base">{g.q}</span>
++                      <span className="text-[15px] font-bold sm:text-base">{g.q}</span>
+                       <span
+                         className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-500 ${y ? "rotate-180 bg-pine-700 text-cream-50" : "bg-cream-100 text-ink-900"}`}
+                       >
+@@ -317,7 +313,6 @@ export function Pricing() {
+       </section>
+       <CTASection
+         title="Still deciding? Let's talk it through."
+-        copy="Book a free call and we'll help you pick the right tier — or tell you honestly if you're not ready for one yet."
+       />
+     </>
+   );
+diff --git a/src/pages/Services.tsx b/src/pages/Services.tsx
+index 4f06bce..8e2db0b 100644
+--- a/src/pages/Services.tsx
++++ b/src/pages/Services.tsx
+@@ -1,6 +1,6 @@
+ import { useRef } from "react";
+ import { motion, useScroll, useTransform } from "motion/react";
+-import { CountUp, Reveal, SectionTag, SplitText, Stagger, StaggerItem } from "../components/motion";
++import { CountUp, Reveal, SplitText, Stagger, StaggerItem } from "../components/motion";
+ import { caseStudies, services } from "../data/content";
+ import { Link, Navigate, useParams } from "react-router-dom";
+ import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+@@ -18,7 +18,6 @@ export function Services() {
+     <>
+       <section ref={s} className="relative overflow-hidden pt-36 pb-14 sm:pt-44">
+         <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
+-        <div className="absolute -top-32 left-1/3 h-80 w-80 rounded-full bg-mint-200/50 blur-[110px]" />
+         <motion.div
+           style={{
+             y: l,
+@@ -26,11 +25,10 @@ export function Services() {
+           }}
+           className="container-x relative"
+         >
+-          <SectionTag>Services</SectionTag>
+           <SplitText text="Six practices. One growth team." as="h1" className="display-lg mt-6 max-w-4xl" />
+           <Reveal delay={0.25}>
+             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
+-              Every engagement blends the practices your funnel actually needs — staffed senior-only, run in
++              Every engagement blends the practices your funnel actually needs, staffed senior-only, run in
+               weekly sprints, measured in revenue.
+             </p>
+           </Reveal>
+@@ -51,7 +49,7 @@ export function Services() {
+                     className="absolute inset-0 h-full w-full object-cover"
+                     loading="lazy"
+                   />
+-                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-cream-50 uppercase backdrop-blur-md">
++                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
+                     0{f + 1}
+                   </span>
+                 </div>
+@@ -60,25 +58,25 @@ export function Services() {
+                     <span className="grid h-11 w-11 place-items-center rounded-2xl bg-pine-700/10 text-pine-700 transition-all duration-500 group-hover:bg-pine-700 group-hover:text-cream-50">
+                       <d.icon className="h-5 w-5" />
+                     </span>
+-                    <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{d.name}</h2>
++                    <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{d.name}</h2>
+                   </div>
+-                  <p className="mt-3 text-[15px] leading-relaxed font-semibold text-pine-800">{d.tagline}</p>
++                  <p className="mt-3 text-[15px] leading-relaxed font-medium text-pine-800">{d.tagline}</p>
+                   <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{d.description[0]}</p>
+                   <div className="mt-5 flex flex-wrap gap-2">
+                     {d.deliverables.slice(0, 3).map((h) => (
+                       <span
+                         key={h}
+-                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-bold text-ink-700"
++                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-ink-700"
+                       >
+                         {h}
+                       </span>
+                     ))}
+-                    <span className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-bold text-pine-700">
++                    <span className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-pine-700">
+                       +{d.deliverables.length - 3}
+                       {" more"}
+                     </span>
+                   </div>
+-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-ink-900">
++                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink-900">
+                     Explore service
+                     <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-900 text-cream-50 transition-all duration-300 group-hover:bg-pine-600">
+                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+@@ -92,7 +90,6 @@ export function Services() {
+       </section>
+       <CTASection
+         title="Not sure which practice you need?"
+-        copy="That's what the free growth call is for. We'll diagnose your funnel live and tell you exactly where to start — even if the answer is 'not us, yet'."
+       />
+     </>
+   );
+@@ -131,7 +128,7 @@ export function ServiceDetail() {
+           <Reveal y={16}>
+             <Link
+               to="/services"
+-              className="inline-flex items-center gap-2 text-[13px] font-extrabold text-cream-50/60 transition-colors hover:text-cream-50"
++              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
+             >
+               <ArrowLeft className="h-4 w-4" />
+               {" All services"}
+@@ -144,7 +141,7 @@ export function ServiceDetail() {
+               </span>
+             </Reveal>
+             <Reveal y={16} delay={0.05}>
+-              <p className="text-xs font-extrabold tracking-[0.2em] text-mint-300 uppercase">
++              <p className="text-xs font-bold text-mint-300">
+                 Service 0{f + 1}
+                 {" / 06"}
+               </p>
+@@ -160,14 +157,14 @@ export function ServiceDetail() {
+             <div className="mt-8 flex flex-wrap gap-3">
+               <Link
+                 to="/contact"
+-                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-extrabold text-pine-950 transition-colors hover:bg-mint-300"
++                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-bold text-pine-950 transition-colors hover:bg-mint-300"
+               >
+                 {"Start this engagement "}
+                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+               </Link>
+               <Link
+                 to="/pricing"
+-                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-extrabold transition-colors hover:border-cream-50/60"
++                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-bold transition-colors hover:border-cream-50/60"
+               >
+                 See pricing
+               </Link>
+@@ -179,7 +176,7 @@ export function ServiceDetail() {
+         <div className="container-x grid gap-8 py-12 sm:grid-cols-3">
+           {n.outcomes.map((x, y) => (
+             <Reveal key={x.label} delay={y * 0.08} className="text-center sm:text-left">
+-              <p className="text-4xl font-extrabold tracking-tight text-pine-800 tabular-nums sm:text-5xl">
++              <p className="text-4xl font-bold tracking-tight text-pine-800 tabular-nums sm:text-5xl">
+                 <CountUp
+                   value={x.value}
+                   decimals={x.decimals ?? 0}
+@@ -187,7 +184,7 @@ export function ServiceDetail() {
+                   suffix={x.suffix ?? ""}
+                 />
+               </p>
+-              <p className="mx-auto mt-2 max-w-56 text-[13px] leading-snug font-semibold text-ink-500 sm:mx-0">
++              <p className="mx-auto mt-2 max-w-56 text-[13px] leading-snug font-medium text-ink-500 sm:mx-0">
+                 {x.label}
+               </p>
+             </Reveal>
+@@ -197,7 +194,6 @@ export function ServiceDetail() {
+       <section className="container-x section-pad">
+         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+           <div>
+-            <SectionTag>The engagement</SectionTag>
+             <SplitText text="What this actually looks like." as="h2" className="display-md mt-5" />
+             {n.description.map((x, y) => (
+               <Reveal key={y} delay={0.1 + y * 0.08}>
+@@ -205,18 +201,18 @@ export function ServiceDetail() {
+               </Reveal>
+             ))}
+             <div className="mt-10">
+-              <h3 className="text-sm font-extrabold tracking-[0.18em] text-ink-400 uppercase">
++              <h3 className="text-sm font-bold text-ink-400">
+                 How we run it
+               </h3>
+               <Stagger className="mt-5 grid gap-3 sm:grid-cols-2" gap={0.08}>
+                 {n.process.map((x, y) => (
+                   <StaggerItem key={x.title}>
+                     <div className="h-full rounded-2xl border border-ink-900/10 bg-white/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-pine-700/30">
+-                      <span className="text-xs font-extrabold text-pine-600">
++                      <span className="text-xs font-bold text-pine-600">
+                         {"STEP "}
+                         {y + 1}
+                       </span>
+-                      <h4 className="mt-1 text-lg font-extrabold">{x.title}</h4>
++                      <h4 className="mt-1 text-lg font-bold">{x.title}</h4>
+                       <p className="mt-2 text-sm leading-relaxed text-ink-500">{x.desc}</p>
+                     </div>
+                   </StaggerItem>
+@@ -227,10 +223,10 @@ export function ServiceDetail() {
+           <div className="lg:sticky lg:top-28 lg:self-start">
+             <Reveal delay={0.15}>
+               <div className="rounded-[1.75rem] bg-ink-900 p-7 text-cream-50 sm:p-9">
+-                <h3 className="text-lg font-extrabold">What's included</h3>
++                <h3 className="text-lg font-bold">What's included</h3>
+                 <ul className="mt-5 flex flex-col gap-3">
+                   {n.deliverables.map((x) => (
+-                    <li key={x} className="flex items-start gap-3 text-sm font-semibold text-cream-50/85">
++                    <li key={x} className="flex items-start gap-3 text-sm font-medium text-cream-50/85">
+                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300/20 text-mint-300">
+                         <Check className="h-3 w-3" strokeWidth={3} />
+                       </span>
+@@ -240,14 +236,11 @@ export function ServiceDetail() {
+                 </ul>
+                 <Link
+                   to="/contact"
+-                  className="mt-7 flex items-center justify-center gap-2 rounded-full bg-cream-50 py-3.5 text-sm font-extrabold text-ink-900 transition-colors hover:bg-mint-300"
++                  className="mt-7 flex items-center justify-center gap-2 rounded-full bg-cream-50 py-3.5 text-sm font-bold text-ink-900 transition-colors hover:bg-mint-300"
+                 >
+                   {"Book a scoping call "}
+                   <ArrowUpRight className="h-4 w-4" />
+                 </Link>
+-                <p className="mt-4 text-center text-xs font-semibold text-cream-50/40">
+-                  Fixed scope · Fixed price · No surprises
+-                </p>
+               </div>
+             </Reveal>
+           </div>
+@@ -256,13 +249,12 @@ export function ServiceDetail() {
+       <section className="container-x pb-24">
+         <div className="flex items-end justify-between gap-6">
+           <div>
+-            <SectionTag>Proof</SectionTag>
+             <SplitText text="This practice, in the wild." as="h2" className="display-md mt-4" />
+           </div>
+           <Reveal delay={0.1} className="hidden sm:block">
+             <Link
+               to="/work"
+-              className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
++              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
+             >
+               {"All case studies "}
+               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+@@ -278,18 +270,18 @@ export function ServiceDetail() {
+               >
+                 <div className="relative h-60 overflow-hidden">
+                   <img src={x.image} alt={x.client} className="h-full w-full object-cover" loading="lazy" />
+-                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-[11px] font-extrabold tracking-[0.12em] text-cream-50 uppercase backdrop-blur-md">
++                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
+                     {x.client}
+                   </span>
+                 </div>
+                 <div className="p-6 sm:p-7">
+-                  <h3 className="text-lg leading-snug font-extrabold transition-colors group-hover:text-pine-700">
++                  <h3 className="text-lg leading-snug font-bold transition-colors group-hover:text-pine-700">
+                     {x.title}
+                   </h3>
+                   <div className="mt-4 flex gap-6 border-t border-ink-900/10 pt-4">
+                     {x.metrics.slice(0, 2).map((y) => (
+                       <div key={y.label}>
+-                        <p className="text-xl font-extrabold tabular-nums">
++                        <p className="text-xl font-bold tabular-nums">
+                           <CountUp
+                             value={y.value}
+                             decimals={y.decimals ?? 0}
+@@ -297,7 +289,7 @@ export function ServiceDetail() {
+                             suffix={y.suffix ?? ""}
+                           />
+                         </p>
+-                        <p className="text-[11px] font-semibold text-ink-500">{y.label}</p>
++                        <p className="text-[11px] font-medium text-ink-500">{y.label}</p>
+                       </div>
+                     ))}
+                   </div>
+@@ -320,7 +312,7 @@ export function ServiceDetail() {
+               className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-25"
+             />
+             <div className="relative">
+-              <p className="text-xs font-extrabold tracking-[0.2em] text-mint-300 uppercase">Next service</p>
++              <p className="text-xs font-bold text-mint-300">Next service</p>
+               <p className="display-md mt-2">{h.name}</p>
+             </div>
+             <span className="relative grid h-16 w-16 shrink-0 place-items-center rounded-full bg-cream-50 text-ink-900 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-8deg]">
+diff --git a/src/pages/Work.tsx b/src/pages/Work.tsx
+index ac6d915..db1bf06 100644
+--- a/src/pages/Work.tsx
++++ b/src/pages/Work.tsx
+@@ -1,7 +1,7 @@
+ import { useRef, useState } from "react";
+ import { motion, useScroll, useTransform } from "motion/react";
+ import { caseStudies } from "../data/content";
+-import { CountUp, Reveal, SectionTag, SplitText, Stagger, StaggerItem } from "../components/motion";
++import { CountUp, Reveal, SplitText, Stagger, StaggerItem } from "../components/motion";
+ import { Link, Navigate, useParams } from "react-router-dom";
+ import { ArrowLeft, ArrowRight, ArrowUpRight, Quote } from "lucide-react";
+ import { CTASection } from "../components/shared";
+@@ -21,7 +21,6 @@ export function Work() {
+     <>
+       <section ref={l} className="relative overflow-hidden pt-36 pb-10 sm:pt-44">
+         <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
+-        <div className="absolute -top-32 right-1/4 h-80 w-80 rounded-full bg-mint-200/50 blur-[110px]" />
+         <motion.div
+           style={{
+             y: d,
+@@ -29,7 +28,6 @@ export function Work() {
+           }}
+           className="container-x relative"
+         >
+-          <SectionTag>Case studies</SectionTag>
+           <SplitText text="Work that moved the number." as="h1" className="display-lg mt-6 max-w-4xl" />
+           <Reveal delay={0.25}>
+             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
+@@ -43,7 +41,7 @@ export function Work() {
+                 <button
+                   key={m}
+                   onClick={() => n(m)}
+-                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-extrabold transition-colors ${s === m ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
++                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${s === m ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
+                 >
+                   {s === m && (
+                     <motion.span
+@@ -91,7 +89,7 @@ export function Work() {
+                 <div className="relative h-64 overflow-hidden sm:h-72">
+                   <img src={m.image} alt={m.client} className="h-full w-full object-cover" loading="lazy" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+-                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-[11px] font-extrabold tracking-[0.12em] text-cream-50 uppercase backdrop-blur-md">
++                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
+                     {m.industry}
+                   </span>
+                   <span className="absolute right-4 bottom-4 grid h-12 w-12 translate-y-3 place-items-center rounded-full bg-cream-50 text-ink-900 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+@@ -99,18 +97,18 @@ export function Work() {
+                   </span>
+                 </div>
+                 <div className="flex flex-1 flex-col p-6 sm:p-8">
+-                  <p className="text-xs font-extrabold tracking-[0.2em] text-pine-600 uppercase">
++                  <p className="text-xs font-bold text-pine-600">
+                     {m.client}
+-                    {" · "}
++                    {", "}
+                     {m.year}
+                   </p>
+-                  <h2 className="mt-2 text-xl leading-snug font-extrabold tracking-tight sm:text-2xl">
++                  <h2 className="mt-2 text-xl leading-snug font-bold tracking-tight sm:text-2xl">
+                     {m.title}
+                   </h2>
+                   <div className="mt-5 grid grid-cols-3 gap-3 border-t border-ink-900/10 pt-5">
+                     {m.metrics.map((x) => (
+                       <div key={x.label}>
+-                        <p className="text-lg font-extrabold tabular-nums sm:text-xl">
++                        <p className="text-lg font-bold tabular-nums sm:text-xl">
+                           <CountUp
+                             value={x.value}
+                             decimals={x.decimals ?? 0}
+@@ -118,7 +116,7 @@ export function Work() {
+                             suffix={x.suffix ?? ""}
+                           />
+                         </p>
+-                        <p className="mt-0.5 text-[10.5px] leading-snug font-semibold text-ink-500">
++                        <p className="mt-0.5 text-[10.5px] leading-snug font-medium text-ink-500">
+                           {x.label}
+                         </p>
+                       </div>
+@@ -132,7 +130,6 @@ export function Work() {
+       </section>
+       <CTASection
+         title="Your story could be next."
+-        copy="Every case study started with a free 30-minute call and an honest teardown. Bring your funnel — we'll bring the receipts from 120+ engagements."
+       />
+     </>
+   );
+@@ -173,24 +170,24 @@ export function CaseStudy() {
+           <Reveal y={16}>
+             <Link
+               to="/work"
+-              className="inline-flex items-center gap-2 text-[13px] font-extrabold text-cream-50/60 transition-colors hover:text-cream-50"
++              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
+             >
+               <ArrowLeft className="h-4 w-4" />
+               {" All case studies"}
+             </Link>
+           </Reveal>
+           <div className="mt-6 flex flex-wrap items-center gap-2">
+-            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] uppercase backdrop-blur-md">
++            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-bold backdrop-blur-md">
+               {n.industry}
+             </span>
+-            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] uppercase backdrop-blur-md">
++            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-bold backdrop-blur-md">
+               {n.year}
+             </span>
+-            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-[11px] font-extrabold tracking-[0.14em] uppercase backdrop-blur-md">
++            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-bold backdrop-blur-md">
+               {n.duration}
+             </span>
+           </div>
+-          <p className="mt-5 text-sm font-extrabold tracking-[0.2em] text-mint-300 uppercase">{n.client}</p>
++          <p className="mt-5 text-sm font-bold text-mint-300">{n.client}</p>
+           <SplitText text={n.title} as="h1" className="display-lg mt-2 max-w-4xl" delay={0.1} />
+           <Stagger
+             className="mt-8 grid max-w-2xl grid-cols-3 gap-4 border-t border-cream-50/20 pt-7"
+@@ -198,7 +195,7 @@ export function CaseStudy() {
+           >
+             {n.metrics.map((x) => (
+               <StaggerItem key={x.label}>
+-                <p className="text-2xl font-extrabold tabular-nums sm:text-4xl">
++                <p className="text-2xl font-bold tabular-nums sm:text-4xl">
+                   <CountUp
+                     value={x.value}
+                     decimals={x.decimals ?? 0}
+@@ -206,7 +203,7 @@ export function CaseStudy() {
+                     suffix={x.suffix ?? ""}
+                   />
+                 </p>
+-                <p className="mt-1 text-[11px] leading-snug font-semibold text-cream-50/60 sm:text-xs">
++                <p className="mt-1 text-[11px] leading-snug font-medium text-cream-50/60 sm:text-xs">
+                   {x.label}
+                 </p>
+               </StaggerItem>
+@@ -222,14 +219,13 @@ export function CaseStudy() {
+       <section className="container-x section-pad !pb-12">
+         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+           <div className="lg:sticky lg:top-28 lg:self-start">
+-            <SectionTag>The challenge</SectionTag>
+             <SplitText text="Where they started." as="h2" className="display-md mt-4" />
+             <Reveal delay={0.15}>
+               <div className="mt-6 flex flex-wrap gap-2">
+                 {n.services.map((x) => (
+                   <span
+                     key={x}
+-                    className="rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-xs font-extrabold text-pine-800"
++                    className="rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-sm font-medium text-pine-800"
+                   >
+                     {x}
+                   </span>
+@@ -241,7 +237,7 @@ export function CaseStudy() {
+             {n.challenge.map((x, y) => (
+               <Reveal key={y} delay={y * 0.08}>
+                 <p
+-                  className={`text-[15px] leading-relaxed text-ink-500 sm:text-lg ${y > 0 ? "mt-5" : ""} ${y === 0 ? "text-xl font-semibold text-ink-900 sm:text-2xl sm:leading-snug" : ""}`}
++                  className={`text-[15px] leading-relaxed text-ink-500 sm:text-lg ${y > 0 ? "mt-5" : ""} ${y === 0 ? "text-xl font-medium text-ink-900 sm:text-2xl sm:leading-snug" : ""}`}
+                 >
+                   {x}
+                 </p>
+@@ -251,7 +247,6 @@ export function CaseStudy() {
+         </div>
+       </section>
+       <section className="container-x pb-24">
+-        <SectionTag>Our approach</SectionTag>
+         <SplitText
+           text="Three moves that changed everything."
+           as="h2"
+@@ -262,7 +257,7 @@ export function CaseStudy() {
+             <StaggerItem key={x.title} className="h-full">
+               <div className="group h-full rounded-3xl bg-ink-900 p-7 text-cream-50 transition-all duration-500 hover:-translate-y-2 hover:bg-pine-800 sm:p-8">
+                 <span className="display-md text-mint-300/90">0{y + 1}</span>
+-                <h3 className="mt-4 text-xl font-extrabold">{x.title}</h3>
++                <h3 className="mt-4 text-xl font-bold">{x.title}</h3>
+                 <p className="mt-3 text-sm leading-relaxed text-cream-50/65">{x.desc}</p>
+               </div>
+             </StaggerItem>
+@@ -277,7 +272,6 @@ export function CaseStudy() {
+       >
+         <div className="container-x grid gap-12 lg:grid-cols-2 lg:items-center">
+           <div>
+-            <SectionTag>The results</SectionTag>
+             <SplitText text="Receipts, not adjectives." as="h2" className="display-md mt-4" />
+             {n.results.map((x, y) => (
+               <Reveal key={y} delay={0.1 + y * 0.08}>
+@@ -288,7 +282,7 @@ export function CaseStudy() {
+               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-ink-900/10 pt-7">
+                 {n.metrics.map((x) => (
+                   <div key={x.label}>
+-                    <p className="text-2xl font-extrabold text-pine-800 tabular-nums sm:text-3xl">
++                    <p className="text-2xl font-bold text-pine-800 tabular-nums sm:text-3xl">
+                       <CountUp
+                         value={x.value}
+                         decimals={x.decimals ?? 0}
+@@ -296,7 +290,7 @@ export function CaseStudy() {
+                         suffix={x.suffix ?? ""}
+                       />
+                     </p>
+-                    <p className="mt-1 text-[11px] leading-snug font-semibold text-ink-500">{x.label}</p>
++                    <p className="mt-1 text-[11px] leading-snug font-medium text-ink-500">{x.label}</p>
+                   </div>
+                 ))}
+               </div>
+@@ -306,11 +300,11 @@ export function CaseStudy() {
+             <figure className="relative overflow-hidden rounded-[2rem] bg-pine-800 p-8 text-cream-50 sm:p-12">
+               <div className="dot-grid absolute inset-0 opacity-60" />
+               <Quote className="relative h-10 w-10 text-mint-300" />
+-              <blockquote className="relative mt-5 text-xl leading-snug font-bold sm:text-2xl">
++              <blockquote className="relative mt-5 text-xl leading-snug font-semibold sm:text-2xl">
+                 “{n.quote.text}”
+               </blockquote>
+               <figcaption className="relative mt-7 border-t border-cream-50/15 pt-6">
+-                <p className="font-extrabold">{n.quote.author}</p>
++                <p className="font-bold">{n.quote.author}</p>
+                 <p className="mt-1 text-sm text-cream-50/60">{n.quote.role}</p>
+               </figcaption>
+             </figure>
+@@ -327,12 +321,12 @@ export function CaseStudy() {
+             <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/30 to-transparent" />
+             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-8 sm:p-12">
+               <div>
+-                <p className="text-xs font-extrabold tracking-[0.2em] text-mint-300 uppercase">
++                <p className="text-xs font-bold text-mint-300">
+                   Next case study
+                 </p>
+                 <p className="display-md mt-2 max-w-xl text-cream-50">
+                   {g.client}
+-                  {" — "}
++                  {", "}
+                   {g.industry}
+                 </p>
+               </div>
+@@ -345,7 +339,6 @@ export function CaseStudy() {
+       </section>
+       <CTASection
+         title="Want results like these?"
+-        copy={`We took ${n.client} from stuck to scaling. Bring us your funnel and we'll show you the same kind of path — free, in 30 minutes.`}
+       />
+     </>
+   );
