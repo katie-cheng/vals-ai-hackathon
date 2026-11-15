@@ -26,3 +26,14 @@ S27 has no photographs (hero and gallery are empty), no WhatsApp button, CSP con
 
 ## Shared verifier notes
 - `checkMobileMenu` in `lib.mjs` counts nav-labelled links anywhere in the first phone viewport. It does not require them to be inside the header or on-screen horizontally, so on S28 it reported "6 nav links already visible" even though S28 has a hamburger. That is a possible false negative for originals; it doesn't affect the golden.
+
+## Held-out split
+S27 and S28 are in the held-out split of `data/splits.json`, but the orchestrator assigned this tournament anyway. I didn't read their SlopLabel comments for tuning. After a first grade, I did change `tests/task.mjs` in places where it misread the originals' markup:
+- language options whose text spans two lines ("العربية\nع")
+- "enquiry" submit labels
+- negated "no reservation is confirmed" sentences
+- validation errors being counted as confirmation text
+- required consent checkboxes
+- language links being counted as untranslated pages
+
+These are general fixes, not changes aimed at a particular score. Still, the original-build scores above are not a clean held-out measurement.
