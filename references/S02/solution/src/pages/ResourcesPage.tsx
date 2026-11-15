@@ -38,7 +38,7 @@ export const ResourcesPage = () => {
         ))}
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12" role="tabpanel">
+      <div key={handbook.id} className="fade-in mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12" role="tabpanel">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-24">
             <h2 className="section-title">{handbook.title}</h2>

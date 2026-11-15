@@ -102,7 +102,7 @@ export const LandingPage = () => {
               aria-live="polite"
               className="min-h-11 border-t border-line px-4 py-2.5 font-mono text-[0.8125rem] text-ink-3"
             >
-              {output ? <span className="text-ok">{output}</span> : "Press Run to see the console output"}
+              {output ? <span className="fade-in text-ok">{output}</span> : "Press Run to see the console output"}
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export const LandingPage = () => {
                   </button>
                 </h3>
                 {isOpen && (
-                  <div id={`chapter-panel-${chapter.id}`} className="pb-6">
+                  <div id={`chapter-panel-${chapter.id}`} className="fade-in pb-6">
                     <p className="text-sm text-ink-2">{chapter.description}</p>
                     <p className="meta mt-1">Covers {chapter.keyConcepts.join(", ").toLowerCase()}.</p>
                     <ol className="mt-4 grid grid-cols-1 gap-x-8 sm:grid-cols-2">

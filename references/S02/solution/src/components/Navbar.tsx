@@ -79,7 +79,7 @@ export const Navbar = () => {
               <Avatar name={currentUser.fullName} />
             </button>
             {accountOpen && (
-              <div role="menu" className="surface absolute right-0 mt-2 w-72 p-4 text-sm shadow-xl shadow-black/40">
+              <div role="menu" className="surface fade-in absolute right-0 mt-2 w-72 p-4 text-sm shadow-xl shadow-black/40">
                 <p className="font-semibold text-ink">{currentUser.fullName}</p>
                 <p className="meta">{currentUser.email}</p>
                 <div className="mt-4 flex items-baseline justify-between">
@@ -127,7 +127,7 @@ export const Navbar = () => {
         </div>
       </div>
       {menuOpen && (
-        <nav aria-label="Main" className="border-t border-line bg-page xl:hidden">
+        <nav aria-label="Main" className="fade-in border-t border-line bg-page xl:hidden">
           <div className="container-page rows py-2">
             {NAV_ITEMS.map((item) => (
               <NavLink

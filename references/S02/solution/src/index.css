@@ -402,6 +402,16 @@
   }
 }
 
+/* Soft motion: a short opacity fade when a panel, menu, dialog or message appears. Opacity only, so nothing moves or reflows. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+.fade-in {
+  animation: fade-in 200ms var(--ease-out);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

@@ -186,7 +186,7 @@ ${_}
         </div>
       </div>
       <p role="status" className="mt-2 min-h-6 text-sm text-ok">
-        {me || ""}
+        {me && <span className="fade-in">{me}</span>}
       </p>
 
       <div className="mt-2 grid grid-cols-1 gap-6 lg:grid-cols-12">

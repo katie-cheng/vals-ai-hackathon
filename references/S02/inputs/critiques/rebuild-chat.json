@@ -34,5 +34,11 @@
   "sent_at": "2026-11-15T02:29-08:00",
   "element": "whole site (colour palette)",
   "comment": "i take it back, de-slopping doesnt mean removing colors"
+ },
+ {
+  "rid": "R7",
+  "sent_at": "2026-11-15T02:33-08:00",
+  "element": "motion, whole site",
+  "comment": "you can bring back soft animations if that is what the spec asked for"
  }
 ]

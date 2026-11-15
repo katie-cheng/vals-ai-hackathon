@@ -63,7 +63,7 @@ export const QuizDetailPage = () => {
           <div
             ref={resultRef}
             role="status"
-            className={`surface mt-8 scroll-mt-24 p-5 ${result.passed ? "border-ok/50" : "border-warn/50"}`}
+            className={`surface fade-in mt-8 scroll-mt-24 p-5 ${result.passed ? "border-ok/50" : "border-warn/50"}`}
           >
             <h2 className="section-title">{result.passed ? "Quiz passed" : "Review recommended"}</h2>
             <p className="mt-1 text-sm text-ink-2">
@@ -131,7 +131,7 @@ export const QuizDetailPage = () => {
                         Choose an answer for this question.
                       </p>
                     )}
-                    {submitted && <p className="mt-4 border-l-2 border-line-strong pl-4 text-sm text-ink-2">{question.explanation}</p>}
+                    {submitted && <p className="fade-in mt-4 border-l-2 border-line-strong pl-4 text-sm text-ink-2">{question.explanation}</p>}
                   </fieldset>
                 </li>
               );

@@ -100,7 +100,7 @@ export const ProfilePage = () => {
             </button>
           </div>
           <p role="status" className="mt-4 min-h-6 text-sm text-ok">
-            {resetDone ? "All progress and notes have been reset." : ""}
+            {resetDone && <span className="fade-in">All progress and notes have been reset.</span>}
           </p>
         </section>
       </div>
@@ -112,7 +112,7 @@ export const ProfilePage = () => {
             if (event.target === event.currentTarget) setConfirmOpen(false);
           }}
         >
-          <div role="alertdialog" aria-modal="true" aria-labelledby="reset-title" aria-describedby="reset-body" className="surface w-full max-w-sm p-6">
+          <div role="alertdialog" aria-modal="true" aria-labelledby="reset-title" aria-describedby="reset-body" className="surface fade-in w-full max-w-sm p-6">
             <h2 id="reset-title" className="section-title">
               Reset course progress?
             </h2>

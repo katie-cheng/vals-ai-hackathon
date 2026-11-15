@@ -343,7 +343,7 @@ export const LessonPlayerPage = () => {
           ))}
         </div>
 
-        <div role="tabpanel" className="mt-8 lg:w-[calc((100%-2rem)*2/3)]">
+        <div role="tabpanel" key={tab} className="fade-in mt-8 lg:w-[calc((100%-2rem)*2/3)]">
           {tab === "overview" && (
             <div className="space-y-10">
               <p className="text-ink-2">{lesson.description}</p>
@@ -624,7 +624,7 @@ export const LessonPlayerPage = () => {
             if (event.target === event.currentTarget) setShortcutsOpen(false);
           }}
         >
-          <div role="dialog" aria-modal="true" aria-labelledby="shortcuts-title" className="surface w-full max-w-sm p-6">
+          <div role="dialog" aria-modal="true" aria-labelledby="shortcuts-title" className="surface fade-in w-full max-w-sm p-6">
             <div className="flex items-center justify-between gap-4">
               <h2 id="shortcuts-title" className="section-title">
                 Keyboard shortcuts
