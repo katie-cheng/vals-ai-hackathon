@@ -17,6 +17,10 @@ const SCRATCHPAD_READY = "Run the code to see its console output.";
 
 const formatTime = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, "0")}`;
 
+// The scratchpad runs JavaScript only; HTML, CSS, Vue and shell references stay read-only.
+const isRunnableJs = (code?: string) =>
+  !!code && !/^\s*</.test(code) && !/^\s*(\$ |npm |npx |git |cd |mkdir |node )/m.test(code) && /\b(const|let|var|function|console)\b|=>/.test(code);
+
 export const LessonPlayerPage = () => {
   const { id } = useParams();
   const lessonId = parseInt(id || "1", 10);
@@ -36,7 +40,8 @@ export const LessonPlayerPage = () => {
   const lesson: any = LESSONS.find((item) => item.id === lessonId) || LESSONS[0];
   const chapter = CHAPTERS.find((item) => item.id === lesson.chapterId) || CHAPTERS[0];
   const chapterLessons = LESSONS.filter((item) => item.chapterId === lesson.chapterId);
-  const starterCode = lesson.interactiveCode?.initialCode || lesson.codeExample || 'console.log("Hello from Lesson!");';
+  const referenceRuns = isRunnableJs(lesson.codeExample);
+  const starterCode = lesson.interactiveCode?.initialCode || (referenceRuns ? lesson.codeExample : 'console.log("Hello from Lesson!");');
   const duration = lesson.durationMinutes * 60;
 
   const [playing, setPlaying] = React.useState(false);
@@ -359,7 +364,7 @@ export const LessonPlayerPage = () => {
                 <section>
                   <div className="flex items-baseline justify-between gap-4">
                     <h2 className="section-title">Code reference</h2>
-                    <button
+                    {referenceRuns && <button
                       type="button"
                       onClick={() => {
                         setCode(lesson.codeExample);
@@ -368,7 +373,7 @@ export const LessonPlayerPage = () => {
                       className="link flex-none text-sm"
                     >
                       Open in scratchpad
-                    </button>
+                    </button>}
                   </div>
                   <pre className="code-block mt-3">
                     <code>{lesson.codeExample}</code>
