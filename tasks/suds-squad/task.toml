@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/suds-squad"
+version = "0.1.0"
+description = "Redesign an existing cleaning-company site into an animation-heavy premium site while keeping its business information and quote flow; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "redesign"]
+
+[metadata]
+difficulty = "hard"
+category = "company-local-business"
+tags = ["design-arena", "local-business", "redesign"]
+source = "Design Arena webapps tournament 3628161e-e393-4d07-b3a3-e5546efe4bf5 (sites S13 muse-spark-1.3-max, S14 gpt-6-luna); /app starts as the reconstructed S13 site"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

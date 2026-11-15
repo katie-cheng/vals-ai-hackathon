@@ -208,7 +208,9 @@ async function grade(url, out) {
       if (task.HANDOFF_URLS) {
         await context.route(task.HANDOFF_URLS, (route) => {
           handoffs.push(route.request().url());
-          return route.abort();
+          // task.mjs HANDOFF_REPLY stands in for an endpoint the brief keeps (e.g. a quote API); without it the request is aborted.
+          const reply = task.HANDOFF_REPLY?.(route.request());
+          return reply ? route.fulfill(reply) : route.abort();
         });
       }
       try {

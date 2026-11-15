@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" class="booting">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04141f" />
+    <meta name="description" content="Residential window cleaning, gutter cleaning, house washing, and pressure washing across Connecticut. Call or text The Suds Squad at 860-578-6207 for a free quote." />
+    <meta property="og:title" content="The Suds Squad | Connecticut, In Its Best Light" />
+    <meta property="og:description" content="Window cleaning, gutter care, house washing, and pressure washing for Connecticut homes." />
+    <meta property="og:image" content="/images/hero-wash-first.jpg" />
+    <link rel="preload" as="image" href="/images/hero-wash-first.jpg" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-wght.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-latin-full.woff2" crossorigin />
+    <title>The Suds Squad | Connecticut Exterior Cleaning</title>
+    <style>
+      html, body { background: #04141f; }
+      #boot-loader { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: #04141f; transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+      #boot-loader.done { opacity: 0; pointer-events: none; }
+      #boot-loader i { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgb(147 188 198 / 0.2); border-top-color: #93bcc6; animation: boot-spin 0.7s linear infinite; }
+      @keyframes boot-spin { to { transform: rotate(360deg); } }
+      #root { transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+      html.booting #root { opacity: 0; }
+      @media (prefers-reduced-motion: reduce) { #boot-loader { display: none; } html.booting #root { opacity: 1; } }
+    </style>
+  </head>
+  <body>
+    <div id="boot-loader" aria-hidden="true"><i></i></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

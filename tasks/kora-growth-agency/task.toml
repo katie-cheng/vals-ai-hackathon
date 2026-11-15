@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/kora-growth-agency"
+version = "0.1.0"
+description = "Recreate a growth agency's multi-page marketing site (home, about, services, case studies, pricing, insights, contact) with its motion; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "multi-page"]
+
+[metadata]
+difficulty = "hard"
+category = "agency"
+tags = ["design-arena", "agency", "multi-page"]
+source = "Design Arena webapps tournament for sites S29 and S30 (muse-spark-1.3-max); reference https://kora.framer.media/"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]
