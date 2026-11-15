@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --page: #eceff3;
+}
+:root.dark {
+  color-scheme: dark;
+  --page: #0f172a;
+}
+
+html {
+  background: var(--page);
+  transition: background-color 400ms ease;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 0;
+}
+
+/* Theme changes fade instead of snapping. */
+.theme-fade,
+.theme-fade * {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
+}
+
+.glass {
+  background-color: rgb(255 255 255 / 0.62);
+  border: 1px solid rgb(15 23 42 / 0.08);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 12px 32px -16px rgb(15 23 42 / 0.18);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.dark .glass {
+  background-color: rgb(30 41 59 / 0.55);
+  border-color: rgb(148 163 184 / 0.14);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.2), 0 16px 40px -20px rgb(0 0 0 / 0.6);
+}
+
+/* Completed goals: the strike line draws in over the text. */
+.goal-text {
+  text-decoration-line: line-through;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  transition: text-decoration-color 350ms ease, color 350ms ease, opacity 350ms ease;
+}
+.goal-text[data-done="true"] {
+  text-decoration-color: currentColor;
+  opacity: 0.6;
+}
+.goal-text[data-done="false"] {
+  text-decoration-line: none;
+}
+.goal-text.just-done {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 55%;
+  background-size: 100% 2px;
+  text-decoration-color: transparent;
+  animation: strike 350ms ease-out both;
+}
+@keyframes strike {
+  from { background-size: 0 2px; }
+  to { background-size: 100% 2px; }
+}
+
+/* Voice visualiser: bars rise and fall while the companion talks. */
+.wave-bar {
+  transform-origin: center;
+  transform: scaleY(0.25);
+  transition: transform 300ms ease;
+}
+.speaking .wave-bar {
+  animation: wave 900ms ease-in-out infinite;
+}
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+.orb {
+  transition: transform 400ms ease, box-shadow 400ms ease;
+}
+.speaking .orb {
+  animation: orb 1.6s ease-in-out infinite;
+}
+@keyframes orb {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.toast-in {
+  animation: toast 250ms ease-out both;
+}
+@keyframes toast {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaking .wave-bar, .speaking .orb, .toast-in, .goal-text.just-done { animation: none; }
+  .wave-bar { transform: scaleY(0.6); }
+}

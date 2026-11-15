@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/preboards-hub"
+version = "0.1.0"
+description = "Build a glassmorphism study and exam countdown dashboard (countdown with settings, subject status tracker, goals checklist, Pomodoro, quotes, speech-synthesis voice companion, notifications, localStorage) from a Design Arena brief; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "web-app", "dashboard", "slop"]
+
+[metadata]
+difficulty = "medium"
+category = "interactive-app"
+tags = ["design-arena", "dashboard", "productivity", "single-page"]
+source = "Design Arena webapps tournament 7b9d98db-4206-4d31-9dd7-4bcee3c673e4 (sites S21 gpt-6-astra, S22 claude-opus-5-5)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]
