@@ -1,6 +1,6 @@
-# SlopBench — agent guide
+# Design Engineer Bench (DEB) — agent guide
 
-SlopBench measures how much "AI slop" frontier models produce when they build websites. A model gets a website brief, builds the site, and a grader scores the result for slop: generic, templated, decorative-without-purpose design and broken or fake content. It is being built for the Vals AI hackathon (team org `hackathon-what-does-the-fox-say-c2f1ff2066`). Demos are Sunday 2 PM.
+Design Engineer Bench (DEB, formerly SlopBench) measures how much "AI slop" frontier models produce when they build websites. A model gets a website brief, builds the site, and a grader scores the result for slop: generic, templated, decorative-without-purpose design and broken or fake content. It is being built for the Vals AI hackathon (team org `hackathon-what-does-the-fox-say-c2f1ff2066`). Demos are Sunday 2 PM.
 
 Read `MEMORY.md` before starting work and add to it when you make or learn a decision (see "Shared memory" below).
 
@@ -18,9 +18,9 @@ GitHub: `katie-cheng/vals-ai-hackathon` (default branch `devin/1794696598-game-e
 uv tool install valkyrie-cli
 valkyrie login                                   # only if not signed in
 valkyrie org use hackathon-what-does-the-fox-say-c2f1ff2066
-valkyrie dataset push slopbench/<dataset> ./tasks --tag v1
+valkyrie dataset push deb/<dataset> ./tasks --tag v1
 valkyrie run start --agent claude_code-v1.0.0 \
-  --dataset slopbench/<dataset>@v1 \
+  --dataset deb/<dataset>@v1 \
   --model anthropic/claude-sonnet-4-6 --provider modal \
   -s ANTHROPIC_API_KEY anthropic-api-key --concurrency 1 --connect
 valkyrie tui                                     # watch runs; whole team sees them
