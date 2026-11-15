@@ -76,3 +76,6 @@ Harbor task layout: `instruction.md` = brief, `environment/` = Node/Vite React b
 
 ## Slop Arena (pairwise votes)
 App: https://slop-arena--wtj4qv7i.preview.devinapps.com (code in `arena/`, served from Ali's session `3dc261cee00b4a5ea9c21e19dc95ff29`; votes in `~/slopbench-arena-data/arena.db` on that VM, export at `/api/export`). Blind side-by-side "which is sloppier?" votes over Design Arena sites (`data/snapshots/{dev,heldout}`) and YC homepages (`data/snapshots/yc/{pre2022,current}`, from `scripts/scrape_yc.py`; pre2022 = Internet Archive snapshot nearest 2021-07-01, a pre-ChatGPT human-made reference set). Votes fit a Bradley–Terry slop score; use them to weight mechanical checks and to evaluate graders (pairwise agreement on held-out sites). YC snapshots are git-ignored (large).
+
+## Credentials
+Never commit keys. Modal: the `modal` CLI/SDK reads `~/.modal.toml` (profile `aliahmad`, set up with `modal token set ... --profile=aliahmad --activate`) or the env vars `MODAL_TOKEN_ID` / `MODAL_TOKEN_SECRET`; code should rely on those, not hard-coded tokens. `.env` and `.modal.toml` are git-ignored.

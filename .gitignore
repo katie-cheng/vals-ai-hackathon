@@ -1,3 +1,5 @@
 data/snapshots/yc/
 __pycache__/
 data/snapshots/ai/
+.env
+.modal.toml
