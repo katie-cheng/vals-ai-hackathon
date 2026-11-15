@@ -6,7 +6,7 @@ Design Arena tournament `2a5d49ef-429e-4496-8f5a-8a23a4bf2302`, originals S09 (k
 | --- | --- | --- | --- | --- | --- |
 | golden (`solution/app`, local) | 1.000 | 1.000 | 1.000 | 1.000 | 0 |
 | golden (Docker: `solve.sh` then `tests/test.sh`) | 1.000 | 1.000 | 1.000 | 1.000 | 0 |
-| S09 https://afterlife-nexus-9wm7.arcada.app | 0.498 | 0.458 | 0.667 | 0.512 | 14.3 |
+| S09 https://afterlife-nexus-9wm7.arcada.app | 0.543 | 0.560 | 0.667 | 0.512 | 14.3 |
 | S10 https://afterlife-world-53em.arcada.app | 0.619 | 0.770 | 1.000 | 0.438 | 19.2 |
 
 ## What the golden fixes
@@ -21,4 +21,4 @@ Design Arena tournament `2a5d49ef-429e-4496-8f5a-8a23a4bf2302`, originals S09 (k
 
 ## Grader notes
 - In headless Chromium, `Notification.permission` is `denied`. `task.mjs` presents it as `default` and counts `requestPermission` calls, so it can check consent-gated prompting.
-- Keyboard, mouse and joystick checks compare screenshots taken before and after input against the frame's own idle change, so an animated scene doesn't pass for free. S09's world didn't move under synthetic WASD or a mouse drag. It may need pointer lock or focus that a real player would grant.
+- Keyboard, mouse and joystick checks compare screenshots taken before and after input against the frame's own idle change, so an animated scene doesn't pass for free.
