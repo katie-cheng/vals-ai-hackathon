@@ -14,7 +14,7 @@ function Process() {
     <section
       ref={a}
       id="process"
-      className="bg-tone-a relative overflow-hidden py-24 sm:py-32"
+      className="bg-tone-a grain relative overflow-hidden py-24 sm:py-32"
     >
       <div className="relative mx-auto grid max-w-6xl gap-10 px-6 sm:px-10 lg:px-24 grid-12 split-5-7">
         <div className="lg:sticky lg:top-28 lg:self-start">

@@ -244,5 +244,11 @@
   "sent_at": "2026-11-15T00:58-08:00",
   "element": "section backgrounds and cards",
   "comment": "instead of gradient, use textures like grain or maybe not have cards at all and just have text with dividers in between"
+ },
+ {
+  "rid": "R42",
+  "sent_at": "2026-11-15T01:00-08:00",
+  "element": "grain texture",
+  "comment": "grain should be used on selective elements not just backgrounds. if its used on backgrounds then anything above it should not have grain and should look like its above it (very slightly transparent/opaque) / also the grain is a bit big"
  }
 ]

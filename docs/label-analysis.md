@@ -26,7 +26,7 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
 ## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
-Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 41 labels (R1–R41, SlopLabel ids 461–501) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 42 labels (R1–R42, SlopLabel ids 461–502) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
 
 | Pattern | Labels | Mechanical? |
 |---|---|---|
@@ -57,6 +57,7 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Loaders are fine when minimal: no text/branding, simple ring, very short, fades into the page (contrast with S13 #-era branded preloaders cut in R14) | R39 | yes: loader overlay visible > ~600ms, or contains text |
 | Zigzag/alternating timeline: half the width empty per row and right-aligned body text on the left cards | R40 | yes: timeline items alternating columns, or text-align:right on multi-line paragraphs |
 | Card-for-everything: every list item boxed in a bordered/filled card; plain text with dividers reads cleaner. Texture (grain) preferred over gradients for depth | R41 | yes: count sibling elements with border+background+radius holding only a heading and a paragraph |
+| Texture applied everywhere / too coarse; translucent panels letting background texture bleed through so nothing reads as layered | R42 | partly: grain tile size and coverage share; panels over textured backgrounds with fill alpha < ~0.85 |
 | Dark/colour overlay tinting content photos (product imagery should show true colour) | R31 | yes: semi-opaque element stacked over an img with no text on it |
 | Hierarchy from heavy weights instead of contrast: large titles should be light (thin sans), with weight kept for small UI text (extends R1/R13) | R30, R32, R36 | yes: computed font-weight of large headings vs body; a regular-weight serif for the hero and section titles is fine (R32, R36) |
 | Flat everything reads unfinished: very subtle tonal background gradients are fine; the slop is glow, gradient text and saturated blobs (refines R3/R18) | R29 | yes: flag gradients by colour distance between stops and by text/blob use, not gradients as such |

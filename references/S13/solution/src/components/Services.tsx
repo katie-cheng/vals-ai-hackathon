@@ -140,7 +140,7 @@ function ServiceSwitcher() {
 
 function Services() {
   return (
-    <section id="services" className="bg-tone-a relative overflow-hidden py-24 sm:py-32">
+    <section id="services" className="bg-tone-a grain relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
       <div className="relative mx-auto max-w-6xl px-6 sm:px-10 lg:px-24">

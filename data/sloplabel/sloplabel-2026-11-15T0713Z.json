@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794733136.4516165
+   "updated_at": 1794733246.679655
   }
  ],
  "labels": [
@@ -12040,6 +12040,35 @@
    "shot_status": "none",
    "created_at": 1794733080.0,
    "updated_at": 1794733080.0
+  },
+  {
+   "id": 502,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R42\"]",
+   "comment": "grain should be used on selective elements not just backgrounds. if its used on backgrounds then anything above it should not have grain and should look like its above it (very slightly transparent/opaque) / also the grain is a bit big",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "grain texture",
+   "component_chain": null,
+   "selector": "section",
+   "selector_confidence": "manual",
+   "tag": "section",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"180px grain tile at .85 base frequency on every section background; panels 4-8% white fills let the grain show through\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794733200.0,
+   "updated_at": 1794733200.0
   }
  ]
 }

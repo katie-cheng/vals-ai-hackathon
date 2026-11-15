@@ -162,7 +162,7 @@ function BeforeAfter() {
   return (
     <section
       id="results"
-      className="bg-paper relative overflow-hidden py-24 text-[#04141f] sm:py-32"
+      className="bg-paper grain-light relative overflow-hidden py-24 text-[#04141f] sm:py-32"
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>

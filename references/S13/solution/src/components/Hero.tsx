@@ -116,7 +116,7 @@ function Hero() {
           </motion.div>
         </motion.div>
         <div className="absolute inset-x-0 bottom-0 z-10" aria-hidden>
-          <div className="overflow-hidden border-t border-white/10 bg-[#04141f]/85 py-3">
+          <div className="overflow-hidden grain border-t border-white/10 bg-[#04141f] py-3">
             <div className="animate-marquee flex w-max items-center gap-10 whitespace-nowrap pr-10">
               {[0, 1].map((M) => (
                 <div key={M} className="flex items-center gap-10">

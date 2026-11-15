@@ -131,7 +131,7 @@ function Header() {
           className={`fixed inset-x-0 top-0 z-[80] transition-all ${a ? "py-2" : "py-4"}`}
         >
           <div
-            className={`mx-auto flex max-w-6xl items-center justify-between gap-3 px-6 transition-all sm:px-10 lg:px-24 ${a ? "rounded-lg border border-white/10 bg-[#04141f]/80 py-2 backdrop-blur-2xl" : "border border-transparent bg-transparent py-1"}`}
+            className={`mx-auto flex max-w-6xl items-center justify-between gap-3 px-6 transition-all sm:px-10 lg:px-24 ${a ? "rounded-lg border border-white/10 bg-[var(--raised)] py-2 backdrop-blur-md" : "border border-transparent bg-transparent py-1"}`}
           >
             <Logo />
             <nav

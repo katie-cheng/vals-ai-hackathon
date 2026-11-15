@@ -8,7 +8,9 @@ Tokens live in `src/index.css` (`@theme` and `@layer components`) and `src/lib/a
 - Uppercase only in the hero service ribbon and in small meta labels (Before/After chips, footer column heads, price item names).
 
 ## Colour
-- Background `abyss` #04141f, flat, with a faint SVG film grain (`.bg-tone-a/b/c`, `.bg-paper` for light sections). No gradients (R41).
+- Background `abyss` #04141f, flat. No gradients (R41).
+- Grain (R42): a fine 110px SVG film grain, only on selected surfaces: `.grain` on Services, Process, Areas, the hero service ribbon and the footer; `.grain-light` on the light Results and Pricing sections. Why us, FAQ and Quote stay flat.
+- Raised fill (R42): anything sitting on a background (header bar, panels, inputs, chips, secondary and icon buttons) uses `--raised` rgb(12 33 45 / 0.92), hover `--raised-hover`, so it covers the grain and reads as layered above it.
 - Accent `cyan-300` #93bcc6 (muted sea-glass). Hover accent `cyan-200`.
 - Borders: `white/10` at rest, `white/15` on controls, `cyan-300/40` for hover or selected surfaces.
 
@@ -23,7 +25,7 @@ Tokens live in `src/index.css` (`@theme` and `@layer components`) and `src/lib/a
 - `.btn` + `.btn-primary` (filled accent) or `.btn-secondary` (outlined). `.btn-lg` for the hero CTA, the form submit and the mobile menu.
 - `.icon-btn`: 44px circular icon button (carousel arrows, menu, share, back to top). `.icon-btn-solid` on light sections.
 - `.option` / `.option-active`: selectable chips (services in the form, preferred contact, map towns).
-- `.surface`: functional frame (service carousel) with border `white/10`, radius 10px, flat `white/4` fill.
+- `.surface`: functional frame (service carousel) with border `white/10`, radius 10px, `--raised` fill.
 - Lists of content (Why us, Process steps, FAQ, contact links) are plain text separated by `white/10` hairline dividers, not cards (R41).
 
 ## Motion
