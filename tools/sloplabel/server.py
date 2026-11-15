@@ -232,7 +232,8 @@ class Shooter:
                 if status.startswith("failed"):
                     # keep whatever screenshots the label already has; only record the failure
                     for f in (shot, ctx_shot):
-                        f.unlink(missing_ok=True)
+                        if f:
+                            f.unlink(missing_ok=True)
                     con.execute("UPDATE labels SET shot_status=? WHERE id=?", (status, label_id))
                     return
                 final_shot, final_ctx = SHOTS / f"{label_id}.png", SHOTS / f"{label_id}_ctx.png"
