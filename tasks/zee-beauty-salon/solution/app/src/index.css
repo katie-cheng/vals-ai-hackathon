@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blush: #f7dde5;
+  --color-champagne: #d4af72;
+  --color-ivory: #fff9f4;
+  --color-rose: #c77d91;
+  /* Rose darkened to pass WCAG AA as text on ivory and blush. */
+  --color-rose-deep: #8e4a5e;
+  --color-charcoal: #292329;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-ivory font-sans text-charcoal antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-medium;
+    line-height: 1.08;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-rose-deep);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded px-5 py-3 text-[0.95rem] font-medium whitespace-nowrap transition duration-300;
+}
+@utility btn-dark {
+  @apply bg-charcoal text-ivory hover:bg-rose-deep;
+}
+@utility btn-outline {
+  @apply border border-charcoal/70 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-ivory;
+}
+@utility btn-light {
+  @apply bg-ivory text-charcoal hover:bg-blush;
+}
+@utility field-label {
+  @apply mb-1.5 block text-[0.95rem] font-medium;
+}
+@utility field {
+  @apply w-full rounded border border-charcoal/20 bg-white px-4 py-3 text-base transition outline-none focus:border-rose-deep focus:ring-2 focus:ring-rose/25 aria-invalid:border-rose-deep;
+}
+@utility field-error {
+  @apply mt-1.5 text-[0.9rem] text-rose-deep;
+}
+@utility section-title {
+  @apply text-[2.6rem] sm:text-5xl lg:text-[3.6rem];
+}
