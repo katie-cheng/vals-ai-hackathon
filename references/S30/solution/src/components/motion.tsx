@@ -1,265 +1,113 @@
-import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { useState, useEffect, useRef } from "react";
 
+// One easing and two durations for the whole site (DESIGN-SYSTEM.md, Motion).
 export const EASE = [0.22, 1, 0.36, 1];
-export function Reveal({ children: s, delay: n = 0, y: l = 44, className: r, once: d = !0 }) {
+export const DUR = 0.5;
+
+/** Entrance: a short fade with a 12px rise, once, in document order. */
+export function Reveal({ children, delay = 0, className }: any) {
+  const reduce = useReducedMotion();
   return (
     <motion.div
-      className={r}
-      initial={{
-        opacity: 0,
-        y: l,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: d,
-        margin: "-12% 0px",
-      }}
-      transition={{
-        duration: 0.9,
-        delay: n,
-        ease: EASE,
-      }}
+      className={className}
+      initial={reduce ? false : { opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-8% 0px" }}
+      transition={{ duration: DUR, delay: Math.min(delay, 0.24), ease: EASE }}
     >
-      {s}
+      {children}
     </motion.div>
   );
 }
-export function Stagger({ children: s, className: n, delay: l = 0, gap: r = 0.09 }) {
-  const d = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: r,
-        delayChildren: l,
-      },
-    },
-  };
+
+export function Stagger({ children, className }: any) {
+  const reduce = useReducedMotion();
   return (
     <motion.div
-      className={n}
-      variants={d}
-      initial="hidden"
+      className={className}
+      variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+      initial={reduce ? false : "hidden"}
       whileInView="show"
-      viewport={{
-        once: !0,
-        margin: "-10% 0px",
-      }}
+      viewport={{ once: true, margin: "-8% 0px" }}
     >
-      {s}
+      {children}
     </motion.div>
   );
 }
-export function StaggerItem({ children: s, className: n, y: l = 36 }) {
-  const r = {
-    hidden: {
-      opacity: 0,
-      y: l,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.85,
-        ease: EASE,
-      },
-    },
-  };
+
+export function StaggerItem({ children, className }: any) {
   return (
-    <motion.div className={n} variants={r}>
-      {s}
+    <motion.div className={className} variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: DUR, ease: EASE } } }}>
+      {children}
     </motion.div>
   );
 }
-export function SplitText({
-  text: s,
-  className: n,
-  as: l = "span",
-  delay: r = 0,
-  stagger: d = 0.035,
-  once: f = !0,
-}) {
-  const h = s.split(" "),
-    m = {
-      hidden: {},
-      show: {
-        transition: {
-          staggerChildren: d,
-          delayChildren: r,
-        },
-      },
-    },
-    g = {
-      hidden: {
-        y: "115%",
-        rotate: 3,
-      },
-      show: {
-        y: "0%",
-        rotate: 0,
-        transition: {
-          duration: 0.9,
-          ease: EASE,
-        },
-      },
-    },
-    x = motion[l] ?? motion.span;
+
+/** A heading that fades in as one block (the original split it into clipped words). */
+export function Heading({ text, as = "h2", className }: any) {
+  const reduce = useReducedMotion();
+  const Tag: any = (motion as any)[as];
   return (
-    <x
-      className={n}
-      variants={m}
-      initial="hidden"
-      whileInView="show"
-      viewport={{
-        once: f,
-        margin: "-8% 0px",
-      }}
-      aria-label={s}
+    <Tag
+      className={className}
+      initial={reduce ? false : { opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-8% 0px" }}
+      transition={{ duration: DUR, ease: EASE }}
     >
-      {h.map((y, v) => (
-        <span
-          key={v}
-          className="inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom"
-          aria-hidden={!0}
-        >
-          <motion.span className="inline-block will-change-transform" variants={g}>
-            {y}
-            {v < h.length - 1 ? " " : ""}
-          </motion.span>
-        </span>
-      ))}
-    </x>
+      {text}
+    </Tag>
   );
 }
-export function CountUp({
-  value: s,
-  decimals: n = 0,
-  prefix: l = "",
-  suffix: r = "",
-  duration: d = 1.8,
-  className: f,
-}) {
-  const h = useRef(null),
-    [m, g] = useState("0"),
-    x = useRef(!1);
+
+/** Counts up once when scrolled into view; tabular figures, final value under reduced motion. */
+export function CountUp({ value, decimals = 0, prefix = "", suffix = "", duration = 1.2, className }: any) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const reduce = useReducedMotion();
+  const final = Number(value).toFixed(decimals);
+  const [shown, setShown] = useState(final);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reduce) return;
+    let raf = 0;
+    let started = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting || started) return;
+        started = true;
+        // Start at the smallest number with as many digits as the final one: with tabular figures the width never changes.
+        const from = value >= 10 ? Math.pow(10, Math.floor(Math.log10(value))) : 0;
+        const t0 = performance.now();
+        const tick = (t: number) => {
+          const p = Math.min((t - t0) / (duration * 1000), 1);
+          setShown((from + (value - from) * (1 - Math.pow(1 - p, 3))).toFixed(decimals));
+          if (p < 1) raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+      },
+      { threshold: 0.4 },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, [value, decimals, duration, reduce]);
   return (
-    useEffect(() => {
-      const y = h.current;
-      if (!y) return;
-      const v = new IntersectionObserver(
-        (S) => {
-          if (S[0].isIntersecting && !x.current) {
-            x.current = !0;
-            const T = performance.now(),
-              j = (O) => {
-                const A = Math.min((O - T) / (d * 1e3), 1),
-                  R = 1 - Math.pow(1 - A, 4);
-                (g((s * R).toFixed(n)), A < 1 && requestAnimationFrame(j));
-              };
-            requestAnimationFrame(j);
-          }
-        },
-        {
-          threshold: 0.4,
-        },
-      );
-      return (v.observe(y), () => v.disconnect());
-    }, [s, n, d]),
-    (
-      <span ref={h} className={f}>
-        {l}
-        {m}
-        {r}
-      </span>
-    )
+    <span ref={ref} className={`tabular-nums ${className ?? ""}`} aria-label={`${prefix}${final}${suffix}`}>
+      {prefix}
+      {shown}
+      {suffix}
+    </span>
   );
 }
-export function Magnetic({ children: s, strength: n = 0.35, className: l }) {
-  const r = useRef(null),
-    [d, f] = useState({
-      x: 0,
-      y: 0,
-    });
+
+/** Image in a fixed-ratio frame; fades in, never scales or clips. */
+export function RevealImage({ src, alt, className, imgClassName, eager = false }: any) {
   return (
-    <motion.div
-      ref={r}
-      className={l}
-      animate={{
-        x: d.x,
-        y: d.y,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 180,
-        damping: 14,
-        mass: 0.4,
-      }}
-      onMouseMove={(h) => {
-        const m = r.current?.getBoundingClientRect();
-        m &&
-          f({
-            x: (h.clientX - (m.left + m.width / 2)) * n,
-            y: (h.clientY - (m.top + m.height / 2)) * n,
-          });
-      }}
-      onMouseLeave={() =>
-        f({
-          x: 0,
-          y: 0,
-        })
-      }
-    >
-      {s}
-    </motion.div>
-  );
-}
-export function ParallaxImage({ src: s, alt: n, className: l, imgClassName: r }) {
-  return (
-    <motion.div
-      className={l}
-      initial={{
-        clipPath: "inset(12% 8% 12% 8% round 32px)",
-        opacity: 0.3,
-      }}
-      whileInView={{
-        clipPath: "inset(0% 0% 0% 0% round 28px)",
-        opacity: 1,
-      }}
-      viewport={{
-        once: !0,
-        margin: "-10% 0px",
-      }}
-      transition={{
-        duration: 1.25,
-        ease: EASE,
-      }}
-      style={{
-        overflow: "hidden",
-      }}
-    >
-      <motion.img
-        src={s}
-        alt={n}
-        loading="lazy"
-        className={r ?? "h-full w-full object-cover"}
-        initial={{
-          scale: 1.18,
-        }}
-        whileInView={{
-          scale: 1,
-        }}
-        viewport={{
-          once: !0,
-          margin: "-10% 0px",
-        }}
-        transition={{
-          duration: 1.5,
-          ease: EASE,
-        }}
-      />
-    </motion.div>
+    <Reveal className={`overflow-hidden rounded-lg bg-cream-200 ${className ?? ""}`}>
+      <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" className={imgClassName ?? "h-full w-full object-cover"} />
+    </Reveal>
   );
 }

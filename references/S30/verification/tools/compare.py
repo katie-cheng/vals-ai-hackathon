@@ -10,10 +10,10 @@ from playwright.async_api import async_playwright
 SHOTS = [
     ("home-hero", "/", None, 900),
     ("work", "/work", None, 1500),
-    ("ledgerly-challenge", "/work/ledgerly", "The challenge", 900),
+    ("ledgerly-challenge", "/work/ledgerly", ("The challenge", "Where they started"), 900),
     ("ledgerly-cta-footer", "/work/ledgerly", "bottom", 1500),
     ("about", "/about", "Founded on a", 1100),
-    ("pricing", "/pricing", "alternatives", 1200),
+    ("pricing", "/pricing", ("alternatives", "Do the math"), 1200),
 ]
 
 
@@ -25,10 +25,10 @@ async def grab(b, base, route, anchor, ch):
         await pg.evaluate(f"window.scrollTo(0,{y})"); await pg.wait_for_timeout(80)
     if anchor == "bottom":
         y = h - ch
-    elif anchor:
-        y = await pg.evaluate("""t => { const e = [...document.querySelectorAll('h1,h2,h3,span,p')]
-            .find(e => e.innerText && e.innerText.toLowerCase().includes(t.toLowerCase()));
-            return e ? e.getBoundingClientRect().top + scrollY - 150 : 0 }""", anchor)
+    elif anchor:  # a tuple is tried in order: the heading wording differs between before and after
+        y = await pg.evaluate("""ts => { const all = [...document.querySelectorAll('h1,h2,h3,span,p')];
+            const e = ts.map(t => all.find(e => e.innerText && e.innerText.toLowerCase().includes(t.toLowerCase()))).find(Boolean);
+            return e ? e.getBoundingClientRect().top + scrollY - 150 : 0 }""", [anchor] if isinstance(anchor, str) else list(anchor))
     else:
         y = 0
     await pg.evaluate("window.scrollTo(0,0)"); await pg.wait_for_timeout(500)
