@@ -86,6 +86,17 @@ export function probe(only) {
   }
 
   // Slop patterns.
+  // A scrolling ribbon (marquee) of uppercase service names is an accepted pattern, not an eyebrow.
+  const inRibbon = (el) => {
+    for (let a = el.parentElement, i = 0; a && i < 5; a = a.parentElement, i++) {
+      const as = getComputedStyle(a);
+      if (as.whiteSpace !== "nowrap" || as.display !== "flex") continue;
+      const box = a.parentElement;
+      if (box && getComputedStyle(box).overflowX !== "visible" && a.scrollWidth > 1.5 * box.clientWidth) return true;
+      if (a.getAnimations().some((x) => x.effect?.getComputedTiming().iterations === Infinity)) return true;
+    }
+    return false;
+  };
   const eyebrowTexts = new Map();
   const numbered = [];
   const emoji = [];
@@ -103,7 +114,7 @@ export function probe(only) {
     emDashes += (t.match(/—/g) || []).length;
     const letters = t.replace(/[^A-Za-z]/g, "");
     const upper = cs.textTransform === "uppercase" || (letters.length >= 3 && letters === letters.toUpperCase());
-    if (fs <= 13 && px(cs.letterSpacing) >= Math.max(0.8, 0.06 * fs) && upper && letters.length >= 3 && words <= 8 && !eyebrowTexts.has(t.toUpperCase()))
+    if (fs <= 13 && px(cs.letterSpacing) >= Math.max(0.8, 0.06 * fs) && upper && letters.length >= 3 && words <= 8 && !eyebrowTexts.has(t.toUpperCase()) && !inRibbon(el))
       eyebrowTexts.set(t.toUpperCase(), finding(el, { fontSize: cs.fontSize, letterSpacing: cs.letterSpacing }));
     if (/^\(?0\d\)?([\s./:)\-–—]|$)/.test(t)) numbered.push(finding(el));
     const dots = (t.match(/[·•]/g) || []).length;
@@ -121,6 +132,8 @@ export function probe(only) {
   for (const h of headingEls) {
     const hs = getComputedStyle(h);
     const ht = clean(h.innerText);
+    // A price with a smaller unit ("$5 each") is not an accented headline.
+    if (/^[+-]?[$€£¥]\s?\d/.test(ht)) continue;
     for (const d of h.querySelectorAll("em,i,span,strong,b,mark")) {
       const dt = clean(d.innerText);
       if (!dt || dt.length >= 0.9 * ht.length || !visible(d)) continue;
