@@ -123,7 +123,8 @@ export function probe(only) {
       dotSeparators += dots;
       if (dotExamples.length < MAX_EXAMPLES) dotExamples.push(finding(el));
     }
-    const em = t.match(emojiRe);
+    // ★/☆ runs are star ratings, not icons.
+    const em = t.replace(/[★☆]/g, "").match(emojiRe);
     if (em) emoji.push(finding(el, { glyphs: em.join("") }));
   }
 
