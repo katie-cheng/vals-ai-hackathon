@@ -82,7 +82,7 @@ def main():
     ranked = sorted(held, key=lambda k: -sc[k])
     grid = "".join(f'<div class="rk"><div class="n">#{i + 1}</div>{card(k, big=False)}</div>' for i, k in enumerate(ranked))
     acc = f"{np.mean(hits):.0%} ({sum(hits)}/{len(hits)} side-picking votes)" if hits else "n/a"
-    page = f"""<!doctype html><meta charset="utf-8"><title>SlopBench: held-out predictions</title>
+    page = f"""<!doctype html><meta charset="utf-8"><title>Design Engineer Bench: held-out predictions</title>
 <style>
 body{{font:14px/1.45 system-ui,sans-serif;margin:24px auto;max-width:1060px;color:#1a1a1a;padding:0 16px}}
 h1{{font-size:22px;margin:0 0 4px}} h2{{font-size:17px;margin:32px 0 8px;border-bottom:1px solid #ddd;padding-bottom:4px}}
