@@ -18,6 +18,7 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Test set covers 8 website types, not just Design Arena briefs: `data/testset.json` (frozen; includes the 10 held-out arena sites); its sites are excluded from training [Ali; 2026-11-14]
 - Show pre-2022 YC sites rarely (picker weight 0.1) and prefer modern (2024+) YC homepages [Ali; 2026-11-14]
 - Top-company sites (`data/web/curated_top.tsv`) are a high-quality anchor; treat them as likely-clean, not proven clean [Ali; 2026-11-14]
+- Arena votes are committed as snapshots in `data/arena/` via `scripts/export_arena.py` (the live `/api/export` is auth-gated to the serving session); rerun and commit after voting sessions [Katie; 2026-11-15]
 
 ## Facts and gotchas
 - Design Arena webapp entries are Vite+React builds on `*.arcada.app`; source is not exposed (`code: null`), but bundles carry `data-source-loc` component tags [Katie; 2026-11-14]
