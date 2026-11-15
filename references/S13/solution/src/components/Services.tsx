@@ -81,7 +81,7 @@ function ServiceSwitcher() {
         aria-roledescription="carousel"
         aria-label="Cleaning services"
         tabIndex={0}
-        className="relative rounded-md outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+        className="relative touch-pan-y rounded-md outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") (e.preventDefault(), go(active + 1));
           if (e.key === "ArrowLeft") (e.preventDefault(), go(active - 1));
