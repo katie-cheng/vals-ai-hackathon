@@ -2,7 +2,7 @@
 
 @theme {
   --font-serif: "Fraunces", Georgia, serif;
-  --font-display: "Archivo", system-ui, sans-serif;
+  --font-display: "Inter Variable", "Inter", system-ui, sans-serif;
   --color-abyss: #04141f;
   /* R19: muted sea-glass accent instead of neon cyan; cool greys instead of sky blues */
   --color-cyan-100: #dbe9ec;

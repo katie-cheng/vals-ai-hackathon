@@ -14,7 +14,7 @@ SHOTS = ROOT / "data/sloplabel/shots"
 
 HEADER = dict(sel="header", clip_top=110)
 HERO_TOP = dict(sel="#top h1", pad=170)
-SVC = dict(sel="#services [role=tabpanel]", pad=24)
+SVC = dict(sel="#service-panel", pad=24)
 SLIDER = dict(sel="#results [role=slider]", pad=16)
 STEPS = dict(sel="#process .space-y-10", pad=10, maxh=900)
 # where each critiqued element lives (or used to live) in the rebuild
@@ -25,7 +25,7 @@ SPEC = {
     73: dict(sel="#top .animate-marquee >> xpath=../..", pad=30, fullw=True),
     67: dict(sel="#services h2", pad=60), 75: SVC, 107: SVC, 126: SVC, 127: SVC, 131: SVC,
     133: SVC, 134: SVC, 135: SVC, 136: dict(sel="#services", pad=0, maxh=1400),
-    139: dict(sel="#results button:has-text('House Siding') >> xpath=..", pad=20),
+    139: dict(sel="#results button[aria-label='Next comparison'] >> xpath=..", pad=20),
     144: SLIDER, 150: SLIDER,
     157: dict(SLIDER, keys=["Home"] + ["ArrowRight"] * 6), 170: dict(SLIDER, keys=["Home"] + ["ArrowRight"] * 3),
     174: dict(SLIDER, keys=["Home"] + ["ArrowRight"] * 12), 190: dict(SLIDER, keys=["End"] + ["ArrowLeft"] * 3),
@@ -46,7 +46,7 @@ SPEC = {
     280: dict(sel="#quote .glass-strong", pad=20, maxh=420), 281: dict(sel="#quote .glass-strong", pad=20, maxh=420),
     284: dict(sel="footer .border-t >> nth=1", pad=30), 287: dict(sel="footer .md\\:grid-cols-\\[1\\.4fr_1fr_1fr\\]", pad=20, below=140),
     285: dict(sel="footer button[aria-label='Share this website']", pad=70),
-    292: dict(sel="#services [role=tabpanel]", pad=10), 297: dict(sel="#services [role=tabpanel]", pad=10),
+    292: dict(sel="#service-panel", pad=10), 297: dict(sel="#service-panel", pad=10),
 }
 
 HIDE_HEADER = "header{visibility:hidden!important}"

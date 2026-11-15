@@ -63,13 +63,11 @@ function ServiceSwitcher() {
   const [active, setActive] = React.useState(0),
     [dir, setDir] = React.useState(1),
     n = services.length,
-    tabs = React.useRef<(HTMLButtonElement | null)[]>([]),
     swipe = React.useRef<{ x: number; y: number } | null>(null),
-    go = (k: number, focus = false) => {
+    go = (k: number) => {
       const next = (k + n) % n;
       setDir(next > active || (active === n - 1 && next === 0) ? 1 : -1);
       setActive(next);
-      if (focus) tabs.current[next]?.focus();
     };
   React.useEffect(() => {
     services.forEach((sv) => {
@@ -79,40 +77,16 @@ function ServiceSwitcher() {
   return (
     <Reveal>
       <div
-        role="tablist"
-        aria-label="Cleaning services"
-        className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
-        onKeyDown={(e) => {
-          if (e.key === "ArrowRight") (e.preventDefault(), go(active + 1, true));
-          if (e.key === "ArrowLeft") (e.preventDefault(), go(active - 1, true));
-        }}
-      >
-        {services.map((sv, k) => {
-          const on = k === active;
-          return (
-            <button
-              key={sv.slug}
-              ref={(el) => {
-                tabs.current[k] = el;
-              }}
-              id={`service-tab-${sv.slug}`}
-              role="tab"
-              aria-selected={on}
-              aria-controls="service-panel"
-              tabIndex={on ? 0 : -1}
-              onClick={() => go(k)}
-              className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2.5 text-[13.5px] font-semibold transition-all duration-300 ${on ? "border-cyan-300 bg-cyan-300 text-[#04141f]" : "border-white/15 bg-white/5 text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
-            >
-              {sv.name}
-            </button>
-          );
-        })}
-      </div>
-      <div
         id="service-panel"
-        role="tabpanel"
-        aria-labelledby={`service-tab-${services[active].slug}`}
-        className="relative"
+        role="group"
+        aria-roledescription="carousel"
+        aria-label="Cleaning services"
+        tabIndex={0}
+        className="relative rounded-md outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowRight") (e.preventDefault(), go(active + 1));
+          if (e.key === "ArrowLeft") (e.preventDefault(), go(active - 1));
+        }}
         onPointerDown={(e) => {
           if (e.pointerType !== "mouse") swipe.current = { x: e.clientX, y: e.clientY };
         }}

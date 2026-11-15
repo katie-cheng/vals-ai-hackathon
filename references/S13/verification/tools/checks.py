@@ -88,33 +88,33 @@ def mobile_menu(br):
 def services(br):
     pg = br.new_page(viewport={"width": 1440, "height": 900})
     pg.goto(URL, wait_until="load"); pg.wait_for_timeout(2800)
-    tabs = pg.locator("#services [role=tab]")
-    n = tabs.count()
-    panel_title = lambda: pg.locator("#services [role=tabpanel] h3").first.inner_text()
-    tabs.nth(2).scroll_into_view_if_needed(); tabs.nth(2).click(); pg.wait_for_timeout(900)
-    t2 = tabs.nth(2).inner_text().strip(); p2 = panel_title()
-    rec("services: 6 tabs, clicking a tab shows that service", n == 6 and t2.split("\n")[-1] in p2, f"tabs={n} tab='{t2}' panel='{p2}'")
-    pg.locator("#services button[aria-label*='Next']").click(); pg.wait_for_timeout(900)
-    rec("services: next button advances", tabs.nth(3).get_attribute("aria-selected") == "true", panel_title())
-    pg.locator("#services button[aria-label*='Previous']").click(); pg.wait_for_timeout(900)
-    rec("services: previous button goes back", tabs.nth(2).get_attribute("aria-selected") == "true", panel_title())
-    tabs.nth(2).focus(); pg.keyboard.press("ArrowRight"); pg.wait_for_timeout(900)
-    rec("services: ArrowRight on tabs advances", tabs.nth(3).get_attribute("aria-selected") == "true")
+    panel = pg.locator("#service-panel")
+    title = lambda: panel.locator("h3").first.inner_text().strip()
+    nxt = pg.locator("#services button[aria-label*='Next']"); prv = pg.locator("#services button[aria-label*='Previous']")
+    panel.scroll_into_view_if_needed(); pg.wait_for_timeout(800)
+    rec("services: no duplicate pill tabs next to the arrows (R22)", pg.locator("#services [role=tab]").count() == 0)
+    t0 = title(); nxt.click(); pg.wait_for_timeout(900); t1 = title()
+    rec("services: next button advances", t1 != t0, f"{t0} -> {t1}")
+    prv.click(); pg.wait_for_timeout(900)
+    rec("services: previous button goes back", title() == t0, title())
+    panel.focus(); pg.keyboard.press("ArrowRight"); pg.wait_for_timeout(900)
+    rec("services: ArrowRight on the focused carousel advances", title() == t1, title())
     titles = set()
-    for i in range(n):
-        tabs.nth(i).click(); pg.wait_for_timeout(700); titles.add(panel_title())
+    for _ in range(6):
+        titles.add(title()); nxt.click(); pg.wait_for_timeout(700)
     rec("services: every service reachable", len(titles) == 6, sorted(titles))
     pg.close()
     pg = br.new_page(viewport={"width": 390, "height": 844}, has_touch=True, is_mobile=True)
     pg.goto(URL, wait_until="load"); pg.wait_for_timeout(2800)
-    panel = pg.locator("#services [role=tabpanel]"); panel.scroll_into_view_if_needed(); pg.wait_for_timeout(800)
+    panel = pg.locator("#service-panel"); panel.scroll_into_view_if_needed(); pg.wait_for_timeout(800)
+    t0 = panel.locator("h3").first.inner_text().strip()
     b = panel.bounding_box()
     pg.evaluate("""([x,y]) => { const el=document.elementFromPoint(x,y);
         const ev=(t,cx)=>el.dispatchEvent(new PointerEvent(t,{bubbles:true,pointerType:'touch',pointerId:1,isPrimary:true,clientX:cx,clientY:y}));
         ev('pointerdown',x); ev('pointermove',x-80); ev('pointerup',x-160); }""",
         [b["x"] + b["width"] * 0.75, b["y"] + 120])
     pg.wait_for_timeout(900)
-    rec("services: swipe left on mobile advances", pg.locator("#services [role=tab]").nth(1).get_attribute("aria-selected") == "true")
+    rec("services: swipe left on mobile advances", panel.locator("h3").first.inner_text().strip() != t0)
     pg.close()
 
 
@@ -133,10 +133,11 @@ def slider(br):
     rec("slider: dragging moves it", abs(v2 - 20) <= 4, f"after drag={v2}")
     pg.mouse.click(b["x"] + b["width"] * 0.8, b["y"] + b["height"] / 2); pg.wait_for_timeout(300)
     rec("slider: click moves it", abs(int(s.get_attribute("aria-valuenow")) - 80) <= 4, s.get_attribute("aria-valuenow"))
-    tabs = pg.locator("#results button:has-text('House Siding') >> xpath=..").locator("button")
+    rec("before/after: no duplicate pill tabs next to the arrows (R22)", pg.locator("#results button:has-text('Driveway')").count() == 0)
     srcs = set()
-    for i in range(tabs.count()):
-        tabs.nth(i).click(); pg.wait_for_timeout(900)
+    for i in range(6):
+        if i: pg.locator("#results button[aria-label='Next comparison']").click()
+        pg.wait_for_timeout(900)
         srcs.add(tuple(pg.eval_on_selector_all("#results [role=slider] img", "els=>els.map(e=>e.getAttribute('src'))")))
     pairs = [p for p in srcs]
     rec("before/after: 6 comparisons, each with distinct before and after images", len(pairs) == 6 and all(len(set(p)) == 2 for p in pairs), pairs)

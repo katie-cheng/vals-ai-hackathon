@@ -118,5 +118,17 @@
   "sent_at": "2026-11-15T00:25-08:00",
   "element": "page side padding",
   "comment": "add more side padding to the site - like the left and right should have a bit more room"
+ },
+ {
+  "rid": "R21",
+  "sent_at": "2026-11-15T00:27-08:00",
+  "element": "sans-serif body/UI font",
+  "comment": "can we make the sans serif font something more tasteful like inter-like"
+ },
+ {
+  "rid": "R22",
+  "sent_at": "2026-11-15T00:27-08:00",
+  "element": "service and before/after pill selectors",
+  "comment": "cut all the pill selections if they are navigable through arrows, dont make it repetitive"
  }
 ]

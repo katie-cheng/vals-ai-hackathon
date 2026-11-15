@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794731163.7221174
+   "updated_at": 1794731308.3245578
   }
  ],
  "labels": [
@@ -11431,6 +11431,64 @@
    "shot_status": "none",
    "created_at": 1794731100.0,
    "updated_at": 1794731100.0
+  },
+  {
+   "id": 481,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R21\"]",
+   "comment": "can we make the sans serif font something more tasteful like inter-like",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "sans-serif body/UI font",
+   "component_chain": null,
+   "selector": "body",
+   "selector_confidence": "manual",
+   "tag": "body",
+   "text": "",
+   "rect": null,
+   "styles": "{\"font-family\": \"Archivo, system-ui, sans-serif\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794731220.0,
+   "updated_at": 1794731220.0
+  },
+  {
+   "id": 482,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R22\"]",
+   "comment": "cut all the pill selections if they are navigable through arrows, dont make it repetitive",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "service and before/after pill selectors",
+   "component_chain": null,
+   "selector": "#services [role=tablist]",
+   "selector_confidence": "manual",
+   "tag": "div",
+   "text": "Pressure Washing · Exterior Window Cleaning · Interior Window Cleaning · Gutter Cleaning · House Washing · Driveway & Patio Cleaning",
+   "rect": null,
+   "styles": "{}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794731220.0,
+   "updated_at": 1794731220.0
   }
  ]
 }

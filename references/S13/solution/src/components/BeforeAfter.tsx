@@ -182,27 +182,6 @@ function BeforeAfter() {
               </p>
             </Reveal>
           </div>
-          <Reveal delay={0.15} className="flex flex-wrap gap-2">
-            {comparisons.map((l, u) => (
-              <button
-                key={l.slug}
-                onClick={() => i(u)}
-                className={`group relative overflow-hidden rounded-md px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${u === a ? "bg-[#04141f] text-white" : "bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-sky-400 hover:text-sky-700"}`}
-              >
-                {u === a && (
-                  <motion.span
-                    layoutId="tab-glow"
-                    className="absolute inset-0 bg-cyan-400/30"
-                    transition={{
-                      duration: 0.5,
-                      ease: EASE,
-                    }}
-                  />
-                )}
-                <span className="relative">{l.title}</span>
-              </button>
-            ))}
-          </Reveal>
         </div>
         <Reveal>
           <ComparisonSlider active={a} />
@@ -229,7 +208,10 @@ function BeforeAfter() {
               }}
               className="max-w-2xl"
             >
-              <p className="text-[15px] leading-relaxed text-slate-600">
+              <p className="text-[15px] font-medium text-[#04141f]">
+                {r.title}
+              </p>
+              <p className="mt-1 text-[15px] leading-relaxed text-slate-600">
                 {r.description}
               </p>
             </motion.div>
