@@ -16,12 +16,12 @@ ts = time.strftime("%Y-%m-%dT%H%MZ", time.gmtime())
 src = sqlite3.connect(app.DB)
 src.row_factory = sqlite3.Row
 
-dst = sqlite3.connect(out / f"arena-{ts}.db")
-src.backup(dst)
-dst.close()
+snap = sqlite3.connect(out / f"arena-{ts}.db")
+src.backup(snap)
+snap.row_factory = sqlite3.Row
 
-votes = [dict(r) for r in src.execute("SELECT * FROM votes ORDER BY id")]
-removed = [dict(r) for r in src.execute("SELECT * FROM removed ORDER BY site_id")]
+votes = [dict(r) for r in snap.execute("SELECT * FROM votes ORDER BY id")]
+removed = [dict(r) for r in snap.execute("SELECT * FROM removed ORDER BY site_id")]
 sites = {k: {f: v for f, v in s.items() if f not in ("dir", "prompt")} for k, s in app.sites().items()}
 json.dump({"exported_at": ts, "sites": sites, "votes": votes, "removed": removed},
           open(out / f"arena-{ts}.json", "w"), indent=1)
