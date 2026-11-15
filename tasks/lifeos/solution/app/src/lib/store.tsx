@@ -53,7 +53,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [confirm, setConfirm] = useState<ConfirmRequest | null>(null);
   const toastId = useRef(0);
 
+  const adopted = useRef(false);
   useEffect(() => {
+    // A document adopted from another tab is already stored; writing it back could clobber that tab's newer save.
+    if (adopted.current) { adopted.current = false; return; }
     localStorage.setItem(KEY, JSON.stringify(data));
   }, [data]);
 
@@ -61,6 +64,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
       if (e.key !== KEY) return;
+      adopted.current = true;
       setData(load());
     };
     addEventListener("storage", onStorage);
