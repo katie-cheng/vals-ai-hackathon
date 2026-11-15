@@ -50,12 +50,12 @@ export function Preloader({ done: s }) {
               duration: 0.4,
               ease: EASE,
             }}
-            className="relative text-sm font-bold text-mint-300"
+            className="relative text-sm font-semibold text-mint-300"
           >
             {preloaderWords[r]}
           </motion.span>
         </AnimatePresence>
-        <div className="relative mt-4 text-7xl font-extrabold tracking-tight tabular-nums sm:text-8xl">
+        <div className="relative mt-4 text-7xl font-bold tracking-tight tabular-nums sm:text-8xl">
           {n}
           <span className="text-mint-300">%</span>
         </div>
@@ -67,7 +67,7 @@ export function Preloader({ done: s }) {
             }}
           />
         </div>
-        <span className="relative mt-6 text-xl font-extrabold">
+        <span className="relative mt-6 text-xl font-bold">
           kora<span className="text-mint-300">.</span>
         </span>
       </motion.div>

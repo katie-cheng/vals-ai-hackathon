@@ -144,7 +144,7 @@ function HomeHero() {
           <Magnetic>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-8 py-4 text-sm font-extrabold text-ink-900 transition-colors duration-300 hover:bg-mint-300"
+              className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-8 py-4 text-sm font-bold text-ink-900 transition-colors duration-300 hover:bg-mint-300"
             >
               Book your free growth call
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -153,7 +153,7 @@ function HomeHero() {
           <Magnetic>
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 rounded-full border border-cream-50/30 bg-cream-50/5 px-8 py-4 text-sm font-extrabold text-cream-50 backdrop-blur-md transition-colors duration-300 hover:border-cream-50/70"
+              className="inline-flex items-center gap-2 rounded-full border border-cream-50/30 bg-cream-50/5 px-8 py-4 text-sm font-bold text-cream-50 backdrop-blur-md transition-colors duration-300 hover:border-cream-50/70"
             >
               {"See our results "}
               <ArrowRight className="h-4 w-4" />
@@ -193,7 +193,7 @@ function HomeHero() {
                 <Star key={v} className="h-3.5 w-3.5 fill-current" />
               ))}
             </div>
-            <p className="mt-1 text-xs font-semibold">Trusted by 120+ growth-stage teams</p>
+            <p className="mt-1 text-xs font-medium">Trusted by 120+ growth-stage teams</p>
           </div>
         </motion.div>
       </motion.div>
@@ -209,7 +209,7 @@ function HomeLogos() {
   return (
     <section className="border-b border-ink-900/8 py-10">
       <Reveal y={20}>
-        <p className="text-center text-xs font-extrabold text-ink-500">
+        <p className="text-center text-xs font-bold text-ink-500">
           Powering growth for category leaders
         </p>
       </Reveal>
@@ -223,7 +223,7 @@ function HomeLogos() {
           {[...clientLogos, ...clientLogos].map((s, n) => (
             <span
               key={n}
-              className="flex shrink-0 items-center gap-3 text-xl font-extrabold tracking-tight whitespace-nowrap text-ink-900/35 transition-colors hover:text-ink-900"
+              className="flex shrink-0 items-center gap-3 text-xl font-bold tracking-tight whitespace-nowrap text-ink-900/35 transition-colors hover:text-ink-900"
             >
               <span className="h-2 w-2 rounded-full bg-pine-600/50" />
               {s}
@@ -246,7 +246,7 @@ function HomeA8() {
     ];
   return (
     <section ref={s} className="container-x section-pad max-w-4xl text-center">
-      <div className="mt-6 text-3xl leading-[1.25] font-extrabold tracking-tight text-ink-900 sm:text-5xl sm:leading-[1.15]">
+      <div className="mt-6 text-3xl leading-[1.25] font-bold tracking-tight text-ink-900 sm:text-5xl sm:leading-[1.15]">
         {l.map((r, d) => (
           <p key={d} className={d === 1 ? "mt-2" : ""}>
             {r.split(" ").map((f, h, m) => {
@@ -268,7 +268,7 @@ function HomeA8() {
       <Reveal delay={0.1}>
         <Link
           to="/about"
-          className="group mt-8 inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
+          className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-pine-700"
         >
           More about our story
           <span className="grid h-8 w-8 place-items-center rounded-full bg-pine-700 text-cream-50 transition-transform duration-300 group-hover:translate-x-1">
@@ -335,13 +335,13 @@ function HomeN8() {
                     className="group flex w-full items-center gap-5 py-5 text-left"
                   >
                     <span
-                      className={`text-xs font-extrabold tabular-nums transition-colors ${d ? "text-mint-300" : "text-cream-50/30"}`}
+                      className={`text-xs font-bold tabular-nums transition-colors ${d ? "text-mint-300" : "text-cream-50/30"}`}
                     >
                       0{r + 1}
                     </span>
                     <span className="flex-1">
                       <span
-                        className={`block text-xl font-extrabold tracking-tight transition-all duration-300 sm:text-2xl ${d ? "translate-x-1 text-cream-50" : "text-cream-50/55 group-hover:text-cream-50/85"}`}
+                        className={`block text-xl font-bold tracking-tight transition-all duration-300 sm:text-2xl ${d ? "translate-x-1 text-cream-50" : "text-cream-50/55 group-hover:text-cream-50/85"}`}
                       >
                         {l.name}
                       </span>
@@ -371,7 +371,7 @@ function HomeN8() {
                             </span>
                             <Link
                               to={`/services/${l.slug}`}
-                              className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-extrabold text-mint-300"
+                              className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-mint-300"
                               onClick={(f) => f.stopPropagation()}
                             >
                               {"Explore service "}
@@ -437,12 +437,12 @@ function HomeN8() {
                       transition={{
                         duration: 0.4,
                       }}
-                      className="text-lg font-extrabold"
+                      className="text-lg font-bold"
                     >
                       {services[s].name}
                     </motion.p>
                   </AnimatePresence>
-                  <p className="text-xs font-semibold text-cream-50/60">
+                  <p className="text-xs font-medium text-cream-50/60">
                     0{s + 1}
                     {" / 06"}
                   </p>
@@ -472,7 +472,7 @@ function HomeI8() {
             delay={n * 0.08}
             className={`text-center ${n > 0 ? "lg:border-l lg:border-ink-900/10" : ""}`}
           >
-            <div className="text-4xl font-extrabold tracking-tight text-ink-900 tabular-nums sm:text-5xl">
+            <div className="text-4xl font-bold tracking-tight text-ink-900 tabular-nums sm:text-5xl">
               <CountUp
                 value={s.value}
                 decimals={s.decimals ?? 0}
@@ -480,7 +480,7 @@ function HomeI8() {
                 suffix={s.suffix ?? ""}
               />
             </div>
-            <p className="mx-auto mt-2 max-w-[12rem] text-[13px] leading-snug font-semibold text-ink-500">
+            <p className="mx-auto mt-2 max-w-[12rem] text-[13px] leading-snug font-medium text-ink-500">
               {s.label}
             </p>
           </Reveal>
@@ -509,7 +509,7 @@ function HomeL8() {
           <Reveal delay={0.25}>
             <Link
               to="/contact"
-              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
+              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-bold text-cream-50 transition-colors hover:bg-pine-700"
             >
               Start with a diagnosis
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -532,18 +532,18 @@ function HomeL8() {
                     <span className="h-3 w-3 rounded-full border-[3px] border-cream-50 bg-pine-600 ring-2 ring-pine-600/30" />
                   </span>
                   <div className="flex items-start justify-between gap-4">
-                    <span className="text-xs font-extrabold tracking-[0.2em] text-pine-600">{r.n}</span>
-                    <span className="text-4xl font-extrabold text-ink-900/8 transition-colors duration-500 group-hover:text-pine-600/20 sm:text-5xl">
+                    <span className="text-xs font-bold tracking-[0.2em] text-pine-600">{r.n}</span>
+                    <span className="text-4xl font-bold text-ink-900/8 transition-colors duration-500 group-hover:text-pine-600/20 sm:text-5xl">
                       {r.n}
                     </span>
                   </div>
-                  <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">{r.title}</h3>
+                  <h3 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{r.title}</h3>
                   <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-500">{r.desc}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {r.tags.map((f) => (
                       <span
                         key={f}
-                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-bold text-ink-700"
+                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-ink-700"
                       >
                         {f}
                       </span>
@@ -575,7 +575,7 @@ function HomeCases() {
           <Reveal delay={0.15}>
             <Link
               to="/work"
-              className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
             >
               View all case studies
               <span className="grid h-9 w-9 place-items-center rounded-full border border-pine-700/30 transition-all duration-300 group-hover:bg-pine-700 group-hover:text-cream-50">
@@ -598,21 +598,21 @@ function HomeCases() {
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="lazy"
                   />
-                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-extrabold text-cream-50 backdrop-blur-md">
+                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
                     {n.industry}
                   </span>
                 </div>
                 <div className="flex flex-col justify-center p-7 sm:p-10">
-                  <p className="text-xs font-extrabold text-pine-600">
+                  <p className="text-xs font-bold text-pine-600">
                     {n.client}
                   </p>
-                  <h3 className="mt-3 text-2xl leading-tight font-extrabold tracking-tight sm:text-[2rem]">
+                  <h3 className="mt-3 text-2xl leading-tight font-bold tracking-tight sm:text-[2rem]">
                     {n.title}
                   </h3>
                   <div className="mt-6 grid grid-cols-3 gap-4 border-t border-ink-900/10 pt-6">
                     {n.metrics.map((r) => (
                       <div key={r.label}>
-                        <div className="text-xl font-extrabold tracking-tight text-ink-900 tabular-nums sm:text-2xl">
+                        <div className="text-xl font-bold tracking-tight text-ink-900 tabular-nums sm:text-2xl">
                           <CountUp
                             value={r.value}
                             decimals={r.decimals ?? 0}
@@ -620,11 +620,11 @@ function HomeCases() {
                             suffix={r.suffix ?? ""}
                           />
                         </div>
-                        <p className="mt-1 text-[11px] leading-snug font-semibold text-ink-500">{r.label}</p>
+                        <p className="mt-1 text-[11px] leading-snug font-medium text-ink-500">{r.label}</p>
                       </div>
                     ))}
                   </div>
-                  <span className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-ink-900">
+                  <span className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-ink-900">
                     Read case study
                     <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-900 text-cream-50 transition-all duration-300 group-hover:bg-pine-600">
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -713,15 +713,15 @@ function HomeO8() {
               }}
               className="relative flex h-full min-h-[20rem] flex-col justify-between gap-8 sm:min-h-[18rem]"
             >
-              <blockquote className="text-xl leading-snug font-bold sm:text-2xl">“{f.quote}”</blockquote>
+              <blockquote className="text-xl leading-snug font-semibold sm:text-2xl">“{f.quote}”</blockquote>
               <figcaption className="flex items-end justify-between gap-6 border-t border-cream-50/15 pt-6">
                 <div>
-                  <p className="font-extrabold">{f.name}</p>
+                  <p className="font-bold">{f.name}</p>
                   <p className="mt-1 text-sm text-cream-50/60">{f.role}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-4xl font-extrabold text-mint-300 tabular-nums">{f.metric}</p>
-                  <p className="mt-1 text-xs font-semibold text-cream-50/60">{f.metricLabel}</p>
+                  <p className="text-4xl font-bold text-mint-300 tabular-nums">{f.metric}</p>
+                  <p className="mt-1 text-xs font-medium text-cream-50/60">{f.metricLabel}</p>
                 </div>
               </figcaption>
             </motion.figure>
@@ -750,7 +750,7 @@ function HomeC8() {
                 <button
                   key={l}
                   onClick={() => n(d)}
-                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-extrabold transition-colors ${f ? "text-cream-50" : "text-ink-500"}`}
+                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${f ? "text-cream-50" : "text-ink-500"}`}
                 >
                   {f && (
                     <motion.span
@@ -776,11 +776,11 @@ function HomeC8() {
               className={`relative flex h-full flex-col rounded-[1.75rem] p-7 transition-all duration-500 hover:-translate-y-2 sm:p-8 ${l.featured ? "bg-ink-900 text-cream-50 shadow-[0_30px_80px_-24px_rgba(14,16,14,0.5)]" : "border border-ink-900/10 bg-white/80 hover:shadow-[0_30px_70px_-28px_rgba(14,16,14,0.35)]"}`}
             >
               {l.featured && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-pine-600 px-4 py-1.5 text-xs font-extrabold whitespace-nowrap text-cream-50">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-pine-600 px-4 py-1.5 text-xs font-bold whitespace-nowrap text-cream-50">
                   {l.badge}
                 </span>
               )}
-              <h3 className="text-xl font-extrabold">{l.name}</h3>
+              <h3 className="text-xl font-bold">{l.name}</h3>
               <p
                 className={`mt-2 min-h-12 text-sm leading-relaxed ${l.featured ? "text-cream-50/60" : "text-ink-500"}`}
               >
@@ -808,21 +808,21 @@ function HomeC8() {
                           duration: 0.35,
                           ease: EASE,
                         }}
-                        className="text-5xl font-extrabold tracking-tight tabular-nums"
+                        className="text-5xl font-bold tracking-tight tabular-nums"
                       >
                         ${s ? Math.round(l.monthly * 0.85).toLocaleString() : l.monthly.toLocaleString()}
                       </motion.span>
                     </AnimatePresence>
-                    <span className={`text-sm font-bold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
+                    <span className={`text-sm font-semibold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
                       {l.unit}
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="text-5xl font-extrabold tracking-tight tabular-nums">
+                    <span className="text-5xl font-bold tracking-tight tabular-nums">
                       ${l.oneTime?.toLocaleString()}
                     </span>
-                    <span className={`text-sm font-bold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
+                    <span className={`text-sm font-semibold ${l.featured ? "text-cream-50/50" : "text-ink-400"}`}>
                       {l.unit}
                     </span>
                   </>
@@ -830,7 +830,7 @@ function HomeC8() {
               </div>
               <ul className="mt-6 flex flex-col gap-2.5">
                 {l.benefits.slice(0, 6).map((r) => (
-                  <li key={r} className="flex items-start gap-2.5 text-[13.5px] font-semibold">
+                  <li key={r} className="flex items-start gap-2.5 text-[13.5px] font-medium">
                     <span
                       className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${l.featured ? "bg-mint-300/20 text-mint-300" : "bg-pine-700/10 text-pine-700"}`}
                     >
@@ -842,7 +842,7 @@ function HomeC8() {
               </ul>
               <Link
                 to="/pricing"
-                className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-extrabold transition-all duration-300 ${l.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
+                className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold transition-all duration-300 ${l.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
               >
                 {l.cta} <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -878,7 +878,7 @@ function HomeU8() {
                     onClick={() => n(d ? -1 : r)}
                     className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
                   >
-                    <span className="text-[15px] font-extrabold sm:text-base">{l.q}</span>
+                    <span className="text-[15px] font-bold sm:text-base">{l.q}</span>
                     <span
                       className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-500 ${d ? "rotate-180 bg-pine-700 text-cream-50" : "bg-cream-100 text-ink-900"}`}
                     >
@@ -929,7 +929,7 @@ function HomeD8() {
         <Reveal delay={0.15}>
           <Link
             to="/insights"
-            className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
           >
             All articles
             <span className="grid h-9 w-9 place-items-center rounded-full border border-pine-700/30 transition-all duration-300 group-hover:bg-pine-700 group-hover:text-cream-50">
@@ -947,21 +947,21 @@ function HomeD8() {
             >
               <div className="relative h-52 overflow-hidden">
                 <img src={s.image} alt={s.title} className="h-full w-full object-cover" loading="lazy" />
-                <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-xs font-extrabold text-pine-800 backdrop-blur">
+                <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-xs font-bold text-pine-800 backdrop-blur">
                   {s.category}
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <p className="text-xs font-bold text-ink-400">
+                <p className="text-xs font-semibold text-ink-400">
                   {s.date}
                   {", "}
                   {s.readTime}
                 </p>
-                <h3 className="mt-2 text-lg leading-snug font-extrabold tracking-tight transition-colors group-hover:text-pine-700">
+                <h3 className="mt-2 text-lg leading-snug font-bold tracking-tight transition-colors group-hover:text-pine-700">
                   {s.title}
                 </h3>
                 <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{s.excerpt}</p>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-extrabold text-ink-900">
+                <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-bold text-ink-900">
                   {"Read article "}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
@@ -986,7 +986,7 @@ function HomeMarquee() {
         {[...s, ...s, ...s, ...s].map((n, l) => (
           <span
             key={l}
-            className="flex shrink-0 items-center gap-10 text-3xl font-extrabold tracking-tight whitespace-nowrap text-cream-50 sm:text-4xl"
+            className="flex shrink-0 items-center gap-10 text-3xl font-bold tracking-tight whitespace-nowrap text-cream-50 sm:text-4xl"
           >
             {n}
             <ArrowUpRight className="h-8 w-8 text-mint-300 transition-transform duration-300 group-hover:rotate-45" />
@@ -1046,7 +1046,7 @@ export function HomeC1() {
               >
                 <Link
                   to="/about"
-                  className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-extrabold text-ink-900 transition-colors hover:bg-mint-300"
+                  className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-bold text-ink-900 transition-colors hover:bg-mint-300"
                 >
                   {"Meet the team "}
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -37,7 +37,7 @@ export function PageTransition({ children: s }) {
             ease: HE,
           }}
         >
-          <span className="text-2xl font-extrabold tracking-tight text-cream-50">
+          <span className="text-2xl font-bold tracking-tight text-cream-50">
             kora<span className="text-mint-300">.</span>
           </span>
         </motion.div>

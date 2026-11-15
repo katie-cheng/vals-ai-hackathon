@@ -41,7 +41,7 @@ export function Work() {
                 <button
                   key={m}
                   onClick={() => n(m)}
-                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-extrabold transition-colors ${s === m ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
+                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${s === m ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
                 >
                   {s === m && (
                     <motion.span
@@ -89,7 +89,7 @@ export function Work() {
                 <div className="relative h-64 overflow-hidden sm:h-72">
                   <img src={m.image} alt={m.client} className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-extrabold text-cream-50 backdrop-blur-md">
+                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
                     {m.industry}
                   </span>
                   <span className="absolute right-4 bottom-4 grid h-12 w-12 translate-y-3 place-items-center rounded-full bg-cream-50 text-ink-900 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
@@ -97,18 +97,18 @@ export function Work() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
-                  <p className="text-xs font-extrabold text-pine-600">
+                  <p className="text-xs font-bold text-pine-600">
                     {m.client}
                     {", "}
                     {m.year}
                   </p>
-                  <h2 className="mt-2 text-xl leading-snug font-extrabold tracking-tight sm:text-2xl">
+                  <h2 className="mt-2 text-xl leading-snug font-bold tracking-tight sm:text-2xl">
                     {m.title}
                   </h2>
                   <div className="mt-5 grid grid-cols-3 gap-3 border-t border-ink-900/10 pt-5">
                     {m.metrics.map((x) => (
                       <div key={x.label}>
-                        <p className="text-lg font-extrabold tabular-nums sm:text-xl">
+                        <p className="text-lg font-bold tabular-nums sm:text-xl">
                           <CountUp
                             value={x.value}
                             decimals={x.decimals ?? 0}
@@ -116,7 +116,7 @@ export function Work() {
                             suffix={x.suffix ?? ""}
                           />
                         </p>
-                        <p className="mt-0.5 text-[10.5px] leading-snug font-semibold text-ink-500">
+                        <p className="mt-0.5 text-[10.5px] leading-snug font-medium text-ink-500">
                           {x.label}
                         </p>
                       </div>
@@ -170,24 +170,24 @@ export function CaseStudy() {
           <Reveal y={16}>
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 text-[13px] font-extrabold text-cream-50/60 transition-colors hover:text-cream-50"
+              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
             >
               <ArrowLeft className="h-4 w-4" />
               {" All case studies"}
             </Link>
           </Reveal>
           <div className="mt-6 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-extrabold backdrop-blur-md">
+            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-bold backdrop-blur-md">
               {n.industry}
             </span>
-            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-extrabold backdrop-blur-md">
+            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-bold backdrop-blur-md">
               {n.year}
             </span>
-            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-extrabold backdrop-blur-md">
+            <span className="rounded-full bg-cream-50/15 px-4 py-1.5 text-xs font-bold backdrop-blur-md">
               {n.duration}
             </span>
           </div>
-          <p className="mt-5 text-sm font-extrabold text-mint-300">{n.client}</p>
+          <p className="mt-5 text-sm font-bold text-mint-300">{n.client}</p>
           <SplitText text={n.title} as="h1" className="display-lg mt-2 max-w-4xl" delay={0.1} />
           <Stagger
             className="mt-8 grid max-w-2xl grid-cols-3 gap-4 border-t border-cream-50/20 pt-7"
@@ -195,7 +195,7 @@ export function CaseStudy() {
           >
             {n.metrics.map((x) => (
               <StaggerItem key={x.label}>
-                <p className="text-2xl font-extrabold tabular-nums sm:text-4xl">
+                <p className="text-2xl font-bold tabular-nums sm:text-4xl">
                   <CountUp
                     value={x.value}
                     decimals={x.decimals ?? 0}
@@ -203,7 +203,7 @@ export function CaseStudy() {
                     suffix={x.suffix ?? ""}
                   />
                 </p>
-                <p className="mt-1 text-[11px] leading-snug font-semibold text-cream-50/60 sm:text-xs">
+                <p className="mt-1 text-[11px] leading-snug font-medium text-cream-50/60 sm:text-xs">
                   {x.label}
                 </p>
               </StaggerItem>
@@ -225,7 +225,7 @@ export function CaseStudy() {
                 {n.services.map((x) => (
                   <span
                     key={x}
-                    className="rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-sm font-semibold text-pine-800"
+                    className="rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-sm font-medium text-pine-800"
                   >
                     {x}
                   </span>
@@ -237,7 +237,7 @@ export function CaseStudy() {
             {n.challenge.map((x, y) => (
               <Reveal key={y} delay={y * 0.08}>
                 <p
-                  className={`text-[15px] leading-relaxed text-ink-500 sm:text-lg ${y > 0 ? "mt-5" : ""} ${y === 0 ? "text-xl font-semibold text-ink-900 sm:text-2xl sm:leading-snug" : ""}`}
+                  className={`text-[15px] leading-relaxed text-ink-500 sm:text-lg ${y > 0 ? "mt-5" : ""} ${y === 0 ? "text-xl font-medium text-ink-900 sm:text-2xl sm:leading-snug" : ""}`}
                 >
                   {x}
                 </p>
@@ -257,7 +257,7 @@ export function CaseStudy() {
             <StaggerItem key={x.title} className="h-full">
               <div className="group h-full rounded-3xl bg-ink-900 p-7 text-cream-50 transition-all duration-500 hover:-translate-y-2 hover:bg-pine-800 sm:p-8">
                 <span className="display-md text-mint-300/90">0{y + 1}</span>
-                <h3 className="mt-4 text-xl font-extrabold">{x.title}</h3>
+                <h3 className="mt-4 text-xl font-bold">{x.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream-50/65">{x.desc}</p>
               </div>
             </StaggerItem>
@@ -282,7 +282,7 @@ export function CaseStudy() {
               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-ink-900/10 pt-7">
                 {n.metrics.map((x) => (
                   <div key={x.label}>
-                    <p className="text-2xl font-extrabold text-pine-800 tabular-nums sm:text-3xl">
+                    <p className="text-2xl font-bold text-pine-800 tabular-nums sm:text-3xl">
                       <CountUp
                         value={x.value}
                         decimals={x.decimals ?? 0}
@@ -290,7 +290,7 @@ export function CaseStudy() {
                         suffix={x.suffix ?? ""}
                       />
                     </p>
-                    <p className="mt-1 text-[11px] leading-snug font-semibold text-ink-500">{x.label}</p>
+                    <p className="mt-1 text-[11px] leading-snug font-medium text-ink-500">{x.label}</p>
                   </div>
                 ))}
               </div>
@@ -300,11 +300,11 @@ export function CaseStudy() {
             <figure className="relative overflow-hidden rounded-[2rem] bg-pine-800 p-8 text-cream-50 sm:p-12">
               <div className="dot-grid absolute inset-0 opacity-60" />
               <Quote className="relative h-10 w-10 text-mint-300" />
-              <blockquote className="relative mt-5 text-xl leading-snug font-bold sm:text-2xl">
+              <blockquote className="relative mt-5 text-xl leading-snug font-semibold sm:text-2xl">
                 “{n.quote.text}”
               </blockquote>
               <figcaption className="relative mt-7 border-t border-cream-50/15 pt-6">
-                <p className="font-extrabold">{n.quote.author}</p>
+                <p className="font-bold">{n.quote.author}</p>
                 <p className="mt-1 text-sm text-cream-50/60">{n.quote.role}</p>
               </figcaption>
             </figure>
@@ -321,7 +321,7 @@ export function CaseStudy() {
             <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/30 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-8 sm:p-12">
               <div>
-                <p className="text-xs font-extrabold text-mint-300">
+                <p className="text-xs font-bold text-mint-300">
                   Next case study
                 </p>
                 <p className="display-md mt-2 max-w-xl text-cream-50">

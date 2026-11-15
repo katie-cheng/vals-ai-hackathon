@@ -88,7 +88,7 @@ export function Footer() {
           <Reveal delay={0.2}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 rounded-full bg-cream-50 px-7 py-4 text-sm font-extrabold text-pine-950 transition-colors duration-300 hover:bg-mint-300"
+              className="group inline-flex items-center gap-3 rounded-full bg-cream-50 px-7 py-4 text-sm font-bold text-pine-950 transition-colors duration-300 hover:bg-mint-300"
             >
               Book your growth call
               <span className="grid h-7 w-7 place-items-center rounded-full bg-pine-950 text-cream-50 transition-transform duration-300 group-hover:rotate-45">
@@ -103,7 +103,7 @@ export function Footer() {
           <Logo dark={!0} />
           <a
             href="mailto:hello@kora.agency"
-            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-mint-300 transition-colors hover:text-cream-50"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-mint-300 transition-colors hover:text-cream-50"
           >
             {"hello@kora.agency "}
             <ArrowRight className="h-4 w-4" />
@@ -111,7 +111,7 @@ export function Footer() {
         </div>
         {footerColumns.map((s) => (
           <div key={s.title}>
-            <h4 className="text-xs font-extrabold text-cream-50/40">
+            <h4 className="text-xs font-bold text-cream-50/40">
               {s.title}
             </h4>
             <ul className="mt-5 space-y-3">
@@ -119,7 +119,7 @@ export function Footer() {
                 <li key={n.label}>
                   <Link
                     to={n.to}
-                    className="nav-link text-[15px] font-semibold text-cream-50/75 transition-colors hover:text-cream-50"
+                    className="nav-link text-[15px] font-medium text-cream-50/75 transition-colors hover:text-cream-50"
                   >
                     {n.label}
                   </Link>
@@ -129,7 +129,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="container-x relative flex flex-col items-start justify-between gap-4 border-t border-cream-50/10 py-7 text-xs font-semibold text-cream-50/45 sm:flex-row sm:items-center">
+      <div className="container-x relative flex flex-col items-start justify-between gap-4 border-t border-cream-50/10 py-7 text-xs font-medium text-cream-50/45 sm:flex-row sm:items-center">
         <span>© 2026 Kora Growth Consultancy. All rights reserved.</span>
         <div className="flex items-center gap-6">
           <span>Privacy</span>
@@ -150,7 +150,7 @@ export function Footer() {
       </div>
       <div className="pointer-events-none relative select-none overflow-hidden" aria-hidden={!0}>
         <div className="container-x">
-          <div className="text-outline-cream -mb-[0.23em] text-center text-[24vw] leading-none font-extrabold tracking-tight lg:text-[19rem]">
+          <div className="text-outline-cream -mb-[0.23em] text-center text-[24vw] leading-none font-bold tracking-tight lg:text-[19rem]">
             kora
           </div>
         </div>

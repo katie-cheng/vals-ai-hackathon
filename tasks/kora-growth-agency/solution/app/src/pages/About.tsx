@@ -85,7 +85,7 @@ export function About() {
               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-ink-900/10 pt-8">
                 {stats.slice(0, 3).map((r) => (
                   <div key={r.label}>
-                    <p className="text-2xl font-extrabold tabular-nums sm:text-3xl">
+                    <p className="text-2xl font-bold tabular-nums sm:text-3xl">
                       <CountUp
                         value={r.value}
                         decimals={r.decimals ?? 0}
@@ -93,7 +93,7 @@ export function About() {
                         suffix={r.suffix ?? ""}
                       />
                     </p>
-                    <p className="mt-1 text-[11px] leading-snug font-semibold text-ink-500">{r.label}</p>
+                    <p className="mt-1 text-[11px] leading-snug font-medium text-ink-500">{r.label}</p>
                   </div>
                 ))}
               </div>
@@ -118,7 +118,7 @@ export function About() {
                   <span className="grid h-13 w-13 place-items-center rounded-2xl bg-mint-300 p-3.5 text-pine-950 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110">
                     <r.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-6 text-xl font-extrabold sm:text-2xl">{r.title}</h3>
+                  <h3 className="mt-6 text-xl font-bold sm:text-2xl">{r.title}</h3>
                   <p className="mt-3 text-[14.5px] leading-relaxed text-cream-50/60">{r.desc}</p>
                 </div>
               </StaggerItem>
@@ -141,11 +141,11 @@ export function About() {
             {timeline.map((r, d) => (
               <Reveal key={r.year} delay={d * 0.03}>
                 <div className="group flex gap-6 border-b border-ink-900/10 py-7 transition-colors first:border-t hover:bg-white/50 sm:gap-10">
-                  <span className="w-16 shrink-0 text-2xl font-extrabold text-pine-700 tabular-nums sm:text-3xl">
+                  <span className="w-16 shrink-0 text-2xl font-bold text-pine-700 tabular-nums sm:text-3xl">
                     {r.year}
                   </span>
                   <div>
-                    <h3 className="text-lg font-extrabold tracking-tight transition-transform duration-300 group-hover:translate-x-1 sm:text-xl">
+                    <h3 className="text-lg font-bold tracking-tight transition-transform duration-300 group-hover:translate-x-1 sm:text-xl">
                       {r.title}
                     </h3>
                     <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-500">{r.desc}</p>
@@ -180,10 +180,10 @@ export function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="text-xs font-extrabold text-mint-300">
+                  <p className="text-xs font-bold text-mint-300">
                     {r.role}
                   </p>
-                  <h3 className="mt-1 text-2xl font-extrabold tracking-tight text-cream-50">{r.name}</h3>
+                  <h3 className="mt-1 text-2xl font-bold tracking-tight text-cream-50">{r.name}</h3>
                   <div className="grid grid-rows-[0fr] transition-all duration-500 group-hover:grid-rows-[1fr]">
                     <p className="overflow-hidden text-[13px] leading-relaxed text-cream-50/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       <span className="block pt-2">{r.bio}</span>
@@ -198,7 +198,7 @@ export function About() {
           <div className="mt-10 text-center">
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-7 py-3.5 text-sm font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-7 py-3.5 text-sm font-bold text-cream-50 transition-colors hover:bg-pine-700"
             >
               Work with this team
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

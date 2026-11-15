@@ -108,7 +108,7 @@ export function Contact() {
               <div className="relative overflow-hidden rounded-[1.75rem] bg-pine-800 p-8 text-cream-50">
                 <div className="dot-grid absolute inset-0 opacity-60" />
                 <div className="relative">
-                  <p className="text-xs font-extrabold text-mint-300">
+                  <p className="text-xs font-bold text-mint-300">
                     What happens next
                   </p>
                   <ul className="mt-5 flex flex-col gap-4">
@@ -134,7 +134,7 @@ export function Contact() {
                           <R.icon className="h-5 w-5 text-mint-300" />
                         </span>
                         <div>
-                          <p className="text-sm font-extrabold">
+                          <p className="text-sm font-bold">
                             <span className="mr-2 text-mint-300">0{V + 1}</span>
                             {R.t}
                           </p>
@@ -148,12 +148,12 @@ export function Contact() {
             </StaggerItem>
             <StaggerItem>
               <div className="rounded-[1.75rem] border border-ink-900/10 bg-white/70 p-8">
-                <p className="text-xs font-extrabold text-ink-400">
+                <p className="text-xs font-bold text-ink-400">
                   Prefer email or foot traffic?
                 </p>
                 <a
                   href="mailto:hello@kora.agency"
-                  className="mt-3 block text-xl font-extrabold text-pine-800 transition-colors hover:text-pine-600"
+                  className="mt-3 block text-xl font-bold text-pine-800 transition-colors hover:text-pine-600"
                 >
                   hello@kora.agency
                 </a>
@@ -227,7 +227,7 @@ export function Contact() {
                       onClick={() => {
                         (m("idle"), n(0), r(emptyForm));
                       }}
-                      className="mt-8 rounded-full border border-ink-900/15 px-6 py-3 text-sm font-extrabold transition-colors hover:bg-ink-900 hover:text-cream-50"
+                      className="mt-8 rounded-full border border-ink-900/15 px-6 py-3 text-sm font-bold transition-colors hover:bg-ink-900 hover:text-cream-50"
                     >
                       Book another call
                     </button>
@@ -250,12 +250,12 @@ export function Contact() {
                           <button
                             type="button"
                             onClick={() => V < s && n(V)}
-                            className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-xs font-extrabold transition-all ${V < s ? "bg-pine-700 text-cream-50" : V === s ? "bg-ink-900 text-cream-50" : "bg-cream-100 text-ink-400"}`}
+                            className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-xs font-bold transition-all ${V < s ? "bg-pine-700 text-cream-50" : V === s ? "bg-ink-900 text-cream-50" : "bg-cream-100 text-ink-400"}`}
                           >
                             {V < s ? <Check className="h-4 w-4" strokeWidth={3} /> : V + 1}
                           </button>
                           <span
-                            className={`hidden text-xs font-extrabold sm:block ${V === s ? "text-ink-900" : "text-ink-400"}`}
+                            className={`hidden text-xs font-bold sm:block ${V === s ? "text-ink-900" : "text-ink-400"}`}
                           >
                             {R}
                           </span>
@@ -297,10 +297,10 @@ export function Contact() {
                           }}
                           className="mt-8 flex flex-col gap-4"
                         >
-                          <h2 className="text-2xl font-extrabold tracking-tight">First, the basics.</h2>
+                          <h2 className="text-2xl font-bold tracking-tight">First, the basics.</h2>
                           <div className="grid gap-4 sm:grid-cols-2">
                             <label className="block">
-                              <span className="mb-1.5 block text-xs font-extrabold text-ink-500">
+                              <span className="mb-1.5 block text-xs font-bold text-ink-500">
                                 Full name *
                               </span>
                               <input
@@ -310,13 +310,13 @@ export function Contact() {
                                 onChange={(R) => S("name", R.target.value)}
                               />
                               {d.name && (
-                                <span className="mt-1 block text-xs font-bold text-red-700">
+                                <span className="mt-1 block text-xs font-semibold text-red-700">
                                   Please enter your name.
                                 </span>
                               )}
                             </label>
                             <label className="block">
-                              <span className="mb-1.5 block text-xs font-extrabold text-ink-500">
+                              <span className="mb-1.5 block text-xs font-bold text-ink-500">
                                 Work email *
                               </span>
                               <input
@@ -327,14 +327,14 @@ export function Contact() {
                                 onChange={(R) => S("email", R.target.value)}
                               />
                               {d.email && (
-                                <span className="mt-1 block text-xs font-bold text-red-700">
+                                <span className="mt-1 block text-xs font-semibold text-red-700">
                                   That email doesn't look right.
                                 </span>
                               )}
                             </label>
                           </div>
                           <label className="block">
-                            <span className="mb-1.5 block text-xs font-extrabold text-ink-500">
+                            <span className="mb-1.5 block text-xs font-bold text-ink-500">
                               Company *
                             </span>
                             <input
@@ -344,13 +344,13 @@ export function Contact() {
                               onChange={(R) => S("company", R.target.value)}
                             />
                             {d.company && (
-                              <span className="mt-1 block text-xs font-bold text-red-700">
+                              <span className="mt-1 block text-xs font-semibold text-red-700">
                                 Please enter your company.
                               </span>
                             )}
                           </label>
                           <label className="block">
-                            <span className="mb-1.5 block text-xs font-extrabold text-ink-500">
+                            <span className="mb-1.5 block text-xs font-bold text-ink-500">
                               {"What's the #1 growth challenge? "}
                               <span className="text-ink-400 normal-case">(optional)</span>
                             </span>
@@ -385,9 +385,9 @@ export function Contact() {
                           }}
                           className="mt-8 flex flex-col gap-6"
                         >
-                          <h2 className="text-2xl font-extrabold tracking-tight">Where should we aim?</h2>
+                          <h2 className="text-2xl font-bold tracking-tight">Where should we aim?</h2>
                           <div>
-                            <span className="mb-2 block text-xs font-extrabold text-ink-500">
+                            <span className="mb-2 block text-xs font-bold text-ink-500">
                               Monthly growth budget *
                             </span>
                             <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
@@ -396,20 +396,20 @@ export function Contact() {
                                   key={R}
                                   type="button"
                                   onClick={() => S("revenue", R)}
-                                  className={`rounded-2xl border-2 px-3 py-3.5 text-[13px] font-extrabold transition-all ${l.revenue === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.revenue ? "border-red-400" : ""}`}`}
+                                  className={`rounded-2xl border-2 px-3 py-3.5 text-[13px] font-bold transition-all ${l.revenue === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.revenue ? "border-red-400" : ""}`}`}
                                 >
                                   {R}
                                 </button>
                               ))}
                             </div>
                             {d.revenue && (
-                              <span className="mt-1 block text-xs font-bold text-red-700">
+                              <span className="mt-1 block text-xs font-semibold text-red-700">
                                 Pick the closest range.
                               </span>
                             )}
                           </div>
                           <div>
-                            <span className="mb-2 block text-xs font-extrabold text-ink-500">
+                            <span className="mb-2 block text-xs font-bold text-ink-500">
                               What do you need help with? *
                             </span>
                             <div className="flex flex-wrap gap-2.5">
@@ -420,7 +420,7 @@ export function Contact() {
                                     key={R}
                                     type="button"
                                     onClick={() => T(R)}
-                                    className={`rounded-full border-2 px-4 py-2.5 text-[13px] font-extrabold transition-all ${V ? "border-ink-900 bg-ink-900 text-cream-50" : `border-ink-900/12 bg-cream-50 text-ink-600 hover:border-ink-900/40 ${d.services ? "border-red-400" : ""}`}`}
+                                    className={`rounded-full border-2 px-4 py-2.5 text-[13px] font-bold transition-all ${V ? "border-ink-900 bg-ink-900 text-cream-50" : `border-ink-900/12 bg-cream-50 text-ink-600 hover:border-ink-900/40 ${d.services ? "border-red-400" : ""}`}`}
                                   >
                                     {V ? "✓ " : "+ "}
                                     {R}
@@ -429,7 +429,7 @@ export function Contact() {
                               })}
                             </div>
                             {d.services && (
-                              <span className="mt-1 block text-xs font-bold text-red-700">
+                              <span className="mt-1 block text-xs font-semibold text-red-700">
                                 Choose at least one.
                               </span>
                             )}
@@ -457,7 +457,7 @@ export function Contact() {
                           }}
                           className="mt-8 flex flex-col gap-6"
                         >
-                          <h2 className="text-2xl font-extrabold tracking-tight">Pick your slot.</h2>
+                          <h2 className="text-2xl font-bold tracking-tight">Pick your slot.</h2>
                           <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
                             {contactE.map((R) => (
                               <button
@@ -466,14 +466,14 @@ export function Contact() {
                                 onClick={() => {
                                   S("slot", R);
                                 }}
-                                className={`rounded-2xl border-2 px-3 py-4 text-sm font-extrabold transition-all ${l.slot === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.slot ? "border-red-400" : ""}`}`}
+                                className={`rounded-2xl border-2 px-3 py-4 text-sm font-bold transition-all ${l.slot === R ? "border-pine-700 bg-pine-700 text-cream-50 shadow-lg" : `border-ink-900/10 bg-cream-50 text-ink-700 hover:border-pine-700/50 ${d.slot ? "border-red-400" : ""}`}`}
                               >
                                 {R}
                               </button>
                             ))}
                           </div>
                           {d.slot && (
-                            <span className="-mt-3 block text-xs font-bold text-red-700">
+                            <span className="-mt-3 block text-xs font-semibold text-red-700">
                               Pick a time that suits you.
                             </span>
                           )}
@@ -496,7 +496,7 @@ export function Contact() {
                                 opacity: 1,
                                 y: 0,
                               }}
-                              className="rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700"
+                              className="rounded-2xl bg-red-50 p-4 text-sm font-semibold text-red-700"
                             >
                               Something went wrong sending your booking. Please try again, your details are
                               saved.
@@ -510,17 +510,17 @@ export function Contact() {
                         <button
                           type="button"
                           onClick={() => n(s - 1)}
-                          className="rounded-full border border-ink-900/15 px-6 py-3.5 text-sm font-extrabold transition-colors hover:bg-cream-100"
+                          className="rounded-full border border-ink-900/15 px-6 py-3.5 text-sm font-bold transition-colors hover:bg-cream-100"
                         >
                           Back
                         </button>
                       ) : (
-                        <span className="text-xs font-semibold text-ink-400">Step 1 of 3</span>
+                        <span className="text-xs font-medium text-ink-400">Step 1 of 3</span>
                       )}
                       <button
                         type="submit"
                         disabled={h === "sending"}
-                        className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-8 py-3.5 text-sm font-extrabold text-cream-50 transition-all hover:bg-pine-700 disabled:opacity-70"
+                        className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-8 py-3.5 text-sm font-bold text-cream-50 transition-all hover:bg-pine-700 disabled:opacity-70"
                       >
                         {h === "sending" ? (
                           <>
@@ -540,7 +540,7 @@ export function Contact() {
                         )}
                       </button>
                     </div>
-                    <p className="mt-5 text-center text-xs font-semibold text-ink-400">
+                    <p className="mt-5 text-center text-xs font-medium text-ink-400">
                       No spam, no nurture sequences. Just one useful call.
                     </p>
                   </motion.form>

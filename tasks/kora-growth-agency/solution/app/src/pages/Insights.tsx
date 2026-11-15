@@ -42,7 +42,7 @@ export function Insights() {
                 <button
                   key={x}
                   onClick={() => n(x)}
-                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-extrabold transition-colors ${s === x ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
+                  className={`relative rounded-full px-5 py-2.5 text-[13px] font-bold transition-colors ${s === x ? "text-cream-50" : "border border-ink-900/12 bg-white/60 text-ink-500 hover:border-ink-900/30"}`}
                 >
                   {s === x && (
                     <motion.span
@@ -70,22 +70,22 @@ export function Insights() {
             >
               <div className="relative min-h-72 overflow-hidden lg:min-h-[26rem]">
                 <img src={m.image} alt={m.title} className="absolute inset-0 h-full w-full object-cover" />
-                <span className="absolute top-5 left-5 rounded-full bg-cream-50 px-4 py-1.5 text-xs font-extrabold text-pine-900">
+                <span className="absolute top-5 left-5 rounded-full bg-cream-50 px-4 py-1.5 text-xs font-bold text-pine-900">
                   {"Featured: "}
                   {m.category}
                 </span>
               </div>
               <div className="flex flex-col justify-center p-7 sm:p-12">
-                <p className="flex items-center gap-2 text-xs font-bold text-cream-50/50">
+                <p className="flex items-center gap-2 text-xs font-semibold text-cream-50/50">
                   {m.date} <Clock className="h-3.5 w-3.5" /> {m.readTime}
                 </p>
-                <h2 className="mt-3 text-2xl leading-tight font-extrabold tracking-tight sm:text-4xl">
+                <h2 className="mt-3 text-2xl leading-tight font-bold tracking-tight sm:text-4xl">
                   {m.title}
                 </h2>
                 <p className="mt-4 text-[15px] leading-relaxed text-cream-50/65">{m.excerpt}</p>
                 <div className="mt-6 flex items-center justify-between border-t border-cream-50/15 pt-6">
                   <div>
-                    <p className="text-sm font-extrabold">{m.author.name}</p>
+                    <p className="text-sm font-bold">{m.author.name}</p>
                     <p className="text-xs text-cream-50/50">{m.author.role}</p>
                   </div>
                   <span className="grid h-12 w-12 place-items-center rounded-full bg-cream-50 text-ink-900 transition-transform duration-300 group-hover:scale-110">
@@ -122,21 +122,21 @@ export function Insights() {
               >
                 <div className="relative h-52 overflow-hidden">
                   <img src={x.image} alt={x.title} className="h-full w-full object-cover" loading="lazy" />
-                  <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-xs font-extrabold text-pine-800 backdrop-blur">
+                  <span className="absolute top-4 left-4 rounded-full bg-cream-50/90 px-3.5 py-1.5 text-xs font-bold text-pine-800 backdrop-blur">
                     {x.category}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="text-xs font-bold text-ink-400">
+                  <p className="text-xs font-semibold text-ink-400">
                     {x.date}
                     {", "}
                     {x.readTime}
                   </p>
-                  <h3 className="mt-2 text-lg leading-snug font-extrabold tracking-tight transition-colors group-hover:text-pine-700">
+                  <h3 className="mt-2 text-lg leading-snug font-bold tracking-tight transition-colors group-hover:text-pine-700">
                     {x.title}
                   </h3>
                   <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{x.excerpt}</p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-extrabold text-ink-900">
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[13px] font-bold text-ink-900">
                     {"Read article "}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
@@ -182,7 +182,7 @@ export function InsightPost() {
           <Reveal y={16}>
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 text-[13px] font-extrabold text-cream-50/60 transition-colors hover:text-cream-50"
+              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
             >
               <ArrowLeft className="h-4 w-4" />
               {" All insights"}
@@ -190,13 +190,13 @@ export function InsightPost() {
           </Reveal>
           <Reveal y={16} delay={0.05}>
             <div className="mt-8 flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-mint-300 px-4 py-1.5 text-xs font-extrabold text-pine-950">
+              <span className="rounded-full bg-mint-300 px-4 py-1.5 text-xs font-bold text-pine-950">
                 {n.category}
               </span>
-              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-xs font-extrabold text-cream-50/70">
+              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-xs font-bold text-cream-50/70">
                 {n.date}
               </span>
-              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-xs font-extrabold text-cream-50/70">
+              <span className="rounded-full bg-cream-50/10 px-4 py-1.5 text-xs font-bold text-cream-50/70">
                 {n.readTime}
               </span>
             </div>
@@ -204,14 +204,14 @@ export function InsightPost() {
           <SplitText text={n.title} as="h1" className="display-md mt-5" delay={0.1} />
           <Reveal delay={0.25}>
             <div className="mt-7 flex items-center gap-3 border-t border-cream-50/15 pt-6 pb-12">
-              <span className="grid h-11 w-11 place-items-center rounded-full bg-mint-300 text-sm font-extrabold text-pine-950">
+              <span className="grid h-11 w-11 place-items-center rounded-full bg-mint-300 text-sm font-bold text-pine-950">
                 {n.author.name
                   .split(" ")
                   .map((g) => g[0])
                   .join("")}
               </span>
               <div>
-                <p className="text-sm font-extrabold">{n.author.name}</p>
+                <p className="text-sm font-bold">{n.author.name}</p>
                 <p className="text-xs text-cream-50/55">{n.author.role}</p>
               </div>
             </div>
@@ -229,11 +229,11 @@ export function InsightPost() {
         {n.body.map((g, x) =>
           g.type === "h2" ? (
             <Reveal key={x} delay={0.02}>
-              <h2 className="mt-12 text-2xl font-extrabold tracking-tight sm:text-3xl">{g.text}</h2>
+              <h2 className="mt-12 text-2xl font-bold tracking-tight sm:text-3xl">{g.text}</h2>
             </Reveal>
           ) : g.type === "quote" ? (
             <Reveal key={x} delay={0.02}>
-              <blockquote className="my-10 rounded-3xl bg-pine-800 p-8 text-xl leading-snug font-bold text-cream-50 sm:p-10 sm:text-2xl">
+              <blockquote className="my-10 rounded-3xl bg-pine-800 p-8 text-xl leading-snug font-semibold text-cream-50 sm:p-10 sm:text-2xl">
                 <span className="mb-3 block text-4xl text-mint-300">“</span>
                 {g.text}
               </blockquote>
@@ -242,8 +242,8 @@ export function InsightPost() {
             <Stagger key={x} className="my-8 flex flex-col gap-3" gap={0.06}>
               {g.items.map((y) => (
                 <StaggerItem key={y} y={16}>
-                  <li className="flex items-start gap-3 rounded-2xl border border-ink-900/10 bg-white/70 p-4 text-[15px] font-semibold text-ink-800">
-                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-pine-700 text-xs font-extrabold text-cream-50">
+                  <li className="flex items-start gap-3 rounded-2xl border border-ink-900/10 bg-white/70 p-4 text-[15px] font-medium text-ink-800">
+                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-pine-700 text-xs font-bold text-cream-50">
                       ✓
                     </span>
                     {y}
@@ -264,14 +264,14 @@ export function InsightPost() {
         <Reveal>
           <div className="mt-14 flex flex-col items-start justify-between gap-5 rounded-3xl border border-ink-900/10 bg-white/70 p-7 sm:flex-row sm:items-center">
             <div className="flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center rounded-full bg-pine-700 text-sm font-extrabold text-cream-50">
+              <span className="grid h-12 w-12 place-items-center rounded-full bg-pine-700 text-sm font-bold text-cream-50">
                 {n.author.name
                   .split(" ")
                   .map((g) => g[0])
                   .join("")}
               </span>
               <div>
-                <p className="text-sm font-extrabold">
+                <p className="text-sm font-bold">
                   {"Written by "}
                   {n.author.name}
                 </p>
@@ -280,7 +280,7 @@ export function InsightPost() {
             </div>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-[13px] font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-[13px] font-bold text-cream-50 transition-colors hover:bg-pine-700"
             >
               {"Discuss this with us "}
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -294,7 +294,7 @@ export function InsightPost() {
           <Reveal delay={0.1} className="hidden sm:block">
             <Link
               to="/insights"
-              className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
             >
               {"All articles "}
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -317,13 +317,13 @@ export function InsightPost() {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-6">
-                  <p className="text-xs font-extrabold text-pine-700">
+                  <p className="text-xs font-bold text-pine-700">
                     {g.category}
                   </p>
-                  <h3 className="mt-2 leading-snug font-extrabold transition-colors group-hover:text-pine-700">
+                  <h3 className="mt-2 leading-snug font-bold transition-colors group-hover:text-pine-700">
                     {g.title}
                   </h3>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-extrabold">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold">
                     {"Read "}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

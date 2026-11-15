@@ -49,7 +49,7 @@ export function Services() {
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="lazy"
                   />
-                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-extrabold text-cream-50 backdrop-blur-md">
+                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
                     0{f + 1}
                   </span>
                 </div>
@@ -58,25 +58,25 @@ export function Services() {
                     <span className="grid h-11 w-11 place-items-center rounded-2xl bg-pine-700/10 text-pine-700 transition-all duration-500 group-hover:bg-pine-700 group-hover:text-cream-50">
                       <d.icon className="h-5 w-5" />
                     </span>
-                    <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{d.name}</h2>
+                    <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{d.name}</h2>
                   </div>
-                  <p className="mt-3 text-[15px] leading-relaxed font-semibold text-pine-800">{d.tagline}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed font-medium text-pine-800">{d.tagline}</p>
                   <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{d.description[0]}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {d.deliverables.slice(0, 3).map((h) => (
                       <span
                         key={h}
-                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-bold text-ink-700"
+                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-ink-700"
                       >
                         {h}
                       </span>
                     ))}
-                    <span className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-bold text-pine-700">
+                    <span className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-pine-700">
                       +{d.deliverables.length - 3}
                       {" more"}
                     </span>
                   </div>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-ink-900">
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink-900">
                     Explore service
                     <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-900 text-cream-50 transition-all duration-300 group-hover:bg-pine-600">
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -128,7 +128,7 @@ export function ServiceDetail() {
           <Reveal y={16}>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-[13px] font-extrabold text-cream-50/60 transition-colors hover:text-cream-50"
+              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
             >
               <ArrowLeft className="h-4 w-4" />
               {" All services"}
@@ -141,7 +141,7 @@ export function ServiceDetail() {
               </span>
             </Reveal>
             <Reveal y={16} delay={0.05}>
-              <p className="text-xs font-extrabold text-mint-300">
+              <p className="text-xs font-bold text-mint-300">
                 Service 0{f + 1}
                 {" / 06"}
               </p>
@@ -157,14 +157,14 @@ export function ServiceDetail() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-extrabold text-pine-950 transition-colors hover:bg-mint-300"
+                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-bold text-pine-950 transition-colors hover:bg-mint-300"
               >
                 {"Start this engagement "}
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
                 to="/pricing"
-                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-extrabold transition-colors hover:border-cream-50/60"
+                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-bold transition-colors hover:border-cream-50/60"
               >
                 See pricing
               </Link>
@@ -176,7 +176,7 @@ export function ServiceDetail() {
         <div className="container-x grid gap-8 py-12 sm:grid-cols-3">
           {n.outcomes.map((x, y) => (
             <Reveal key={x.label} delay={y * 0.08} className="text-center sm:text-left">
-              <p className="text-4xl font-extrabold tracking-tight text-pine-800 tabular-nums sm:text-5xl">
+              <p className="text-4xl font-bold tracking-tight text-pine-800 tabular-nums sm:text-5xl">
                 <CountUp
                   value={x.value}
                   decimals={x.decimals ?? 0}
@@ -184,7 +184,7 @@ export function ServiceDetail() {
                   suffix={x.suffix ?? ""}
                 />
               </p>
-              <p className="mx-auto mt-2 max-w-56 text-[13px] leading-snug font-semibold text-ink-500 sm:mx-0">
+              <p className="mx-auto mt-2 max-w-56 text-[13px] leading-snug font-medium text-ink-500 sm:mx-0">
                 {x.label}
               </p>
             </Reveal>
@@ -201,18 +201,18 @@ export function ServiceDetail() {
               </Reveal>
             ))}
             <div className="mt-10">
-              <h3 className="text-sm font-extrabold text-ink-400">
+              <h3 className="text-sm font-bold text-ink-400">
                 How we run it
               </h3>
               <Stagger className="mt-5 grid gap-3 sm:grid-cols-2" gap={0.08}>
                 {n.process.map((x, y) => (
                   <StaggerItem key={x.title}>
                     <div className="h-full rounded-2xl border border-ink-900/10 bg-white/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-pine-700/30">
-                      <span className="text-xs font-extrabold text-pine-600">
+                      <span className="text-xs font-bold text-pine-600">
                         {"STEP "}
                         {y + 1}
                       </span>
-                      <h4 className="mt-1 text-lg font-extrabold">{x.title}</h4>
+                      <h4 className="mt-1 text-lg font-bold">{x.title}</h4>
                       <p className="mt-2 text-sm leading-relaxed text-ink-500">{x.desc}</p>
                     </div>
                   </StaggerItem>
@@ -223,10 +223,10 @@ export function ServiceDetail() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Reveal delay={0.15}>
               <div className="rounded-[1.75rem] bg-ink-900 p-7 text-cream-50 sm:p-9">
-                <h3 className="text-lg font-extrabold">What's included</h3>
+                <h3 className="text-lg font-bold">What's included</h3>
                 <ul className="mt-5 flex flex-col gap-3">
                   {n.deliverables.map((x) => (
-                    <li key={x} className="flex items-start gap-3 text-sm font-semibold text-cream-50/85">
+                    <li key={x} className="flex items-start gap-3 text-sm font-medium text-cream-50/85">
                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300/20 text-mint-300">
                         <Check className="h-3 w-3" strokeWidth={3} />
                       </span>
@@ -236,7 +236,7 @@ export function ServiceDetail() {
                 </ul>
                 <Link
                   to="/contact"
-                  className="mt-7 flex items-center justify-center gap-2 rounded-full bg-cream-50 py-3.5 text-sm font-extrabold text-ink-900 transition-colors hover:bg-mint-300"
+                  className="mt-7 flex items-center justify-center gap-2 rounded-full bg-cream-50 py-3.5 text-sm font-bold text-ink-900 transition-colors hover:bg-mint-300"
                 >
                   {"Book a scoping call "}
                   <ArrowUpRight className="h-4 w-4" />
@@ -254,7 +254,7 @@ export function ServiceDetail() {
           <Reveal delay={0.1} className="hidden sm:block">
             <Link
               to="/work"
-              className="group inline-flex items-center gap-2 text-sm font-extrabold text-pine-700"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
             >
               {"All case studies "}
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -270,18 +270,18 @@ export function ServiceDetail() {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img src={x.image} alt={x.client} className="h-full w-full object-cover" loading="lazy" />
-                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-extrabold text-cream-50 backdrop-blur-md">
+                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
                     {x.client}
                   </span>
                 </div>
                 <div className="p-6 sm:p-7">
-                  <h3 className="text-lg leading-snug font-extrabold transition-colors group-hover:text-pine-700">
+                  <h3 className="text-lg leading-snug font-bold transition-colors group-hover:text-pine-700">
                     {x.title}
                   </h3>
                   <div className="mt-4 flex gap-6 border-t border-ink-900/10 pt-4">
                     {x.metrics.slice(0, 2).map((y) => (
                       <div key={y.label}>
-                        <p className="text-xl font-extrabold tabular-nums">
+                        <p className="text-xl font-bold tabular-nums">
                           <CountUp
                             value={y.value}
                             decimals={y.decimals ?? 0}
@@ -289,7 +289,7 @@ export function ServiceDetail() {
                             suffix={y.suffix ?? ""}
                           />
                         </p>
-                        <p className="text-[11px] font-semibold text-ink-500">{y.label}</p>
+                        <p className="text-[11px] font-medium text-ink-500">{y.label}</p>
                       </div>
                     ))}
                   </div>
@@ -312,7 +312,7 @@ export function ServiceDetail() {
               className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-25"
             />
             <div className="relative">
-              <p className="text-xs font-extrabold text-mint-300">Next service</p>
+              <p className="text-xs font-bold text-mint-300">Next service</p>
               <p className="display-md mt-2">{h.name}</p>
             </div>
             <span className="relative grid h-16 w-16 shrink-0 place-items-center rounded-full bg-cream-50 text-ink-900 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-8deg]">

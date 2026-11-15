@@ -47,7 +47,7 @@ export function Logo({ dark: s = !1, compact: n = !1 }) {
         </svg>
       </span>
       {!n && (
-        <span className={`text-xl font-extrabold tracking-tight ${s ? "text-cream-50" : "text-ink-900"}`}>
+        <span className={`text-xl font-bold tracking-tight ${s ? "text-cream-50" : "text-ink-900"}`}>
           kora
         </span>
       )}
@@ -113,7 +113,7 @@ export function Nav() {
                   key={m.to}
                   to={m.to}
                   className={({ isActive: g }) =>
-                    `nav-link text-[13.5px] font-bold tracking-wide transition-colors ${g ? "active text-pine-700" : "text-ink-900/70 hover:text-ink-900"}`
+                    `nav-link text-[13.5px] font-semibold tracking-wide transition-colors ${g ? "active text-pine-700" : "text-ink-900/70 hover:text-ink-900"}`
                   }
                 >
                   {m.label}
@@ -124,7 +124,7 @@ export function Nav() {
               <Magnetic strength={0.25} className="hidden sm:block">
                 <Link
                   to="/contact"
-                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink-900 px-5 py-2.5 text-[13.5px] font-bold text-cream-50"
+                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink-900 px-5 py-2.5 text-[13.5px] font-semibold text-cream-50"
                 >
                   <span className="absolute inset-0 translate-y-full rounded-full bg-pine-600 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
                   <span className="relative">Book a call</span>
@@ -199,7 +199,7 @@ export function Nav() {
                       <NavLink
                         to={m.to}
                         className={({ isActive: x }) =>
-                          `group flex items-baseline gap-4 py-1.5 text-5xl font-extrabold tracking-tight sm:text-6xl ${x ? "text-mint-300" : "text-cream-50"}`
+                          `group flex items-baseline gap-4 py-1.5 text-5xl font-bold tracking-tight sm:text-6xl ${x ? "text-mint-300" : "text-cream-50"}`
                         }
                       >
                         <span className="transition-transform duration-500 group-hover:translate-x-3">
@@ -227,7 +227,7 @@ export function Nav() {
                 >
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-mint-300 px-7 py-3.5 text-sm font-extrabold text-pine-950"
+                    className="inline-flex items-center gap-2 rounded-full bg-mint-300 px-7 py-3.5 text-sm font-bold text-pine-950"
                   >
                     {"Book a call "}
                     <ArrowUpRight className="h-4 w-4" />
@@ -244,7 +244,7 @@ export function Nav() {
                 transition={{
                   delay: 0.6,
                 }}
-                className="relative flex items-center justify-between border-t border-cream-50/10 px-6 py-5 text-xs font-semibold text-cream-50/50 sm:px-10"
+                className="relative flex items-center justify-between border-t border-cream-50/10 px-6 py-5 text-xs font-medium text-cream-50/50 sm:px-10"
               >
                 <span>hello@kora.agency</span>
                 <span>© 2026 Kora</span>

@@ -61,7 +61,7 @@ export function Pricing() {
                   <button
                     key={g}
                     onClick={() => n(y)}
-                    className={`relative rounded-full px-6 py-2.5 text-[13px] font-extrabold transition-colors ${v ? "text-cream-50" : "text-ink-500"}`}
+                    className={`relative rounded-full px-6 py-2.5 text-[13px] font-bold transition-colors ${v ? "text-cream-50" : "text-ink-500"}`}
                   >
                     {v && (
                       <motion.span
@@ -90,12 +90,12 @@ export function Pricing() {
               >
                 {g.badge && (
                   <span
-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-extrabold whitespace-nowrap ${g.featured ? "bg-pine-600 text-cream-50" : "bg-cream-100 text-pine-800"}`}
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-bold whitespace-nowrap ${g.featured ? "bg-pine-600 text-cream-50" : "bg-cream-100 text-pine-800"}`}
                   >
                     {g.badge}
                   </span>
                 )}
-                <h2 className="text-xl font-extrabold">{g.name}</h2>
+                <h2 className="text-xl font-bold">{g.name}</h2>
                 <p
                   className={`mt-2 min-h-12 text-sm leading-relaxed ${g.featured ? "text-cream-50/60" : "text-ink-500"}`}
                 >
@@ -123,24 +123,24 @@ export function Pricing() {
                             duration: 0.35,
                             ease: EASE,
                           }}
-                          className="text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl"
+                          className="text-5xl font-bold tracking-tight tabular-nums sm:text-6xl"
                         >
                           ${s ? Math.round(g.monthly * 0.85).toLocaleString() : g.monthly.toLocaleString()}
                         </motion.span>
                       </AnimatePresence>
                       <span
-                        className={`text-sm font-bold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
+                        className={`text-sm font-semibold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
                       >
                         {g.unit}
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl">
+                      <span className="text-5xl font-bold tracking-tight tabular-nums sm:text-6xl">
                         ${g.oneTime?.toLocaleString()}
                       </span>
                       <span
-                        className={`text-sm font-bold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
+                        className={`text-sm font-semibold ${g.featured ? "text-cream-50/50" : "text-ink-400"}`}
                       >
                         {g.unit}
                       </span>
@@ -148,13 +148,13 @@ export function Pricing() {
                   )}
                 </div>
                 {g.monthly && s && (
-                  <p className={`mt-1 text-xs font-bold ${g.featured ? "text-mint-300" : "text-pine-700"}`}>
+                  <p className={`mt-1 text-xs font-semibold ${g.featured ? "text-mint-300" : "text-pine-700"}`}>
                     Billed quarterly, save ${Math.round(g.monthly * 0.15 * 3).toLocaleString()}/quarter
                   </p>
                 )}
                 <ul className="mt-7 flex flex-col gap-3">
                   {g.benefits.map((x) => (
-                    <li key={x} className="flex items-start gap-2.5 text-[13.5px] font-semibold">
+                    <li key={x} className="flex items-start gap-2.5 text-[13.5px] font-medium">
                       <span
                         className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${g.featured ? "bg-mint-300/20 text-mint-300" : "bg-pine-700/10 text-pine-700"}`}
                       >
@@ -166,7 +166,7 @@ export function Pricing() {
                 </ul>
                 <Link
                   to="/contact"
-                  className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-full py-4 text-sm font-extrabold transition-all duration-300 ${g.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
+                  className={`group mt-8 inline-flex items-center justify-center gap-2 rounded-full py-4 text-sm font-bold transition-all duration-300 ${g.featured ? "bg-cream-50 text-ink-900 hover:bg-mint-300" : "border border-ink-900/15 text-ink-900 hover:border-ink-900 hover:bg-ink-900 hover:text-cream-50"}`}
                 >
                   {g.cta}{" "}
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -177,13 +177,13 @@ export function Pricing() {
         </Stagger>
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-col items-center gap-4 rounded-3xl border border-pine-700/20 bg-mint-100/60 p-7 sm:flex-row sm:justify-center sm:gap-8">
-            <span className="flex items-center gap-2 text-sm font-extrabold text-pine-800">
+            <span className="flex items-center gap-2 text-sm font-bold text-pine-800">
               <ShieldCheck className="h-5 w-5" />
               {" The Kora guarantee"}
             </span>
             <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
               {guarantees.map((g) => (
-                <span key={g} className="flex items-center gap-1.5 text-[13px] font-bold text-ink-700">
+                <span key={g} className="flex items-center gap-1.5 text-[13px] font-semibold text-ink-700">
                   <Check className="h-4 w-4 text-pine-700" strokeWidth={3} /> {g}
                 </span>
               ))}
@@ -204,7 +204,7 @@ export function Pricing() {
             <Reveal delay={0.25}>
               <Link
                 to="/contact"
-                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-extrabold text-cream-50 transition-colors hover:bg-pine-700"
+                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3 text-sm font-bold text-cream-50 transition-colors hover:bg-pine-700"
               >
                 {"Talk through the math "}
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -237,14 +237,14 @@ export function Pricing() {
                   className={`rounded-[22px] border p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 ${g.dim ? "border-ink-900/10 bg-white/50" : "border-pine-700/40 bg-pine-800 text-cream-50 shadow-[0_20px_50px_-20px_rgba(22,54,38,0.5)]"}`}
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-lg font-extrabold">{g.label}</h3>
+                    <h3 className="text-lg font-bold">{g.label}</h3>
                     <p
-                      className={`text-lg font-extrabold tabular-nums ${g.dim ? "text-ink-400" : "text-mint-300"}`}
+                      className={`text-lg font-bold tabular-nums ${g.dim ? "text-ink-400" : "text-mint-300"}`}
                     >
                       {g.cost}
                     </p>
                   </div>
-                  <p className={`mt-1 text-sm font-semibold ${g.dim ? "text-ink-400" : "text-cream-50/70"}`}>
+                  <p className={`mt-1 text-sm font-medium ${g.dim ? "text-ink-400" : "text-cream-50/70"}`}>
                     {g.note}
                   </p>
                 </div>
@@ -270,7 +270,7 @@ export function Pricing() {
                       onClick={() => r(y ? -1 : x)}
                       className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
                     >
-                      <span className="text-[15px] font-extrabold sm:text-base">{g.q}</span>
+                      <span className="text-[15px] font-bold sm:text-base">{g.q}</span>
                       <span
                         className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-500 ${y ? "rotate-180 bg-pine-700 text-cream-50" : "bg-cream-100 text-ink-900"}`}
                       >
