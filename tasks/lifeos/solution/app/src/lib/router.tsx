@@ -14,21 +14,23 @@ export const ROUTES: Route[] = [
 ];
 
 const normalize = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
-const Ctx = createContext<{ path: string; navigate(to: string): void }>({ path: "/", navigate: () => {} });
+const Ctx = createContext<{ path: string; search: string; navigate(to: string): void }>({ path: "/", search: "", navigate: () => {} });
 
 export function Router({ children }: { children: ReactNode }) {
-  const [path, setPath] = useState(() => normalize(location.pathname));
+  const [loc, setLoc] = useState(() => ({ path: normalize(location.pathname), search: location.search }));
   useEffect(() => {
-    const onPop = () => setPath(normalize(location.pathname));
+    const onPop = () => setLoc({ path: normalize(location.pathname), search: location.search });
     addEventListener("popstate", onPop);
     return () => removeEventListener("popstate", onPop);
   }, []);
   const navigate = (to: string) => {
-    if (normalize(to) !== path) history.pushState(null, "", to);
-    setPath(normalize(to));
+    const url = new URL(to, location.href);
+    const next = { path: normalize(url.pathname), search: url.search };
+    if (next.path !== loc.path || next.search !== loc.search) history.pushState(null, "", url.pathname + url.search);
+    setLoc(next);
     window.scrollTo({ top: 0 });
   };
-  return <Ctx.Provider value={{ path, navigate }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ ...loc, navigate }}>{children}</Ctx.Provider>;
 }
 
 export const useRouter = () => useContext(Ctx);

@@ -18,12 +18,12 @@ const PAGES: Record<string, () => React.ReactElement> = {
 };
 
 function Current() {
-  const { path } = useRouter();
+  const { path, search } = useRouter();
   const Page = PAGES[path];
   const title = ROUTES.find((r) => r.path === path)?.title ?? "Page not found";
   return (
     <Shell title={title}>
-      {Page ? <Page /> : <div className="card"><EmptyState icon={<Compass size={20} />} title="This page doesn't exist" text="Head back to your overview." action={<Link to="/" className="btn btn-primary">Back to Overview</Link>} /></div>}
+      {Page ? <Page key={search} /> : <div className="card"><EmptyState icon={<Compass size={20} />} title="This page doesn't exist" text="Head back to your overview." action={<Link to="/" className="btn btn-primary">Back to Overview</Link>} /></div>}
     </Shell>
   );
 }
