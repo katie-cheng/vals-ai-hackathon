@@ -30,7 +30,8 @@ MODELS=(
   "openrouter/deepseek/deepseek-v4.1-flash-1017|OPENROUTER_API_KEY|${OPENROUTER_SECRET:-}"
 )
 
-valkyrie org use "$ORG"
+# An access key (VALKYRIE_API_KEY) is already bound to its org, and `org use` refuses it.
+valkyrie whoami | grep -q "$ORG" || valkyrie org use "$ORG"
 tasks/sync-verifier.sh --check
 
 if [ "${PUSH:-1}" = 1 ]; then

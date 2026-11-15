@@ -54,7 +54,8 @@ export function probe(only) {
       const r = el.getBoundingClientRect();
       if (r.width < 4 || r.height < 4 || !visible(el) || el.closest("[aria-hidden=true]")) continue;
       const t = clean(el.innerText);
-      if (!t || t.length > 40 || t.split(" ").length > 5) continue;
+      // A question is an accordion row, not a short control, and may wrap.
+      if (!t || t.length > 40 || t.split(" ").length > 5 || /\?$/.test(t)) continue;
       if (el.tagName === "A" && !el.closest("header,nav") && el.getAttribute("role") !== "button" && !hasSurface(getComputedStyle(el))) continue;
       const boxes = new Map();
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);

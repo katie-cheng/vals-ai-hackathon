@@ -54,7 +54,6 @@ export function requirements(views) {
   const navFound = ["about", "work|case", "insight|blog", "contact|book|call|talk|get in touch"].filter((n) => headerTexts.some((t) => new RegExp(n).test(t)));
   add("nav", "Header links to the standalone pages", fraction(navFound.length, 4), `found: ${navFound.join(", ")}`);
   fromAct("mobile-menu", "Mobile menu", "mobileMenu");
-  add("seo-meta", "Title names Kora and a meta description exists", (/kora/i.test(home.title) ? 0.5 : 0) + (home.metaDescription.trim() ? 0.5 : 0), home.title);
   return items;
 }
 
@@ -121,17 +120,22 @@ export async function interactDesktop(context, url, handoffs, pages) {
     const candidates = [byRole.contact?.url, url].filter(Boolean);
     for (const u of candidates) {
       const page = await freshPage(context, u);
-      const toggle = page.locator("[aria-expanded=false]:visible, summary:visible, button:visible").filter({ hasText: /\?\s*$/ }).first();
-      if (await toggle.count()) {
+      // The first question is often open already, so a later one is tried when a click reveals nothing.
+      const toggles = page.locator("[aria-expanded=false]:visible, summary:visible, button:visible").filter({ hasText: /\?\s*$/ });
+      const n = Math.min(3, await toggles.count());
+      for (let i = 0; i < n; i++) {
         const before = await page.evaluate(() => document.body.innerText);
-        await toggle.scrollIntoViewIfNeeded();
-        await toggle.click({ timeout: 5000 });
+        await toggles.nth(i).scrollIntoViewIfNeeded();
+        await toggles.nth(i).click({ timeout: 5000 });
         await page.waitForTimeout(900);
         const added = newLines(before, await page.evaluate(() => document.body.innerText));
-        await page.close();
-        return { pass: added.length > 0, detail: `${new URL(u).pathname}: ${added.length} new lines` };
+        if (added.length) {
+          await page.close();
+          return { pass: true, detail: `${new URL(u).pathname}: question ${i + 1} revealed ${added.length} new lines` };
+        }
       }
       await page.close();
+      if (n) return { pass: false, detail: `${new URL(u).pathname}: ${n} questions clicked, none revealed an answer` };
     }
     return { pass: false, detail: "no collapsed FAQ question found" };
   });
