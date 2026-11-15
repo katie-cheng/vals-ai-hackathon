@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from train_probe import load, source  # noqa: E402
+from train_probe import load, source, test_sites  # noqa: E402
 
 
 REPS = 5
@@ -19,7 +19,7 @@ REPS = 5
 def main():
     sites, votes, F = load()
     votes = [v for v in votes if v["left_id"] in F and v["right_id"] in F]
-    heldout = {k for k, s in sites.items() if s["split"] == "heldout"}
+    heldout = {k for k, s in sites.items() if s["split"] == "heldout"} | test_sites()
     votes = [v for v in votes if v["left_id"] not in heldout and v["right_id"] not in heldout]
     grp = lambda k: sites[k]["group"] or k
     groups = sorted({grp(k) for k in F})

@@ -1,0 +1,3026 @@
+[
+{
+"source": "osm-local",
+"slug": "stores-dsw-com",
+"url": "https://stores.dsw.com/usa/tx/roundrock/dsw-designer-shoe-warehouse-university-oaks.html",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Austin",
+"name": "DSW"
+},
+{
+"source": "osm-local",
+"slug": "americanjune-com",
+"url": "https://americanjune.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Austin",
+"name": "American June"
+},
+{
+"source": "osm-local",
+"slug": "crescenthouseinc-com",
+"url": "https://crescenthouseinc.com/furniture/",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Austin",
+"name": "CH Furniture Outlet"
+},
+{
+"source": "osm-local",
+"slug": "ellesboutique-co",
+"url": "https://ellesboutique.co/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Austin",
+"name": "Elle's Austin"
+},
+{
+"source": "osm-local",
+"slug": "shop-lululemon-com",
+"url": "https://shop.lululemon.com/stores/us/austin/6thandlamar",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Austin",
+"name": "Lululemon"
+},
+{
+"source": "osm-local",
+"slug": "artclassesaustin-com",
+"url": "https://artclassesaustin.com/",
+"type": "ecommerce",
+"osm_tag": "shop=art",
+"city": "Austin",
+"name": "Art Plus Academy"
+},
+{
+"source": "osm-local",
+"slug": "stores-footlocker-com",
+"url": "https://stores.footlocker.com/tx/cedarpark/11200-lakeline-mall-8711.html",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Austin",
+"name": "Foot Locker"
+},
+{
+"source": "osm-local",
+"slug": "stores-nordstromrack-com",
+"url": "https://stores.nordstromrack.com/us/tx/sunset-valley/5601-brodie-lane",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Austin",
+"name": "Nordstrom Rack"
+},
+{
+"source": "osm-local",
+"slug": "starfurniture-com",
+"url": "https://www.starfurniture.com/",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Austin",
+"name": "Star Furniture"
+},
+{
+"source": "osm-local",
+"slug": "torrid-com",
+"url": "https://www.torrid.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Austin",
+"name": "Torrid"
+},
+{
+"source": "osm-local",
+"slug": "kids-n-cats-com",
+"url": "https://kids-n-cats.com/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Austin",
+"name": "Kids N Cats Unique Gifts"
+},
+{
+"source": "osm-local",
+"slug": "parisbaguette-com",
+"url": "https://www.parisbaguette.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Austin",
+"name": "Paris Baguette"
+},
+{
+"source": "osm-local",
+"slug": "hotelella-com",
+"url": "https://www.hotelella.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Goodall Wooten House"
+},
+{
+"source": "osm-local",
+"slug": "choicehotels-com",
+"url": "https://www.choicehotels.com/texas/cedar-park/comfort-suites-hotels/txi11",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Comfort Suites"
+},
+{
+"source": "osm-local",
+"slug": "coltonhousehotel-com",
+"url": "https://coltonhousehotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Colton House Hotel"
+},
+{
+"source": "osm-local",
+"slug": "wyndhamhotels-com",
+"url": "https://www.wyndhamhotels.com/laquinta/austin-texas/la-quinta-inn-and-suites-austin-parmer-tech-ridge/overview",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "LaQuinta"
+},
+{
+"source": "osm-local",
+"slug": "radissonhotels-com",
+"url": "https://www.radissonhotels.com/en-us/hotels/country-inn-austin-university-tx",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Country Inn & Suites"
+},
+{
+"source": "osm-local",
+"slug": "extendedstayamerica-com",
+"url": "https://www.extendedstayamerica.com",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Extended Stay America Select Suites Austin - Round Rock"
+},
+{
+"source": "osm-local",
+"slug": "sangabrielhouse-com",
+"url": "https://www.sangabrielhouse.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Austin",
+"name": "San Gabriel House Bed & Breakfast"
+},
+{
+"source": "osm-local",
+"slug": "driskillhotel-com",
+"url": "https://driskillhotel.com",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "The Driskill"
+},
+{
+"source": "osm-local",
+"slug": "hoteltrinityatx-com",
+"url": "https://www.hoteltrinityatx.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Hotel Trinity"
+},
+{
+"source": "osm-local",
+"slug": "originhotel-com",
+"url": "https://www.originhotel.com/hotels/austin",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "Origin Hotel"
+},
+{
+"source": "osm-local",
+"slug": "citizenm-com",
+"url": "https://www.citizenm.com/hotels/united-states/austin/austin-downtown-hotel",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "citizenM Austin Downtown"
+},
+{
+"source": "osm-local",
+"slug": "carpenterhotel-com",
+"url": "https://carpenterhotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Austin",
+"name": "The Carpenter Hotel"
+},
+{
+"source": "osm-local",
+"slug": "mytexasinjuryattorney-com",
+"url": "https://mytexasinjuryattorney.com/austin-personal-injury-lawyer/",
+"type": "local_service",
+"osm_tag": "office=lawyer",
+"city": "Austin",
+"name": "Deon Goldschmidt Attorneys"
+},
+{
+"source": "osm-local",
+"slug": "creativecuts-net",
+"url": "http://www.creativecuts.net/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Austin",
+"name": "Creative Cuts"
+},
+{
+"source": "osm-local",
+"slug": "faskelay-com",
+"url": "https://www.faskelay.com/",
+"type": "local_service",
+"osm_tag": "office=accountant",
+"city": "Austin",
+"name": "Faske Lay & Co., .L.L.P., Certified Public Accountants & Business Advisors"
+},
+{
+"source": "osm-local",
+"slug": "maximumfx-com",
+"url": "https://www.maximumfx.com/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Austin",
+"name": "Maximum FX Salon"
+},
+{
+"source": "osm-local",
+"slug": "kindclinic-org",
+"url": "https://kindclinic.org/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Austin",
+"name": "Kind Clinic"
+},
+{
+"source": "osm-local",
+"slug": "austinapartmentsnow-com",
+"url": "http://austinapartmentsnow.com/",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Austin",
+"name": "Apartments Now! Apartment Locators"
+},
+{
+"source": "osm-local",
+"slug": "texastoothfairies-com",
+"url": "https://www.texastoothfairies.com/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Austin",
+"name": "Texas Tooth Fairies Pediatric Dentistry"
+},
+{
+"source": "osm-local",
+"slug": "raresidential-com",
+"url": "https://www.raresidential.com/",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Austin",
+"name": "RA Residential"
+},
+{
+"source": "osm-local",
+"slug": "firestonecompleteautocare-com",
+"url": "https://www.firestonecompleteautocare.com/",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Austin",
+"name": "Firestone Complete Auto Care"
+},
+{
+"source": "osm-local",
+"slug": "supercuts-com",
+"url": "https://www.supercuts.com/locations/tx/austin/parmer-crossing-haircuts-8795.html",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Austin",
+"name": "Supercuts"
+},
+{
+"source": "osm-local",
+"slug": "lonestarcares-org",
+"url": "https://lonestarcares.org/location/lone-star-circle-of-at-care-georgetown-dental/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Austin",
+"name": "Lone Star Circle of Care Dental Center"
+},
+{
+"source": "osm-local",
+"slug": "riverrockdentalfamily-com",
+"url": "https://riverrockdentalfamily.com/locations/river-rock-east-riverside/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Austin",
+"name": "River Rock Dental"
+},
+{
+"source": "osm-local",
+"slug": "pappadeaux-com",
+"url": "https://pappadeaux.com/home/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "Pappadeux's Seafood Kitchen"
+},
+{
+"source": "osm-local",
+"slug": "waterlooicehouse-com",
+"url": "https://www.waterlooicehouse.com/escarpment-menus",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "Waterloo Ice House"
+},
+{
+"source": "osm-local",
+"slug": "huilaushan-us",
+"url": "https://huilaushan.us",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Austin",
+"name": "Hui Lau Shan"
+},
+{
+"source": "osm-local",
+"slug": "crownandanchorpub-com",
+"url": "http://crownandanchorpub.com",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Austin",
+"name": "Crown and Anchor Pub"
+},
+{
+"source": "osm-local",
+"slug": "pecheaustin-com",
+"url": "https://www.pecheaustin.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "P\u00e9ch\u00e9"
+},
+{
+"source": "osm-local",
+"slug": "tex-mex-joes-n-lamar-com",
+"url": "https://www.tex-mex-joes-n-lamar.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "Tex Mex Joe's"
+},
+{
+"source": "osm-local",
+"slug": "localfoodstexas-com",
+"url": "https://www.localfoodstexas.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "Local Foods"
+},
+{
+"source": "osm-local",
+"slug": "shinerssaloon-com",
+"url": "https://shinerssaloon.com/",
+"type": "restaurant",
+"osm_tag": "amenity=bar",
+"city": "Austin",
+"name": "Shiner's Saloon"
+},
+{
+"source": "osm-local",
+"slug": "dhabacafeatx-com",
+"url": "https://www.dhabacafeatx.com/coffeeshop",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Austin",
+"name": "Dhaba Cafe"
+},
+{
+"source": "osm-local",
+"slug": "thekenneyfort-com",
+"url": "https://thekenneyfort.com/",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Austin",
+"name": "The Kenney Fort Pub"
+},
+{
+"source": "osm-local",
+"slug": "justines1937-com",
+"url": "https://www.justines1937.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "Justine's"
+},
+{
+"source": "osm-local",
+"slug": "buffalowildwings-com",
+"url": "https://www.buffalowildwings.com",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Austin",
+"name": "Buffalo Wild Wings"
+},
+{
+"source": "osm-local",
+"slug": "fatface-com",
+"url": "https://www.fatface.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Dublin",
+"name": "Fatface"
+},
+{
+"source": "osm-local",
+"slug": "boodles-com",
+"url": "https://www.boodles.com/en-ie/pages/boodles-dublin",
+"type": "ecommerce",
+"osm_tag": "shop=jewelry",
+"city": "Dublin",
+"name": "Boodles"
+},
+{
+"source": "osm-local",
+"slug": "jamesherren-com",
+"url": "https://www.jamesherren.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Dublin",
+"name": "James Herren"
+},
+{
+"source": "osm-local",
+"slug": "cocoboutique-ie",
+"url": "https://www.cocoboutique.ie/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Dublin",
+"name": "Coco Boutique"
+},
+{
+"source": "osm-local",
+"slug": "gpomuseum-ie",
+"url": "https://www.gpomuseum.ie/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Dublin",
+"name": "GPO Museum Shop"
+},
+{
+"source": "osm-local",
+"slug": "lapis-ie",
+"url": "https://lapis.ie",
+"type": "ecommerce",
+"osm_tag": "shop=jewelry",
+"city": "Dublin",
+"name": "Lapis"
+},
+{
+"source": "osm-local",
+"slug": "a4art-ie",
+"url": "https://www.a4art.ie/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Dublin",
+"name": "A4 Art"
+},
+{
+"source": "osm-local",
+"slug": "thefurnituredistrict-ie",
+"url": "http://www.thefurnituredistrict.ie/",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Dublin",
+"name": "Furniture District"
+},
+{
+"source": "osm-local",
+"slug": "riverisland-com",
+"url": "https://www.riverisland.com/how-can-we-help/find-a-store/dublin-swords",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Dublin",
+"name": "River Island"
+},
+{
+"source": "osm-local",
+"slug": "thedoorwaygallery-com",
+"url": "https://thedoorwaygallery.com",
+"type": "ecommerce",
+"osm_tag": "shop=art",
+"city": "Dublin",
+"name": "The Doorway Gallery"
+},
+{
+"source": "osm-local",
+"slug": "bouchonjewellery-ie",
+"url": "https://www.bouchonjewellery.ie",
+"type": "ecommerce",
+"osm_tag": "shop=jewelry",
+"city": "Dublin",
+"name": "Bouchon"
+},
+{
+"source": "osm-local",
+"slug": "cinnamoodrolls-com",
+"url": "https://cinnamoodrolls.com",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Dublin",
+"name": "Cinnamood"
+},
+{
+"source": "osm-local",
+"slug": "cassidyshotel-com",
+"url": "https://www.cassidyshotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Dublin",
+"name": "Cassidy's Hotel"
+},
+{
+"source": "osm-local",
+"slug": "ariel-house-net",
+"url": "https://www.ariel-house.net/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Dublin",
+"name": "Ariel House"
+},
+{
+"source": "osm-local",
+"slug": "quincecottage-ie",
+"url": "http://www.quincecottage.ie",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Dublin",
+"name": "Quince Cottage"
+},
+{
+"source": "osm-local",
+"slug": "travelodge-co-uk",
+"url": "https://www.travelodge.co.uk/hotels/679/Dublin-City-Centre-hotel",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Dublin",
+"name": "Travelodge Plus"
+},
+{
+"source": "osm-local",
+"slug": "harringtonhall-com",
+"url": "https://www.harringtonhall.com/rooms.html",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Dublin",
+"name": "Harrington Hall Guesthouse"
+},
+{
+"source": "osm-local",
+"slug": "themonthotel-ie",
+"url": "https://www.themonthotel.ie/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Dublin",
+"name": "The Mont Hotel"
+},
+{
+"source": "osm-local",
+"slug": "annandalebnb-com",
+"url": "https://www.annandalebnb.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Dublin",
+"name": "Annandale House B&B"
+},
+{
+"source": "osm-local",
+"slug": "motel-one-com",
+"url": "https://www.motel-one.com/en/hotels/dublin/hotel-dublin/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Dublin",
+"name": "Motel One Dublin"
+},
+{
+"source": "osm-local",
+"slug": "anoige-ie",
+"url": "https://www.anoige.ie/hostels/our-hostel-guide/knockree-youth-hostel/",
+"type": "hospitality",
+"osm_tag": "tourism=hostel",
+"city": "Dublin",
+"name": "Knockree Hostel"
+},
+{
+"source": "osm-local",
+"slug": "albanyhousedublin-com",
+"url": "https://www.albanyhousedublin.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Dublin",
+"name": "Albany House"
+},
+{
+"source": "osm-local",
+"slug": "abberley-ie",
+"url": "https://www.abberley.ie/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Dublin",
+"name": "Abberley Court Hotel"
+},
+{
+"source": "osm-local",
+"slug": "ashlinghouse-ie",
+"url": "http://www.ashlinghouse.ie/home/Azalea-Lodge-BB---Our-Sister-Property-/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Dublin",
+"name": "Azalea Lodge B&B"
+},
+{
+"source": "osm-local",
+"slug": "petermark-ie",
+"url": "https://petermark.ie/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Dublin",
+"name": "Peter Mark"
+},
+{
+"source": "osm-local",
+"slug": "graftonbarbers-com",
+"url": "https://graftonbarbers.com/drumcondra/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Dublin",
+"name": "The Grafton Barber"
+},
+{
+"source": "osm-local",
+"slug": "newcastledental-ie",
+"url": "https://newcastledental.ie/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Dublin",
+"name": "Newcastle Dental"
+},
+{
+"source": "osm-local",
+"slug": "trulydental-ie",
+"url": "https://trulydental.ie/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Dublin",
+"name": "Truly"
+},
+{
+"source": "osm-local",
+"slug": "dunlaoghairemotorworx-ie",
+"url": "https://www.dunlaoghairemotorworx.ie/",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Dublin",
+"name": "Dun Laoghaire Motor Worx"
+},
+{
+"source": "osm-local",
+"slug": "branchstudiod8-book-app",
+"url": "https://branchstudiod8.book.app",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Dublin",
+"name": "Branch Hair Stidio"
+},
+{
+"source": "osm-local",
+"slug": "looksbeauty-ie",
+"url": "https://looksbeauty.ie/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Dublin",
+"name": "Looks Beauty & Nails"
+},
+{
+"source": "osm-local",
+"slug": "waterstoneclinic-ie",
+"url": "https://waterstoneclinic.ie/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Dublin",
+"name": "Waterstone Clinic"
+},
+{
+"source": "osm-local",
+"slug": "meadows-ie",
+"url": "https://meadows.ie/property/",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Dublin",
+"name": "Meadows"
+},
+{
+"source": "osm-local",
+"slug": "blow-ie",
+"url": "https://www.blow.ie/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Dublin",
+"name": "Blow Hair & Beauty"
+},
+{
+"source": "osm-local",
+"slug": "ballyfermotdentalpractice-ie",
+"url": "https://www.ballyfermotdentalpractice.ie/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Dublin",
+"name": "Ballyfermot Dental Practice"
+},
+{
+"source": "osm-local",
+"slug": "centricgp-ie",
+"url": "https://www.centricgp.ie/clifton-court-medical/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Dublin",
+"name": "Clifton Court Medical"
+},
+{
+"source": "osm-local",
+"slug": "calimerodublin-com",
+"url": "http://calimerodublin.com/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Dublin",
+"name": "Calimero Caf\u00e9"
+},
+{
+"source": "osm-local",
+"slug": "krystlenightclub-com",
+"url": "https://www.krystlenightclub.com/",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Dublin",
+"name": "Krystle"
+},
+{
+"source": "osm-local",
+"slug": "munchies-ie",
+"url": "https://www.munchies.ie/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Dublin",
+"name": "3fe IFSC"
+},
+{
+"source": "osm-local",
+"slug": "parlour-ie",
+"url": "https://parlour.ie/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Dublin",
+"name": "Parlour"
+},
+{
+"source": "osm-local",
+"slug": "thecelt-ie",
+"url": "https://thecelt.ie",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Dublin",
+"name": "The Celt"
+},
+{
+"source": "osm-local",
+"slug": "yamamori-ie",
+"url": "https://www.yamamori.ie/southcity",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Dublin",
+"name": "Yamamori South City"
+},
+{
+"source": "osm-local",
+"slug": "organicsupermarket-ie",
+"url": "https://www.organicsupermarket.ie/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Dublin",
+"name": "Denj Persian Cuisine"
+},
+{
+"source": "osm-local",
+"slug": "platformpizzabar-ie",
+"url": "https://www.platformpizzabar.ie/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Dublin",
+"name": "Platform Pizza"
+},
+{
+"source": "osm-local",
+"slug": "clontarfcastle-ie",
+"url": "https://www.clontarfcastle.ie/dining/knights-bar/",
+"type": "restaurant",
+"osm_tag": "amenity=bar",
+"city": "Dublin",
+"name": "Knights Bar"
+},
+{
+"source": "osm-local",
+"slug": "obriens-ie",
+"url": "https://www.obriens.ie/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Dublin",
+"name": "O'Briens"
+},
+{
+"source": "osm-local",
+"slug": "oregansdublin-com",
+"url": "https://www.oregansdublin.com/",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Dublin",
+"name": "O'Regan's"
+},
+{
+"source": "osm-local",
+"slug": "motleybrue-ie",
+"url": "https://www.motleybrue.ie/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Dublin",
+"name": "Motley Brue"
+},
+{
+"source": "osm-local",
+"slug": "beletta-com",
+"url": "https://beletta.com/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Edinburgh",
+"name": "Bel & Etta"
+},
+{
+"source": "osm-local",
+"slug": "swishprint-co-uk",
+"url": "http://www.swishprint.co.uk/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "Swish"
+},
+{
+"source": "osm-local",
+"slug": "mcnaughtansbookshop-com",
+"url": "http://www.mcnaughtansbookshop.com/",
+"type": "ecommerce",
+"osm_tag": "shop=books",
+"city": "Edinburgh",
+"name": "McNaughtan's Bookshop"
+},
+{
+"source": "osm-local",
+"slug": "thewhitecompany-com",
+"url": "https://www.thewhitecompany.com/uk/our-stores/edinburgh",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "The White Company"
+},
+{
+"source": "osm-local",
+"slug": "scotlandshop-com",
+"url": "https://www.scotlandshop.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "ScotlandShop"
+},
+{
+"source": "osm-local",
+"slug": "primark-com",
+"url": "https://www.primark.com/en-gb/stores/edinburgh/91-93-princes-street",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "Primark"
+},
+{
+"source": "osm-local",
+"slug": "roddandgunn-com",
+"url": "https://www.roddandgunn.com/uk",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "Rodd & Gunn"
+},
+{
+"source": "osm-local",
+"slug": "brora-co-uk",
+"url": "https://www.brora.co.uk/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "Brora"
+},
+{
+"source": "osm-local",
+"slug": "handsel-uk",
+"url": "https://www.handsel.uk/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Edinburgh",
+"name": "Handsel"
+},
+{
+"source": "osm-local",
+"slug": "smi-menswear-co-uk",
+"url": "https://www.smi-menswear.co.uk/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Edinburgh",
+"name": "smi"
+},
+{
+"source": "osm-local",
+"slug": "ryansbikesurgery-com",
+"url": "https://www.ryansbikesurgery.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bicycle",
+"city": "Edinburgh",
+"name": "Ryan's Bike Surgery"
+},
+{
+"source": "osm-local",
+"slug": "office-co-uk",
+"url": "https://www.office.co.uk/view/content/storelocator?storename=Office%20Edinburgh",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Edinburgh",
+"name": "Office"
+},
+{
+"source": "osm-local",
+"slug": "tynecastleparkhotel-com",
+"url": "https://tynecastleparkhotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Edinburgh",
+"name": "Tynecastle Park Hotel"
+},
+{
+"source": "osm-local",
+"slug": "themurrayfieldhouse-co-uk",
+"url": "http://www.themurrayfieldhouse.co.uk/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Edinburgh",
+"name": "The Murrayfield House"
+},
+{
+"source": "osm-local",
+"slug": "uoecollection-com",
+"url": "https://www.uoecollection.com/hotels/the-scott/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Edinburgh",
+"name": "The Scott"
+},
+{
+"source": "osm-local",
+"slug": "24royalterrace-co-uk",
+"url": "https://www.24royalterrace.co.uk/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Edinburgh",
+"name": "24 Royal Terrace"
+},
+{
+"source": "osm-local",
+"slug": "braelodge-com",
+"url": "https://www.braelodge.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Brae Lodge"
+},
+{
+"source": "osm-local",
+"slug": "highfieldgh-co-uk",
+"url": "https://www.highfieldgh.co.uk/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Highfield"
+},
+{
+"source": "osm-local",
+"slug": "all-accor-com",
+"url": "https://all.accor.com/hotel/8710/index.en.shtml",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Edinburgh",
+"name": "Ibis Budget Edinburgh Park"
+},
+{
+"source": "osm-local",
+"slug": "sailte-house-edinburgh-hotel-org",
+"url": "https://sailte-house.edinburgh-hotel.org/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Sailte House"
+},
+{
+"source": "osm-local",
+"slug": "albahillsguesthouseedinburgh-com",
+"url": "http://www.albahillsguesthouseedinburgh.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Alba Hills"
+},
+{
+"source": "osm-local",
+"slug": "pillarshouse-co-uk",
+"url": "https://pillarshouse.co.uk/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Pillars House"
+},
+{
+"source": "osm-local",
+"slug": "lanternguesthouse-co-uk",
+"url": "https://www.lanternguesthouse.co.uk/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Lantern Guest House"
+},
+{
+"source": "osm-local",
+"slug": "observatory-house-art",
+"url": "https://www.observatory-house.art/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Edinburgh",
+"name": "Observatory House"
+},
+{
+"source": "osm-local",
+"slug": "architecturalservicesedinburgh-co-uk",
+"url": "https://www.architecturalservicesedinburgh.co.uk/",
+"type": "local_service",
+"osm_tag": "office=architect",
+"city": "Edinburgh",
+"name": "Kyla Martin"
+},
+{
+"source": "osm-local",
+"slug": "southernmedicalgroup-co-uk",
+"url": "https://www.southernmedicalgroup.co.uk/",
+"type": "local_service",
+"osm_tag": "amenity=doctors",
+"city": "Edinburgh",
+"name": "Southern Medical Group"
+},
+{
+"source": "osm-local",
+"slug": "whitesautoservices-com",
+"url": "https://www.whitesautoservices.com/",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Edinburgh",
+"name": "White's Auto Services"
+},
+{
+"source": "osm-local",
+"slug": "murrayfielddental-co-uk",
+"url": "https://murrayfielddental.co.uk/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Edinburgh",
+"name": "Murrayfield Dental Practice"
+},
+{
+"source": "osm-local",
+"slug": "sgalbraithhair-com",
+"url": "https://www.sgalbraithhair.com/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Edinburgh",
+"name": "S Galbraith Hair Studio"
+},
+{
+"source": "osm-local",
+"slug": "aienlettings-co-uk",
+"url": "http://www.aienlettings.co.uk/",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Edinburgh",
+"name": "UB Hones"
+},
+{
+"source": "osm-local",
+"slug": "morningsidedentist-co-uk",
+"url": "https://www.morningsidedentist.co.uk/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Edinburgh",
+"name": "Morningside Dental Clinic"
+},
+{
+"source": "osm-local",
+"slug": "garlandsflorist-co-uk",
+"url": "http://www.garlandsflorist.co.uk/",
+"type": "local_service",
+"osm_tag": "shop=florist",
+"city": "Edinburgh",
+"name": "Garlands"
+},
+{
+"source": "osm-local",
+"slug": "daniellecarrhairdressing-com",
+"url": "https://daniellecarrhairdressing.com",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Edinburgh",
+"name": "Danielle Carr Hairdressing"
+},
+{
+"source": "osm-local",
+"slug": "ardmillandental-com",
+"url": "https://www.ardmillandental.com/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Edinburgh",
+"name": "Ardmillan Dental Practice"
+},
+{
+"source": "osm-local",
+"slug": "dunehairdressing-co-uk",
+"url": "https://www.dunehairdressing.co.uk/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Edinburgh",
+"name": "Dune Hairdressing"
+},
+{
+"source": "osm-local",
+"slug": "aeglelight-com",
+"url": "https://aeglelight.com",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Edinburgh",
+"name": "aegle light"
+},
+{
+"source": "osm-local",
+"slug": "thegoldendragonrestaurant-co-uk",
+"url": "https://www.thegoldendragonrestaurant.co.uk/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "The Golden Dragon"
+},
+{
+"source": "osm-local",
+"slug": "thespicepavilion-co-uk",
+"url": "http://www.thespicepavilion.co.uk/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "The Spice Pavilion"
+},
+{
+"source": "osm-local",
+"slug": "threemarysbar-co-uk",
+"url": "https://threemarysbar.co.uk",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Edinburgh",
+"name": "Three Marys"
+},
+{
+"source": "osm-local",
+"slug": "soulvegan-uk",
+"url": "https://soulvegan.uk/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "Soul Vegan"
+},
+{
+"source": "osm-local",
+"slug": "fruitmarket-co-uk",
+"url": "https://www.fruitmarket.co.uk/cafe/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Edinburgh",
+"name": "Fruitmarket Cafe"
+},
+{
+"source": "osm-local",
+"slug": "lounge33edinburgh-co-uk",
+"url": "https://lounge33edinburgh.co.uk/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Edinburgh",
+"name": "Lounge 33"
+},
+{
+"source": "osm-local",
+"slug": "bistronomy176-co-uk",
+"url": "https://bistronomy176.co.uk/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "Bistronomy 176"
+},
+{
+"source": "osm-local",
+"slug": "contini-com",
+"url": "https://www.contini.com/contini-cannonball",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "Contini Cannonball"
+},
+{
+"source": "osm-local",
+"slug": "howies-uk-com",
+"url": "https://www.howies.uk.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "Howies"
+},
+{
+"source": "osm-local",
+"slug": "greatukpubs-co-uk",
+"url": "https://www.greatukpubs.co.uk/amber-rose-edinburgh",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Edinburgh",
+"name": "The Amber Rose"
+},
+{
+"source": "osm-local",
+"slug": "accom-ed-ac-uk",
+"url": "https://www.accom.ed.ac.uk/during-your-stay/catering/",
+"type": "restaurant",
+"osm_tag": "amenity=bar",
+"city": "Edinburgh",
+"name": "Arthur's Food and Drink"
+},
+{
+"source": "osm-local",
+"slug": "assaggini-co-uk",
+"url": "https://www.assaggini.co.uk/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Edinburgh",
+"name": "Assaggini"
+},
+{
+"source": "osm-local",
+"slug": "marionmarshalljewellery-com-au",
+"url": "https://www.marionmarshalljewellery.com.au/",
+"type": "ecommerce",
+"osm_tag": "shop=jewelry",
+"city": "Melbourne",
+"name": "Marion Marshall Jewellery"
+},
+{
+"source": "osm-local",
+"slug": "superamart-com-au",
+"url": "https://www.superamart.com.au",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Melbourne",
+"name": "Super A Mart"
+},
+{
+"source": "osm-local",
+"slug": "conrad-s-com",
+"url": "https://conrad-s.com",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Melbourne",
+"name": "Conrad-S"
+},
+{
+"source": "osm-local",
+"slug": "ocab-com-au",
+"url": "https://www.ocab.com.au",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Melbourne",
+"name": "Ocab"
+},
+{
+"source": "osm-local",
+"slug": "amalinevitale-com-au",
+"url": "https://www.amalinevitale.com.au",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Melbourne",
+"name": "Amaline Vitale"
+},
+{
+"source": "osm-local",
+"slug": "bicyclesuperstore-com-au",
+"url": "https://www.bicyclesuperstore.com.au/stores/nunawading",
+"type": "ecommerce",
+"osm_tag": "shop=bicycle",
+"city": "Melbourne",
+"name": "Bicycle Superstore"
+},
+{
+"source": "osm-local",
+"slug": "plush-com-au",
+"url": "https://www.plush.com.au/plush-dandenong",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Melbourne",
+"name": "Plush"
+},
+{
+"source": "osm-local",
+"slug": "ellinormazza-com-au",
+"url": "https://ellinormazza.com.au/",
+"type": "ecommerce",
+"osm_tag": "shop=jewelry",
+"city": "Melbourne",
+"name": "Ellinor Mazza"
+},
+{
+"source": "osm-local",
+"slug": "uniqlo-com",
+"url": "https://www.uniqlo.com/au/shop/docklands.html",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Melbourne",
+"name": "Uniqlo"
+},
+{
+"source": "osm-local",
+"slug": "furnitureoutlet-net-au",
+"url": "https://furnitureoutlet.net.au/",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Melbourne",
+"name": "Furniture Outlet"
+},
+{
+"source": "osm-local",
+"slug": "dobsons-com-au",
+"url": "https://dobsons.com.au/schools/norwood-secondary-college/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Melbourne",
+"name": "Dobsons Norwood Secondary College Store"
+},
+{
+"source": "osm-local",
+"slug": "vianovastyle-com-au",
+"url": "https://vianovastyle.com.au/",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Melbourne",
+"name": "Via Nova Style"
+},
+{
+"source": "osm-local",
+"slug": "nexthotelmelbourne-com",
+"url": "https://nexthotelmelbourne.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Next"
+},
+{
+"source": "osm-local",
+"slug": "melbourne-intercontinental-com",
+"url": "https://www.melbourne.intercontinental.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "InterContinental"
+},
+{
+"source": "osm-local",
+"slug": "ovolohotels-com",
+"url": "https://ovolohotels.com/ovolo/south-yarra/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Ovolo South Yarra"
+},
+{
+"source": "osm-local",
+"slug": "brightonapartment-com-au",
+"url": "https://www.brightonapartment.com.au",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Brighton Serviced Apartments"
+},
+{
+"source": "osm-local",
+"slug": "bayviewhotels-com",
+"url": "https://www.bayviewhotels.com/eden/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Bayview Eden"
+},
+{
+"source": "osm-local",
+"slug": "langhamhotels-com",
+"url": "https://www.langhamhotels.com/en/the-langham/melbourne/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "The Langham"
+},
+{
+"source": "osm-local",
+"slug": "cityparkhotel-com-au",
+"url": "https://www.cityparkhotel.com.au/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "City Park Hotel"
+},
+{
+"source": "osm-local",
+"slug": "accorhotels-com",
+"url": "https://www.accorhotels.com/gb/hotel-9270-mercure-north-melbourne/index.shtml",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Mercure North Melbourne"
+},
+{
+"source": "osm-local",
+"slug": "novotelmelbourne-com-au",
+"url": "https://www.novotelmelbourne.com.au/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Novotel Melbourne on Collins"
+},
+{
+"source": "osm-local",
+"slug": "flagstaffcityinn-com-au",
+"url": "https://www.flagstaffcityinn.com.au/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Flagstaff City Inn"
+},
+{
+"source": "osm-local",
+"slug": "ibis-com",
+"url": "http://www.ibis.com/gb/hotel-5044-ibis-budget-melbourne-airport/index.shtml",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Ibis Budget"
+},
+{
+"source": "osm-local",
+"slug": "discoverasr-com",
+"url": "https://www.discoverasr.com/en/lyf/australia/lyf-on-elizabeth-melbourne",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Melbourne",
+"name": "Lyf on Elizabeth"
+},
+{
+"source": "osm-local",
+"slug": "ociabeautyco-com-au",
+"url": "https://www.ociabeautyco.com.au/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Melbourne",
+"name": "Ocia Beauty Co"
+},
+{
+"source": "osm-local",
+"slug": "turnthecorner-com-au",
+"url": "https://www.turnthecorner.com.au/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Melbourne",
+"name": "Turn The Corner Medical Clinic Fairfield"
+},
+{
+"source": "osm-local",
+"slug": "brunswickcentralvet-com-au",
+"url": "https://brunswickcentralvet.com.au/",
+"type": "local_service",
+"osm_tag": "amenity=veterinary",
+"city": "Melbourne",
+"name": "Brunswick Central Vet"
+},
+{
+"source": "osm-local",
+"slug": "melbourne-dentist-clinic-com",
+"url": "http://melbourne.dentist-clinic.com",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Melbourne",
+"name": "Melbourne Dentist Clinic"
+},
+{
+"source": "osm-local",
+"slug": "buffnailstudios-com",
+"url": "https://buffnailstudios.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Melbourne",
+"name": "Buff Nail Studios"
+},
+{
+"source": "osm-local",
+"slug": "bundooravet-com-au",
+"url": "https://www.bundooravet.com.au",
+"type": "local_service",
+"osm_tag": "amenity=veterinary",
+"city": "Melbourne",
+"name": "Bundoora Veterinary Hospital and Clinic"
+},
+{
+"source": "osm-local",
+"slug": "realestatecraigieburn-com-au",
+"url": "https://realestatecraigieburn.com.au/",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Melbourne",
+"name": "Craigieburn Local"
+},
+{
+"source": "osm-local",
+"slug": "sensationalbeautyclinic-com",
+"url": "https://www.sensationalbeautyclinic.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Melbourne",
+"name": "Sensational Beauty Clinic"
+},
+{
+"source": "osm-local",
+"slug": "visionradiology-com-au",
+"url": "https://visionradiology.com.au/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Melbourne",
+"name": "Vision Radiology Carnegie"
+},
+{
+"source": "osm-local",
+"slug": "frederickproperty-com-au",
+"url": "https://www.frederickproperty.com.au/",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Melbourne",
+"name": "Frederick Property"
+},
+{
+"source": "osm-local",
+"slug": "mycar-com-au",
+"url": "https://www.mycar.com.au/stores/vic/hallam",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Melbourne",
+"name": "mycar Tyre & Auto"
+},
+{
+"source": "osm-local",
+"slug": "ebhg-com-au",
+"url": "https://www.ebhg.com.au/",
+"type": "local_service",
+"osm_tag": "amenity=doctors",
+"city": "Melbourne",
+"name": "East Bentleigh Health Group - Chiropractic & Podiatry"
+},
+{
+"source": "osm-local",
+"slug": "quanjude-com-au",
+"url": "http://www.quanjude.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Melbourne",
+"name": "Quanjude Chinese Restaurant"
+},
+{
+"source": "osm-local",
+"slug": "mymks-com-au",
+"url": "https://mymks.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Melbourne",
+"name": "MKS Spices'n Things"
+},
+{
+"source": "osm-local",
+"slug": "piccolomondocarlton-au",
+"url": "https://piccolomondocarlton.au/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Melbourne",
+"name": "Piccolo Mondo"
+},
+{
+"source": "osm-local",
+"slug": "thepointalbertpark-com-au",
+"url": "http://www.thepointalbertpark.com.au/index.php",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Melbourne",
+"name": "The Point Restaurant"
+},
+{
+"source": "osm-local",
+"slug": "tamurasakebar-com",
+"url": "https://www.tamurasakebar.com/",
+"type": "restaurant",
+"osm_tag": "amenity=bar",
+"city": "Melbourne",
+"name": "Tamura Sake Bar"
+},
+{
+"source": "osm-local",
+"slug": "leafandvine-com-au",
+"url": "https://leafandvine.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Melbourne",
+"name": "Leaf & Vine"
+},
+{
+"source": "osm-local",
+"slug": "hopscotchmelbourne-com-au",
+"url": "https://hopscotchmelbourne.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=bar",
+"city": "Melbourne",
+"name": "Hopscotch"
+},
+{
+"source": "osm-local",
+"slug": "junctionhotel-net-au",
+"url": "https://www.junctionhotel.net.au",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Melbourne",
+"name": "Junction Hotel"
+},
+{
+"source": "osm-local",
+"slug": "priorthornbury-com-au",
+"url": "https://www.priorthornbury.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Melbourne",
+"name": "Prior Thornbury"
+},
+{
+"source": "osm-local",
+"slug": "nikushiki-com-au",
+"url": "https://nikushiki.com.au",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Melbourne",
+"name": "Niku Shiki Melbourne Central"
+},
+{
+"source": "osm-local",
+"slug": "hannascafe-com-au",
+"url": "https://hannascafe.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Melbourne",
+"name": "Hanna's Cafe"
+},
+{
+"source": "osm-local",
+"slug": "bellevuebar-com-au",
+"url": "https://bellevuebar.com.au/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Melbourne",
+"name": "Bellevue Bar\u00a0&\u00a0Terrace"
+},
+{
+"source": "osm-local",
+"slug": "hottopic-com",
+"url": "https://www.hottopic.com/homepage",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Portland",
+"name": "Hot Topic"
+},
+{
+"source": "osm-local",
+"slug": "locations-jjill-com",
+"url": "https://locations.jjill.com/or/hillsboro/169/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Portland",
+"name": "J.Jill"
+},
+{
+"source": "osm-local",
+"slug": "tenderlovingempire-com",
+"url": "https://tenderlovingempire.com/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Portland",
+"name": "Tender Loving Empire"
+},
+{
+"source": "osm-local",
+"slug": "earthboundtrading-com",
+"url": "https://www.earthboundtrading.com/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Portland",
+"name": "Earthbound Trading Co."
+},
+{
+"source": "osm-local",
+"slug": "vintage-books-com",
+"url": "https://www.vintage-books.com/",
+"type": "ecommerce",
+"osm_tag": "shop=books",
+"city": "Portland",
+"name": "Vintage Books"
+},
+{
+"source": "osm-local",
+"slug": "sugarwheelworks-com",
+"url": "https://sugarwheelworks.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bicycle",
+"city": "Portland",
+"name": "Sugar Wheel Works"
+},
+{
+"source": "osm-local",
+"slug": "cedarstreetbagelco-com",
+"url": "https://www.cedarstreetbagelco.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Portland",
+"name": "Cedar Street Bagel Company"
+},
+{
+"source": "osm-local",
+"slug": "sweetpeabaking-com",
+"url": "http://sweetpeabaking.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Portland",
+"name": "Sweetpea"
+},
+{
+"source": "osm-local",
+"slug": "mrformaltuxedos-com",
+"url": "https://mrformaltuxedos.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Portland",
+"name": "Mr. Formal"
+},
+{
+"source": "osm-local",
+"slug": "somethingcycles-com",
+"url": "https://www.somethingcycles.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bicycle",
+"city": "Portland",
+"name": "Something Cycles"
+},
+{
+"source": "osm-local",
+"slug": "keenfootwear-com",
+"url": "https://www.keenfootwear.com/",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Portland",
+"name": "Keen Garage"
+},
+{
+"source": "osm-local",
+"slug": "fleetfeet-com",
+"url": "https://www.fleetfeet.com/s/pdx/locations/portland",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Portland",
+"name": "Fleet Feet"
+},
+{
+"source": "osm-local",
+"slug": "portlandswhitehouse-com",
+"url": "https://www.portlandswhitehouse.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Portland",
+"name": "Portland's White House"
+},
+{
+"source": "osm-local",
+"slug": "palisociety-com",
+"url": "https://www.palisociety.com/hotels/hotel-grand-stark",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Hotel Grand Stark"
+},
+{
+"source": "osm-local",
+"slug": "apaintedladyinn-com",
+"url": "https://www.apaintedladyinn.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Portland",
+"name": "A Painted Lady Inn"
+},
+{
+"source": "osm-local",
+"slug": "bridgewayhotels-com",
+"url": "https://www.bridgewayhotels.com",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Bridgeway Inn & Suites"
+},
+{
+"source": "osm-local",
+"slug": "hoteldeluxeportland-com",
+"url": "https://www.hoteldeluxeportland.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Hotel deLuxe"
+},
+{
+"source": "osm-local",
+"slug": "thefultonhouse-com",
+"url": "https://thefultonhouse.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Portland",
+"name": "Fulton House"
+},
+{
+"source": "osm-local",
+"slug": "theporterhotel-com",
+"url": "https://www.theporterhotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Porter Hotel"
+},
+{
+"source": "osm-local",
+"slug": "portlandparamount-com",
+"url": "https://www.portlandparamount.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Paramount Hotel"
+},
+{
+"source": "osm-local",
+"slug": "downtownvalueinn-com",
+"url": "http://www.downtownvalueinn.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Downtown Value Inn"
+},
+{
+"source": "osm-local",
+"slug": "staypineapple-com",
+"url": "https://www.staypineapple.com/hotel-rose-portland-or",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Portland",
+"name": "Hotel Rose"
+},
+{
+"source": "osm-local",
+"slug": "kexhotels-com",
+"url": "https://kexhotels.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hostel",
+"city": "Portland",
+"name": "KEX"
+},
+{
+"source": "osm-local",
+"slug": "nwportlandhostel-com",
+"url": "https://www.nwportlandhostel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hostel",
+"city": "Portland",
+"name": "Northwest Portland International Hostel and Guesthouse"
+},
+{
+"source": "osm-local",
+"slug": "echonaturalbeauty-com",
+"url": "https://echonaturalbeauty.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Portland",
+"name": "Echo Natural Beauty"
+},
+{
+"source": "osm-local",
+"slug": "westernpsych-com",
+"url": "https://www.westernpsych.com/",
+"type": "local_service",
+"osm_tag": "amenity=doctors",
+"city": "Portland",
+"name": "Western Psychological and Counseling Services, PC"
+},
+{
+"source": "osm-local",
+"slug": "jiffylube-com",
+"url": "https://www.jiffylube.com/locations/or/portland/2527",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Portland",
+"name": "Jiffy Lube"
+},
+{
+"source": "osm-local",
+"slug": "thewaxskinspa-com",
+"url": "https://thewaxskinspa.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Portland",
+"name": "The Wax Skin Spa"
+},
+{
+"source": "osm-local",
+"slug": "app-greatclips-com",
+"url": "https://app.greatclips.com/salon/1821/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Portland",
+"name": "Great Clips"
+},
+{
+"source": "osm-local",
+"slug": "midas-com",
+"url": "https://www.midas.com/store/or/gresham/135-nw-burnside-drive-97030?shopnum=1972",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Portland",
+"name": "Midas"
+},
+{
+"source": "osm-local",
+"slug": "sylvanchiropractic-com",
+"url": "https://www.sylvanchiropractic.com/",
+"type": "local_service",
+"osm_tag": "amenity=doctors",
+"city": "Portland",
+"name": "Sylvan Chiropractic Clinic and Wellness Center"
+},
+{
+"source": "osm-local",
+"slug": "sellerslawoffice-com",
+"url": "https://sellerslawoffice.com/",
+"type": "local_service",
+"osm_tag": "office=lawyer",
+"city": "Portland",
+"name": "Sellers Law Office"
+},
+{
+"source": "osm-local",
+"slug": "labellenails-net",
+"url": "https://www.labellenails.net/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Portland",
+"name": "La Belle Nails"
+},
+{
+"source": "osm-local",
+"slug": "graysonlawllp-com",
+"url": "http://www.graysonlawllp.com",
+"type": "local_service",
+"osm_tag": "office=lawyer",
+"city": "Portland",
+"name": "Grayson Law LLP"
+},
+{
+"source": "osm-local",
+"slug": "gp-salon-com",
+"url": "https://www.gp-salon.com/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Portland",
+"name": "Grand Paradise Salon"
+},
+{
+"source": "osm-local",
+"slug": "pearlmedspa-com",
+"url": "https://pearlmedspa.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Portland",
+"name": "Pearl Medspa"
+},
+{
+"source": "osm-local",
+"slug": "hartroadpizza-com",
+"url": "https://www.hartroadpizza.com/",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Portland",
+"name": "Hart Road Pizza & Sports Bar"
+},
+{
+"source": "osm-local",
+"slug": "scchef-us",
+"url": "http://www.scchef.us",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Szechuan Chef"
+},
+{
+"source": "osm-local",
+"slug": "lacarretaofgresham-com",
+"url": "http://www.lacarretaofgresham.com",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "La Carreta of Gresham"
+},
+{
+"source": "osm-local",
+"slug": "mijaliscofamilyrestaurant-com",
+"url": "https://mijaliscofamilyrestaurant.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Mi Jalisco"
+},
+{
+"source": "osm-local",
+"slug": "flying-pie-com",
+"url": "https://www.flying-pie.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Flying Pie Pizzeria"
+},
+{
+"source": "osm-local",
+"slug": "wahihana-com",
+"url": "https://wahihana.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Wahi Hana"
+},
+{
+"source": "osm-local",
+"slug": "locations-noodles-com",
+"url": "https://locations.noodles.com/or/hillsboro/7216-ne-cornell-road",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Noodles & Company"
+},
+{
+"source": "osm-local",
+"slug": "baimintthai-com",
+"url": "http://www.baimintthai.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Bai Mint Thai"
+},
+{
+"source": "osm-local",
+"slug": "nohos-com",
+"url": "http://www.nohos.com",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Noho's Hawaiian Cafe"
+},
+{
+"source": "osm-local",
+"slug": "stoicpdx-com",
+"url": "https://stoicpdx.com",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Portland",
+"name": "Stoic Bar & Restaurant"
+},
+{
+"source": "osm-local",
+"slug": "bunbohuerestaurant-business-site",
+"url": "https://bunbohuerestaurant.business.site",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "Bun Bo Hue Restaurant"
+},
+{
+"source": "osm-local",
+"slug": "restaurants-ihop-com",
+"url": "https://restaurants.ihop.com/en-us/or/portland/breakfast-4931-se-82nd-ave-675",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Portland",
+"name": "IHOP"
+},
+{
+"source": "osm-local",
+"slug": "stores-madewell-com",
+"url": "https://stores.madewell.com/us/wa/bellevue/118a-bellevue-square",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Seattle",
+"name": "Madewell"
+},
+{
+"source": "osm-local",
+"slug": "decoreofseattle-com",
+"url": "https://decoreofseattle.com/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Seattle",
+"name": "De'Core of Seattle"
+},
+{
+"source": "osm-local",
+"slug": "richshome-com",
+"url": "https://www.richshome.com/locations/bellevue/",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Seattle",
+"name": "Rich's for the Home"
+},
+{
+"source": "osm-local",
+"slug": "soma-com",
+"url": "https://www.soma.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Seattle",
+"name": "Soma"
+},
+{
+"source": "osm-local",
+"slug": "sezane-com",
+"url": "https://www.sezane.com/us-en/our-locations/sezane-washington",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Seattle",
+"name": "S\u00e9zane"
+},
+{
+"source": "osm-local",
+"slug": "bkstr-com",
+"url": "https://www.bkstr.com/lakewashingtonitstore/home",
+"type": "ecommerce",
+"osm_tag": "shop=books",
+"city": "Seattle",
+"name": "LWIT Bookstore"
+},
+{
+"source": "osm-local",
+"slug": "christiansciencetwelfthseattle-com",
+"url": "https://christiansciencetwelfthseattle.com/",
+"type": "ecommerce",
+"osm_tag": "shop=books",
+"city": "Seattle",
+"name": "Christian Science Reading Room"
+},
+{
+"source": "osm-local",
+"slug": "pointnopointstudio-com",
+"url": "https://pointnopointstudio.com/pages/fremont-showroom",
+"type": "ecommerce",
+"osm_tag": "shop=art",
+"city": "Seattle",
+"name": "Point No Point Studio"
+},
+{
+"source": "osm-local",
+"slug": "byenbakeri-com",
+"url": "https://www.byenbakeri.com",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Seattle",
+"name": "Byen Bakeri"
+},
+{
+"source": "osm-local",
+"slug": "colegallery-net",
+"url": "https://colegallery.net/",
+"type": "ecommerce",
+"osm_tag": "shop=art",
+"city": "Seattle",
+"name": "Cole Gallery"
+},
+{
+"source": "osm-local",
+"slug": "bootylandkids-com",
+"url": "https://bootylandkids.com",
+"type": "ecommerce",
+"osm_tag": "shop=toys",
+"city": "Seattle",
+"name": "Bootyland Kids & Two Owls"
+},
+{
+"source": "osm-local",
+"slug": "superjocknjill-com",
+"url": "https://www.superjocknjill.com/",
+"type": "ecommerce",
+"osm_tag": "shop=shoes",
+"city": "Seattle",
+"name": "Super Jock 'n Jill"
+},
+{
+"source": "osm-local",
+"slug": "baronesshotel-com",
+"url": "https://www.baronesshotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Baroness Hotel"
+},
+{
+"source": "osm-local",
+"slug": "civicseattle-com",
+"url": "https://www.civicseattle.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Civic Hotel"
+},
+{
+"source": "osm-local",
+"slug": "warwickhotels-com",
+"url": "https://warwickhotels.com/seattle/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Warwick Seattle Hotel"
+},
+{
+"source": "osm-local",
+"slug": "thesomm-com",
+"url": "https://thesomm.com",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "The Somm"
+},
+{
+"source": "osm-local",
+"slug": "embassysuitesbellevue-com",
+"url": "http://www.embassysuitesbellevue.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Embassy Suites by Hilton Seattle Bellevue"
+},
+{
+"source": "osm-local",
+"slug": "hotelballardseattle-com",
+"url": "https://www.hotelballardseattle.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Hotel Ballard"
+},
+{
+"source": "osm-local",
+"slug": "seattlegaslightinn-com",
+"url": "https://seattlegaslightinn.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Seattle Gaslight Inn"
+},
+{
+"source": "osm-local",
+"slug": "mayflowerpark-com",
+"url": "https://www.mayflowerpark.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Mayflower Park Hotel Seattle"
+},
+{
+"source": "osm-local",
+"slug": "paramounthotelseattle-com",
+"url": "https://www.paramounthotelseattle.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "The Paramount Hotel"
+},
+{
+"source": "osm-local",
+"slug": "themaxwellhotel-com",
+"url": "http://www.themaxwellhotel.com",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "The Maxwell Hotel"
+},
+{
+"source": "osm-local",
+"slug": "qualityinn-com",
+"url": "http://www.qualityinn.com/hotel-renton-washington-WA191",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Best Western Plus - Renton"
+},
+{
+"source": "osm-local",
+"slug": "interurbansuiteshotel-com",
+"url": "https://interurbansuiteshotel.com",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Seattle",
+"name": "Interurban Suites Hotel"
+},
+{
+"source": "osm-local",
+"slug": "greasemonkeyauto-com",
+"url": "https://www.greasemonkeyauto.com/locations/us/wa/seattle/2501-northeast-55th-st",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Seattle",
+"name": "Grease Monkey"
+},
+{
+"source": "osm-local",
+"slug": "seattlechinesemedicalcenter-com",
+"url": "http://seattlechinesemedicalcenter.com/",
+"type": "local_service",
+"osm_tag": "amenity=doctors",
+"city": "Seattle",
+"name": "Seattle Chinese Medical Center"
+},
+{
+"source": "osm-local",
+"slug": "salonfilament-com",
+"url": "https://salonfilament.com",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Seattle",
+"name": "Filament"
+},
+{
+"source": "osm-local",
+"slug": "johnlscott-com",
+"url": "https://johnlscott.com",
+"type": "local_service",
+"osm_tag": "office=estate_agent",
+"city": "Seattle",
+"name": "John L. Scott"
+},
+{
+"source": "osm-local",
+"slug": "houseofbeautywa-com",
+"url": "https://www.houseofbeautywa.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Seattle",
+"name": "House of Beauty"
+},
+{
+"source": "osm-local",
+"slug": "southlakeuniondentistoffice-com",
+"url": "https://www.southlakeuniondentistoffice.com/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Seattle",
+"name": "South Lake Union Dentist Office"
+},
+{
+"source": "osm-local",
+"slug": "pointstire-com",
+"url": "https://www.pointstire.com/15th",
+"type": "local_service",
+"osm_tag": "shop=car_repair",
+"city": "Seattle",
+"name": "Point S Affordable Tire & Service"
+},
+{
+"source": "osm-local",
+"slug": "fringeseattle-com",
+"url": "https://fringeseattle.com/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Seattle",
+"name": "Fringe"
+},
+{
+"source": "osm-local",
+"slug": "weldonbarber-com",
+"url": "https://weldonbarber.com",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Seattle",
+"name": "Weldon Barber"
+},
+{
+"source": "osm-local",
+"slug": "swedish-org",
+"url": "https://www.swedish.org/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Seattle",
+"name": "Swedish Renton Specialty Clinic/OBGYN"
+},
+{
+"source": "osm-local",
+"slug": "noahsalon-com",
+"url": "https://www.noahsalon.com",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Seattle",
+"name": "Noah Salon"
+},
+{
+"source": "osm-local",
+"slug": "urbananimalnw-com",
+"url": "https://urbananimalnw.com/locations/downtown/",
+"type": "local_service",
+"osm_tag": "amenity=veterinary",
+"city": "Seattle",
+"name": "Urban Animal"
+},
+{
+"source": "osm-local",
+"slug": "zeitgeistcoffee-com",
+"url": "https://www.zeitgeistcoffee.com/gzstory",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Seattle",
+"name": "Georgetown Zeitgeist"
+},
+{
+"source": "osm-local",
+"slug": "hotasphoseatle-com",
+"url": "https://www.hotasphoseatle.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Seattle",
+"name": "Hot As Pho!"
+},
+{
+"source": "osm-local",
+"slug": "tljus-com",
+"url": "https://tljus.com/stores/bellevue-100-108th-ave-ne",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Seattle",
+"name": "Tous les Jours"
+},
+{
+"source": "osm-local",
+"slug": "caffeappassionato-com",
+"url": "https://caffeappassionato.com/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Seattle",
+"name": "Caff\u00e8 Appassionato"
+},
+{
+"source": "osm-local",
+"slug": "sorasushi-menu11-com",
+"url": "https://sorasushi.menu11.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Seattle",
+"name": "Sora Sushi"
+},
+{
+"source": "osm-local",
+"slug": "seattlecidercompany-com",
+"url": "https://www.seattlecidercompany.com/home/5253-2/",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Seattle",
+"name": "The Woods Tasting Room"
+},
+{
+"source": "osm-local",
+"slug": "girardis-osteria-com",
+"url": "https://www.girardis-osteria.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Seattle",
+"name": "Girardi's Osteria Italiana"
+},
+{
+"source": "osm-local",
+"slug": "saffronspiceseattle-com",
+"url": "https://saffronspiceseattle.com",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Seattle",
+"name": "Saffron Spice"
+},
+{
+"source": "osm-local",
+"slug": "duecucina-com",
+"url": "https://duecucina.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Seattle",
+"name": "Due Cucina"
+},
+{
+"source": "osm-local",
+"slug": "artusibar-com",
+"url": "https://artusibar.com/",
+"type": "restaurant",
+"osm_tag": "amenity=bar",
+"city": "Seattle",
+"name": "Artusi"
+},
+{
+"source": "osm-local",
+"slug": "mercurys-com",
+"url": "https://mercurys.com/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Seattle",
+"name": "Mercurys Coffee Co."
+},
+{
+"source": "osm-local",
+"slug": "manaoseattle-com",
+"url": "https://manaoseattle.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Seattle",
+"name": "Manao"
+},
+{
+"source": "osm-local",
+"slug": "applewoodbakery-com",
+"url": "http://www.applewoodbakery.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Toronto",
+"name": "COBS Bread"
+},
+{
+"source": "osm-local",
+"slug": "butter-baker-com",
+"url": "https://www.butter-baker.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Toronto",
+"name": "Butter Baker"
+},
+{
+"source": "osm-local",
+"slug": "carolescheesecake-com",
+"url": "https://www.carolescheesecake.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Toronto",
+"name": "Carole's Cheesecake Company"
+},
+{
+"source": "osm-local",
+"slug": "thesidekitchen-ca",
+"url": "https://www.thesidekitchen.ca/",
+"type": "ecommerce",
+"osm_tag": "shop=gift",
+"city": "Toronto",
+"name": "The Side Kitchen"
+},
+{
+"source": "osm-local",
+"slug": "urbanbarn-com",
+"url": "https://www.urbanbarn.com/",
+"type": "ecommerce",
+"osm_tag": "shop=furniture",
+"city": "Toronto",
+"name": "Urban Barn"
+},
+{
+"source": "osm-local",
+"slug": "labastillebakery-com",
+"url": "https://www.labastillebakery.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Toronto",
+"name": "La Bastille"
+},
+{
+"source": "osm-local",
+"slug": "platosclosetmississauga-com",
+"url": "https://www.platosclosetmississauga.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Toronto",
+"name": "Plato's Closet"
+},
+{
+"source": "osm-local",
+"slug": "lea-annbelter-com",
+"url": "https://lea-annbelter.com/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Toronto",
+"name": "Lea Ann Belter Bridal"
+},
+{
+"source": "osm-local",
+"slug": "maisonbirks-com",
+"url": "https://www.maisonbirks.com/en/storelocator/maison-birks-yorkdale-shopping-centre",
+"type": "ecommerce",
+"osm_tag": "shop=jewelry",
+"city": "Toronto",
+"name": "Maison Birks"
+},
+{
+"source": "osm-local",
+"slug": "digitime-ca",
+"url": "https://digitime.ca/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Toronto",
+"name": "Digitime Custom Tees"
+},
+{
+"source": "osm-local",
+"slug": "cobsbread-com",
+"url": "https://www.cobsbread.com/",
+"type": "ecommerce",
+"osm_tag": "shop=bakery",
+"city": "Toronto",
+"name": "COBS Bread"
+},
+{
+"source": "osm-local",
+"slug": "bodyblue-ca",
+"url": "https://bodyblue.ca/",
+"type": "ecommerce",
+"osm_tag": "shop=clothes",
+"city": "Toronto",
+"name": "Body Blue"
+},
+{
+"source": "osm-local",
+"slug": "35acores-com",
+"url": "https://35acores.com",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Toronto",
+"name": "Acores Bed and Breakfast"
+},
+{
+"source": "osm-local",
+"slug": "live-parkside-com",
+"url": "http://www.live-parkside.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Parkside Student Residence"
+},
+{
+"source": "osm-local",
+"slug": "riu-com",
+"url": "https://www.riu.com/en/hotel/canada/toronto/hotel-riu-plaza-toronto",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Hotel Riu Plaza Toronto"
+},
+{
+"source": "osm-local",
+"slug": "hotelocho-com",
+"url": "https://www.hotelocho.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Hotel Ocho"
+},
+{
+"source": "osm-local",
+"slug": "gladstonehouse-ca",
+"url": "https://www.gladstonehouse.ca/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Gladstone House"
+},
+{
+"source": "osm-local",
+"slug": "thebroadviewhotel-ca",
+"url": "https://www.thebroadviewhotel.ca",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "The Broadview Hotel"
+},
+{
+"source": "osm-local",
+"slug": "chelseatoronto-com",
+"url": "https://www.chelseatoronto.com/en/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Chelsea Hotel, Toronto"
+},
+{
+"source": "osm-local",
+"slug": "westinprincetoronto-com",
+"url": "http://www.westinprincetoronto.com/?SWAQ=958P",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Pan Pacific Toronto"
+},
+{
+"source": "osm-local",
+"slug": "torontocentre-intercontinental-com",
+"url": "https://www.torontocentre.intercontinental.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "InterContinental Toronto Centre Hotel"
+},
+{
+"source": "osm-local",
+"slug": "beverleyplacebandb-com",
+"url": "https://www.beverleyplacebandb.com/",
+"type": "hospitality",
+"osm_tag": "tourism=guest_house",
+"city": "Toronto",
+"name": "Beverley Place Bed and Breakfast"
+},
+{
+"source": "osm-local",
+"slug": "thestrathconahotel-com",
+"url": "https://www.thestrathconahotel.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Union Hotel"
+},
+{
+"source": "osm-local",
+"slug": "hotelxtoronto-com",
+"url": "https://hotelxtoronto.com/",
+"type": "hospitality",
+"osm_tag": "tourism=hotel",
+"city": "Toronto",
+"name": "Hotel X Toronto"
+},
+{
+"source": "osm-local",
+"slug": "avenuetotalhealth-com",
+"url": "https://www.avenuetotalhealth.com/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Toronto",
+"name": "Avenue Total Health"
+},
+{
+"source": "osm-local",
+"slug": "fresha-com",
+"url": "https://www.fresha.com",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Toronto",
+"name": "Elivate Studio"
+},
+{
+"source": "osm-local",
+"slug": "stanchierifamilylaw-ca",
+"url": "https://stanchierifamilylaw.ca/",
+"type": "local_service",
+"osm_tag": "office=lawyer",
+"city": "Toronto",
+"name": "Stanchieri Family Law"
+},
+{
+"source": "osm-local",
+"slug": "alderwoodvet-ca",
+"url": "https://alderwoodvet.ca",
+"type": "local_service",
+"osm_tag": "amenity=veterinary",
+"city": "Toronto",
+"name": "Alderwood Veterinary Clinic"
+},
+{
+"source": "osm-local",
+"slug": "dralimirjan-com",
+"url": "http://www.dralimirjan.com/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Toronto",
+"name": "Dr. Ali Mirjan"
+},
+{
+"source": "osm-local",
+"slug": "pickeringsmiles-com",
+"url": "https://pickeringsmiles.com",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Toronto",
+"name": "PickeringSmiles.com"
+},
+{
+"source": "osm-local",
+"slug": "trinitydental-ca",
+"url": "https://www.trinitydental.ca/",
+"type": "local_service",
+"osm_tag": "amenity=dentist",
+"city": "Toronto",
+"name": "Trinity Dental Centre"
+},
+{
+"source": "osm-local",
+"slug": "skinatomylaserclinic-com",
+"url": "https://skinatomylaserclinic.com/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Toronto",
+"name": "Skinatomy Laser Clinic"
+},
+{
+"source": "osm-local",
+"slug": "larocheskinandbeauty-com",
+"url": "http://www.larocheskinandbeauty.com/",
+"type": "local_service",
+"osm_tag": "shop=beauty",
+"city": "Toronto",
+"name": "La Roche Skin & Beauty Care"
+},
+{
+"source": "osm-local",
+"slug": "addictivehair-ca",
+"url": "https://addictivehair.ca/",
+"type": "local_service",
+"osm_tag": "shop=hairdresser",
+"city": "Toronto",
+"name": "Addictive Hair & Beauty Salon"
+},
+{
+"source": "osm-local",
+"slug": "vitalifeclinic-com",
+"url": "https://vitalifeclinic.com/",
+"type": "local_service",
+"osm_tag": "amenity=clinic",
+"city": "Toronto",
+"name": "Vitalife"
+},
+{
+"source": "osm-local",
+"slug": "konstruction-ca",
+"url": "https://konstruction.ca",
+"type": "local_service",
+"osm_tag": "craft=carpenter",
+"city": "Toronto",
+"name": "Konstruction Group Inc."
+},
+{
+"source": "osm-local",
+"slug": "bluehorseeatery-ca",
+"url": "https://bluehorseeatery.ca/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "The Blue Horse Eatery"
+},
+{
+"source": "osm-local",
+"slug": "shrijicatering-ca",
+"url": "https://shrijicatering.ca/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Shriji Catering & Take-out"
+},
+{
+"source": "osm-local",
+"slug": "naimas-ca",
+"url": "http://naimas.ca",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Toronto",
+"name": "Naimas Asian Fusion Cafe"
+},
+{
+"source": "osm-local",
+"slug": "jjqs-ca",
+"url": "https://jjqs.ca/",
+"type": "restaurant",
+"osm_tag": "amenity=pub",
+"city": "Toronto",
+"name": "J.J.Q's Billards and Lounge"
+},
+{
+"source": "osm-local",
+"slug": "azariasrestaurant-com",
+"url": "https://www.azariasrestaurant.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Azarias"
+},
+{
+"source": "osm-local",
+"slug": "nenechickenontario-com",
+"url": "https://www.nenechickenontario.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Nene Chicken"
+},
+{
+"source": "osm-local",
+"slug": "thegoldenturtle-ca",
+"url": "http://thegoldenturtle.ca",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Golden Turtle"
+},
+{
+"source": "osm-local",
+"slug": "moterusushi-com",
+"url": "https://moterusushi.com",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Moteru Sushi"
+},
+{
+"source": "osm-local",
+"slug": "cafezuzu-com",
+"url": "https://cafezuzu.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Cafe Zuzu"
+},
+{
+"source": "osm-local",
+"slug": "wynonatoronto-com",
+"url": "https://wynonatoronto.com/",
+"type": "restaurant",
+"osm_tag": "amenity=restaurant",
+"city": "Toronto",
+"name": "Wynona"
+},
+{
+"source": "osm-local",
+"slug": "ichateashop-com",
+"url": "https://ichateashop.com/",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Toronto",
+"name": "Icha Tea"
+},
+{
+"source": "osm-local",
+"slug": "ohbz-com",
+"url": "https://ohbz.com/oo/lavenuetoronto-toronto-on",
+"type": "restaurant",
+"osm_tag": "amenity=cafe",
+"city": "Toronto",
+"name": "L'avenue"
+}
+]

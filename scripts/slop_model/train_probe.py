@@ -14,6 +14,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[2] / "data/models"
 TIE = {"both", "neither", "same"}
 
 
+def test_sites():
+    """Frozen stratified test set (data/testset.json); its sites are never trained on."""
+    f = ROOT.parent / "testset.json"
+    return set(json.load(open(f))["sites"]) if f.exists() else set()
+
+
 def source(s):
     return "arena" if s["kind"] == "arena" else s["split"]
 
@@ -70,7 +76,7 @@ def main():
     rng = np.random.default_rng(0)
     rng.shuffle(groups)
     fold = {g: i % 5 for i, g in enumerate(groups)}
-    heldout = {k for k, s in sites.items() if s["split"] == "heldout"}
+    heldout = {k for k, s in sites.items() if s["split"] == "heldout"} | test_sites()
     print(f"{len(F)} sites, {len(votes)} votes ({sum(v['choice'] in TIE for v in votes)} ties)")
 
     best = (-1, None)

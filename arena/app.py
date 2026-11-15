@@ -84,6 +84,13 @@ def sites():
             sid = f"ai-{meta['source']}-{meta['slug']}"
             out[sid] = dict(id=sid, kind="web", split=meta["source"], group=sid, model=f"ai:{meta['source']}",
                             url=meta["render_url"], dir=str(m.parent))
+        for m in (SNAP / "web").glob("*/*/meta.json"):
+            meta = json.load(open(m))
+            if not usable_capture(meta):
+                continue
+            sid = f"web-{meta['source']}-{meta['slug']}"
+            out[sid] = dict(id=sid, kind="web", split=meta["source"], group=sid, model=f"web:{meta['source']}",
+                            url=meta["render_url"], site_type=meta.get("type"), dir=str(m.parent))
         _sites, _sites_at = out, time.time()
         return out
 
@@ -207,6 +214,19 @@ def warm_cache():
         time.sleep(60)
 
 
+TEST_VOTERS = 2
+_testset = {"mtime": None, "data": {}}
+
+
+def testset():
+    """Frozen stratified test set (data/testset.json, built by scripts/build_testset.py): sites + planned pairs."""
+    f = ROOT / "data/testset.json"
+    m = f.stat().st_mtime if f.exists() else None
+    if m != _testset["mtime"]:
+        _testset.update(mtime=m, data=json.load(open(f)) if m else {})
+    return _testset["data"]
+
+
 @app.get("/api/next")
 def next_pair():
     voter = (request.args.get("voter") or "").strip()
@@ -228,11 +248,16 @@ def next_pair():
         mine.add(pair_key(*ex))
     avail = {c: [p for p in ps if pair_key(*p) not in mine] for c, ps in cats.items()}
     avail = {c: ps for c, ps in avail.items() if ps}
-    if not avail:
+    if not avail and not testset().get("pairs"):
         return jsonify({"done": True})
-    names = list(avail)
-    cat = random.choices(names, weights=[CATEGORY_WEIGHTS.get(c, 0.1) for c in names])[0]
-    ps = avail[cat]
+    pending = [tuple(p) for p in testset().get("pairs", []) if p[0] in S and p[1] in S
+               and counts[pair_key(*p)] < TEST_VOTERS and pair_key(*p) not in mine]
+    if pending:  # frozen test-set pairs come first until each has TEST_VOTERS votes
+        cat, ps = "test", pending
+    else:
+        names = list(avail)
+        cat = random.choices(names, weights=[CATEGORY_WEIGHTS.get(c, 0.1) for c in names])[0]
+        ps = avail[cat]
     low = min(counts[pair_key(*p)] for p in ps)
     least = [p for p in ps if counts[pair_key(*p)] == low]
     fresh = [p for p in least if p[0] not in recent and p[1] not in recent]
