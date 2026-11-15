@@ -1,105 +1,80 @@
 import * as React from "react";
-import { Check, Copy } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HANDBOOKS } from "../data/handbooks";
 
 export const ResourcesPage = () => {
-  const [c, d] = React.useState("javascript");
-  const [f, i] = React.useState(null);
-  const p = HANDBOOKS.find((handbook) => handbook.id === c) || HANDBOOKS[0];
-  const h = (v, T) => {
-    navigator.clipboard.writeText(v);
-    i(T);
-    setTimeout(() => i(null), 2e3);
+  const { hash } = useLocation();
+  const navigate = useNavigate();
+  const [copied, setCopied] = React.useState<number | null>(null);
+  const handbook: any = HANDBOOKS.find((item) => item.id === hash.slice(1)) || HANDBOOKS[0];
+
+  const copy = (snippet: string, index: number) => {
+    navigator.clipboard?.writeText(snippet);
+    setCopied(index);
+    setTimeout(() => setCopied(null), 2000);
   };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-      <div className="pb-4 border-b border-slate-800 space-y-2">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-sky-400 uppercase tracking-wider">
-            Developer Cheatsheets
-          </span>
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-            Course Handbook
-          </span>
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white">{"Course Resources & Cheatsheets"}</h1>
-        <p className="text-xs sm:text-sm text-slate-400 max-w-2xl">
-          Quick reference guides, syntax summaries, and copyable snippets covering every topic taught across
-          the IT Beginner curriculum.
-        </p>
-      </div>
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 text-xs scrollbar-thin">
-        {HANDBOOKS.map((handbook) => (
+    <div className="container-page page">
+      <h1 className="page-title">Course resources and cheatsheets</h1>
+      <p className="lead mt-2">
+        Quick reference guides, syntax summaries, and copyable snippets covering every topic taught across the IT
+        Beginner curriculum.
+      </p>
+
+      <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Handbooks">
+        {HANDBOOKS.map((item) => (
           <button
-            key={handbook.id}
-            onClick={() => d(handbook.id)}
-            className={`px-4 py-2 rounded-xl font-bold shrink-0 transition-colors ${c === handbook.id ? "bg-sky-500 text-slate-950 shadow-md shadow-sky-500/20" : "bg-slate-900 text-slate-300 hover:text-white border border-slate-800"}`}
+            key={item.id}
+            type="button"
+            role="tab"
+            aria-selected={item.id === handbook.id}
+            onClick={() => navigate(`/resources#${item.id}`, { replace: true })}
+            className="option"
           >
-            {handbook.title}
+            {item.title}
           </button>
         ))}
       </div>
-      <div className="space-y-6">
-        <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
-          <div className="flex items-center gap-2 text-xs text-sky-400 font-bold">
-            <span>Chapter {p.chapterNumber} Handbook</span>
-            <span>•</span>
-            <span>{p.category}</span>
+
+      <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12" role="tabpanel">
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-24">
+            <h2 className="section-title">{handbook.title}</h2>
+            <p className="meta mt-1">
+              Chapter {handbook.chapterNumber}, {handbook.category}
+            </p>
+            <p className="mt-3 text-sm text-ink-2">{handbook.summary}</p>
           </div>
-          <h2 className="text-2xl font-black text-white">{p.title}</h2>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{p.summary}</p>
         </div>
-        <div className="space-y-6">
-          {p.subsections.map((subsection, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4 shadow-xl"
-            >
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-white">{subsection.heading}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{subsection.description}</p>
-              </div>
+        <div className="min-w-0 space-y-12 lg:col-span-8">
+          {handbook.subsections.map((subsection: any, index: number) => (
+            <section key={`${handbook.id}-${index}`}>
+              <h3 className="item-title">{subsection.heading}</h3>
+              <p className="mt-1 text-sm text-ink-3">{subsection.description}</p>
               {subsection.codeSnippet && (
-                <div className="space-y-1 relative">
-                  <div className="flex items-center justify-between text-xs pb-1 text-slate-400 font-mono">
-                    <span>Syntax Reference:</span>
-                    <button
-                      onClick={() => h(subsection.codeSnippet, `sub-${index}`)}
-                      className="text-sky-400 hover:underline flex items-center gap-1"
-                    >
-                      {f === `sub-${index}` ? (
-                        <>
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                          <span className="text-emerald-400">Copied!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-3.5 h-3.5" />
-                          <span>Copy Snippet</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                  <pre className="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-sky-300 overflow-x-auto leading-relaxed">
+                <div className="relative mt-4">
+                  <pre className="code-block pr-20">
                     <code>{subsection.codeSnippet}</code>
                   </pre>
+                  <button
+                    type="button"
+                    onClick={() => copy(subsection.codeSnippet, index)}
+                    className="btn btn-secondary btn-sm absolute right-2 top-2 w-[4.5rem]"
+                    aria-label={`Copy the ${subsection.heading} snippet`}
+                  >
+                    {copied === index ? "Copied" : "Copy"}
+                  </button>
                 </div>
               )}
               {subsection.tips && (
-                <div className="p-4 rounded-xl bg-slate-850 border border-slate-800 text-xs text-slate-300 space-y-1.5">
-                  <span className="font-bold text-amber-400 block font-mono text-[11px]">
-                    {"Best Practices & Tips:"}
-                  </span>
-                  <ul className="space-y-1 pl-4 list-disc text-slate-300">
-                    {subsection.tips.map((tip, index2) => (
-                      <li key={index2} className="leading-relaxed">
-                        {tip}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-ink-2 marker:text-ink-3">
+                  {subsection.tips.map((tip: string, tipIndex: number) => (
+                    <li key={tipIndex}>{tip}</li>
+                  ))}
+                </ul>
               )}
-            </div>
+            </section>
           ))}
         </div>
       </div>

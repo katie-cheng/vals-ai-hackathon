@@ -1,150 +1,133 @@
 import * as React from "react";
-import { Download, RotateCcw } from "lucide-react";
 import { useCourse } from "../context/CourseContext";
 
 export const ProfilePage = () => {
-  const {
-    currentUser,
-    switchUserRole,
-    totalCompletedCount,
-    overallPercent,
-    certificates,
-    notes,
-    resetAllProgress,
-  } = useCourse();
-  const [T, S] = React.useState(false);
-  const [M, b] = React.useState(false);
-  const x = () => {
+  const { currentUser, switchUserRole, totalCompletedCount, overallPercent, certificates, notes, resetAllProgress } =
+    useCourse();
+  const [confirmOpen, setConfirmOpen] = React.useState(false);
+  const [resetDone, setResetDone] = React.useState(false);
+  const cancelRef = React.useRef<HTMLButtonElement>(null);
+  const otherRole = currentUser.role === "admin" ? "student" : "admin";
+
+  React.useEffect(() => {
+    if (!confirmOpen) return;
+    cancelRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setConfirmOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [confirmOpen]);
+
+  const reset = () => {
     resetAllProgress();
-    S(false);
-    b(true);
-    setTimeout(() => b(false), 3e3);
+    setConfirmOpen(false);
+    setResetDone(true);
   };
-  const _ = () => {
-    const R = {
+
+  const exportData = () => {
+    const payload = {
       user: currentUser,
       progressCompletedCount: totalCompletedCount,
       certificates,
       notes,
       exportDate: new Date().toISOString(),
     };
-    const U = new Blob([JSON.stringify(R, null, 2)], {
-      type: "application/json",
-    });
-    const V = URL.createObjectURL(U);
-    const k = document.createElement("a");
-    k.href = V;
-    k.download = `it-beginner-learning-export-${currentUser.username}.json`;
-    k.click();
-    URL.revokeObjectURL(V);
+    const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" }));
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `it-beginner-learning-export-${currentUser.username}.json`;
+    anchor.click();
+    URL.revokeObjectURL(url);
   };
+
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-      <div className="pb-4 border-b border-slate-800 space-y-2">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-sky-400 uppercase tracking-wider">
-            {"Account & Credentials"}
-          </span>
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white">Student Profile Settings</h1>
-        <p className="text-xs sm:text-sm text-slate-400">
-          Manage your personal profile, credentials showcase, and learning data.
-        </p>
-      </div>
-      {M && (
-        <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold animate-in fade-in">
-          ✓ All progress and notes have been reset to fresh student defaults.
-        </div>
-      )}
-      <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 shadow-xl">
-        <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+    <div className="container-page page">
+      <div className="max-w-3xl">
+        <h1 className="page-title">Profile</h1>
+
+        <section className="mt-8 flex flex-wrap items-center gap-5">
           <img
             src={currentUser.avatarUrl}
-            alt={currentUser.fullName}
-            className="w-20 h-20 rounded-full object-cover border-2 border-sky-400 shadow-lg"
+            alt=""
+            width={72}
+            height={72}
+            className="h-[4.5rem] w-[4.5rem] flex-none rounded-full bg-raised object-cover"
           />
-          <div className="space-y-1">
-            <h2 className="text-xl font-bold text-white">{currentUser.fullName}</h2>
-            <p className="text-xs text-slate-400">{currentUser.email}</p>
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs">
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-sky-400 font-bold uppercase text-[10px]">
-                {currentUser.role}
-              </span>
-              <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold text-[10px]">
-                🔥 {currentUser.streakDays} Day Streak
-              </span>
-              <span className="text-slate-400 text-[11px]">Enrolled: {currentUser.joinedDate}</span>
-            </div>
-          </div>
-        </div>
-        <button
-          onClick={() => switchUserRole(currentUser.role === "admin" ? "student" : "admin")}
-          className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors"
-        >
-          Toggle to {currentUser.role === "admin" ? "Student" : "Admin"} Mode
-        </button>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1 text-center">
-          <p className="text-2xl font-black text-white">{totalCompletedCount} / 42</p>
-          <p className="text-xs text-slate-400">Lessons Completed</p>
-        </div>
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1 text-center">
-          <p className="text-2xl font-black text-sky-400">{overallPercent}%</p>
-          <p className="text-xs text-slate-400">Curriculum Mastery</p>
-        </div>
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1 text-center">
-          <p className="text-2xl font-black text-amber-400">{certificates.length}</p>
-          <p className="text-xs text-slate-400">Earned Certificates</p>
-        </div>
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1 text-center">
-          <p className="text-2xl font-black text-purple-400">{notes.length}</p>
-          <p className="text-xs text-slate-400">Personal Notes</p>
-        </div>
-      </div>
-      <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-        <h3 className="font-bold text-base text-white">{"Data & Privacy Options"}</h3>
-        <p className="text-xs text-slate-400">
-          Export your learning milestones, saved code snippets, and timestamped notes to JSON, or reset all
-          course progress.
-        </p>
-        <div className="flex flex-wrap items-center gap-3 pt-2">
-          <button
-            onClick={_}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors"
-          >
-            <Download className="w-3.5 h-3.5 text-sky-400" />
-            <span>Export Learning Data (.json)</span>
-          </button>
-          <button
-            onClick={() => S(true)}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-rose-950/40 hover:bg-rose-900/40 text-rose-300 text-xs font-semibold border border-rose-500/30 transition-colors"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset All Progress</span>
-          </button>
-        </div>
-      </div>
-      {T && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="rounded-2xl bg-slate-900 border border-slate-800 p-6 max-w-sm w-full space-y-4 text-xs">
-            <h3 className="font-bold text-base text-white">Reset Course Progress?</h3>
-            <p className="text-slate-300 leading-relaxed">
-              This will clear all completed lesson checkmarks, personal notes, and certificates from your
-              browser storage.
+          <div className="min-w-0 flex-1">
+            <h2 className="section-title">{currentUser.fullName}</h2>
+            <p className="meta break-all">{currentUser.email}</p>
+            <p className="meta">
+              {currentUser.role === "admin" ? "Admin" : "Student"}, enrolled {currentUser.joinedDate}
             </p>
-            <div className="flex items-center justify-end gap-2 pt-2">
-              <button
-                onClick={() => S(false)}
-                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
-              >
+          </div>
+          <button
+            type="button"
+            onClick={() => switchUserRole(otherRole)}
+            title="Toggle between Student and Administrator accounts to test admin features"
+            className="btn btn-secondary"
+          >
+            Switch to {otherRole} view
+          </button>
+        </section>
+
+        <dl className="rows mt-10 text-sm">
+          {[
+            ["Lessons completed", `${totalCompletedCount} of 42 (${overallPercent}%)`],
+            ["Study streak", `${currentUser.streakDays} days`],
+            ["Certificates earned", String(certificates.length)],
+            ["Personal notes", String(notes.length)],
+          ].map(([label, value]) => (
+            <div key={label} className="flex items-baseline justify-between gap-4 py-3">
+              <dt className="text-ink-3">{label}</dt>
+              <dd className="tabular-nums text-ink">{value}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <section className="mt-12" aria-labelledby="data-title">
+          <h2 id="data-title" className="section-title">
+            Your data
+          </h2>
+          <p className="mt-2 text-sm text-ink-3">
+            Export your learning milestones, saved code snippets, and timestamped notes to JSON, or reset all course
+            progress.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <button type="button" onClick={exportData} className="btn btn-secondary">
+              Export learning data
+            </button>
+            <button type="button" onClick={() => setConfirmOpen(true)} className="btn btn-secondary text-bad">
+              Reset all progress
+            </button>
+          </div>
+          <p role="status" className="mt-4 min-h-6 text-sm text-ok">
+            {resetDone ? "All progress and notes have been reset." : ""}
+          </p>
+        </section>
+      </div>
+
+      {confirmOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setConfirmOpen(false);
+          }}
+        >
+          <div role="alertdialog" aria-modal="true" aria-labelledby="reset-title" aria-describedby="reset-body" className="surface w-full max-w-sm p-6">
+            <h2 id="reset-title" className="section-title">
+              Reset course progress?
+            </h2>
+            <p id="reset-body" className="mt-2 text-sm text-ink-2">
+              This will clear all completed lesson checkmarks, personal notes, and certificates from your browser
+              storage.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
+              <button ref={cancelRef} type="button" onClick={() => setConfirmOpen(false)} className="btn btn-secondary">
                 Cancel
               </button>
-              <button
-                onClick={x}
-                className="px-4 py-2 rounded-lg bg-rose-500 hover:bg-rose-400 text-white font-bold"
-              >
-                Yes, Reset Progress
+              <button type="button" onClick={reset} className="btn btn-secondary border-bad text-bad">
+                Reset progress
               </button>
             </div>
           </div>

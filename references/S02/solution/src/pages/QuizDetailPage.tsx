@@ -1,225 +1,156 @@
 import * as React from "react";
-import confetti from "canvas-confetti";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { Award, ChevronLeft, CircleCheck, CircleX, RotateCcw } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { ChevronLeft } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { QUIZ_QUESTIONS } from "../data/quizzes";
 import { useCourse } from "../context/CourseContext";
 
+type Result = { score: number; total: number; percentage: number; passed: boolean };
+
 export const QuizDetailPage = () => {
   const { chapterId } = useParams();
-  useNavigate();
-  const d = parseInt(chapterId || "1", 10);
-  const { submitQuiz, claimCertificate, quizAttempts } = useCourse();
-  const h = CHAPTERS.find((chapter) => chapter.id === d) || CHAPTERS[0];
-  const v = QUIZ_QUESTIONS.filter((question) => question.chapterId === d);
-  const [T, S] = React.useState({});
-  const [M, b] = React.useState(false);
-  const [x, _] = React.useState(null);
-  const R = ($, te) => {
-    if (!M) {
-      S((me) => ({
-        ...me,
-        [$]: te,
-      }));
-    }
+  const id = parseInt(chapterId || "1", 10);
+  const { submitQuiz, claimCertificate } = useCourse();
+  const chapter = CHAPTERS.find((item) => item.id === id) || CHAPTERS[0];
+  const questions = QUIZ_QUESTIONS.filter((question) => question.chapterId === id);
+  const [answers, setAnswers] = React.useState<Record<string, string>>({});
+  const [result, setResult] = React.useState<Result | null>(null);
+  const [showMissing, setShowMissing] = React.useState(false);
+  const resultRef = React.useRef<HTMLDivElement>(null);
+  const submitted = result !== null;
+  const answered = Object.keys(answers).length;
+
+  const choose = (questionId: string | number, option: string) => {
+    if (!submitted) setAnswers((current) => ({ ...current, [questionId]: option }));
   };
-  const U = (event) => {
+
+  const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const te = submitQuiz(d, T);
-    _({
-      score: te.score,
-      total: te.totalQuestions,
-      percentage: te.percentage,
-      passed: te.passed,
-    });
-    b(true);
-    if (te.passed) {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: {
-          y: 0.6,
-        },
-      });
-      claimCertificate(d, h.title, "chapter");
+    if (answered < questions.length) {
+      setShowMissing(true);
+      const first = questions.find((question) => !answers[question.id]);
+      if (first) document.getElementById(`question-${first.id}`)?.scrollIntoView({ block: "center" });
+      return;
     }
+    const outcome = submitQuiz(id, answers);
+    setResult({ score: outcome.score, total: outcome.totalQuestions, percentage: outcome.percentage, passed: outcome.passed });
+    if (outcome.passed) claimCertificate(id, chapter.title, "chapter");
+    requestAnimationFrame(() => resultRef.current?.scrollIntoView({ block: "start" }));
   };
-  const V = () => {
-    S({});
-    b(false);
-    _(null);
+
+  const reset = () => {
+    setAnswers({});
+    setResult(null);
+    setShowMissing(false);
+    window.scrollTo(0, 0);
   };
-  const k = Object.keys(T).length;
-  const F = k === v.length;
+
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-      <div className="flex items-center justify-between text-xs text-slate-400">
-        <Link to="/quizzes" className="flex items-center gap-1 hover:text-white transition-colors">
-          <ChevronLeft className="w-4 h-4" />
-          <span>Back to All Quizzes</span>
+    <div className="container-page page">
+      <div className="mx-auto max-w-3xl">
+        <Link to="/quizzes" className="inline-flex items-center gap-1 text-sm text-ink-3 transition-colors hover:text-ink">
+          <ChevronLeft className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+          All quizzes
         </Link>
-        <span className="font-mono">{v.length} Questions</span>
-      </div>
-      <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">{h.icon}</span>
-          <div>
-            <span className="text-xs font-bold text-sky-400">Chapter {h.orderIndex} Assessment</span>
-            <h1 className="text-2xl font-black text-white">{h.title} Quiz</h1>
-          </div>
-        </div>
-        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          Answer all questions below. Immediate feedback and detailed explanations will be provided after
-          submission.
+        <h1 className="page-title mt-4">{chapter.title} quiz</h1>
+        <p className="lead mt-2">
+          Chapter {chapter.orderIndex}, {questions.length} questions, 66% to pass. Answer every question; the
+          explanations appear after you submit.
         </p>
-        <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
-          <span>
-            Answered:{" "}
-            <strong>
-              {k} / {v.length}
-            </strong>
-          </span>
-          <span>
-            Passing mark: <strong>66%</strong>
-          </span>
-        </div>
-      </div>
-      {M && x && (
-        <div
-          className={`p-6 rounded-2xl border space-y-4 animate-in fade-in duration-200 ${x.passed ? "bg-emerald-950/40 border-emerald-500/40 text-emerald-300" : "bg-rose-950/40 border-rose-500/40 text-rose-300"}`}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              {x.passed ? (
-                <CircleCheck className="w-6 h-6 text-emerald-400" />
-              ) : (
-                <CircleX className="w-6 h-6 text-rose-400" />
-              )}
-              <div>
-                <h3 className="font-extrabold text-lg text-white">
-                  {x.passed ? "🎉 Assessment Passed with Honors!" : "Review Recommended"}
-                </h3>
-                <p className="text-xs">
-                  You scored{" "}
-                  <strong className="text-white">
-                    {x.score} / {x.total}
-                  </strong>{" "}
-                  ({x.percentage}%).
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={V}
-                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>Retake</span>
-              </button>
-              {x.passed && (
-                <Link
-                  to={`/certificate/ITB-CH${d}-CERT`}
-                  className="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-1 shadow-md"
-                >
-                  <Award className="w-3.5 h-3.5" />
-                  <span>Claim Certificate</span>
+
+        {result && (
+          <div
+            ref={resultRef}
+            role="status"
+            className={`surface mt-8 scroll-mt-24 p-5 ${result.passed ? "border-ok/50" : "border-warn/50"}`}
+          >
+            <h2 className="section-title">{result.passed ? "Quiz passed" : "Review recommended"}</h2>
+            <p className="mt-1 text-sm text-ink-2">
+              You scored {result.score} of {result.total} ({result.percentage}%).
+            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              {result.passed && (
+                <Link to={`/certificate/ITB-CH${id}-CERT`} className="btn btn-primary">
+                  View certificate
                 </Link>
               )}
+              <button type="button" onClick={reset} className="btn btn-secondary">
+                Retake quiz
+              </button>
             </div>
           </div>
-        </div>
-      )}
-      <form onSubmit={U} className="space-y-6">
-        {v.map(($, index) => {
-          const me = T[$.id];
-          const ue = me === $.correctOption;
-          return (
-            <div
-              key={$.id}
-              className={`p-6 rounded-2xl bg-slate-900 border transition-all space-y-4 ${M ? (ue ? "border-emerald-500/40" : "border-rose-500/40") : "border-slate-800"}`}
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-slate-800 text-sky-400 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                    {index + 1}
-                  </span>
-                  <h3 className="font-bold text-sm sm:text-base text-white leading-snug">{$.question}</h3>
-                </div>
-                {M && (
-                  <span
-                    className={`text-xs font-bold px-2 py-0.5 rounded shrink-0 ${ue ? "bg-emerald-500/20 text-emerald-400" : "bg-rose-500/20 text-rose-400"}`}
-                  >
-                    {ue ? "✓ Correct" : "✗ Incorrect"}
-                  </span>
-                )}
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                {["A", "B", "C", "D"].map((be) => {
-                  const ne = $[`option${be}`];
-                  const pe = me === be;
-                  const Be = $.correctOption === be;
-                  let re = "bg-slate-850 hover:bg-slate-800 border-slate-800 text-slate-300";
-                  if (M) {
-                    if (Be) {
-                      re = "bg-emerald-950/60 border-emerald-500 text-emerald-200 font-bold";
-                    } else {
-                      if (pe && !ue) {
-                        re = "bg-rose-950/60 border-rose-500 text-rose-200";
-                      }
-                    }
-                  } else {
-                    if (pe) {
-                      re = "bg-sky-500/20 border-sky-500 text-sky-300 font-bold";
-                    }
-                  }
-                  return (
-                    <button
-                      key={be}
-                      type="button"
-                      onClick={() => R($.id, be)}
-                      className={`p-3 rounded-xl border text-left text-xs transition-all flex items-start gap-2.5 ${re}`}
-                    >
-                      <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-200 font-bold text-[10px] flex items-center justify-center shrink-0">
-                        {be}
+        )}
+
+        <form onSubmit={onSubmit} noValidate className="mt-10">
+          <ol className="space-y-10">
+            {questions.map((question: any, index) => {
+              const selected = answers[question.id];
+              const correct = selected === question.correctOption;
+              const missing = showMissing && !selected;
+              return (
+                <li key={question.id} id={`question-${question.id}`}>
+                  <fieldset aria-describedby={missing ? `question-${question.id}-error` : undefined}>
+                    <legend className="item-title flex w-full items-start justify-between gap-4">
+                      <span>
+                        {index + 1}. {question.question}
                       </span>
-                      <span className="leading-relaxed">{ne}</span>
-                    </button>
-                  );
-                })}
-              </div>
-              {M && (
-                <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 space-y-1">
-                  <span className="font-bold text-sky-400 block font-mono text-[11px]">Explanation:</span>
-                  <p className="leading-relaxed">{$.explanation}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
-        <div className="pt-2 flex items-center justify-between">
-          <Link to="/quizzes" className="text-xs text-slate-400 hover:text-white">
-            ← Cancel Assessment
-          </Link>
-          {M ? (
-            <button
-              type="button"
-              onClick={V}
-              className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-all"
-            >
-              {"Reset & Retake Quiz"}
-            </button>
-          ) : (
-            <button
-              type="submit"
-              disabled={!F}
-              className={`px-6 py-3 rounded-xl font-bold text-xs transition-all shadow-xl ${F ? "bg-amber-500 hover:bg-amber-400 text-slate-950 cursor-pointer shadow-amber-500/20" : "bg-slate-800 text-slate-400 cursor-not-allowed"}`}
-            >
-              {F ? "Submit Quiz Assessment" : `Answer all questions (${k}/${v.length})`}
-            </button>
-          )}
-        </div>
-      </form>
+                      {submitted && (
+                        <span className={`badge flex-none ${correct ? "badge-ok" : "badge-warn"}`}>
+                          {correct ? "Correct" : "Incorrect"}
+                        </span>
+                      )}
+                    </legend>
+                    <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2" role="radiogroup" aria-label={`Question ${index + 1}`}>
+                      {["A", "B", "C", "D"].map((letter) => {
+                        const isSelected = selected === letter;
+                        const isAnswer = question.correctOption === letter;
+                        let state = "border-line text-ink-2 hover:border-line-strong";
+                        if (submitted && isAnswer) state = "border-ok bg-ok/10 text-ink";
+                        else if (submitted && isSelected) state = "border-bad bg-bad/10 text-ink";
+                        else if (!submitted && isSelected) state = "border-accent bg-accent/15 text-ink";
+                        return (
+                          <button
+                            key={letter}
+                            type="button"
+                            role="radio"
+                            aria-checked={isSelected}
+                            disabled={submitted}
+                            onClick={() => choose(question.id, letter)}
+                            className={`flex min-h-11 items-start gap-3 rounded-md border px-3 py-2.5 text-left text-sm transition-colors ${state}`}
+                          >
+                            <span className="w-4 flex-none font-mono text-ink-3">{letter}</span>
+                            <span>{question[`option${letter}`]}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {missing && (
+                      <p id={`question-${question.id}-error`} className="field-error">
+                        Choose an answer for this question.
+                      </p>
+                    )}
+                    {submitted && <p className="mt-4 border-l-2 border-line-strong pl-4 text-sm text-ink-2">{question.explanation}</p>}
+                  </fieldset>
+                </li>
+              );
+            })}
+          </ol>
+          <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-line pt-6">
+            {submitted ? (
+              <button type="button" onClick={reset} className="btn btn-secondary">
+                Retake quiz
+              </button>
+            ) : (
+              <button type="submit" className="btn btn-primary">
+                Submit quiz
+              </button>
+            )}
+            <span className="meta" aria-live="polite">
+              {answered} of {questions.length} answered
+            </span>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
