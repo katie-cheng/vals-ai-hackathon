@@ -24,21 +24,19 @@ function SplitWords({
         {h.map((b, v) => (
           <span
             key={v}
-            className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom"
+            className="inline-block"
             aria-hidden
           >
             <motion.span
               className="inline-block will-change-transform"
               initial={{
-                y: "115%",
-                rotate: 5,
+                y: "0.35em",
                 opacity: 0,
               }}
               animate={
                 p
                   ? {
-                      y: "0%",
-                      rotate: 0,
+                      y: "0em",
                       opacity: 1,
                     }
                   : {}
@@ -88,12 +86,10 @@ function Reveal({
       initial={{
         opacity: 0,
         y: r,
-        filter: "blur(6px)",
       }}
       whileInView={{
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
       }}
       viewport={{
         once: u,

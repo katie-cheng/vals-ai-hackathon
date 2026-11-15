@@ -18,25 +18,30 @@ import {
   Sparkles,
 } from "lucide-react";
 
-function HeroWords({ text: a, delay: i = 0, className: r = "" }) {
+function HeroWords({
+  text: a,
+  delay: i = 0,
+  className: r = "",
+  wordClassName: w = "",
+}: {
+  text: string;
+  delay?: number;
+  className?: string;
+  wordClassName?: string;
+}) {
+  const words = a.split(" ");
   return (
     <span className={r} aria-label={a}>
-      {a.split(" ").map((l, u) => (
-        <span
-          key={u}
-          className="inline-block overflow-hidden pb-[0.14em] -mb-[0.14em] align-bottom"
-          aria-hidden
-        >
+      {words.map((l, u) => (
+        <span key={u} className="inline-block" aria-hidden>
           <motion.span
-            className="inline-block origin-left will-change-transform"
+            className={`inline-block will-change-transform ${w}`}
             initial={{
-              y: "110%",
-              rotate: 6,
+              y: "0.35em",
               opacity: 0,
             }}
             animate={{
-              y: "0%",
-              rotate: 0,
+              y: "0em",
               opacity: 1,
             }}
             transition={{
@@ -47,13 +52,12 @@ function HeroWords({ text: a, delay: i = 0, className: r = "" }) {
           >
             {l}
           </motion.span>
-          {u < a.split(" ").length - 1 ? <span>{" "}</span> : null}
+          {u < words.length - 1 ? <span>{" "}</span> : null}
         </span>
       ))}
     </span>
   );
 }
-
 function Hero() {
   const a = React.useRef(null),
     { scrollYProgress: i } = useScroll({
@@ -64,8 +68,6 @@ function Hero() {
     l = useTransform(i, [0, 1], [1, 1.22]),
     u = useTransform(i, [0, 0.75], [1, 0]),
     h = useTransform(i, [0, 1], [0, -140]),
-    d = useTransform(i, [0, 1], [0, -220]),
-    p = useTransform(i, [0.55, 1], [0.92, 1]),
     y = useMotionValue(0),
     b = useMotionValue(0),
     v = useSpring(y, {
@@ -176,38 +178,13 @@ function Hero() {
           }}
           className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pt-36 sm:px-6 lg:pt-40"
         >
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 26,
-              scale: 0.94,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.9,
-              ease: EASE,
-              delay: 0.25,
-            }}
-            className="mb-7 inline-flex w-fit items-center gap-2.5 rounded-full border border-cyan-300/30 bg-cyan-300/10 py-2 pl-3 pr-4 backdrop-blur-xl"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-300 opacity-75" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-300" />
-            </span>
-            <span className="text-[12px] font-bold uppercase tracking-[0.22em] text-cyan-100">
-              Free estimates · All of Connecticut
-            </span>
-          </motion.div>
           <h1 className="max-w-5xl text-[13.5vw] font-black leading-[0.92] tracking-tight text-white sm:text-7xl lg:text-[6.2rem]">
             <HeroWords text="Connecticut," delay={0.35} className="block" />
             <HeroWords
               text="in its best light."
               delay={0.62}
-              className="animate-shine-text block bg-gradient-to-r from-cyan-200 via-white to-sky-300 bg-clip-text text-transparent"
+              className="block"
+              wordClassName="animate-shine-text bg-gradient-to-r from-cyan-200 via-white to-sky-300 bg-clip-text pb-[0.08em] text-transparent"
             />
           </h1>
           <motion.p
@@ -270,9 +247,6 @@ function Hero() {
             </Magnetic>
           </motion.div>
           <motion.div
-            style={{
-              y: d,
-            }}
             className="mt-12 hidden gap-3 lg:flex"
             aria-hidden
           >
@@ -344,9 +318,6 @@ function Hero() {
           </span>
         </motion.a>
         <motion.div
-          style={{
-            scale: p,
-          }}
           className="absolute inset-x-0 bottom-0 z-10"
           aria-hidden
         >
