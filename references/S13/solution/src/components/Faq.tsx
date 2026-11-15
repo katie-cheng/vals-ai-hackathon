@@ -1,8 +1,8 @@
 import * as React from "react";
+import { Plus } from "lucide-react";
 import { SITE, faqs } from "../data/content";
 import { EASE, Reveal, SplitWords } from "../lib/anim";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle, Phone } from "lucide-react";
 
 function Faq() {
   const [a, i] = React.useState(faqs[0]?.id ?? null);
@@ -24,9 +24,8 @@ function Faq() {
             </p>
           </Reveal>
           <Reveal delay={0.3}>
-            <div className="glass mt-8 rounded-3xl p-6">
-              <p className="flex items-center gap-2 text-[14px] font-bold text-white">
-                <MessageCircle className="h-4 w-4 text-cyan-300" />
+            <div className="glass mt-8 rounded-lg p-6">
+              <p className="flex items-center gap-2 text-[14px] font-medium text-white">
                 {" Still have a question?"}
               </p>
               <div className="mt-3 flex flex-col gap-2 text-[14px] font-semibold">
@@ -53,7 +52,7 @@ function Faq() {
             return (
               <Reveal key={r.id} delay={Math.min(l * 0.04, 0.3)} y={24}>
                 <motion.article
-                  className={`overflow-hidden rounded-2xl border backdrop-blur-xl transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "border-white/10 bg-white/[0.04] hover:border-white/25"}`}
+                  className={`overflow-hidden rounded-lg border backdrop-blur-xl transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "border-white/10 bg-white/[0.04] hover:border-white/25"}`}
                 >
                   <button
                     onClick={() => i(u ? null : r.id)}
@@ -66,21 +65,20 @@ function Faq() {
                     >
                       {String(l + 1).padStart(2, "0")}
                     </span>
-                    <strong className="flex-1 text-[15px] font-extrabold text-white sm:text-base">
+                    <strong className="flex-1 text-[15px] font-medium text-white sm:text-base">
                       {r.question}
                     </strong>
                     <motion.span
                       animate={{
-                        rotate: u ? 135 : 0,
-                        scale: u ? 1.1 : 1,
+                        rotate: u ? 45 : 0,
                       }}
                       transition={{
                         duration: 0.35,
                         ease: EASE,
                       }}
-                      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-xl font-black transition-colors duration-300 ${u ? "bg-cyan-300 text-[#04141f]" : "bg-white/10 text-cyan-200"}`}
+                      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors duration-300 ${u ? "bg-cyan-300 text-[#04141f]" : "bg-white/10 text-cyan-200"}`}
                     >
-                      +
+                      <Plus className="h-4 w-4" strokeWidth={2.25} />
                     </motion.span>
                   </button>
                   <AnimatePresence initial={false}>
@@ -117,7 +115,6 @@ function Faq() {
         </div>
       </div>
       <div className="hidden">
-        <Phone />
       </div>
     </section>
   );

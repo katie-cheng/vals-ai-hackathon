@@ -4,15 +4,7 @@ import { Magnetic, Reveal } from "../lib/anim";
 import { Bubbles, WaveDivider } from "../lib/fx";
 import { Logo } from "./Header";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowUp,
-  Check,
-  Droplets,
-  Link2,
-  Mail,
-  Phone,
-} from "lucide-react";
+import { ArrowUp, Link2 } from "lucide-react";
 
 function Footer() {
   const [a, i] = React.useState(null),
@@ -48,7 +40,7 @@ function Footer() {
               A clean home starts with a clear plan.
             </p>
             <motion.p
-              className="font-serif-d mt-4 text-[11.5vw] font-semibold leading-[0.95] text-white sm:text-7xl lg:text-8xl"
+              className="font-serif-d mt-4 text-[2.2rem] font-medium leading-tight text-white sm:text-5xl"
               initial={{
                 opacity: 0,
                 y: 60,
@@ -69,18 +61,6 @@ function Footer() {
               your home{" "}
               is.
             </motion.p>
-          </Reveal>
-          <Reveal delay={0.2} className="mt-9 flex justify-center">
-            <Magnetic>
-              <a
-                href="#quote"
-                className="group inline-flex items-center gap-3 rounded-full bg-cyan-300 px-9 py-4 text-base font-black text-[#04141f] transition-all duration-500 hover:bg-right"
-              >
-                <Droplets className="h-5 w-5 transition-transform duration-500 group-hover:rotate-[20deg] group-hover:scale-125" />
-                Get a free quote
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </a>
-            </Magnetic>
           </Reveal>
           <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-[1.4fr_1fr_1fr]">
             <div>
@@ -109,8 +89,7 @@ function Footer() {
                   }}
                   className="mt-2 flex items-center gap-1.5 text-[12.5px] font-semibold text-cyan-200"
                   role="status"
-                >
-                  <Check className="h-3.5 w-3.5" /> {a}
+                > {a}
                 </motion.p>
               )}
             </div>
@@ -149,7 +128,6 @@ function Footer() {
                     href={SITE.phoneHref}
                     className="group flex items-center gap-2.5 text-sky-100/80 transition hover:text-white"
                   >
-                    <Phone className="h-4 w-4 text-cyan-300 transition-transform duration-300 group-hover:scale-125" />
                     {SITE.phoneDisplay}
                   </a>
                 </li>
@@ -158,7 +136,6 @@ function Footer() {
                     href={SITE.emailHref}
                     className="group flex items-center gap-2.5 break-all text-sky-100/80 transition hover:text-white"
                   >
-                    <Mail className="h-4 w-4 shrink-0 text-cyan-300 transition-transform duration-300 group-hover:scale-125" />
                     {SITE.email}
                   </a>
                 </li>

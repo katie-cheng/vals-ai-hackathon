@@ -3,7 +3,6 @@ import { prices, towns } from "../data/content";
 import { EASE, Magnetic, Reveal, SplitWords } from "../lib/anim";
 import { Bubbles } from "../lib/fx";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, Droplets, MapPin } from "lucide-react";
 
 const CT_PATH =
   "M104 62 568 48 612 91 598 154 620 195 594 235 577 276 537 307 494 307 469 341 433 348 407 382 373 390 348 419 308 423 276 451 234 440 203 410 173 402 168 373 168 404 126 435 67 428 75 373 94 327 85 271 102 222 91 166 103 119Z";
@@ -68,7 +67,7 @@ function PricingAreas() {
               </Reveal>
             </div>
             <Reveal delay={0.15}>
-              <div className="glass-strong relative overflow-hidden !rounded-3xl p-6 sm:p-7">
+              <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#04141f] p-6 sm:p-7">
                 <Bubbles count={8} minSize={2} maxSize={10} />
                 <h3 className="font-serif-d relative text-xl font-medium text-white">
                   Larger jobs need a look first.
@@ -80,15 +79,6 @@ function PricingAreas() {
                   free, and the complete price is confirmed before work is
                   scheduled.
                 </p>
-                <Magnetic strength={0.2} className="relative mt-5 inline-block">
-                  <a
-                    href="#quote"
-                    className="group inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 text-[13.5px] font-black text-[#04141f]"
-                  >
-                    {"Get my property quote "}
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
-                </Magnetic>
               </div>
             </Reveal>
           </div>
@@ -104,19 +94,18 @@ function PricingAreas() {
                     duration: 0.35,
                     ease: EASE,
                   }}
-                  className="group relative h-full overflow-hidden rounded-3xl bg-white p-6 shadow-[0_18px_50px_-20px_rgba(4,40,70,.35)] ring-1 ring-slate-200/80 transition-shadow duration-300"
+                  className="group relative h-full overflow-hidden rounded-lg bg-white p-6 ring-1 ring-slate-200/80 transition-shadow duration-300"
                 >
                   <div
                     className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-cyan-400 transition-transform duration-500 group-hover:scale-x-100"
                     aria-hidden
                   />
-                  <Droplets className="h-5 w-5 text-sky-400 transition-transform duration-500 group-hover:rotate-[20deg] group-hover:scale-125" />
-                  <p className="mt-4 text-[14px] font-bold text-slate-600">
+                  <p className="mt-4 text-[14px] font-medium text-slate-600">
                     {l.label}
                   </p>
-                  <p className="mt-1 text-4xl font-black tracking-tight text-[#04141f]">
+                  <p className="mt-1 text-4xl font-medium tracking-tight text-[#04141f]">
                     {l.display_price}
-                    <span className="ml-1.5 align-middle text-[13px] font-bold text-slate-400">
+                    <span className="ml-1.5 align-middle text-[13px] font-medium text-slate-400">
                       {l.unit}
                     </span>
                   </p>
@@ -135,7 +124,7 @@ function PricingAreas() {
         <Bubbles count={12} className="opacity-40" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <Reveal className="relative order-2 lg:order-1">
-            <div className="glass relative overflow-hidden rounded-[2rem] p-4 sm:p-6">
+            <div className="glass relative overflow-hidden rounded-lg p-4 sm:p-6">
               <div className="relative">
                 <svg
                   viewBox="40 20 620 440"
@@ -255,7 +244,7 @@ function PricingAreas() {
                   })}
                 </svg>
                 <div
-                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-[1.5rem]"
+                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-lg"
                   aria-hidden
                 >
                 </div>
@@ -284,9 +273,8 @@ function PricingAreas() {
                   <button
                     key={l.id}
                     onClick={() => i(l.name)}
-                    className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[12.5px] font-bold transition-all duration-300 ${a === l.name ? "scale-105 bg-cyan-300 text-[#04141f]" : "border border-white/12 bg-white/5 text-sky-100/75 hover:border-cyan-300/50 hover:text-white"}`}
+                    className={`flex items-center gap-1.5 rounded-md px-3.5 py-2 text-[12.5px] font-medium transition-all duration-300 ${a === l.name ? "scale-105 bg-cyan-300 text-[#04141f]" : "border border-white/12 bg-white/5 text-sky-100/75 hover:border-cyan-300/50 hover:text-white"}`}
                   >
-                    <MapPin className="h-3 w-3" />
                     {l.name}
                   </button>
                 ))}
@@ -312,9 +300,8 @@ function PricingAreas() {
                     duration: 0.35,
                     ease: EASE,
                   }}
-                  className="mt-4 flex items-center gap-2 text-[14px] font-bold text-cyan-200"
-                >
-                  <Check className="h-4 w-4 text-cyan-300" /> {r.name}
+                  className="mt-4 flex items-center gap-2 text-[14px] font-medium text-cyan-200"
+                > {r.name}
                   {", "}
                   {r.region}. Yes, we come to you.
                 </motion.p>
@@ -325,15 +312,6 @@ function PricingAreas() {
                 Do not see your town? The map shows a selection only. Ask about
                 any Connecticut address.
               </p>
-              <Magnetic strength={0.2} className="mt-5 inline-block">
-                <a
-                  href="#quote"
-                  className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13.5px] font-black text-[#04141f] transition-all duration-300 hover:bg-cyan-300"
-                >
-                  {"Ask about your property "}
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
-              </Magnetic>
             </Reveal>
           </div>
         </div>

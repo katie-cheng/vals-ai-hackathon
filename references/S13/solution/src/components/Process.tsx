@@ -3,7 +3,6 @@ import { SITE, processSteps } from "../data/content";
 import { EASE, Reveal, SplitWords } from "../lib/anim";
 import { Bubbles } from "../lib/fx";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, BadgeDollarSign } from "lucide-react";
 
 function Process() {
   const a = React.useRef(null),
@@ -103,7 +102,7 @@ function Process() {
                           duration: 0.35,
                           ease: EASE,
                         }}
-                        className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
+                        className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
                       >
                         <h3 className="font-serif-d text-xl font-medium text-white sm:text-[1.4rem]">
                           {l.title}
@@ -111,18 +110,8 @@ function Process() {
                         <p className="mt-3 text-[14.5px] leading-relaxed text-sky-100/70">
                           {l.description}
                         </p>
-                        {u === 0 && (
-                          <a
-                            href="#quote"
-                            className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-black text-cyan-300 transition-all hover:gap-3 hover:text-cyan-200"
-                          >
-                            {"Start your request "}
-                            <ArrowRight className="h-4 w-4" />
-                          </a>
-                        )}
                         {u === 1 && (
-                          <p className="mt-5 inline-flex items-center gap-2 text-[13px] font-bold text-sky-200/80">
-                            <BadgeDollarSign className="h-4 w-4 text-cyan-300" />
+                          <p className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium text-sky-200/80">
                             {
                               " Complete price confirmed before work is scheduled"
                             }
@@ -141,7 +130,7 @@ function Process() {
             Have photos of the problem areas?{" "}
             <a
               href={SITE.smsHref}
-              className="font-bold text-cyan-300 underline decoration-cyan-300/40 underline-offset-4 transition hover:text-cyan-200"
+              className="font-medium text-cyan-300 underline decoration-cyan-300/40 underline-offset-4 transition hover:text-cyan-200"
             >
               {"Text them to "}
               {SITE.phoneDisplay}

@@ -52,27 +52,15 @@ function Trust() {
         </div>
         <div className="persp grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
           {trustItems.map((a, i) => {
-            const Icon = TRUST_ICONS[a.icon] ?? ShieldCheck;
             return (
               <Reveal key={a.id} delay={(i % 3) * 0.1}>
                 <Tilt max={8} className="group h-full">
                   <div
-                    className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.08] p-6 backdrop-blur-xl transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:border-cyan-300/40 sm:p-7"
+                    className="relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.08] p-6 backdrop-blur-xl transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:border-cyan-300/40 sm:p-7"
                     style={{
                       transformStyle: "preserve-3d",
                     }}
                   >
-                    <div
-                      className="relative mb-5 inline-grid h-14 w-14 place-items-center rounded-2xl bg-cyan-300/25 ring-1 ring-cyan-300/30 transition-all duration-500 group-hover:rotate-[10deg] group-hover:scale-110 group-hover:from-cyan-300 group-hover:to-sky-400"
-                      style={{
-                        transform: "translateZ(30px)",
-                      }}
-                    >
-                      <Icon
-                        className="h-6 w-6 text-cyan-200 transition-colors duration-300 group-hover:text-[#04141f]"
-                        strokeWidth={2.2}
-                      />
-                    </div>
                     <h3
                       className="relative text-lg font-semibold text-white"
                       style={{

@@ -3,7 +3,7 @@ import { comparisons } from "../data/content";
 import { EASE, Reveal, SplitWords } from "../lib/anim";
 import { Gleams } from "../lib/fx";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronsLeftRight, MoveHorizontal } from "lucide-react";
+import { ChevronsLeftRight } from "lucide-react";
 
 function ComparisonSlider({ active: a }) {
   const i = comparisons[a],
@@ -31,7 +31,7 @@ function ComparisonSlider({ active: a }) {
   return (
     <div
       ref={y}
-      className="relative aspect-[4/3] w-full cursor-ew-resize select-none overflow-hidden rounded-[1.75rem] border border-white/12 shadow-[0_30px_80px_-20px_rgba(0,0,0,.8)] sm:aspect-[16/10]"
+      className="relative aspect-[4/3] w-full cursor-ew-resize select-none overflow-hidden rounded-lg border border-white/12 sm:aspect-[16/10]"
       onPointerDown={(g) => {
         (p(false),
           h(true),
@@ -116,10 +116,10 @@ function ComparisonSlider({ active: a }) {
           </AnimatePresence>
         </div>
       </div>
-      <span className="absolute left-4 top-4 z-20 rounded-full border border-white/25 bg-black/55 px-3.5 py-1.5 text-[13px] font-bold text-white backdrop-blur">
+      <span className="absolute left-4 top-4 z-20 rounded-md border border-white/25 bg-black/55 px-3.5 py-1.5 text-[13px] font-medium text-white backdrop-blur">
         Before
       </span>
-      <span className="absolute right-4 top-4 z-20 rounded-full bg-cyan-300 px-3.5 py-1.5 text-[13px] font-bold text-[#04141f] shadow-lg">
+      <span className="absolute right-4 top-4 z-20 rounded-md bg-cyan-300 px-3.5 py-1.5 text-[13px] font-medium text-[#04141f]">
         After
       </span>
       <div
@@ -168,9 +168,8 @@ function ComparisonSlider({ active: a }) {
             exit={{
               opacity: 0,
             }}
-            className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-[#04141f]/70 px-4 py-2 text-[12px] font-bold text-cyan-100 backdrop-blur-xl"
+            className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-md bg-[#04141f]/70 px-4 py-2 text-[12px] font-medium text-cyan-100 backdrop-blur-xl"
           >
-            <MoveHorizontal className="h-4 w-4 text-cyan-300" />
             Drag to reveal the clean
           </motion.div>
         )}
@@ -210,7 +209,7 @@ function BeforeAfter() {
               <button
                 key={l.slug}
                 onClick={() => i(u)}
-                className={`group relative overflow-hidden rounded-full px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${u === a ? "bg-[#04141f] text-white shadow-[0_12px_30px_-10px_rgba(4,20,31,.6)]" : "bg-white text-slate-600 shadow-sm ring-1 ring-slate-200 hover:ring-sky-400 hover:text-sky-700"}`}
+                className={`group relative overflow-hidden rounded-md px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${u === a ? "bg-[#04141f] text-white" : "bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-sky-400 hover:text-sky-700"}`}
               >
                 {u === a && (
                   <motion.span

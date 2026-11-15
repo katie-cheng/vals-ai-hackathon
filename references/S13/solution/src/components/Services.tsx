@@ -211,7 +211,7 @@ function ServicePanel({ index: a }: { index: number }) {
     <div ref={l} className="persp">
       <Tilt
         max={5}
-        className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.07] backdrop-blur-xl"
+        className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] backdrop-blur-xl"
       >
         <div className="grid gap-0 lg:grid-cols-2">
           <div className="relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
@@ -228,7 +228,7 @@ function ServicePanel({ index: a }: { index: number }) {
           </div>
           <div className="relative flex flex-col justify-center gap-5 p-7 sm:p-10">
             <span
-              className="font-serif-d pointer-events-none absolute right-6 top-4 text-[5.5rem] font-bold leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-cyan-300/10"
+              className="font-serif-d pointer-events-none absolute right-6 top-4 text-[5.5rem] font-medium leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-cyan-300/10"
               aria-hidden
             >
               {String(a + 1).padStart(2, "0")}
@@ -242,19 +242,10 @@ function ServicePanel({ index: a }: { index: number }) {
             <p className="text-[13.5px] leading-snug text-sky-200/70">
               {i.price_note}
             </p>
-            <div className="mt-1">
-              <a
-                href="#quote"
-                className="group/btn inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13.5px] font-black text-[#04141f] transition-all duration-300 hover:bg-cyan-300"
-              >
-                {i.quote_label}
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-              </a>
-            </div>
           </div>
         </div>
         <div
-          className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 rounded-lg opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity duration-500 group-hover:opacity-100"
           aria-hidden
         />
       </Tilt>
@@ -291,8 +282,7 @@ function ServiceSwitcher() {
         }}
       >
         {services.map((sv, k) => {
-          const Icon = SERVICE_ICONS[k % SERVICE_ICONS.length],
-            on = k === active;
+          const on = k === active;
           return (
             <button
               key={sv.slug}
@@ -305,9 +295,8 @@ function ServiceSwitcher() {
               aria-controls="service-panel"
               tabIndex={on ? 0 : -1}
               onClick={() => go(k)}
-              className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2.5 text-[13.5px] font-semibold transition-all duration-300 ${on ? "border-cyan-300 bg-cyan-300 text-[#04141f]" : "border-white/15 bg-white/5 text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
+              className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-md border px-4 py-2.5 text-[13.5px] font-semibold transition-all duration-300 ${on ? "border-cyan-300 bg-cyan-300 text-[#04141f]" : "border-white/15 bg-white/5 text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
             >
-              <Icon className={`h-4 w-4 ${on ? "text-[#04141f]" : "text-cyan-300"}`} />
               {sv.name}
             </button>
           );

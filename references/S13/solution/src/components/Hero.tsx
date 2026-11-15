@@ -9,13 +9,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import {
-  ArrowRight,
-  BadgeCheck,
-  Droplets,
-  Phone,
-  Sparkles,
-} from "lucide-react";
 
 function HeroWords({
   text: a,
@@ -174,7 +167,7 @@ function Hero() {
           }}
           className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pt-36 sm:px-6 lg:pt-40"
         >
-          <h1 className="max-w-4xl text-[11vw] font-bold leading-[1] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]">
+          <h1 className="max-w-4xl text-[11vw] font-semibold leading-[1] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]">
             <HeroWords text="Connecticut," delay={0.35} className="block" />
             <HeroWords
               text="in its best light."
@@ -221,23 +214,9 @@ function Hero() {
             <Magnetic>
               <a
                 href="#quote"
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-cyan-300 px-8 py-4 text-[15px] font-black text-[#04141f] transition-all duration-500 hover:bg-right"
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-md bg-cyan-300 px-4 py-2 text-[15px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right"
               >
-                <Sparkles className="h-5 w-5 transition-transform duration-500 group-hover:rotate-[25deg] group-hover:scale-125" />
                 Get my free quote
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </a>
-            </Magnetic>
-            <Magnetic>
-              <a
-                href={SITE.phoneHref}
-                className="group inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/5 px-7 py-4 text-[15px] font-bold text-white backdrop-blur-xl transition-all duration-300 hover:border-cyan-300/60 hover:bg-cyan-300/10"
-              >
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-cyan-300/20 transition-transform duration-300 group-hover:scale-110">
-                  <Phone className="h-4 w-4 text-cyan-200" />
-                </span>
-                {"Call "}
-                {SITE.phoneDisplay}
               </a>
             </Magnetic>
           </motion.div>
@@ -247,15 +226,12 @@ function Hero() {
           >
             {[
               {
-                icon: BadgeCheck,
                 t: "Interior + exterior glass",
               },
               {
-                icon: Droplets,
                 t: "Gutters · Siding · Concrete",
               },
               {
-                icon: Sparkles,
                 t: "Streak-aware finish",
               },
             ].map((M, H) => (
@@ -276,12 +252,11 @@ function Hero() {
                   ease: EASE,
                   delay: 1.4 + H * 0.15,
                 }}
-                className={`glass flex items-center gap-2.5 rounded-2xl px-4 py-3 text-[13px] font-bold text-sky-50 ${H % 2 ? "animate-float-y-sm" : "animate-float-y"}`}
+                className={`glass flex items-center gap-2.5 rounded-lg px-4 py-3 text-[13px] font-medium text-sky-50 ${H % 2 ? "animate-float-y-sm" : "animate-float-y"}`}
                 style={{
                   animationDelay: `${H * 0.8}s`,
                 }}
               >
-                <M.icon className="h-4 w-4 text-cyan-300" />
                 {M.t}
               </motion.div>
             ))}
@@ -309,7 +284,6 @@ function Hero() {
                       className="flex items-center gap-8 text-[14px] font-medium text-cyan-100/80"
                     >
                       {H}
-                      <Droplets className="h-3.5 w-3.5 text-cyan-400" />
                     </span>
                   ))}
                 </div>

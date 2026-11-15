@@ -53,10 +53,10 @@ function Preloader({ done: a }) {
           }}
           className="relative"
         >
-          <div className="grid h-20 w-20 place-items-center rounded-3xl bg-cyan-300">
+          <div className="grid h-20 w-20 place-items-center rounded-lg bg-cyan-300">
             <Droplets className="h-10 w-10 text-[#04141f]" strokeWidth={2.4} />
           </div>
-          <span className="absolute inset-0 animate-ping rounded-3xl border-2 border-cyan-300/60" />
+          <span className="absolute inset-0 animate-ping rounded-lg border-2 border-cyan-300/60" />
         </motion.div>
         <motion.p
           initial={{
@@ -170,7 +170,7 @@ function App() {
       <div className="min-h-screen bg-[#04141f] text-white">
         <a
           href="#services"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[110] focus:rounded-full focus:bg-cyan-300 focus:px-5 focus:py-2.5 focus:font-bold focus:text-[#04141f]"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[110] focus:rounded-md focus:bg-cyan-300 focus:px-5 focus:py-2.5 focus:font-medium focus:text-[#04141f]"
         >
           Skip to main content
         </a>

@@ -4,18 +4,7 @@ import { EASE, Magnetic, Reveal, SplitWords } from "../lib/anim";
 import { submitQuote } from "../lib/api";
 import { Bubbles, ParticleCanvas } from "../lib/fx";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ArrowRight,
-  BadgeCheck,
-  CalendarCheck,
-  Check,
-  LoaderCircle,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  TriangleAlert,
-} from "lucide-react";
+import { Check, LoaderCircle, Phone, Send } from "lucide-react";
 
 const EMPTY_FORM = {
   name: "",
@@ -70,7 +59,7 @@ function Field({ label: a, error: i, children: r, htmlFor: l, required: u }) {
 }
 
 const inputClass = (a?: unknown) =>
-  `w-full rounded-2xl border bg-white/[0.06] px-4 py-3.5 text-[15px] font-medium text-white placeholder:text-sky-200/30 outline-none backdrop-blur transition-all duration-300 focus:scale-[1.01] ${a ? "border-rose-400/70 focus:border-rose-300 focus:ring-4 focus:ring-rose-400/15" : "border-white/15 hover:border-white/30 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/15"}`;
+  `w-full rounded-lg border bg-white/[0.06] px-4 py-2.5 text-[15px] font-medium text-white placeholder:text-sky-200/30 outline-none backdrop-blur transition-all duration-300 focus:scale-[1.01] ${a ? "border-rose-400/70 focus:border-rose-300 focus:ring-4 focus:ring-rose-400/15" : "border-white/15 hover:border-white/30 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/15"}`;
 
 function Quote() {
   const [a, i] = React.useState(EMPTY_FORM),
@@ -173,26 +162,6 @@ function Quote() {
       </div>
       <ParticleCanvas density={50} />
       <Bubbles count={18} className="opacity-50" />
-      <div
-        className="mask-fade-x pointer-events-none relative mb-12 overflow-hidden"
-        aria-hidden
-      >
-        <div
-          className="animate-marquee flex w-max gap-10 whitespace-nowrap"
-          style={{
-            animationDuration: "36s",
-          }}
-        >
-          {[0, 1].map((O) => (
-            <p
-              key={O}
-              className="text-stroke text-[13vw] font-black leading-none tracking-tight opacity-30 sm:text-7xl"
-            >
-              Free quote · Free quote · Free quote · Free quote ·
-            </p>
-          ))}
-        </div>
-      </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
         <div>
           <SplitWords
@@ -210,19 +179,16 @@ function Quote() {
           <div className="mt-8 space-y-3">
             {[
               {
-                icon: Phone,
                 k: "Call",
                 v: SITE.phoneDisplay,
                 href: SITE.phoneHref,
               },
               {
-                icon: Send,
                 k: "Text",
                 v: "Send photos and questions",
                 href: SITE.smsHref,
               },
               {
-                icon: Mail,
                 k: "Email",
                 v: SITE.email,
                 href: SITE.emailHref,
@@ -238,16 +204,13 @@ function Quote() {
                     duration: 0.3,
                     ease: EASE,
                   }}
-                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40"
+                  className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40"
                 >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-cyan-300/15 text-cyan-300 transition-all duration-300 group-hover:bg-cyan-300 group-hover:text-[#04141f]">
-                    <O.icon className="h-5 w-5" />
-                  </span>
                   <span>
                     <span className="block text-[13px] font-medium text-sky-200/70">
                       {O.k}
                     </span>
-                    <span className="block break-all text-[15px] font-bold text-white">
+                    <span className="block break-all text-[15px] font-medium text-white">
                       {O.v}
                     </span>
                   </span>
@@ -257,14 +220,13 @@ function Quote() {
           </div>
           <Reveal delay={0.5}>
             <p className="mt-6 flex items-start gap-2 text-[12.5px] leading-relaxed text-sky-200/55">
-              <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
               Your details are used only to respond to this request. Submitting
               the form does not book an appointment.
             </p>
           </Reveal>
         </div>
         <Reveal delay={0.15}>
-          <div className="glass-strong relative overflow-hidden rounded-[2rem] p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,.8)] sm:p-9">
+          <div className="glass-strong relative overflow-hidden rounded-lg p-6 sm:p-9">
             <AnimatePresence mode="wait">
               {u === "success" ? (
                 <motion.div
@@ -354,7 +316,7 @@ function Quote() {
                     transition={{
                       delay: 0.6,
                     }}
-                    className="mt-4 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 py-2 text-[13px] font-semibold text-cyan-200"
+                    className="mt-4 rounded-md border border-cyan-300/30 bg-cyan-300/10 px-5 py-2 text-[13px] font-semibold text-cyan-200"
                   >
                     {"Your reference: "}
                     {y}
@@ -374,7 +336,7 @@ function Quote() {
                     Need to add something? Call or text{" "}
                     <a
                       href={SITE.phoneHref}
-                      className="font-bold text-cyan-300"
+                      className="font-medium text-cyan-300"
                     >
                       {SITE.phoneDisplay}
                     </a>
@@ -390,7 +352,7 @@ function Quote() {
                       delay: 0.8,
                     }}
                     onClick={Y}
-                    className="mt-7 rounded-full border border-white/20 px-6 py-3 text-[13.5px] font-bold text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+                    className="mt-7 rounded-md border border-white/20 px-4 py-2 text-[13.5px] font-medium text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
                   >
                     Start another request
                   </motion.button>
@@ -550,7 +512,7 @@ function Quote() {
                             whileTap={{
                               scale: 0.95,
                             }}
-                            className={`flex cursor-pointer items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-bold transition-all duration-300 ${G ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-white/[0.05] text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
+                            className={`flex cursor-pointer items-center gap-2 rounded-md px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${G ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-white/[0.05] text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
                           >
                             <input
                               type="checkbox"
@@ -563,9 +525,7 @@ function Quote() {
                             <span
                               className={`grid h-5 w-5 place-items-center rounded-full transition-all ${G ? "bg-[#04141f]/20" : "bg-white/10"}`}
                             >
-                              {G && (
-                                <Check className="h-3 w-3" strokeWidth={3.5} />
-                              )}
+                              {G && <Check className="h-3 w-3" strokeWidth={3} />}
                             </span>
                             {O}
                           </motion.label>
@@ -623,17 +583,14 @@ function Quote() {
                         {[
                           {
                             v: "call",
-                            icon: Phone,
                             t: "Call me",
                           },
                           {
                             v: "text",
-                            icon: Send,
                             t: "Text me",
                           },
                           {
                             v: "email",
-                            icon: Mail,
                             t: "Email me",
                           },
                         ].map((O) => (
@@ -646,10 +603,9 @@ function Quote() {
                                 preferredContact: O.v,
                               }))
                             }
-                            className={`flex items-center justify-center gap-1.5 rounded-2xl border px-2 py-3.5 text-[12.5px] font-bold transition-all duration-300 ${a.preferredContact === O.v ? "border-cyan-300 bg-cyan-300/15 text-cyan-200" : "border-white/15 bg-white/[0.05] text-sky-100/70 hover:border-white/30"}`}
+                            className={`flex items-center justify-center gap-1.5 rounded-lg border px-2 py-3.5 text-[12.5px] font-medium transition-all duration-300 ${a.preferredContact === O.v ? "border-cyan-300 bg-cyan-300/15 text-cyan-200" : "border-white/15 bg-white/[0.05] text-sky-100/70 hover:border-white/30"}`}
                             aria-pressed={a.preferredContact === O.v}
-                          >
-                            <O.icon className="h-3.5 w-3.5" /> {O.t}
+                          > {O.t}
                           </button>
                         ))}
                       </div>
@@ -718,9 +674,8 @@ function Quote() {
                           opacity: 0,
                         }}
                         role="alert"
-                        className="mt-4 flex items-center gap-2.5 rounded-2xl border border-rose-400/40 bg-rose-500/10 px-4 py-3 text-[13.5px] font-semibold text-rose-200"
-                      >
-                        <TriangleAlert className="h-5 w-5 shrink-0" /> {d}
+                        className="mt-4 flex items-center gap-2.5 rounded-lg border border-rose-400/40 bg-rose-500/10 px-4 py-3 text-[13.5px] font-semibold text-rose-200"
+                      > {d}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -731,7 +686,7 @@ function Quote() {
                       whileTap={{
                         scale: 0.97,
                       }}
-                      className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-cyan-300 px-6 py-4 text-[15.5px] font-black text-[#04141f] transition-all duration-500 hover:bg-right disabled:opacity-70"
+                      className="group flex w-full items-center justify-center gap-3 rounded-lg bg-cyan-300 px-5 py-3 text-[15.5px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right disabled:opacity-70"
                     >
                       {u === "submitting" ? (
                         <>
@@ -740,9 +695,7 @@ function Quote() {
                         </>
                       ) : (
                         <>
-                          <CalendarCheck className="h-5 w-5 transition-transform duration-300 group-hover:rotate-[12deg]" />
                           Send my free quote request
-                          <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
                         </>
                       )}
                     </motion.button>

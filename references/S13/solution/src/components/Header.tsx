@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ArrowRight, Droplets, Menu, Phone, X } from "lucide-react";
+import { Droplets, Menu, X } from "lucide-react";
 
 const NAV = [
   {
@@ -47,12 +47,12 @@ function Logo({ compact: a = false }) {
       className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap"
       aria-label="The Suds Squad, back to top"
     >
-      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-2xl bg-cyan-300 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105">
+      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-lg bg-cyan-300 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105">
         <Droplets className="h-5 w-5 text-[#04141f]" strokeWidth={2.6} />
       </span>
       {!a && (
         <span className="leading-none">
-          <span className="block text-[15px] font-black tracking-tight text-white">
+          <span className="block text-[15px] font-semibold tracking-tight text-white">
             {"The Suds "}
             <span className="text-cyan-300">Squad</span>
           </span>
@@ -105,7 +105,7 @@ function Header() {
           className={`fixed inset-x-0 top-0 z-[80] transition-all duration-500 ${a ? "py-2" : "py-4"}`}
         >
           <div
-            className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-all duration-500 sm:px-6 ${a ? "rounded-2xl border border-white/10 bg-[#04141f]/80 py-2 shadow-[0_18px_50px_-12px_rgba(0,0,0,.7)] backdrop-blur-2xl" : "border border-transparent bg-transparent py-1"}`}
+            className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-all duration-500 sm:px-6 ${a ? "rounded-lg border border-white/10 bg-[#04141f]/80 py-2 backdrop-blur-2xl" : "border border-transparent bg-transparent py-1"}`}
           >
             <Logo />
             <nav
@@ -116,7 +116,7 @@ function Header() {
                 <a
                   key={p.href}
                   href={p.href}
-                  className="group relative whitespace-nowrap rounded-full px-3.5 py-2 text-[13.5px] font-semibold text-sky-100/80 transition-colors duration-300 hover:text-white"
+                  className="group relative whitespace-nowrap rounded-md px-3.5 py-2 text-[13.5px] font-semibold text-sky-100/80 transition-colors duration-300 hover:text-white"
                 >
                   {p.label}
                   <span className="absolute inset-x-3 -bottom-0.5 h-[2px] origin-left scale-x-0 rounded-full bg-cyan-300 transition-transform duration-300 group-hover:scale-x-100" />
@@ -126,18 +126,16 @@ function Header() {
             <div className="flex items-center gap-2.5">
               <a
                 href={SITE.phoneHref}
-                className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[13px] font-bold text-white backdrop-blur transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10 md:flex"
+                className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-[13px] font-medium text-white backdrop-blur transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10 md:flex"
               >
-                <Phone className="h-3.5 w-3.5 animate-pulse-soft text-cyan-300" />
                 {SITE.phoneDisplay}
               </a>
               <Magnetic strength={0.25}>
                 <a
                   href="#quote"
-                  className="group hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-cyan-300 px-5 py-2.5 text-[13.5px] font-black text-[#04141f] transition-all duration-300 sm:inline-flex"
+                  className="group hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-md bg-cyan-300 px-4 py-2 text-[13.5px] font-medium text-[#04141f] transition-all duration-300 sm:inline-flex"
                 >
                   Get a free quote
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </Magnetic>
               <button
@@ -152,7 +150,7 @@ function Header() {
             </div>
           </div>
           <div
-            className="mx-auto mt-1 h-[2px] max-w-7xl overflow-hidden rounded-full px-4 sm:px-6"
+            className="mx-auto mt-1 h-[2px] max-w-7xl overflow-hidden rounded-md px-4 sm:px-6"
             aria-hidden
           >
             <div
@@ -217,10 +215,9 @@ function Header() {
                       duration: 0.5,
                       ease: EASE,
                     }}
-                    className="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-xl font-extrabold text-white transition hover:bg-white/5"
+                    className="group flex items-center justify-between rounded-lg px-4 py-2.5 text-xl font-medium text-white transition hover:bg-white/5"
                   >
                     {p.label}
-                    <ArrowRight className="h-5 w-5 -translate-x-2 text-cyan-300 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                   </motion.a>
                 ))}
                 <motion.div
@@ -244,19 +241,17 @@ function Header() {
                   </p>
                   <a
                     href={SITE.phoneHref}
-                    className="flex items-center justify-center gap-2 rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3.5 font-bold text-white"
+                    className="flex items-center justify-center gap-2 rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-4 py-2.5 font-medium text-white"
                   >
-                    <Phone className="h-4 w-4 text-cyan-300" />
                     {" Call or text "}
                     {SITE.phoneDisplay}
                   </a>
                   <a
                     href="#quote"
                     onClick={() => l(false)}
-                    className="flex items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-4 py-3.5 font-black text-[#04141f]"
+                    className="flex items-center justify-center gap-2 rounded-lg bg-cyan-300 px-4 py-2.5 font-medium text-[#04141f]"
                   >
                     {"Request a free quote "}
-                    <ArrowRight className="h-4 w-4" />
                   </a>
                 </motion.div>
               </motion.nav>
