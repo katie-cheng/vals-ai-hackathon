@@ -6,7 +6,7 @@ The delivery header lets the cursors be simulated and the prompt form work on th
 
 | Site | reward | requirements | task | slop | slop points |
 | --- | --- | --- | --- | --- | --- |
-| S23 qwen3.8-max (live URL) | 0.43 | 0.70 | 0.64 | 0.17 | 75.2 |
+| S23 qwen3.8-max (live URL) | 0.43 | 0.70 | 0.64 | 0.17 | 74.1 |
 | S24 muse-spark-1.2 (live URL) | 0.37 | 0.58 | 0.49 | 0.16 | 80.7 |
 | golden reference (`solution/app`) | 1.00 | 1.00 | 1.00 | 1.00 | 0 |
 
