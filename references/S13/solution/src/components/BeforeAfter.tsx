@@ -168,7 +168,7 @@ function BeforeAfter() {
       </div>
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <SplitWords
               text="See what a thorough clean changes."
               as="h2"

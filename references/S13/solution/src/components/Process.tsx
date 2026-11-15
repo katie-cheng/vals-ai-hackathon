@@ -17,7 +17,7 @@ function Process() {
       className="relative overflow-hidden bg-gradient-to-b from-[#04141f] via-[#082230] to-[#04141f] py-24 sm:py-32"
     >
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-        <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
+        <div className="mb-16 max-w-3xl sm:mb-20">
           <SplitWords
             text="From first message to final check."
             as="h2"
@@ -102,7 +102,7 @@ function Process() {
             })}
           </div>
         </div>
-        <Reveal className="mt-14 text-center">
+        <Reveal className="mt-14">
           <p className="text-[14px] text-sky-100/70">
             Have photos of the problem areas?{" "}
             <a

@@ -130,5 +130,17 @@
   "sent_at": "2026-11-15T00:27-08:00",
   "element": "service and before/after pill selectors",
   "comment": "cut all the pill selections if they are navigable through arrows, dont make it repetitive"
+ },
+ {
+  "rid": "R23",
+  "sent_at": "2026-11-15T00:32-08:00",
+  "element": "section layouts",
+  "comment": "the component layout should follow a more consistent grid"
+ },
+ {
+  "rid": "R24",
+  "sent_at": "2026-11-15T00:33-08:00",
+  "element": "logo mark",
+  "comment": "make the logo more professional - probably a more detailed svg outline looking logo not just a few elements"
  }
 ]

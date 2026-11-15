@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { Droplets, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV = [
   {
@@ -40,6 +40,34 @@ const NAV = [
   },
 ];
 
+function LogoMark({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M12 4.6c0 0-2.6 3-2.6 4.7a2.6 2.6 0 0 0 5.2 0c0-1.7-2.6-4.7-2.6-4.7z" />
+      <path d="M11.1 9.6a1 1 0 0 0 .9.8" />
+      <path d="M4.5 19.4 20 6.8l15.5 12.6" />
+      <path d="M27 12.3V8.2h3.4V15" />
+      <path d="M8 17v16h24V17" />
+      <path d="M17.5 33v-6.6a2.5 2.5 0 0 1 5 0V33" />
+      <rect x="10.8" y="20.6" width="4.8" height="4.8" rx="0.4" />
+      <path d="M13.2 20.6v4.8M10.8 23h4.8" />
+      <rect x="24.4" y="20.6" width="4.8" height="4.8" rx="0.4" />
+      <path d="M26.8 20.6v4.8M24.4 23h4.8" />
+      <path d="M17.6 16.4h4.8" />
+      <path d="M3.5 33h33" />
+    </svg>
+  );
+}
+
 function Logo({ compact: a = false }) {
   return (
     <a
@@ -47,9 +75,7 @@ function Logo({ compact: a = false }) {
       className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap"
       aria-label="The Suds Squad, back to top"
     >
-      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-lg bg-cyan-300 transition-transform duration-500">
-        <Droplets className="h-5 w-5 text-[#04141f]" strokeWidth={2.6} />
-      </span>
+      <LogoMark className="h-10 w-10 text-cyan-300" />
       {!a && (
         <span className="leading-none">
           <span className="block text-[15px] font-semibold tracking-tight text-white">

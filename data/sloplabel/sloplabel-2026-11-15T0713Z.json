@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794731308.3245578
+   "updated_at": 1794731617.3084207
   }
  ],
  "labels": [
@@ -11489,6 +11489,64 @@
    "shot_status": "none",
    "created_at": 1794731220.0,
    "updated_at": 1794731220.0
+  },
+  {
+   "id": 483,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R23\"]",
+   "comment": "the component layout should follow a more consistent grid",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "section layouts",
+   "component_chain": null,
+   "selector": "section .grid",
+   "selector_confidence": "manual",
+   "tag": "div",
+   "text": "",
+   "rect": null,
+   "styles": "{\"pricing\": \"1fr 1.2fr / gap 40\", \"areas\": \"1fr 1fr / gap 64\", \"faq\": \"1fr 1.4fr / gap 48\", \"quote\": \"1fr 1.35fr / gap 64\", \"footer\": \"1.4fr 1fr 1fr / gap 40\", \"trust\": \"3 cols / gap 20\", \"process heading\": \"centred; others left\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794731520.0,
+   "updated_at": 1794731520.0
+  },
+  {
+   "id": 484,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R24\"]",
+   "comment": "make the logo more professional - probably a more detailed svg outline looking logo not just a few elements",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "logo mark",
+   "component_chain": null,
+   "selector": "header a[aria-label*='back to top'] > span",
+   "selector_confidence": "manual",
+   "tag": "span",
+   "text": "",
+   "rect": null,
+   "styles": "{}",
+   "html": "<span class=\"... h-10 w-10 rounded-lg bg-cyan-300\"><svg lucide-droplets/></span>",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794731580.0,
+   "updated_at": 1794731580.0
   }
  ]
 }

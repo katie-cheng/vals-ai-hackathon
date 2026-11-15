@@ -26,7 +26,7 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
 ## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
-Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 22 labels (R1–R22, SlopLabel ids 461–482) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 24 labels (R1–R24, SlopLabel ids 461–484) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
 
 | Pattern | Labels | Mechanical? |
 |---|---|---|
@@ -48,6 +48,8 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Cramped side padding (content close to viewport edges) | R20 | yes: container padding / content inset at each width |
 | Characterful/wide grotesk body font where a neutral sans (Inter-like) reads more professional | R21 | partly: computed body font-family vs a neutral-sans allowlist; taste call otherwise |
 | Redundant navigation: pill/tab row plus prev/next arrows for the same carousel | R22 | yes: a tab/pill group and prev/next buttons controlling the same panel |
+| Inconsistent layout grid: every section picks its own column ratio, gutter and alignment | R23 | yes: column edges and gutters across sections should snap to one shared grid |
+| Logo is a stock icon (e.g. Lucide droplet) in a filled rounded tile rather than a designed mark | R24 | partly: logo svg matches an icon-library glyph |
 | Hero image missing on first paint (waits for JS/video poster) | R17 | yes: hero image request start and paint time vs first contentful paint |
 
 ## Other observations

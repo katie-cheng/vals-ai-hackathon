@@ -48,7 +48,7 @@ function Trust() {
             </p>
           </Reveal>
         </div>
-        <div className="persp grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
+        <div className="persp grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-8">
           {trustItems.map((a, i) => {
             return (
               <Reveal key={a.id} delay={(i % 3) * 0.1}>

@@ -75,6 +75,8 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R20 | Not enough side padding | Section and header containers go from `px-4 sm:px-6` to `px-6 sm:px-10 lg:px-16` | round 6 |
 | R21 | Sans-serif should be more tasteful, Inter-like | Body/UI font Archivo → Inter (variable, bundled via `@fontsource-variable/inter`); Fraunces headings unchanged | round 7 |
 | R22 | Pill selectors duplicate the arrow navigation | Services: pill tablist removed; the panel is a keyboard-focusable carousel (← →, swipe) with prev/next and "n of 6". Before/after: pill row removed; prev/next + dots stay, and the comparison name now sits above its description | round 7 |
+| R23 | Layout should follow a more consistent grid | One 12-column grid with a 32px gutter (`.grid-12` in `index.css`): pricing, FAQ and quote are 5/7, areas 7/5, footer 6/3/3, trust cards 4/4/4, price tiles 32px gutter. Process and footer headings left-aligned like every other section; section intros all `max-w-3xl` | round 8 |
+| R24 | Logo should be a more detailed, professional outline mark | Stock Lucide droplet in a filled tile replaced by a custom line-art `LogoMark` (house with roof, chimney, paned windows, arched door, ground line and a water droplet; one 1.6px stroke, flat accent colour). Same mark in `favicon.svg` | round 8 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.

@@ -34,7 +34,7 @@ function Footer() {
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
         <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-10 lg:px-16 sm:pt-20">
-          <Reveal className="text-center">
+          <Reveal>
             <p className="text-[15px] font-semibold text-cyan-300">
               A clean home starts with a clear plan.
             </p>
@@ -61,7 +61,7 @@ function Footer() {
               is.
             </motion.p>
           </Reveal>
-          <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-[2fr_1fr_1fr] grid-12 split-6-3-3">
             <div>
               <Logo />
               <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-sky-100/65">
