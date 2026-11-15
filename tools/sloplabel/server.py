@@ -14,6 +14,7 @@ import re
 import secrets
 import sqlite3
 import time
+from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from contextlib import asynccontextmanager
 from functools import lru_cache
 from pathlib import Path
@@ -59,6 +60,11 @@ LABEL_FIELDS = [
 JSON_FIELDS = {"tags", "component_chain", "rect", "styles"}
 EDITABLE = {"comment", "annotator"}
 VERDICTS = {"slop"}
+
+
+def script_json(obj) -> str:
+    """json.dumps safe to embed inside an inline <script>: no '<' can close the tag."""
+    return json.dumps(obj).replace("<", "\\u003c")
 
 
 def db() -> sqlite3.Connection:
@@ -184,7 +190,15 @@ class Shooter:
                                 "x": max(box["x"], 0), "y": max(box["y"] + await page.evaluate("scrollY"), 0),
                                 "width": min(box["width"], vw), "height": 2400})
                         else:
-                            await el.screenshot(path=str(shot), timeout=15000)
+                            try:
+                                await el.screenshot(path=str(shot), timeout=15000, animations="disabled")
+                            except PlaywrightTimeoutError:
+                                # element keeps moving (scroll-driven / looping animation): clip the viewport instead
+                                box = await el.bounding_box() or box
+                                await page.screenshot(path=str(shot), animations="disabled", clip={
+                                    "x": max(box["x"], 0), "y": max(box["y"], 0),
+                                    "width": max(1, min(box["width"], vw - max(box["x"], 0))),
+                                    "height": max(1, min(box["height"], vh - max(box["y"], 0)))})
                         await page.evaluate(
                             """() => { const el = document.querySelector('[data-slop-capture]'); const r = el.getBoundingClientRect();
                                const o = document.createElement('div');
@@ -214,6 +228,13 @@ class Shooter:
                     for f in (shot, ctx_shot):
                         if f:
                             f.unlink(missing_ok=True)
+                    return
+                if status.startswith("failed"):
+                    # keep whatever screenshots the label already has; only record the failure
+                    for f in (shot, ctx_shot):
+                        if f:
+                            f.unlink(missing_ok=True)
+                    con.execute("UPDATE labels SET shot_status=? WHERE id=?", (status, label_id))
                     return
                 final_shot, final_ctx = SHOTS / f"{label_id}.png", SHOTS / f"{label_id}_ctx.png"
                 for tmp, final in ((shot, final_shot), (ctx_shot, final_ctx)):
@@ -290,7 +311,7 @@ def open_site(site_id: str, view: str = "desktop", focus: int | None = None):
     if view == "desktop":
         target = page_path
     else:
-        target = f"/__slop/frame/{site_id}?w=390&h=844&p={quote(page_path, safe='/#?=&')}"
+        target = f"/__slop/frame/{site_id}?w=390&h=844&p={quote(page_path, safe='/')}"
     resp = RedirectResponse(target, status_code=302, headers=NO_STORE)
     resp.set_cookie("slop_site", site_id, samesite="lax", path="/")
     if focus is not None:
@@ -304,7 +325,7 @@ def frame_page(site_id: str, w: int = 390, h: int = 844, p: str = "/"):
     if not p.startswith("/") or p.startswith("//"):
         p = "/"
     html = (ROOT / "static/frame.html").read_text()
-    html = html.replace("__CFG__", json.dumps({"site_id": site_id, "title": site["title"], "model": site["model"], "w": w, "h": h, "path": p}))
+    html = html.replace("__CFG__", script_json({"site_id": site_id, "title": site["title"], "model": site["model"], "w": w, "h": h, "path": p}))
     resp = HTMLResponse(html, headers=NO_STORE)
     resp.set_cookie("slop_site", site_id, samesite="lax", path="/")
     return resp
@@ -501,7 +522,7 @@ try{navigator.serviceWorker.register=function(){return Promise.reject(new Error(
 
 
 def inject(html: str, site: dict, capture: bool) -> str:
-    cfg = json.dumps({"site_id": site["site_id"], "title": site["title"], "model": site["model"],
+    cfg = script_json({"site_id": site["site_id"], "title": site["title"], "model": site["model"],
                       "placement": site["placement"], "tournament": site["tournament"], "url": site["url"]})
     guard = HEAD_GUARD.replace("__CFG__", cfg)
     m = re.search(r"<head[^>]*>", html, re.I)
