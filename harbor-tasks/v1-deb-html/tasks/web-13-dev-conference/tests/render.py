@@ -82,7 +82,7 @@ def main() -> None:
 
     (OUT / "render_log.json").write_text(json.dumps(log, indent=2))
     renders = all(metrics[f"{n}_loaded"] for n in VIEWPORTS)
-    nonblank = metrics["desktop_text_chars"] >= MIN_TEXT_CHARS
+    nonblank = all(metrics[f"{n}_text_chars"] >= MIN_TEXT_CHARS for n in VIEWPORTS)
     metrics["reward"] = int(renders and nonblank)
     write_reward(metrics)
 
