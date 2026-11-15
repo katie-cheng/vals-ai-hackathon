@@ -250,7 +250,21 @@ function lessonPagesOf(pages) {
         .filter(Boolean).length + (p.path.includes("?") ? "?" : "");
     groups.set(key, [...(groups.get(key) || []), p]);
   }
-  return [...groups.values()].sort((a, b) => b.length - a.length)[0] || [];
+  const group = [...groups.values()].sort((a, b) => b.length - a.length)[0] || [];
+  // Within that depth, a path segment most of the pages share (the "lesson" of /lesson/3) is part of the lesson route,
+  // so a page without it (/course/curriculum) is not a lesson page.
+  const segs = (p) =>
+    p.path
+      .replace(/[?#](?!\/).*$/, "")
+      .split("/")
+      .filter(Boolean);
+  const fixed = (segs(group[0] || { path: "" }) || []).map((_, i) => {
+    const counts = new Map();
+    for (const p of group) counts.set(segs(p)[i], (counts.get(segs(p)[i]) || 0) + 1);
+    const [value, n] = [...counts].sort((a, b) => b[1] - a[1])[0];
+    return n > group.length / 2 ? value : null;
+  });
+  return group.filter((p) => fixed.every((value, i) => value === null || segs(p)[i] === value));
 }
 const slim = (p) => ({
   path: p.path,
