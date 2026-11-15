@@ -40,7 +40,7 @@ Notes
 - `environment/`: `mcr.microsoft.com/playwright:v1.64.1-noble` + Playwright npm in `/opt/verifier`, template Vite app in `/app` with `npm ci` done.
 - `solution/`: golden reference site + `solve.sh` (oracle).
 - `tests/`: `test.sh` rebuilds `/app` (build failure → reward 0), then `grade.mjs` (generic: serves dist, renders 390/768/1280/1440/1920 + a 1920→360 resize sweep, scores, saves screenshots + HTML), `probe.mjs` (generic in-page facts + slop-pattern counts), `task.mjs` (task-specific requirements checklist + interactions).
-- Reward: `gate × (requirements + slop)/2`. `slop = 1/(1 + points/15)`, points from SlopLabel-derived patterns (eyebrows, heading accent spans, `·` separators, pills, oversized rounding, numbered markers, em dashes, emoji/dingbat icons, gradient text, pulsing dots, tiny text, duplicate CTAs, broken/wrapping controls), each with a free allowance; brief-requested styles are exempt.
+- Reward: `gate × (requirements + slop)/2`. `slop = task × 1/(1 + points/15)`, so a page that skips the brief earns little slop credit, points from SlopLabel-derived patterns (eyebrows, heading accent spans, `·` separators, pills, oversized rounding, numbered markers, em dashes, emoji/dingbat icons, gradient text, pulsing dots, tiny text, duplicate CTAs, broken/wrapping controls), each with a free allowance; brief-requested styles are exempt.
 - To add a task: copy `grade.mjs`/`probe.mjs` unchanged, write a new `task.mjs` (see `tasks/README.md`).
 
 ### 2c. Golden references `references/S13` (Suds Squad, Katie signed off) and `references/S30` (Kora, PRs #10–#13)

@@ -270,13 +270,17 @@ async function grade(url, out) {
     : [];
   const requirementsScore = mean([...taskReqs, ...baseReqs].map((r) => r.score));
   const points = slop.reduce((total, s) => total + s.points, 0);
-  const slopScore = gate ? 1 / (1 + points / SLOP_HALF_POINTS) : 0;
+  const slopRaw = gate ? 1 / (1 + points / SLOP_HALF_POINTS) : 0;
+  const taskScore = mean(taskReqs.map((r) => r.score));
+  // A page that does little of the brief has little room for slop, so slop credit is scaled by how much of the task it met.
+  const slopScore = slopRaw * taskScore;
   const reward = {
     reward: round(gate * (requirementsScore + slopScore) / 2),
     requirements: round(requirementsScore),
-    task: round(mean(taskReqs.map((r) => r.score))),
+    task: round(taskScore),
     baseline: round(mean(baseReqs.map((r) => r.score))),
     slop: round(slopScore),
+    slop_raw: round(slopRaw),
     slop_points: round(points),
     gate,
   };
