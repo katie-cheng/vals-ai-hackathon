@@ -44,7 +44,7 @@ function Logo({ compact: a = false }) {
   return (
     <a
       href="#top"
-      className="group flex items-center gap-2.5"
+      className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap"
       aria-label="The Suds Squad, back to top"
     >
       <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-300 via-sky-400 to-blue-600 shadow-[0_8px_24px_-6px_rgba(34,211,238,.7)] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105">
@@ -110,14 +110,14 @@ function Header() {
           >
             <Logo />
             <nav
-              className="hidden items-center gap-1 lg:flex"
+              className="hidden items-center gap-1 xl:flex"
               aria-label="Main navigation"
             >
               {NAV.map((p) => (
                 <a
                   key={p.href}
                   href={p.href}
-                  className="group relative rounded-full px-3.5 py-2 text-[13.5px] font-semibold text-sky-100/80 transition-colors duration-300 hover:text-white"
+                  className="group relative whitespace-nowrap rounded-full px-3.5 py-2 text-[13.5px] font-semibold text-sky-100/80 transition-colors duration-300 hover:text-white"
                 >
                   {p.label}
                   <span className="absolute inset-x-3 -bottom-0.5 h-[2px] origin-left scale-x-0 rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 transition-transform duration-300 group-hover:scale-x-100" />
@@ -127,7 +127,7 @@ function Header() {
             <div className="flex items-center gap-2.5">
               <a
                 href={SITE.phoneHref}
-                className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[13px] font-bold text-white backdrop-blur transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10 md:flex"
+                className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[13px] font-bold text-white backdrop-blur transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10 md:flex"
               >
                 <Phone className="h-3.5 w-3.5 animate-pulse-soft text-cyan-300" />
                 {SITE.phoneDisplay}
@@ -135,7 +135,7 @@ function Header() {
               <Magnetic strength={0.25}>
                 <a
                   href="#quote"
-                  className="shine-sweep group hidden items-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-2.5 text-[13.5px] font-black text-[#04141f] shadow-[0_10px_30px_-8px_rgba(34,211,238,.8)] transition-all duration-300 hover:shadow-[0_14px_40px_-6px_rgba(34,211,238,.9)] sm:inline-flex"
+                  className="shine-sweep group hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-2.5 text-[13.5px] font-black text-[#04141f] shadow-[0_10px_30px_-8px_rgba(34,211,238,.8)] transition-all duration-300 hover:shadow-[0_14px_40px_-6px_rgba(34,211,238,.9)] sm:inline-flex"
                 >
                   Get a free quote
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -143,7 +143,7 @@ function Header() {
               </Magnetic>
               <button
                 onClick={() => l(!r)}
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/10 lg:hidden"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/10 xl:hidden"
                 aria-label={
                   r ? "Close navigation menu" : "Open navigation menu"
                 }
@@ -179,7 +179,7 @@ function Header() {
               transition={{
                 duration: 0.3,
               }}
-              className="fixed inset-0 z-[75] bg-[#04141f]/70 backdrop-blur-xl lg:hidden"
+              className="fixed inset-0 z-[75] bg-[#04141f]/70 backdrop-blur-xl xl:hidden"
               onClick={() => l(false)}
             >
               <motion.nav
@@ -244,7 +244,7 @@ function Header() {
                   }}
                   className="mt-5 space-y-3 border-t border-white/10 pt-6"
                 >
-                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-sky-200/60">
+                  <p className="text-sm font-semibold text-sky-200/70">
                     Prefer to talk it through?
                   </p>
                   <a
