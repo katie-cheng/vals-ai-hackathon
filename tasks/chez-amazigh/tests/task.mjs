@@ -62,7 +62,7 @@ export function requirements(views) {
     ["sauna", /sauna/], ["family friendly", /family|famil|children|enfants/], ["pets", /pets?\b|animaux/]]);
   const caveat = (word) => new RegExp(`${word.source}[^\\n]{0,160}(confirm|on request|subject to|ask|a confirmer|sous reserve|demande|verify|check)`).test(all);
   add("conditional-facilities", "Sauna and pets are stated as subject to confirmation", (caveat(/sauna/) ? 0.5 : 0) + (caveat(/\bpets?\b|animaux/) ? 0.5 : 0));
-  const capacity = all.match(/\b(sleeps|accommodates|up to|jusqu'a|capacity of|capacite de|max(imum)?)\s*:?\s*\d+\s*(guests|people|persons|personnes|voyageurs|adults)?|\b\d+\s*(guests|people|persons|personnes|voyageurs)\s*(max|maximum)\b|\b\d+\s*(double |single |twin )?(beds|lits)\b/);
+  const capacity = all.match(/\b(sleeps|accommodates|up to|jusqu'a|capacity( of)?|capacite( de)?|max(imum)?)\s*:?\s*\d+\s*(guests|people|persons|personnes|voyageurs|adults)?|\b\d+\s*(guests|people|persons|personnes|voyageurs)\s*(max|maximum)\b|\b\d+\s*(double |single |twin )?(beds|lits)\b/);
   add("no-exact-capacity", "No exact capacity or bed count advertised", capacity ? 0 : 1, capacity?.[0]);
   add("sleeping-arrangements", "Sleeping arrangements mentioned as to be confirmed", all.split(/(?<=[.!?\n])/).some((s) => /sleeping|couchage|beds|lits/.test(s) && /confirm/.test(s)) ? 1 : 0);
   scoreList("food", "Breakfast, bread, jams, seasonal produce, tagines, lunch and dinner", [
@@ -83,10 +83,10 @@ export function requirements(views) {
     ["check-in 10:00-21:00", /10[:h.]00\s*(–|-|to|a|au|and|et)\s*21[:h.]00/], ["check-out 09:00-18:00", /0?9[:h.]00\s*(–|-|to|a|au|and|et)\s*18[:h.]00/],
     ["children", /children|enfants|kids/], ["pets", /pets?\b|animaux/], ["no parties", /part(y|ies)|fetes?|events?|evenements?/], ["cancellation", /cancell?ation|annulation/]]);
   add("policies-confirmed", "Policies to be confirmed with the owner before direct reservations", /(polic|conditions|regle|reglement|rules)[^\n]{0,160}confirm|confirm[^\n]{0,160}(polic|conditions|regle|rules)/.test(all) ? 1 : 0);
-  const affirmed = (re) => [...all.matchAll(new RegExp(re.source, "g"))].find((m) => !/(\bno|\bnot|never|n't|\bpas|aucune?|until|before|once|avant|jusqu'a|sans)\W+(\w+\W+){0,3}$/.test(all.slice(Math.max(0, m.index - 40), m.index)));
+  const affirmed = (re, text = all) => [...text.matchAll(new RegExp(re.source, "g"))].find((m) => !/(\bno|\bnot|never|n't|\bpas|aucune?|until|before|once|avant|jusqu'a|sans)\W+(\w+\W+){0,3}$/.test(text.slice(Math.max(0, m.index - 40), m.index)));
   const fake = affirmed(/real[- ]time availability|instant(ly)? (booking )?confirm|(booking|reservation|stay) (is |has been )?confirmed|(reservation|booking) confirmed|reservation (est )?confirmee|disponibilite en temps reel|book instantly with us/);
   const postSubmit = fold(act.inquiryConfirmation?.text || "");
-  const fakeAfter = postSubmit.match(/(booking|reservation|stay) (is |has been )?confirmed|reservation (est )?confirmee|you('re| are) booked/);
+  const fakeAfter = affirmed(/(booking|reservation|stay) (is |has been )?confirmed|reservation (est )?confirmee|you('re| are) booked/, postSubmit);
   add("no-false-availability", "No false real-time availability or confirmed reservation", fake || fakeAfter ? 0 : 1, (fake || fakeAfter)?.[0]);
   const invented = [
     ...hrefs.filter((h) => /^tel:.*\d{6}/.test(h) || /^mailto:[^?]*@/.test(h) || /(wa\.me|whatsapp\.com\/send|api\.whatsapp\.com).*\d{6}/.test(h)),
@@ -160,7 +160,7 @@ function langState() {
 
 /** Clicks the control that switches to `code` (opening a language menu first if needed). */
 async function switchLanguage(page, code) {
-  const names = { ar: "ar|عربي|العربية|عربية|arabic|arabe", fr: "fr|français|francais|french" }[code];
+  const names = { ar: "ar|عربي|العربية|عربية|arabic|arabe", fr: "fr|français|francais|french", en: "en|english|anglais|الإنجليزية|إنجليزية" }[code];
   const exact = new RegExp(`^\\s*(${names})\\s*$`, "i");
   const find = () => page.evaluate(({ code, src }) => {
     const re = new RegExp(src, "i");
@@ -403,8 +403,9 @@ export async function interactDesktop(context, url, handoffs, pages) {
     const start = await fPage.evaluate(langState);
     if (start.frShare >= 0.7) {
       // The site opens in French: the check is then that English exists.
-      const switched = await switchLanguage(fPage, "en".replace("en", "fr")).catch(() => false);
-      return { pass: true, detail: `opens in French (${Math.round(start.frShare * 100)}% French function words)${switched ? "" : ""}` };
+      if (!(await switchLanguage(fPage, "en").catch(() => false))) return { pass: false, score: 0.5, detail: "opens in French but has no English language control" };
+      const s = await fPage.evaluate(langState);
+      return { pass: s.frShare <= 0.3, score: s.frShare <= 0.3 ? 1 : 0.5, detail: `opens in French; after switching to English ${Math.round(s.frShare * 100)}% French function words` };
     }
     if (!(await switchLanguage(fPage, "fr"))) return { pass: false, detail: "no French language control" };
     const s = await fPage.evaluate(langState);
