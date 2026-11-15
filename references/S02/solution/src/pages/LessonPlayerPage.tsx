@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, useParams } from "react-router-dom";
-import { Bookmark, Check, ChevronLeft, ChevronRight, Keyboard, Maximize2, Minimize2, Pause, Play, RotateCcw, RotateCw, Trash2, X } from "lucide-react";
+import { Bookmark, Check, ChevronLeft, ChevronRight, Keyboard, Maximize2, Minimize2, Pause, Play, RotateCcw, RotateCw, ThumbsUp, Trash2, X } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { LESSONS } from "../data/lessons";
 import { Avatar } from "../components/Avatar";
@@ -403,6 +403,7 @@ export const LessonPlayerPage = () => {
               />
               <div className="mt-3 flex flex-wrap items-center gap-3">
                 <button type="button" onClick={runCode} className="btn btn-primary">
+                  <Play aria-hidden="true" />
                   Run code
                 </button>
                 <button type="button" onClick={() => setCode(starterCode)} className="btn btn-secondary">
@@ -510,7 +511,7 @@ export const LessonPlayerPage = () => {
                         <Avatar name={discussion.userName} />
                         <div className="min-w-0 flex-1">
                           <p className="text-sm">
-                            <span className="font-medium text-ink">{discussion.userName}</span>
+                            <span className="font-semibold text-ink">{discussion.userName}</span>
                             <span className="meta">
                               {discussion.userRole === "admin" ? ", instructor" : ""}, {discussion.createdAt}
                             </span>
@@ -524,7 +525,8 @@ export const LessonPlayerPage = () => {
                           aria-label={`Upvote, ${discussion.upvotes} so far`}
                           className={`btn btn-secondary btn-sm w-[4.5rem] flex-none tabular-nums ${discussion.hasUpvoted ? "border-accent" : ""}`}
                         >
-                          +1 <span className="text-ink-3">{discussion.upvotes}</span>
+                          <ThumbsUp aria-hidden="true" />
+                          {discussion.upvotes}
                         </button>
                       </div>
                       <div className="ml-11">
@@ -533,7 +535,7 @@ export const LessonPlayerPage = () => {
                             {discussion.replies.map((reply: any) => (
                               <li key={reply.id}>
                                 <p className="text-sm">
-                                  <span className="font-medium text-ink">{reply.userName}</span>
+                                  <span className="font-semibold text-ink">{reply.userName}</span>
                                   <span className="meta">
                                     {reply.userRole === "admin" ? ", instructor" : ""}, {reply.createdAt}
                                   </span>

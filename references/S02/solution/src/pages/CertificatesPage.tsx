@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Check, Lock } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { useCourse } from "../context/CourseContext";
 
@@ -64,7 +65,10 @@ export const CertificatesPage = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-4 text-sm lg:col-span-3 lg:justify-end">
-                  <span className={`badge ${earned ? "badge-ok" : ""}`}>{earned ? "Earned" : "Locked"}</span>
+                  <span className={`badge ${earned ? "badge-ok" : ""}`}>
+                    {earned ? <Check aria-hidden="true" /> : <Lock aria-hidden="true" />}
+                    {earned ? "Earned" : "Locked"}
+                  </span>
                   <Link to={`/courses#chapter-${chapter.id}`} className="link">
                     Lessons
                   </Link>

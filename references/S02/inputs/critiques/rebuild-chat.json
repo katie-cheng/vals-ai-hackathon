@@ -1,0 +1,20 @@
+[
+ {
+  "rid": "R1",
+  "sent_at": "2026-11-15T02:23-08:00",
+  "element": "whole site (colour palette)",
+  "comment": "the new palette is too muted"
+ },
+ {
+  "rid": "R2",
+  "sent_at": "2026-11-15T02:25-08:00",
+  "element": "icons, whole site",
+  "comment": "you can still use icons just make sure they are more consistent and only used when. needed"
+ },
+ {
+  "rid": "R3",
+  "sent_at": "2026-11-15T02:25-08:00",
+  "element": "typography, whole site",
+  "comment": "vary font weight a lot more"
+ }
+]

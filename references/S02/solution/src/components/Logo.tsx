@@ -16,6 +16,6 @@ export const Logo = () => (
       <path d="M24.5 9v6.5" />
       <path d="M9 24h10" />
     </svg>
-    <span className="text-[1.0625rem] font-semibold tracking-tight text-ink">IT Beginner</span>
+    <span className="text-[1.0625rem] font-bold tracking-tight text-ink">IT Beginner</span>
   </span>
 );

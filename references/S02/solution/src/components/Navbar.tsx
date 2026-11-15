@@ -46,7 +46,7 @@ export const Navbar = () => {
   }, [accountOpen]);
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
-    `inline-flex h-10 items-center whitespace-nowrap rounded-md px-3 text-sm transition-colors ${
+    `inline-flex h-10 items-center whitespace-nowrap rounded-md px-3 text-sm font-medium transition-colors ${
       isActive ? "bg-accent/15 text-accent" : "text-ink-2 hover:text-ink"
     }`;
 
@@ -80,11 +80,11 @@ export const Navbar = () => {
             </button>
             {accountOpen && (
               <div role="menu" className="surface absolute right-0 mt-2 w-72 p-4 text-sm shadow-xl shadow-black/40">
-                <p className="font-medium text-ink">{currentUser.fullName}</p>
+                <p className="font-semibold text-ink">{currentUser.fullName}</p>
                 <p className="meta">{currentUser.email}</p>
                 <div className="mt-4 flex items-baseline justify-between">
                   <span className="text-ink-2">Curriculum progress</span>
-                  <span className="text-ink">{overallPercent}%</span>
+                  <span className="font-semibold text-ink">{overallPercent}%</span>
                 </div>
                 <div className="progress mt-2">
                   <span style={{ width: `${overallPercent}%` }} />

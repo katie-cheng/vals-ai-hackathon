@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, useParams } from "react-router-dom";
-import { ChevronLeft } from "lucide-react";
+import { Check, ChevronLeft, X } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { QUIZ_QUESTIONS } from "../data/quizzes";
 import { useCourse } from "../context/CourseContext";
@@ -92,11 +92,12 @@ export const QuizDetailPage = () => {
                 <li key={question.id} id={`question-${question.id}`}>
                   <fieldset aria-describedby={missing ? `question-${question.id}-error` : undefined}>
                     <legend className="item-title flex w-full items-start justify-between gap-4">
-                      <span>
+                      <span className="font-semibold">
                         {index + 1}. {question.question}
                       </span>
                       {submitted && (
-                        <span className={`badge flex-none ${correct ? "badge-ok" : "badge-warn"}`}>
+                        <span className={`badge flex-none ${correct ? "badge-ok" : "badge-bad"}`}>
+                          {correct ? <Check aria-hidden="true" /> : <X aria-hidden="true" />}
                           {correct ? "Correct" : "Incorrect"}
                         </span>
                       )}

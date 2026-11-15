@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Printer } from "lucide-react";
 import { useCourse } from "../context/CourseContext";
 
 export const CertificateDetailPage = () => {
@@ -34,6 +34,7 @@ export const CertificateDetailPage = () => {
             All certificates
           </Link>
           <button type="button" onClick={() => window.print()} className="btn btn-primary">
+            <Printer aria-hidden="true" />
             Print or save as PDF
           </button>
         </div>

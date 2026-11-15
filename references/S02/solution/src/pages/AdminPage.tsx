@@ -125,7 +125,7 @@ export const AdminPage = () => {
             <thead>
               <tr className="border-b border-line text-ink-3">
                 {["Student", "Role", "Lessons", "Quizzes", "Notes", "Joined"].map((heading) => (
-                  <th key={heading} scope="col" className="px-4 py-3 font-normal">
+                  <th key={heading} scope="col" className="px-4 py-3 font-medium">
                     {heading}
                   </th>
                 ))}
@@ -138,7 +138,7 @@ export const AdminPage = () => {
               {visible.map((student) => (
                 <tr key={student.id} className="border-b border-line last:border-b-0">
                   <td className="px-4 py-3">
-                    <p className="text-ink">{student.fullName}</p>
+                    <p className="font-medium text-ink">{student.fullName}</p>
                     <p className="meta">{student.email}</p>
                   </td>
                   <td className="px-4 py-3">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Play } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { LESSONS } from "../data/lessons";
 import { useCourse } from "../context/CourseContext";
@@ -25,7 +26,7 @@ export const DashboardPage = () => {
   return (
     <div className="container-page page">
       <h1 className="page-title">Welcome back, {currentUser.fullName}</h1>
-      <p className="lead mt-2">
+      <p className="lead mt-2 font-light">
         You have completed {totalCompletedCount} of 42 lessons ({overallPercent}%), with {inProgress} in progress,
         a {currentUser.streakDays}-day study streak and {certificates.length}{" "}
         {certificates.length === 1 ? "certificate" : "certificates"} earned.
@@ -46,6 +47,7 @@ export const DashboardPage = () => {
             <p className="mt-2 line-clamp-2 text-sm text-ink-2">{resumeLesson.description}</p>
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
               <Link to={`/lesson/${resumeLesson.id}`} className="btn btn-primary">
+                <Play aria-hidden="true" />
                 Resume lesson
               </Link>
               <span className="meta">{resumeLesson.durationMinutes} min</span>
@@ -108,7 +110,7 @@ export const DashboardPage = () => {
                 {bookmarked.map((lesson) => (
                   <li key={lesson.id}>
                     <Link to={`/lesson/${lesson.id}`} className="row-link block py-3">
-                      <span className="block truncate text-sm text-ink">{lesson.title}</span>
+                      <span className="block truncate text-sm font-medium text-ink">{lesson.title}</span>
                       <span className="meta">Lesson {lesson.orderIndex}</span>
                     </Link>
                   </li>

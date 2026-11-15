@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { QUIZ_QUESTIONS } from "../data/quizzes";
 import { useCourse } from "../context/CourseContext";
@@ -31,6 +32,7 @@ export const QuizzesPage = () => {
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3 lg:col-span-3 lg:justify-end">
                 {attempt && (
                   <span className={`badge ${attempt.passed ? "badge-ok" : "badge-warn"}`}>
+                    {attempt.passed && <Check aria-hidden="true" />}
                     {attempt.passed ? "Passed" : "Needs review"}, {attempt.percentage}%
                   </span>
                 )}

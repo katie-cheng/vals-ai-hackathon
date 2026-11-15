@@ -23,7 +23,7 @@ export const Footer = () => (
           </p>
         </div>
         <div className="lg:col-span-3">
-          <h2 className="text-sm font-medium text-ink">Curriculum</h2>
+          <h2 className="text-sm font-semibold text-ink">Curriculum</h2>
           <ul className="mt-3 space-y-2 text-sm">
             {CHAPTERS.map((chapter) => (
               <li key={chapter.id}>
@@ -35,7 +35,7 @@ export const Footer = () => (
           </ul>
         </div>
         <div className="lg:col-span-3">
-          <h2 className="text-sm font-medium text-ink">Tools</h2>
+          <h2 className="text-sm font-semibold text-ink">Tools</h2>
           <ul className="mt-3 space-y-2 text-sm">
             {TOOLS.map((tool) => (
               <li key={tool.to}>
@@ -47,7 +47,7 @@ export const Footer = () => (
           </ul>
         </div>
         <div className="lg:col-span-2">
-          <h2 className="text-sm font-medium text-ink">Open source</h2>
+          <h2 className="text-sm font-semibold text-ink">Open source</h2>
           <p className="mt-3 text-sm text-ink-3">
             MIT licensed and free for learners. Source:{" "}
             <a

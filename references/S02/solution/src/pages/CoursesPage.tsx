@@ -95,14 +95,14 @@ export const CoursesPage = () => {
                       <Link to={`/lesson/${lesson.id}`} className="row-link flex min-w-0 flex-1 items-baseline gap-4 py-3">
                         <span className="meta w-6 flex-none text-right tabular-nums">{lesson.orderIndex}</span>
                         <span className="min-w-0 flex-1">
-                          <span className="block text-[0.9375rem] text-ink">{lesson.title}</span>
+                          <span className="block text-[0.9375rem] font-medium text-ink">{lesson.title}</span>
                           <span className="meta">
                             {lesson.durationMinutes} min
                             {status === "in_progress" && <span className="text-accent">, in progress</span>}
                           </span>
                         </span>
                         {status === "completed" && (
-                          <span className="flex flex-none items-center gap-1 self-center text-[0.8125rem] text-ok">
+                          <span className="state flex flex-none items-center gap-1 self-center text-[0.8125rem] text-ok">
                             <Check className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
                             <span className="sr-only sm:not-sr-only">Completed</span>
                           </span>

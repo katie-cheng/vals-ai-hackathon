@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Check, Copy } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HANDBOOKS } from "../data/handbooks";
 
@@ -59,9 +60,10 @@ export const ResourcesPage = () => {
                   <button
                     type="button"
                     onClick={() => copy(subsection.codeSnippet, index)}
-                    className="btn btn-secondary btn-sm w-[4.5rem] flex-none"
+                    className="btn btn-secondary btn-sm w-[5.5rem] flex-none"
                     aria-label={`Copy the ${subsection.heading} snippet`}
                   >
+                    {copied === index ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
                     {copied === index ? "Copied" : "Copy"}
                   </button>
                 )}

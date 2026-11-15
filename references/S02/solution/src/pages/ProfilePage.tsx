@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Download, RotateCcw } from "lucide-react";
 import { Avatar } from "../components/Avatar";
 import { useCourse } from "../context/CourseContext";
 
@@ -75,7 +76,7 @@ export const ProfilePage = () => {
           ].map(([label, value]) => (
             <div key={label} className="flex items-baseline justify-between gap-4 py-3">
               <dt className="text-ink-3">{label}</dt>
-              <dd className="tabular-nums text-ink">{value}</dd>
+              <dd className="font-semibold tabular-nums text-ink">{value}</dd>
             </div>
           ))}
         </dl>
@@ -90,9 +91,11 @@ export const ProfilePage = () => {
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <button type="button" onClick={exportData} className="btn btn-secondary">
+              <Download aria-hidden="true" />
               Export learning data
             </button>
             <button type="button" onClick={() => setConfirmOpen(true)} className="btn btn-secondary text-bad">
+              <RotateCcw aria-hidden="true" />
               Reset all progress
             </button>
           </div>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Download, Play, Save } from "lucide-react";
 import { PLAYGROUND_TEMPLATES } from "../data/playground";
 import { useCourse } from "../context/CourseContext";
 
@@ -175,9 +176,11 @@ ${_}
         </div>
         <div className="flex flex-wrap items-center gap-2 sm:col-span-4 sm:justify-end">
           <button type="button" onClick={pe} disabled={!U.trim()} className="btn btn-secondary">
+            <Save aria-hidden="true" />
             Save
           </button>
           <button type="button" onClick={Be} className="btn btn-secondary" title="Download as HTML">
+            <Download aria-hidden="true" />
             Export .html
           </button>
         </div>
@@ -204,6 +207,7 @@ ${_}
               ))}
             </div>
             <button type="button" onClick={ne} className="btn btn-primary btn-sm">
+              <Play aria-hidden="true" />
               Run code
             </button>
           </div>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { LESSONS } from "../data/lessons";
 import { useCourse } from "../context/CourseContext";
@@ -51,15 +51,16 @@ export const LandingPage = () => {
     <div className="pb-20">
       <section className="container-page grid grid-cols-1 items-center gap-12 pt-14 lg:grid-cols-12 lg:gap-8 lg:pt-20">
         <div className="lg:col-span-6">
-          <h1 className="text-4xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-5xl">
+          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-ink sm:text-5xl">
             Master full-stack web development from zero to production
           </h1>
-          <p className="lead mt-5 text-lg">
+          <p className="lead mt-5 text-lg font-light">
             The AjinLab IT Beginner curriculum: 42 video lessons across 6 chapters, with an in-browser code
             sandbox, chapter quizzes and printable certificates of completion. Free and open source.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Link to={`/lesson/${lastResumeLessonId}`} className="btn btn-primary">
+              <Play aria-hidden="true" />
               Resume lesson {lastResumeLessonId}
             </Link>
             <Link to="/playground" className="link text-sm">
@@ -72,6 +73,7 @@ export const LandingPage = () => {
             <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
               <span className="font-mono text-[0.8125rem] text-ink-3">in-lesson-scratchpad.js</span>
               <button type="button" onClick={() => setOutput("Ready to learn full-stack web tech!")} className="btn btn-secondary btn-sm">
+                <Play aria-hidden="true" />
                 Run
               </button>
             </div>
@@ -87,7 +89,7 @@ export const LandingPage = () => {
       </section>
 
       <section className="container-page mt-24">
-        <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-ink">
+        <h2 className="max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink">
           Everything you need to master modern software development
         </h2>
         <p className="lead mt-3">Every lesson is integrated with active learning tools.</p>
@@ -104,7 +106,7 @@ export const LandingPage = () => {
       <section className="container-page mt-20 grid grid-cols-1 gap-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-24">
-            <h2 className="text-3xl font-semibold tracking-tight text-ink">Curriculum</h2>
+            <h2 className="text-3xl font-bold tracking-[-0.02em] text-ink">Curriculum</h2>
             <p className="lead mt-3">
               Six chapters take you from setting up your tools to a full-stack application. Open a chapter to see
               its lessons.
@@ -172,7 +174,7 @@ export const LandingPage = () => {
 
       <section className="container-page mt-24">
         <div className="border-t border-line pt-12">
-          <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-ink">
+          <h2 className="max-w-xl text-3xl font-bold tracking-[-0.02em] text-ink">
             Ready to code your first web application?
           </h2>
           <p className="lead mt-3">Progress, notes, code snippets and certificates are saved in your browser.</p>
