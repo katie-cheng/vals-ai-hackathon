@@ -132,19 +132,6 @@ function PricingAreas() {
                   role="img"
                   aria-label="Representative Suds Squad service towns in Connecticut"
                 >
-                  <defs>
-                    <radialGradient id="ctGlow" cx="50%" cy="45%" r="70%">
-                      <stop offset="0%" stopColor="rgba(34,211,238,.35)" />
-                      <stop offset="100%" stopColor="rgba(34,211,238,0)" />
-                    </radialGradient>
-                  </defs>
-                  <rect
-                    x="40"
-                    y="20"
-                    width="620"
-                    height="440"
-                    fill="url(#ctGlow)"
-                  />
                   <motion.path
                     d={CT_PATH}
                     fill="rgba(14,116,144,.25)"
@@ -154,12 +141,9 @@ function PricingAreas() {
                       pathLength: 0,
                       opacity: 0,
                     }}
-                    whileInView={{
+                    animate={{
                       pathLength: 1,
                       opacity: 1,
-                    }}
-                    viewport={{
-                      once: true,
                     }}
                     transition={{
                       duration: 2.2,
@@ -225,7 +209,7 @@ function PricingAreas() {
                             scale: 0,
                             opacity: 0,
                           }}
-                          whileInView={{
+                          animate={{
                             scale: 1,
                             opacity: 1,
                           }}

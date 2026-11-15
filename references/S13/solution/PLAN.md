@@ -43,6 +43,7 @@ Ambiguity flags: **[A]** = I had to interpret the critique; the interpretation i
 
 Not applied:
 - S14 #352 "overuse of icons" has no specific S13 element; flagged for Katie rather than applied site-wide.
-- S14 #304, #306, #308, #345, #356 and the empty S14 labels: no matching S13 pattern (see CRITIQUES.md).
+- S14 #304, #306, #308, #345 and the empty S14 labels: no matching S13 pattern (see CRITIQUES.md).
+- S14 #356 ("there is no map just points"): S13 has the same failure. Its outline and town dots stay at opacity 0 because their `whileInView` reveal never fires. They now animate in on mount and the decorative radial glow behind the map is removed (R3).
 
 Brief guard: the brief asks for unusually heavy animation, before/after comparisons, animated services, process, trust, pricing, service area, FAQ and a working quote form. Hero video, parallax, particles, bubbles, marquee, magnetic buttons, tilt cards, scroll progress, map drawing, slider and accordion all stay; `../verification/REPORT.md` checks every brief requirement.

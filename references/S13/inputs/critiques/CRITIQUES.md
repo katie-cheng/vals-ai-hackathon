@@ -368,4 +368,4 @@ of the live S13/S14 apps. Full records (selector, computed styles, outer HTML) a
 | [#345](../../../../data/sloplabel/shots/345_ctx.png) | the bottom of these cards are covered by the section below it | S13 service rows are not covered by the following section |
 | [#349](../../../../data/sloplabel/shots/349_ctx.png) | (empty) | no comment text |
 | [#352](../../../../data/sloplabel/shots/352_ctx.png) | overuse of icons | 'overuse of icons' has no specific S13 element; flagged as ambiguous, not applied globally |
-| [#356](../../../../data/sloplabel/shots/356_ctx.png) | there is no map just points? its totally missing the map of connecticut | S13 already draws a Connecticut outline map |
+| [#356](../../../../data/sloplabel/shots/356_ctx.png) | there is no map just points? its totally missing the map of connecticut | Same pattern in S13: the Connecticut outline and town dots never become visible (their `whileInView` reveal never fires, so they stay at opacity 0); only the labels show. Fix: make the outline and dots render. |
