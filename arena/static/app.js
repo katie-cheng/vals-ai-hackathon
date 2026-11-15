@@ -31,7 +31,7 @@ async function next(){
   ahead = null;
   if (r.done) { $('arena').innerHTML = '<p style="padding:24px">No pairs left for you. Thanks!</p>'; return; }
   cur = r; shownAt = Date.now();
-  for (const k of ['A','B']) { $('broken'+k).checked = false; $('ship'+k).value = ''; }
+  for (const k of ['A','B']) $('ship'+k).value = '';
   $('reason').value = '';
   $('brief').hidden = !r.prompt; $('brief').open = false; $('brieftext').textContent = r.prompt || '';
   render(); busy = false;
@@ -43,12 +43,21 @@ async function vote(choice){
   busy = true;
   await fetch('/api/vote', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
     voter, left: cur.left.id, right: cur.right.id, category: cur.category, view: view(), choice,
-    reason: $('reason').value, broken_left: $('brokenA').checked, broken_right: $('brokenB').checked,
+    reason: $('reason').value,
     ship_left: $('shipA').value || null, ship_right: $('shipB').value || null, ms: Date.now() - shownAt})});
   if (choice !== 'skip') { n++; $('count').textContent = n + ' this session'; }
   toast(choice === 'skip' ? 'Skipped' : 'Saved');
   next();
 }
+
+document.querySelectorAll('.remove').forEach(b => b.addEventListener('click', async () => {
+  if (!cur || busy) return;
+  const side = b.dataset.side, s = side === 'A' ? cur.left : cur.right;
+  if (!confirm(`Stop showing site ${side}? It is removed for everyone and left out of results and exports. You can undo on the Results page.`)) return;
+  busy = true;
+  await fetch('/api/remove', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({voter, site: s.id})});
+  toast('Removed'); ahead = null; next();
+}));
 
 document.querySelectorAll('[data-c]').forEach(b => b.addEventListener('click', () => vote(b.dataset.c)));
 $('view').addEventListener('change', render);

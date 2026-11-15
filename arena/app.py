@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS votes (
   category TEXT, view TEXT, choice TEXT NOT NULL CHECK (choice IN ('left','right','same','both','neither','skip')),
   reason TEXT, broken_left INTEGER DEFAULT 0, broken_right INTEGER DEFAULT 0,
   ship_left TEXT, ship_right TEXT, ms INTEGER, created_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS removed (site_id TEXT PRIMARY KEY, voter TEXT, created_at REAL NOT NULL);
 """
 
 
@@ -83,6 +84,16 @@ def sites():
                             url=meta["render_url"], dir=str(m.parent))
         _sites, _sites_at = out, time.time()
         return out
+
+
+def removed():
+    return {r["site_id"]: dict(r) for r in db().execute("SELECT * FROM removed")}
+
+
+def live_sites():
+    """Sites minus those someone marked "stop showing"; removed sites are excluded from pairs, results and export."""
+    gone = removed()
+    return {k: v for k, v in sites().items() if k not in gone}
 
 
 def candidate_pairs(S):
@@ -197,7 +208,7 @@ def warm_cache():
 @app.get("/api/next")
 def next_pair():
     voter = (request.args.get("voter") or "").strip()
-    S = sites()
+    S = live_sites()
     cats = candidate_pairs(S)
     rows = db().execute("SELECT voter, left_id, right_id FROM votes WHERE choice != 'skip' OR voter = ?", (voter,)).fetchall()
     counts, mine = defaultdict(int), set()
@@ -265,9 +276,27 @@ def bradley_terry(comparisons, ids, iters=200, prior=1.0):
     return {i: math.log(x) for i, x in p.items()}
 
 
+@app.post("/api/remove")
+def remove_site():
+    v = request.get_json(force=True)
+    sid, voter = resolve(v.get("site") or ""), (v.get("voter") or "").strip()
+    if not sid or not voter:
+        abort(400)
+    db().execute("INSERT OR REPLACE INTO removed (site_id, voter, created_at) VALUES (?,?,?)", (sid, voter, time.time()))
+    db().commit()
+    return jsonify({"ok": True})
+
+
+@app.post("/api/restore")
+def restore_site():
+    db().execute("DELETE FROM removed WHERE site_id = ?", ((request.get_json(force=True).get("site") or ""),))
+    db().commit()
+    return jsonify({"ok": True})
+
+
 @app.get("/api/results")
 def results():
-    S = sites()
+    S = live_sites()
     rows = [dict(r) for r in db().execute("SELECT * FROM votes ORDER BY id").fetchall()]
     real = [r for r in rows if r["choice"] != "skip" and r["left_id"] in S and r["right_id"] in S]
     comps = [(r["left_id"], r["right_id"], {"left": 1.0, "right": 0.0}.get(r["choice"], 0.5)) for r in real]
@@ -307,15 +336,18 @@ def results():
         cats[r["category"]] += 1
     return jsonify({"votes": len(real), "skips": len(rows) - len(real), "voters": voters, "categories": cats,
                     "pairs_multi_voter": len(agree), "pair_agreement": (sum(agree) / len(agree)) if agree else None,
-                    "sites": site_rows, "models": model_rows, "sites_available": len(S)})
+                    "sites": site_rows, "models": model_rows, "sites_available": len(S),
+                    "removed": [{"id": k, "voter": r["voter"], "url": sites().get(k, {}).get("url"),
+                                 "model": sites().get(k, {}).get("model")} for k, r in removed().items()]})
 
 
 @app.get("/api/export")
 def export():
-    S = sites()
-    rows = [dict(r) for r in db().execute("SELECT * FROM votes ORDER BY id").fetchall()]
+    S = live_sites()
+    rows = [dict(r) for r in db().execute("SELECT * FROM votes ORDER BY id").fetchall()
+            if r["left_id"] in S and r["right_id"] in S]
     meta = {k: {f: v for f, v in s.items() if f != "dir"} for k, s in S.items()}
-    return jsonify({"exported_at": time.time(), "sites": meta, "votes": rows})
+    return jsonify({"exported_at": time.time(), "sites": meta, "votes": rows, "removed_sites": sorted(removed())})
 
 
 threading.Thread(target=warm_cache, daemon=True).start()

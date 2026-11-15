@@ -3,9 +3,10 @@
 <header class="top"><h1>Slop Arena</h1><span class="muted">Results</span><nav><a href="/">Vote</a><a href="/api/export">Export JSON</a></nav></header>
 <main class="results">
 <div class="stats" id="stats"></div>
-<p class="muted">Score is a Bradley–Terry log-strength fitted to all votes (ties count half). Higher = sloppier. "human:yc-pre2022" are YC homepages as archived in 2021; "human:yc-current" are live homepages of 2025–26 YC companies.</p>
+<p class="muted">Score is a Bradley–Terry log-strength fitted to all votes (ties count half). Higher = sloppier. "human:yc-pre2022" are YC homepages as archived in 2021; "yc-current" are live homepages of 2025–26 YC companies (mixed, may be AI-made); "ai:*" are sites built with Lovable. Sites marked "stop showing" are excluded from everything above.</p>
 <h2>By model</h2><table id="models"></table>
 <h2>By site</h2><table id="sites"></table>
+<h2>Removed ("stop showing")</h2><table id="removed"></table>
 </main>
 <script>
 fetch('/api/results').then(r=>r.json()).then(d=>{
@@ -15,7 +16,10 @@ fetch('/api/results').then(r=>r.json()).then(d=>{
   const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   document.getElementById('models').innerHTML='<tr><th>Model</th><th class="num">Sites</th><th class="num">Mean score</th></tr>'+
     d.models.map(m=>`<tr><td>${esc(m.model)}</td><td class="num">${m.sites}</td><td class="num">${m.mean_score.toFixed(2)}</td></tr>`).join('');
-  document.getElementById('sites').innerHTML='<tr><th>Site</th><th>Split</th><th>Model</th><th class="num">Score</th><th class="num">Votes</th><th class="num">Broken</th><th class="num">Ship yes/no</th><th class="num">Both/neither slop</th></tr>'+
-    d.sites.map(s=>`<tr><td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.id)}</a></td><td>${esc(s.split)}</td><td>${esc(s.model)}</td><td class="num">${s.score.toFixed(2)}</td><td class="num">${s.votes}</td><td class="num">${s.broken}</td><td class="num">${s.ship_yes}/${s.ship_no}</td><td class="num">${s.both_slop}/${s.neither_slop}</td></tr>`).join('');
+  document.getElementById('sites').innerHTML='<tr><th>Site</th><th>Split</th><th>Model</th><th class="num">Score</th><th class="num">Votes</th><th class="num">Ship yes/no</th><th class="num">Both/neither slop</th></tr>'+
+    d.sites.map(s=>`<tr><td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.id)}</a></td><td>${esc(s.split)}</td><td>${esc(s.model)}</td><td class="num">${s.score.toFixed(2)}</td><td class="num">${s.votes}</td><td class="num">${s.ship_yes}/${s.ship_no}</td><td class="num">${s.both_slop}/${s.neither_slop}</td></tr>`).join('');
+  document.getElementById('removed').innerHTML=d.removed.length?'<tr><th>Site</th><th>Model</th><th>Removed by</th><th></th></tr>'+
+    d.removed.map(r=>`<tr><td><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.id)}</a></td><td>${esc(r.model)}</td><td>${esc(r.voter)}</td><td><button data-restore="${esc(r.id)}">Undo</button></td></tr>`).join(''):'<tr><td class="muted">None</td></tr>';
+  document.querySelectorAll('[data-restore]').forEach(b=>b.onclick=()=>fetch('/api/restore',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({site:b.dataset.restore})}).then(()=>location.reload()));
 });
 </script></body></html>
