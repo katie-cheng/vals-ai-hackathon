@@ -4,7 +4,7 @@ import { useStore } from "../client/store";
 import type { PeerState } from "../server/bus";
 import { Panel, useAction } from "../components/Panel";
 
-export function FriendsPanel({ onClose, others, onMessage }: { onClose: () => void; others: PeerState[]; onMessage: () => void }) {
+export function FriendsPanel({ onClose, others, onMessage }: { onClose: () => void; others: PeerState[]; onMessage: (friendId: string) => void }) {
   const a = useStore((s) => s.account)!;
   const token = useStore((s) => s.token)!;
   const profiles = useStore((s) => s.profiles);
@@ -59,7 +59,7 @@ export function FriendsPanel({ onClose, others, onMessage }: { onClose: () => vo
                 </div>
               </div>
               <div className="row-actions">
-                <button type="button" className="btn btn-small" onClick={onMessage}>Message</button>
+                <button type="button" className="btn btn-small" onClick={() => onMessage(id)}>Message</button>
                 <button type="button" className="btn btn-small btn-quiet" disabled={busy} onClick={() => run(api.unfriend(token, id), "Removed from friends.")}>Remove</button>
               </div>
             </li>

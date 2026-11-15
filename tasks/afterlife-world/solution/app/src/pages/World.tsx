@@ -116,6 +116,7 @@ function Play() {
   const quality: Quality = settings.quality === "auto" ? device.quality : settings.quality;
   const [panel, setPanel] = useState<PanelId | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dmWith, setDmWith] = useState("world");
   const [place, setPlace] = useState("Lantern Plaza");
   const [stats, setStats] = useState<{ fps: number; quality: Quality }>({ fps: 0, quality });
   const [gatherNote, setGatherNote] = useState("");
@@ -280,8 +281,8 @@ function Play() {
 
       {panel === "inventory" && <InventoryPanel onClose={() => setPanel(null)} visited={account.visited.length} total={PLACES.length} />}
       {panel === "market" && <MarketPanel onClose={() => setPanel(null)} />}
-      {panel === "friends" && <FriendsPanel onClose={() => setPanel(null)} others={others} onMessage={() => setPanel("messages")} />}
-      {panel === "messages" && <MessagesPanel onClose={() => setPanel(null)} />}
+      {panel === "friends" && <FriendsPanel onClose={() => setPanel(null)} others={others} onMessage={(id) => (setDmWith(id), setPanel("messages"))} />}
+      {panel === "messages" && <MessagesPanel onClose={() => (setPanel(null), setDmWith("world"))} initial={dmWith} />}
       {panel === "homes" && <HomesPanel onClose={() => setPanel(null)} onGo={(x, z) => (engine.current?.setPosition(x, z, 0), (lastMove.current = Date.now()))} />}
       {panel === "events" && <EventsPanel onClose={() => setPanel(null)} />}
       {panel === "notifications" && <NotificationsPanel onClose={() => setPanel(null)} />}

@@ -4,12 +4,12 @@ import { loadDirect, useStore } from "../client/store";
 import { Panel, clock } from "../components/Panel";
 import { Chat } from "./Chat";
 
-export function MessagesPanel({ onClose }: { onClose: () => void }) {
+export function MessagesPanel({ onClose, initial = "world" }: { onClose: () => void; initial?: string }) {
   const a = useStore((s) => s.account)!;
   const token = useStore((s) => s.token)!;
   const profiles = useStore((s) => s.profiles);
   const direct = useStore((s) => s.direct);
-  const [channel, setChannel] = useState<string>("world");
+  const [channel, setChannel] = useState<string>(initial);
   const [text, setText] = useState("");
   const [error, setError] = useState("");
   useEffect(() => {
