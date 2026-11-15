@@ -6,3 +6,6 @@ data/snapshots/ai/
 logs/
 data/models/*.pkl
 data/models/*.npz
+data/snapshots/web/
+data/snapshots/dev/
+reports/
