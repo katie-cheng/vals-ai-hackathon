@@ -1,9 +1,9 @@
-# SlopBench shared memory
+# Design Engineer Bench (DEB) shared memory
 
 Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. Keep it current; delete what stops being true.
 
 ## Decisions
-- Project name is SlopBench; goal is grading frontier models' frontend output for "slop" [Ali; 2026-11-14]
+- Project name is Design Engineer Bench (DEB), renamed from SlopBench; Harbor tasks use the `deb/` namespace; goal is grading frontier models' frontend output for "slop" [Aidan; 2026-11-15]
 - Tasks use Harbor format and run on Valkyrie (org `hackathon-what-does-the-fox-say-c2f1ff2066`) [Aidan; 2026-11-14]
 - The slop indicator taxonomy comes from human critiques/labels, not from an agent's own scoring [Katie; 2026-11-14]
 - Annotation labels are stored in SQLite (SlopLabel tool) [Katie; 2026-11-14]
@@ -20,13 +20,16 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Top-company sites (`data/web/curated_top.tsv`) are a high-quality anchor; treat them as likely-clean, not proven clean [Ali; 2026-11-14]
 - Focus shifted from the classifier to a few Harbor tasks, each with a golden reference site: it is the oracle `solution/`, the labelled arena originals are negative controls, and the verifier must separate them. Never grade by similarity to the golden site [Ali; 2026-11-15]
 - A golden site must also clear `tasks/reference-rubric.md` (17 criteria taken from Katie's SlopLabel comments, each traced to label ids); where the brief asks for something the rubric flags, the brief wins [Ali; 2026-11-15]
+- Arena votes are committed as snapshots in `data/arena/` via `scripts/export_arena.py` (the live `/api/export` is auth-gated to the serving session); rerun and commit after voting sessions [Katie; 2026-11-15]
 
 ## Facts and gotchas
 - Design Arena webapp entries are Vite+React builds on `*.arcada.app`; source is not exposed (`code: null`), but bundles carry `data-source-loc` component tags [Katie; 2026-11-14]
 - 4 of the 30 mirrored arena sites lack `data-source-loc` tags (preboards-hub, both lifeos, one jcql); SlopLabel falls back to CSS selectors there [Katie; 2026-11-14]
 - Cross-origin pages can't be inspected from an overlay; SlopLabel serves local mirrors instead [Katie; 2026-11-14]
-- `katie-cheng/vals-ai-hackathon` is the SlopBench repo; the old Total Benchmark Island code was removed [Ali; 2026-11-15]
+- `katie-cheng/vals-ai-hackathon` is the DEB repo; the old Total Benchmark Island code was removed [Ali; 2026-11-15]
 - Hackathon README must start with a one-paragraph, entirely human-written overview [Aidan; 2026-11-14]
+- SlopLabel DB exports (JSON/CSV/SQLite) and all element screenshots live in `data/sloplabel/`; the tool source is in `tools/sloplabel/`. Labels are slop-only (no verdict/severity/tags; comment optional). [devin for Katie; 2026-11-15]
+- `harbor-tasks/v1-deb-html/` holds Aidan's 26 v1 DEB tasks (single-file HTML, render-only verifier). Kept as a draft reference; the real tasks should be multi-file React with slop graders. [devin for Katie; 2026-11-15]
 
 ## Open questions
 - How to use Design Arena votes: sanity-check hit rate, fit per-check weights via logistic regression on DOM-feature differences (controlling for broken/brief-ignoring sites), optionally pretrain the probe. Blocked on how many tournaments/votes the arena API exposes [Ali; 2026-11-14]

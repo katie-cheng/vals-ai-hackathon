@@ -1,0 +1,34 @@
+schema_version = "1.4"
+artifacts = ["/app/index.html"]
+
+[task]
+name = "deb/web-13-dev-conference"
+description = "A conference website for \"DevSummit Lisbon 2027\", a 3-day developer conference. Countdown to the event, speaker grid, a …"
+keywords = ["frontend", "web-design", "ai-slop", "landing-pages-and-marketing"]
+
+[metadata]
+category = "web-design"
+section = "landing-pages-and-marketing"
+prompt_id = 13
+prompt_source = "prompts.md"
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+network_mode = "public"
+
+[verifier]
+timeout_sec = 600.0
+environment_mode = "separate"
+
+[verifier.environment]
+build_timeout_sec = 900.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+network_mode = "public"

@@ -58,7 +58,8 @@ def sites():
             return _sites
         out = {}
         splits = json.load(open(ROOT / "data/splits.json"))
-        export = sorted((ROOT / "data/sloplabel").glob("export-*.json"))
+        # latest SlopLabel dump (export-<ts>.json or sloplabel-<ts>.json), ordered by the full <ts> after the prefix
+        export = sorted((ROOT / "data/sloplabel").glob("*-20*Z.json"), key=lambda f: f.stem.split("-", 1)[1])
         prompts = {s["site_id"]: s.get("prompt") for s in json.load(open(export[-1]))["sites"]} if export else {}
         for split in ("dev", "heldout"):
             for s in splits[split]:
