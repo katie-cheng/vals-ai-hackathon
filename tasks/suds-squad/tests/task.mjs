@@ -6,8 +6,14 @@ import { attempt, checkMobileMenu, digits, freshPage, newLines, norm, squash } f
 
 // The business's quote endpoint, kept by the brief; the grader answers it as the deployed endpoint does.
 export const HANDOFF_URLS = /\/api\/quotes(\?|$)/;
-export const HANDOFF_REPLY = (request) =>
-  request.method() === "POST" ? { status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, reference: "SS-GRADER-0001" }) } : null;
+// A request that does not carry the name and email the grader typed is refused, so an empty or unwired form cannot pass.
+export const HANDOFF_REPLY = (request) => {
+  if (request.method() !== "POST") return null;
+  const body = decodeURIComponent((request.postData() || "").replace(/\+/g, " "));
+  const ok = body.includes(QUOTE.name) && body.includes(QUOTE.email);
+  const reply = ok ? { ok: true, reference: "SS-GRADER-0001" } : { error: "Tell us your name and email." };
+  return { status: ok ? 201 : 400, contentType: "application/json", body: JSON.stringify(reply) };
+};
 export const SLOP_EXEMPT = { pulsing_dots: "brief: subtle moving particles, floating bubbles and water droplets" };
 
 const PHONE = "8605786207";
