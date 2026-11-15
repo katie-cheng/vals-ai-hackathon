@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthContext";
 
 export const ProfilePage = () => {
   const { account, signOut } = useAuth();
-  const { currentUser, totalCompletedCount, overallPercent, certificates, notes, resetAllProgress } =
+  const { currentUser, progress, snippets, totalCompletedCount, overallPercent, certificates, notes, resetAllProgress } =
     useCourse();
   const [confirmOpen, setConfirmOpen] = React.useState(false);
   const [resetDone, setResetDone] = React.useState(false);
@@ -33,6 +33,8 @@ export const ProfilePage = () => {
     const payload = {
       user: currentUser,
       progressCompletedCount: totalCompletedCount,
+      lessonProgress: progress,
+      snippets,
       certificates,
       notes,
       exportDate: new Date().toISOString(),
