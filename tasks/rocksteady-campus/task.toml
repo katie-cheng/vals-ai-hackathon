@@ -14,10 +14,10 @@ tags = ["design-arena", "local-business", "ecommerce", "multi-page"]
 source = "Design Arena webapps tournament 104e4bb6-f582-4005-ade0-55d4a41ccf30 (sites S05 gpt-6-astra-max, S06 kimi-k3.1-pro); golden reference from references/S06"
 
 [agent]
-timeout_sec = 5400.0
+timeout_sec = 7200.0
 
 [verifier]
-timeout_sec = 1200.0
+timeout_sec = 1800.0
 
 [environment]
 build_timeout_sec = 1200.0

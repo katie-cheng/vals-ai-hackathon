@@ -9,7 +9,7 @@ cd /app
 rm -rf /app/dist
 if ! npm run build >"$OUT/build.log" 2>&1 || [ ! -f /app/dist/index.html ]; then
   echo "build failed; see build.log"
-  echo '{"reward": 0, "requirements": 0, "slop": 0, "gate": 0}' >"$OUT/reward.json"
+  echo '{"reward": 0, "requirements": 0, "task": 0, "baseline": 0, "slop": 0, "gate": 0}' >"$OUT/reward.json"
   exit 0
 fi
 

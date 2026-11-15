@@ -20,6 +20,7 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Top-company sites (`data/web/curated_top.tsv`) are a high-quality anchor; treat them as likely-clean, not proven clean [Ali; 2026-11-14]
 - Focus shifted from the classifier to a few Harbor tasks, each with a golden reference site: it is the oracle `solution/`, the labelled arena originals are negative controls, and the verifier must separate them. Never grade by similarity to the golden site [Ali; 2026-11-15]
 - A golden site must also clear `tasks/reference-rubric.md` (25 criteria taken from Katie's SlopLabel comments and her S13 rebuild review, each traced to label ids); where the brief asks for something the rubric flags, the brief wins [Ali; 2026-11-15]
+- Scores are split into task-agnostic (slop patterns + baseline checks, same thresholds for every task, from the shared `tasks/verifier/`) and task-specific (each task's `task.mjs` checklist); a pattern the brief asks for goes in that task's `SLOP_EXEMPT` [Ali; 2026-11-15]
 - Arena votes are committed as snapshots in `data/arena/` via `scripts/export_arena.py` (the live `/api/export` is auth-gated to the serving session); rerun and commit after voting sessions [Katie; 2026-11-15]
 
 ## Facts and gotchas

@@ -1,5 +1,10 @@
-// Task-specific part of the verifier: the ZEE Beauty Saloon brief's checklist and the interactions it asks for.
-// grade.mjs and probe.mjs are generic across tasks; each task supplies its own task.mjs.
+// Task-specific part of the verifier: the ZEE Beauty Saloon brief's checklist, the interactions it asks for, and what grade.mjs
+// should intercept or exempt. grade.mjs, probe.mjs, lib.mjs and test.sh are shared copies of tasks/verifier/; only this file is per task.
+import { attempt, checkMobileMenu, digits, freshPage, hexDistance, newLines, norm, overlayOpen, squash } from "./lib.mjs";
+
+export const HANDOFF_URLS = /wa\.me|whatsapp\.com/;
+// Nothing in this brief asks for a pattern that grade.mjs SLOP_CHECKS penalises.
+export const SLOP_EXEMPT = { big_rounding: "brief: elegant rounded corners" };
 
 const PHONE_DIGITS = "3234325141";
 const SERVICES = ["Bridal Makeup", "Party Makeup", "Hair Styling", "Haircuts", "Hair Treatments", "Facial Treatments", "Skincare", "Waxing", "Threading", "Manicure & Pedicure"];
@@ -11,15 +16,7 @@ const BODY_FONTS = ["poppins", "inter"];
 const PALETTE = ["#f7dde5", "#d4af72", "#fff9f4", "#c77d91", "#292329"];
 const BOOKING = { name: "Ayesha Khan", phone: "03001234567", date: "2026-12-20", time: "15:00", message: "Testing the booking form" };
 
-const norm = (s) => (s || "").toLowerCase().replace(/[’`]/g, "'").replace(/&/g, " and ").replace(/[^a-z0-9#'+ ]+/g, " ").replace(/\s+/g, " ").trim();
-const squash = (s) => norm(s).replace(/\band\b/g, "").replace(/ /g, "");
-const digits = (s) => (s || "").replace(/\D/g, "");
 const fraction = (found, total) => found / total;
-
-function hexDistance(a, b) {
-  const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
-  return Math.max(...p(a).map((x, i) => Math.abs(x - p(b)[i])));
-}
 
 /** Field kinds of the booking form, matched on type/name/id/placeholder/label/aria text. */
 const FIELD_KINDS = {
@@ -110,13 +107,6 @@ export function requirements(views) {
   add("no-social-links", "No unverified social links", social.length ? 0 : 1, social.map((c) => c.href || c.text).slice(0, 3).join(", "));
   const claims = d.text.match(/\b\d{2,}\s*\+|\byears of (experience|expertise)\b|\bcertified\b|\baward[- ]winning\b|\bawards?\b/i);
   add("no-invented-claims", "No invented experience, stats or awards", claims ? 0 : 1, claims?.[0] || "");
-
-  const errors = rendered.flatMap(([, v]) => v.log.consoleErrors);
-  add("console-clean", "No console errors", errors.length ? 0 : 1, errors.slice(0, 2).join(" | "));
-  const broken = new Set(rendered.flatMap(([, v]) => [...v.facts.brokenImages, ...v.log.failedImages]));
-  add("images-load", "All images load", Math.max(0, 1 - broken.size / 5), [...broken].slice(0, 3).join(", "));
-  const overflowing = Object.entries(views).filter(([, v]) => !v.ok || v.facts.overflowX > 1).map(([name, v]) => (v.ok ? `${name} ${v.facts.overflowX}px` : `${name} failed`));
-  add("no-overflow", "No horizontal overflow at any width", 1 - overflowing.length / Object.keys(views).length, overflowing.join(", "));
   return items;
 }
 
@@ -141,16 +131,6 @@ function galleryImages() {
   const g = document.querySelector('[data-sb="gallery"]');
   if (!g) return [];
   return [...g.querySelectorAll("img")].filter((i) => i.getBoundingClientRect().width > 0 && i.checkVisibility({ opacityProperty: true })).map((i) => i.currentSrc || i.src);
-}
-
-function overlayOpen() {
-  const visible = (el) => el.getBoundingClientRect().width > 0 && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-  if ([...document.querySelectorAll("[role=dialog],dialog[open],[aria-modal=true]")].some(visible)) return true;
-  return [...document.body.querySelectorAll("*")].some((el) => {
-    if (getComputedStyle(el).position !== "fixed" || !el.querySelector("img") || !visible(el)) return false;
-    const r = el.getBoundingClientRect();
-    return r.width * r.height >= 0.5 * innerWidth * innerHeight;
-  });
 }
 
 /** Marks the booking form (the form around the phone field, else its nearest ancestor with >= 4 fields) and its fields. */
@@ -193,11 +173,6 @@ function bookingBlocked() {
   return [...scope.querySelectorAll("input,select,textarea")].some((f) => !f.checkValidity() || f.getAttribute("aria-invalid") === "true");
 }
 
-const newLines = (before, after) => {
-  const seen = new Set(before.split("\n").map((l) => l.trim()));
-  return after.split("\n").map((l) => l.trim()).filter((l) => l && !seen.has(l));
-};
-
 async function fill(page, kind, value) {
   const f = page.locator(`[data-sbf="${kind}"]`);
   if (!(await f.count())) return false;
@@ -208,21 +183,6 @@ async function fill(page, kind, value) {
   } catch {
     return false;
   }
-}
-
-async function attempt(fn) {
-  try {
-    return await fn();
-  } catch (e) {
-    return { pass: false, detail: `error: ${String(e).split("\n")[0].slice(0, 200)}` };
-  }
-}
-
-async function freshPage(context, url) {
-  const page = await context.newPage();
-  await page.goto(url, { waitUntil: "load", timeout: 90_000 });
-  await page.waitForTimeout(2000);
-  return page;
 }
 
 export async function interactDesktop(context, url, handoffs) {
@@ -302,25 +262,5 @@ export async function interactDesktop(context, url, handoffs) {
 }
 
 export async function interactMobile(context, url) {
-  const page = await freshPage(context, url);
-  const navVisible = (items) =>
-    [...document.querySelectorAll("a,button")].filter((el) => {
-      const r = el.getBoundingClientRect();
-      const label = (el.innerText || "").toLowerCase().replace(/[^a-z ]+/g, " ").replace(/\s+/g, " ").trim();
-      return items.includes(label) && r.width > 0 && r.bottom > 0 && r.top < innerHeight && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-    }).length;
-  const mobileMenu = await attempt(async () => {
-    const before = await page.evaluate(navVisible, NAV_ITEMS);
-    if (before >= 4) return { pass: false, detail: `${before} nav links already visible: no collapsed menu` };
-    // Prefer an explicitly labelled toggle, else an icon-only button in the header.
-    let toggle = page.locator("button[aria-label*='menu' i]:visible, [aria-expanded]:visible, [aria-controls]:visible").first();
-    if (!(await toggle.count())) toggle = page.locator("header button:visible, nav button:visible").filter({ hasNotText: /\w/ }).first();
-    if (!(await toggle.count())) return { pass: false, detail: "no menu toggle found" };
-    await toggle.click({ timeout: 5000 });
-    await page.waitForTimeout(1000);
-    const after = await page.evaluate(navVisible, NAV_ITEMS);
-    return { pass: after >= 4, detail: `nav links visible ${before} -> ${after}` };
-  });
-  await page.close();
-  return { mobileMenu };
+  return { mobileMenu: await checkMobileMenu(context, url, NAV_ITEMS) };
 }

@@ -1,540 +1,507 @@
-// Task-specific part of the verifier: the Rocksteady Campus brief's checklist and the interactions it asks for.
-// grade.mjs and probe.mjs are generic across tasks; each task supplies its own task.mjs.
-// The site has several routes, so the interactions open each page through its navigation link and report what they find;
-// requirements() turns the home-page facts and those reports into the checklist.
+// Task-specific part of the verifier: the Rocksteady Campus brief's checklist, the interactions it asks for, and what grade.mjs
+// should intercept or exempt. grade.mjs, probe.mjs, lib.mjs and test.sh are shared copies of tasks/verifier/; only this file is per task.
+import { assignPages, attempt, checkMobileMenu, digits, freshPage, hexDistance, newLines, norm, overlayOpen, squash } from "./lib.mjs";
 
-const PHONE_DIGITS = ["0631044361", "27631044361"];
+export const HANDOFF_URLS = /wa\.me|whatsapp\.com/;
+// Nothing in this brief asks for a pattern that grade.mjs SLOP_CHECKS penalises.
+export const SLOP_EXEMPT = { big_rounding: "brief: stylish cards with subtle shadows and rounded corners" };
+
+const PHONE = "631044361";
+const WHATSAPP = "27631044361";
+// Used only when the login screen does not show the demo credentials it is asked to show.
+const ADMIN = { email: "admin@rocksteadycampus.co.za", password: "Rocksteady#2026" };
+const HEADLINE = "BIG FLAVOUR. GENEROUS PORTIONS. REAL TOWNSHIP TASTE.";
+const CMS_MARK = "CAMPUS EDIT CHECK 4471";
+const HEROES = ["hero-kota", "hero-dagwood", "hero-burger", "hero-sandwich", "hero-toasties"];
 const CATEGORIES = ["Kotas", "Dagwoods", "Burgers", "Rolls", "Sandwiches", "Chips & Sides", "Beverages", "Specials & Combos"];
-// The six About topics; the wording of the headings is free, so each is matched loosely on the page text.
-const ABOUT_TOPICS = { story: /\bstory\b|\bborn\b|\bbegan\b|\bstarted\b|\bfounded\b/, passion: /passion|\blove\b/, quality: /quality/, fresh: /fresh/, portions: /(generous|portions?).{0,200}(afford|price|value)|(afford|price|value).{0,200}(generous|portions?)/, community: /community|rockville/ };
-const NAV_ITEMS = ["home", "menu", "about", "about us", "gallery", "reviews", "contact", "order", "order online"];
-const ADMIN_AREAS = ["orders", "menu", "reviews", "customers", "promotions", "content", "gallery", "reports"];
-const BRAND_RED = "#f1001f";
-const CUSTOMER = { name: "Thabo Mokoena", phone: "0721234567", email: "thabo@example.com", address: "12 Vundla Drive, Rockville, Soweto" };
-// Each page: the link label that opens it, and the path to try when no such link exists.
-const PAGES = {
-  menu: { label: "^(our |full |the )?menu$", href: "menu", path: "/menu" },
-  about: { label: "^about( us)?$", href: "about", path: "/about" },
-  gallery: { label: "^gallery$", href: "gallery", path: "/gallery" },
-  reviews: { label: "^reviews?$", href: "review", path: "/reviews" },
-  contact: { label: "^contact( us)?$", href: "contact", path: "/contact" },
-  order: { label: "^order( online| now)?$", href: "order", path: "/order" },
-  login: { label: "^(log ?in|sign ?in|account|my account|portal)$", href: "login|signin|sign-in|account|portal", path: "/login" },
+const CATEGORY_COUNTS = { Kotas: 10, Dagwoods: 4, Burgers: 3, Rolls: 5, Sandwiches: 3, "Chips & Sides": 25 };
+const ROLES = {
+  about: [/about|story/],
+  menu: [/menu/],
+  order: [/order|checkout|cart|basket/],
+  gallery: [/gallery|photos/],
+  reviews: [/review/],
+  login: [/log-?in|sign-?in/, /account|portal/],
+  contact: [/contact/],
 };
+const NAV_ITEMS = ["home", "menu", "our menu", "about", "about us", "gallery", "reviews", "contact", "contact us"];
+const ADMIN_AREAS = [/\borders?\b/, /\bmenu\b|\bmeals?\b/, /\breviews?\b/, /\bcustomers?\b/, /promotions?|specials|offers/, /content|pages|website/, /gallery|images|photos|media/, /reports?|sales/, /opening hours|business details|settings/];
+const CHECKOUT_FIELDS = [
+  ["name", "\\bname\\b"],
+  ["mobile", "mobile|phone|cell|contact number"],
+  ["address", "address|street"],
+  ["instructions", "instruction|note|special|request"],
+];
+const CHECKOUT = { name: "Thabo Mokoena", mobile: "0821234567", address: "12 Vilakazi Street, Orlando West, Soweto", instructions: "Extra atchar please" };
+const ADD_RE = /^\+?\s*add\b|add to (cart|order|basket)/i;
+const PRICE_RE = /\bR\s?\d+(?:[.,]\d{2})?\b/g;
 
-const norm = (s) => (s || "").toLowerCase().replace(/[’`]/g, "'").replace(/&/g, " and ").replace(/[^a-z0-9#'+ ]+/g, " ").replace(/\s+/g, " ").trim();
-const digits = (s) => (s || "").replace(/\D/g, "");
-const round = (x) => Math.round(x * 1000) / 1000;
-
-function hexDistance(a, b) {
-  const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
-  return Math.max(...p(a).map((x, i) => Math.abs(x - p(b)[i])));
-}
+const fraction = (found, total) => found / total;
 
 /** Each item: {id, desc, score in [0,1], detail}. */
 export function requirements(views) {
-  const d = views.desktop.facts;
-  const rendered = Object.entries(views).filter(([, v]) => v.ok);
-  const act = Object.assign({}, ...rendered.map(([, v]) => v.interactions));
-  const text = norm(d.text);
-  const clickTexts = d.clickables.filter((c) => c.visible).map((c) => norm(c.text));
+  const pages = views.desktop.pages;
+  const byRole = assignPages(pages, ROLES);
+  const home = pages[0].facts;
+  const page = (role) => byRole[role]?.facts;
+  const textOf = (role) => page(role)?.text || "";
+  const allText = pages.map((p) => p.facts.text).join("\n");
+  const act = Object.assign({}, ...Object.values(views).filter((v) => v.ok).map((v) => v.interactions));
   const items = [];
-  const add = (id, desc, score, detail = "") => items.push({ id, desc, score: round(Math.max(0, Math.min(1, score))), detail: String(detail).slice(0, 240) });
-  const has = (s) => text.includes(norm(s));
-  // An interaction report scores its `score` when it has one, else 1 for a pass; a missing report (page never opened) scores 0.
-  const fromAct = (id, desc, key) => {
-    const r = act[key];
-    add(id, desc, r ? (r.score ?? (r.pass ? 1 : 0)) : 0, r ? r.detail : "not run");
-  };
+  const add = (id, desc, score, detail = "") => items.push({ id, desc, score: Math.round(score * 1000) / 1000, detail });
+  const fromAct = (id, desc, key) => add(id, desc, act[key]?.score ?? (act[key]?.pass ? 1 : 0), act[key]?.detail);
+  const share = (text, patterns) => patterns.filter((re) => re.test(text));
 
-  // Home page
-  add("name", "Business name shown", has("Rocksteady Campus") ? 1 : 0);
-  add("headline", "Home shows the given headline", has("Big flavour. Generous portions. Real township taste.") ? 1 : 0);
-  const ctas = ["order now", "explore our menu"].filter((c) => clickTexts.some((t) => t.includes(c)));
-  add("hero-ctas", "Order Now and Explore Our Menu buttons", ctas.length / 2, `found: ${ctas.join(", ")}`);
-  fromAct("hero-slider", "Hero banner slides through the five attached images", "heroSlider");
-  fromAct("logo", "Official logo in the header and the footer", "logo");
-  const cats = CATEGORIES.filter(has);
-  add("home-categories", "Featured menu categories on the home page", cats.length / 4, `found ${cats.length}/8`);
-  add("home-favourites", "Best-selling and customer favourite meals", /best[- ]?sell|favourite|favorite|popular/i.test(d.text) && /R\s?\d{2}/.test(d.text) ? 1 : 0);
-  add("home-promotions", "Special promotions and daily deals", /special|deal|promo|combo|offer/i.test(d.text) ? 1 : 0);
-  add("home-testimonials", "Customer testimonials and ratings", /review|testimonial|customers? (say|love)|rating/i.test(d.text) ? 1 : 0);
-  const addressParts = ["1563 Makapane", "Rockville", "Soweto", "1818"].filter(has);
-  add("address", "Business address shown", addressParts.length / 4, `found ${addressParts.length}/4`);
-  add("phone", "Telephone number shown", PHONE_DIGITS.some((p) => digits(d.text).includes(p)) ? 1 : 0);
-  const hours = (/11[:.]00\s*(–|-|—|to|until)\s*20[:.]00|11\s*am\s*(–|-|—|to|until)\s*8\s*pm/i.test(d.text) ? 0.5 : 0) + (/sun(day)?s?\W{0,12}closed|closed\W{0,12}(on )?sun/i.test(d.text) ? 0.5 : 0);
-  add("hours", "Opening hours: Monday to Saturday 11:00 to 20:00, Sunday closed", hours);
+  add("name", "Business name shown", /rocksteady campus/i.test(home.text) ? 1 : 0);
+  const h1 = home.headings.filter((h) => h.tag === "h1").map((h) => norm(h.text));
+  add("hero-headline", "Hero h1 is the given headline", h1.some((h) => h.includes(norm(HEADLINE))) ? 1 : 0, `h1: ${h1.join(" | ").slice(0, 120)}`);
+  const clickTexts = home.clickables.filter((c) => c.visible).map((c) => norm(c.text));
+  const ctas = ["Order Now", "Explore Our Menu"].filter((c) => clickTexts.some((t) => t.includes(norm(c))));
+  add("hero-ctas", "ORDER NOW and EXPLORE OUR MENU buttons", fraction(ctas.length, 2), `found: ${ctas.join(", ")}`);
+  fromAct("hero-slider", "Hero uses the five attached banner images", "heroImages");
+  fromAct("logo", "Attached logo in the header and footer", "logo");
+
+  const roles = Object.keys(ROLES);
+  add("pages", "About, Menu, Order, Gallery, Reviews, Login and Contact pages", fraction(roles.filter((r) => byRole[r]).length, roles.length),
+    roles.map((r) => `${r} ${byRole[r]?.path || "missing"}`).join(", "));
+  const homeSections = share(home.text, [
+    new RegExp(CATEGORIES.slice(0, 5).join("|"), "i"), /best[- ]?sell|favourite|popular/i, /promo|special|deal|offer/i, /why/i, /review|testimonial/i, /makapane/i,
+  ]);
+  add("home-sections", "Home: categories, favourites, deals, why us, testimonials, location", fraction(homeSections.length, 6), `${homeSections.length}/6`);
+  const about = share(textOf("about"), [/our story/i, /passion/i, /quality/i, /fresh/i, /generous|affordable/i, /community|rockville/i]);
+  add("about-sections", "About: story, passion, quality, fresh, generous portions, community", fraction(about.length, 6), `${about.length}/6 on ${byRole.about?.path || "no about page"}`);
+
+  const menuFlat = squash(textOf("menu"));
+  const categories = CATEGORIES.filter((c) => menuFlat.includes(squash(c)));
+  add("menu-categories", "Menu has all eight categories", fraction(categories.length, CATEGORIES.length), `missing: ${CATEGORIES.filter((c) => !categories.includes(c)).join(", ")}`);
+  fromAct("menu-counts", "10 Kotas, 4 Dagwoods, 3 Burgers, 5 Rolls, 3 Sandwiches, 25 Chips & Sides", "menuCounts");
+  fromAct("menu-filter", "Category filters change the menu", "menuFilter");
+  fromAct("menu-search", "Menu search narrows the items", "menuSearch");
+  const menuText = textOf("menu");
+  const prices = (menuText.match(PRICE_RE) || []).length;
+  const details = [prices >= 20, /add-?ons?|extras?|customi[sz]/i.test(menuText), /available|sold out|in stock|unavailable/i.test(menuText)];
+  add("menu-details", "Items show ZAR prices, add-ons or customisation, and availability", fraction(details.filter(Boolean).length, 3), `prices ${prices}, extras ${details[1]}, availability ${details[2]}`);
+
+  fromAct("cart-add", "Adding a meal updates the cart count", "cartAdd");
+  fromAct("cart-quantity", "Quantity can be increased and the total updates", "cartQuantity");
+  fromAct("checkout-fields", "Checkout: name, mobile, address, instructions, collection/delivery, cash, delivery fee", "checkoutFields");
+  fromAct("payment-honest", "Online payment is not presented as working", "paymentHonest");
+  fromAct("order-placed", "Placing an order shows an order number", "orderPlaced");
+  fromAct("order-progress", "The order shows its progress", "orderProgress");
+
+  fromAct("gallery-lightbox", "Clicking a gallery image opens a lightbox", "lightbox");
+  const reviews = textOf("reviews");
+  const reviewFacts = [/\b[0-5][.,]\d\b|out of 5|\/\s?5\b/i.test(reviews), /\b(20\d\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*\b/i.test(reviews),
+    (page("reviews")?.fields || []).some((f) => f.tag === "textarea") || !!act.reviewSubmit?.form];
+  add("reviews-page", "Reviews: overall rating, dated reviews, submission form", fraction(reviewFacts.filter(Boolean).length, 3), `rating ${reviewFacts[0]}, dates ${reviewFacts[1]}, form ${reviewFacts[2]}`);
+  fromAct("review-submit", "Submitting a review is acknowledged", "reviewSubmit");
+
+  const login = textOf("login");
+  const loginFacts = [/customer/i.test(login) && /admin/i.test(login), /forgot|reset/i.test(login), /register|create (an )?account|sign up/i.test(login)];
+  add("login-portal", "Login: customer and admin access, password recovery, registration", fraction(loginFacts.filter(Boolean).length, 3), `two roles ${loginFacts[0]}, recovery ${loginFacts[1]}, register ${loginFacts[2]}`);
+  fromAct("admin-dashboard", "Admin login opens a dashboard covering orders, menu, reviews, content", "admin");
+  fromAct("cms-edit", "Editing the hero headline in the admin changes the home page", "cms");
+
+  const contact = page("contact");
+  const contactText = contact?.text || "";
+  const contactFacts = [
+    ["1563 Makapane Street", "Rockville", "Soweto", "1818"].every((s) => contactText.includes(s)),
+    digits(contactText).includes(PHONE),
+    /11[:h]00\s*(–|-|—|to)\s*20[:h]00/i.test(contactText),
+    /sunday[^\n]{0,20}closed/i.test(contactText),
+  ];
+  add("contact-details", "Contact page: address, phone, Mon-Sat 11:00-20:00, Sunday closed", fraction(contactFacts.filter(Boolean).length, 4), contactFacts.join(", "));
+  const hrefs = pages.flatMap((p) => p.facts.clickables.map((c) => c.href));
+  const mapRe = /google\.[a-z.]+\/maps|maps\.google|maps\.app\.goo\.gl|goo\.gl\/maps|openstreetmap|maps\.apple/;
+  add("map", "Map of the restaurant on the contact page", (contact?.iframes || []).some((s) => mapRe.test(s)) ? 1 : (contact?.clickables || []).some((c) => mapRe.test(c.href)) ? 0.5 : 0);
+  add("directions", "Get Directions button", (contact?.clickables || []).some((c) => /direction/i.test(c.text) && /maps|goo\.gl/.test(c.href)) ? 1 : 0);
+  add("click-to-call", "tel: link to the restaurant", hrefs.some((h) => h.startsWith("tel:") && digits(h).includes(PHONE)) ? 1 : 0);
+  add("whatsapp", "WhatsApp contact link", hrefs.some((h) => /wa\.me|whatsapp\.com/.test(h) && digits(h).includes(WHATSAPP)) ? 1 : 0);
+  add("contact-form", "Contact enquiry form", (contact?.fields || []).some((f) => f.tag === "textarea") ? 1 : 0);
   const socialRe = /instagram|facebook|fb\.com|tiktok|twitter\.com|x\.com\/|youtube/i;
-  const social = new Set(d.clickables.filter((c) => socialRe.test(c.href)).map((c) => c.href.match(socialRe)[0].toLowerCase()));
-  add("social-links", "Footer social media links", Math.min(1, social.size / 2), [...social].join(", "));
-  const navLabels = ["menu", "about", "gallery", "reviews", "contact"].filter((n) => d.clickables.some((c) => c.inHeader && c.visible && norm(c.text).split(" ").includes(n)));
-  add("nav-links", "Navigation links to the pages", navLabels.length / 5, `found: ${navLabels.join(", ")}`);
-  fromAct("sticky-nav", "Sticky navigation", "stickyNav");
-  add("seo-meta", "Title names the business and a meta description exists", (/rocksteady/i.test(d.title) ? 0.5 : 0) + (d.metaDescription.trim() ? 0.5 : 0), d.title);
-  add("brand-red", "Uses the brand red #F1001F", d.colors.some((c) => hexDistance(c, BRAND_RED) <= 6) ? 1 : 0);
+  add("social-links", "Social media links", hrefs.some((h) => socialRe.test(h)) ? 1 : 0);
+  fromAct("location-assist", "Checkout offers to use the customer's location", "locationAssist");
 
-  // Pages and flows
-  fromAct("about-topics", "About page covers the six topics", "about");
-  fromAct("menu-categories", "Menu page lists the eight categories", "menuCategories");
-  fromAct("menu-items", "Menu items have a price in Rand and an add-to-cart button", "menuItems");
-  fromAct("menu-filter", "Menu category filter narrows the list", "menuFilter");
-  fromAct("menu-search", "Menu search narrows the list", "menuSearch");
-  fromAct("customise", "A meal can be customised with extras before adding", "customise");
-  fromAct("cart-count", "Adding a meal updates the cart count in the header", "cartCount");
-  fromAct("checkout-options", "Checkout offers collection or delivery, a cash option and an order summary", "checkoutOptions");
-  fromAct("checkout-validation", "An empty checkout is not accepted", "checkoutValidation");
-  fromAct("order-confirmation", "A valid order is confirmed with an order number", "orderConfirmation");
-  fromAct("gallery-lightbox", "Gallery image opens in a lightbox", "lightbox");
-  fromAct("reviews-page", "Reviews page shows an overall rating, reviews and a submission form", "reviews");
-  fromAct("review-validation", "An empty review is not accepted", "reviewValidation");
-  fromAct("contact-info", "Contact page has a Google map, directions, click-to-call, WhatsApp and an enquiry form", "contact");
-  fromAct("contact-validation", "An empty enquiry is not accepted", "contactValidation");
-  fromAct("login-portal", "Login portal: customer login, registration, password recovery and an administrator entry", "login");
-  fromAct("login-rejects", "Wrong login details are rejected", "loginRejects");
-  fromAct("admin-dashboard", "The demo administrator reaches a dashboard that manages orders, menu, content and reviews", "admin");
-  fromAct("mobile-nav", "Mobile-friendly navigation", "mobileMenu");
-  fromAct("mobile-order-now", "Order Now stays visible on a phone", "mobileOrderNow");
-  fromAct("mobile-pages-fit", "No page overflows horizontally on a phone", "mobilePagesFit");
-
-  // Health
-  const errors = rendered.flatMap(([, v]) => v.log.consoleErrors);
-  add("console-clean", "No console errors", errors.length ? 0 : 1, errors.slice(0, 2).join(" | "));
-  const broken = new Set(rendered.flatMap(([, v]) => [...v.facts.brokenImages, ...v.log.failedImages]));
-  add("images-load", "All images load", 1 - broken.size / 5, [...broken].slice(0, 3).join(", "));
-  const overflowing = Object.entries(views).filter(([, v]) => !v.ok || v.facts.overflowX > 1).map(([name, v]) => (v.ok ? `${name} ${v.facts.overflowX}px` : `${name} failed`));
-  add("no-overflow", "Home page has no horizontal overflow at any width", 1 - overflowing.length / Object.keys(views).length, overflowing.join(", "));
+  const headerTexts = home.clickables.filter((c) => c.inHeader && c.visible).map((c) => norm(c.text));
+  const navFound = ["home", "menu", "about", "gallery", "reviews", "contact", "order"].filter((n) => headerTexts.some((t) => t.includes(n)));
+  add("nav", "Header links to every page plus Order Now", fraction(navFound.length, 7), `found: ${navFound.join(", ")}`);
+  fromAct("mobile-menu", "Hamburger menu on mobile", "mobileMenu");
+  add("palette", "Uses the brand red #F1001F", home.colors.some((c) => hexDistance(c, "#f1001f") <= 8) ? 1 : 0);
+  add("seo-meta", "Title names Rocksteady Campus and a meta description exists", (/rocksteady/i.test(home.title) ? 0.5 : 0) + (home.metaDescription.trim() ? 0.5 : 0), home.title);
   return items;
 }
 
-// ---- in-page helpers (serialised into the page) ----
-
-function findPageHref({ label, href }) {
-  const norm = (s) => (s || "").replace(/\s+/g, " ").trim().toLowerCase();
-  const links = [...document.querySelectorAll("a[href]")].filter((a) => !/^(https?:)?\/\//.test(a.getAttribute("href")) || a.origin === location.origin);
-  const byLabel = links.find((a) => new RegExp(label, "i").test(norm(a.innerText || a.getAttribute("aria-label"))));
-  const byHref = links.find((a) => new RegExp(`^[#/]*(${href})\\b`, "i").test(a.getAttribute("href")));
-  return (byLabel || byHref)?.href || null;
-}
-
-function pageState() {
-  const visible = (el) => el.getBoundingClientRect().width > 0 && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-  const main = document.querySelector("main") || document.body;
-  const text = document.body.innerText;
-  const fields = [...document.querySelectorAll("input,select,textarea")].filter(visible);
-  return {
-    text,
-    prices: (main.innerText.match(/R\s?\d{1,4}([.,]\d{2})?/g) || []).length,
-    addButtons: [...main.querySelectorAll("button,a,[role=button]")].filter((b) => visible(b) && /\badd\b/i.test(`${b.innerText} ${b.getAttribute("aria-label") || ""}`)).length,
-    invalid: fields.filter((f) => !f.checkValidity() || f.getAttribute("aria-invalid") === "true").length,
-    alerts: [...document.querySelectorAll("[role=alert]")].filter(visible).length,
-    password: fields.some((f) => f.type === "password"),
-    textareas: fields.filter((f) => f.tagName === "TEXTAREA").length,
-    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    hrefs: [...document.querySelectorAll("a[href]")].map((a) => a.href),
-    iframes: [...document.querySelectorAll("iframe")].map((f) => f.src),
-  };
-}
-
-function overlayOpen() {
-  const visible = (el) => el.getBoundingClientRect().width > 0 && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-  if ([...document.querySelectorAll("[role=dialog],dialog[open],[aria-modal=true]")].some(visible)) return true;
-  return [...document.body.querySelectorAll("*")].some((el) => {
-    if (getComputedStyle(el).position !== "fixed" || !el.querySelector("img") || !visible(el)) return false;
-    const r = el.getBoundingClientRect();
-    return r.width * r.height >= 0.5 * innerWidth * innerHeight;
-  });
-}
-
-/** The hero: distinct photographs in the block around the largest image in the first screen, and logo images in header and footer. */
-function heroFacts() {
-  const src = (i) => (i.currentSrc || i.src || "").split("?")[0];
-  const isLogo = (i) => /logo/i.test(`${i.alt} ${i.src}`);
-  const imgs = [...document.images].filter((i) => !isLogo(i));
-  const inFirstScreen = imgs.filter((i) => {
-    const r = i.getBoundingClientRect();
-    return r.top < innerHeight && r.bottom > 0 && r.width * r.height > 0.15 * innerWidth * innerHeight;
-  });
-  const shown = inFirstScreen.filter((i) => i.checkVisibility({ opacityProperty: true, visibilityProperty: true })).map(src);
-  let block = inFirstScreen[0]?.closest("section") || inFirstScreen[0]?.parentElement;
-  while (block && block.parentElement && block.parentElement !== document.body && block.getBoundingClientRect().height < 0.6 * innerHeight) block = block.parentElement;
-  const inBlock = block ? [...new Set([...block.querySelectorAll("img")].filter((i) => !isLogo(i)).map(src))] : [];
-  const logos = (sel) => [...document.querySelectorAll(`${sel} img`)].some((i) => isLogo(i) && i.naturalWidth > 0);
-  return { shown, inBlock, headerLogo: logos("header") || logos("nav"), footerLogo: logos("footer") };
-}
-
-function headerCartCount() {
-  const scope = document.querySelector("header") || document.querySelector("nav") || document.body;
-  const counts = [];
-  for (const el of scope.querySelectorAll("a,button,[role=button]")) {
-    const label = `${el.innerText} ${el.getAttribute("aria-label") || ""} ${el.getAttribute("href") || ""} ${el.title || ""}`;
-    if (!/cart|basket|bag|order/i.test(label)) continue;
-    for (const m of `${el.innerText} ${el.getAttribute("aria-label") || ""}`.match(/\d+/g) || []) counts.push(Number(m));
+/** In-page: every image the page references (img, srcset, picture sources, CSS backgrounds), loaded or not. */
+function imageRefs() {
+  const refs = new Set();
+  const srcset = (s) => (s || "").split(",").map((x) => x.trim().split(" ")[0]).filter(Boolean);
+  for (const img of document.images) [img.currentSrc, img.src, ...srcset(img.srcset)].forEach((r) => r && refs.add(r));
+  for (const s of document.querySelectorAll("source")) srcset(s.srcset).forEach((r) => refs.add(r));
+  for (const el of document.querySelectorAll("*")) {
+    const bg = getComputedStyle(el).backgroundImage;
+    if (bg && bg !== "none") for (const m of bg.matchAll(/url\(["']?([^"')]+)/g)) refs.add(m[1]);
   }
-  return { found: [...scope.querySelectorAll("a,button,[role=button]")].some((el) => /cart|basket|bag/i.test(`${el.innerText} ${el.getAttribute("aria-label") || ""} ${el.title || ""}`)), count: Math.max(0, ...counts) };
+  return [...refs];
 }
 
-/** Fills every visible empty text field of the form around the first phone/name field with a value that suits its kind. */
-function fillFields(customer) {
-  const visible = (el) => el.getBoundingClientRect().width > 0 && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-  const describe = (f) => [f.type, f.name, f.id, f.placeholder, f.getAttribute("aria-label"), f.autocomplete, f.labels?.[0]?.innerText, f.closest("label")?.innerText, f.parentElement?.innerText?.slice(0, 80)].join(" ").toLowerCase();
-  const set = (f, v) => {
-    const proto = f.tagName === "TEXTAREA" ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
-    Object.getOwnPropertyDescriptor(proto, "value").set.call(f, v);
-    f.dispatchEvent(new Event("input", { bubbles: true }));
-    f.dispatchEvent(new Event("change", { bubbles: true }));
-    f.dispatchEvent(new Event("blur", { bubbles: true }));
-  };
+/** In-page: whether the header and the footer each show the attached logo (by file name, or an image whose alt names the brand). */
+function logoPlaces() {
+  const isLogo = (img) => /rocksteady-logo/i.test(img.currentSrc || img.src) || /rocksteady/i.test(img.alt || "");
+  const shown = (root) => !!root && [...root.querySelectorAll("img")].some((i) => isLogo(i) && i.getBoundingClientRect().width > 0);
+  return { header: shown(document.querySelector("header")) || shown(document.querySelector("nav")), footer: shown(document.querySelector("footer")) };
+}
+
+/** In-page: visible add-to-cart controls outside the header and nav. */
+function countAdds(source) {
+  const re = new RegExp(source, "i");
+  return [...document.querySelectorAll("button,a,[role=button]")].filter((el) => {
+    const r = el.getBoundingClientRect();
+    const label = (el.innerText || el.getAttribute("aria-label") || "").trim();
+    return r.width > 0 && r.height > 0 && re.test(label) && !el.closest("header,nav") && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
+  }).length;
+}
+
+/** In-page: add-to-cart controls under a category heading, for menus that list every category as a section instead of filtering. */
+function countInSection([category, others, source]) {
+  const re = new RegExp(source, "i");
+  const key = (s) => (s || "").toLowerCase().replace(/&/g, "and").replace(/[^a-z]+/g, "");
+  const isHeading = (el, name) => /^H[1-4]$/.test(el.tagName) && key(el.innerText).startsWith(key(name));
+  const heading = [...document.querySelectorAll("h1,h2,h3,h4")].find((h) => isHeading(h, category));
+  if (!heading) return null;
+  let box = heading.parentElement;
+  const adds = (root) => [...root.querySelectorAll("button,a,[role=button]")].filter((b) => re.test((b.innerText || b.getAttribute("aria-label") || "").trim()));
+  while (box && box !== document.body && adds(box).length === 0) box = box.parentElement;
+  if (!box || box === document.body) return null;
+  const otherHeading = [...box.querySelectorAll("h1,h2,h3,h4")].some((h) => others.some((o) => isHeading(h, o)));
+  return otherHeading ? null : adds(box).length;
+}
+
+/** In-page: marks the first visible field matching each [kind, regex source] with data-sbf, and lists the kinds found. */
+function markFields(specs) {
+  const describe = (f) =>
+    [f.type, f.name, f.id, f.placeholder, f.getAttribute("aria-label"), f.labels?.[0]?.innerText, f.closest("label")?.innerText].join(" ").toLowerCase();
+  const fields = [...document.querySelectorAll("input,textarea,select")].filter(
+    (f) => !["hidden", "submit", "button", "checkbox", "radio"].includes(f.type) && f.getBoundingClientRect().width > 0,
+  );
+  const found = [];
+  for (const [kind, source] of specs) {
+    const f = fields.find((x) => !x.hasAttribute("data-sbf") && new RegExp(source).test(describe(x)));
+    if (f) f.setAttribute("data-sbf", kind), found.push(kind);
+  }
+  return found;
+}
+
+/** In-page: numbers shown on the header's cart control (a link or button that names a cart, basket, bag or order). */
+function cartCount() {
+  const els = [...document.querySelectorAll("header a, header button, nav a, nav button")].filter((el) =>
+    /cart|basket|bag|order/i.test([el.getAttribute("aria-label"), el.getAttribute("href"), el.innerText, el.className].join(" ")),
+  );
+  return els.map((el) => Number((el.innerText.match(/\d+/) || ["0"])[0])).reduce((a, b) => Math.max(a, b), 0);
+}
+
+async function clickText(page, re, scope = "body") {
+  const target = page.locator(`${scope} :is(button,a,[role=button],[role=tab],label):visible`).filter({ hasText: re }).first();
+  if (!(await target.count())) return false;
+  await target.click({ timeout: 5000 });
+  await page.waitForTimeout(900);
+  return true;
+}
+
+async function fillMarked(page, values) {
   const filled = [];
-  const scope = document.querySelector("main") || document.body;
-  for (const f of scope.querySelectorAll("input,textarea")) {
-    if (!visible(f) || f.value || f.disabled || f.readOnly) continue;
-    if (["hidden", "submit", "button", "checkbox", "radio", "file", "search", "range", "date", "time", "number"].includes(f.type)) continue;
-    const t = describe(f);
-    if (/search|promo|coupon|voucher/.test(t)) continue;
-    const kind = f.type === "tel" || /phone|mobile|cell|whatsapp|\b0[67]\d\b/.test(t) ? "phone" : f.type === "email" || /e-?mail/.test(t) ? "email" : f.type === "password" ? "password" : /address|street|suburb/.test(t) ? "address" : /name/.test(t) ? "name" : "other";
-    set(f, { phone: customer.phone, email: customer.email, password: "Rockville#2026", address: customer.address, name: customer.name, other: "Extra napkins please, thank you." }[kind]);
-    filled.push(kind);
+  for (const [kind, value] of Object.entries(values)) {
+    const f = page.locator(`[data-sbf="${kind}"]`);
+    if (!(await f.count())) continue;
+    try {
+      if ((await f.evaluate((el) => el.tagName)) === "SELECT") await f.selectOption({ index: 1 }, { timeout: 3000 });
+      else await f.fill(value, { timeout: 3000 });
+      filled.push(kind);
+    } catch {
+      // A field that refuses input stays unfilled; the checks below report what happened.
+    }
   }
   return filled;
 }
 
-// ---- node-side helpers ----
-
-const newLines = (before, after) => {
-  const seen = new Set(before.split("\n").map((l) => l.trim()));
-  return after.split("\n").map((l) => l.trim()).filter((l) => l && !seen.has(l));
-};
-
-async function attempt(fn) {
-  try {
-    return await fn();
-  } catch (e) {
-    return { pass: false, detail: `error: ${String(e).split("\n")[0].slice(0, 200)}` };
+async function addFirstItem(page) {
+  const add = page.locator(":is(main, body) :is(button,a,[role=button]):visible").filter({ hasText: ADD_RE }).first();
+  if (!(await add.count())) return false;
+  await add.scrollIntoViewIfNeeded();
+  await add.click({ timeout: 5000 });
+  await page.waitForTimeout(900);
+  // Meals with customisation open a dialog first; confirm it with its add button. A cart drawer that opens on add is left alone.
+  if ((await openDialog(page)) && !(await cartOpen(page))) {
+    const confirm = (await openDialog(page)).locator("button:visible").filter({ hasText: /add to (cart|bag|order|basket)|^\s*add\b|confirm|done/i }).last();
+    if (await confirm.count()) await confirm.click({ timeout: 5000 });
+    await page.waitForTimeout(900);
   }
+  return true;
 }
 
-async function freshPage(context, url) {
-  const page = await context.newPage();
-  await page.goto(url, { waitUntil: "load", timeout: 90_000 });
-  await page.waitForTimeout(2000);
-  return page;
+async function openDialog(page) {
+  const dialog = page.locator("[role=dialog]:visible, dialog[open], [aria-modal=true]:visible").last();
+  return (await dialog.count()) ? dialog : null;
 }
 
-/** Opens a page of the site: follows its navigation link from the home page, else tries the usual path. */
-async function openPage(context, base, name) {
-  const page = await freshPage(context, base);
-  const href = await page.evaluate(findPageHref, PAGES[name]);
-  await page.goto(href || new URL(PAGES[name].path, base).href, { waitUntil: "load", timeout: 90_000 });
-  await page.waitForTimeout(1500);
-  // Scroll once through the page so scroll-triggered reveals have fired before anything is read.
-  const { height, step } = await page.evaluate(() => ({ height: document.documentElement.scrollHeight, step: innerHeight }));
-  for (let y = 0; y < Math.min(height, 20_000); y += step / 2) {
-    await page.evaluate((top) => window.scrollTo(0, top), y);
-    await page.waitForTimeout(100);
-  }
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(500);
-  return page;
+/** The cart is showing, as a drawer or dialog, when an open dialog mentions checkout or a subtotal. */
+async function cartOpen(page) {
+  const dialog = await openDialog(page);
+  return !!dialog && /checkout|check out|subtotal/i.test(await dialog.innerText());
 }
 
-const clickable = (page, re, scope = "body") => page.locator(`${scope} button:visible, ${scope} a:visible, ${scope} [role=button]:visible, ${scope} [role=tab]:visible, ${scope} input[type=submit]:visible`).filter({ hasText: re });
-
-/** Clicks the submit control of the first visible form in main (or the last button that reads like one) and reports what changed. */
-async function submitForm(page, re) {
-  const before = await page.evaluate(pageState);
-  let submit = page.locator("main form:visible button[type=submit]:visible, main form:visible input[type=submit]:visible").last();
-  if (!(await submit.count())) submit = clickable(page, re, "main").last();
-  if (!(await submit.count())) return null;
-  await submit.scrollIntoViewIfNeeded();
-  await submit.click({ timeout: 5000 });
-  await page.waitForTimeout(1500);
-  const after = await page.evaluate(pageState);
-  return { before, after, added: newLines(before.text, after.text) };
-}
-
-const SUCCESS = /thank|received|sent|submitted|success|confirmed|we('| wi)ll (be in touch|get back)|pending (approval|moderation)/i;
-const ERROR = /required|please|enter |valid|missing|fill|at least|select|choose|must|cannot|incorrect|wrong|not (found|recogni)|could ?n.t|unable|no account|try again/i;
-
-/** An empty form passes when the submit is blocked (invalid fields, an alert or an error line) and nothing reads like success. */
-async function emptySubmitBlocked(page, re) {
-  const r = await submitForm(page, re);
-  if (!r) return { pass: false, detail: "no form submit control found" };
-  const message = r.added.find((l) => ERROR.test(l));
-  const success = r.added.find((l) => SUCCESS.test(l) && !ERROR.test(l));
-  return { pass: !success && (r.after.invalid > 0 || r.after.alerts > 0 || !!message), detail: `invalid fields ${r.after.invalid}, alerts ${r.after.alerts}, message ${message || "-"}, success ${success || "-"}` };
-}
-
-export async function interactDesktop(context, url) {
+export async function interactDesktop(context, url, handoffs, pages) {
+  const byRole = assignPages(pages, ROLES);
   const out = {};
+  const missing = (role) => ({ pass: false, detail: `no ${role} page found` });
 
-  // Home: hero slider, logo, sticky navigation.
   const home = await freshPage(context, url);
-  out.heroSlider = await attempt(async () => {
-    const seen = new Set();
-    let inBlock = [];
-    for (let i = 0; i < 14; i++) {
-      const f = await home.evaluate(heroFacts);
-      f.shown.forEach((s) => seen.add(s));
-      if (f.inBlock.length > inBlock.length) inBlock = f.inBlock;
-      await home.waitForTimeout(1000);
+  out.heroImages = await attempt(async () => {
+    const refs = new Set();
+    for (let i = 0; i < 3; i++) {
+      (await home.evaluate(imageRefs)).forEach((r) => refs.add(r));
+      await home.waitForTimeout(3500);
     }
-    const count = Math.max(seen.size, inBlock.length);
-    return { pass: count >= 5 && seen.size >= 2, score: (Math.min(5, count) / 5 + (seen.size >= 2 ? 1 : 0)) / 2, detail: `${inBlock.length} photographs in the hero, ${seen.size} shown in turn over 14s` };
+    const found = HEROES.filter((h) => [...refs].some((r) => r.includes(h)));
+    return { score: found.length / HEROES.length, detail: `found: ${found.join(", ") || "none"}` };
   });
   out.logo = await attempt(async () => {
-    const f = await home.evaluate(heroFacts);
-    return { pass: f.headerLogo && f.footerLogo, score: ((f.headerLogo ? 1 : 0) + (f.footerLogo ? 1 : 0)) / 2, detail: `header ${f.headerLogo}, footer ${f.footerLogo}` };
-  });
-  out.stickyNav = await attempt(async () => {
-    await home.evaluate(() => window.scrollTo(0, 1600));
-    await home.waitForTimeout(800);
-    const stuck = await home.evaluate(() => {
-      const top = document.elementsFromPoint(innerWidth / 2, 24).find((el) => el.closest("header,nav"));
-      return !!top && scrollY > 800;
-    });
-    return { pass: stuck, detail: `navigation at the top of the viewport after scrolling: ${stuck}` };
+    const at = await home.evaluate(logoPlaces);
+    return { score: (at.header ? 0.5 : 0) + (at.footer ? 0.5 : 0), detail: `header ${at.header}, footer ${at.footer}` };
   });
   await home.close();
 
-  const about = await openPage(context, url, "about");
-  out.about = await attempt(async () => {
-    const text = norm((await about.evaluate(pageState)).text);
-    const found = Object.keys(ABOUT_TOPICS).filter((t) => ABOUT_TOPICS[t].test(text));
-    return { pass: found.length === 6, score: found.length / 6, detail: `found ${found.length}/6: ${found.join(", ")}` };
-  });
-  await about.close();
-
-  // Menu: categories, items, filter, search.
-  const menu = await openPage(context, url, "menu");
-  const menuStart = await menu.evaluate(pageState);
-  out.menuCategories = await attempt(async () => {
-    const text = norm(menuStart.text);
-    const found = CATEGORIES.filter((c) => text.includes(norm(c)));
-    return { pass: found.length === 8, score: found.length / 8, detail: `found ${found.length}/8` };
-  });
-  out.menuItems = { pass: menuStart.prices >= 20 && menuStart.addButtons >= 20, score: (Math.min(1, menuStart.prices / 20) + Math.min(1, menuStart.addButtons / 20)) / 2, detail: `${menuStart.prices} prices, ${menuStart.addButtons} add buttons` };
-  out.menuFilter = await attempt(async () => {
-    const filter = clickable(menu, /^\s*Burgers(\s*\(?\d+\)?)?\s*$/i, "main").first();
-    if (!(await filter.count())) return { pass: false, detail: "no Burgers category control on the menu page" };
-    await filter.click({ timeout: 5000 });
-    await menu.waitForTimeout(1200);
-    const after = await menu.evaluate(pageState);
-    const inView = await menu.evaluate(() => /burger/i.test([...document.querySelectorAll("main h1,main h2,main h3,main h4")].filter((h) => h.getBoundingClientRect().top < innerHeight && h.getBoundingClientRect().bottom > 0).map((h) => h.innerText).join(" ")));
-    // Uber Eats style menus either filter the list or jump to the category's section; both count.
-    const narrowed = after.prices > 0 && after.prices < menuStart.prices;
-    return { pass: narrowed || inView, detail: `prices ${menuStart.prices} -> ${after.prices}, burger heading in view ${inView}` };
-  });
-  await menu.close();
-  const search = await openPage(context, url, "menu");
-  out.menuSearch = await attempt(async () => {
-    const input = search.locator("main input[type=search]:visible, main input[placeholder*='earch' i]:visible, main input[aria-label*='earch' i]:visible, input[placeholder*='earch' i]:visible").first();
-    if (!(await input.count())) return { pass: false, detail: "no search field on the menu page" };
-    await input.fill("dagwood");
-    await search.waitForTimeout(1200);
-    const after = await search.evaluate(pageState);
-    return { pass: after.prices > 0 && after.prices < menuStart.prices, detail: `"dagwood": prices ${menuStart.prices} -> ${after.prices}` };
-  });
-  await search.close();
-
-  // Ordering: add a meal, cart count, checkout validation, confirmation. One page throughout, so in-memory carts survive.
-  const shop = await openPage(context, url, "menu");
-  const countBefore = await shop.evaluate(headerCartCount);
-  await attempt(async () => {
-    const addBtn = shop.locator("main button:visible, main a:visible").filter({ hasText: /\badd\b/i }).or(shop.locator("main button[aria-label*='add' i]:visible")).first();
-    await addBtn.scrollIntoViewIfNeeded();
-    await addBtn.click({ timeout: 5000 });
-    await shop.waitForTimeout(1200);
-    const dialog = shop.locator("[role=dialog]:visible, dialog[open], [aria-modal=true]:visible").last();
-    if (await dialog.count()) {
-      const options = await dialog.locator("input[type=checkbox], input[type=radio], [role=checkbox], [role=radio], [role=switch], select, textarea").count();
-      const stepper = await dialog.locator("button[aria-label*='ncrease' i], button[aria-label*='quantity' i]").count();
-      out.customise = { pass: options > 0, detail: `dialog with ${options} option controls, quantity control ${stepper > 0}` };
-      await dialog.locator("button:visible").filter({ hasText: /\badd\b/i }).last().click({ timeout: 5000 });
-      await shop.waitForTimeout(1200);
-    } else out.customise = { pass: false, detail: "adding a meal opened no customisation dialog" };
-  });
-  out.customise ||= { pass: false, detail: "no add-to-cart button found on the menu page" };
-  out.cartCount = await attempt(async () => {
-    const after = await shop.evaluate(headerCartCount);
-    return { pass: after.found && after.count > countBefore.count, score: ((after.found ? 1 : 0) + (after.count > countBefore.count ? 1 : 0)) / 2, detail: `cart control ${after.found}, count ${countBefore.count} -> ${after.count}` };
-  });
-  const checkoutReport = await attempt(async () => {
-    const checkout = () => clickable(shop, /check ?out/i).first();
-    if (!(await checkout().count())) {
-      const cart = shop.locator("header button:visible, header a:visible").filter({ has: shop.locator("svg") }).and(shop.locator("[aria-label*='cart' i], [aria-label*='basket' i], [aria-label*='bag' i], [href*='cart' i], [title*='cart' i]")).first();
-      if (await cart.count()) await cart.click({ timeout: 5000 });
-      await shop.waitForTimeout(1000);
-    }
-    if (await checkout().count()) await checkout().click({ timeout: 5000 });
-    else {
-      const href = await shop.evaluate(findPageHref, PAGES.order);
-      const link = shop.locator(`a[href="${new URL(href || "/order", url).pathname}"]:visible`).first();
-      if (await link.count()) await link.click({ timeout: 5000 });
-    }
-    await shop.waitForTimeout(1500);
-    // Some checkouts sit behind one more "checkout" step on the order page.
-    const s = await shop.evaluate(pageState);
-    if (!/name/i.test(s.text) && (await checkout().count())) {
-      await checkout().click({ timeout: 5000 });
-      await shop.waitForTimeout(1500);
-    }
-    const state = await shop.evaluate(pageState);
-    const parts = { collection: /collect|pick[- ]?up/i.test(state.text), delivery: /deliver/i.test(state.text), cash: /cash/i.test(state.text), subtotal: /subtotal/i.test(state.text), total: /\btotal\b/i.test(state.text) && /R\s?\d/.test(state.text) };
-    const ok = Object.values(parts).filter(Boolean).length;
-    return { pass: ok === 5, score: ok / 5, detail: Object.entries(parts).map(([k, v]) => `${k} ${v}`).join(", ") };
-  });
-  out.checkoutOptions = checkoutReport;
-  const ORDER_NUMBER = /(#\s?[A-Z0-9-]*\d{3,}|\b[A-Z]{2,5}[- ]?\d{3,}[A-Z0-9-]*\b)/;
-  const SUBMIT_ORDER = /place (my |your )?order|confirm( order)?|submit order|complete order|send order|pay/i;
-  out.checkoutValidation = await attempt(async () => {
-    const r = await submitForm(shop, SUBMIT_ORDER);
-    if (!r) return { pass: false, detail: "no place-order control found" };
-    const confirmed = r.added.find((l) => /confirm|thank|received|placed/i.test(l) && ORDER_NUMBER.test(r.added.join(" ")));
-    const message = r.added.find((l) => ERROR.test(l));
-    return { pass: !confirmed && (r.after.invalid > 0 || r.after.alerts > 0 || !!message), detail: `invalid fields ${r.after.invalid}, alerts ${r.after.alerts}, message ${message || "-"}` };
-  });
-  out.orderConfirmation = await attempt(async () => {
-    const filled = await shop.evaluate(fillFields, CUSTOMER);
-    await shop.waitForTimeout(400);
-    const r = await submitForm(shop, SUBMIT_ORDER);
-    if (!r) return { pass: false, detail: "no place-order control found" };
-    const number = r.added.join(" \n ").match(ORDER_NUMBER)?.[0];
-    const confirmed = r.added.find((l) => /confirm|thank|received|placed|on its way|preparing/i.test(l));
-    return { pass: !!number && !!confirmed, score: ((number ? 1 : 0) + (confirmed ? 1 : 0)) / 2, detail: `filled ${filled.join(",")}; order number ${number || "-"}; ${confirmed || "no confirmation text"}` };
-  });
-  await shop.close();
-
-  const gallery = await openPage(context, url, "gallery");
-  out.lightbox = await attempt(async () => {
-    const before = await gallery.evaluate(overlayOpen);
-    const index = await gallery.evaluate(() => [...document.querySelectorAll("main img")].findIndex((i) => i.getBoundingClientRect().width >= 150 && i.checkVisibility() && !i.closest("header,footer")));
-    if (index < 0) return { pass: false, detail: "no gallery image found" };
-    const img = gallery.locator("main img").nth(index);
-    await img.scrollIntoViewIfNeeded();
-    await img.click({ force: true, timeout: 5000 });
-    await gallery.waitForTimeout(1000);
-    const after = await gallery.evaluate(overlayOpen);
-    return { pass: !before && after, detail: `overlay before ${before}, after ${after}` };
-  });
-  await gallery.close();
-
-  const reviews = await openPage(context, url, "reviews");
-  out.reviews = await attempt(async () => {
-    const s = await reviews.evaluate(pageState);
-    const stars = await reviews.evaluate(() => document.querySelectorAll("main svg[class*='star' i], main [aria-label*='star' i], main [aria-label*='out of 5' i]").length + (document.body.innerText.match(/★/g) || []).length);
-    const parts = { rating: /\b[1-5][.,]\d\b/.test(s.text), stars: stars >= 5, form: s.textareas > 0, dates: /\b(20\d\d|\d+ (day|week|month|year)s? ago)\b/i.test(s.text) };
-    const ok = Object.values(parts).filter(Boolean).length;
-    return { pass: ok === 4, score: ok / 4, detail: Object.entries(parts).map(([k, v]) => `${k} ${v}`).join(", ") };
-  });
-  out.reviewValidation = await attempt(() => emptySubmitBlocked(reviews, /submit|send|post|share|leave/i));
-  await reviews.close();
-
-  const contact = await openPage(context, url, "contact");
-  out.contact = await attempt(async () => {
-    const s = await contact.evaluate(pageState);
-    const mapRe = /google\.[a-z.]+\/maps|maps\.google|maps\.app\.goo\.gl|goo\.gl\/maps/i;
-    const parts = {
-      map: s.iframes.some((f) => mapRe.test(f)),
-      directions: s.hrefs.some((h) => mapRe.test(h)),
-      call: s.hrefs.some((h) => /^tel:/i.test(h) && PHONE_DIGITS.some((p) => digits(h).includes(p))),
-      whatsapp: s.hrefs.some((h) => /wa\.me|whatsapp\.com/i.test(h)),
-      form: s.textareas > 0,
-    };
-    const ok = Object.values(parts).filter(Boolean).length;
-    return { pass: ok === 5, score: ok / 5, detail: Object.entries(parts).map(([k, v]) => `${k} ${v}`).join(", ") };
-  });
-  out.contactValidation = await attempt(() => emptySubmitBlocked(contact, /send|submit|enquir/i));
-  await contact.close();
-
-  // Login portal and the demo administrator.
-  const login = await openPage(context, url, "login");
-  out.login = await attempt(async () => {
-    const s = await login.evaluate(pageState);
-    const parts = { password: s.password, register: /register|sign ?up|create (an |your )?account/i.test(s.text), recovery: /forgot|reset|recover/i.test(s.text), admin: /admin|staff/i.test(s.text) };
-    const ok = Object.values(parts).filter(Boolean).length;
-    return { pass: ok === 4, score: ok / 4, detail: Object.entries(parts).map(([k, v]) => `${k} ${v}`).join(", ") };
-  });
-  const signIn = async (page, email, password) => {
-    const before = await page.evaluate(pageState);
-    await page.locator("input[type=email]:visible, input[name*='mail' i]:visible, input[type=text]:visible").first().fill(email);
-    await page.locator("input[type=password]:visible").first().fill(password);
-    await page.locator("input[type=password]:visible").first().press("Enter");
-    await page.waitForTimeout(1500);
-    const after = await page.evaluate(pageState);
-    return { after, added: newLines(before.text, after.text) };
-  };
-  out.loginRejects = await attempt(async () => {
-    const r = await signIn(login, "nobody@example.com", "wrong-password-1");
-    const message = r.added.find((l) => ERROR.test(l) || /invalid|incorrect|match/i.test(l));
-    return { pass: r.after.password && (!!message || r.after.alerts > 0 || r.after.invalid > 0), detail: `still on the login form ${r.after.password}, message ${message || "-"}` };
-  });
-  out.admin = await attempt(async () => {
-    const tab = clickable(login, /admin|staff/i).first();
-    if (await tab.count()) await tab.click({ timeout: 5000 });
-    await login.waitForTimeout(800);
-    const creds = await login.evaluate(() => {
-      const text = document.body.innerText;
-      const email = text.match(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g) || [];
-      const marked = [...document.querySelectorAll("strong,b,code,kbd,samp,mark")].map((e) => e.innerText.trim());
-      const after = [...text.matchAll(/password\s*[:=]?\s*([^\s,;]{6,})/gi)].map((m) => m[1]);
-      return { email, passwords: [...new Set([...marked, ...after])].filter((t) => t && !t.includes("@") && !/\s/.test(t) && t.length >= 6) };
-    });
-    if (!creds.email.length || !creds.passwords.length) return { pass: false, detail: "no demo administrator email and password shown on the administrator login screen" };
-    for (const email of creds.email.slice(0, 2)) {
-      for (const password of creds.passwords.slice(0, 3)) {
-        if (!(await login.locator("input[type=password]:visible").count())) break;
-        await signIn(login, email, password);
+  const menuPage = byRole.menu;
+  if (!menuPage) Object.assign(out, { menuCounts: missing("menu"), menuFilter: missing("menu"), menuSearch: missing("menu") });
+  else {
+    const menu = await freshPage(context, menuPage.url);
+    const total = await menu.evaluate(countAdds, ADD_RE.source);
+    const counts = {};
+    let filtered = false;
+    out.menuCounts = await attempt(async () => {
+      for (const category of Object.keys(CATEGORY_COUNTS)) {
+        // \s also covers the non-breaking spaces some menus put around "&"; a count badge can follow the label with no space ("Sides25").
+        const words = category.split(" ").map((w) => (w === "&" ? "(&|and)" : w)).join("\\s+");
+        const filter = menu.locator(":is(button,[role=tab],a):visible").filter({ hasText: new RegExp(`^\\s*${words}(?![a-z])`, "i") }).first();
+        let n = null;
+        if (await filter.count()) {
+          await filter.click({ timeout: 5000 });
+          await menu.waitForTimeout(900);
+          n = await menu.evaluate(countAdds, ADD_RE.source);
+          if (n !== total) filtered = true;
+          else n = null;
+        }
+        if (n === null) n = await menu.evaluate(countInSection, [category, CATEGORIES.filter((c) => c !== category), ADD_RE.source]);
+        counts[category] = n;
       }
-    }
-    const s = await login.evaluate(pageState);
-    const text = norm(s.text);
-    const areas = ADMIN_AREAS.filter((a) => text.includes(a));
-    const inside = !s.password && /dashboard|admin/i.test(s.text);
-    return { pass: inside && areas.length >= 6, score: inside ? Math.min(1, areas.length / 6) : 0, detail: `signed in ${inside}; areas: ${areas.join(", ")}` };
-  });
-  await login.close();
+      const right = Object.entries(CATEGORY_COUNTS).filter(([c, want]) => counts[c] === want).length;
+      return { score: right / Object.keys(CATEGORY_COUNTS).length, detail: Object.entries(counts).map(([c, n]) => `${c} ${n ?? "?"}/${CATEGORY_COUNTS[c]}`).join(", ") };
+    });
+    out.menuFilter = { pass: filtered, detail: filtered ? `a category filter narrowed ${total} items` : `no category filter changed the ${total} items` };
+    out.menuSearch = await attempt(async () => {
+      const page = await freshPage(context, menuPage.url);
+      const box = page.locator("input[type=search]:visible, input[placeholder*='search' i]:visible, input[aria-label*='search' i]:visible").first();
+      if (!(await box.count())) return (await page.close(), { pass: false, detail: "no search box on the menu page" });
+      const before = await page.evaluate(countAdds, ADD_RE.source);
+      await box.fill("dagwood");
+      await page.waitForTimeout(1000);
+      const after = await page.evaluate(countAdds, ADD_RE.source);
+      await page.close();
+      return { pass: after > 0 && after < before, detail: `"dagwood": ${before} -> ${after} items` };
+    });
+    await menu.close();
+  }
+
+  // One page carries the order from the menu through checkout, since carts often live only in memory.
+  if (!menuPage) Object.assign(out, { cartAdd: missing("menu"), cartQuantity: missing("menu"), checkoutFields: missing("menu"), orderPlaced: missing("menu") });
+  else {
+    const page = await freshPage(context, menuPage.url);
+    out.cartAdd = await attempt(async () => {
+      const before = await page.evaluate(cartCount);
+      if (!(await addFirstItem(page))) return { pass: false, detail: "no add-to-cart button on the menu page" };
+      const after = await page.evaluate(cartCount);
+      return { pass: after > before, detail: `header cart count ${before} -> ${after}` };
+    });
+    out.cartQuantity = await attempt(async () => {
+      const icon = page.locator(":is(header,nav) :is(a,button):visible").filter({ has: page.locator("[aria-label*='cart' i], svg") }).filter({ hasText: /^\s*\d*\s*$/ });
+      const labelled = page
+        .locator(["cart", "basket", "bag"].map((w) => `:is(header,nav) :is(a,button)[aria-label*='${w}' i]:visible`).concat(":is(header,nav) a[href*='cart']:visible").join(", "))
+        .first();
+      let opened = await cartOpen(page);
+      if (!opened) opened = (await clickText(page, /cart|basket|view order|your order/i, "header")) || (await clickText(page, /view cart|checkout|view order/i));
+      if (!opened && (await labelled.count())) opened = !!(await labelled.click({ timeout: 5000 }).then(() => true).catch(() => false));
+      if (!opened && (await icon.count()) === 1) opened = !!(await icon.click({ timeout: 5000 }).then(() => true).catch(() => false));
+      await page.waitForTimeout(900);
+      if (!opened && byRole.order) {
+        await page.goto(byRole.order.url, { waitUntil: "load" });
+        await page.waitForTimeout(1500);
+      }
+      const scope = (await openDialog(page)) || page.locator("body");
+      const totals = async () => (await scope.innerText()).match(/\bR\s?\d+(?:[.,]\d{2})?\b/g)?.join(" ") || "";
+      const before = await totals();
+      const plus = scope.locator("button:visible").filter({ hasText: /^\s*\+\s*$/ }).or(scope.locator("button[aria-label*='increase' i]:visible, button[aria-label*='plus' i]:visible, button[aria-label*='add one' i]:visible")).first();
+      if (!(await plus.count())) return { pass: false, detail: "no + quantity button in the cart" };
+      await plus.click({ timeout: 5000 });
+      await page.waitForTimeout(900);
+      const after = await totals();
+      return { pass: after !== before, detail: `totals ${before.slice(0, 60)} -> ${after.slice(0, 60)}` };
+    });
+    let orderText = "";
+    out.checkoutFields = await attempt(async () => {
+      await clickText(page, /^\s*(checkout|check out|proceed|continue to checkout|go to checkout)\b/i);
+      await page.waitForTimeout(800);
+      const kinds = await page.evaluate(markFields, CHECKOUT_FIELDS);
+      orderText = await page.evaluate(() => document.body.innerText);
+      const fee = /delivery (fee|cost|charge)|delivery[^\n]{0,24}\bR\s?\d+/i.test(orderText);
+      const facts = { fields: kinds.length / CHECKOUT_FIELDS.length, collection: /collect/i.test(orderText) && /deliver/i.test(orderText), cash: /cash/i.test(orderText), fee };
+      const score = (facts.fields + facts.collection + facts.cash + facts.fee) / 4;
+      return { score, detail: `fields ${kinds.join(",") || "none"}; collection/delivery ${facts.collection}; cash ${facts.cash}; delivery fee ${facts.fee}` };
+    });
+    out.paymentHonest = await attempt(async () => {
+      const online = /card|online payment|payfast|yoco|ozow|snapscan|eft/i.test(orderText);
+      const marked = /coming soon|not (yet )?(available|enabled|configured|connected)|unavailable|disabled/i.test(orderText);
+      return { pass: !online || marked, detail: `online payment mentioned ${online}, marked unavailable ${marked}` };
+    });
+    const locationRe = /use (my |your )?(current )?location|locate me|detect (my )?location|share (my |your )?location/i;
+    out.locationAssist = await attempt(async () => {
+      if (!orderText) return { pass: false, detail: "checkout not reached" };
+      if (locationRe.test(orderText)) return { pass: true, detail: "" };
+      // The location option often appears only once delivery is chosen.
+      await clickText(page, /^\s*(deliver|delivery)\b/i);
+      await page.waitForTimeout(600);
+      return { pass: locationRe.test(await page.evaluate(() => document.body.innerText)), detail: "after choosing delivery" };
+    });
+    out.orderPlaced = await attempt(async () => {
+      await clickText(page, /^\s*(collect|collection|pick ?up)/i);
+      await clickText(page, /cash/i);
+      await page.evaluate(markFields, CHECKOUT_FIELDS);
+      const filled = await fillMarked(page, CHECKOUT);
+      const before = await page.evaluate(() => document.body.innerText);
+      if (!(await clickText(page, /place\b[^\n]{0,20}\border\b|confirm (my )?order|submit (my )?order|complete (my )?order|send (my )?order/i)))
+        return { pass: false, detail: `filled ${filled.join(",") || "nothing"}; no place-order button` };
+      await page.waitForTimeout(1500);
+      const fresh = newLines(before, await page.evaluate(() => document.body.innerText));
+      // An order number either follows a label ("Order #1042", "Order no. RC-1042") or stands on its own line ("RC-2792F38F", "RSC-2611-2727");
+      // a standalone price such as "R100" is not one.
+      const labelled = /order[^\n]{0,24}(#|no\.?|number|id|ref)[^\n]{0,6}[A-Z]{0,5}-?\d{3,}|#\s?[A-Z]{0,5}-?\d{3,}/i;
+      const standalone = /^#?\s?[A-Z]{1,6}(?:[-\s]?[A-Z0-9]{2,12}){1,3}$/;
+      const number = fresh.find((l) => labelled.test(l) || (standalone.test(l) && /\d/.test(l) && !/^R\s?\d+(?:[.,]\d{2})?$/.test(l)));
+      const progress = fresh.find((l) => /received|accepted|preparing|being prepared|ready|completed|pending|on its way/i.test(l));
+      out.orderProgress = { pass: !!progress, detail: progress || "no order status after placing" };
+      return { pass: !!number, detail: `filled ${filled.join(",")}; ${number || "no order number"}` };
+    });
+    out.orderProgress ??= { pass: false, detail: "order not placed" };
+    await page.close();
+  }
+
+  if (!byRole.gallery) out.lightbox = missing("gallery");
+  else {
+    const page = await freshPage(context, byRole.gallery.url);
+    out.lightbox = await attempt(async () => {
+      const img = page.locator("main img:visible").first();
+      if (!(await img.count())) return { pass: false, detail: "no visible gallery image" };
+      const before = await page.evaluate(overlayOpen);
+      await img.scrollIntoViewIfNeeded();
+      await img.click({ force: true, timeout: 5000 });
+      await page.waitForTimeout(1000);
+      const after = await page.evaluate(overlayOpen);
+      return { pass: !before && after, detail: `overlay before ${before}, after ${after}` };
+    });
+    await page.close();
+  }
+
+  if (!byRole.reviews) out.reviewSubmit = missing("reviews");
+  else {
+    const page = await freshPage(context, byRole.reviews.url);
+    out.reviewSubmit = await attempt(async () => {
+      const specs = [["name", "\\bname\\b"], ["comment", "review|comment|message|experience|textarea"]];
+      let kinds = await page.evaluate(markFields, specs);
+      // Many review forms sit behind a button that opens them.
+      if (!kinds.includes("comment") && (await clickText(page, /share your experience|write a review|leave a review|add a review|review us|rate us/i))) kinds = await page.evaluate(markFields, specs);
+      if (!kinds.includes("comment")) return { pass: false, form: false, detail: "no review form" };
+      // A forced click on a star behind a modal's backdrop would land on the backdrop and close the form, so look inside the open dialog.
+      const scope = (await openDialog(page)) || page.locator("body");
+      const star = scope.locator("button[aria-label*='5 star' i]:visible, button[aria-label*='five' i]:visible, label[for*='5']:visible, input[type=radio][value='5']").first();
+      if (await star.count()) await star.click({ force: true, timeout: 3000 }).catch(() => {});
+      await fillMarked(page, { name: "Lerato Dlamini", comment: "Generous kota and friendly service. Will be back." });
+      const before = await page.evaluate(() => document.body.innerText);
+      const submitRe = /submit|post|send|leave (a )?review|add review|share/i;
+      const submitted = (await clickText(page, submitRe, "[role=dialog]")) || (await clickText(page, submitRe, "form"));
+      if (!submitted) return { pass: false, form: true, detail: "no submit button in the review form" };
+      await page.waitForTimeout(1200);
+      const message = newLines(before, await page.evaluate(() => document.body.innerText)).find((l) => /thank|pending|moderat|submitted|received|approved/i.test(l));
+      return { pass: !!message, form: true, detail: message || "no acknowledgement" };
+    });
+    await page.close();
+  }
+
+  // Admin last: the CMS check edits stored content, and nothing after it should see that edit.
+  const adminPage = pages.find((p) => /admin|dashboard|designer/.test(p.path)) || byRole.login;
+  if (!adminPage) Object.assign(out, { admin: missing("login"), cms: missing("login") });
+  else {
+    const page = await freshPage(context, adminPage.url);
+    out.admin = await attempt(async () => {
+      const areas = async () => {
+        const text = (await page.evaluate(() => document.body.innerText)).toLowerCase();
+        return { text, n: ADMIN_AREAS.filter((re) => re.test(text)).length };
+      };
+      const before = await areas();
+      await clickText(page, /^\s*(admin|administrator|staff|designer)\b/i);
+      const email = page.locator("input[type=email]:visible, input[name*='email' i]:visible, input[placeholder*='email' i]:visible").first();
+      const password = page.locator("input[type=password]:visible").first();
+      if ((await email.count()) && (await password.count())) {
+        // The instruction asks for the demo administrator's email and password to be shown on the login screen.
+        const shown = await page.evaluate(() => document.body.innerText);
+        const emails = shown.match(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g) || [];
+        const shownEmail = emails.find((e) => /admin/i.test(e));
+        const afterEmail = shownEmail ? shown.slice(shown.indexOf(shownEmail)) : shown;
+        const shownPassword = afterEmail.match(/password\s*:\s*(\S{6,})/i)?.[1];
+        await email.fill(shownEmail || ADMIN.email);
+        await password.fill(shownPassword || ADMIN.password);
+        await password.press("Enter");
+        await page.waitForTimeout(1500);
+      }
+      await clickText(page, /open (the )?(designer|admin|dashboard)|go to dashboard|enter dashboard/i);
+      await page.waitForTimeout(800);
+      const after = await areas();
+      // A login page can name a few management areas too, so the dashboard must either say so or show clearly more of them.
+      const inside = !(await page.locator("input[type=password]:visible").count()) && (/dashboard|log ?out|sign ?out|overview|workspace/.test(after.text) || after.n >= before.n + 2);
+      return { score: inside ? Math.min(1, after.n / 6) : 0, detail: `${inside ? "dashboard" : "still at login"}; ${after.n}/${ADMIN_AREAS.length} management areas` };
+    });
+    out.cms = await attempt(async () => {
+      if (!out.admin.score) return { pass: false, detail: "admin dashboard not reached" };
+      const findHeadline = () =>
+        page.evaluate((needle) => {
+          const editable = [...document.querySelectorAll("input,textarea,[contenteditable=true]")];
+          // The headline field starts with the headline; other copy can mention "big flavour" too.
+          const el = editable.find((e) => (e.value ?? e.innerText ?? "").trim().toLowerCase().startsWith(needle) && e.getBoundingClientRect().width > 0);
+          if (el) el.setAttribute("data-sbf", "headline");
+          return !!el;
+        }, "big flavour");
+      let found = await findHeadline();
+      for (const re of [/content|pages?|website|homepage|home/i, /hero|banner|slides?|media/i, /text|cms|edit/i]) {
+        if (found) break;
+        const tabs = page.locator("main :is(button,a,[role=tab]):visible, aside :is(button,a,[role=tab]):visible, nav :is(button,a,[role=tab]):visible").filter({ hasText: re });
+        for (let i = 0; i < Math.min(3, await tabs.count()) && !found; i++) {
+          await tabs.nth(i).click({ timeout: 3000 }).catch(() => {});
+          await page.waitForTimeout(700);
+          found = await findHeadline();
+        }
+      }
+      if (!found) return { pass: false, detail: "no editable field holding the hero headline" };
+      await page.locator('[data-sbf="headline"]').fill(CMS_MARK);
+      await page.locator('[data-sbf="headline"]').press("Tab");
+      await clickText(page, /^\s*(save|update|publish|apply)\b/i);
+      await page.waitForTimeout(800);
+      await page.goto(url, { waitUntil: "load" });
+      await page.waitForTimeout(2000);
+      const shown = (await page.evaluate(() => document.body.innerText)).includes(CMS_MARK);
+      return { score: shown ? 1 : 0.5, detail: shown ? "edited headline shows on the home page" : "headline field edited, but the home page did not change" };
+    });
+    await page.close();
+  }
   return out;
 }
 
 export async function interactMobile(context, url) {
-  const out = {};
-  const page = await freshPage(context, url);
-  const navVisible = (items) =>
-    [...document.querySelectorAll("a,button")].filter((el) => {
-      const r = el.getBoundingClientRect();
-      const label = (el.innerText || "").toLowerCase().replace(/[^a-z ]+/g, " ").replace(/\s+/g, " ").trim();
-      return items.includes(label) && r.width > 0 && r.bottom > 0 && r.top < innerHeight && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-    }).length;
-  out.mobileOrderNow = await attempt(async () => {
-    const shown = await page.evaluate(() =>
-      [...document.querySelectorAll("a,button")].some((el) => {
-        const r = el.getBoundingClientRect();
-        return /order now/i.test(el.innerText || "") && r.width > 0 && r.top >= 0 && r.bottom <= innerHeight && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
-      }));
-    return { pass: shown, detail: `"Order now" readable in the first phone screen: ${shown}` };
-  });
-  out.mobileMenu = await attempt(async () => {
-    const before = await page.evaluate(navVisible, NAV_ITEMS);
-    // A bottom tab bar that already shows the pages is a mobile navigation too.
-    if (before >= 4) return { pass: true, detail: `${before} page links visible without a toggle` };
-    let toggle = page.locator("button[aria-label*='menu' i]:visible, button[aria-label*='navigation' i]:visible, header [aria-expanded]:visible, header [aria-controls]:visible").first();
-    if (!(await toggle.count())) toggle = page.locator("header button:visible, nav button:visible").filter({ hasNotText: /\w/ }).last();
-    if (!(await toggle.count())) return { pass: false, detail: "no menu toggle found" };
-    await toggle.click({ timeout: 5000 });
-    await page.waitForTimeout(1000);
-    const after = await page.evaluate(navVisible, NAV_ITEMS);
-    return { pass: after >= 4, detail: `page links visible ${before} -> ${after}` };
-  });
-  await page.close();
-  out.mobilePagesFit = await attempt(async () => {
-    const over = [];
-    for (const name of Object.keys(PAGES)) {
-      const p = await openPage(context, url, name);
-      const o = (await p.evaluate(pageState)).overflowX;
-      if (o > 1) over.push(`${name} ${o}px`);
-      await p.close();
-    }
-    return { pass: !over.length, score: 1 - over.length / Object.keys(PAGES).length, detail: over.join(", ") || "all pages fit" };
-  });
-  return out;
+  return { mobileMenu: await checkMobileMenu(context, url, NAV_ITEMS) };
 }
