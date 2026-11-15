@@ -7,6 +7,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SNAP = ROOT / "data/snapshots"
 DB = pathlib.Path(os.environ.get("ARENA_DB", pathlib.Path.home() / "slopbench-arena-data/arena.db"))
 CATEGORY_WEIGHTS = {"same_prompt": 0.3, "arena_cross": 0.25, "arena_vs_web": 0.3, "web_web": 0.15}
+# Per-site sampling weight within a category; pre-2022 archive sites are shown less often.
+SPLIT_WEIGHTS = {"yc-pre2022": 0.3}
 
 app = Flask(__name__, static_folder="static")
 
@@ -228,7 +230,9 @@ def next_pair():
     cat = random.choices(names, weights=[CATEGORY_WEIGHTS.get(c, 0.1) for c in names])[0]
     ps = avail[cat]
     low = min(counts[pair_key(*p)] for p in ps)
-    a, b = random.choice([p for p in ps if counts[pair_key(*p)] == low])
+    least = [p for p in ps if counts[pair_key(*p)] == low]
+    w = [SPLIT_WEIGHTS.get(S[x]["split"], 1.0) * SPLIT_WEIGHTS.get(S[y]["split"], 1.0) for x, y in least]
+    a, b = random.choices(least, weights=w)[0]
     if random.random() < 0.5:
         a, b = b, a
     prompt = S[a]["prompt"] if cat == "same_prompt" else None
