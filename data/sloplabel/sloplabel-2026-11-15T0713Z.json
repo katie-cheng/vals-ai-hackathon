@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794732818.2966156
+   "updated_at": 1794732971.3156734
   }
  ],
  "labels": [
@@ -11982,6 +11982,35 @@
    "shot_status": "none",
    "created_at": 1794732780.0,
    "updated_at": 1794732780.0
+  },
+  {
+   "id": 500,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R40\"]",
+   "comment": "the timeline has a lot of negative space and the left side cards should not be right aligned and the text should prob be a bit more condensed, titles of each card should be serif",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "process timeline",
+   "component_chain": null,
+   "selector": "#process",
+   "selector_confidence": "manual",
+   "tag": "section",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"zigzag two-column timeline, left cards right-aligned, p-8 cards, Inter titles\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794732900.0,
+   "updated_at": 1794732900.0
   }
  ]
 }

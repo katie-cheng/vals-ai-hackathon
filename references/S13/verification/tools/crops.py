@@ -16,7 +16,7 @@ HEADER = dict(sel="header", clip_top=110)
 HERO_TOP = dict(sel="#top h1", pad=170)
 SVC = dict(sel="#service-panel", pad=24)
 SLIDER = dict(sel="#results [role=slider]", pad=16)
-STEPS = dict(sel="#process .space-y-10", pad=10, maxh=900)
+STEPS = dict(sel="#process ol", pad=10, maxh=900)
 # where each critiqued element lives (or used to live) in the rebuild
 SPEC = {
     38: HERO_TOP, 40: HERO_TOP, 46: dict(sel="#top h1", pad=30),
@@ -31,8 +31,8 @@ SPEC = {
     174: dict(SLIDER, keys=["Home"] + ["ArrowRight"] * 12), 190: dict(SLIDER, keys=["End"] + ["ArrowLeft"] * 3),
     168: dict(sel="#results [role=slider]", pad=16, below=150),
     228: dict(sel="#process h3 >> nth=0", pad=120), 235: dict(sel="#process h3 >> nth=1", pad=120),
-    230: dict(sel="#process .space-y-10 .rounded-full >> nth=0", pad=40),
-    239: dict(sel="#process .space-y-10 .rounded-full >> nth=2", pad=40),
+    230: dict(sel="#process ol .rounded-full >> nth=0", pad=40),
+    239: dict(sel="#process ol .rounded-full >> nth=2", pad=40),
     237: STEPS, 246: STEPS,
     255: dict(sel="#why-us h2", pad=40, below=420), 256: dict(sel="#why-us h2", pad=40, below=420),
     258: dict(sel="#why-us h2", pad=40, below=420), 260: dict(sel="#why-us h2", pad=60),

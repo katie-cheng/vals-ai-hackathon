@@ -232,5 +232,11 @@
   "sent_at": "2026-11-15T00:53-08:00",
   "element": "page loader",
   "comment": "i liked having the loader screen before all the elements loaded in, it should just not have any text on it and just a very very simple circle loading animation and be very fast and then fade the page in"
+ },
+ {
+  "rid": "R40",
+  "sent_at": "2026-11-15T00:55-08:00",
+  "element": "process timeline",
+  "comment": "the timeline has a lot of negative space and the left side cards should not be right aligned and the text should prob be a bit more condensed, titles of each card should be serif"
  }
 ]
