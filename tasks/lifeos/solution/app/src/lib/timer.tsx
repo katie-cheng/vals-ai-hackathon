@@ -31,37 +31,41 @@ export function TimerProvider({ children }: { children: ReactNode }) {
   const [label, setLabel] = useState("");
   const [cycle, setCycle] = useState(0);
   const endAt = useRef(0);
+  // Length of the countdown currently loaded, so a session is credited with what was actually timed.
+  const length = useRef(minutesFor("focus"));
+  const load = (m: TimerMode) => { length.current = minutesFor(m); setRemaining(minutesFor(m) * 60); };
 
   // Duration changes in settings apply immediately while the timer is idle.
   useEffect(() => {
-    if (!running) setRemaining(minutesFor(mode) * 60);
+    if (!running) load(mode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [minutesFor]);
 
   const setMode = (m: TimerMode) => {
     setModeState(m);
     setRunning(false);
-    setRemaining(minutesFor(m) * 60);
+    load(m);
   };
 
-  const finish = useCallback(() => {
+  const finish = useCallback((completed: boolean) => {
     setRunning(false);
     if (mode === "focus") {
-      addSession({ mode, minutes: minutesFor("focus"), label: label.trim() || "Focus session", completedAt: Date.now() });
+      if (completed) addSession({ mode, minutes: length.current, label: label.trim() || "Focus session", completedAt: Date.now() });
       const next = (cycle + 1) % s.longEvery === 0 ? "long" : "short";
       setCycle((c) => c + 1);
-      toast(`Focus session complete. Time for a ${next === "long" ? "long" : "short"} break.`);
+      toast(completed ? `Focus session complete. Time for a ${next === "long" ? "long" : "short"} break.` : "Focus session skipped.", completed ? "success" : "info");
       setModeState(next);
-      setRemaining(minutesFor(next) * 60);
-      if (s.autoStartBreaks) {
+      load(next);
+      if (completed && s.autoStartBreaks) {
         endAt.current = Date.now() + minutesFor(next) * 60_000;
         setRunning(true);
       }
     } else {
-      toast("Break finished. Ready for the next focus session?", "info");
+      toast(completed ? "Break finished. Ready for the next focus session?" : "Break skipped.", "info");
       setModeState("focus");
-      setRemaining(minutesFor("focus") * 60);
+      load("focus");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, label, cycle, s.longEvery, s.autoStartBreaks, minutesFor, addSession, toast]);
 
   useEffect(() => {
@@ -69,7 +73,7 @@ export function TimerProvider({ children }: { children: ReactNode }) {
     const tick = () => {
       const left = Math.max(0, Math.round((endAt.current - Date.now()) / 1000));
       setRemaining(left);
-      if (left === 0) finish();
+      if (left === 0) finish(true);
     };
     const id = window.setInterval(tick, 250);
     return () => window.clearInterval(id);
@@ -79,8 +83,8 @@ export function TimerProvider({ children }: { children: ReactNode }) {
     mode, remaining, total: minutesFor(mode) * 60, running, label, cycle, setLabel, setMode,
     start: () => { endAt.current = Date.now() + remaining * 1000; setRunning(true); },
     pause: () => setRunning(false),
-    reset: () => { setRunning(false); setRemaining(minutesFor(mode) * 60); },
-    skip: () => finish(),
+    reset: () => { setRunning(false); load(mode); },
+    skip: () => finish(false),
   };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
