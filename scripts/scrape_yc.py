@@ -2,7 +2,7 @@
 
 Sets (stratified by industry, seed 0):
   pre2022: batches <= 2021, rendered from the Internet Archive snapshot closest to 2021-07-01 (pre-ChatGPT human-made reference set)
-  current: batches 2025-2026, rendered live (in-the-wild mix)
+  current: batches 2024+, rendered live (in-the-wild mix)
 
 Source list: data/yc/yc-oss-all.json from https://yc-oss.github.io/api/companies/all.json
 Output: data/snapshots/yc/<set>/<slug>/{desktop,mobile}.{png,html}, meta.json; plus data/yc/<set>.jsonl
@@ -47,7 +47,7 @@ companies = json.load(open(ROOT / "data/yc/yc-oss-all.json"))
 if args.set == "pre2022":
     pool = [c for c in companies if c.get("website") and year(c) and year(c) <= 2021]
 else:
-    pool = [c for c in companies if c.get("website") and year(c) in (2025, 2026)]
+    pool = [c for c in companies if c.get("website") and year(c) and year(c) >= 2024]
 candidates = stratified(pool, args.n)
 out_dir = ROOT / "data/snapshots/yc" / args.set
 out_dir.mkdir(parents=True, exist_ok=True)

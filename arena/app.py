@@ -8,7 +8,7 @@ SNAP = ROOT / "data/snapshots"
 DB = pathlib.Path(os.environ.get("ARENA_DB", pathlib.Path.home() / "slopbench-arena-data/arena.db"))
 CATEGORY_WEIGHTS = {"same_prompt": 0.15, "arena_cross": 0.2, "arena_vs_web": 0.35, "web_web": 0.3}
 # Per-site sampling weight within a category; pre-2022 archive sites are shown less often.
-SPLIT_WEIGHTS = {"yc-pre2022": 0.3}
+SPLIT_WEIGHTS = {"yc-pre2022": 0.1}
 
 app = Flask(__name__, static_folder="static")
 
