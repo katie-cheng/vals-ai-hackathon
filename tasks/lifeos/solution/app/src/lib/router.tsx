@@ -14,20 +14,20 @@ export const ROUTES: Route[] = [
 ];
 
 const normalize = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
-const Ctx = createContext<{ path: string; search: string; navigate(to: string): void }>({ path: "/", search: "", navigate: () => {} });
+const Ctx = createContext<{ path: string; search: string; visit: number; navigate(to: string): void }>({ path: "/", search: "", visit: 0, navigate: () => {} });
 
 export function Router({ children }: { children: ReactNode }) {
-  const [loc, setLoc] = useState(() => ({ path: normalize(location.pathname), search: location.search }));
+  const [loc, setLoc] = useState(() => ({ path: normalize(location.pathname), search: location.search, visit: 0 }));
   useEffect(() => {
-    const onPop = () => setLoc({ path: normalize(location.pathname), search: location.search });
+    const onPop = () => setLoc((l) => ({ path: normalize(location.pathname), search: location.search, visit: l.visit + 1 }));
     addEventListener("popstate", onPop);
     return () => removeEventListener("popstate", onPop);
   }, []);
   const navigate = (to: string) => {
     const url = new URL(to, location.href);
-    const next = { path: normalize(url.pathname), search: url.search };
-    if (next.path !== loc.path || next.search !== loc.search) history.pushState(null, "", url.pathname + url.search);
-    setLoc(next);
+    if (url.pathname + url.search !== location.pathname + location.search) history.pushState(null, "", url.pathname + url.search);
+    // A query link (?new=1, ?q=) is an instruction to the page, so it remounts the page even when already there.
+    setLoc((l) => ({ path: normalize(url.pathname), search: url.search, visit: url.search ? l.visit + 1 : l.visit }));
     window.scrollTo({ top: 0 });
   };
   return <Ctx.Provider value={{ ...loc, navigate }}>{children}</Ctx.Provider>;
