@@ -1,6 +1,6 @@
 const $ = id => document.getElementById(id);
 let voter = localStorage.getItem('arenaVoter') || '';
-let cur = null, shownAt = 0, n = 0, busy = false;
+let cur = null, ahead = null, shownAt = 0, n = 0, busy = false;
 const view = () => $('view').value;
 
 function toast(t){const el=$('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),900);}
@@ -15,15 +15,27 @@ function render(){
   }
 }
 
+function fetchPair(exclude){
+  const q = '/api/next?voter=' + encodeURIComponent(voter) + (exclude ? '&exclude=' + exclude.left.id + ',' + exclude.right.id : '');
+  return fetch(q).then(r => r.json());
+}
+
+function preload(p){
+  if (!p || p.done) return;
+  for (const s of [p.left, p.right]) for (const v of ['desktop', 'mobile']) { const i = new Image(); i.src = s[v]; }
+}
+
 async function next(){
   busy = true;
-  const r = await fetch('/api/next?voter=' + encodeURIComponent(voter)).then(r => r.json());
+  const r = ahead ? await ahead : await fetchPair();
+  ahead = null;
   if (r.done) { $('arena').innerHTML = '<p style="padding:24px">No pairs left for you. Thanks!</p>'; return; }
   cur = r; shownAt = Date.now();
   for (const k of ['A','B']) { $('broken'+k).checked = false; $('ship'+k).value = ''; }
   $('reason').value = '';
   $('brief').hidden = !r.prompt; $('brief').open = false; $('brieftext').textContent = r.prompt || '';
   render(); busy = false;
+  ahead = fetchPair(r); ahead.then(preload);
 }
 
 async function vote(choice){
@@ -42,7 +54,7 @@ document.querySelectorAll('[data-c]').forEach(b => b.addEventListener('click', (
 $('view').addEventListener('change', render);
 document.addEventListener('keydown', e => {
   if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName) || $('arena').hidden) return;
-  const m = {'1':'left','2':'same','3':'right','s':'skip','S':'skip'}[e.key];
+  const m = {'1':'left','2':'right','3':'both','4':'neither','s':'skip','S':'skip'}[e.key];
   if (m) { e.preventDefault(); vote(m); }
   if (e.key === 'v') { $('view').value = view() === 'desktop' ? 'mobile' : 'desktop'; render(); }
 });

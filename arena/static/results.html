@@ -15,7 +15,7 @@ fetch('/api/results').then(r=>r.json()).then(d=>{
   const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   document.getElementById('models').innerHTML='<tr><th>Model</th><th class="num">Sites</th><th class="num">Mean score</th></tr>'+
     d.models.map(m=>`<tr><td>${esc(m.model)}</td><td class="num">${m.sites}</td><td class="num">${m.mean_score.toFixed(2)}</td></tr>`).join('');
-  document.getElementById('sites').innerHTML='<tr><th>Site</th><th>Split</th><th>Model</th><th class="num">Score</th><th class="num">Votes</th><th class="num">Broken</th><th class="num">Ship yes/no</th></tr>'+
-    d.sites.map(s=>`<tr><td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.id)}</a></td><td>${esc(s.split)}</td><td>${esc(s.model)}</td><td class="num">${s.score.toFixed(2)}</td><td class="num">${s.votes}</td><td class="num">${s.broken}</td><td class="num">${s.ship_yes}/${s.ship_no}</td></tr>`).join('');
+  document.getElementById('sites').innerHTML='<tr><th>Site</th><th>Split</th><th>Model</th><th class="num">Score</th><th class="num">Votes</th><th class="num">Broken</th><th class="num">Ship yes/no</th><th class="num">Both/neither slop</th></tr>'+
+    d.sites.map(s=>`<tr><td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.id)}</a></td><td>${esc(s.split)}</td><td>${esc(s.model)}</td><td class="num">${s.score.toFixed(2)}</td><td class="num">${s.votes}</td><td class="num">${s.broken}</td><td class="num">${s.ship_yes}/${s.ship_no}</td><td class="num">${s.both_slop}/${s.neither_slop}</td></tr>`).join('');
 });
 </script></body></html>

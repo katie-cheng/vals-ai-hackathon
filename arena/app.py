@@ -1,5 +1,5 @@
 """Slop Arena: blind pairwise "which site is sloppier?" votes."""
-import hashlib, json, math, os, pathlib, random, sqlite3, threading, time
+import functools, hashlib, io, json, math, os, pathlib, random, sqlite3, threading, time
 from collections import defaultdict
 from flask import Flask, abort, g, jsonify, request, send_file, send_from_directory
 
@@ -13,7 +13,7 @@ app = Flask(__name__, static_folder="static")
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS votes (
   id INTEGER PRIMARY KEY, voter TEXT NOT NULL, left_id TEXT NOT NULL, right_id TEXT NOT NULL,
-  category TEXT, view TEXT, choice TEXT NOT NULL CHECK (choice IN ('left','right','same','skip')),
+  category TEXT, view TEXT, choice TEXT NOT NULL CHECK (choice IN ('left','right','same','both','neither','skip')),
   reason TEXT, broken_left INTEGER DEFAULT 0, broken_right INTEGER DEFAULT 0,
   ship_left TEXT, ship_right TEXT, ms INTEGER, created_at REAL NOT NULL);
 """
@@ -24,6 +24,10 @@ def db():
         DB.parent.mkdir(parents=True, exist_ok=True)
         g.db = sqlite3.connect(DB)
         g.db.row_factory = sqlite3.Row
+        old = g.db.execute("SELECT sql FROM sqlite_master WHERE name='votes'").fetchone()
+        if old and "'both'" not in old[0]:
+            g.db.executescript("ALTER TABLE votes RENAME TO votes_old;" + SCHEMA +
+                               "INSERT INTO votes SELECT * FROM votes_old; DROP TABLE votes_old;")
         g.db.executescript(SCHEMA)
     return g.db
 
@@ -92,12 +96,19 @@ def pair_key(a, b):
     return tuple(sorted((a, b)))
 
 
-def token(sid):
-    """Opaque per-site id so voters can't tell arena sites, YC sites or models apart from the id."""
+@functools.lru_cache(maxsize=1)
+def salt():
     salt_file = DB.parent / "salt"
     if not salt_file.exists():
+        salt_file.parent.mkdir(parents=True, exist_ok=True)
         salt_file.write_text(os.urandom(16).hex())
-    return hashlib.sha256((salt_file.read_text() + sid).encode()).hexdigest()[:12]
+    return salt_file.read_text()
+
+
+@functools.lru_cache(maxsize=None)
+def token(sid):
+    """Opaque per-site id so voters can't tell arena sites, YC sites or models apart from the id."""
+    return hashlib.sha256((salt() + sid).encode()).hexdigest()[:12]
 
 
 def resolve(tok):
@@ -109,7 +120,7 @@ def resolve(tok):
 
 def public_site(s):
     t = token(s["id"])
-    return {"id": t, "desktop": f"/shots/{t}/desktop.png", "mobile": f"/shots/{t}/mobile.png", "live": s["url"]}
+    return {"id": t, "desktop": f"/shots/{t}/desktop.webp", "mobile": f"/shots/{t}/mobile.webp", "live": s["url"]}
 
 
 @app.get("/")
@@ -122,15 +133,57 @@ def results_page():
     return send_from_directory(app.static_folder, "results.html")
 
 
-@app.get("/shots/<sid>/<view>.png")
-def shot(sid, view):
+CACHE = DB.parent / "shots"
+SHOT_WIDTH = {"desktop": 1000, "mobile": 390}
+MAX_SHOT_HEIGHT = 9000
+
+
+def compressed_shot(s, view):
+    """Full-page PNGs are multi-MB; serve a resized, height-capped WebP, cached on disk."""
+    src = pathlib.Path(s["dir"]) / f"{view}.png"
+    if not src.exists():
+        return None
+    out = CACHE / f"{token(s['id'])}-{view}.webp"
+    if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
+        from PIL import Image
+        im = Image.open(src).convert("RGB")
+        w = SHOT_WIDTH[view]
+        h = min(round(im.height * w / im.width), MAX_SHOT_HEIGHT)
+        im = im.crop((0, 0, im.width, round(h * im.width / w))).resize((w, h), Image.LANCZOS)
+        CACHE.mkdir(parents=True, exist_ok=True)
+        tmp = out.with_suffix(f".{os.getpid()}.tmp")
+        im.save(tmp, "WEBP", quality=72, method=4)
+        tmp.replace(out)
+    return out
+
+
+@app.get("/shots/<sid>/<view>.<ext>")
+def shot(sid, view, ext):
     s = sites().get(resolve(sid) or "")
     if not s or view not in ("desktop", "mobile"):
         abort(404)
-    p = pathlib.Path(s["dir"]) / f"{view}.png"
-    if not p.exists():
+    p = compressed_shot(s, view) if ext == "webp" else pathlib.Path(s["dir"]) / f"{view}.png"
+    if not p or not p.exists():
         abort(404)
-    return send_file(p, max_age=3600)
+    return send_file(p, max_age=86400)
+
+
+def warm_cache():
+    import fcntl
+    CACHE.mkdir(parents=True, exist_ok=True)
+    lock = open(CACHE / ".warm.lock", "w")
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        return
+    while True:
+        for s in list(sites().values()):
+            for view in SHOT_WIDTH:
+                try:
+                    compressed_shot(s, view)
+                except Exception:
+                    pass
+        time.sleep(60)
 
 
 @app.get("/api/next")
@@ -145,6 +198,9 @@ def next_pair():
         counts[k] += 1
         if r["voter"] == voter:
             mine.add(k)
+    ex = [resolve(t) for t in (request.args.get("exclude") or "").split(",") if t]
+    if len(ex) == 2 and all(ex):
+        mine.add(pair_key(*ex))
     avail = {c: [p for p in ps if pair_key(*p) not in mine] for c, ps in cats.items()}
     avail = {c: ps for c, ps in avail.items() if ps}
     if not avail:
@@ -166,7 +222,7 @@ def vote():
     voter = (v.get("voter") or "").strip()
     S = sites()
     v["left"], v["right"] = resolve(v.get("left") or ""), resolve(v.get("right") or "")
-    if not voter or v.get("left") not in S or v.get("right") not in S or v.get("choice") not in ("left", "right", "same", "skip"):
+    if not voter or v.get("left") not in S or v.get("right") not in S or v.get("choice") not in ("left", "right", "both", "neither", "skip"):
         abort(400)
     db().execute(
         "INSERT INTO votes (voter,left_id,right_id,category,view,choice,reason,broken_left,broken_right,ship_left,ship_right,ms,created_at)"
@@ -206,20 +262,23 @@ def results():
     S = sites()
     rows = [dict(r) for r in db().execute("SELECT * FROM votes ORDER BY id").fetchall()]
     real = [r for r in rows if r["choice"] != "skip" and r["left_id"] in S and r["right_id"] in S]
-    comps = [(r["left_id"], r["right_id"], {"left": 1.0, "right": 0.0, "same": 0.5}[r["choice"]]) for r in real]
+    comps = [(r["left_id"], r["right_id"], {"left": 1.0, "right": 0.0}.get(r["choice"], 0.5)) for r in real]
     ids = sorted({x for c in comps for x in c[:2]})
     scores = bradley_terry(comps, ids) if ids else {}
     nvotes = defaultdict(int)
     broken, ship = defaultdict(int), defaultdict(lambda: [0, 0])
+    both, neither = defaultdict(int), defaultdict(int)
     for r in real:
         for side in ("left", "right"):
             sid = r[f"{side}_id"]
             nvotes[sid] += 1
+            both[sid] += r["choice"] == "both"
+            neither[sid] += r["choice"] == "neither"
             broken[sid] += r[f"broken_{side}"]
             if r[f"ship_{side}"] in ("yes", "no"):
                 ship[sid][0 if r[f"ship_{side}"] == "yes" else 1] += 1
     site_rows = sorted(({"id": i, "split": S[i]["split"], "model": S[i]["model"], "score": round(scores[i], 3),
-                         "votes": nvotes[i], "broken": broken[i], "ship_yes": ship[i][0], "ship_no": ship[i][1],
+                         "votes": nvotes[i], "broken": broken[i], "both_slop": both[i], "neither_slop": neither[i], "ship_yes": ship[i][0], "ship_no": ship[i][1],
                          "url": S[i]["url"]} for i in ids), key=lambda r: -r["score"])
     by_model = defaultdict(list)
     for r in site_rows:
@@ -229,7 +288,7 @@ def results():
     pv = defaultdict(list)
     for r in real:
         k = pair_key(r["left_id"], r["right_id"])
-        winner = {"left": r["left_id"], "right": r["right_id"], "same": "same"}[r["choice"]]
+        winner = {"left": r["left_id"], "right": r["right_id"]}.get(r["choice"], r["choice"])
         pv[k].append((r["voter"], winner))
     agree = [len({w for _, w in vs}) == 1 for vs in pv.values() if len({v for v, _ in vs}) >= 2]
     voters = defaultdict(int)
@@ -249,6 +308,9 @@ def export():
     rows = [dict(r) for r in db().execute("SELECT * FROM votes ORDER BY id").fetchall()]
     meta = {k: {f: v for f, v in s.items() if f != "dir"} for k, s in S.items()}
     return jsonify({"exported_at": time.time(), "sites": meta, "votes": rows})
+
+
+threading.Thread(target=warm_cache, daemon=True).start()
 
 
 if __name__ == "__main__":
