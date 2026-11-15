@@ -47,7 +47,7 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-ink/10 bg-ivory px-5 pt-2 pb-6 sm:px-8 min-[1100px]:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="max-h-[calc(100svh-4.5rem)] overflow-y-auto overscroll-contain border-t border-ink/10 bg-ivory px-5 pt-2 pb-6 sm:px-8 min-[1100px]:hidden">
           <ul>
             {NAV.map((item) => (
               <li key={item.href} className="border-b border-ink/10">
