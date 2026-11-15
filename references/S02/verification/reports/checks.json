@@ -1,0 +1,500 @@
+{
+ "url": "http://localhost:4303",
+ "passed": 122,
+ "failed": 0,
+ "results": {
+  "no console errors, page errors or failed requests on 15 routes @1440": {
+   "pass": true,
+   "detail": []
+  },
+  "no third-party requests @1440": {
+   "pass": true,
+   "detail": []
+  },
+  "no console errors, page errors or failed requests on 15 routes @390": {
+   "pass": true,
+   "detail": []
+  },
+  "no third-party requests @390": {
+   "pass": true,
+   "detail": []
+  },
+  "no horizontal overflow on 15 routes at [360, 390, 480, 600, 768, 900, 1024, 1180, 1279, 1280, 1440]": {
+   "pass": true,
+   "detail": []
+  },
+  "header links, buttons, options and badges stay on one line at every width": {
+   "pass": true,
+   "detail": []
+  },
+  "no button, option or badge label is clipped at any width": {
+   "pass": true,
+   "detail": []
+  },
+  "CLS 0 on a throttled cold load of every route (1440 and 390)": {
+   "pass": true,
+   "detail": []
+  },
+  "hovering rows and buttons shifts nothing": {
+   "pass": true,
+   "detail": 0
+  },
+  "all 66 internal links resolve to a page (and anchor)": {
+   "pass": true,
+   "detail": []
+  },
+  "external links": {
+   "pass": true,
+   "detail": [
+    "https://github.com/AjinLab/it-beginner-website"
+   ]
+  },
+  "every control has an accessible name": {
+   "pass": true,
+   "detail": []
+  },
+  "every image has alt": {
+   "pass": true,
+   "detail": []
+  },
+  "exactly one h1 per route": {
+   "pass": true,
+   "detail": []
+  },
+  "unknown route falls back to the landing page": {
+   "pass": true,
+   "detail": ""
+  },
+  "nav: Dashboard opens /dashboard and is marked current": {
+   "pass": true,
+   "detail": ""
+  },
+  "nav: Curriculum opens /courses and is marked current": {
+   "pass": true,
+   "detail": ""
+  },
+  "nav: Playground opens /playground and is marked current": {
+   "pass": true,
+   "detail": ""
+  },
+  "nav: Cheatsheets opens /resources and is marked current": {
+   "pass": true,
+   "detail": ""
+  },
+  "nav: Quizzes opens /quizzes and is marked current": {
+   "pass": true,
+   "detail": ""
+  },
+  "nav: Certificates opens /certificates and is marked current": {
+   "pass": true,
+   "detail": ""
+  },
+  "header search opens /search with the field focused": {
+   "pass": true,
+   "detail": ""
+  },
+  "account menu opens": {
+   "pass": true,
+   "detail": ""
+  },
+  "account menu closes on Escape": {
+   "pass": true,
+   "detail": ""
+  },
+  "account menu closes on outside click": {
+   "pass": true,
+   "detail": ""
+  },
+  "role switch: admin view adds the admin link": {
+   "pass": true,
+   "detail": ""
+  },
+  "admin link opens /admin": {
+   "pass": true,
+   "detail": ""
+  },
+  "mobile: desktop nav hidden, menu button shown": {
+   "pass": true,
+   "detail": ""
+  },
+  "mobile menu opens with 6 links": {
+   "pass": true,
+   "detail": ""
+  },
+  "mobile menu link navigates and closes the menu": {
+   "pass": true,
+   "detail": ""
+  },
+  "landing scratchpad: Run prints the console output": {
+   "pass": true,
+   "detail": ""
+  },
+  "landing curriculum: 6 chapters, first open": {
+   "pass": true,
+   "detail": ""
+  },
+  "landing curriculum: opening chapter 3 shows its 16 lessons and closes chapter 1": {
+   "pass": true,
+   "detail": ""
+  },
+  "landing curriculum: clicking again closes it": {
+   "pass": true,
+   "detail": ""
+  },
+  "landing curriculum: keyboard opens a chapter": {
+   "pass": true,
+   "detail": ""
+  },
+  "landing lesson link opens the lesson": {
+   "pass": true,
+   "detail": ""
+  },
+  "hero CTA resumes the last lesson": {
+   "pass": true,
+   "detail": "/lesson/4"
+  },
+  "curriculum lists 42 lessons in 6 chapters": {
+   "pass": true,
+   "detail": ""
+  },
+  "chapter filter shows only chapter 3 (16 lessons)": {
+   "pass": true,
+   "detail": ""
+  },
+  "All chapters restores the list": {
+   "pass": true,
+   "detail": ""
+  },
+  "bookmark toggles": {
+   "pass": true,
+   "detail": ""
+  },
+  "bookmark shows on the dashboard": {
+   "pass": true,
+   "detail": ""
+  },
+  "/courses#chapter-4 scrolls to chapter 4": {
+   "pass": true,
+   "detail": ""
+  },
+  "search starts with 42 lessons": {
+   "pass": true,
+   "detail": ""
+  },
+  "keyword filter narrows results": {
+   "pass": true,
+   "detail": 2
+  },
+  "keyword + chapter with no match shows the empty state": {
+   "pass": true,
+   "detail": ""
+  },
+  "reset filters restores 42": {
+   "pass": true,
+   "detail": ""
+  },
+  "status filter: completed = 3": {
+   "pass": true,
+   "detail": ""
+  },
+  "status filter: bookmarked = 3": {
+   "pass": true,
+   "detail": ""
+  },
+  "quizzes lists 6 quizzes, chapter 1 passed": {
+   "pass": true,
+   "detail": ""
+  },
+  "Start quiz opens /quiz/2": {
+   "pass": true,
+   "detail": ""
+  },
+  "submitting an incomplete quiz shows an error per unanswered question and does not submit": {
+   "pass": true,
+   "detail": ""
+  },
+  "answering clears that question's error; answer is marked checked": {
+   "pass": true,
+   "detail": ""
+  },
+  "submit shows score, per-question result and explanations": {
+   "pass": true,
+   "detail": ""
+  },
+  "answers lock after submit": {
+   "pass": true,
+   "detail": ""
+  },
+  "retake clears the quiz": {
+   "pass": true,
+   "detail": ""
+  },
+  "all-correct submission passes and offers the certificate": {
+   "pass": true,
+   "detail": ""
+  },
+  "certificate page shows the earned certificate": {
+   "pass": true,
+   "detail": ""
+  },
+  "print button calls window.print": {
+   "pass": true,
+   "detail": ""
+  },
+  "certificates page lists both certificates; chapter 2 marked earned": {
+   "pass": true,
+   "detail": ""
+  },
+  "earned certificate persists across reload": {
+   "pass": true,
+   "detail": ""
+  },
+  "unknown certificate code shows a not-found state, not a fake certificate": {
+   "pass": true,
+   "detail": ""
+  },
+  "lesson does not autoplay": {
+   "pass": true,
+   "detail": "0:00"
+  },
+  "play advances the timer": {
+   "pass": true,
+   "detail": "0:02"
+  },
+  "pause stops it": {
+   "pass": true,
+   "detail": ""
+  },
+  "seek buttons move 5 seconds": {
+   "pass": true,
+   "detail": "0:07"
+  },
+  "2x speed advances twice as fast": {
+   "pass": true,
+   "detail": "0:11"
+  },
+  "seek slider is keyboard operable": {
+   "pass": true,
+   "detail": ""
+  },
+  "Space / K shortcuts play and pause": {
+   "pass": true,
+   "detail": ""
+  },
+  "F toggles theater mode (chapter list hides)": {
+   "pass": true,
+   "detail": ""
+  },
+  "shortcuts dialog opens with focus inside": {
+   "pass": true,
+   "detail": ""
+  },
+  "shortcuts dialog closes on Escape": {
+   "pass": true,
+   "detail": ""
+  },
+  "bookmark button toggles": {
+   "pass": true,
+   "detail": ""
+  },
+  "mark as done toggles": {
+   "pass": true,
+   "detail": ""
+  },
+  "toggle buttons keep their width in both states": {
+   "pass": true,
+   "detail": [
+    136,
+    136
+   ]
+  },
+  "lesson tab Scratchpad selects and shows its panel": {
+   "pass": true,
+   "detail": ""
+  },
+  "lesson tab Notes selects and shows its panel": {
+   "pass": true,
+   "detail": ""
+  },
+  "lesson tab Q&A selects and shows its panel": {
+   "pass": true,
+   "detail": ""
+  },
+  "lesson tab Transcript selects and shows its panel": {
+   "pass": true,
+   "detail": ""
+  },
+  "lesson tab Overview selects and shows its panel": {
+   "pass": true,
+   "detail": ""
+  },
+  "scratchpad runs code": {
+   "pass": true,
+   "detail": ""
+  },
+  "scratchpad reports errors": {
+   "pass": true,
+   "detail": ""
+  },
+  "scratchpad reset restores the starter code": {
+   "pass": true,
+   "detail": ""
+  },
+  "empty note is rejected with a message": {
+   "pass": true,
+   "detail": ""
+  },
+  "note saves and lists": {
+   "pass": true,
+   "detail": ""
+  },
+  "note deletes": {
+   "pass": true,
+   "detail": ""
+  },
+  "empty question is rejected with a message": {
+   "pass": true,
+   "detail": ""
+  },
+  "question posts": {
+   "pass": true,
+   "detail": ""
+  },
+  "upvote changes the count": {
+   "pass": true,
+   "detail": ""
+  },
+  "empty reply is rejected": {
+   "pass": true,
+   "detail": ""
+  },
+  "reply posts": {
+   "pass": true,
+   "detail": ""
+  },
+  "transcript line seeks the video": {
+   "pass": true,
+   "detail": ""
+  },
+  "chapter list opens another lesson": {
+   "pass": true,
+   "detail": ""
+  },
+  "next link opens the next lesson": {
+   "pass": true,
+   "detail": ""
+  },
+  "playground runs the preset on load": {
+   "pass": true,
+   "detail": ""
+  },
+  "playground HTML tab shows its editor": {
+   "pass": true,
+   "detail": ""
+  },
+  "playground CSS tab shows its editor": {
+   "pass": true,
+   "detail": ""
+  },
+  "playground JavaScript tab shows its editor": {
+   "pass": true,
+   "detail": ""
+  },
+  "playground Run code prints to the console": {
+   "pass": true,
+   "detail": ""
+  },
+  "console clears": {
+   "pass": true,
+   "detail": ""
+  },
+  "save adds a snippet and confirms": {
+   "pass": true,
+   "detail": ""
+  },
+  "save is disabled without a title": {
+   "pass": true,
+   "detail": ""
+  },
+  "export downloads an .html file": {
+   "pass": true,
+   "detail": ""
+  },
+  "choosing a snippet loads it": {
+   "pass": true,
+   "detail": ""
+  },
+  "cheatsheets: 4 handbooks, first selected": {
+   "pass": true,
+   "detail": ""
+  },
+  "cheatsheet tab switches content and updates the URL": {
+   "pass": true,
+   "detail": ""
+  },
+  "copy puts the snippet on the clipboard and confirms": {
+   "pass": true,
+   "detail": ""
+  },
+  "copy button reverts and keeps its width": {
+   "pass": true,
+   "detail": ""
+  },
+  "admin in student view: role buttons disabled, switch offered": {
+   "pass": true,
+   "detail": ""
+  },
+  "switching to admin enables the roster": {
+   "pass": true,
+   "detail": ""
+  },
+  "role toggle changes the row": {
+   "pass": true,
+   "detail": ""
+  },
+  "roster filter narrows to 1": {
+   "pass": true,
+   "detail": ""
+  },
+  "roster filter empty state": {
+   "pass": true,
+   "detail": ""
+  },
+  "role persists across navigation": {
+   "pass": true,
+   "detail": ""
+  },
+  "profile role switch": {
+   "pass": true,
+   "detail": ""
+  },
+  "export downloads JSON": {
+   "pass": true,
+   "detail": ""
+  },
+  "reset opens a confirm dialog with focus on Cancel": {
+   "pass": true,
+   "detail": ""
+  },
+  "Escape cancels the reset": {
+   "pass": true,
+   "detail": ""
+  },
+  "confirming resets progress and says so": {
+   "pass": true,
+   "detail": ""
+  },
+  "dashboard reflects the reset": {
+   "pass": true,
+   "detail": ""
+  },
+  "reduced motion: no animation or transition longer than 10ms": {
+   "pass": true,
+   "detail": 0
+  },
+  "no infinite animations on any route": {
+   "pass": true,
+   "detail": []
+  }
+ }
+}

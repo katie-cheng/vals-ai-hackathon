@@ -1,0 +1,19 @@
+{
+  "name": "dec",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/generator": "^8.1.2",
+    "@babel/parser": "^8.1.2",
+    "@babel/traverse": "^8.1.2",
+    "@babel/types": "^8.1.2",
+    "prettier": "^3.10.1"
+  }
+}

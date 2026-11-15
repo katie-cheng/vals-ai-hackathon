@@ -1,0 +1,310 @@
+{
+ "site": "original (inputs/live-app)",
+ "route": "/",
+ "slop_points": 31.341,
+ "slop_score": 0.3237,
+ "slop": [
+  {
+   "id": "eyebrows",
+   "about": "small uppercase letter-spaced label text (unique strings)",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "heading_accents",
+   "about": "headings with an italic / recoloured / different-font accent span",
+   "value": 1,
+   "points": 1,
+   "by_width": {
+    "phone": 1,
+    "tablet": 1,
+    "laptop": 1,
+    "desktop": 1,
+    "wide": 1
+   },
+   "examples": [
+    {
+     "el": "h1.text-4xl.sm:text-5xl.lg:text-6xl",
+     "text": "Master Full-Stack Web Development from Zero to Production.",
+     "accent": "from Zero to Production."
+    }
+   ]
+  },
+  {
+   "id": "dot_separators",
+   "about": "\u00b7 and \u2022 separator glyphs",
+   "value": 16,
+   "points": 7.5,
+   "by_width": {
+    "phone": 16,
+    "tablet": 16,
+    "laptop": 16,
+    "desktop": 16,
+    "wide": 16
+   },
+   "examples": [
+    {
+     "el": "span",
+     "text": "Production-Grade Full-Stack Curriculum \u2022 42 Lessons"
+    },
+    {
+     "el": "p.text-[10px].text-slate-400",
+     "text": "HTML \u2022 CSS \u2022 JS"
+    },
+    {
+     "el": "span.text-[11px].text-slate-400",
+     "text": "\u2022 3 Lessons"
+    },
+    {
+     "el": "span.text-[11px].text-slate-400",
+     "text": "\u2022 1.5 hrs"
+    }
+   ]
+  },
+  {
+   "id": "pills",
+   "about": "fully rounded pill buttons and badges",
+   "value": 3,
+   "points": 0.3333,
+   "by_width": {
+    "phone": 3,
+    "tablet": 3,
+    "laptop": 3,
+    "desktop": 3,
+    "wide": 3
+   },
+   "examples": [
+    {
+     "el": "div.flex.items-center.gap-1",
+     "text": "5d Streak"
+    },
+    {
+     "el": "div.inline-flex.items-center.gap-2",
+     "text": "Production-Grade Full-Stack Curriculum \u2022 42 Lessons"
+    },
+    {
+     "el": "span.inline-flex.items-center.gap-1",
+     "text": "Start Your Daily Study Streak Today"
+    }
+   ]
+  },
+  {
+   "id": "big_rounding",
+   "about": "large containers with radius >= 24px",
+   "value": 3,
+   "points": 0.3333,
+   "by_width": {
+    "phone": 3,
+    "tablet": 3,
+    "laptop": 3,
+    "desktop": 3,
+    "wide": 3
+   },
+   "examples": [
+    {
+     "el": "div.absolute.top-1/4.left-1/2",
+     "text": "",
+     "radius": "3.35544e+07px"
+    },
+    {
+     "el": "div.p-8.rounded-3xl.bg-slate-900/90",
+     "text": "COMPLETE SYLLABUS 42 Lessons across 6 Structured Chapters Click any chapter belo",
+     "radius": "24px"
+    },
+    {
+     "el": "div.relative.overflow-hidden.rounded-3xl",
+     "text": "Start Your Daily Study Streak Today Ready to code your first web application? Ju",
+     "radius": "24px"
+    }
+   ]
+  },
+  {
+   "id": "numbered_markers",
+   "about": "01 / 02 / 03 section, step or menu markers",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "em_dashes_per_1k_words",
+   "about": "em dashes per 1000 words of copy",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "emoji_icons",
+   "about": "emoji and dingbat glyphs used as icons",
+   "value": 16,
+   "points": 16,
+   "by_width": {
+    "phone": 16,
+    "tablet": 16,
+    "laptop": 16,
+    "desktop": 16,
+    "wide": 16
+   },
+   "examples": [
+    {
+     "el": "span.text-2xl",
+     "text": "\ud83d\ude80",
+     "glyphs": "\ud83d\ude80"
+    },
+    {
+     "el": "span.text-2xl",
+     "text": "\u2699\ufe0f",
+     "glyphs": "\u2699"
+    },
+    {
+     "el": "span.text-2xl",
+     "text": "\ud83c\udf10",
+     "glyphs": "\ud83c\udf10"
+    },
+    {
+     "el": "span.text-2xl",
+     "text": "\ud83d\udee0\ufe0f",
+     "glyphs": "\ud83d\udee0"
+    }
+   ]
+  },
+  {
+   "id": "gradient_text",
+   "about": "gradient-filled text",
+   "value": 1,
+   "points": 1,
+   "by_width": {
+    "phone": 1,
+    "tablet": 1,
+    "laptop": 1,
+    "desktop": 1,
+    "wide": 1
+   },
+   "examples": [
+    {
+     "el": "span.text-transparent.bg-clip-text.bg-gradient-to-r",
+     "text": "from Zero to Production."
+    }
+   ]
+  },
+  {
+   "id": "pulsing_dots",
+   "about": "small infinitely animated dots",
+   "value": 0.6,
+   "points": 0.6,
+   "by_width": {
+    "phone": 0,
+    "tablet": 1,
+    "laptop": 1,
+    "desktop": 0,
+    "wide": 1
+   },
+   "examples": [
+    {
+     "el": "span.inline-block.w-2.h-2",
+     "text": "",
+     "animation": "ping"
+    }
+   ]
+  },
+  {
+   "id": "tiny_text_share",
+   "about": "share of copy words set below 12px",
+   "value": 0.1487,
+   "points": 2.5744,
+   "by_width": {
+    "phone": 0.1479,
+    "tablet": 0.1493,
+    "laptop": 0.1488,
+    "desktop": 0.1488,
+    "wide": 0.1488
+   },
+   "examples": []
+  },
+  {
+   "id": "duplicate_ctas",
+   "about": "the same call to action twice within one block",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "broken_controls",
+   "about": "buttons, nav links or the logo whose label wraps or overflows at some width from 360 to 1920px",
+   "value": 2,
+   "points": 2,
+   "by_width": {
+    "360": 2,
+    "390": 1,
+    "414": 0,
+    "480": 0,
+    "540": 0,
+    "600": 0,
+    "680": 0,
+    "768": 0,
+    "820": 0,
+    "900": 0,
+    "960": 0,
+    "1024": 0,
+    "1100": 0,
+    "1180": 0,
+    "1280": 0,
+    "1366": 0,
+    "1440": 0,
+    "1536": 0,
+    "1680": 0,
+    "1920": 0
+   },
+   "examples": [
+    {
+     "el": "a.px-6.py-3.5.rounded-xl",
+     "text": "Start From Lesson 1 (Welcome)",
+     "lines": 2,
+     "spill": 0,
+     "widths": [
+      390,
+      360
+     ]
+    },
+    {
+     "el": "a.px-6.py-3.5.rounded-xl",
+     "text": "Open Student Learning Hub",
+     "lines": 2,
+     "spill": 0,
+     "widths": [
+      360
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "Diagnostic only. The grader renders the landing route. Its requirements half is the zee-beauty-salon brief and does not apply to S02, so reward and requirements are omitted."
+}

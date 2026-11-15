@@ -1,0 +1,50 @@
+[
+ {
+  "rid": "R1",
+  "sent_at": "2026-11-15T02:23-08:00",
+  "element": "whole site (colour palette)",
+  "comment": "the new palette is too muted"
+ },
+ {
+  "rid": "R2",
+  "sent_at": "2026-11-15T02:25-08:00",
+  "element": "icons, whole site",
+  "comment": "you can still use icons just make sure they are more consistent and only used when. needed"
+ },
+ {
+  "rid": "R3",
+  "sent_at": "2026-11-15T02:25-08:00",
+  "element": "typography, whole site",
+  "comment": "vary font weight a lot more"
+ },
+ {
+  "rid": "R4",
+  "sent_at": "2026-11-15T02:27-08:00",
+  "element": "hero h1 (and other phrase-length display headings)",
+  "comment": "hero titles should generally be thinner to combat over emphasizing a whole phrase as a lot of ai generated hero titles do"
+ },
+ {
+  "rid": "R5",
+  "sent_at": "2026-11-15T02:29-08:00",
+  "element": "whole site (colour palette)",
+  "comment": "add back the colors"
+ },
+ {
+  "rid": "R6",
+  "sent_at": "2026-11-15T02:29-08:00",
+  "element": "whole site (colour palette)",
+  "comment": "i take it back, de-slopping doesnt mean removing colors"
+ },
+ {
+  "rid": "R7",
+  "sent_at": "2026-11-15T02:33-08:00",
+  "element": "motion, whole site",
+  "comment": "you can bring back soft animations if that is what the spec asked for"
+ },
+ {
+  "rid": "R8",
+  "sent_at": "2026-11-15T02:34-08:00",
+  "element": "all routes, on reload",
+  "comment": "there is layout shift on reload where the text loads in and shifts"
+ }
+]
