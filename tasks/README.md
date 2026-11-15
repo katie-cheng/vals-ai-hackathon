@@ -144,3 +144,12 @@ For a new task:
 2. Label it in SlopLabel and fix what the labels find; repeat until a round finds nothing.
 3. Copy the source (with `package-lock.json`, without `node_modules`/`dist`) to `solution/app/` and confirm the grader gives it about 1 at all five widths.
 4. Put it against the arena sites in the Slop Arena for blind votes.
+
+## rocksteady-campus status
+
+Brief: Design Arena tournament `104e4bb6-f582-4005-ade0-55d4a41ccf30` (S05 `gpt-6-astra-max`, S06 `kimi-k3.1-pro`): an eight-page takeaway ordering site with cart, checkout, customer portal and admin CMS. `solution/app` is the golden reference from `references/S06/solution` (the S06 original rebuilt against its SlopLabel critiques; `references/S06/reference.patch` is the diff). `tests/task.mjs` holds the brief requirements; `grade.mjs`, `probe.mjs` and `test.sh` are the shared ones.
+
+| Site | reward | requirements | slop points |
+| --- | --- | --- | --- |
+| oracle (`solution/app`) | 1.00 | 1.00 | 0 |
+| S06 original (negative control) | 0.70 | 0.997 | 21.84 |

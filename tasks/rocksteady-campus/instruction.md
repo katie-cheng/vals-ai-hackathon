@@ -2,13 +2,13 @@ You are working in `/app`, a Vite + React + TypeScript project with its dependen
 Build the website described in the brief below inside this project.
 
 Delivery requirements:
-- `npm run build` must succeed and write a static site to `/app/dist`. The site is served from `/app/dist` as static files at `/`, with any path that has no file extension falling back to `index.html` so client-side routes work, and opened in Chromium at desktop and phone sizes.
+- `npm run build` must succeed and write a static site to `/app/dist`. The site is served from `/app/dist` as static files at `/` (unknown paths fall back to `index.html`) and opened in Chromium at desktop and phone sizes.
 - Keep it a client-side Vite + React app: no Next.js, no server, no SSR. You may install any npm packages; the network is available.
-- There is no backend. Where the brief asks for a database, accounts, orders, reviews or a CMS, keep that data in the browser (for example in localStorage) so it survives a page reload.
-- No payment provider is configured. Show online payment as not yet available, as the brief asks, and keep the other enabled options such as Cash on Collection working.
-- Seed one administrator account, email `admin@rocksteadycampus.co.za` and password `Rocksteady#2026`, so the administrator portal can be reviewed.
-- The brief's attachments are in `/app/public/attachments/`: the logo (`rocksteady-logo.png`) and the five hero banner images (`hero-kota.webp`, `hero-dagwood.webp`, `hero-burger.webp`, `hero-sandwich.webp`, `hero-toasties.webp`). The three reference screenshots it mentions (Homepage, Digital Menu, Admin Dashboard) are not available.
-- Every page must load without console errors, and every image you reference must actually load.
+- There is no backend. The "database", accounts, orders and CMS edits live in the browser (for example `localStorage`), and forms work on the client.
+- Seed one demo administrator account and show its email and password on the administrator login screen, so the admin portal can be opened without a backend.
+- Each page in the brief has its own route, linked from the navigation.
+- The brief's attachments are in `/app/public/images`: the official logo (`rocksteady-logo.png`), the five hero photographs (`hero-kota.webp`, `hero-dagwood.webp`, `hero-burger.webp`, `hero-sandwich.webp`, `hero-toasties.webp`) and five more food and lifestyle photographs. The three mock-up pictures the brief mentions (Homepage, Digital Menu, Admin Dashboard) are not available; follow the written brief.
+- The page must load without console errors, and every image you reference must actually load.
 
 ---
 

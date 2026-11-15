@@ -1,0 +1,117 @@
+{
+ "index": {
+  "Ht": "heroKota",
+  "zn": "heroBurger",
+  "Ce": "heroDagwood",
+  "mi": "heroToasties",
+  "_a": "heroSandwich",
+  "El": "chipsImage",
+  "ds": "beveragesImage",
+  "T4": "standardExtras",
+  "Mv": "lightExtras",
+  "E4": "defaultCategories",
+  "nt": "menuItem",
+  "w4": "defaultItems",
+  "A4": "defaultHeroSlides",
+  "C4": "defaultGallery",
+  "R4": "defaultReviews",
+  "N4": "defaultContent",
+  "Z1": "createDefaultData",
+  "ys": "formatRand",
+  "F1": "DATA_KEY",
+  "jv": "CART_KEY",
+  "Dv": "SESSION_KEY",
+  "O4": "loadData",
+  "Lv": "loadJson",
+  "rd": "hashPassword",
+  "zv": "createSalt",
+  "J1": "StoreContext",
+  "M4": "StoreProvider",
+  "xn": "useStore",
+  "Vd": "navLinks",
+  "Bd": "Logo",
+  "j4": "Header",
+  "D4": "CartDrawer",
+  "L4": "ItemModal",
+  "z4": "ItemModalHost",
+  "_4": "Footer",
+  "H4": "MobileNav",
+  "U4": "Toast",
+  "V4": "Layout",
+  "pn": "Reveal",
+  "Sl": "SectionHeading",
+  "nR": "PageHero",
+  "B4": "Stars",
+  "k4": "MenuCard",
+  "aR": "EmptyState",
+  "Y4": "Home",
+  "q4": "AboutRoute",
+  "G4": "AdminRoute",
+  "X4": "ContactRoute",
+  "K4": "GalleryRoute",
+  "Q4": "MenuRoute",
+  "P4": "OrderRoute",
+  "Z4": "PortalRoute",
+  "F4": "ReviewsRoute",
+  "J4": "ScrollToTop",
+  "I1": "PageLoader",
+  "I4": "NotFound",
+  "$4": "SiteRoutes",
+  "W4": "App"
+ },
+ "About": {
+  "N": "AboutPage"
+ },
+ "Contact": {
+  "$": "ContactPage"
+ },
+ "Gallery": {
+  "k": "GalleryPage"
+ },
+ "Menu": {
+  "P": "MenuPage"
+ },
+ "Reviews": {
+  "U": "ReviewsPage"
+ },
+ "Order": {
+  "Ge": "OrderPage",
+  "Re": "OrderConfirmation"
+ },
+ "OrderTracker": {
+  "T": "OrderTracker",
+  "j": "statusIcon"
+ },
+ "Portal": {
+  "ds": "PortalPage",
+  "ts": "CustomerDashboard"
+ },
+ "Admin": {
+  "D": "compressImage",
+  "Y": "downloadFile",
+  "as": "ReviewsManager",
+  "ts": "CustomersManager",
+  "ns": "SettingsManager",
+  "os": "SaveBadge",
+  "cs": "ReportsManager",
+  "J": "contentSections",
+  "rs": "ContentManager",
+  "ls": "HeroSlidesEditor",
+  "$": "imageSlotLabels",
+  "is": "MediaManager",
+  "ds": "GalleryManager",
+  "ms": "MenuManager",
+  "ce": "EditorDrawer",
+  "xs": "ItemEditor",
+  "us": "CategoryEditor",
+  "ps": "PromotionsManager",
+  "X": "sectionMeta",
+  "Cs": "AdminPage",
+  "gs": "DashboardOverview",
+  "hs": "PlusGlyph",
+  "re": "statusStyles",
+  "le": "OrdersTable",
+  "bs": "OrdersManager",
+  "js": "OrderDetail"
+ }
+}

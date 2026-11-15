@@ -1,0 +1,3 @@
+import fs from 'fs'; import postcss from 'postcss'; import prettier from 'prettier';
+const css=fs.readFileSync(process.env.HOME+'/s06raw/index-iO6dNovt.css','utf8'); const root=postcss.parse(css);
+for(const n of root.nodes){ if(n.type==='atrule'&&n.name==='layer'){ const nm=n.params; if(nm==='utilities'||nm==='properties'){ console.log(`/* layer ${nm}: ${n.nodes?.length} */`); continue;} console.log(`/* ==== layer ${nm} */`); console.log(await prettier.format(n.nodes.map(x=>x.toString()).join('\n'),{parser:'css'})); } else if(n.type==='atrule'&&n.name==='property'){} else { console.log('/* ==== top */'); console.log(await prettier.format(n.toString(),{parser:'css'})); } }

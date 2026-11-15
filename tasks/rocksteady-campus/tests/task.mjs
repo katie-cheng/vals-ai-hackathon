@@ -8,6 +8,7 @@ export const SLOP_EXEMPT = { big_rounding: "brief: stylish cards with subtle sha
 
 const PHONE = "631044361";
 const WHATSAPP = "27631044361";
+// Used only when the login screen does not show the demo credentials it is asked to show.
 const ADMIN = { email: "admin@rocksteadycampus.co.za", password: "Rocksteady#2026" };
 const HEADLINE = "BIG FLAVOUR. GENEROUS PORTIONS. REAL TOWNSHIP TASTE.";
 const CMS_MARK = "CAMPUS EDIT CHECK 4471";
@@ -440,8 +441,13 @@ export async function interactDesktop(context, url, handoffs, pages) {
       const email = page.locator("input[type=email]:visible, input[name*='email' i]:visible, input[placeholder*='email' i]:visible").first();
       const password = page.locator("input[type=password]:visible").first();
       if ((await email.count()) && (await password.count())) {
-        await email.fill(ADMIN.email);
-        await password.fill(ADMIN.password);
+        // The instruction asks for the demo administrator's email and password to be shown on the login screen.
+        const shown = await page.evaluate(() => document.body.innerText);
+        const emails = shown.match(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g) || [];
+        const shownEmail = emails.find((e) => /admin/i.test(e));
+        const shownPassword = shown.match(/password\s*[:\-]?\s*\n?\s*(\S{6,})/i)?.[1];
+        await email.fill(shownEmail || ADMIN.email);
+        await password.fill(shownPassword || ADMIN.password);
         await password.press("Enter");
         await page.waitForTimeout(1500);
       }

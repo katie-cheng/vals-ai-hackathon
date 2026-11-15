@@ -164,7 +164,7 @@ export function InsightPost() {
   if (!n) return <Navigate to="/insights" replace={!0} />;
   const f = insights.findIndex((g) => g.slug === s),
     h = insights[(f + 1) % insights.length],
-    m = insights.filter((g) => g.slug !== s).slice(0, 2);
+    m = insights.filter((g) => g.slug !== s && g.slug !== h.slug).slice(0, 2);
   return (
     <>
       <section ref={l} className="relative overflow-hidden bg-pine-950 pt-32 pb-0 text-cream-50 sm:pt-40">
