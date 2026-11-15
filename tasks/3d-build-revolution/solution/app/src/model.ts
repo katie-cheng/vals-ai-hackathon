@@ -114,7 +114,9 @@ export const wallHeight = (c: Config) => c.storeys * c.storeyHeight;
 export function roofRise(c: Config) {
   const t = Math.tan((c.pitch * Math.PI) / 180);
   if (c.roof === "flat") return 0.35;
-  if (c.roof === "mono") return c.depth * t * 0.5;
+  // Mono and gable slopes run front to back; a hip's shorter span sets its ridge.
+  if (c.roof === "mono") return c.depth * t;
+  if (c.roof === "gable") return c.depth * 0.5 * t;
   return Math.min(c.width, c.depth) * 0.5 * t;
 }
 
