@@ -72,7 +72,7 @@ export class JarScene extends Phaser.Scene {
   }
 
   private tween(config: Phaser.Types.Tweens.TweenBuilderConfig): Promise<void> {
-    return new Promise((resolve) => this.tweens.add({ ...config, onComplete: () => resolve() }));
+    return new Promise((resolve) => this.tweens.add({ ...config, onComplete: (tween, targets) => { config.onComplete?.(tween, targets); resolve(); } }));
   }
 
   private wait(ms: number) {
