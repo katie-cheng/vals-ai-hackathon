@@ -69,6 +69,7 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R13 | Bold overused | font-black/extrabold/bold to medium; semibold only for h1 and logo | round 3 |
 | R14 | Animations heavier than needed | No preloader, Lenis, particles, bubbles, droplets, gleams, mouse/scroll parallax, magnetic buttons, tilt cards, word-by-word reveals, floating chips, looping service effects, hover lifts or moving dashed lines. Kept: hero video, marquee, short fade/slide reveals, scroll-filled process line, panel/FAQ/form transitions | round 4 |
 | R16 | White shows on overscroll | `html` gets the navy background and `overscroll-behavior: none` (no bounce past top/bottom) | round 4 |
+| R17 | Hero image not there on first load | Hero photo is preloaded (`<link rel=preload fetchpriority=high>`) and rendered as an `<img>` under the video, so it no longer waits for the video poster | round 4 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.

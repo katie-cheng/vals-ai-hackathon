@@ -33,8 +33,15 @@ function Hero() {
           aria-hidden
         >
           <div className="absolute inset-0">
+            <img
+              src="/images/hero-house.jpg"
+              alt=""
+              fetchPriority="high"
+              decoding="sync"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <video
-              className="h-full w-full object-cover"
+              className="relative h-full w-full object-cover"
               src="/videos/hero-wash.mp4"
               poster="/images/hero-house.jpg"
               autoPlay

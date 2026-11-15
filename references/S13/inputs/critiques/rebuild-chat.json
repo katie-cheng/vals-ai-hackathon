@@ -94,5 +94,11 @@
   "sent_at": "2026-11-15T00:16-08:00",
   "element": "page overscroll",
   "comment": "when you scroll too far up or down on the page, you see white - this should not be the case\n\nyou should rather not be able to scroll past the top"
+ },
+ {
+  "rid": "R17",
+  "sent_at": "2026-11-15T00:18-08:00",
+  "element": "hero background image",
+  "comment": "when the page first loads, the hero image doesnt load in immediately"
  }
 ]

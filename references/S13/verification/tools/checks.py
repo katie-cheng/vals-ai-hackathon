@@ -5,7 +5,7 @@ Covers: console errors, failed requests, horizontal overflow, header wrapping, i
 mobile menu, services switcher, before/after slider, FAQ, map towns, quote form (invalid + valid), share button,
 reduced motion.
 """
-import json, sys
+import json, os, sys
 from playwright.sync_api import sync_playwright
 
 URL, OUT = sys.argv[1], sys.argv[2]
@@ -49,7 +49,8 @@ def layout(br):
           const lines = e => { const rg = document.createRange(); rg.selectNodeContents(e);
             return new Set([...rg.getClientRects()].filter(r => r.width > 1).map(r => Math.round(r.top / 4))).size };
           return [...h.querySelectorAll('a,button')].filter(e => e.offsetParent && !e.closest('[aria-label="Mobile navigation"]'))
-            .filter(e => e.innerText.trim() && lines(e) > e.innerText.trim().split('\\n').length).map(e => e.innerText.trim()) }""")
+            .flatMap(e => e.querySelector('*') ? [...e.querySelectorAll('*')].filter(c => !c.children.length) : [e])
+            .filter(e => e.innerText && e.innerText.trim() && lines(e) > 1).map(e => e.innerText.trim()) }""")
         rec(f"header text on one line @{w}", not wrapped, wrapped)
         pg.close()
 
@@ -200,7 +201,9 @@ def reduced_motion(br):
 
 with sync_playwright() as p:
     br = p.chromium.launch()
-    for fn in (errors_and_requests, layout, links_buttons, mobile_menu, services, slider, faq_towns_share, quote, reduced_motion):
+    ALL = (errors_and_requests, layout, links_buttons, mobile_menu, services, slider, faq_towns_share, quote, reduced_motion)
+    only = os.environ.get('ONLY')
+    for fn in [f for f in ALL if not only or f.__name__ in only.split(',')]:
         try:
             fn(br)
         except Exception as e:

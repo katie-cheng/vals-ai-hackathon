@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion";
 import { BeforeAfter } from "./components/BeforeAfter";
 import { Faq } from "./components/Faq";
 import { Footer } from "./components/Footer";
@@ -12,6 +13,7 @@ import { SITE } from "./data/content";
 
 function App() {
   return (
+    <MotionConfig reducedMotion="user">
     <div className="min-h-screen bg-[#04141f] text-white">
       <a
         href="#services"
@@ -33,6 +35,7 @@ function App() {
       <Footer />
       <span className="sr-only">{SITE.tagline}</span>
     </div>
+    </MotionConfig>
   );
 }
 
