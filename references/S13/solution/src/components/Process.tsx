@@ -21,7 +21,7 @@ function Process() {
           <SplitWords
             text="From first message to final check."
             as="h2"
-            className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-[2.6rem]"
+            className="font-serif-d block text-[1.9rem] font-normal leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
             <p className="mt-5 text-[17px] leading-relaxed text-sky-100/75">

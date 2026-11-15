@@ -178,5 +178,17 @@
   "sent_at": "2026-11-15T00:43-08:00",
   "element": "headings",
   "comment": "use a thin sans serif font more for more visual hierarchy"
+ },
+ {
+  "rid": "R31",
+  "sent_at": "2026-11-15T00:45-08:00",
+  "element": "services carousel image",
+  "comment": "the images in the carousell got tinted over"
+ },
+ {
+  "rid": "R32",
+  "sent_at": "2026-11-15T00:45-08:00",
+  "element": "section headings",
+  "comment": "the serif font was fine in some places"
  }
 ]

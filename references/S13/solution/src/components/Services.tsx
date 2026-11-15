@@ -30,7 +30,6 @@ function ServicePanel({ index: a }: { index: number }) {
               alt={i.image_alt}
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-[#04141f]/60 " />
           </div>
           <div className="relative flex flex-col justify-center gap-5 p-7 sm:p-10">
             <span
@@ -149,7 +148,7 @@ function Services() {
           <SplitWords
             text="The right clean for every part of your home."
             as="h2"
-            className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-[2.6rem]"
+            className="font-serif-d block text-[1.9rem] font-normal leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.25}>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-sky-100/75">

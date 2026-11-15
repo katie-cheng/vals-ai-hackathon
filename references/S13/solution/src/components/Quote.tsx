@@ -164,7 +164,7 @@ function Quote() {
           <SplitWords
             text="Tell us what needs cleaning."
             as="h2"
-            className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-[2.6rem]"
+            className="font-serif-d block text-[1.9rem] font-normal leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
             <p className="mt-4 max-w-md text-[17px] leading-relaxed text-sky-100/75">

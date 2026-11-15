@@ -36,7 +36,7 @@ function Footer() {
         <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-10 lg:px-16 sm:pt-20">
           <Reveal>
             <motion.p
-              className="mt-4 text-[2.2rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-5xl"
+              className="font-serif-d mt-4 text-[2.2rem] font-normal leading-tight text-white sm:text-5xl"
               initial={{
                 opacity: 0,
                 y: 60,

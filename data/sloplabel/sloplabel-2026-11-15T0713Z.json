@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794732223.5865679
+   "updated_at": 1794732352.945054
   }
  ],
  "labels": [
@@ -11721,6 +11721,64 @@
    "shot_status": "none",
    "created_at": 1794732180.0,
    "updated_at": 1794732180.0
+  },
+  {
+   "id": 491,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R31\"]",
+   "comment": "the images in the carousell got tinted over",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "services carousel image",
+   "component_chain": null,
+   "selector": "#service-panel img",
+   "selector_confidence": "manual",
+   "tag": "img",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"div.absolute.inset-0.bg-[#04141f]/60 overlay above each service photo\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794732300.0,
+   "updated_at": 1794732300.0
+  },
+  {
+   "id": 492,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R32\"]",
+   "comment": "the serif font was fine in some places",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "section headings",
+   "component_chain": null,
+   "selector": "section h2",
+   "selector_confidence": "manual",
+   "tag": "h2",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"after R30 every heading was Inter Light; Fraunces removed\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794732300.0,
+   "updated_at": 1794732300.0
   }
  ]
 }

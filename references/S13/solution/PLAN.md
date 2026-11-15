@@ -83,6 +83,8 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R28 | Ribbon may use uppercase with icons | Service ribbon restored after the R26 cut: uppercase 12px labels with 0.14em tracking, each with a 1.6-stroke line icon in the muted accent; stops under reduced motion. Exception to R4/R9 scoped to this ribbon only | round 10 |
 | R29 | Add back very subtle gradients, to backgrounds etc | Low-contrast tonal gradients (navy #04141f to #072030 at most) on every dark section (`bg-tone-a/b/c`), a paper-to-mist gradient on the light Results and Pricing sections (`bg-paper`), and faint top-light gradients on glass panels and FAQ cards. No glows, gradient text or coloured blobs | round 11 |
 | R30 | Use a thin sans serif more for visual hierarchy | Headings switch from Fraunces/semibold to Inter Light: hero and section titles weight 300 with slight negative tracking, card titles 400, decorative numerals 200; medium stays only on small UI text. Fraunces and its font file removed | round 12 |
+| R31 | Carousel images tinted over | Removed the 60% navy overlay on the service photos; they show at true colour | round 12 |
+| R32 | Serif was fine in some places | Fraunces restored at regular weight (400) for section titles and the footer heading; hero headline, card/step titles and numerals stay Inter Light/Regular (refines R30) | round 12 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.

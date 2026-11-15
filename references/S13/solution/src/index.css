@@ -2,6 +2,7 @@
 
 @theme {
   --font-display: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-serif: "Fraunces", "Fraunces Fallback", Georgia, serif;
   --color-abyss: #04141f;
   /* R19: muted sea-glass accent instead of neon cyan; cool greys instead of sky blues */
   --color-cyan-100: #dbe9ec;
@@ -23,6 +24,21 @@
   font-weight: 100 900;
   font-display: swap;
   src: url("/fonts/inter-latin-wght.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/fraunces-latin-full.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia"), local("Times New Roman"), local("Liberation Serif");
+  size-adjust: 104%;
+  ascent-override: 94%;
+  descent-override: 24.5%;
+  line-gap-override: 0%;
 }
 @font-face {
   font-family: "Inter Fallback";
@@ -115,6 +131,9 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #22d3ee;
   border-radius: 8px;
+}
+.font-serif-d {
+  font-family: var(--font-serif);
 }
 .glass {
   -webkit-backdrop-filter: blur(18px);
