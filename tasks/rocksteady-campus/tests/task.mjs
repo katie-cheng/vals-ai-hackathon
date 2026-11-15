@@ -445,7 +445,8 @@ export async function interactDesktop(context, url, handoffs, pages) {
         const shown = await page.evaluate(() => document.body.innerText);
         const emails = shown.match(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g) || [];
         const shownEmail = emails.find((e) => /admin/i.test(e));
-        const shownPassword = shown.match(/password\s*[:\-]?\s*\n?\s*(\S{6,})/i)?.[1];
+        const afterEmail = shownEmail ? shown.slice(shown.indexOf(shownEmail)) : shown;
+        const shownPassword = afterEmail.match(/password\s*:\s*(\S{6,})/i)?.[1];
         await email.fill(shownEmail || ADMIN.email);
         await password.fill(shownPassword || ADMIN.password);
         await password.press("Enter");
