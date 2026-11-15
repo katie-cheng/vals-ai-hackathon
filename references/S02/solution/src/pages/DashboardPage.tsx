@@ -26,7 +26,7 @@ export const DashboardPage = () => {
   return (
     <div className="container-page page">
       <h1 className="page-title">Welcome back, {currentUser.fullName}</h1>
-      <p className="lead mt-2 font-light">
+      <p className="lead mt-2">
         You have completed {totalCompletedCount} of 42 lessons ({overallPercent}%), with {inProgress} in progress,
         a {currentUser.streakDays}-day study streak and {certificates.length}{" "}
         {certificates.length === 1 ? "certificate" : "certificates"} earned.

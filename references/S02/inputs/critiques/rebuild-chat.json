@@ -16,5 +16,11 @@
   "sent_at": "2026-11-15T02:25-08:00",
   "element": "typography, whole site",
   "comment": "vary font weight a lot more"
+ },
+ {
+  "rid": "R4",
+  "sent_at": "2026-11-15T02:27-08:00",
+  "element": "hero h1 (and other phrase-length display headings)",
+  "comment": "hero titles should generally be thinner to combat over emphasizing a whole phrase as a lot of ai generated hero titles do"
  }
 ]

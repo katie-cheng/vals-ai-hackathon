@@ -51,10 +51,10 @@ export const LandingPage = () => {
     <div className="pb-20">
       <section className="container-page grid grid-cols-1 items-center gap-12 pt-14 lg:grid-cols-12 lg:gap-8 lg:pt-20">
         <div className="lg:col-span-6">
-          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-ink sm:text-5xl">
+          <h1 className="display text-4xl leading-[1.1] text-ink sm:text-5xl">
             Master full-stack web development from zero to production
           </h1>
-          <p className="lead mt-5 text-lg font-light">
+          <p className="lead mt-5 text-lg">
             The AjinLab IT Beginner curriculum: 42 video lessons across 6 chapters, with an in-browser code
             sandbox, chapter quizzes and printable certificates of completion. Free and open source.
           </p>
@@ -89,7 +89,7 @@ export const LandingPage = () => {
       </section>
 
       <section className="container-page mt-24">
-        <h2 className="max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink">
+        <h2 className="max-w-2xl display text-3xl text-ink">
           Everything you need to master modern software development
         </h2>
         <p className="lead mt-3">Every lesson is integrated with active learning tools.</p>
@@ -106,7 +106,7 @@ export const LandingPage = () => {
       <section className="container-page mt-20 grid grid-cols-1 gap-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-24">
-            <h2 className="text-3xl font-bold tracking-[-0.02em] text-ink">Curriculum</h2>
+            <h2 className="display text-3xl text-ink">Curriculum</h2>
             <p className="lead mt-3">
               Six chapters take you from setting up your tools to a full-stack application. Open a chapter to see
               its lessons.
@@ -174,7 +174,7 @@ export const LandingPage = () => {
 
       <section className="container-page mt-24">
         <div className="border-t border-line pt-12">
-          <h2 className="max-w-xl text-3xl font-bold tracking-[-0.02em] text-ink">
+          <h2 className="max-w-xl display text-3xl text-ink">
             Ready to code your first web application?
           </h2>
           <p className="lead mt-3">Progress, notes, code snippets and certificates are saved in your browser.</p>
