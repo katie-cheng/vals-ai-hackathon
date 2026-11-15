@@ -24,3 +24,5 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Do we use the 26 prompt-db briefs, the Design Arena tournament prompts, or both? [Ali; 2026-11-14]
 - Which frontier models and harnesses go in the results table? [Ali; 2026-11-14]
 - Is the trained classifier worth building before demos, or only the judge plus DOM checks? [Ali; 2026-11-14]
+- SlopLabel Export JSON: `styles` is a dict; Tailwind `rounded-full` shows as borderRadius `1.67772e+07px`; `sites.done`/overall fields unused so far (export 2026-11-15)
+- Eyebrow labels (small caps, letter-spaced text above headings) are the most-flagged pattern, by all three annotators: see docs/label-analysis.md
