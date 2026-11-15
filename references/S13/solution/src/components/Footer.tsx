@@ -41,13 +41,6 @@ function Footer() {
       <div className="relative bg-[#06283d]">
         <Bubbles count={20} className="opacity-60" />
         <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="animate-drift absolute -right-32 top-10 h-96 w-96 rounded-full bg-cyan-400/15 blur-[130px]" />
-          <div
-            className="animate-drift absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-sky-500/15 blur-[120px]"
-            style={{
-              animationDelay: "-8s",
-            }}
-          />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-14 sm:px-6 sm:pt-20">
           <Reveal className="text-center">
@@ -73,9 +66,7 @@ function Footer() {
               }}
             >
               Ready when{" "}
-              <span className="animate-shine-text bg-gradient-to-r from-cyan-200 via-white to-cyan-200 bg-clip-text text-transparent">
-                your home
-              </span>{" "}
+              your home{" "}
               is.
             </motion.p>
           </Reveal>
@@ -83,7 +74,7 @@ function Footer() {
             <Magnetic>
               <a
                 href="#quote"
-                className="shine-sweep group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-300 via-sky-300 to-cyan-300 bg-[length:200%_auto] px-9 py-4 text-base font-black text-[#04141f] shadow-[0_20px_60px_-12px_rgba(34,211,238,.8)] transition-all duration-500 hover:bg-right"
+                className="group inline-flex items-center gap-3 rounded-full bg-cyan-300 px-9 py-4 text-base font-black text-[#04141f] transition-all duration-500 hover:bg-right"
               >
                 <Droplets className="h-5 w-5 transition-transform duration-500 group-hover:rotate-[20deg] group-hover:scale-125" />
                 Get a free quote

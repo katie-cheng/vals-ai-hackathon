@@ -53,7 +53,7 @@ function Preloader({ done: a }) {
           }}
           className="relative"
         >
-          <div className="grid h-20 w-20 place-items-center rounded-3xl bg-gradient-to-br from-cyan-300 to-sky-600 shadow-[0_20px_60px_-10px_rgba(34,211,238,.8)]">
+          <div className="grid h-20 w-20 place-items-center rounded-3xl bg-cyan-300">
             <Droplets className="h-10 w-10 text-[#04141f]" strokeWidth={2.4} />
           </div>
           <span className="absolute inset-0 animate-ping rounded-3xl border-2 border-cyan-300/60" />
@@ -72,7 +72,7 @@ function Preloader({ done: a }) {
             duration: 0.6,
             ease: EASE,
           }}
-          className="mt-6 text-sm font-black uppercase tracking-[0.4em] text-white"
+          className="mt-6 text-base font-semibold text-white"
         >
           The Suds Squad
         </motion.p>
@@ -88,7 +88,7 @@ function Preloader({ done: a }) {
             duration: 1.4,
             ease: "easeInOut",
           }}
-          className="mt-5 h-[3px] w-52 origin-left rounded-full bg-gradient-to-r from-cyan-300 to-sky-400"
+          className="mt-5 h-[3px] w-52 origin-left rounded-full bg-cyan-300"
         />
         <motion.div
           className="mt-6 flex gap-1.5"

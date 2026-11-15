@@ -77,18 +77,6 @@ function ComparisonSlider({ active: a }) {
         />
       </AnimatePresence>
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <motion.div
-          className="absolute -left-1/3 top-0 h-full w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-          animate={{
-            x: ["0%", "500%"],
-          }}
-          transition={{
-            duration: 4.5,
-            repeat: 1 / 0,
-            ease: "easeInOut",
-            repeatDelay: 2,
-          }}
-        />
       </div>
       <Gleams count={8} />
       <div
@@ -141,7 +129,7 @@ function ComparisonSlider({ active: a }) {
         }}
         aria-hidden
       >
-        <div className="absolute inset-y-0 -left-px w-[3px] bg-gradient-to-b from-cyan-200 via-white to-cyan-200 shadow-[0_0_20px_rgba(34,211,238,.9)]" />
+        <div className="absolute inset-y-0 -left-px w-[3px] bg-cyan-200" />
         <motion.div
           animate={
             u
@@ -161,7 +149,7 @@ function ComparisonSlider({ active: a }) {
                   duration: 0.2,
                 }
           }
-          className="absolute top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-white/80 bg-gradient-to-br from-cyan-300 to-sky-500 text-[#04141f] shadow-[0_10px_36px_-6px_rgba(34,211,238,1)]"
+          className="absolute top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-white/80 bg-cyan-300 text-[#04141f]"
         >
           <ChevronsLeftRight className="h-6 w-6" strokeWidth={2.8} />
         </motion.div>
@@ -200,13 +188,6 @@ function BeforeAfter() {
       className="relative overflow-hidden bg-[#f5fafd] py-24 text-[#04141f] sm:py-32"
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="animate-drift absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-cyan-300/30 blur-[120px]" />
-        <div
-          className="animate-drift absolute bottom-0 right-0 h-80 w-80 rounded-full bg-sky-400/20 blur-[110px]"
-          style={{
-            animationDelay: "-7s",
-          }}
-        />
       </div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
@@ -214,10 +195,10 @@ function BeforeAfter() {
             <SplitWords
               text="See what a thorough clean changes."
               as="h2"
-              className="font-serif-d block text-4xl font-semibold leading-[1.05] sm:text-6xl"
+              className="font-serif-d block text-[1.9rem] font-medium leading-tight sm:text-[2.6rem]"
             />
             <Reveal delay={0.2}>
-              <p className="mt-4 text-[15.5px] leading-relaxed text-slate-600">
+              <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
                 Move the control across each image to compare the surface before
                 and after cleaning. These examples illustrate the difference in
                 clarity, color, and visible buildup.
@@ -234,7 +215,7 @@ function BeforeAfter() {
                 {u === a && (
                   <motion.span
                     layoutId="tab-glow"
-                    className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 to-sky-500/30"
+                    className="absolute inset-0 bg-cyan-400/30"
                     transition={{
                       duration: 0.5,
                       ease: EASE,

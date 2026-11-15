@@ -55,9 +55,6 @@ function Bubbles({
             "--o": d.o,
             "--s": d.s,
             border: `1.5px solid ${r}`,
-            background:
-              "radial-gradient(circle at 32% 30%, rgba(255,255,255,.65), transparent 55%)",
-            boxShadow: `0 0 ${d.size / 2}px ${r}`,
           } as React.CSSProperties}
         />
       ))}
@@ -102,9 +99,7 @@ function DropletsFx({ count: a = 16, className: i = "" }) {
             animationDuration: `${l.dur}s`,
             animationDelay: `${l.delay}s`,
             "--sway": `${l.sway}px`,
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(186,230,253,.55) 30%, rgba(255,255,255,.85) 50%, rgba(125,211,252,.5) 75%, rgba(255,255,255,0) 100%)",
-            filter: "blur(0.4px)",
+            background: "rgba(224,242,254,.6)",
           } as React.CSSProperties}
         />
       ))}
@@ -360,7 +355,7 @@ function ScrollProgress() {
     i = useTransform(a, [0, 1], [0, 1]);
   return (
     <motion.div
-      className="fixed inset-x-0 top-0 z-[90] h-[3px] origin-left bg-gradient-to-r from-cyan-300 via-sky-400 to-cyan-200"
+      className="fixed inset-x-0 top-0 z-[90] h-[3px] origin-left bg-cyan-300"
       style={{
         scaleX: i,
       }}

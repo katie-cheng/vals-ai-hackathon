@@ -9,17 +9,16 @@ function Faq() {
   return (
     <section id="faq" className="relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="animate-drift absolute -left-24 top-1/3 h-80 w-80 rounded-full bg-sky-600/15 blur-[120px]" />
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <SplitWords
             text="Useful answers before you book."
             as="h2"
-            className="font-serif-d block text-4xl font-semibold leading-[1.05] text-white sm:text-5xl"
+            className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
-            <p className="mt-4 text-[15px] leading-relaxed text-sky-100/70">
+            <p className="mt-4 text-[17px] leading-relaxed text-sky-100/70">
               Pricing, service areas, inside glass, screens, mirrors, and
               multi-service visits are covered here.
             </p>
@@ -63,7 +62,7 @@ function Faq() {
                     className="flex w-full items-center gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
                   >
                     <span
-                      className={`text-[12px] font-black tracking-widest ${u ? "text-cyan-300" : "text-sky-200/40"}`}
+                      className={`text-[13px] font-semibold tabular-nums ${u ? "text-cyan-300" : "text-sky-200/40"}`}
                     >
                       {String(l + 1).padStart(2, "0")}
                     </span>

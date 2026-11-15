@@ -37,7 +37,7 @@ body {
   background: #04141f;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#22d3ee, #0ea5e9);
+  background: #22d3ee;
   border-radius: 8px;
 }
 .font-serif-d {

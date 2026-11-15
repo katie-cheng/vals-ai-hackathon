@@ -47,18 +47,17 @@ function Logo({ compact: a = false }) {
       className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap"
       aria-label="The Suds Squad, back to top"
     >
-      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-300 via-sky-400 to-blue-600 shadow-[0_8px_24px_-6px_rgba(34,211,238,.7)] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105">
+      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-2xl bg-cyan-300 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105">
         <Droplets className="h-5 w-5 text-[#04141f]" strokeWidth={2.6} />
-        <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/60 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
       </span>
       {!a && (
         <span className="leading-none">
           <span className="block text-[15px] font-black tracking-tight text-white">
-            {"THE SUDS "}
-            <span className="text-cyan-300">SQUAD</span>
+            {"The Suds "}
+            <span className="text-cyan-300">Squad</span>
           </span>
-          <span className="block text-[10px] font-semibold tracking-[0.32em] text-sky-200/70">
-            CONNECTICUT
+          <span className="block text-[12px] font-medium text-sky-200/70">
+            Connecticut
           </span>
         </span>
       )}
@@ -120,7 +119,7 @@ function Header() {
                   className="group relative whitespace-nowrap rounded-full px-3.5 py-2 text-[13.5px] font-semibold text-sky-100/80 transition-colors duration-300 hover:text-white"
                 >
                   {p.label}
-                  <span className="absolute inset-x-3 -bottom-0.5 h-[2px] origin-left scale-x-0 rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 transition-transform duration-300 group-hover:scale-x-100" />
+                  <span className="absolute inset-x-3 -bottom-0.5 h-[2px] origin-left scale-x-0 rounded-full bg-cyan-300 transition-transform duration-300 group-hover:scale-x-100" />
                 </a>
               ))}
             </nav>
@@ -135,7 +134,7 @@ function Header() {
               <Magnetic strength={0.25}>
                 <a
                   href="#quote"
-                  className="shine-sweep group hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-2.5 text-[13.5px] font-black text-[#04141f] shadow-[0_10px_30px_-8px_rgba(34,211,238,.8)] transition-all duration-300 hover:shadow-[0_14px_40px_-6px_rgba(34,211,238,.9)] sm:inline-flex"
+                  className="group hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-cyan-300 px-5 py-2.5 text-[13.5px] font-black text-[#04141f] transition-all duration-300 sm:inline-flex"
                 >
                   Get a free quote
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -157,7 +156,7 @@ function Header() {
             aria-hidden
           >
             <div
-              className="h-full rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-cyan-200 transition-[width] duration-150"
+              className="h-full rounded-full bg-cyan-300 transition-[width] duration-150"
               style={{
                 width: `${u * 100}%`,
               }}
@@ -196,14 +195,10 @@ function Header() {
                   duration: 0.5,
                   ease: EASE,
                 }}
-                className="absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col gap-1 overflow-y-auto border-l border-cyan-300/20 bg-gradient-to-b from-[#06283d] to-[#04141f] p-7 pt-24"
+                className="absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col gap-1 overflow-y-auto border-l border-cyan-300/20 bg-[#06283d] p-7 pt-24"
                 onClick={(p) => p.stopPropagation()}
                 aria-label="Mobile navigation"
               >
-                <div
-                  className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"
-                  aria-hidden
-                />
                 {NAV.map((p, y) => (
                   <motion.a
                     key={p.href}
@@ -258,7 +253,7 @@ function Header() {
                   <a
                     href="#quote"
                     onClick={() => l(false)}
-                    className="shine-sweep flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-sky-400 px-4 py-3.5 font-black text-[#04141f]"
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-4 py-3.5 font-black text-[#04141f]"
                   >
                     {"Request a free quote "}
                     <ArrowRight className="h-4 w-4" />

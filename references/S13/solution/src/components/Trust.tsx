@@ -32,8 +32,7 @@ function Trust() {
           playsInline
           preload="metadata"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#04141f] via-[#04141f]/70 to-[#04141f]" />
-        <div className="animate-drift absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-cyan-500/15 blur-[130px]" />
+        <div className="absolute inset-0 bg-[#04141f]/60" />
       </div>
       <Gleams count={10} className="opacity-60" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
@@ -41,10 +40,10 @@ function Trust() {
           <SplitWords
             text="Careful work. Clear communication."
             as="h2"
-            className="font-serif-d block text-4xl font-semibold leading-[1.05] text-white sm:text-6xl"
+            className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
-            <p className="mt-5 max-w-2xl text-[15.5px] leading-relaxed text-sky-100/75">
+            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-sky-100/75">
               Good exterior cleaning is not about using the most pressure. It is
               about reading the surface, working methodically, and respecting
               the home around it.
@@ -58,13 +57,13 @@ function Trust() {
               <Reveal key={a.id} delay={(i % 3) * 0.1}>
                 <Tilt max={8} className="group h-full">
                   <div
-                    className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 backdrop-blur-xl transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:border-cyan-300/40 sm:p-7"
+                    className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.08] p-6 backdrop-blur-xl transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:border-cyan-300/40 sm:p-7"
                     style={{
                       transformStyle: "preserve-3d",
                     }}
                   >
                     <div
-                      className="relative mb-5 inline-grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-cyan-300/25 to-sky-500/20 ring-1 ring-cyan-300/30 transition-all duration-500 group-hover:rotate-[10deg] group-hover:scale-110 group-hover:from-cyan-300 group-hover:to-sky-400"
+                      className="relative mb-5 inline-grid h-14 w-14 place-items-center rounded-2xl bg-cyan-300/25 ring-1 ring-cyan-300/30 transition-all duration-500 group-hover:rotate-[10deg] group-hover:scale-110 group-hover:from-cyan-300 group-hover:to-sky-400"
                       style={{
                         transform: "translateZ(30px)",
                       }}
@@ -75,7 +74,7 @@ function Trust() {
                       />
                     </div>
                     <h3
-                      className="relative text-lg font-black text-white"
+                      className="relative text-lg font-semibold text-white"
                       style={{
                         transform: "translateZ(20px)",
                       }}

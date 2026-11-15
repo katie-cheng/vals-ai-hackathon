@@ -170,15 +170,6 @@ function Quote() {
   return (
     <section id="quote" className="relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="animate-drift absolute left-1/2 top-1/4 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[150px]" />
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,.8) 1px, transparent 1px)",
-            backgroundSize: "30px 30px",
-          }}
-        />
       </div>
       <ParticleCanvas density={50} />
       <Bubbles count={18} className="opacity-50" />
@@ -195,7 +186,7 @@ function Quote() {
           {[0, 1].map((O) => (
             <p
               key={O}
-              className="text-stroke text-[13vw] font-black uppercase leading-none tracking-tight opacity-30 sm:text-7xl"
+              className="text-stroke text-[13vw] font-black leading-none tracking-tight opacity-30 sm:text-7xl"
             >
               Free quote · Free quote · Free quote · Free quote ·
             </p>
@@ -207,10 +198,10 @@ function Quote() {
           <SplitWords
             text="Tell us what needs cleaning."
             as="h2"
-            className="font-serif-d block text-4xl font-semibold leading-[1.05] text-white sm:text-5xl"
+            className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
-            <p className="mt-4 max-w-md text-[15.5px] leading-relaxed text-sky-100/75">
+            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-sky-100/75">
               Share the property details and select every service you want to
               discuss. We will review the request, look at the property, and
               confirm the scope and price with you.
@@ -309,7 +300,7 @@ function Quote() {
                       duration: 0.7,
                       ease: EASE,
                     }}
-                    className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-cyan-300 to-sky-500 shadow-[0_18px_50px_-10px_rgba(34,211,238,.9)]"
+                    className="grid h-20 w-20 place-items-center rounded-full bg-cyan-300"
                   >
                     <Check
                       className="h-10 w-10 text-[#04141f]"
@@ -363,7 +354,7 @@ function Quote() {
                     transition={{
                       delay: 0.6,
                     }}
-                    className="mt-4 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 py-2 font-mono text-[13px] font-bold text-cyan-200"
+                    className="mt-4 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 py-2 text-[13px] font-semibold text-cyan-200"
                   >
                     {"Your reference: "}
                     {y}
@@ -419,7 +410,7 @@ function Quote() {
                   noValidate={false}
                 >
                   <div className="mb-6 flex items-center justify-between">
-                    <h3 className="text-lg font-black text-white">
+                    <h3 className="text-lg font-semibold text-white">
                       Free quote request
                     </h3>
                   </div>
@@ -559,7 +550,7 @@ function Quote() {
                             whileTap={{
                               scale: 0.95,
                             }}
-                            className={`flex cursor-pointer items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-bold transition-all duration-300 ${G ? "bg-gradient-to-r from-cyan-300 to-sky-400 text-[#04141f] shadow-[0_8px_24px_-6px_rgba(34,211,238,.8)]" : "border border-white/15 bg-white/[0.05] text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
+                            className={`flex cursor-pointer items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-bold transition-all duration-300 ${G ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-white/[0.05] text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
                           >
                             <input
                               type="checkbox"
@@ -655,7 +646,7 @@ function Quote() {
                                 preferredContact: O.v,
                               }))
                             }
-                            className={`flex items-center justify-center gap-1.5 rounded-2xl border px-2 py-3.5 text-[12.5px] font-bold transition-all duration-300 ${a.preferredContact === O.v ? "border-cyan-300 bg-cyan-300/15 text-cyan-200 shadow-[0_0_20px_-4px_rgba(34,211,238,.6)]" : "border-white/15 bg-white/[0.05] text-sky-100/70 hover:border-white/30"}`}
+                            className={`flex items-center justify-center gap-1.5 rounded-2xl border px-2 py-3.5 text-[12.5px] font-bold transition-all duration-300 ${a.preferredContact === O.v ? "border-cyan-300 bg-cyan-300/15 text-cyan-200" : "border-white/15 bg-white/[0.05] text-sky-100/70 hover:border-white/30"}`}
                             aria-pressed={a.preferredContact === O.v}
                           >
                             <O.icon className="h-3.5 w-3.5" /> {O.t}
@@ -740,7 +731,7 @@ function Quote() {
                       whileTap={{
                         scale: 0.97,
                       }}
-                      className="shine-sweep group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-300 via-sky-300 to-cyan-300 bg-[length:200%_auto] px-6 py-4 text-[15.5px] font-black text-[#04141f] shadow-[0_20px_50px_-12px_rgba(34,211,238,.8)] transition-all duration-500 hover:bg-right disabled:opacity-70"
+                      className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-cyan-300 px-6 py-4 text-[15.5px] font-black text-[#04141f] transition-all duration-500 hover:bg-right disabled:opacity-70"
                     >
                       {u === "submitting" ? (
                         <>

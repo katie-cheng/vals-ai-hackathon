@@ -50,13 +50,6 @@ function PricingAreas() {
         className="relative overflow-hidden bg-[#f5fafd] py-24 text-[#04141f] sm:py-32"
       >
         <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="animate-drift absolute -left-24 top-10 h-80 w-80 rounded-full bg-sky-400/25 blur-[110px]" />
-          <div
-            className="animate-drift absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-cyan-300/40 blur-[110px]"
-            style={{
-              animationDelay: "-5s",
-            }}
-          />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-12 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-end">
@@ -64,10 +57,10 @@ function PricingAreas() {
               <SplitWords
                 text="Clear prices for window work."
                 as="h2"
-                className="font-serif-d block text-4xl font-semibold leading-[1.05] sm:text-5xl"
+                className="font-serif-d block text-[1.9rem] font-medium leading-tight sm:text-[2.6rem]"
               />
               <Reveal delay={0.2}>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-slate-600">
+                <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
                   Individual window items have set prices. Gutters, siding, and
                   hard surfaces are quoted after we understand the size,
                   condition, and access at your property.
@@ -77,7 +70,7 @@ function PricingAreas() {
             <Reveal delay={0.15}>
               <div className="glass-strong relative overflow-hidden !rounded-3xl p-6 sm:p-7">
                 <Bubbles count={8} minSize={2} maxSize={10} />
-                <h3 className="font-serif-d relative text-2xl font-semibold text-white">
+                <h3 className="font-serif-d relative text-xl font-medium text-white">
                   Larger jobs need a look first.
                 </h3>
                 <p className="relative mt-2 text-[14px] leading-relaxed text-sky-100/75">
@@ -90,7 +83,7 @@ function PricingAreas() {
                 <Magnetic strength={0.2} className="relative mt-5 inline-block">
                   <a
                     href="#quote"
-                    className="shine-sweep group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 to-sky-400 px-6 py-3 text-[13.5px] font-black text-[#04141f]"
+                    className="group inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 text-[13.5px] font-black text-[#04141f]"
                   >
                     {"Get my property quote "}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -111,10 +104,10 @@ function PricingAreas() {
                     duration: 0.35,
                     ease: EASE,
                   }}
-                  className="group relative h-full overflow-hidden rounded-3xl bg-white p-6 shadow-[0_18px_50px_-20px_rgba(4,40,70,.35)] ring-1 ring-slate-200/80 transition-shadow duration-300 hover:shadow-[0_24px_60px_-18px_rgba(14,165,233,.5)]"
+                  className="group relative h-full overflow-hidden rounded-3xl bg-white p-6 shadow-[0_18px_50px_-20px_rgba(4,40,70,.35)] ring-1 ring-slate-200/80 transition-shadow duration-300"
                 >
                   <div
-                    className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-gradient-to-r from-cyan-400 to-sky-500 transition-transform duration-500 group-hover:scale-x-100"
+                    className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-cyan-400 transition-transform duration-500 group-hover:scale-x-100"
                     aria-hidden
                   />
                   <Droplets className="h-5 w-5 text-sky-400 transition-transform duration-500 group-hover:rotate-[20deg] group-hover:scale-125" />
@@ -138,7 +131,6 @@ function PricingAreas() {
       </section>
       <section id="areas" className="relative overflow-hidden py-24 sm:py-32">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="animate-drift absolute right-1/4 top-0 h-96 w-96 rounded-full bg-sky-600/15 blur-[130px]" />
         </div>
         <Bubbles count={12} className="opacity-40" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
@@ -266,18 +258,6 @@ function PricingAreas() {
                   className="pointer-events-none absolute inset-0 overflow-hidden rounded-[1.5rem]"
                   aria-hidden
                 >
-                  <motion.div
-                    className="absolute h-20 w-20 rounded-full bg-cyan-300/10 blur-2xl"
-                    animate={{
-                      x: [20, 260, 120, 300, 20],
-                      y: [40, 160, 260, 90, 40],
-                    }}
-                    transition={{
-                      duration: 18,
-                      repeat: 1 / 0,
-                      ease: "easeInOut",
-                    }}
-                  />
                 </div>
               </div>
             </div>
@@ -286,10 +266,10 @@ function PricingAreas() {
             <SplitWords
               text="One state. Plenty of dirty windows."
               as="h2"
-              className="font-serif-d block text-4xl font-semibold leading-[1.05] text-white sm:text-5xl"
+              className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
             />
             <Reveal delay={0.2}>
-              <p className="mt-4 max-w-lg text-[15.5px] leading-relaxed text-sky-100/75">
+              <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-sky-100/75">
                 We serve homes throughout Connecticut, from the Capitol Region
                 to the shoreline and Fairfield County. If your property has a
                 Connecticut ZIP code, send us the address.
@@ -304,7 +284,7 @@ function PricingAreas() {
                   <button
                     key={l.id}
                     onClick={() => i(l.name)}
-                    className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[12.5px] font-bold transition-all duration-300 ${a === l.name ? "scale-105 bg-cyan-300 text-[#04141f] shadow-[0_8px_24px_-6px_rgba(34,211,238,.8)]" : "border border-white/12 bg-white/5 text-sky-100/75 hover:border-cyan-300/50 hover:text-white"}`}
+                    className={`flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[12.5px] font-bold transition-all duration-300 ${a === l.name ? "scale-105 bg-cyan-300 text-[#04141f]" : "border border-white/12 bg-white/5 text-sky-100/75 hover:border-cyan-300/50 hover:text-white"}`}
                   >
                     <MapPin className="h-3 w-3" />
                     {l.name}
@@ -348,7 +328,7 @@ function PricingAreas() {
               <Magnetic strength={0.2} className="mt-5 inline-block">
                 <a
                   href="#quote"
-                  className="shine-sweep group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13.5px] font-black text-[#04141f] transition-all duration-300 hover:bg-cyan-300"
+                  className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[13.5px] font-black text-[#04141f] transition-all duration-300 hover:bg-cyan-300"
                 >
                   {"Ask about your property "}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

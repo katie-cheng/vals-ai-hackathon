@@ -19,7 +19,6 @@ function Process() {
       className="relative overflow-hidden py-24 sm:py-32"
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="animate-drift absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-sky-600/12 blur-[140px]" />
       </div>
       <Bubbles count={16} className="opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
@@ -27,10 +26,10 @@ function Process() {
           <SplitWords
             text="From first message to final check."
             as="h2"
-            className="font-serif-d block text-4xl font-semibold leading-[1.05] text-white sm:text-6xl"
+            className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
-            <p className="mt-5 text-[15.5px] leading-relaxed text-sky-100/75">
+            <p className="mt-5 text-[17px] leading-relaxed text-sky-100/75">
               You will know what we are cleaning, what it costs, and when we are
               coming before the work begins. One request can include several
               services.
@@ -58,7 +57,7 @@ function Process() {
             aria-hidden
           >
             <motion.div
-              className="h-full w-full origin-top bg-gradient-to-b from-cyan-300 via-sky-400 to-cyan-200"
+              className="h-full w-full origin-top bg-cyan-300"
               style={{
                 scaleY: r,
               }}
@@ -106,7 +105,7 @@ function Process() {
                         }}
                         className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
                       >
-                        <h3 className="font-serif-d text-2xl font-semibold text-white sm:text-[1.7rem]">
+                        <h3 className="font-serif-d text-xl font-medium text-white sm:text-[1.4rem]">
                           {l.title}
                         </h3>
                         <p className="mt-3 text-[14.5px] leading-relaxed text-sky-100/70">

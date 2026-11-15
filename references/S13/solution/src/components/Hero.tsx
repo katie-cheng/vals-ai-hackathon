@@ -10,7 +10,6 @@ import {
   useTransform,
 } from "framer-motion";
 import {
-  ArrowDown,
   ArrowRight,
   BadgeCheck,
   Droplets,
@@ -123,8 +122,7 @@ function Hero() {
               preload="auto"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#04141f]/80 via-[#04141f]/35 to-[#04141f]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#04141f]/85 via-transparent to-[#04141f]/40" />
+          <div className="absolute inset-0 bg-[#04141f]/65" />
         </motion.div>
         <motion.div
           style={{
@@ -134,8 +132,6 @@ function Hero() {
           className="pointer-events-none absolute inset-0"
           aria-hidden
         >
-          <div className="absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-cyan-400/25 blur-[110px]" />
-          <div className="absolute bottom-[22%] right-[10%] h-80 w-80 rounded-full bg-sky-500/20 blur-[120px]" />
         </motion.div>
         <motion.div
           style={{
@@ -145,7 +141,6 @@ function Hero() {
           className="pointer-events-none absolute inset-0"
           aria-hidden
         >
-          <div className="animate-pulse-soft absolute right-[22%] top-[12%] h-40 w-40 rounded-full bg-white/10 blur-[80px]" />
         </motion.div>
         <ParticleCanvas density={80} />
         <Bubbles count={22} />
@@ -167,8 +162,7 @@ function Hero() {
                 height: 20 + ((H * 53) % 60),
                 animationDuration: `${5 + ((H * 29) % 7)}s`,
                 animationDelay: `${-((H * 41) % 10)}s`,
-                background:
-                  "linear-gradient(180deg, transparent, rgba(186,230,253,.4) 30%, rgba(255,255,255,.7) 50%, rgba(125,211,252,.35) 75%, transparent)",
+                background: "rgba(224,242,254,.6)",
               }}
             />
           ))}
@@ -180,13 +174,12 @@ function Hero() {
           }}
           className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pt-36 sm:px-6 lg:pt-40"
         >
-          <h1 className="max-w-5xl text-[13.5vw] font-black leading-[0.92] tracking-tight text-white sm:text-7xl lg:text-[6.2rem]">
+          <h1 className="max-w-4xl text-[11vw] font-bold leading-[1] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]">
             <HeroWords text="Connecticut," delay={0.35} className="block" />
             <HeroWords
               text="in its best light."
               delay={0.62}
               className="block"
-              wordClassName="animate-shine-text bg-gradient-to-r from-cyan-200 via-white to-sky-300 bg-clip-text pb-[0.08em] text-transparent"
             />
           </h1>
           <motion.p
@@ -228,7 +221,7 @@ function Hero() {
             <Magnetic>
               <a
                 href="#quote"
-                className="shine-sweep group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-cyan-300 via-sky-300 to-cyan-300 bg-[length:200%_auto] px-8 py-4 text-[15px] font-black text-[#04141f] shadow-[0_20px_60px_-12px_rgba(34,211,238,.8)] transition-all duration-500 hover:bg-right hover:shadow-[0_24px_70px_-10px_rgba(34,211,238,1)]"
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-cyan-300 px-8 py-4 text-[15px] font-black text-[#04141f] transition-all duration-500 hover:bg-right"
               >
                 <Sparkles className="h-5 w-5 transition-transform duration-500 group-hover:rotate-[25deg] group-hover:scale-125" />
                 Get my free quote
@@ -294,31 +287,6 @@ function Hero() {
             ))}
           </motion.div>
         </motion.div>
-        <motion.a
-          href="#services"
-          style={{
-            opacity: u,
-          }}
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            delay: 1.8,
-            duration: 1,
-          }}
-          className="group relative z-10 mx-auto mb-28 flex flex-col items-center gap-2 text-sky-200/70 transition-colors hover:text-white"
-          aria-label="Scroll to explore"
-        >
-          <span className="text-[11px] font-bold uppercase tracking-[0.3em]">
-            Scroll to explore
-          </span>
-          <span className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-white/5 backdrop-blur transition-all duration-300 group-hover:border-cyan-300/60 group-hover:bg-cyan-300/10">
-            <ArrowDown className="h-5 w-5 animate-bounce text-cyan-300" />
-          </span>
-        </motion.a>
         <motion.div
           className="absolute inset-x-0 bottom-0 z-10"
           aria-hidden
@@ -328,17 +296,17 @@ function Hero() {
               {[0, 1].map((M) => (
                 <div key={M} className="flex items-center gap-8">
                   {[
-                    "PRESSURE WASHING",
-                    "WINDOW CLEANING",
-                    "GUTTER CLEANING",
-                    "HOUSE WASHING",
-                    "DRIVEWAYS",
-                    "PATIOS",
-                    "FREE ESTIMATES",
+                    "Pressure washing",
+                    "Window cleaning",
+                    "Gutter cleaning",
+                    "House washing",
+                    "Driveways",
+                    "Patios",
+                    "Free estimates",
                   ].map((H) => (
                     <span
                       key={H}
-                      className="flex items-center gap-8 text-[13px] font-black tracking-[0.28em] text-cyan-200/80"
+                      className="flex items-center gap-8 text-[14px] font-medium text-cyan-100/80"
                     >
                       {H}
                       <Droplets className="h-3.5 w-3.5 text-cyan-400" />
