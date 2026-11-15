@@ -8,13 +8,15 @@ export default function SettingsModal({ exam, onSave, onClose }: { exam: Exam; o
   const [name, setName] = useState(exam.name);
   const [when, setWhen] = useState(toLocalInput(exam.target));
   const first = useRef<HTMLInputElement>(null);
+  const close = useRef(onClose);
+  close.current = onClose;
 
   useEffect(() => {
     first.current?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close.current();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, []);
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
