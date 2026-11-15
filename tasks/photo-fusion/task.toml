@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/photo-fusion"
+version = "0.1.0"
+description = "Build a client-side photo merger (upload, drag and drop, horizontal/vertical/grid/collage layouts, spacing, borders, backgrounds, live preview, PNG/JPG download); graded on brief fulfillment, real merging and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "web-app", "canvas"]
+
+[metadata]
+difficulty = "hard"
+category = "interactive-app"
+tags = ["design-arena", "tool", "image-editor"]
+source = "Design Arena webapps tournament 3221e631-35de-41fb-ae3a-a3c843e5eb79 (sites S11 muse-spark-1.3, S12 gpt-6.1-sol)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1500.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]
