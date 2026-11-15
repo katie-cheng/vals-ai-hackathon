@@ -5,4 +5,9 @@ import { quotesApi } from "./server/quotes";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), quotesApi()],
+  server: {
+    fs: {
+      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "**/.data/**"],
+    },
+  },
 });
