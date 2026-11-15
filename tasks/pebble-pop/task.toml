@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/pebble-pop"
+version = "0.1.0"
+description = "Build Pebble Pop, a complete woodland match-3 drop puzzle game (React, Vite, TypeScript, Phaser 3) with every screen, 40 levels, boosters and persistence; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "phaser", "game", "slop"]
+
+[metadata]
+difficulty = "hard"
+category = "game"
+tags = ["design-arena", "game", "phaser", "puzzle"]
+source = "Design Arena tournament 38d779df-df0c-4746-ada4-638ff03f8a93 for sites S15 (claude-opus-5-5) and S16 (evergreen)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]
