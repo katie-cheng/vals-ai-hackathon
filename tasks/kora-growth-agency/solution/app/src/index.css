@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+  --color-cream-50: #faf8f2;
+  --color-cream-100: #f3eee1;
+  --color-cream-200: #e8e1cd;
+  --color-ink-950: #0e100e;
+  --color-ink-900: #151715;
+  --color-ink-800: #1f221f;
+  --color-ink-700: #2c302c;
+  --color-ink-500: #5b615a;
+  --color-ink-400: #878c83;
+  --color-pine-950: #0b1510;
+  --color-pine-900: #10241a;
+  --color-pine-800: #163626;
+  --color-pine-700: #1d4a2f;
+  --color-pine-600: #27653c;
+  --color-pine-500: #33854d;
+  --color-mint-100: #e9f2e2;
+  --color-mint-200: #d7e7cb;
+  --color-mint-300: #bcd8a9;
+  --color-gold-400: #c9a227;
+  --animate-spin-slow: spin-slow 14s linear infinite;
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+}
+
+@layer base {
+  html { scroll-behavior: auto; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  body {
+    background: var(--color-cream-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--color-pine-700); color: #fff; }
+}
+
+@layer components {
+  .container-x { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+  .section-pad { padding-block: clamp(4.5rem, 9vw, 8.5rem); }
+  .display-xl { letter-spacing: -0.035em; font-size: clamp(2.9rem, 8.5vw, 7.5rem); font-weight: 800; line-height: 0.98; }
+  .display-lg { letter-spacing: -0.03em; font-size: clamp(2.4rem, 6vw, 5.25rem); font-weight: 800; line-height: 1; }
+  .display-md { letter-spacing: -0.025em; font-size: clamp(2rem, 4.6vw, 3.75rem); font-weight: 800; line-height: 1.02; }
+  .serif-accent { font-family: var(--font-serif); letter-spacing: -0.01em; font-style: italic; font-weight: 400; }
+  .marquee-track { width: max-content; animation: marquee-x linear infinite; display: flex; }
+  .marquee-paused:hover .marquee-track { animation-play-state: paused; }
+  .grain::after {
+    content: ""; pointer-events: none; z-index: 5; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    width: 200%; height: 200%; position: fixed; inset: -50%;
+  }
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; transform-origin: 100%; background: currentColor; border-radius: 2px; width: 100%; height: 2px;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); position: absolute; bottom: -3px; left: 0; transform: scaleX(0);
+  }
+  .nav-link:hover::after, .nav-link.active::after { transform-origin: 0; transform: scaleX(1); }
+  .zoom-img img { transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1); }
+  .zoom-img:hover img { transform: scale(1.06); }
+  .dot-grid { background-image: radial-gradient(#faf8f224 1px, #0000 1px); background-size: 26px 26px; }
+  .dot-grid-dark { background-image: radial-gradient(#1517151f 1px, #0000 1px); background-size: 26px 26px; }
+  .field {
+    border: 1px solid var(--color-cream-200); width: 100%; color: var(--color-ink-900); background: #ffffffbf;
+    border-radius: 0.9rem; outline: none; padding: 0.85rem 1.1rem; font-size: 0.95rem; font-weight: 500;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  }
+  .field::placeholder { color: var(--color-ink-400); font-weight: 500; }
+  .field:focus { border-color: var(--color-pine-600); background: #fff; box-shadow: 0 0 0 4px #27653c1f; }
+  .field-error { border-color: #c0392b !important; box-shadow: 0 0 0 4px #c0392b1a !important; }
+  .custom-cursor-on, .custom-cursor-on a, .custom-cursor-on button { cursor: none; }
+}
+
+@keyframes marquee-x { 0% { transform: translate(0); } 100% { transform: translate(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .animate-spin-slow { animation: none; }
+}
