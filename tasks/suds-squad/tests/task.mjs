@@ -9,7 +9,11 @@ export const HANDOFF_URLS = /\/api\/quotes(\?|$)/;
 // A request that does not carry the name and email the grader typed is refused, so an empty or unwired form cannot pass.
 export const HANDOFF_REPLY = (request) => {
   if (request.method() !== "POST") return null;
-  const body = decodeURIComponent((request.postData() || "").replace(/\+/g, " "));
+  const raw = request.postData() || "";
+  let body = raw;
+  try {
+    body += "\n" + decodeURIComponent(raw.replace(/\+/g, " "));
+  } catch {}
   const ok = body.includes(QUOTE.name) && body.includes(QUOTE.email);
   const reply = ok ? { ok: true, reference: "SS-GRADER-0001" } : { error: "Tell us your name and email." };
   return { status: ok ? 201 : 400, contentType: "application/json", body: JSON.stringify(reply) };
