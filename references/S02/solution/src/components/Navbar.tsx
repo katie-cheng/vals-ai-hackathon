@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Search, X } from "lucide-react";
 import { useCourse } from "../context/CourseContext";
 import { Logo } from "./Logo";
@@ -17,7 +17,6 @@ const NAV_ITEMS = [
 export const Navbar = () => {
   const { currentUser, switchUserRole, totalCompletedCount, overallPercent } = useCourse();
   const location = useLocation();
-  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [accountOpen, setAccountOpen] = React.useState(false);
   const accountRef = React.useRef<HTMLDivElement>(null);
@@ -64,9 +63,9 @@ export const Navbar = () => {
           ))}
         </nav>
         <div className="flex flex-none items-center gap-1">
-          <button type="button" onClick={() => navigate("/search")} className="icon-btn" aria-label="Search lessons">
+          <Link to="/search" className="icon-btn" aria-label="Search lessons">
             <Search className="h-5 w-5" strokeWidth={1.75} />
-          </button>
+          </Link>
           <div className="relative" ref={accountRef}>
             <button
               type="button"

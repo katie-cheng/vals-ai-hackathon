@@ -2245,10 +2245,10 @@ index 0000000..5d31d4f
 +  </span>
 +);
 diff --git a/src/components/Navbar.tsx b/src/components/Navbar.tsx
-index e068c2c..976e47d 100644
+index e068c2c..7be2128 100644
 --- a/src/components/Navbar.tsx
 +++ b/src/components/Navbar.tsx
-@@ -1,279 +1,145 @@
+@@ -1,279 +1,144 @@
  import * as React from "react";
 -import { Link, useLocation, useNavigate } from "react-router-dom";
 -import {
@@ -2267,7 +2267,7 @@ index e068c2c..976e47d 100644
 -  UserCheck,
 -  X,
 -} from "lucide-react";
-+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
++import { Link, NavLink, useLocation } from "react-router-dom";
 +import { Menu, Search, X } from "lucide-react";
  import { useCourse } from "../context/CourseContext";
 +import { Logo } from "./Logo";
@@ -2322,7 +2322,6 @@ index e068c2c..976e47d 100644
 -    },
 -  ];
 +  const location = useLocation();
-+  const navigate = useNavigate();
 +  const [menuOpen, setMenuOpen] = React.useState(false);
 +  const [accountOpen, setAccountOpen] = React.useState(false);
 +  const accountRef = React.useRef<HTMLDivElement>(null);
@@ -2438,11 +2437,12 @@ index e068c2c..976e47d 100644
 -              </>
 -            )}
 -            <span className="text-[10px] text-slate-400">(Switch)</span>
-+        <div className="flex flex-none items-center gap-1">
-+          <button type="button" onClick={() => navigate("/search")} className="icon-btn" aria-label="Search lessons">
-+            <Search className="h-5 w-5" strokeWidth={1.75} />
-           </button>
+-          </button>
 -          <div className="relative">
++        <div className="flex flex-none items-center gap-1">
++          <Link to="/search" className="icon-btn" aria-label="Search lessons">
++            <Search className="h-5 w-5" strokeWidth={1.75} />
++          </Link>
 +          <div className="relative" ref={accountRef}>
              <button
 -              onClick={() => M(!S)}
@@ -2517,18 +2517,18 @@ index e068c2c..976e47d 100644
 -                  >
 -                    <Sparkles className="w-3.5 h-3.5 text-sky-400" />
 -                    {"Learning Hub & Dashboard"}
--                  </Link>
++                <p className="meta mt-2">{totalCompletedCount} of 42 lessons completed</p>
++                <div className="mt-4 flex flex-col border-t border-line pt-2">
++                  <Link role="menuitem" to="/profile" className="row-link -mx-2 rounded-md px-2 py-2 text-ink-2 hover:text-ink">
++                    Profile
+                   </Link>
 -                  <Link
 -                    to="/profile"
 -                    className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-slate-200 transition-colors"
 -                  >
 -                    <CircleCheck className="w-3.5 h-3.5 text-emerald-400" />
 -                    {"Profile & Credentials"}
-+                <p className="meta mt-2">{totalCompletedCount} of 42 lessons completed</p>
-+                <div className="mt-4 flex flex-col border-t border-line pt-2">
-+                  <Link role="menuitem" to="/profile" className="row-link -mx-2 rounded-md px-2 py-2 text-ink-2 hover:text-ink">
-+                    Profile
-                   </Link>
+-                  </Link>
 -                  {currentUser.role === "admin" && (
 -                    <Link
 -                      to="/admin"

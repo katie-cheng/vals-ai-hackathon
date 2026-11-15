@@ -76,3 +76,8 @@ admin KPIs and the any-code "verified" certificate removed; fonts self-hosted; c
 6. Multi-route apps: every rubric criterion applies to every route, and the grader should render more than `/`. All 48 S02 labels are on the landing page, yet the same patterns repeat on the 12 inner routes.
 7. A page must not present fabricated proof for arbitrary input (a "verified" certificate for any URL code), and dashboard KPIs must come from the data shown. Extends R9 and R17 to app screens.
 8. Label-pattern additions: page-header "eyebrow + pill" pairs; emoji stored in data and rendered as icons; tag pills listing topics; arrow glyphs in link labels; header clusters that overflow at desktop widths.
+
+## Harbor task
+
+This rebuild is the oracle of `tasks/it-beginner-platform` (`solution/app` is a copy of `solution/` here, without `PLAN.md` and `DESIGN-SYSTEM.md`).
+Building the task's crawler found that the header's search control was a button, unreachable by following links; it is now a link.
