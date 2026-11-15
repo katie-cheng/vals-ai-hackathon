@@ -71,7 +71,7 @@ export class Engine {
   private frames = 0;
   private fpsAt = performance.now();
   private slowSpells = 0;
-  private sent = 0;
+  private sent = Date.now();
   private raf = 0;
   private drag: { id: number; x: number; y: number } | null = null;
   private collected: Record<string, number> = {};
