@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/rocksteady-campus"
+version = "0.1.0"
+description = "Build a multi-page township takeaway ordering site with a menu, cart, checkout, reviews and a client-side CMS from a detailed Design Arena brief; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "ecommerce"]
+
+[metadata]
+difficulty = "hard"
+category = "food-ordering"
+tags = ["design-arena", "local-business", "multi-page"]
+source = "Design Arena webapps tournament 104e4bb6-f582-4005-ade0-55d4a41ccf30 (sites S05 gpt-6-astra-max, S06 kimi-k3.1-pro)"
+
+[agent]
+timeout_sec = 7200.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

@@ -2,6 +2,8 @@
 // Returns page facts for the brief requirements and raw counts for the slop patterns the team labelled
 // (docs/label-analysis.md, tasks/reference-rubric.md); scoring happens in grade.mjs.
 // probe("controls") returns only the controls whose label breaks at the current width, for the resize sweep in grade.mjs.
+// probe("inner") is for pages after the home page: slop inside header, nav and footer is skipped there, since the home page already
+// counted that shared chrome. Page facts are unaffected.
 export function probe(only) {
   const MAX_EXAMPLES = 6;
   const visible = (el) => {
@@ -75,8 +77,10 @@ export function probe(only) {
   }
 
   const all = [...document.body.querySelectorAll("*")].filter((el) => !["SCRIPT", "STYLE", "NOSCRIPT", "TEMPLATE"].includes(el.tagName));
+  const chrome = (el) => only === "inner" && !!el.closest("header,nav,footer,[role=banner],[role=contentinfo]");
+  const counted = all.filter((el) => !chrome(el));
   const holders = [];
-  for (const el of all) {
+  for (const el of counted) {
     const t = ownText(el);
     if (t && visible(el)) holders.push({ el, t, cs: getComputedStyle(el) });
   }
@@ -89,12 +93,14 @@ export function probe(only) {
   const dotExamples = [];
   let tinyWords = 0;
   let totalWords = 0;
+  let emDashes = 0;
   const emojiRe = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B50}\u{2B55}]/gu;
   for (const { el, t, cs } of holders) {
     const fs = px(cs.fontSize);
     const words = t.split(" ").length;
     totalWords += words;
     if (fs < 12) tinyWords += words;
+    emDashes += (t.match(/—/g) || []).length;
     const letters = t.replace(/[^A-Za-z]/g, "");
     const upper = cs.textTransform === "uppercase" || (letters.length >= 3 && letters === letters.toUpperCase());
     if (fs <= 13 && px(cs.letterSpacing) >= Math.max(0.8, 0.06 * fs) && upper && letters.length >= 3 && words <= 8 && !eyebrowTexts.has(t.toUpperCase()))
@@ -110,7 +116,7 @@ export function probe(only) {
   }
 
   const headingAccents = [];
-  const headingEls = new Set([...document.querySelectorAll("h1,h2,h3,h4")].filter(visible));
+  const headingEls = new Set([...document.querySelectorAll("h1,h2,h3,h4")].filter((h) => visible(h) && !chrome(h)));
   for (const { el, cs } of holders) if (px(cs.fontSize) >= 36 && cs.display !== "inline" && !el.closest("h1,h2,h3,h4")) headingEls.add(el);
   for (const h of headingEls) {
     const hs = getComputedStyle(h);
@@ -130,7 +136,7 @@ export function probe(only) {
   const bigRounding = [];
   const gradientText = [];
   const pulsingDots = [];
-  for (const el of all) {
+  for (const el of counted) {
     if (!visible(el)) continue;
     const r = el.getBoundingClientRect();
     const cs = getComputedStyle(el);
@@ -157,7 +163,7 @@ export function probe(only) {
     return r.width > 0 && r.height > 0 && el.checkVisibility({ visibilityProperty: true });
   };
   const ctasByText = new Map();
-  for (const el of all) {
+  for (const el of counted) {
     if (!latent(el) || el.closest("header,nav,footer,[aria-hidden=true],dialog,[role=dialog]") || !ctaLike(el)) continue;
     const t = clean(el.innerText).toLowerCase();
     if (t && t.length <= 60 && t.split(" ").length <= 8) ctasByText.set(t, [...(ctasByText.get(t) || []), el]);
@@ -176,6 +182,8 @@ export function probe(only) {
 
   const bodyText = document.body.innerText;
   const strip = (list) => list.map(({ node, ...rest }) => rest);
+  // Rates also return their numerator and denominator so grade.mjs can pool them across pages.
+  const rate = (num, den, per) => ({ count: (per * num) / Math.max(1, den), num, den, per, examples: [] });
   const slop = {
     eyebrows: { count: eyebrowTexts.size, examples: [...eyebrowTexts.values()].slice(0, MAX_EXAMPLES) },
     heading_accents: { count: headingAccents.length, examples: headingAccents.slice(0, MAX_EXAMPLES) },
@@ -183,11 +191,11 @@ export function probe(only) {
     pills: { count: pills.length, examples: strip(pills).slice(0, MAX_EXAMPLES) },
     big_rounding: { count: bigRounding.length, examples: strip(bigRounding).slice(0, MAX_EXAMPLES) },
     numbered_markers: { count: numbered.length, examples: numbered.slice(0, MAX_EXAMPLES) },
-    em_dashes_per_1k_words: { count: (1000 * (bodyText.match(/—/g) || []).length) / Math.max(1, totalWords), examples: [] },
+    em_dashes_per_1k_words: rate(emDashes, totalWords, 1000),
     emoji_icons: { count: emoji.reduce((n, e) => n + [...e.glyphs].length, 0), examples: emoji.slice(0, MAX_EXAMPLES) },
     gradient_text: { count: gradientText.length, examples: gradientText.slice(0, MAX_EXAMPLES) },
     pulsing_dots: { count: pulsingDots.length, examples: pulsingDots.slice(0, MAX_EXAMPLES) },
-    tiny_text_share: { count: tinyWords / Math.max(1, totalWords), examples: [] },
+    tiny_text_share: rate(tinyWords, totalWords, 1),
     duplicate_ctas: { count: duplicateCtas.length, examples: duplicateCtas.slice(0, MAX_EXAMPLES) },
   };
 
