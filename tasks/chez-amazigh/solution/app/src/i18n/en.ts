@@ -73,7 +73,7 @@ const en = {
     title: "What guests report on Booking.com",
     overallLabel: "Overall rating",
     outOf: "out of 10",
-    reviews: "Based on 51 guest reviews",
+    reviews: "Based on {reviews} guest reviews",
     categories: { staff: "Staff", value: "Value for money", comfort: "Comfort", location: "Location", facilities: "Facilities", cleanliness: "Cleanliness", wifi: "Wi-Fi" },
     attribution: "Source: Booking.com guest review scores for Chez l'habitant AmazighTiken, as published on the listing in November 2026.",
     readReviews: "Read the reviews on Booking.com",
@@ -123,8 +123,8 @@ const en = {
     ],
     policiesTitle: "House policies",
     policies: {
-      checkIn: "Check-in: 10:00–21:00",
-      checkOut: "Check-out: 09:00–18:00",
+      checkIn: "Check-in: {checkIn}",
+      checkOut: "Check-out: {checkOut}",
       children: "Children are welcome.",
       pets: "Pets are allowed according to the listing; please ask first.",
       parties: "Parties and events are not permitted.",
@@ -211,7 +211,7 @@ const en = {
     getting: [
       { title: "By car", body: "Use the GPS coordinates or the Google Maps link. Free private parking is available at the house." },
       { title: "From Ouarzazate", body: "Ouarzazate has an airport and bus connections. Ask the family about the last stretch to the village when you write." },
-      { title: "Arrival times", body: "Check-in is between 10:00 and 21:00. Let the family know your expected arrival time." },
+      { title: "Arrival times", body: "Check-in hours are {checkIn}. Let the family know your expected arrival time." },
     ],
   },
   contact: {

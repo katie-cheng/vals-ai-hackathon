@@ -73,7 +73,7 @@ const fr: Dict = {
     title: "L'avis des voyageurs sur Booking.com",
     overallLabel: "Note globale",
     outOf: "sur 10",
-    reviews: "Sur la base de 51 commentaires",
+    reviews: "Sur la base de {reviews} commentaires",
     categories: { staff: "Personnel", value: "Rapport qualité/prix", comfort: "Confort", location: "Situation géographique", facilities: "Équipements", cleanliness: "Propreté", wifi: "Wi-Fi" },
     attribution: "Source : notes des commentaires clients Booking.com pour Chez l'habitant AmazighTiken, telles que publiées sur l'annonce en novembre 2026.",
     readReviews: "Lire les commentaires sur Booking.com",
@@ -123,8 +123,8 @@ const fr: Dict = {
     ],
     policiesTitle: "Règlement de la maison",
     policies: {
-      checkIn: "Arrivée : 10:00–21:00",
-      checkOut: "Départ : 09:00–18:00",
+      checkIn: "Arrivée : {checkIn}",
+      checkOut: "Départ : {checkOut}",
       children: "Les enfants sont les bienvenus.",
       pets: "Animaux acceptés selon l'annonce ; merci de demander avant.",
       parties: "Les fêtes et événements ne sont pas autorisés.",
@@ -211,7 +211,7 @@ const fr: Dict = {
     getting: [
       { title: "En voiture", body: "Utilisez les coordonnées GPS ou le lien Google Maps. Un parking privé gratuit est disponible à la maison." },
       { title: "Depuis Ouarzazate", body: "Ouarzazate dispose d'un aéroport et de liaisons en car. Demandez à la famille comment rejoindre le village en écrivant." },
-      { title: "Heures d'arrivée", body: "L'arrivée se fait entre 10:00 et 21:00. Indiquez à la famille votre heure d'arrivée prévue." },
+      { title: "Heures d'arrivée", body: "Horaires d'arrivée : {checkIn}. Indiquez à la famille votre heure d'arrivée prévue." },
     ],
   },
   contact: {

@@ -2,11 +2,26 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import en, { type Dict } from "./en";
 import fr from "./fr";
 import ar from "./ar";
+import { site } from "../config/site";
 
 export type Lang = "en" | "fr" | "ar";
 export const LANGS: Lang[] = ["en", "fr", "ar"];
-const DICTS: Record<Lang, Dict> = { en, fr, ar };
 const KEY = "lang";
+
+const FACTS: Record<string, string> = {
+  reviews: String(site.ratings.reviews),
+  checkIn: site.policies.checkIn,
+  checkOut: site.policies.checkOut,
+};
+
+/** Fills {reviews}, {checkIn} and {checkOut} in the dictionaries from config/site.ts. */
+function fillFacts<T>(v: T): T {
+  if (typeof v === "string") return v.replace(/\{(\w+)\}/g, (m, k: string) => FACTS[k] ?? m) as T;
+  if (Array.isArray(v)) return v.map(fillFacts) as T;
+  if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, fillFacts(x)])) as T;
+  return v;
+}
+const FILLED: Record<Lang, Dict> = { en: fillFacts(en), fr: fillFacts(fr), ar: fillFacts(ar) };
 
 function initialLang(): Lang {
   const fromUrl = new URLSearchParams(location.search).get("lang");
@@ -37,7 +52,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     () => ({
       lang,
       dir,
-      t: DICTS[lang],
+      t: FILLED[lang],
       setLang: (l) => {
         setLangState(l);
         try {
