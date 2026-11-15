@@ -145,9 +145,9 @@ ${_}
     URL.revokeObjectURL(qe);
   };
   const tabs = [
-    { id: "html", label: "HTML", value: S, set: M, placeholder: "<!-- Enter HTML here -->" },
-    { id: "css", label: "CSS", value: b, set: x, placeholder: "/* Enter CSS rules here */" },
-    { id: "js", label: "JavaScript", value: _, set: R, placeholder: "// Enter JavaScript logic here" },
+    { id: "html", label: "HTML", value: S, set: M, placeholder: "<!-- Enter HTML here -->", tab: "text-orange", text: "text-[#fed7aa]" },
+    { id: "css", label: "CSS", value: b, set: x, placeholder: "/* Enter CSS rules here */", tab: "text-accent", text: "text-[#bae6fd]" },
+    { id: "js", label: "JavaScript", value: _, set: R, placeholder: "// Enter JavaScript logic here", tab: "text-quiz", text: "text-[#fde68a]" },
   ];
   const activeTab = tabs.find((tab) => tab.id === h) || tabs[2];
   return (
@@ -200,7 +200,7 @@ ${_}
                   role="tab"
                   aria-selected={h === tab.id}
                   onClick={() => v(tab.id)}
-                  className="option h-8 border-transparent px-3"
+                  className={`option h-8 border-transparent px-3 ${h === tab.id ? tab.tab : ""}`}
                 >
                   {tab.label}
                 </button>
@@ -218,7 +218,7 @@ ${_}
             onChange={(event) => activeTab.set(event.target.value)}
             placeholder={activeTab.placeholder}
             spellCheck={false}
-            className="min-h-[30rem] w-full flex-1 resize-none bg-[#080c14] p-4 font-mono text-[0.8125rem] leading-6 text-ink-2 focus:outline-none"
+            className={`min-h-[30rem] w-full flex-1 resize-none bg-[#080c14] p-4 font-mono text-[0.8125rem] leading-6 focus:outline-none ${activeTab.text}`}
           />
         </div>
         <div className="flex min-w-0 flex-col gap-6 lg:col-span-6">
@@ -238,7 +238,7 @@ ${_}
                 <p className="text-ink-3">No console output yet. Use console.log() in your JavaScript.</p>
               ) : (
                 k.map((entry: any, index) => (
-                  <div key={index} className={entry.type === "error" ? "text-bad" : entry.type === "warn" ? "text-warn" : "text-ink-2"}>
+                  <div key={index} className={entry.type === "error" ? "text-bad" : entry.type === "warn" ? "text-warn" : "text-ok"}>
                     {entry.text}
                   </div>
                 ))

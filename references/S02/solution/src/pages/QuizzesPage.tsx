@@ -37,11 +37,11 @@ export const QuizzesPage = () => {
                   </span>
                 )}
                 {certificate && (
-                  <Link to={`/certificate/${certificate.certificateCode}`} className="link text-sm">
+                  <Link to={`/certificate/${certificate.certificateCode}`} className="link link-quiz text-sm">
                     Certificate
                   </Link>
                 )}
-                <Link to={`/quiz/${chapter.id}`} className="btn btn-secondary" aria-label={`${attempt ? "Retake" : "Start"} the chapter ${chapter.orderIndex} quiz`}>
+                <Link to={`/quiz/${chapter.id}`} className="btn btn-quiz" aria-label={`${attempt ? "Retake" : "Start"} the chapter ${chapter.orderIndex} quiz`}>
                   {attempt ? "Retake quiz" : "Start quiz"}
                 </Link>
               </div>

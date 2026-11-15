@@ -31,7 +31,7 @@ export const CertificatesPage = () => {
                 >
                   <span className="item-title sm:col-span-6">{certificate.chapterTitle}</span>
                   <span className="meta sm:col-span-3">Issued {certificate.issuedAt}</span>
-                  <span className="font-mono text-[0.8125rem] text-ink-3 sm:col-span-3 sm:text-right">
+                  <span className="font-mono text-[0.8125rem] text-quiz sm:col-span-3 sm:text-right">
                     {certificate.certificateCode}
                   </span>
                 </Link>
@@ -72,7 +72,7 @@ export const CertificatesPage = () => {
                   <Link to={`/courses#chapter-${chapter.id}`} className="link">
                     Lessons
                   </Link>
-                  <Link to={`/quiz/${chapter.id}`} className="link">
+                  <Link to={`/quiz/${chapter.id}`} className="link link-quiz">
                     Quiz
                   </Link>
                 </div>

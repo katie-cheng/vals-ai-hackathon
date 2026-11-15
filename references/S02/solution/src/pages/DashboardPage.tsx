@@ -27,11 +27,18 @@ export const DashboardPage = () => {
     <div className="container-page page">
       <h1 className="page-title">Welcome back, {currentUser.fullName}</h1>
       <p className="lead mt-2">
-        You have completed {totalCompletedCount} of 42 lessons ({overallPercent}%), with {inProgress} in progress,
-        a {currentUser.streakDays}-day study streak and {certificates.length}{" "}
-        {certificates.length === 1 ? "certificate" : "certificates"} earned.
+        You have completed{" "}
+        <strong className="font-semibold text-ok">
+          {totalCompletedCount} of 42 lessons ({overallPercent}%)
+        </strong>
+        , with <strong className="font-semibold text-accent">{inProgress} in progress</strong>, a{" "}
+        <strong className="font-semibold text-quiz">{currentUser.streakDays}-day study streak</strong> and{" "}
+        <strong className="font-semibold text-admin">
+          {certificates.length} {certificates.length === 1 ? "certificate" : "certificates"}
+        </strong>{" "}
+        earned.
       </p>
-      <div className="progress mt-5 max-w-[44rem]" role="img" aria-label={`${overallPercent}% of the curriculum completed`}>
+      <div className="progress progress-done mt-5 max-w-[44rem]" role="img" aria-label={`${overallPercent}% of the curriculum completed`}>
         <span style={{ width: `${overallPercent}%` }} />
       </div>
 
@@ -85,7 +92,7 @@ export const DashboardPage = () => {
                       <Link to={`/courses#chapter-${chapter.id}`} className="link">
                         Lessons
                       </Link>
-                      <Link to={`/quiz/${chapter.id}`} className="link">
+                      <Link to={`/quiz/${chapter.id}`} className="link link-quiz">
                         Quiz
                       </Link>
                     </div>

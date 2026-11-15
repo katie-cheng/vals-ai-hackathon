@@ -75,11 +75,11 @@ export const CoursesPage = () => {
                     </span>
                   </div>
                   <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-                    <Link to={`/quiz/${chapter.id}`} className="btn btn-secondary">
+                    <Link to={`/quiz/${chapter.id}`} className="btn btn-quiz">
                       Chapter quiz
                     </Link>
                     {certificate && (
-                      <Link to={`/certificate/${certificate.certificateCode}`} className="link text-sm">
+                      <Link to={`/certificate/${certificate.certificateCode}`} className="link link-quiz text-sm">
                         Certificate
                       </Link>
                     )}

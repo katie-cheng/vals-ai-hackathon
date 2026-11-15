@@ -69,14 +69,14 @@ export const ProfilePage = () => {
 
         <dl className="rows mt-10 text-sm">
           {[
-            ["Lessons completed", `${totalCompletedCount} of 42 (${overallPercent}%)`],
-            ["Study streak", `${currentUser.streakDays} days`],
-            ["Certificates earned", String(certificates.length)],
-            ["Personal notes", String(notes.length)],
-          ].map(([label, value]) => (
+            ["Lessons completed", `${totalCompletedCount} of 42 (${overallPercent}%)`, "text-ok"],
+            ["Study streak", `${currentUser.streakDays} days`, "text-quiz"],
+            ["Certificates earned", String(certificates.length), "text-admin"],
+            ["Personal notes", String(notes.length), "text-accent"],
+          ].map(([label, value, colour]) => (
             <div key={label} className="flex items-baseline justify-between gap-4 py-3">
               <dt className="text-ink-3">{label}</dt>
-              <dd className="font-semibold tabular-nums text-ink">{value}</dd>
+              <dd className={`font-semibold tabular-nums ${colour}`}>{value}</dd>
             </div>
           ))}
         </dl>

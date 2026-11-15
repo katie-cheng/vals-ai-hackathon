@@ -33,12 +33,12 @@ export const CertificateDetailPage = () => {
             <ChevronLeft className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
             All certificates
           </Link>
-          <button type="button" onClick={() => window.print()} className="btn btn-primary">
+          <button type="button" onClick={() => window.print()} className="btn btn-quiz">
             <Printer aria-hidden="true" />
             Print or save as PDF
           </button>
         </div>
-        <article className="cert-print-container mt-6 border-4 border-double border-line-strong bg-raised px-6 py-12 text-center sm:px-14 sm:py-16">
+        <article className="cert-print-container mt-6 border-4 border-double border-accent bg-raised px-6 py-12 text-center sm:px-14 sm:py-16">
           <p className="font-display text-lg font-semibold tracking-wide text-accent">AjinLab Education</p>
           <h1 className="mt-2 text-sm font-normal tracking-normal text-ink-3">Certificate of curriculum completion</h1>
           <p className="mt-12 text-sm text-ink-3">This is to certify that</p>
@@ -59,7 +59,7 @@ export const CertificateDetailPage = () => {
             </div>
             <div>
               <dt className="meta">Serial code</dt>
-              <dd className="mt-1 break-all font-mono text-ink">{serial}</dd>
+              <dd className="mt-1 break-all font-mono text-quiz">{serial}</dd>
             </div>
             <div>
               <dt className="meta">Lead curriculum instructor</dt>

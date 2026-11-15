@@ -95,7 +95,7 @@ export const Navbar = () => {
                     Profile
                   </Link>
                   {isAdmin && (
-                    <Link role="menuitem" to="/admin" className="row-link -mx-2 rounded-md px-2 py-2 text-ink-2 hover:text-ink">
+                    <Link role="menuitem" to="/admin" className="row-link link-admin -mx-2 rounded-md px-2 py-2">
                       Admin control center
                     </Link>
                   )}

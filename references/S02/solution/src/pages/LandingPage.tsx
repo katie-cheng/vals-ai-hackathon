@@ -5,39 +5,59 @@ import { CHAPTERS } from "../data/chapters";
 import { LESSONS } from "../data/lessons";
 import { useCourse } from "../context/CourseContext";
 
-const SCRATCHPAD = `// Chapter 3: Web Development Fundamentals
-const platform = "IT Beginner";
-const curriculum = {
-  lessons: 42,
-  framework: "Vue.js + REST APIs",
-  hasQuizzes: true,
-  printableCertificate: true
-};
-console.log("Ready to learn full-stack web tech!");`;
+const K = ({ children }: { children: React.ReactNode }) => <span className="text-indigo">{children}</span>;
+const V = ({ children }: { children: React.ReactNode }) => <span className="text-accent-hover">{children}</span>;
+const S = ({ children }: { children: React.ReactNode }) => <span className="text-[#fcd34d]">{children}</span>;
+const B = ({ children }: { children: React.ReactNode }) => <span className="text-admin">{children}</span>;
+const Scratchpad = () => (
+  <pre className="overflow-x-auto px-4 py-4 font-mono text-[0.8125rem] leading-6 text-ink-2">
+    <span className="text-ink-3">{"// Chapter 3: Web Development Fundamentals"}</span>
+    {"\n"}
+    <K>const</K> <V>platform</V> = <S>"IT Beginner"</S>;{"\n"}
+    <K>const</K> <V>curriculum</V> {"= {"}
+    {"\n"}
+    {"  lessons: "}
+    <span className="text-ok">42</span>,{"\n"}
+    {"  framework: "}
+    <S>"Vue.js + REST APIs"</S>,{"\n"}
+    {"  hasQuizzes: "}
+    <B>true</B>,{"\n"}
+    {"  printableCertificate: "}
+    <B>true</B>
+    {"\n};\n"}
+    console.log(<S>"Ready to learn full-stack web tech!"</S>);
+  </pre>
+);
 
 const FEATURES = [
   {
     title: "Video player",
+    colour: "text-accent",
     body: "Resumes from your exact second, plays at 1.25x, 1.5x or 2x, and has keyboard shortcuts and transcript jump links.",
   },
   {
     title: "In-browser code sandbox",
+    colour: "text-indigo",
     body: "Tabbed editor for HTML, CSS and JavaScript with a sandboxed preview, console capture and 4 practice presets saved in your browser.",
   },
   {
     title: "Chapter quizzes",
+    colour: "text-ok",
     body: "Instant feedback and an explanation for every answer. Passing a quiz issues the chapter certificate.",
   },
   {
     title: "Certificates",
+    colour: "text-quiz",
     body: "Each certificate has a unique verification code and a print layout for LinkedIn or your portfolio.",
   },
   {
     title: "Q&A and notes",
+    colour: "text-admin",
     body: "Ask lesson-specific questions, upvote answers, and keep timestamped notes that jump the video back to that second.",
   },
   {
     title: "Cheatsheets and handbooks",
+    colour: "text-bad",
     body: "Syntax references for JavaScript ES6+, HTML5, the CSS box model and Flexbox, Agile and Scrum, and the command line and NPM.",
   },
 ];
@@ -77,7 +97,7 @@ export const LandingPage = () => {
                 Run
               </button>
             </div>
-            <pre className="overflow-x-auto px-4 py-4 font-mono text-[0.8125rem] leading-6 text-ink-2">{SCRATCHPAD}</pre>
+            <Scratchpad />
             <div
               aria-live="polite"
               className="min-h-11 border-t border-line px-4 py-2.5 font-mono text-[0.8125rem] text-ink-3"
@@ -96,7 +116,7 @@ export const LandingPage = () => {
         <dl className="mt-10 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature) => (
             <div key={feature.title} className="border-t border-line py-6">
-              <dt className="item-title">{feature.title}</dt>
+              <dt className={`item-title ${feature.colour}`}>{feature.title}</dt>
               <dd className="mt-2 text-sm text-ink-3">{feature.body}</dd>
             </div>
           ))}
@@ -161,7 +181,7 @@ export const LandingPage = () => {
                         </li>
                       ))}
                     </ol>
-                    <Link to={`/quiz/${chapter.id}`} className="link mt-4 inline-block text-sm">
+                    <Link to={`/quiz/${chapter.id}`} className="link link-quiz mt-4 inline-block text-sm">
                       Take the chapter {chapter.id} quiz
                     </Link>
                   </div>

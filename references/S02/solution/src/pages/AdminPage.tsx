@@ -85,9 +85,9 @@ export const AdminPage = () => {
       <p className="lead mt-2">The enrolment roster for the IT Beginner platform: learning progress, quiz results and roles.</p>
 
       {!isAdmin && (
-        <div className="surface mt-8 flex flex-wrap items-center justify-between gap-4 p-4" role="status">
+        <div className="surface mt-8 flex flex-wrap items-center justify-between gap-4 border-admin/40 p-4" role="status">
           <p className="text-sm text-ink-2">You are in student view. Switch to admin view to change roles.</p>
-          <button type="button" onClick={() => switchUserRole("admin")} className="btn btn-secondary">
+          <button type="button" onClick={() => switchUserRole("admin")} className="btn btn-admin">
             Switch to admin view
           </button>
         </div>
@@ -142,7 +142,7 @@ export const AdminPage = () => {
                     <p className="meta">{student.email}</p>
                   </td>
                   <td className="px-4 py-3">
-                    <span className={`badge ${student.role === "admin" ? "badge-warn" : ""}`}>
+                    <span className={`badge ${student.role === "admin" ? "badge-admin" : ""}`}>
                       {student.role === "admin" ? "Admin" : "Student"}
                     </span>
                   </td>

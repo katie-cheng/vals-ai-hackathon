@@ -71,7 +71,7 @@ export const QuizDetailPage = () => {
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
               {result.passed && certificate && (
-                <Link to={`/certificate/${certificate.certificateCode}`} className="btn btn-primary">
+                <Link to={`/certificate/${certificate.certificateCode}`} className="btn btn-quiz">
                   View certificate
                 </Link>
               )}
@@ -143,7 +143,7 @@ export const QuizDetailPage = () => {
                 Retake quiz
               </button>
             ) : (
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-quiz">
                 Submit quiz
               </button>
             )}

@@ -20,6 +20,11 @@
   --color-ok: #34d399;
   --color-warn: #fbbf24;
   --color-bad: #fb7185;
+  /* Hues the original assigns by meaning: amber = quizzes and certificates, purple = admin, indigo = code tools. */
+  --color-quiz: #fbbf24;
+  --color-admin: #c084fc;
+  --color-indigo: #818cf8;
+  --color-orange: #fdba74;
 
   --radius-md: 6px;
   --radius-lg: 10px;
@@ -174,6 +179,20 @@
   .btn-primary:hover:not(:disabled) {
     background: var(--color-accent-hover);
   }
+  .btn-quiz {
+    background: var(--color-quiz);
+    color: #1c1300;
+  }
+  .btn-quiz:hover:not(:disabled) {
+    background: #fcd34d;
+  }
+  .btn-admin {
+    background: var(--color-admin);
+    color: #1a0b2e;
+  }
+  .btn-admin:hover:not(:disabled) {
+    background: #d8b4fe;
+  }
   .btn-secondary {
     background: var(--color-raised);
     border-color: var(--color-line-strong);
@@ -218,6 +237,18 @@
   .link:hover {
     color: var(--color-accent-hover);
     text-decoration-color: currentColor;
+  }
+  .link-quiz {
+    color: var(--color-quiz);
+  }
+  .link-quiz:hover {
+    color: #fcd34d;
+  }
+  .link-admin {
+    color: var(--color-admin);
+  }
+  .link-admin:hover {
+    color: #d8b4fe;
   }
 
   /* Functional frames only: forms, players, editors, tables, menus. */
@@ -332,6 +363,10 @@
     border-color: rgb(251 113 133 / 0.5);
     color: var(--color-bad);
   }
+  .badge-admin {
+    border-color: rgb(192 132 252 / 0.5);
+    color: var(--color-admin);
+  }
   .badge-warn {
     border-color: rgb(251 191 36 / 0.5);
     color: var(--color-warn);
@@ -362,7 +397,7 @@
     font-family: var(--font-mono);
     font-size: 0.8125rem;
     line-height: 1.6;
-    color: var(--color-ink-2);
+    color: #bae6fd;
     overflow-x: auto;
   }
 }

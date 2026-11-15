@@ -289,7 +289,7 @@ export const LessonPlayerPage = () => {
                 <ChevronRight className="h-4 w-4 flex-none" strokeWidth={1.75} aria-hidden="true" />
               </Link>
             ) : (
-              <Link to={`/quiz/${chapter.id}`} className="link flex-none">
+              <Link to={`/quiz/${chapter.id}`} className="link link-quiz flex-none">
                 Take the chapter quiz
               </Link>
             )}
@@ -327,7 +327,7 @@ export const LessonPlayerPage = () => {
                 );
               })}
             </ol>
-            <Link to={`/quiz/${chapter.id}`} className="link mt-4 inline-block text-sm">
+            <Link to={`/quiz/${chapter.id}`} className="link link-quiz mt-4 inline-block text-sm">
               Chapter {chapter.orderIndex} quiz
             </Link>
           </aside>
@@ -513,7 +513,7 @@ export const LessonPlayerPage = () => {
                           <p className="text-sm">
                             <span className="font-semibold text-ink">{discussion.userName}</span>
                             <span className="meta">
-                              {discussion.userRole === "admin" ? ", instructor" : ""}, {discussion.createdAt}
+                              {discussion.userRole === "admin" && <span className="font-medium text-admin">, instructor</span>}, {discussion.createdAt}
                             </span>
                           </p>
                           <p className="mt-1 text-[0.9375rem] text-ink-2">{discussion.content}</p>
@@ -537,7 +537,7 @@ export const LessonPlayerPage = () => {
                                 <p className="text-sm">
                                   <span className="font-semibold text-ink">{reply.userName}</span>
                                   <span className="meta">
-                                    {reply.userRole === "admin" ? ", instructor" : ""}, {reply.createdAt}
+                                    {reply.userRole === "admin" && <span className="font-medium text-admin">, instructor</span>}, {reply.createdAt}
                                   </span>
                                 </p>
                                 <p className="mt-0.5 text-[0.9375rem] text-ink-2">{reply.content}</p>
