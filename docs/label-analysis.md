@@ -25,6 +25,25 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Responsive breakage (nav/button/phone text wrapping), overlapping elements on scroll, marquee not full width, empty components, duplicated CTAs | katie | ~10 | mostly yes: multi-viewport render, line counts, bbox overlap while scrolling, empty-box and duplicate-text checks |
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
+## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 16 labels (R1–R16, SlopLabel ids 461–476) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+
+| Pattern | Labels | Mechanical? |
+|---|---|---|
+| Headings too large/heavy relative to their subtitle; whole phrases emphasised | R1, R13 | yes: heading/subtitle font-size ratio and weight; share of text ≥600 weight |
+| Any gradient or glow at all (backgrounds, logo tile, map halo), not just text/corner glows | R3, R6 | yes: `background-image` gradient, coloured `box-shadow`/`filter: blur`/`drop-shadow` |
+| Small uppercase labels anywhere (scroll cue, logo sub-line, marquee), not only eyebrows | R4, R6 | yes: caps text ≤14px or letter-spacing>0 |
+| Useless helper text ("Scroll to explore") | R5 | yes: text regex |
+| Bold, over-padded buttons | R7 | yes: button font-weight ≥600, padding vs font size |
+| Text shadow / outlined decorative background text | R8 | yes: `text-shadow`, `-webkit-text-stroke` |
+| Heavy decorative icon use (icon next to every label, button, chip) | R9 | yes: icon count per section / per CTA |
+| Duplicate CTAs to the same destination | R10 | yes: count links per `href` |
+| Animated control misaligned in a state change (FAQ + → × off-centre) | R11 | yes: icon/container centre offset after toggling |
+| Excessive corner rounding everywhere (beyond pills) | R12 | yes: radius ≥ 12px on cards/buttons |
+| Heavy, stacked animation (preloader, smooth-scroll hijack, particles, parallax, magnetic/tilt, per-word reveals, looping effects) | R14 | partly: count of infinite animations, rAF canvases, scroll-linked transforms |
+| Paired labels styled inconsistently (Before vs After), blurred overlays | R15 |
+| Light page background exposed on overscroll of a dark site | R16 | yes: `html` background vs body; `overscroll-behavior` | yes: sibling label style diff; `backdrop-filter` |
+
 ## Other observations
 - Both salon sites (S03 gpt-6-astra-max, S04 kimi-k3.1-pro) independently chose Inter + Cormorant Garamond italic accents and 9–10px caps eyebrows: cross-model convergence.
 - Arena: in both fully labeled pairs (S01 vs S02, S03 vs S04) the arena loser has more labels. n=2, and label counts reflect annotator effort, so not evidence yet.
