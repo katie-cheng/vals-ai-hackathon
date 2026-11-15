@@ -190,8 +190,33 @@ function baseline(views) {
   ];
 }
 
+/**
+ * Gives every context a 5s limit on requests to other hosts, then an empty reply: the sandbox network may hang, which
+ * would hold back the load event. A host that failed once gets the empty reply straight away.
+ */
+function limitExternalRequests(browser, url) {
+  const origin = new URL(url).origin;
+  const deadHosts = new Set();
+  const newContext = browser.newContext.bind(browser);
+  browser.newContext = async (options) => {
+    const context = await newContext(options);
+    await context.route((u) => u.origin !== origin, async (route) => {
+      const host = new URL(route.request().url()).host;
+      try {
+        if (deadHosts.has(host)) throw new Error("unreachable");
+        await route.fulfill({ response: await route.fetch({ timeout: 5_000 }) });
+      } catch {
+        deadHosts.add(host);
+        await route.fulfill({ status: 200, body: "" }).catch(() => {});
+      }
+    });
+    return context;
+  };
+}
+
 async function grade(url, out) {
   const browser = await chromium.launch();
+  limitExternalRequests(browser, url);
   const views = {};
   let sweep;
   let pages = [{ url, path: "/", labels: ["home"] }];
