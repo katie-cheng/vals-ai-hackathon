@@ -1,0 +1,3264 @@
+[
+ {
+  "id": 171,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different fonts, use of \u00b7 , monofont",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/Nav.tsx:73:8",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Nav",
+    "loc": "src/components/Nav.tsx:67:6"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Nav\\.tsx\\:73\\:8\"]",
+  "tag": "div",
+  "text": "kora. Book a call",
+  "rect": {
+   "left": 0,
+   "top": 0,
+   "width": 924,
+   "height": 80.25,
+   "page_top": 0
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(21, 23, 21)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "flex",
+   "position": "static"
+  },
+  "html": "<div class=\"mx-auto flex max-w-6xl items-center justify-between gap-4 transition-all duration-500 bg-transparent px-5 py-5 sm:px-8\" data-source-loc=\"src/components/Nav.tsx:73:8\"><a class=\"group flex items-center gap-2.5\" aria-label=\"Kora home\" data-source-loc=\"src/components/Nav.tsx:19:4\" href=\"/\" data-discover=\"true\"><span class=\"relative grid h-9 w-9 place-items-center overflow-hidden rounded-xl bg-pine-700 text-cream-50 transition-transform duration-500 group-hover:rotate-[10deg]\" data-source-loc=\"src/components/Nav.tsx:20:6\"><svg viewBox=\"0 0 24 24\" class=\"h-5 w-5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" data-source-loc=\"src/components/Nav.tsx:21:8\"><path d=\"M12 21c-5 0-8-3.5-8-8 0-5 4-9 10-10-.5 6-1.5 12-6 14\" data-source-loc=\"src/components/Nav.tsx:22:10\"></path><path d=\"M12 21c5 0 8-3.5 8-8\" opacity=\"0.5\" data-source-loc=\"src/components/Nav.tsx:23:10\"></path></svg></span><span class=\"text-xl font-extrabold tracking-tight text-ink-900\" data-source-loc=\"src/components/Nav.tsx:27:8\">kora<span class=\"text-pine-500\" data-source-loc=\"src/components/Nav.tsx:28:14\">.</span></span></a><nav class=\"hidden items-center gap-7 lg:flex\" aria-label=\"Primary\" data-source-loc=\"src/components/Nav.tsx:81:10\"><a data-source-loc=\"src/components/Nav.tsx:83:14\" aria-current=\"page\" class=\"nav-link text-[13.5px] font-bold tracking-wide transition-colors active text-pine-700\" href=\"/\" data-discover=\"true\">Home</a><a data-source-loc=\"src/components/Nav.tsx:83:14\" class=\"nav-link text-[13.5px] font-bold tracking-wide transition-colors text-ink-900/70 hover:text-ink-900\" href=\"/about\" data-discover=\"true\">About</a><a data-source-loc=\"src/components/Nav.tsx:83:14\" class=\"nav-link text-[13.5px] font-bold tracking-wide transition-colors text-ink-900/70 hover:text-ink-900\" href=\"/services\" data-discover=\"true\">Services</a><a data-source-loc=\"src/components/Nav.tsx:83:14\" class=\"nav-link text-[13.5px] font-bold tracking-wide transition-colors text-ink-900/70 hover:text-ink-900\" href=\"/work\" data-discover=\"true\">Work</a><a data-source-loc=\"src/components/Nav.tsx:83:14\" class=\"nav-link text-[13.5px] font-bold tracking-wide transition-colors text-ink-900/70 hover:text-ink-900\" href=\"/pricing\" data-discover=\"true\">Pricing</a><a data-source-loc=\"src/components/Nav.tsx:83:14\" class=\"nav-link text-[13.5px] font-bold tracking-wide transition-colors text-ink-900/70 hover:text-ink-900\" href=\"/insights\" data-discover=\"true\">Insights</a></nav><div class=\"flex items-center gap-3\" data-source-loc=\"src/components/Nav.tsx:96:10\"><div class=\"hidden sm:block\" data-source-loc=\"src/components/motion.tsx:193:4\" style=\"transform: none;\"><a class=\"group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink-900 px-5 py-2.5 text-[13.5px] font-bold text-cream-50\" data-source-loc=\"src/components/Nav.tsx:98:14\" href=\"/contact\" data-discover=\"true\"><span class=\"absolute inset-0 translate-y-full rounded-full bg-pine-600 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0\" data-source-loc=\"src/components/Nav.tsx:102:16\"></span><span class=\"relative\" data-source-loc=\"src/components/Nav.tsx:103:16\">Book a call</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" aria-hidden=\"true\" data-source-loc=\"src/components/Nav.tsx:104:16\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div><button class=\"grid h-10 w-10 place-items-center rounded-full border border-ink-900/15 bg-white/60 text-ink-900 lg:hidden\" aria-label=\"Open menu\" data-source-loc=\"src/components/Nav.tsx:107:12\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu h-5 w-5\" aria-hidden=\"true\" data-source-loc=\"src/components/Nav.tsx:112:14\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16\"></path><path d=\"M4 19h16\"></path></svg></button></div></div>",
+  "crop": "data/sloplabel/shots/171.png",
+  "context": "data/sloplabel/shots/171_ctx.png"
+ },
+ {
+  "id": 183,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Machines is not aligned with the rest of a text, different font",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/motion.tsx:119:10",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Home",
+    "loc": "src/pages/Home.tsx:65:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:105:4"
+   }
+  ],
+  "selector": "span[data-source-loc=\"src\\/pages\\/Home\\.tsx\\:113\\:10\"]:nth-of-type(3) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:105\\:4\"]:nth-of-type(2) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:114\\:8\"] > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:119\\:10\"]",
+  "tag": "span",
+  "text": "machines.",
+  "rect": {
+   "left": 467.234375,
+   "top": 259.2421875,
+   "width": 288.5078125,
+   "height": 77.796875,
+   "page_top": 259.2421875
+  },
+  "styles": {
+   "fontFamily": "\"Instrument Serif\", ui-serif, Georgia, serif",
+   "fontSize": "79.39px",
+   "fontWeight": "400",
+   "fontStyle": "italic",
+   "letterSpacing": "-0.7939px",
+   "textTransform": "none",
+   "color": "rgb(188, 216, 169)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-block",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">machines.</span>",
+  "crop": "data/sloplabel/shots/183.png",
+  "context": "data/sloplabel/shots/183_ctx.png"
+ },
+ {
+  "id": 188,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "pulsating dot and case studies (vibecode pattern), vibecoded-esque font, weird edge radius",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:28:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "CASE STUDIES",
+  "rect": {
+   "left": 32,
+   "top": 176,
+   "width": 148.890625,
+   "height": 30.5,
+   "page_top": 176
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Case studies</span>",
+  "crop": "data/sloplabel/shots/188.png",
+  "context": "data/sloplabel/shots/188_ctx.png"
+ },
+ {
+  "id": 211,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Use of \u00b7 symbol",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 360.0,
+  "loc": "src/pages/Work.tsx:86:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:61:6"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:64\\:12\"]:nth-of-type(2) > a[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:71\\:14\"] > div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:85\\:16\"]:nth-of-type(2) > p[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:86\\:18\"]",
+  "tag": "p",
+  "text": "LEDGERLY \u00b7 2025",
+  "rect": {
+   "left": 504,
+   "top": 436.5390625,
+   "width": 356,
+   "height": 16,
+   "page_top": 796.5390625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "2.4px",
+   "textTransform": "uppercase",
+   "color": "rgb(39, 101, 60)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"text-xs font-extrabold tracking-[0.2em] text-pine-600 uppercase\" data-source-loc=\"src/pages/Work.tsx:86:18\">Ledgerly \u00b7 2025</p>",
+  "crop": "data/sloplabel/shots/211.png",
+  "context": "data/sloplabel/shots/211_ctx.png"
+ },
+ {
+  "id": 213,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Use of \u00b7 symbol",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 360.0,
+  "loc": "src/pages/Work.tsx:86:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:61:6"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:64\\:12\"]:nth-of-type(1) > a[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:71\\:14\"] > div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:85\\:16\"]:nth-of-type(2) > p[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:86\\:18\"]",
+  "tag": "p",
+  "text": "NOVA CLOUD \u00b7 2026",
+  "rect": {
+   "left": 64,
+   "top": 436.5390625,
+   "width": 356,
+   "height": 16,
+   "page_top": 796.5390625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "2.4px",
+   "textTransform": "uppercase",
+   "color": "rgb(39, 101, 60)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"text-xs font-extrabold tracking-[0.2em] text-pine-600 uppercase\" data-source-loc=\"src/pages/Work.tsx:86:18\">Nova Cloud \u00b7 2026</p>",
+  "crop": "data/sloplabel/shots/213.png",
+  "context": "data/sloplabel/shots/213_ctx.png"
+ },
+ {
+  "id": 215,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Use of \u00b7 symbol",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1111.5,
+  "loc": "src/pages/Work.tsx:86:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:61:6"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:64\\:12\"]:nth-of-type(4) > a[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:71\\:14\"] > div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:85\\:16\"]:nth-of-type(2) > p[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:86\\:18\"]",
+  "tag": "p",
+  "text": "ATLAS FREIGHT \u00b7 2025",
+  "rect": {
+   "left": 504,
+   "top": 246.9140625,
+   "width": 356,
+   "height": 16,
+   "page_top": 1358.4140625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "2.4px",
+   "textTransform": "uppercase",
+   "color": "rgb(39, 101, 60)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"text-xs font-extrabold tracking-[0.2em] text-pine-600 uppercase\" data-source-loc=\"src/pages/Work.tsx:86:18\">Atlas Freight \u00b7 2025</p>",
+  "crop": "data/sloplabel/shots/215.png",
+  "context": "data/sloplabel/shots/215_ctx.png"
+ },
+ {
+  "id": 216,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Use of x \u00b7 symbol",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1111.5,
+  "loc": "src/pages/Work.tsx:86:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:61:6"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:64\\:12\"]:nth-of-type(3) > a[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:71\\:14\"] > div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:85\\:16\"]:nth-of-type(2) > p[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:86\\:18\"]",
+  "tag": "p",
+  "text": "BLOOM & CO \u00b7 2026",
+  "rect": {
+   "left": 64,
+   "top": 246.9140625,
+   "width": 356,
+   "height": 16,
+   "page_top": 1358.4140625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "2.4px",
+   "textTransform": "uppercase",
+   "color": "rgb(39, 101, 60)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"text-xs font-extrabold tracking-[0.2em] text-pine-600 uppercase\" data-source-loc=\"src/pages/Work.tsx:86:18\">Bloom &amp; Co \u00b7 2026</p>",
+  "crop": "data/sloplabel/shots/216.png",
+  "context": "data/sloplabel/shots/216_ctx.png"
+ },
+ {
+  "id": 217,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Ugly gradient, symbolic of AI usage",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1401.5,
+  "loc": "src/components/shared.tsx:31:10",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:31\\:10\"]",
+  "tag": "div",
+  "text": "",
+  "rect": {
+   "left": 32,
+   "top": 280.7890625,
+   "width": 860,
+   "height": 394.5625,
+   "page_top": 1682.2890625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "radial-gradient(rgba(250, 248, 242, 0.14) 1px, rgba(0, 0, 0, 0) 1px)",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "0.7",
+   "display": "block",
+   "position": "absolute"
+  },
+  "html": "<div class=\"dot-grid absolute inset-0 opacity-70\" data-source-loc=\"src/components/shared.tsx:31:10\"></div>",
+  "crop": "data/sloplabel/shots/217.png",
+  "context": "data/sloplabel/shots/217_ctx.png"
+ },
+ {
+  "id": 224,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Monofont subtitle, representative of heavy AI usage, use of \u00b7 , ",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1401.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 579.3515625,
+   "width": 672,
+   "height": 16,
+   "page_top": 1980.8515625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/224.png",
+  "context": "data/sloplabel/shots/224_ctx.png"
+ },
+ {
+  "id": 231,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Subtitle could be excluded, use of em dash, could be taken off, and the your story could be pushed down",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1401.5,
+  "loc": "src/components/shared.tsx:35:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:35\\:12\"]",
+  "tag": "p",
+  "text": "Every case study started with a free 30-minute call and an honest teardown. Bring your funnel \u2014 we'll bring the receipts from 120+ engagements.",
+  "rect": {
+   "left": 174,
+   "top": 424.6015625,
+   "width": 576,
+   "height": 48.75,
+   "page_top": 1826.1015625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "15px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.65)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream-50/65\" data-source-loc=\"src/components/shared.tsx:35:12\">Every case study started with a free 30-minute call and an honest teardown. Bring your funnel \u2014 we'll bring the receipts from 120+ engagements.</p>",
+  "crop": "data/sloplabel/shots/231.png",
+  "context": "data/sloplabel/shots/231_ctx.png"
+ },
+ {
+  "id": 232,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "symbolic of ai format, usage of em dash, the pulsating dot, rough edges",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2032.5,
+  "loc": "src/components/Footer.tsx:46:14",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:46:14"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:46\\:14\"]",
+  "tag": "span",
+  "text": "BOOKING Q1 2027 \u2014 3 SPOTS LEFT",
+  "rect": {
+   "left": 32,
+   "top": 252.3515625,
+   "width": 285.34375,
+   "height": 30.5,
+   "page_top": 2284.8515625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(215, 231, 203)",
+   "backgroundColor": "oklab(0.979003 -0.000167608 0.00822967 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border border-cream-50/15 bg-cream-50/5 px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] text-mint-200 uppercase\" data-source-loc=\"src/components/Footer.tsx:46:14\"><span class=\"h-1.5 w-1.5 animate-pulse-dot rounded-full bg-mint-300\" data-source-loc=\"src/components/Footer.tsx:47:16\"></span>Booking Q1 2027 \u2014 3 spots left</span>",
+  "crop": "data/sloplabel/shots/232.png",
+  "context": "data/sloplabel/shots/232_ctx.png"
+ },
+ {
+  "id": 233,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Em dash, redundant subtitle text. Would recommend removing, and pushing the hello@kora.agency below the kora logo with the same spacing",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2513.0,
+  "loc": "src/components/Footer.tsx:74:10",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:74\\:10\"]",
+  "tag": "p",
+  "text": "A growth consultancy for ambitious teams. Strategy, creative, and RevOps \u2014 built to book calls and compound revenue.",
+  "rect": {
+   "left": 32,
+   "top": 174.9765625,
+   "width": 320,
+   "height": 68.25,
+   "page_top": 2687.9765625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.55)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-5 max-w-xs text-sm leading-relaxed text-cream-50/55\" data-source-loc=\"src/components/Footer.tsx:74:10\">A growth consultancy for ambitious teams. Strategy, creative, and RevOps \u2014 built to book calls and compound revenue.</p>",
+  "crop": "data/sloplabel/shots/233.png",
+  "context": "data/sloplabel/shots/233_ctx.png"
+ },
+ {
+  "id": 234,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2275.0,
+  "loc": "src/components/motion.tsx:105:4",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:105:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:44\\:10\"]:nth-of-type(1) > h2[data-source-loc=\"src\\/components\\/motion\\.tsx\\:105\\:4\"]",
+  "tag": "h2",
+  "text": "Let's grow something worth talking about.",
+  "rect": {
+   "left": 32,
+   "top": 64.3515625,
+   "width": 672,
+   "height": 87.625,
+   "page_top": 2339.3515625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "42.964px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "-1.0741px",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<h2 class=\"display-md mt-6\" aria-label=\"Let's grow something worth talking about.\" data-source-loc=\"src/components/motion.tsx:105:4\"><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">Let's&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">grow&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">something&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">worth&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">talking&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">about.</span></span></h2>",
+  "crop": "data/sloplabel/shots/234.png",
+  "context": "data/sloplabel/shots/234_ctx.png"
+ },
+ {
+  "id": 236,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2275.0,
+  "loc": "src/components/Footer.tsx:42:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:42\\:6\"]",
+  "tag": "div",
+  "text": "BOOKING Q1 2027 \u2014 3 SPOTS LEFT Let's grow something worth talking about. Book your growth call",
+  "rect": {
+   "left": 0,
+   "top": -102.1484375,
+   "width": 924,
+   "height": 411.125,
+   "page_top": 2172.8515625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "relative"
+  },
+  "html": "<div class=\"container-x relative pt-20 pb-4 sm:pt-28\" data-source-loc=\"src/components/Footer.tsx:42:6\"><div class=\"flex flex-col items-start justify-between gap-8 border-b border-cream-50/10 pb-12 lg:flex-row lg:items-end\" data-source-loc=\"src/components/Footer.tsx:43:8\"><div class=\"max-w-2xl\" data-source-loc=\"src/components/Footer.tsx:44:10\"><div data-source-loc=\"src/components/motion.tsx:19:4\" style=\"opacity: 1; transform: none;\"><span class=\"inline-flex items-center gap-2 rounded-full border border-cream-50/15 bg-cream-50/5 px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] text-mint-200 uppercase\" data-source-loc=\"src/components/Footer.tsx:46:14\"><span class=\"h-1.5 w-1.5 animate-pulse-dot rounded-full bg-mint-300\" data-source-loc=\"src/components/Footer.tsx:47:16\"></span>Booking Q1 2027 \u2014 3 spots left</span></div><h2 class=\"display-md mt-6\" aria-label=\"Let's grow something worth talking about.\" data-source-loc=\"src/components/motion.tsx:105:4\"><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">Let's&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">grow&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">something&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">worth&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">talking&nbsp;</span></span><span class=\"inline-block overflow-hidden pb-[0.08em] -mb-[0.08em] align-bottom\" aria-hidden=\"true\" data-source-loc=\"src/components/motion.tsx:114:8\"><span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">about.</span></span></h2></div><div data-source-loc=\"src/components/motion.tsx:19:4\" style=\"opacity: 1; transform: none;\"><a class=\"group inline-flex items-center gap-3 rounded-full bg-cream-50 px-7 py-4 text-sm font-extrabold text-pine-950 transition-colors duration-300 hover:bg-mint-300\" data-source-loc=\"src/components/Footer.tsx:58:12\" href=\"/contact\" data-discover=\"true\">Book your growth call<span class=\"grid h-7 w-7 place-items-center rounded-full bg-pine-950 text-cream-50 transition-transform duration-300 group-hover:rotate-45\" data-source-loc=\"src/components/Footer.tsx:63:14\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right h-4 w-4\" aria-hidden=\"true\" data-source-loc=\"src/components/Footer.tsx:64:16\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></span></a></div></div></div>",
+  "crop": "data/sloplabel/shots/236.png",
+  "context": "data/sloplabel/shots/236_ctx.png"
+ },
+ {
+  "id": 238,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, weird radius element, slop font -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 616.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:166\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE CHALLENGE",
+  "rect": {
+   "left": 32,
+   "top": 123.5078125,
+   "width": 160.9765625,
+   "height": 30.5,
+   "page_top": 740.0078125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The challenge</span>",
+  "crop": "data/sloplabel/shots/238.png",
+  "context": "data/sloplabel/shots/238_ctx.png"
+ },
+ {
+  "id": 240,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, weird radius element, slop font -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 616.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:188:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "section[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:188\\:6\"]:nth-of-type(3) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "OUR APPROACH",
+  "rect": {
+   "left": 32,
+   "top": 512.5703125,
+   "width": 157.3125,
+   "height": 30.5,
+   "page_top": 1129.0703125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Our approach</span>",
+  "crop": "data/sloplabel/shots/240.png",
+  "context": "data/sloplabel/shots/240_ctx.png"
+ },
+ {
+  "id": 248,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, weird radius element, slop font -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2028.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:205:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:207\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE RESULTS",
+  "rect": {
+   "left": 32,
+   "top": 82.9453125,
+   "width": 140.4765625,
+   "height": 30.5,
+   "page_top": 2111.4453125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The results</span>",
+  "crop": "data/sloplabel/shots/248.png",
+  "context": "data/sloplabel/shots/248_ctx.png"
+ },
+ {
+  "id": 249,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of \u00b7 monofont beard -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3433.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 355.0703125,
+   "width": 672,
+   "height": 16,
+   "page_top": 3788.5703125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/249.png",
+  "context": "data/sloplabel/shots/249_ctx.png"
+ },
+ {
+  "id": 252,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Unnecessary subtitle, would remove this and push the \"Want results like this?\" down. Em dash usage",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3433.5,
+  "loc": "src/components/shared.tsx:35:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:35\\:12\"]",
+  "tag": "p",
+  "text": "We took Ledgerly from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.",
+  "rect": {
+   "left": 174,
+   "top": 200.3203125,
+   "width": 576,
+   "height": 48.75,
+   "page_top": 3633.8203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "15px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.65)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream-50/65\" data-source-loc=\"src/components/shared.tsx:35:12\">We took Ledgerly from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.</p>",
+  "crop": "data/sloplabel/shots/252.png",
+  "context": "data/sloplabel/shots/252_ctx.png"
+ },
+ {
+  "id": 257,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3433.5,
+  "loc": "src/components/motion.tsx:119:10",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:105:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/components\\/shared\\.tsx\\:33\\:10\"]:nth-of-type(3) > h2[data-source-loc=\"src\\/components\\/motion\\.tsx\\:105\\:4\"] > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:114\\:8\"]:nth-of-type(3) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:119\\:10\"]",
+  "tag": "span",
+  "text": "like",
+  "rect": {
+   "left": 485.390625,
+   "top": 136.5078125,
+   "width": 78.0703125,
+   "height": 43.8125,
+   "page_top": 3570.0078125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "42.964px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "-1.0741px",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-block",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-block will-change-transform\" data-source-loc=\"src/components/motion.tsx:119:10\" style=\"transform: none;\">like&nbsp;</span>",
+  "crop": "data/sloplabel/shots/257.png",
+  "context": "data/sloplabel/shots/257_ctx.png"
+ },
+ {
+  "id": 267,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of pulsating dot and monofont, would remove elements of this pattern entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 560.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:166\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE CHALLENGE",
+  "rect": {
+   "left": 32,
+   "top": 180.0078125,
+   "width": 160.9765625,
+   "height": 30.5,
+   "page_top": 740.0078125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The challenge</span>",
+  "crop": "data/sloplabel/shots/267.png",
+  "context": "data/sloplabel/shots/267_ctx.png"
+ },
+ {
+  "id": 269,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, weird radius, results, would remove elements like this entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2059.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:205:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:207\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE RESULTS",
+  "rect": {
+   "left": 32,
+   "top": 95.4453125,
+   "width": 140.4765625,
+   "height": 30.5,
+   "page_top": 2154.9453125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The results</span>",
+  "crop": "data/sloplabel/shots/269.png",
+  "context": "data/sloplabel/shots/269_ctx.png"
+ },
+ {
+  "id": 275,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of \u00b7 monofont beard -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3545.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 286.5703125,
+   "width": 672,
+   "height": 16,
+   "page_top": 3832.0703125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/275.png",
+  "context": "data/sloplabel/shots/275_ctx.png"
+ },
+ {
+  "id": 276,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of em dash, unnecessary subtitle, would remove this and push Want Results Like This?",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3545.5,
+  "loc": "src/components/shared.tsx:35:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:35\\:12\"]",
+  "tag": "p",
+  "text": "We took Nova Cloud from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.",
+  "rect": {
+   "left": 174,
+   "top": 131.8203125,
+   "width": 576,
+   "height": 48.75,
+   "page_top": 3677.3203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "15px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.65)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream-50/65\" data-source-loc=\"src/components/shared.tsx:35:12\">We took Nova Cloud from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.</p>",
+  "crop": "data/sloplabel/shots/276.png",
+  "context": "data/sloplabel/shots/276_ctx.png"
+ },
+ {
+  "id": 278,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of pulsating dot, weird radius element, em dash, would remove elements of this pattern entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3851.0,
+  "loc": "src/components/Footer.tsx:46:14",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:46:14"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:46\\:14\"]",
+  "tag": "span",
+  "text": "BOOKING Q1 2027 \u2014 3 SPOTS LEFT",
+  "rect": {
+   "left": 32,
+   "top": 285.0703125,
+   "width": 285.34375,
+   "height": 30.5,
+   "page_top": 4136.0703125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(215, 231, 203)",
+   "backgroundColor": "oklab(0.979003 -0.000167608 0.00822967 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border border-cream-50/15 bg-cream-50/5 px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] text-mint-200 uppercase\" data-source-loc=\"src/components/Footer.tsx:46:14\"><span class=\"h-1.5 w-1.5 animate-pulse-dot rounded-full bg-mint-300\" data-source-loc=\"src/components/Footer.tsx:47:16\"></span>Booking Q1 2027 \u2014 3 spots left</span>",
+  "crop": "data/sloplabel/shots/278.png",
+  "context": "data/sloplabel/shots/278_ctx.png"
+ },
+ {
+  "id": 282,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of \u00b7 monofont beard -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3391.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 395.0703125,
+   "width": 672,
+   "height": 16,
+   "page_top": 3786.5703125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/282.png",
+  "context": "data/sloplabel/shots/282_ctx.png"
+ },
+ {
+  "id": 283,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Would remove this, and push Want results like this down in lieu",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3391.5,
+  "loc": "src/components/shared.tsx:35:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:35\\:12\"]",
+  "tag": "p",
+  "text": "We took Atlas Freight from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.",
+  "rect": {
+   "left": 174,
+   "top": 240.3203125,
+   "width": 576,
+   "height": 48.75,
+   "page_top": 3631.8203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "15px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.65)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream-50/65\" data-source-loc=\"src/components/shared.tsx:35:12\">We took Atlas Freight from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.</p>",
+  "crop": "data/sloplabel/shots/283.png",
+  "context": "data/sloplabel/shots/283_ctx.png"
+ },
+ {
+  "id": 286,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, monofont, weird radius element that doesn't match other radii, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1630.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:205:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:207\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE RESULTS",
+  "rect": {
+   "left": 32,
+   "top": 478.9453125,
+   "width": 140.4765625,
+   "height": 30.5,
+   "page_top": 2109.4453125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The results</span>",
+  "crop": "data/sloplabel/shots/286.png",
+  "context": "data/sloplabel/shots/286_ctx.png"
+ },
+ {
+  "id": 290,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, radius, that doesn't match the other radii, nonunified font, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 926.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:188:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "section[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:188\\:6\"]:nth-of-type(3) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "OUR APPROACH",
+  "rect": {
+   "left": 32,
+   "top": 177.8203125,
+   "width": 157.3125,
+   "height": 30.5,
+   "page_top": 1104.3203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Our approach</span>",
+  "crop": "data/sloplabel/shots/290.png",
+  "context": "data/sloplabel/shots/290_ctx.png"
+ },
+ {
+  "id": 293,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, radius, that doesn't match the other radii, nonunified font, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 587.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:166\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE CHALLENGE",
+  "rect": {
+   "left": 32,
+   "top": 152.5078125,
+   "width": 160.9765625,
+   "height": 30.5,
+   "page_top": 740.0078125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The challenge</span>",
+  "crop": "data/sloplabel/shots/293.png",
+  "context": "data/sloplabel/shots/293_ctx.png"
+ },
+ {
+  "id": 295,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 587.5,
+  "loc": "src/components/motion.tsx:19:4",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:166\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1)",
+  "tag": "div",
+  "text": "THE CHALLENGE",
+  "rect": {
+   "left": 32,
+   "top": 152.5078125,
+   "width": 860,
+   "height": 30.5,
+   "page_top": 740.0078125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(21, 23, 21)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<div data-source-loc=\"src/components/motion.tsx:19:4\" style=\"opacity: 1; transform: none;\"><span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The challenge</span></div>",
+  "crop": "data/sloplabel/shots/295.png",
+  "context": "data/sloplabel/shots/295_ctx.png"
+ },
+ {
+  "id": 298,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, non-matching fonts, unmatched radii -> would remove element entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 520.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:166\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE CHALLENGE",
+  "rect": {
+   "left": 32,
+   "top": 220.0078125,
+   "width": 160.9765625,
+   "height": 30.5,
+   "page_top": 740.0078125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The challenge</span>",
+  "crop": "data/sloplabel/shots/298.png",
+  "context": "data/sloplabel/shots/298_ctx.png"
+ },
+ {
+  "id": 299,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Fonts don't match the rest of the website, would change to unify the font",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 520.0,
+  "loc": "src/pages/Work.tsx:172:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:170:14"
+   }
+  ],
+  "selector": "span[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:172\\:18\"]:nth-of-type(3)",
+  "tag": "span",
+  "text": "Growth Strategy",
+  "rect": {
+   "left": 422.984375,
+   "top": 334.3203125,
+   "width": 131.921875,
+   "height": 34,
+   "page_top": 854.3203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(22, 54, 38)",
+   "backgroundColor": "oklab(0.36923 -0.0618198 0.0292211 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<span class=\"rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-xs font-extrabold text-pine-800\" data-source-loc=\"src/pages/Work.tsx:172:18\">Growth Strategy</span>",
+  "crop": "data/sloplabel/shots/299.png",
+  "context": "data/sloplabel/shots/299_ctx.png"
+ },
+ {
+  "id": 300,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Fonts don't match the rest of the website, would change to unify the fonts\n",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 520.0,
+  "loc": "src/pages/Work.tsx:172:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:170:14"
+   }
+  ],
+  "selector": "span[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:172\\:18\"]:nth-of-type(2)",
+  "tag": "span",
+  "text": "Analytics & Experimentation",
+  "rect": {
+   "left": 212.859375,
+   "top": 334.3203125,
+   "width": 202.125,
+   "height": 34,
+   "page_top": 854.3203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(22, 54, 38)",
+   "backgroundColor": "oklab(0.36923 -0.0618198 0.0292211 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<span class=\"rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-xs font-extrabold text-pine-800\" data-source-loc=\"src/pages/Work.tsx:172:18\">Analytics &amp; Experimentation</span>",
+  "crop": "data/sloplabel/shots/300.png",
+  "context": "data/sloplabel/shots/300_ctx.png"
+ },
+ {
+  "id": 301,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Fonts don't match the rest of the website, would change to unify the fonts",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 520.0,
+  "loc": "src/pages/Work.tsx:172:18",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:164:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:170:14"
+   }
+  ],
+  "selector": "span[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:172\\:18\"]:nth-of-type(1)",
+  "tag": "span",
+  "text": "Performance Marketing",
+  "rect": {
+   "left": 32,
+   "top": 334.3203125,
+   "width": 172.859375,
+   "height": 34,
+   "page_top": 854.3203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "800",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(22, 54, 38)",
+   "backgroundColor": "oklab(0.36923 -0.0618198 0.0292211 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<span class=\"rounded-full border border-pine-700/25 bg-pine-700/5 px-4 py-2 text-xs font-extrabold text-pine-800\" data-source-loc=\"src/pages/Work.tsx:172:18\">Performance Marketing</span>",
+  "crop": "data/sloplabel/shots/301.png",
+  "context": "data/sloplabel/shots/301_ctx.png"
+ },
+ {
+  "id": 302,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, radius, that doesn't match the other radii, nonunified font, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1985.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Work",
+    "loc": "src/pages/Work.tsx:205:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Work\\.tsx\\:207\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE RESULTS",
+  "rect": {
+   "left": 32,
+   "top": 171.9453125,
+   "width": 140.4765625,
+   "height": 30.5,
+   "page_top": 2156.9453125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The results</span>",
+  "crop": "data/sloplabel/shots/302.png",
+  "context": "data/sloplabel/shots/302_ctx.png"
+ },
+ {
+  "id": 303,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Would remove this subtitle, use of em dash, would push want results like this element down",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3440.5,
+  "loc": "src/components/shared.tsx:35:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:35\\:12\"]",
+  "tag": "p",
+  "text": "We took Bloom & Co from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.",
+  "rect": {
+   "left": 174,
+   "top": 271.8203125,
+   "width": 576,
+   "height": 48.75,
+   "page_top": 3712.3203125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "15px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.65)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream-50/65\" data-source-loc=\"src/components/shared.tsx:35:12\">We took Bloom &amp; Co from stuck to scaling. Bring us your funnel and we'll show you the same kind of path \u2014 free, in 30 minutes.</p>",
+  "crop": "data/sloplabel/shots/303.png",
+  "context": "data/sloplabel/shots/303_ctx.png"
+ },
+ {
+  "id": 305,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of \u00b7 symbol, monofont beard -> would remove entirely, symbolic of slop",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3440.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 426.5703125,
+   "width": 672,
+   "height": 16,
+   "page_top": 3867.0703125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/305.png",
+  "context": "data/sloplabel/shots/305_ctx.png"
+ },
+ {
+  "id": 309,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, differing radius from the rest of the elements, different font from website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Services",
+    "loc": "src/pages/Services.tsx:24:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "SERVICES",
+  "rect": {
+   "left": 32,
+   "top": 176,
+   "width": 116.6171875,
+   "height": 30.5,
+   "page_top": 176
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Services</span>",
+  "crop": "data/sloplabel/shots/309.png",
+  "context": "data/sloplabel/shots/309_ctx.png"
+ },
+ {
+  "id": 311,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/Nav.tsx:107:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Nav",
+    "loc": "src/components/Nav.tsx:67:6"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Nav\\.tsx\\:107\\:12\"]",
+  "tag": "button",
+  "text": "",
+  "rect": {
+   "left": 852,
+   "top": 20.125,
+   "width": 40,
+   "height": 40,
+   "page_top": 20.125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(21, 23, 21)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "grid",
+   "position": "static"
+  },
+  "html": "<button class=\"grid h-10 w-10 place-items-center rounded-full border border-ink-900/15 bg-white/60 text-ink-900 lg:hidden\" aria-label=\"Open menu\" data-source-loc=\"src/components/Nav.tsx:107:12\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu h-5 w-5\" aria-hidden=\"true\" data-source-loc=\"src/components/Nav.tsx:112:14\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16\"></path><path d=\"M4 19h16\"></path></svg></button>",
+  "crop": "data/sloplabel/shots/311.png",
+  "context": "data/sloplabel/shots/311_ctx.png"
+ },
+ {
+  "id": 312,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, differing radius from the rest of the elements, different font from website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:33:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Pricing\\.tsx\\:37\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"] > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "PRICING",
+  "rect": {
+   "left": 408.8046875,
+   "top": 176,
+   "width": 106.390625,
+   "height": 30.5,
+   "page_top": 176
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Pricing</span>",
+  "crop": "data/sloplabel/shots/312.png",
+  "context": "data/sloplabel/shots/312_ctx.png"
+ },
+ {
+  "id": 313,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, differing radius from the rest of the elements, different font from website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2537.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:160:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Pricing\\.tsx\\:162\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "KORA VS. THE ALTERNATIVES",
+  "rect": {
+   "left": 32,
+   "top": 286.578125,
+   "width": 249.3671875,
+   "height": 30.5,
+   "page_top": 2823.578125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Kora vs. the alternatives</span>",
+  "crop": "data/sloplabel/shots/313.png",
+  "context": "data/sloplabel/shots/313_ctx.png"
+ },
+ {
+  "id": 316,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Elements radius don't match the \"talk me through the math\" radius, radius unification needed",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2861.5,
+  "loc": "src/pages/Pricing.tsx:184:16",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:160:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:47:4"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:184:16"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:73\\:4\"]:nth-of-type(3) > div[data-source-loc=\"src\\/pages\\/Pricing\\.tsx\\:184\\:16\"]",
+  "tag": "div",
+  "text": "Kora Growth Partner $5.5k/mo quarterly Strategist + specialists \u00b7 shipping week one \u00b7 revenue-measured",
+  "rect": {
+   "left": 32,
+   "top": 475.140625,
+   "width": 860,
+   "height": 110,
+   "page_top": 3336.640625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgb(22, 54, 38)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "16px",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(22, 54, 38, 0.5) 0px 20px 50px -20px",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<div class=\"rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 border-pine-700/40 bg-pine-800 text-cream-50 shadow-[0_20px_50px_-20px_rgba(22,54,38,0.5)]\" data-source-loc=\"src/pages/Pricing.tsx:184:16\"><div class=\"flex flex-wrap items-baseline justify-between gap-2\" data-source-loc=\"src/pages/Pricing.tsx:185:18\"><h3 class=\"text-lg font-extrabold\" data-source-loc=\"src/pages/Pricing.tsx:186:20\">Kora Growth Partner</h3><p class=\"text-lg font-extrabold tabular-nums text-mint-300\" data-source-loc=\"src/pages/Pricing.tsx:187:20\">$5.5k/mo quarterly</p></div><p class=\"mt-1 text-sm font-semibold text-cream-50/70\" data-source-loc=\"src/pages/Pricing.tsx:189:18\">Strategist + specialists \u00b7 shipping week one \u00b7 revenue-measured</p></div>",
+  "crop": "data/sloplabel/shots/316.png",
+  "context": "data/sloplabel/shots/316_ctx.png"
+ },
+ {
+  "id": 324,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Elements radius don't match the \"talk me through the math\" radius, radius unification needed",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2861.5,
+  "loc": "src/pages/Pricing.tsx:184:16",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:160:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:47:4"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:184:16"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:73\\:4\"]:nth-of-type(1) > div[data-source-loc=\"src\\/pages\\/Pricing\\.tsx\\:184\\:16\"]",
+  "tag": "div",
+  "text": "Senior growth hire $150k+/yr + equity One person \u00b7 6-month ramp \u00b7 single skillset",
+  "rect": {
+   "left": 32,
+   "top": 231.140625,
+   "width": 860,
+   "height": 110,
+   "page_top": 3092.640625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(21, 23, 21)",
+   "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "16px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<div class=\"rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 border-ink-900/10 bg-white/50\" data-source-loc=\"src/pages/Pricing.tsx:184:16\"><div class=\"flex flex-wrap items-baseline justify-between gap-2\" data-source-loc=\"src/pages/Pricing.tsx:185:18\"><h3 class=\"text-lg font-extrabold\" data-source-loc=\"src/pages/Pricing.tsx:186:20\">Senior growth hire</h3><p class=\"text-lg font-extrabold tabular-nums text-ink-400\" data-source-loc=\"src/pages/Pricing.tsx:187:20\">$150k+/yr + equity</p></div><p class=\"mt-1 text-sm font-semibold text-ink-400\" data-source-loc=\"src/pages/Pricing.tsx:189:18\">One person \u00b7 6-month ramp \u00b7 single skillset</p></div>",
+  "crop": "data/sloplabel/shots/324.png",
+  "context": "data/sloplabel/shots/324_ctx.png"
+ },
+ {
+  "id": 326,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Elements radius don't match the \"talk me through the math\" radius, radius unification needed",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2861.5,
+  "loc": "src/pages/Pricing.tsx:184:16",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:160:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:47:4"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:184:16"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:73\\:4\"]:nth-of-type(2) > div[data-source-loc=\"src\\/pages\\/Pricing\\.tsx\\:184\\:16\"]",
+  "tag": "div",
+  "text": "Traditional agency $8\u201315k/mo Junior staff \u00b7 hourly billing \u00b7 reports, not revenue",
+  "rect": {
+   "left": 32,
+   "top": 353.140625,
+   "width": 860,
+   "height": 110,
+   "page_top": 3214.640625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(21, 23, 21)",
+   "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "16px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<div class=\"rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 border-ink-900/10 bg-white/50\" data-source-loc=\"src/pages/Pricing.tsx:184:16\"><div class=\"flex flex-wrap items-baseline justify-between gap-2\" data-source-loc=\"src/pages/Pricing.tsx:185:18\"><h3 class=\"text-lg font-extrabold\" data-source-loc=\"src/pages/Pricing.tsx:186:20\">Traditional agency</h3><p class=\"text-lg font-extrabold tabular-nums text-ink-400\" data-source-loc=\"src/pages/Pricing.tsx:187:20\">$8\u201315k/mo</p></div><p class=\"mt-1 text-sm font-semibold text-ink-400\" data-source-loc=\"src/pages/Pricing.tsx:189:18\">Junior staff \u00b7 hourly billing \u00b7 reports, not revenue</p></div>",
+  "crop": "data/sloplabel/shots/326.png",
+  "context": "data/sloplabel/shots/326_ctx.png"
+ },
+ {
+  "id": 333,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Usage of \u00b7 , monofont beard, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 4493.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 266.953125,
+   "width": 672,
+   "height": 16,
+   "page_top": 4760.453125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/333.png",
+  "context": "data/sloplabel/shots/333_ctx.png"
+ },
+ {
+  "id": 335,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different radii from the rest of the elements, would remove this entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3246.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Pricing",
+    "loc": "src/pages/Pricing.tsx:198:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/Pricing\\.tsx\\:200\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"] > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "PRICING FAQ",
+  "rect": {
+   "left": 393.21875,
+   "top": 298.640625,
+   "width": 137.5546875,
+   "height": 30.5,
+   "page_top": 3544.640625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Pricing FAQ</span>",
+  "crop": "data/sloplabel/shots/335.png",
+  "context": "data/sloplabel/shots/335_ctx.png"
+ },
+ {
+  "id": 337,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Would remove the pulsating dot element, different radius from the rest of the elements, different font -> would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Insights",
+    "loc": "src/pages/Insights.tsx:28:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "INSIGHTS",
+  "rect": {
+   "left": 32,
+   "top": 176,
+   "width": 115.03125,
+   "height": 30.5,
+   "page_top": 176
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Insights</span>",
+  "crop": "data/sloplabel/shots/337.png",
+  "context": "data/sloplabel/shots/337_ctx.png"
+ },
+ {
+  "id": 339,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Monofont beard, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2519.5,
+  "loc": "src/components/shared.tsx:51:12",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:28:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "shared",
+    "loc": "src/components/shared.tsx:30:8"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/shared\\.tsx\\:51\\:12\"]",
+  "tag": "p",
+  "text": "Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown",
+  "rect": {
+   "left": 126,
+   "top": 396.6640625,
+   "width": 672,
+   "height": 16,
+   "page_top": 2916.1640625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "oklab(0.979003 -0.000167608 0.00822967 / 0.4)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<p class=\"mt-6 text-xs font-semibold text-cream-50/40\" data-source-loc=\"src/components/shared.tsx:51:12\">Free 30-min call \u00b7 No pitch \u00b7 Actionable teardown</p>",
+  "crop": "data/sloplabel/shots/339.png",
+  "context": "data/sloplabel/shots/339_ctx.png"
+ },
+ {
+  "id": 341,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 0.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:55:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/About\\.tsx\\:59\\:6\"]:nth-of-type(4) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "ABOUT KORA",
+  "rect": {
+   "left": 32,
+   "top": 176,
+   "width": 136.40625,
+   "height": 30.5,
+   "page_top": 176
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>About Kora</span>",
+  "crop": "data/sloplabel/shots/341.png",
+  "context": "data/sloplabel/shots/341_ctx.png"
+ },
+ {
+  "id": 343,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Not enough space between the image, would expect the same amount of px spacing as the rest of the elements from each other, image overlaps on top of the our story. Also pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1212.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:86:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/About\\.tsx\\:101\\:10\"]:nth-of-type(2) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1) > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "OUR STORY",
+  "rect": {
+   "left": 32,
+   "top": 222.328125,
+   "width": 127.4296875,
+   "height": 30.5,
+   "page_top": 1434.328125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Our story</span>",
+  "crop": "data/sloplabel/shots/343.png",
+  "context": "data/sloplabel/shots/343_ctx.png"
+ },
+ {
+  "id": 348,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Would remove floating element entirely, isn't inside the image behind it, weird floating animation not visible anywhere else -> remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1034.5,
+  "loc": "src/pages/About.tsx:93:14",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:86:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:93:14"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/pages\\/About\\.tsx\\:93\\:14\"]",
+  "tag": "div",
+  "text": "6+ years compounding client growth",
+  "rect": {
+   "left": 737.734375,
+   "top": 243.55734252929688,
+   "width": 178.265625,
+   "height": 148,
+   "page_top": 1278.0573425292969
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgb(21, 23, 21)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "24px",
+   "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<div class=\"animate-float-soft rounded-3xl bg-ink-900 p-6 text-cream-50 shadow-2xl sm:p-8\" data-source-loc=\"src/pages/About.tsx:93:14\"><p class=\"text-4xl font-extrabold text-mint-300 tabular-nums sm:text-5xl\" data-source-loc=\"src/pages/About.tsx:94:16\"><span data-source-loc=\"src/components/motion.tsx:172:4\">6+</span></p><p class=\"mt-1 text-xs font-bold text-cream-50/60\" data-source-loc=\"src/pages/About.tsx:97:16\">years compounding<br data-source-loc=\"src/pages/About.tsx:97:88\">client growth</p></div>",
+  "crop": "data/sloplabel/shots/348.png",
+  "context": "data/sloplabel/shots/348_ctx.png"
+ },
+ {
+  "id": 353,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1744.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:139:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/About\\.tsx\\:141\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"] > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "WHAT WE BELIEVE",
+  "rect": {
+   "left": 375.375,
+   "top": 331.015625,
+   "width": 173.2421875,
+   "height": 30.5,
+   "page_top": 2075.015625
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(215, 231, 203)",
+   "backgroundColor": "oklab(0.979003 -0.000167608 0.00822967 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-cream-50/20 bg-cream-50/5 text-mint-200\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-mint-300\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>What we believe</span>",
+  "crop": "data/sloplabel/shots/353.png",
+  "context": "data/sloplabel/shots/353_ctx.png"
+ },
+ {
+  "id": 354,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 2817.5,
+  "loc": "src/components/motion.tsx:19:4",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:162:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/About\\.tsx\\:164\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"]:nth-of-type(1)",
+  "tag": "div",
+  "text": "THE JOURNEY",
+  "rect": {
+   "left": 32,
+   "top": 228.6328125,
+   "width": 860,
+   "height": 30.5,
+   "page_top": 3046.1328125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(21, 23, 21)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "static"
+  },
+  "html": "<div data-source-loc=\"src/components/motion.tsx:19:4\" style=\"opacity: 1; transform: none;\"><span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The journey</span></div>",
+  "crop": "data/sloplabel/shots/354.png",
+  "context": "data/sloplabel/shots/354_ctx.png"
+ },
+ {
+  "id": 355,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 3620.5,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "About",
+    "loc": "src/pages/About.tsx:191:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "div[data-source-loc=\"src\\/pages\\/About\\.tsx\\:193\\:10\"]:nth-of-type(1) > div[data-source-loc=\"src\\/components\\/motion\\.tsx\\:19\\:4\"] > span[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "THE PARTNERS",
+  "rect": {
+   "left": 32,
+   "top": 418.25,
+   "width": 151.6171875,
+   "height": 30.5,
+   "page_top": 4038.75
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>The partners</span>",
+  "crop": "data/sloplabel/shots/355.png",
+  "context": "data/sloplabel/shots/355_ctx.png"
+ },
+ {
+  "id": 357,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 5581.0,
+  "loc": "src/components/Footer.tsx:46:14",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:46:14"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:46\\:14\"]",
+  "tag": "span",
+  "text": "BOOKING Q1 2027 \u2014 3 SPOTS LEFT",
+  "rect": {
+   "left": 32,
+   "top": 334.25,
+   "width": 285.34375,
+   "height": 30.5,
+   "page_top": 5915.25
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(215, 231, 203)",
+   "backgroundColor": "oklab(0.979003 -0.000167608 0.00822967 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border border-cream-50/15 bg-cream-50/5 px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] text-mint-200 uppercase\" data-source-loc=\"src/components/Footer.tsx:46:14\"><span class=\"h-1.5 w-1.5 animate-pulse-dot rounded-full bg-mint-300\" data-source-loc=\"src/components/Footer.tsx:47:16\"></span>Booking Q1 2027 \u2014 3 spots left</span>",
+  "crop": "data/sloplabel/shots/357.png",
+  "context": "data/sloplabel/shots/357_ctx.png"
+ },
+ {
+  "id": 358,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 5581.0,
+  "loc": "src/components/Nav.tsx:103:16",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Nav",
+    "loc": "src/components/Nav.tsx:67:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:193:4"
+   },
+   {
+    "name": "Nav",
+    "loc": "src/components/Nav.tsx:98:14"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Nav\\.tsx\\:103\\:16\"]",
+  "tag": "span",
+  "text": "Book a call",
+  "rect": {
+   "left": 722.9855346679688,
+   "top": 36.05616760253906,
+   "width": 68.65625,
+   "height": 20.25,
+   "page_top": 5617.056167602539
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "13.5px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "color": "rgb(250, 248, 242)",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "0px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "block",
+   "position": "relative"
+  },
+  "html": "<span class=\"relative\" data-source-loc=\"src/components/Nav.tsx:103:16\">Book a call</span>",
+  "crop": "data/sloplabel/shots/358.png",
+  "context": "data/sloplabel/shots/358_ctx.png"
+ },
+ {
+  "id": 359,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 40.0,
+  "loc": "src/components/motion.tsx:250:6",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Contact",
+    "loc": "src/pages/Contact.tsx:107:6"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/motion\\.tsx\\:250\\:6\"]",
+  "tag": "span",
+  "text": "CONTACT",
+  "rect": {
+   "left": 32,
+   "top": 141.55508422851562,
+   "width": 114.53125,
+   "height": 30.5,
+   "page_top": 181.55508422851562
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(29, 74, 47)",
+   "backgroundColor": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase border-ink-900/15 bg-white/70 text-pine-700\" data-source-loc=\"src/components/motion.tsx:250:6\"><span class=\"h-1.5 w-1.5 rounded-full animate-pulse-dot bg-pine-600\" data-source-loc=\"src/components/motion.tsx:257:8\"></span>Contact</span>",
+  "crop": "data/sloplabel/shots/359.png",
+  "context": "data/sloplabel/shots/359_ctx.png"
+ },
+ {
+  "id": 360,
+  "site_id": "S30",
+  "annotator": "Aidan",
+  "comment": "Pulsating dot, different font, different radius compared to the website, would remove entirely",
+  "viewport_w": 934,
+  "viewport_h": 713,
+  "scroll_y": 1694.5,
+  "loc": "src/components/Footer.tsx:46:14",
+  "component_chain": [
+   {
+    "name": "App",
+    "loc": "src/App.tsx:46:6"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:40:4"
+   },
+   {
+    "name": "motion",
+    "loc": "src/components/motion.tsx:19:4"
+   },
+   {
+    "name": "Footer",
+    "loc": "src/components/Footer.tsx:46:14"
+   }
+  ],
+  "selector": "[data-source-loc=\"src\\/components\\/Footer\\.tsx\\:46\\:14\"]",
+  "tag": "span",
+  "text": "BOOKING Q1 2027 \u2014 3 SPOTS LEFT",
+  "rect": {
+   "left": 32,
+   "top": 99.625,
+   "width": 285.34375,
+   "height": 30.5,
+   "page_top": 1794.125
+  },
+  "styles": {
+   "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif",
+   "fontSize": "11px",
+   "fontWeight": "700",
+   "fontStyle": "normal",
+   "letterSpacing": "1.98px",
+   "textTransform": "uppercase",
+   "color": "rgb(215, 231, 203)",
+   "backgroundColor": "oklab(0.979003 -0.000167608 0.00822967 / 0.05)",
+   "backgroundImage": "none",
+   "backdropFilter": "none",
+   "borderRadius": "1.67772e+07px",
+   "boxShadow": "none",
+   "opacity": "1",
+   "display": "inline-flex",
+   "position": "static"
+  },
+  "html": "<span class=\"inline-flex items-center gap-2 rounded-full border border-cream-50/15 bg-cream-50/5 px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] text-mint-200 uppercase\" data-source-loc=\"src/components/Footer.tsx:46:14\"><span class=\"h-1.5 w-1.5 animate-pulse-dot rounded-full bg-mint-300\" data-source-loc=\"src/components/Footer.tsx:47:16\"></span>Booking Q1 2027 \u2014 3 spots left</span>",
+  "crop": "data/sloplabel/shots/360.png",
+  "context": "data/sloplabel/shots/360_ctx.png"
+ }
+]
