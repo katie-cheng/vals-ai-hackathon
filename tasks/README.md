@@ -93,9 +93,13 @@ There is no golden reference yet, so `solution/app/` is missing and the oracle f
 | Site | reward | task | baseline | slop | slop points |
 | --- | --- | --- | --- | --- | --- |
 | S05 gpt-6-astra-max | 0.62 | 0.93 | 1.00 | 0.30 | 34.9 |
+| S06 kimi-k3.1-pro | 0.49 | 0.85 | 0.87 | 0.12 | 107.5 |
 
 S05's points come mostly from eyebrows (15.3) and tiny text (11.0, 57% of its text).
 It misses the fifth hero banner, item availability on the menu, social links and a use-my-location option at checkout.
+S06's come mostly from pills (61.9, about 200 per page width) and eyebrows (29.6); its /order page overflows a phone by 377px.
+It replaces the brief's hero headline, misses item availability and a use-my-location option, and its phone menu button does not reveal the nav.
+Neither arena site was given the seeded admin account; the grader still reaches S05's dashboard through its login but not S06's, so S06 fails the admin and CMS checks.
 
 ## Building a golden reference
 
