@@ -6,7 +6,7 @@ from flask import Flask, abort, g, jsonify, request, send_file, send_from_direct
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SNAP = ROOT / "data/snapshots"
 DB = pathlib.Path(os.environ.get("ARENA_DB", pathlib.Path.home() / "slopbench-arena-data/arena.db"))
-CATEGORY_WEIGHTS = {"same_prompt": 0.3, "arena_cross": 0.25, "arena_vs_web": 0.3, "web_web": 0.15}
+CATEGORY_WEIGHTS = {"same_prompt": 0.15, "arena_cross": 0.2, "arena_vs_web": 0.35, "web_web": 0.3}
 # Per-site sampling weight within a category; pre-2022 archive sites are shown less often.
 SPLIT_WEIGHTS = {"yc-pre2022": 0.3}
 
@@ -212,13 +212,17 @@ def next_pair():
     voter = (request.args.get("voter") or "").strip()
     S = live_sites()
     cats = candidate_pairs(S)
-    rows = db().execute("SELECT voter, left_id, right_id FROM votes WHERE choice != 'skip' OR voter = ?", (voter,)).fetchall()
-    counts, mine = defaultdict(int), set()
+    rows = db().execute("SELECT voter, left_id, right_id FROM votes WHERE choice != 'skip' OR voter = ? ORDER BY id",
+                        (voter,)).fetchall()
+    counts, mine, seen, recent = defaultdict(int), set(), defaultdict(int), []
     for r in rows:
         k = pair_key(r["left_id"], r["right_id"])
         counts[k] += 1
         if r["voter"] == voter:
             mine.add(k)
+            seen[r["left_id"]] += 1
+            seen[r["right_id"]] += 1
+            recent = (recent + [r["left_id"], r["right_id"]])[-8:]
     ex = [resolve(t) for t in (request.args.get("exclude") or "").split(",") if t]
     if len(ex) == 2 and all(ex):
         mine.add(pair_key(*ex))
@@ -231,7 +235,14 @@ def next_pair():
     ps = avail[cat]
     low = min(counts[pair_key(*p)] for p in ps)
     least = [p for p in ps if counts[pair_key(*p)] == low]
-    w = [SPLIT_WEIGHTS.get(S[x]["split"], 1.0) * SPLIT_WEIGHTS.get(S[y]["split"], 1.0) for x, y in least]
+    fresh = [p for p in least if p[0] not in recent and p[1] not in recent]
+    least = fresh or least
+
+    def weight(x):
+        # Favour sites this voter has seen least so the same sites don't keep coming back.
+        return SPLIT_WEIGHTS.get(S[x]["split"], 1.0) / (1 + seen[x]) ** 2
+
+    w = [weight(x) * weight(y) for x, y in least]
     a, b = random.choices(least, weights=w)[0]
     if random.random() < 0.5:
         a, b = b, a
