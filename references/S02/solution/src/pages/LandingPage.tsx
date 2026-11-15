@@ -142,28 +142,30 @@ export const LandingPage = () => {
             const lessons = LESSONS.filter((lesson) => lesson.chapterId === chapter.id);
             return (
               <div key={chapter.id}>
-                <h3>
-                  <button
-                    type="button"
-                    onClick={() => setOpenChapter(isOpen ? null : chapter.id)}
-                    aria-expanded={isOpen}
-                    aria-controls={`chapter-panel-${chapter.id}`}
-                    className="row-link flex w-full items-center justify-between gap-4 py-4 text-left"
-                  >
-                    <span className="min-w-0">
-                      <span className="item-title block">{chapter.title}</span>
-                      <span className="meta block">
-                        Chapter {chapter.orderIndex}, {lessons.length} {lessons.length === 1 ? "lesson" : "lessons"},{" "}
-                        {chapter.estimatedHours}
-                      </span>
-                    </span>
-                    <ChevronDown
-                      className={`h-5 w-5 flex-none text-ink-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                      strokeWidth={1.75}
-                      aria-hidden="true"
-                    />
-                  </button>
-                </h3>
+                <div className="row-link relative flex items-center justify-between gap-4 py-4">
+                  <div className="min-w-0">
+                    <h3 className="item-title">
+                      <button
+                        type="button"
+                        onClick={() => setOpenChapter(isOpen ? null : chapter.id)}
+                        aria-expanded={isOpen}
+                        aria-controls={`chapter-panel-${chapter.id}`}
+                        className="text-left after:absolute after:inset-0"
+                      >
+                        {chapter.title}
+                      </button>
+                    </h3>
+                    <p className="meta">
+                      Chapter {chapter.orderIndex}, {lessons.length} {lessons.length === 1 ? "lesson" : "lessons"},{" "}
+                      {chapter.estimatedHours}
+                    </p>
+                  </div>
+                  <ChevronDown
+                    className={`h-5 w-5 flex-none text-ink-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    strokeWidth={1.75}
+                    aria-hidden="true"
+                  />
+                </div>
                 {isOpen && (
                   <div id={`chapter-panel-${chapter.id}`} className="fade-in pb-6">
                     <p className="text-sm text-ink-2">{chapter.description}</p>
