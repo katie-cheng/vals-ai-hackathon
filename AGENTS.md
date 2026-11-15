@@ -34,7 +34,7 @@ Built-in harnesses: Claude Code (`claude_code-v1.0.0`), Codex (`codex-v1.0.0`), 
 Not in this repo yet (lives on Katie's Devin VM, session `15f198f597984f9c828909d1906a42ad`): mirrors and screenshots of 30 Design Arena sites, a critique sheet (S01–S30), a draft Playwright verifier, one example Harbor task (ZEE salon prompt), and the **SlopLabel** annotation tool (in progress).
 
 ### Prompt set
-26 briefs in 8 categories: portfolios/personal, company/local business, landing pages, rebuild-style (heavily specified), dashboards/data, interactive apps/3D/games, general. Each has `task_id` (e.g. `07-indian-restaurant`), `specificity` (vague <15 words, moderate <60, heavy), named `libraries`, and a `requirements` checklist usable for a brief-fulfillment score. The system prompt asks for **one self-contained HTML file** rendered in a sandboxed iframe (CDN Tailwind/Three.js/D3/Recharts allowed), no console errors, responsive 360px→desktop, no lorem ipsum.
+26 briefs in 8 categories: portfolios/personal, company/local business, landing pages, rebuild-style (heavily specified), dashboards/data, interactive apps/3D/games, general. Each has `task_id` (e.g. `07-indian-restaurant`), `specificity` (vague <15 words, moderate <60, heavy), named `libraries`, and a `requirements` checklist usable for a brief-fulfillment score. The shared `system_prompt.txt` currently asks for **one self-contained HTML file** rendered in a sandboxed iframe. That is outdated: tasks are **multi-file React apps** (like the Design Arena webapps), so the system prompt must be rewritten. Keep its other requirements: no console errors, responsive 360px→desktop, working controls, no lorem ipsum.
 
 ### Design Arena reference sites
 Source: https://www.designarena.ai/leaderboard?section=website&board=webapps
@@ -50,7 +50,7 @@ Inspired by https://github.com/cerealbox39/ui-editor. FastAPI server hosts the m
 - Storage: SQLite. Export to JSON/CSV.
 
 ## Grader architecture (planned)
-Score the **rendered** page (Playwright, computed styles), not source. Layers:
+Score the **rendered** page (Playwright, computed styles), not source. **Make checks mechanical wherever possible.** Each recurring human-label tag becomes a deterministic DOM check if it can be detected mechanically; otherwise it becomes a judge rubric question. Layers:
 1. **Deterministic DOM checks.** Gradient text, `backdrop-filter` share, generic font allowlist, emoji-as-icons, Lucide-only icons, repeated CTAs, numbered "01 / LABEL" eyebrows, fake stats/testimonials, console errors, dead buttons/links, mobile overflow, contrast (axe). Each check fires on specific elements, so it localizes for free.
 2. **Interaction checks.** Forms validate, filters/lightboxes/tabs work.
 3. **VLM judge with a rubric.** One yes/no question per criterion on screenshots with numbered element marks, returning element IDs and evidence. Prefer pairwise comparisons; use judges from more than one lab.
@@ -58,7 +58,9 @@ Score the **rendered** page (Playwright, computed styles), not source. Layers:
 5. **Cross-brief sameness.** Embedding and DOM-structure similarity of one model's outputs across different briefs. Needs no labels.
 6. **Trained classifier** (optional, timeboxed). See `docs/grader-design.md`.
 
-Harbor task layout: `instruction.md` = brief, `environment/` = build image, `tests/` = verifier that serves the build, runs Playwright, writes a 0–1 reward.
+Design Arena votes ("A beat B") are a weak signal, not ground truth. Use them to sanity-check our scores, and to fit per-check weights with P(A≻B)=σ(wᵀ(f(B)−f(A))) over DOM-check outputs, controlling for broken or brief-ignoring sites. A near-zero or wrong-sign weight flags a check to drop.
+
+Harbor task layout: `instruction.md` = brief, `environment/` = Node/Vite React build image, `tests/` = verifier that serves the build, runs Playwright, writes a 0–1 reward.
 
 ## Working rules
 - **Human critiques define the slop indicators.** Don't score, rank, or invent a taxonomy of sites ahead of the team's own labels. A previous session was stopped for doing this.

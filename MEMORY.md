@@ -8,6 +8,8 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - The slop indicator taxonomy comes from human critiques/labels, not from an agent's own scoring [Katie; 2026-11-14]
 - Annotation labels are stored in SQLite (SlopLabel tool) [Katie; 2026-11-14]
 - Grade the rendered DOM/screenshots, not source code [Ali; 2026-11-14]
+- Harbor tasks are multi-file React apps (matching Design Arena webapps), not single HTML files; `system_prompt.txt` from the prompt DB must be rewritten to match [Ali; 2026-11-14]
+- Make grader checks mechanical (deterministic DOM/computed-style) wherever possible; use the VLM judge only for what can't be detected mechanically [Ali; 2026-11-14]
 - Layered grader: deterministic DOM checks + rubric VLM judge + brief-fulfillment score; trained classifier is optional and gets cut first if time is short [Ali; 2026-11-14]
 
 ## Facts and gotchas
@@ -18,7 +20,7 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Hackathon README must start with a one-paragraph, entirely human-written overview [Aidan; 2026-11-14]
 
 ## Open questions
-- Output format: our system prompt asks for a single HTML file, but Design Arena references are multi-file Vite/React apps. Which format do the Harbor tasks use? [Ali; 2026-11-14]
+- How to use Design Arena votes: sanity-check hit rate, fit per-check weights via logistic regression on DOM-feature differences (controlling for broken/brief-ignoring sites), optionally pretrain the probe. Blocked on how many tournaments/votes the arena API exposes [Ali; 2026-11-14]
 - Do we use the 26 prompt-db briefs, the Design Arena tournament prompts, or both? [Ali; 2026-11-14]
 - Which frontier models and harnesses go in the results table? [Ali; 2026-11-14]
 - Is the trained classifier worth building before demos, or only the judge plus DOM checks? [Ali; 2026-11-14]
