@@ -8,6 +8,38 @@ import { ArrowRight, Check, Droplets, MapPin } from "lucide-react";
 const CT_PATH =
   "M104 62 568 48 612 91 598 154 620 195 594 235 577 276 537 307 494 307 469 341 433 348 407 382 373 390 348 419 308 423 276 451 234 440 203 410 173 402 168 373 168 404 126 435 67 428 75 373 94 327 85 271 102 222 91 166 103 119Z";
 
+type Town = (typeof towns)[number];
+
+function TownLabel({ town: t }: { town: Town }) {
+  const near = towns
+    .filter((o) => o.id !== t.id)
+    .reduce((best, o) =>
+      Math.hypot(o.map_x - t.map_x, o.map_y - t.map_y) <
+      Math.hypot(best.map_x - t.map_x, best.map_y - t.map_y)
+        ? o
+        : best,
+    );
+  const left = near.map_x > t.map_x,
+    up = near.map_y > t.map_y;
+  return (
+    <text
+      x={t.map_x + (left ? -14 : 14)}
+      y={t.map_y + (up ? -10 : 18)}
+      textAnchor={left ? "end" : "start"}
+      fill="#fff"
+      fontSize="13"
+      fontWeight="800"
+      paintOrder="stroke"
+      stroke="#04141f"
+      strokeWidth="5"
+      strokeLinejoin="round"
+      pointerEvents="none"
+    >
+      {t.name}
+    </text>
+  );
+}
+
 function PricingAreas() {
   const [a, i] = React.useState("Connecticut"),
     r = towns.find((l) => l.name === a);
@@ -29,12 +61,6 @@ function PricingAreas() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-12 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-end">
             <div>
-              <Reveal>
-                <p className="mb-4 flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.35em] text-sky-600">
-                  <span className="h-px w-10 bg-sky-500" />
-                  {" 05 / Pricing"}
-                </p>
-              </Reveal>
               <SplitWords
                 text="Clear prices for window work."
                 as="h2"
@@ -51,20 +77,15 @@ function PricingAreas() {
             <Reveal delay={0.15}>
               <div className="glass-strong relative overflow-hidden !rounded-3xl p-6 sm:p-7">
                 <Bubbles count={8} minSize={2} maxSize={10} />
-                <p className="relative text-[11px] font-black uppercase tracking-[0.3em] text-cyan-300">
-                  Custom estimates
-                </p>
-                <h3 className="font-serif-d relative mt-2 text-2xl font-semibold text-white">
+                <h3 className="font-serif-d relative text-2xl font-semibold text-white">
                   Larger jobs need a look first.
                 </h3>
                 <p className="relative mt-2 text-[14px] leading-relaxed text-sky-100/75">
                   Gutter cleaning, house washing, driveways, sidewalks, and
                   patios are priced by the actual job. Size, stories, surface
-                  condition, and access all affect the quote.
-                </p>
-                <p className="relative mt-3 text-[13.5px] font-bold text-cyan-200">
-                  Your estimate is free, and the complete price is confirmed
-                  before work is scheduled.
+                  condition, and access all affect the quote. Your estimate is
+                  free, and the complete price is confirmed before work is
+                  scheduled.
                 </p>
                 <Magnetic strength={0.2} className="relative mt-5 inline-block">
                   <a
@@ -97,7 +118,7 @@ function PricingAreas() {
                     aria-hidden
                   />
                   <Droplets className="h-5 w-5 text-sky-400 transition-transform duration-500 group-hover:rotate-[20deg] group-hover:scale-125" />
-                  <p className="mt-4 text-[12px] font-black uppercase tracking-[0.18em] text-slate-500">
+                  <p className="mt-4 text-[14px] font-bold text-slate-600">
                     {l.label}
                   </p>
                   <p className="mt-1 text-4xl font-black tracking-tight text-[#04141f]">
@@ -123,12 +144,6 @@ function PricingAreas() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <Reveal className="relative order-2 lg:order-1">
             <div className="glass relative overflow-hidden rounded-[2rem] p-4 sm:p-6">
-              <p className="mb-1 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-cyan-300">
-                Connecticut service map
-              </p>
-              <p className="mb-3 px-2 text-[12px] text-sky-200/60">
-                Interactive map of representative Connecticut service towns
-              </p>
               <div className="relative">
                 <svg
                   viewBox="40 20 620 440"
@@ -242,20 +257,7 @@ function PricingAreas() {
                             ease: EASE,
                           }}
                         />
-                        {(h || u % 4 === 0) && (
-                          <text
-                            x={l.map_x + 12}
-                            y={l.map_y + 4}
-                            fill="#fff"
-                            fontSize="12"
-                            fontWeight="800"
-                            paintOrder="stroke"
-                            stroke="#04141f"
-                            strokeWidth="3"
-                          >
-                            {l.name}
-                          </text>
-                        )}
+                        {h && <TownLabel town={l} />}
                       </g>
                     );
                   })}
@@ -278,18 +280,9 @@ function PricingAreas() {
                   />
                 </div>
               </div>
-              <p className="mt-2 px-2 text-[12px] italic text-sky-200/50">
-                Representative towns, not a complete list
-              </p>
             </div>
           </Reveal>
           <div className="order-1 lg:order-2">
-            <Reveal>
-              <p className="mb-4 flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.35em] text-cyan-300">
-                <span className="h-px w-10 bg-cyan-300" />
-                {" 06 / Service area"}
-              </p>
-            </Reveal>
             <SplitWords
               text="One state. Plenty of dirty windows."
               as="h2"
@@ -303,7 +296,7 @@ function PricingAreas() {
               </p>
             </Reveal>
             <Reveal delay={0.3}>
-              <p className="mb-3 mt-8 text-[11px] font-black uppercase tracking-[0.3em] text-sky-200/60">
+              <p className="mb-3 mt-8 text-[14px] font-semibold text-sky-100/80">
                 Representative service towns
               </p>
               <div className="flex flex-wrap gap-2">
@@ -342,7 +335,7 @@ function PricingAreas() {
                   className="mt-4 flex items-center gap-2 text-[14px] font-bold text-cyan-200"
                 >
                   <Check className="h-4 w-4 text-cyan-300" /> {r.name}
-                  {" — "}
+                  {", "}
                   {r.region}. Yes, we come to you.
                 </motion.p>
               )}
