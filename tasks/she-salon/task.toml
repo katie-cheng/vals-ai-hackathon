@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/she-salon"
+version = "0.1.0"
+description = "Build a luxury women-only salon and make-up studio website from a detailed Design Arena brief; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop"]
+
+[metadata]
+difficulty = "medium"
+category = "company-local-business"
+tags = ["design-arena", "local-business"]
+source = "Design Arena webapps tournament 48a75fbb-eccd-4cba-a096-0745644f346e (sites S17 gpt-6-astra-max, S18 muse-spark-1.3)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 900.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]
