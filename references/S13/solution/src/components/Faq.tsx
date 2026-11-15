@@ -18,22 +18,22 @@ function Faq() {
             className="font-serif-d block text-[1.9rem] font-normal leading-tight text-white sm:text-[2.6rem]"
           />
         </div>
-        <div className="space-y-3">
+        <div className="border-t border-white/10">
           {faqs.map((r, l) => {
             const u = a === r.id;
             return (
               <Reveal key={r.id} delay={Math.min(l * 0.04, 0.3)} y={24}>
                 <motion.article
-                  className={`overflow-hidden rounded-lg border transition-colors ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "surface hover:border-cyan-300/40"}`}
+                  className="overflow-hidden border-b border-white/10"
                 >
                   <button
                     onClick={() => i(u ? null : r.id)}
                     aria-expanded={u}
                     aria-controls={`faq-answer-${r.id}`}
-                    className="flex w-full items-center gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
+                    className="flex w-full items-center gap-4 py-5 text-left"
                   >
                     <span
-                      className={`text-[13px] font-semibold tabular-nums ${u ? "text-cyan-300" : "text-sky-200/40"}`}
+                      className={`text-[13px] font-medium tabular-nums ${u ? "text-cyan-300" : "text-sky-200/40"}`}
                     >
                       {String(l + 1).padStart(2, "0")}
                     </span>
@@ -74,7 +74,7 @@ function Faq() {
                           ease: EASE,
                         }}
                       >
-                        <p className="px-5 pb-5 pl-[3.4rem] text-[14.5px] leading-relaxed text-sky-100/75 sm:px-6 sm:pl-[3.7rem]">
+                        <p className="pb-6 pl-9 pr-12 text-[14.5px] leading-relaxed text-sky-100/75">
                           {r.answer}
                         </p>
                       </motion.div>

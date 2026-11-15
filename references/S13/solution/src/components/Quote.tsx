@@ -198,7 +198,7 @@ function Quote() {
                     duration: DUR.base,
                     ease: EASE,
                   }}
-                  className="surface group flex items-center gap-4 p-4 hover:border-cyan-300/40"
+                  className="group flex items-center gap-4 border-b border-white/10 py-4 transition hover:border-cyan-300/50"
                 >
                   <span>
                     <span className="block text-[13px] font-medium text-sky-200/70">

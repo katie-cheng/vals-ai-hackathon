@@ -14,7 +14,7 @@ function Process() {
     <section
       ref={a}
       id="process"
-      className="relative overflow-hidden bg-gradient-to-b from-[#04141f] via-[#082230] to-[#04141f] py-24 sm:py-32"
+      className="bg-tone-a relative overflow-hidden py-24 sm:py-32"
     >
       <div className="relative mx-auto grid max-w-6xl gap-10 px-6 sm:px-10 lg:px-24 grid-12 split-5-7">
         <div className="lg:sticky lg:top-28 lg:self-start">
@@ -42,7 +42,7 @@ function Process() {
               }}
             />
           </div>
-          <ol className="space-y-4">
+          <ol>
             {processSteps.map((l) => (
               <li key={l.id} className="relative pl-16">
                 <motion.div
@@ -50,12 +50,12 @@ function Process() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-20% 0px" }}
                   transition={{ duration: DUR.base, ease: EASE }}
-                  className="absolute left-0 top-4 z-10 grid h-11 w-11 place-items-center rounded-full border border-cyan-300 bg-[#04141f] text-lg font-light text-cyan-100"
+                  className="absolute left-0 top-5 z-10 grid h-11 w-11 place-items-center rounded-full border border-cyan-300 bg-[#04141f] text-lg font-light text-cyan-100"
                 >
                   {l.step_number}
                 </motion.div>
                 <Reveal delay={0.1}>
-                  <div className="surface p-5 hover:border-cyan-300/40 sm:px-6">
+                  <div className="border-b border-white/10 py-6">
                     <h3 className="font-serif-d text-[1.25rem] font-normal leading-snug text-white">
                       {l.title}
                     </h3>

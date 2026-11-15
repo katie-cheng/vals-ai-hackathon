@@ -48,23 +48,13 @@ function Trust() {
             </p>
           </Reveal>
         </div>
-        <div className="persp grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-8">
+        <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {trustItems.map((a, i) => {
             return (
               <Reveal key={a.id} delay={(i % 3) * 0.1}>
                 <div className="group h-full">
-                  <div
-                    className="surface relative h-full overflow-hidden p-6 group-hover:border-cyan-300/40 sm:p-7"
-                    style={{
-                      transformStyle: "preserve-3d",
-                    }}
-                  >
-                    <h3
-                      className="relative text-lg font-semibold text-white"
-                      style={{
-                        transform: "translateZ(20px)",
-                      }}
-                    >
+                  <div className="h-full border-t border-white/15 pt-5">
+                    <h3 className="font-serif-d text-[1.25rem] font-normal leading-snug text-white">
                       {a.title}
                     </h3>
                     <p className="relative mt-2.5 text-[14px] leading-relaxed text-sky-100/70">

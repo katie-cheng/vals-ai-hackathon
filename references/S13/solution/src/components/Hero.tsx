@@ -53,7 +53,6 @@ function Hero() {
             />
           </div>
           <div className="absolute inset-0 bg-[#04141f]/60" />
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#04141f]" />
         </div>
         <motion.div
           className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pb-12 pt-28 sm:px-10 lg:px-24 lg:pb-16 lg:pt-28"
