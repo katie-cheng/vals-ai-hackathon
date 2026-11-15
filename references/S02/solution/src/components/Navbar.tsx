@@ -47,7 +47,7 @@ export const Navbar = () => {
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
     `inline-flex h-10 items-center whitespace-nowrap rounded-md px-3 text-sm transition-colors ${
-      isActive ? "bg-raised-hover text-ink" : "text-ink-2 hover:text-ink"
+      isActive ? "bg-accent/15 text-accent" : "text-ink-2 hover:text-ink"
     }`;
 
   return (

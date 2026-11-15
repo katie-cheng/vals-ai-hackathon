@@ -234,7 +234,7 @@ export const LessonPlayerPage = () => {
                   onChange={(event) => setPosition(Number(event.target.value))}
                   aria-label="Seek"
                   aria-valuetext={`${formatTime(position)} of ${formatTime(duration)}`}
-                  className="h-1 min-w-0 flex-1 cursor-pointer accent-[#7cc4ea]"
+                  className="h-1 min-w-0 flex-1 cursor-pointer accent-[#38bdf8]"
                 />
                 <span className="w-10 flex-none text-right font-mono text-[0.8125rem] tabular-nums text-ink-3">{formatTime(duration)}</span>
               </div>

@@ -7,19 +7,19 @@
   --font-display: Cinzel, Georgia, serif;
 
   --color-page: #0b0f19;
-  --color-raised: #111827;
-  --color-raised-hover: #172033;
+  --color-raised: #0f172a;
+  --color-raised-hover: #1e293b;
   --color-line: rgb(148 163 184 / 0.16);
   --color-line-strong: rgb(148 163 184 / 0.32);
   --color-ink: #f1f5f9;
   --color-ink-2: #cbd5e1;
   --color-ink-3: #94a3b8;
-  --color-accent: #7cc4ea;
-  --color-accent-hover: #a5d8f3;
-  --color-on-accent: #06202e;
-  --color-ok: #6fcf9f;
-  --color-warn: #e6b566;
-  --color-bad: #f08a8a;
+  --color-accent: #38bdf8;
+  --color-accent-hover: #7dd3fc;
+  --color-on-accent: #020617;
+  --color-ok: #34d399;
+  --color-warn: #fbbf24;
+  --color-bad: #fb7185;
 
   --radius-md: 6px;
   --radius-lg: 10px;
@@ -245,7 +245,7 @@
   .option[aria-pressed="true"],
   .option[aria-selected="true"],
   .option-active {
-    background: rgb(124 196 234 / 0.14);
+    background: rgb(56 189 248 / 0.16);
     border-color: var(--color-accent);
     color: var(--color-ink);
   }
@@ -301,11 +301,11 @@
     white-space: nowrap;
   }
   .badge-ok {
-    border-color: rgb(111 207 159 / 0.45);
+    border-color: rgb(52 211 153 / 0.5);
     color: var(--color-ok);
   }
   .badge-warn {
-    border-color: rgb(230 181 102 / 0.45);
+    border-color: rgb(251 191 36 / 0.5);
     color: var(--color-warn);
   }
 
