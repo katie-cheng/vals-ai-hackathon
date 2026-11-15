@@ -27,8 +27,11 @@ export default function ChatSheet({ room, me, run, open, onClose }: Props) {
   }, [open, count, keyboard]);
 
   useEffect(() => {
+    if (open) closeButton.current?.focus();
+  }, [open]);
+
+  useEffect(() => {
     if (!open) return;
-    closeButton.current?.focus();
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
