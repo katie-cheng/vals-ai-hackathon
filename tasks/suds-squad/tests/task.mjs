@@ -1,7 +1,7 @@
 // Task-specific part of the verifier: the Suds Squad redesign brief's checklist and the interactions it asks for.
 // grade.mjs, probe.mjs, lib.mjs and test.sh are shared copies of tasks/verifier/; only this file is per task.
-// /app starts as the reconstructed S13 site, so "preserve all existing business information and working functionality"
-// is checked against that site's content (src/data/content.ts in environment/app).
+// The "existing website" is environment/app/existing-site/index.html: the S13 site's facts and quote form with its copy and design stripped,
+// so "preserve all existing business information and working functionality" is checked against that page.
 import { attempt, checkMobileMenu, digits, freshPage, newLines, norm, squash } from "./lib.mjs";
 
 // The business's quote endpoint, kept by the brief; the grader answers it as the deployed endpoint does.

@@ -104,18 +104,19 @@ Neither arena site was given the seeded admin account; the grader still reaches 
 ## suds-squad status
 
 The brief is S13/S14's (Suds Squad, a Connecticut window and exterior cleaning company), kept verbatim.
-It asks to "completely transform my existing cleaning company's website" but carries none of the business details, so `/app` starts as the live S13 site (muse-spark-1.3-max), reconstructed in `references/S13/inputs/live-app`, and the checks require its phone, email, services, prices and towns to survive.
+It asks to "completely transform my existing cleaning company's website" but carries none of the business details.
+The existing website is `environment/app/existing-site/index.html`: the live S13 site's facts (contact, services, prices, towns, FAQ, quote form fields and endpoint contract) and its photos and videos, as unstyled HTML with the generated taglines removed, so it carries no design for the agent to copy.
+`/app` is otherwise the bare template, and the checks require the phone, email, services, prices and towns to survive.
 The quote form posts to `/api/quotes`; `HANDOFF_REPLY` answers it as the deployed endpoint does, and the checks require a validated, confirmed request.
 `SLOP_EXEMPT` waives `pulsing_dots`, because the brief asks for floating particles and bubbles.
 The golden reference is `references/S13/solution` (Katie's critique-driven rebuild).
 
 | Site | reward | task | baseline | slop | slop points |
 | --- | --- | --- | --- | --- | --- |
-| S13 live site (the starting `/app`) | 0.56 | 1.00 | 1.00 | 0.12 | 110.5 |
+| S13 live site (muse-spark's build of this brief) | 0.56 | 1.00 | 1.00 | 0.12 | 110.5 |
 | golden reference (`solution/app`) | 0.73 | 0.99 | 1.00 | 0.46 | 17.5 |
 
 The golden site's points are the uppercase service ribbon Katie kept (7.5), the 01 to 05 slide counters (5) and a heading-accent false positive on price units such as "$5 each" (5).
-An agent that leaves `/app` alone scores 0.56, so this task measures how much slop a model removes or adds while keeping a working site.
 
 ## kora-growth-agency status
 

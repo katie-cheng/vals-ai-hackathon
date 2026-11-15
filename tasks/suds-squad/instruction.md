@@ -1,10 +1,10 @@
-You are working in `/app`, the existing website of a cleaning company (Vite + React + TypeScript, Tailwind 4, Framer Motion), with its dependencies already installed.
-Redesign it as the brief below asks. The current copy, business details, prices, service areas and quote form in `src/` are the business's real information; keep them.
+You are working in `/app`, an empty Vite + React + TypeScript project with its dependencies already installed.
+The cleaning company's current website is `/app/existing-site/index.html`, with the photos and videos it uses in `/app/existing-site/media/`. Its business details, services, prices, service areas, FAQ and quote form are the business's real information; keep them. Transform it as the brief below asks.
 
 Delivery requirements:
 - `npm run build` must succeed and write a static site to `/app/dist`. The site is served from `/app/dist` as static files at `/` and opened in Chromium at desktop and phone sizes.
 - Keep it a client-side Vite + React app: no Next.js, no server, no SSR. You may install any npm packages; the network is available.
-- The quote form sends its request as JSON with `POST /api/quotes` (`src/lib/api.ts`). That is the business's existing endpoint and is available when the site is reviewed; `server/quotes.ts` is a local stand-in for development. Keep the form submitting there and show the reply's `reference` on success.
+- The quote form sends its request as JSON with `POST /api/quotes`. The fields, the endpoint's rules and its replies are in the comment above the form in `existing-site/index.html`. That is the business's existing endpoint; it is available when the site is reviewed, not during development. Keep the form submitting there and show the reply's `reference` on success.
 - Every page must load without console errors, and every image and video you reference must actually load.
 
 ---
