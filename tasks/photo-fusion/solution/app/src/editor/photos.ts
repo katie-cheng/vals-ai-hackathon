@@ -10,10 +10,14 @@ async function decode(blob: Blob): Promise<{ source: CanvasImageSource; width: n
     return { source: bitmap, width: bitmap.width, height: bitmap.height };
   } catch {
     const url = URL.createObjectURL(blob);
-    const img = new Image();
-    img.src = url;
-    await img.decode();
-    return { source: img, width: img.naturalWidth, height: img.naturalHeight };
+    try {
+      const img = new Image();
+      img.src = url;
+      await img.decode();
+      return { source: img, width: img.naturalWidth, height: img.naturalHeight };
+    } finally {
+      URL.revokeObjectURL(url);
+    }
   }
 }
 
