@@ -28,3 +28,5 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Eyebrow labels (small caps, letter-spaced text above headings) are the most-flagged pattern, by all three annotators: see docs/label-analysis.md
 - Held-out sites (data/splits.json): grade them only with frozen graders; never tune on them
 - Arcada sites never reach Playwright `networkidle` (animations/polling); use `wait_until="load"` plus a fixed wait
+- Pairwise "which is sloppier" votes (Slop Arena) are the main evaluation signal for graders; YC pre-2022 archived homepages serve as human-made reference sites
+- The session VM has 2 CPUs: run Playwright scrapes sequentially with ≤2 workers
