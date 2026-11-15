@@ -70,6 +70,35 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Layout shift on load/reload (font swap reflow, slide-in entrances, late state restyle, media without reserved space) | R25 | yes: CLS via PerformanceObserver, plus element movement during the first seconds |
 | Hero image missing on first paint (waits for JS/video poster) | R17 | yes: hero image request start and paint time vs first contentful paint |
 
+## Rebuild critiques (sites `S02-ref` and `S06-ref`, katie via chat, 2026-11-15)
+Katie reviewed the S02 (It Beginner) and S06 (Rocksteady Campus) golden rebuilds the same way (`references/S02/`, `references/S06/`; SlopLabel ids 507–514 for `S02-ref` R1–R8 and 515–516 for `S06-ref` R1–R2). Unlike the S13 round, most of these are corrections of over-application: applying R1–R25 strictly had removed things that were not slop. They are calibration patterns, mostly about thresholds.
+
+| Pattern | Labels | Mechanical? |
+|---|---|---|
+| Over-corrected palette: de-slopping flattened the site to greys; colour that carries brand, category or status meaning must stay | S02-ref R1, R5, R6 | partly: chroma of the accent palette vs the original; share of coloured surfaces |
+| Icons are fine when consistent (one set, one size, one stroke) and used only where needed, not banned outright | S02-ref R2 | yes: distinct icon sizes/stroke widths; icons per fact row |
+| Too little weight contrast: one or two weights across the whole type scale reads flat; vary weight by role | S02-ref R3 | yes: count of distinct computed font-weights in use |
+| Over-emphasised hero phrase: a whole phrase-length h1 set bold; large display titles should be thin | S02-ref R4 | yes: hero h1 size > ~48px at weight ≥ 600 |
+| Motion the brief asks for (soft animations) is fine when short and opacity-only; strictness should not strip it | S02-ref R7 | yes: duration ≤ ~0.5s, no translate/stagger beyond a few items |
+| Layout shift on reload: text loads in and moves (font swap, late entrances) | S02-ref R8 | yes: CLS on a throttled cold load per route |
+| Brief precedence: when the brief names a treatment (gradient overlays, uppercase headline, bold type, cards with shadows and radius, a slider) keep it and execute it well | S06-ref R1, R2 | no: reviewer compares brief wording with page |
+
+## Label patterns from the S02, S06 and S30 reference builds
+Patterns the three sessions found while applying the labels and the rubric, drawn from the original labels (ids in brackets) rather than new chat critiques.
+
+| Pattern | Labels | Mechanical? |
+|---|---|---|
+| Labelled pattern recurs site-wide outside the labelled element (mono subtitles, pulsing dots, `·` separators, odd radii, icon tiles on every section); fixing only the labelled instance leaves most of the slop in place (S30 scored 19 points after every label was addressed) | S30 171, 188, 224, 238, 240, 248, 249, 267 | yes: per-pattern counts on every route, expect 0 after a fix |
+| Monospace or second-family small text (eyebrows, subtitles, nav labels) as an "engineered" look | S30 171, 224, 249, 267 | yes: computed font-family of text ≤ 14px vs the body family |
+| Inconsistent corner radii across cards, buttons and tiles | S30 188, 238, 240, 248 | yes: count distinct computed border-radius values |
+| Floating stat/KPI card over an image, not anchored to the image or the layout, often with a drifting animation | S30 348 | yes: absolutely positioned element with a number overlapping an `<img>` |
+| Primary CTA collapses to a bare icon at narrow widths | S05 289 | yes: button text node empty below a breakpoint |
+| Two differently styled arrow/pager controls side by side for one carousel | S06 395 | yes: ≥ 2 sibling button groups controlling the same panel |
+| Filter or search causes the page to jump (content height collapses, scroll resets) | S06 400 | yes: bounding-box diff of untouched elements and `scrollY` before/after the control |
+| Fact rows (hours, location, contact, "why us") rendered as a card with an icon each; repetitive captions added for fullness | S06 405; S05 453, 457 | yes: icons per fact row; sibling cards each holding only an icon + one line |
+| Forced "big numbers" used as design, not as facts | S02 448 | yes: numeric-only elements > 32px that are not prices or dates |
+| Grader false positive: long FAQ questions wrapping inside their button are not broken controls | (S30 FAQ) | fixed in the shared verifier (commit 1403cc4) |
+
 ## Other observations
 - Both salon sites (S03 gpt-6-astra-max, S04 kimi-k3.1-pro) independently chose Inter + Cormorant Garamond italic accents and 9–10px caps eyebrows: cross-model convergence.
 - Arena: in both fully labeled pairs (S01 vs S02, S03 vs S04) the arena loser has more labels. n=2, and label counts reflect annotator effort, so not evidence yet.
