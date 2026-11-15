@@ -1,0 +1,327 @@
+{
+ "base": "http://localhost:5181",
+ "passed": 20,
+ "total": 20,
+ "results": [
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/",
+   "width": 1440,
+   "height": 10389,
+   "console_errors": [],
+   "path": "/",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/about",
+   "width": 1440,
+   "height": 5191,
+   "console_errors": [],
+   "path": "/about",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/services",
+   "width": 1440,
+   "height": 4257,
+   "console_errors": [],
+   "path": "/services",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/services/growth-strategy",
+   "width": 1440,
+   "height": 4043,
+   "console_errors": [],
+   "path": "/services/growth-strategy",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/work",
+   "width": 1440,
+   "height": 3046,
+   "console_errors": [],
+   "path": "/work",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/work/ledgerly",
+   "width": 1440,
+   "height": 4184,
+   "console_errors": [],
+   "path": "/work/ledgerly",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/pricing",
+   "width": 1440,
+   "height": 4252,
+   "console_errors": [],
+   "path": "/pricing",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/insights",
+   "width": 1440,
+   "height": 3276,
+   "console_errors": [],
+   "path": "/insights",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/insights/90-day-growth-roadmap",
+   "width": 1440,
+   "height": 4589,
+   "console_errors": [],
+   "path": "/insights/90-day-growth-roadmap",
+   "pass": true
+  },
+  {
+   "scrollWidth": 1440,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/contact",
+   "width": 1440,
+   "height": 2051,
+   "console_errors": [],
+   "path": "/contact",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/",
+   "width": 390,
+   "height": 13986,
+   "console_errors": [],
+   "path": "/",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/about",
+   "width": 390,
+   "height": 8065,
+   "console_errors": [],
+   "path": "/about",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/services",
+   "width": 390,
+   "height": 6220,
+   "console_errors": [],
+   "path": "/services",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/services/growth-strategy",
+   "width": 390,
+   "height": 5757,
+   "console_errors": [],
+   "path": "/services/growth-strategy",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/work",
+   "width": 390,
+   "height": 4385,
+   "console_errors": [],
+   "path": "/work",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/work/ledgerly",
+   "width": 390,
+   "height": 5512,
+   "console_errors": [],
+   "path": "/work/ledgerly",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/pricing",
+   "width": 390,
+   "height": 6295,
+   "console_errors": [],
+   "path": "/pricing",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/insights",
+   "width": 390,
+   "height": 5341,
+   "console_errors": [],
+   "path": "/insights",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/insights/90-day-growth-roadmap",
+   "width": 390,
+   "height": 5585,
+   "console_errors": [],
+   "path": "/insights/90-day-growth-roadmap",
+   "pass": true
+  },
+  {
+   "scrollWidth": 390,
+   "text_middot": 0,
+   "text_emdash": 0,
+   "animated_dots": 0,
+   "monospace": 0,
+   "fonts": [
+    "Manrope"
+   ],
+   "route": "/contact",
+   "width": 390,
+   "height": 3136,
+   "console_errors": [],
+   "path": "/contact",
+   "pass": true
+  }
+ ]
+}
