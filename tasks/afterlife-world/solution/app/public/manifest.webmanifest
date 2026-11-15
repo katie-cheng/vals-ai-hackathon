@@ -1,0 +1,9 @@
+{
+  "name": "AFTERLIFE",
+  "short_name": "AFTERLIFE",
+  "start_url": "/world",
+  "display": "standalone",
+  "background_color": "#151a1f",
+  "theme_color": "#151a1f",
+  "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+}

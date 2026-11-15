@@ -31,6 +31,7 @@ A task's `tests/task.mjs` exports:
 - `interactDesktop(context, url, handoffs, pages)` and `interactMobile(context, url, handoffs, pages)` (optional): the interactions the brief asks for, run at 1440 and 390px; `pages` lists `{url, path, labels}`, and `lib.mjs` `assignPages` maps them to roles such as menu or contact. Their results reach `requirements` as `views.desktop.interactions` and `views.phone.interactions`.
 - `HANDOFF_URLS` (optional): a regex for outbound hand-offs the brief asks for (a WhatsApp booking, a mailto form service); matching requests are recorded in `handoffs` and blocked.
 - `SLOP_EXEMPT` (optional): slop check ids the brief explicitly asks for, each mapped to the brief's words, e.g. `{ pulsing_dots: "brief: subtle moving particles" }`. An exempt check is still measured and reported but costs no points; an unknown id stops the grader.
+- `GATE` (optional): `{ minText, minHeight }` lowers the desktop render gate (default 200 characters and 600px) for games or apps whose start screen is short.
 
 ## Reward
 

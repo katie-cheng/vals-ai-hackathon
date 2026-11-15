@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/chez-amazigh"
+version = "0.1.0"
+description = "Build a premium multi-page, trilingual (French, English, Arabic RTL) website for a real Amazigh family guesthouse near Ouarzazate, with a reservation inquiry form and no invented contact details; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "multi-page", "i18n", "rtl"]
+
+[metadata]
+difficulty = "hard"
+category = "hospitality"
+tags = ["design-arena", "hospitality", "multi-page", "i18n"]
+source = "Design Arena webapps tournament d7aa0332-ab63-4633-b425-65a215d554e0 for sites S27 (claude-sonnet-5-5) and S28 (claude-opus-4-8)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/jcql-quiz-league"
+version = "0.1.0"
+description = "Build a live scoreboard and an operator page (add teams with logos, keep scores, always sorted high to low) for a hostel quiz league; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "scoreboard", "app"]
+
+[metadata]
+difficulty = "medium"
+category = "interactive-app"
+tags = ["design-arena", "scoreboard", "crud", "localstorage"]
+source = "Design Arena webapps tournament 9361f114-1137-4016-8e30-b5502f25340b (sites S25 gpt-6-astra, S26 muse-spark-1.3-max)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

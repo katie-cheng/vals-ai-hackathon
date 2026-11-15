@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/truth-or-dare"
+version = "0.1.0"
+description = "Optimise an existing two-phone Truth or Dare game for smartphones: vertical game screen, a realistic synchronised bottle spin, staged truth-or-dare screens and a bottom-sheet chat; graded by playing a round on two tabs plus the human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "game", "mobile", "slop", "animation"]
+
+[metadata]
+difficulty = "hard"
+category = "interactive-apps-games"
+tags = ["design-arena", "game", "mobile", "multiplayer"]
+source = "Design Arena webapps tournament 6ec52011-a188-455f-b698-6c9c1370e722 (sites S19 qwen3.8-max, S20 minimax-m3); the earlier game is not published, so /app starts as a neutral unstyled stand-in"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

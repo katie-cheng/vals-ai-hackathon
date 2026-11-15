@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/it-beginner"
+version = "0.1.0"
+description = "Improve or reconstruct an existing Express/EJS learning platform (6 chapters, 42 lessons, playground, quizzes, certificates, admin) as a production-ready client-side React app; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "redesign", "web-app"]
+
+[metadata]
+difficulty = "hard"
+category = "rebuild"
+tags = ["design-arena", "education", "redesign", "web-app"]
+source = "Design Arena webapps tournament 05097c11-f54e-4ad4-928e-a1236623eecc (sites S01 gpt-6-astra, S02 gemini-3.8-flash); existing site https://github.com/AjinLab/it-beginner-website"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

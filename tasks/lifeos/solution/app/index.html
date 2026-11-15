@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LifeOS keeps your tasks, habits, calendar, focus sessions and notes in one calm workspace." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>LifeOS</title>
+    <script>
+      try {
+        var d = JSON.parse(localStorage.getItem("lifeos:data:v1") || "null");
+        if (d && d.settings && d.settings.theme === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

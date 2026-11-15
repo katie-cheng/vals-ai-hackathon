@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/afterlife-world"
+version = "0.1.0"
+description = "Build AFTERLIFE, a responsive browser 3D shared world with keyboard/mouse and virtual-joystick controls, a notification centre, a shared account backend stand-in and an honest Android APK section; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop", "3d", "webgl"]
+
+[metadata]
+difficulty = "hard"
+category = "game"
+tags = ["design-arena", "3d-world", "multiplayer", "notifications"]
+source = "Design Arena tournament 2a5d49ef-429e-4496-8f5a-8a23a4bf2302, sites S09 (kimi-k3.1-pro) and S10 (claude-sonnet-5-5)"
+
+[agent]
+timeout_sec = 3600.0
+
+[verifier]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

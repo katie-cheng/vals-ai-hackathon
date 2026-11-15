@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #fbf6ee;
+  --color-beige: #ecdfcd;
+  --color-blush: #f3dcd6;
+  --color-gold: #b8955a;
+  /* Gold darkened to pass WCAG AA as small text on ivory, beige and blush. */
+  --color-gold-deep: #7a5a2b;
+  --color-ink: #16120f;
+  --color-muted: #5a4f45;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+  body {
+    @apply bg-ivory font-sans text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-medium;
+    line-height: 1.08;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold-deep);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2.5 rounded-sm px-6 py-3.5 text-[0.95rem] font-medium whitespace-nowrap transition-colors duration-300 ease-soft;
+}
+@utility btn-dark {
+  @apply bg-ink text-ivory hover:bg-gold-deep;
+}
+@utility btn-outline {
+  @apply border border-ink/60 text-ink hover:border-ink hover:bg-ink hover:text-ivory;
+}
+@utility btn-gold {
+  @apply bg-gold text-ink hover:bg-ivory;
+}
+@utility btn-outline-light {
+  @apply border border-ivory/50 text-ivory hover:border-ivory hover:bg-ivory hover:text-ink;
+}
+@utility section {
+  @apply px-5 py-24 sm:px-8 lg:py-32;
+}
+@utility wrap {
+  @apply mx-auto w-full max-w-6xl;
+}
+@utility section-title {
+  @apply text-[2.5rem] sm:text-5xl lg:text-[3.5rem];
+}
+@utility rule {
+  @apply block h-px w-14 bg-gold;
+}
