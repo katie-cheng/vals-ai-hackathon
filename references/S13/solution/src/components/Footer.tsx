@@ -51,7 +51,7 @@ function Footer() {
         </div>
         <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-14 sm:px-6 sm:pt-20">
           <Reveal className="text-center">
-            <p className="text-[12px] font-black uppercase tracking-[0.35em] text-cyan-300">
+            <p className="text-[15px] font-semibold text-cyan-300">
               A clean home starts with a clear plan.
             </p>
             <motion.p
@@ -100,10 +100,11 @@ function Footer() {
               </p>
               <button
                 onClick={r}
-                className="group mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[13px] font-bold text-white transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10"
+                aria-label="Share this website"
+                title="Share this website"
+                className="group mt-5 grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10"
               >
-                <Link2 className="h-3.5 w-3.5 text-cyan-300 transition-transform duration-300 group-hover:rotate-[25deg]" />
-                Share this website
+                <Link2 className="h-4 w-4 text-cyan-300 transition-transform duration-300 group-hover:rotate-[25deg]" />
               </button>
               {a && (
                 <motion.p
@@ -123,7 +124,7 @@ function Footer() {
               )}
             </div>
             <nav aria-label="Footer">
-              <p className="mb-4 text-[11px] font-black uppercase tracking-[0.3em] text-sky-200/50">
+              <p className="mb-4 text-[14px] font-semibold text-sky-200/60">
                 Explore
               </p>
               <ul className="space-y-1">
@@ -148,7 +149,7 @@ function Footer() {
               </ul>
             </nav>
             <div>
-              <p className="mb-4 text-[11px] font-black uppercase tracking-[0.3em] text-sky-200/50">
+              <p className="mb-4 text-[14px] font-semibold text-sky-200/60">
                 Contact
               </p>
               <ul className="space-y-3 text-[14.5px] font-semibold">
@@ -179,12 +180,8 @@ function Footer() {
             </div>
           </div>
           <div className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-7 sm:flex-row">
-            <p className="text-[11px] font-black uppercase tracking-[0.35em] text-sky-200/40">
-              THE SUDS SQUAD
-            </p>
-            <p className="max-w-md text-center text-[12px] leading-relaxed text-sky-200/45 sm:text-right">
-              Connecticut window cleaning, gutter cleaning, and pressure
-              washing.
+            <p className="text-[12.5px] text-sky-200/50">
+              © {new Date().getFullYear()} {SITE.name}
             </p>
             <Magnetic strength={0.3}>
               <a

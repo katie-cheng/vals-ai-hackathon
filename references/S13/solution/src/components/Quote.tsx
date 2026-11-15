@@ -40,7 +40,7 @@ function Field({ label: a, error: i, children: r, htmlFor: l, required: u }) {
         scale: 1.005,
       }}
     >
-      <span className="mb-1.5 flex items-center justify-between text-[12px] font-black uppercase tracking-[0.16em] text-sky-200/80">
+      <span className="mb-1.5 flex items-center justify-between text-[13.5px] font-semibold text-sky-100/85">
         {a} {u && <b className="text-cyan-300">*</b>}
       </span>
       {r}
@@ -204,12 +204,6 @@ function Quote() {
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
         <div>
-          <Reveal>
-            <p className="mb-4 flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.35em] text-cyan-300">
-              <span className="h-px w-10 bg-cyan-300" />
-              {" 08 / Free estimate"}
-            </p>
-          </Reveal>
           <SplitWords
             text="Tell us what needs cleaning."
             as="h2"
@@ -259,7 +253,7 @@ function Quote() {
                     <O.icon className="h-5 w-5" />
                   </span>
                   <span>
-                    <span className="block text-[11px] font-black uppercase tracking-[0.25em] text-sky-200/60">
+                    <span className="block text-[13px] font-medium text-sky-200/70">
                       {O.k}
                     </span>
                     <span className="block break-all text-[15px] font-bold text-white">
@@ -280,10 +274,6 @@ function Quote() {
         </div>
         <Reveal delay={0.15}>
           <div className="glass-strong relative overflow-hidden rounded-[2rem] p-6 shadow-[0_40px_100px_-30px_rgba(0,0,0,.8)] sm:p-9">
-            <div
-              className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300 to-transparent"
-              aria-hidden
-            />
             <AnimatePresence mode="wait">
               {u === "success" ? (
                 <motion.div
@@ -432,14 +422,7 @@ function Quote() {
                     <h3 className="text-lg font-black text-white">
                       Free quote request
                     </h3>
-                    <span className="flex items-center gap-1.5 rounded-full bg-cyan-300/15 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.15em] text-cyan-200">
-                      <MapPin className="h-3 w-3" />
-                      {" Connecticut only"}
-                    </span>
                   </div>
-                  <p className="mb-4 text-[12px] font-black uppercase tracking-[0.22em] text-sky-200/50">
-                    Property and contact details
-                  </p>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <Field
                       label="Full name"
@@ -560,7 +543,7 @@ function Quote() {
                       r.services ? "quote-services-error" : void 0
                     }
                   >
-                    <legend className="mb-1 text-[12px] font-black uppercase tracking-[0.22em] text-sky-200/80">
+                    <legend className="mb-1 text-[13.5px] font-semibold text-sky-100/85">
                       {"What can we clean? "}
                       <b className="text-cyan-300">*</b>
                     </legend>
@@ -642,7 +625,7 @@ function Quote() {
                       </select>
                     </Field>
                     <div>
-                      <span className="mb-1.5 block text-[12px] font-black uppercase tracking-[0.16em] text-sky-200/80">
+                      <span className="mb-1.5 block text-[13.5px] font-semibold text-sky-100/85">
                         Preferred contact
                       </span>
                       <div className="grid grid-cols-3 gap-2">
@@ -702,7 +685,7 @@ function Quote() {
                   <div className="mt-4">
                     <label
                       htmlFor="quote-notes"
-                      className="mb-1.5 block text-[12px] font-black uppercase tracking-[0.16em] text-sky-200/80"
+                      className="mb-1.5 block text-[13.5px] font-semibold text-sky-100/85"
                     >
                       Notes, access, and trouble spots
                     </label>

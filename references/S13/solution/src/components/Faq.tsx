@@ -13,12 +13,6 @@ function Faq() {
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
-          <Reveal>
-            <p className="mb-4 flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.35em] text-cyan-300">
-              <span className="h-px w-10 bg-cyan-300" />
-              {" 07 / Questions"}
-            </p>
-          </Reveal>
           <SplitWords
             text="Useful answers before you book."
             as="h2"
