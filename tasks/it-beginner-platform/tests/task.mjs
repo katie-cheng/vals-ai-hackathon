@@ -234,14 +234,20 @@ async function crawl(context, start, limit, shape = (u) => u) {
 }
 
 const about = (p, re) => re.test(p.path) || p.h1.some((h) => re.test(h)) || re.test(p.title.split(/[|·–—-]/)[0]);
-// A lesson page is headed by a lesson title (its h1, or its first heading when it has no h1), possibly with a subtitle added.
-// Lesson pages share one route, so the largest group of such pages under one parent path is taken; that leaves out a
-// curriculum page that happens to be headed like the lesson called "Curriculum".
+// A lesson page is headed by a lesson title (its h1, or its first heading when it has no h1), possibly with words added. A title of one or two words must open the heading, so that
+// "Certificate of curriculum completion" is not taken for the lesson called "Curriculum".
+// Lesson pages sit at one depth (/lesson/3, or /chapter/basics/lesson/3 under any chapter), so the largest group of such pages
+// at one path depth is taken; that leaves out a curriculum page that happens to be headed like the lesson called "Curriculum".
 function lessonPagesOf(pages) {
   const groups = new Map();
   for (const p of pages) {
-    if (p.failed || !LESSONS.some((t) => (p.h1.length ? p.h1 : p.headings.slice(0, 1)).some((h) => lineMatches(norm(h), t, 0.8, 6)))) continue;
-    const key = p.path.replace(/\d+/g, "N").replace(/\/[^/]*$/, "");
+    if (p.failed || !LESSONS.some((t) => (p.h1.length ? p.h1 : p.headings.slice(0, 1)).some((h) => (tokens(h)[0] === tokens(t)[0] || tokens(t).length >= 3) && lineMatches(norm(h), t, 0.8, 6))))
+      continue;
+    const key =
+      p.path
+        .replace(/[?#](?!\/).*$/, "")
+        .split("/")
+        .filter(Boolean).length + (p.path.includes("?") ? "?" : "");
     groups.set(key, [...(groups.get(key) || []), p]);
   }
   return [...groups.values()].sort((a, b) => b.length - a.length)[0] || [];
