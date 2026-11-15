@@ -57,6 +57,16 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(KEY, JSON.stringify(data));
   }, [data]);
 
+  // Another tab saved: adopt its document so this tab's next save doesn't overwrite it.
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== KEY) return;
+      setData(load());
+    };
+    addEventListener("storage", onStorage);
+    return () => removeEventListener("storage", onStorage);
+  }, []);
+
   useEffect(() => {
     document.documentElement.dataset.theme = data.settings.theme;
     document.documentElement.style.colorScheme = data.settings.theme;
