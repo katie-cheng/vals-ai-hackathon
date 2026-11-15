@@ -59,17 +59,19 @@ function SearchBox() {
   const notes = term ? data.notes.filter((n) => (n.title + " " + n.body).toLowerCase().includes(term)).slice(0, 3) : [];
   const go = (to: string) => { setQ(""); navigate(to); };
   return (
-    <div className="search" role="search">
+    <div className="search" role="search"
+      onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false); }}>
       <Search size={16} className="search-icon" aria-hidden="true" />
       <input type="search" placeholder="Search tasks and notes" aria-label="Search tasks and notes" value={q}
-        onChange={(e) => setQ(e.target.value)} onFocus={() => setFocused(true)} onBlur={() => setTimeout(() => setFocused(false), 150)} />
+        onChange={(e) => setQ(e.target.value)} onFocus={() => setFocused(true)}
+        onKeyDown={(e) => e.key === "Escape" && setFocused(false)} />
       {focused && term && (
         <div className="search-results">
           {tasks.length + notes.length === 0 && <p className="search-empty">No tasks or notes match "{q.trim()}"</p>}
           {tasks.length > 0 && <p className="search-group">Tasks</p>}
-          {tasks.map((t) => <button type="button" key={t.id} onMouseDown={() => go(`/tasks?q=${encodeURIComponent(q.trim())}`)}>{t.title}</button>)}
+          {tasks.map((t) => <button type="button" key={t.id} onMouseDown={(e) => e.preventDefault()} onClick={() => go(`/tasks?q=${encodeURIComponent(q.trim())}`)}>{t.title}</button>)}
           {notes.length > 0 && <p className="search-group">Notes</p>}
-          {notes.map((n) => <button type="button" key={n.id} onMouseDown={() => go(`/notes?q=${encodeURIComponent(q.trim())}`)}>{n.title}</button>)}
+          {notes.map((n) => <button type="button" key={n.id} onMouseDown={(e) => e.preventDefault()} onClick={() => go(`/notes?q=${encodeURIComponent(q.trim())}`)}>{n.title}</button>)}
         </div>
       )}
     </div>
