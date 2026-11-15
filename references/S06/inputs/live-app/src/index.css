@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --color-brand: #f1001f;
+  --color-brand-dark: #c90019;
+  --color-cream: #f6f4ef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  color: #080808;
+  background: #f6f4ef;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #f1001f59;
+  outline-offset: 3px;
+}
+::selection {
+  color: #fff;
+  background: #f1001f;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 py-3 text-[12px] font-extrabold tracking-[0.12em] text-white uppercase transition duration-300 hover:bg-brand-dark hover:shadow-[0_12px_35px_rgba(241,0,31,0.3)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-dark {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-7 py-3 text-[12px] font-extrabold tracking-[0.12em] text-white uppercase transition duration-300 hover:bg-neutral-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-outline {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-black/20 px-7 py-3 text-[12px] font-extrabold tracking-[0.12em] uppercase transition duration-300 hover:border-black hover:bg-black hover:text-white active:scale-[0.98];
+  }
+  .btn-white {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/35 bg-white/5 px-7 py-3 text-[12px] font-extrabold tracking-[0.12em] text-white uppercase backdrop-blur-md transition duration-300 hover:bg-white hover:text-black active:scale-[0.98];
+  }
+  .eyebrow {
+    @apply flex items-center gap-3 text-[11px] font-extrabold tracking-[0.22em] text-brand uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply block h-[2px] w-7 bg-brand;
+  }
+  .display-title {
+    @apply font-display text-5xl leading-[0.94] font-black tracking-[-0.025em] uppercase sm:text-6xl lg:text-7xl;
+  }
+  .field {
+    @apply w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black transition placeholder:text-neutral-400 focus:border-brand focus:ring-2 focus:ring-brand/10 focus:outline-none;
+  }
+  .field-label {
+    @apply mb-2 block text-[11px] font-bold tracking-[0.1em] text-neutral-600 uppercase;
+  }
+  .admin-field {
+    @apply w-full rounded-lg border border-neutral-200 bg-white px-3 py-2.5 text-sm text-neutral-800 transition focus:border-brand focus:ring-2 focus:ring-brand/10 focus:outline-none;
+  }
+  .admin-label {
+    @apply mb-1.5 block text-xs font-semibold text-neutral-600;
+  }
+  .admin-card {
+    @apply rounded-2xl border border-neutral-200/80 bg-white shadow-[0_3px_16px_rgba(0,0,0,0.024)];
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.text-balance {
+  text-wrap: balance;
+}
+.text-stroke {
+  -webkit-text-stroke: 1px #ffffff59;
+  color: #0000;
+}
+.hero-vignette {
+  background:
+    linear-gradient(90deg, #000000f5, #000000c7 35%, #00000038 72%, #00000052),
+    linear-gradient(#0000 58%, #000000b8);
+}
+.paper-texture {
+  background-image: radial-gradient(#00000009 0.6px, #0000 0.6px);
+  background-size: 7px 7px;
+}
+.marquee-track {
+  animation: 24s linear infinite marquee;
+}
+@keyframes marquee {
+  to {
+    transform: translate(-50%);
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  to {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.live-dot {
+  animation: 1.8s ease-in-out infinite pulse-soft;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .live-dot {
+    animation: none;
+  }
+}

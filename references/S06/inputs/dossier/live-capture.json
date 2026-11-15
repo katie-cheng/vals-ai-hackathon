@@ -1,0 +1,7316 @@
+{
+ "header": {
+  "1440": {
+   "nav": true,
+   "menuButton": false,
+   "orderNow": true,
+   "bottomNav": false,
+   "headerHeight": 103,
+   "docWidth": 1440
+  },
+  "1280": {
+   "nav": true,
+   "menuButton": false,
+   "orderNow": true,
+   "bottomNav": false,
+   "headerHeight": 103,
+   "docWidth": 1280
+  },
+  "1024": {
+   "nav": false,
+   "menuButton": true,
+   "orderNow": true,
+   "bottomNav": false,
+   "headerHeight": 103,
+   "docWidth": 1024
+  },
+  "768": {
+   "nav": false,
+   "menuButton": true,
+   "orderNow": true,
+   "bottomNav": false,
+   "headerHeight": 103,
+   "docWidth": 768
+  },
+  "390": {
+   "nav": false,
+   "menuButton": true,
+   "orderNow": false,
+   "bottomNav": true,
+   "headerHeight": 103,
+   "docWidth": 390
+  }
+ },
+ "routes": {
+  "/": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 4686,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "BIG FLAVOUR. GENEROUS PORTIONS. REAL TOWNSHIP TASTE.",
+     "top": 0,
+     "height": 900,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       3
+      ],
+      [
+       "Manrope 400",
+       3
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "9px",
+       6
+      ],
+      [
+       "12px",
+       4
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "88px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       8
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       8
+      ],
+      [
+       "8px",
+       5
+      ]
+     ],
+     "textNodes": 13,
+     "smallUppercase": 6,
+     "under12px": 7,
+     "icons": 5,
+     "text": "ROCKVILLE \u00b7 SOWETO \u00b7 EST. WITH LOVE\nMADE IN ROCKVILLE. LOVED IN SOWETO.\nBIG FLAVOUR. GENEROUS PORTIONS. REAL TOWNSHIP TASTE.\n\nFreshly prepared kotas, dagwoods, burgers and more \u2014 stacked with quality ingredients and served with true Rockville heart.\n\nORDER NOW\nEXPLORE OUR MENU\nNM\nSK\nTR\n4.9\nLOCAL FAVOURITE\n\nMade fresh\n\nEVERY SINGLE ORDER"
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "heading": "",
+     "top": 900,
+     "height": 52,
+     "bg": "rgb(241, 0, 31)",
+     "components": [
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       8
+      ]
+     ],
+     "sizes": [
+      [
+       "18px",
+       8
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       8
+      ]
+     ],
+     "radii": [],
+     "textNodes": 8,
+     "smallUppercase": 0,
+     "under12px": 0,
+     "icons": 24,
+     "text": "BIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE"
+    },
+    {
+     "tag": "section",
+     "id": "categories",
+     "heading": "PICK YOUR FAVOURITE.",
+     "top": 952,
+     "height": 634,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       9
+      ],
+      [
+       "Barlow Condensed 700",
+       8
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "20px",
+       8
+      ],
+      [
+       "10px",
+       8
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       9
+      ],
+      [
+       "oklch(0.556 0 0)",
+       8
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       9
+      ],
+      [
+       "16px",
+       8
+      ]
+     ],
+     "textNodes": 20,
+     "smallUppercase": 2,
+     "under12px": 9,
+     "icons": 9,
+     "text": "WHAT ARE YOU CRAVING?\nPICK YOUR FAVOURITE.\n\nFrom iconic kotas to flame-grilled burgers, every order is made fresh and packed with flavour.\n\nVIEW FULL MENU\nKOTAS\n\n10 options\n\nDAGWOODS\n\n4 options\n\nBURGERS\n\n3 options\n\nROLLS\n\n5 options\n\nSANDWICHES\n\n3 options\n\nCHIPS & SIDES\n\n25 options\n\nBEVERAGES\n\n6 options\n\nSPECIALS & COMBOS\n\n4 options"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE MEALS EVERYONE TALKS ABOUT.",
+     "top": 1586,
+     "height": 911,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       8
+      ],
+      [
+       "Manrope 800",
+       7
+      ],
+      [
+       "Manrope 400",
+       5
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "20px",
+       4
+      ],
+      [
+       "13px",
+       4
+      ],
+      [
+       "24px",
+       4
+      ],
+      [
+       "10px",
+       4
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       9
+      ],
+      [
+       "rgb(255, 255, 255)",
+       5
+      ],
+      [
+       "oklch(0.556 0 0)",
+       4
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       5
+      ],
+      [
+       "16px",
+       4
+      ]
+     ],
+     "textNodes": 21,
+     "smallUppercase": 7,
+     "under12px": 6,
+     "icons": 5,
+     "text": "ROCKVILLE FAVOURITES\nTHE MEALS EVERYONE TALKS ABOUT.\n\nBig on flavour, generous by nature. Meet the orders our regulars keep coming back for.\n\nSEE EVERYTHING\nCAMPUS CLASSIC\n\nQuarter loaf filled with seasoned chips, polony, cheese, egg, atchar and our signature Campus sauce.\n\nR45\nADD\nROCKVILLE RUSSIAN\n\nA proper township favourite with chips, grilled Russian, cheese, egg, lettuce and tomato.\n\nR55\nADD\nFEATURED\nBEEF & CHEDDAR\n\nJuicy beef patty, melted cheddar, chips, caramelised onion and Campus sauce.\n\nR70\nADD\nDOUBLE RUSSIAN DELUXE\n\nTwo grilled Russians with chips, cheese, egg, atchar and a generous sauce finish.\n\nR75\nADD"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "MORE FLAVOUR. LESS SPEND.",
+     "top": 2497,
+     "height": 484,
+     "bg": "rgb(241, 0, 31)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Manrope 400",
+       1
+      ],
+      [
+       "Barlow Condensed 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       4
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 6,
+     "smallUppercase": 2,
+     "under12px": 1,
+     "icons": 1,
+     "text": "R58\nTODAY\u2019S CAMPUS DEAL\nMORE FLAVOUR. LESS SPEND.\n\nGet the Solo Campus Combo \u2014 a Campus Classic Kota and a 440ml soft drink \u2014 for only R58.\n\nGRAB THE COMBO\nOnly R58"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "WE DON\u2019T DO SMALL FLAVOUR.",
+     "top": 2981,
+     "height": 656,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       4
+      ],
+      [
+       "Manrope 400",
+       4
+      ],
+      [
+       "Barlow Condensed 700",
+       3
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "72px",
+       4
+      ],
+      [
+       "24px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0 0 0 / 0.035)",
+       3
+      ],
+      [
+       "rgb(8, 8, 8)",
+       3
+      ],
+      [
+       "oklch(0.556 0 0)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "24px",
+       3
+      ],
+      [
+       "16px",
+       3
+      ]
+     ],
+     "textNodes": 12,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 3,
+     "text": "WHY ROCKSTEADY?\nWE DON\u2019T DO SMALL FLAVOUR.\n\nGood food should fill you up, bring people together and never cost more than it should.\n\n01\nFRESH, EVERY ORDER\n\nYour meal hits the grill when you order. No shortcuts, no warming trays, just fresh flavour.\n\n02\nPORTIONS THAT DELIVER\n\nWe stack generously because a Rocksteady meal should leave you properly satisfied.\n\n03\nPROUDLY ROCKVILLE\n\nLocal heart, local flavour and a warm welcome for every person who walks through our door."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "SOWETO HAS SPOKEN.",
+     "top": 3637,
+     "height": 686,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       7
+      ],
+      [
+       "Barlow Condensed 700",
+       3
+      ],
+      [
+       "Manrope 700",
+       3
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       6
+      ],
+      [
+       "18px",
+       3
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       8
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "24px",
+       3
+      ]
+     ],
+     "textNodes": 16,
+     "smallUppercase": 5,
+     "under12px": 4,
+     "icons": 16,
+     "text": "WORD ON THE STREET\nSOWETO HAS SPOKEN.\n\nReal reviews from the people who make our campus a community.\n\nREAD ALL REVIEWS\n\u201cThe Full House is genuinely generous and everything tasted fresh. My order was ready when I arrived and the service was warm.\u201d\nN\n\nNaledi M.\n\nVERIFIED LOCAL CUSTOMER\n\n\u201cBest chips in Rockville, and that Campus sauce needs its own fan club. Proper flavour at a price that makes sense.\u201d\nS\n\nSipho K.\n\nVERIFIED LOCAL CUSTOMER\n\n\u201cOrdered the family feast for Sunday lunch and everyone was happy. Easy ordering, big portions and no fuss.\u201d\nT\n\nThandi R.\n\nVERIFIED LOCAL CUSTOMER"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "FIND US IN ROCKVILLE.",
+     "top": 4324,
+     "height": 716,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       4
+      ],
+      [
+       "Manrope 800",
+       3
+      ],
+      [
+       "Manrope 700",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       3
+      ],
+      [
+       "12px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       3
+      ],
+      [
+       "rgb(8, 8, 8)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 3,
+     "under12px": 2,
+     "icons": 5,
+     "text": "COME THROUGH\nFIND US IN ROCKVILLE.\n\nCollection is quick, delivery is easy, and there is always something delicious coming off the grill.\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\n063 104 4361\nGET DIRECTIONS\nORDER COLLECTION\n1563 Makapane Street\n\nRockville, Soweto"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 5039,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 9107,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "BIG FLAVOUR. GENEROUS PORTIONS. REAL TOWNSHIP TASTE.",
+     "top": 0,
+     "height": 844,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       3
+      ],
+      [
+       "Manrope 400",
+       3
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "9px",
+       6
+      ],
+      [
+       "12px",
+       4
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "54px",
+       1
+      ],
+      [
+       "13px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       8
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       8
+      ],
+      [
+       "8px",
+       5
+      ]
+     ],
+     "textNodes": 13,
+     "smallUppercase": 6,
+     "under12px": 7,
+     "icons": 5,
+     "text": "MADE IN ROCKVILLE. LOVED IN SOWETO.\nBIG FLAVOUR. GENEROUS PORTIONS. REAL TOWNSHIP TASTE.\n\nFreshly prepared kotas, dagwoods, burgers and more \u2014 stacked with quality ingredients and served with true Rockville heart.\n\nORDER NOW\nEXPLORE OUR MENU"
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "heading": "",
+     "top": 844,
+     "height": 52,
+     "bg": "rgb(241, 0, 31)",
+     "components": [
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       8
+      ]
+     ],
+     "sizes": [
+      [
+       "18px",
+       8
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       8
+      ]
+     ],
+     "radii": [],
+     "textNodes": 8,
+     "smallUppercase": 0,
+     "under12px": 0,
+     "icons": 24,
+     "text": "BIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE\nBIG FLAVOUR\nGENEROUS PORTIONS\nREAL TOWNSHIP TASTE"
+    },
+    {
+     "tag": "section",
+     "id": "categories",
+     "heading": "PICK YOUR FAVOURITE.",
+     "top": 896,
+     "height": 1333,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       9
+      ],
+      [
+       "Barlow Condensed 700",
+       8
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "18px",
+       8
+      ],
+      [
+       "10px",
+       8
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       9
+      ],
+      [
+       "oklch(0.556 0 0)",
+       8
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       9
+      ],
+      [
+       "16px",
+       8
+      ]
+     ],
+     "textNodes": 20,
+     "smallUppercase": 2,
+     "under12px": 9,
+     "icons": 9,
+     "text": "WHAT ARE YOU CRAVING?\nPICK YOUR FAVOURITE.\n\nFrom iconic kotas to flame-grilled burgers, every order is made fresh and packed with flavour.\n\nVIEW FULL MENU\nKOTAS\nDAGWOODS\nBURGERS\nROLLS\nSANDWICHES\nCHIPS & SIDES\nBEVERAGES\nSPECIALS & COMBOS"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE MEALS EVERYONE TALKS ABOUT.",
+     "top": 2229,
+     "height": 2323,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       8
+      ],
+      [
+       "Manrope 800",
+       7
+      ],
+      [
+       "Manrope 400",
+       5
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "20px",
+       4
+      ],
+      [
+       "13px",
+       4
+      ],
+      [
+       "24px",
+       4
+      ],
+      [
+       "10px",
+       4
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       9
+      ],
+      [
+       "rgb(255, 255, 255)",
+       5
+      ],
+      [
+       "oklch(0.556 0 0)",
+       4
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       5
+      ],
+      [
+       "16px",
+       4
+      ]
+     ],
+     "textNodes": 21,
+     "smallUppercase": 7,
+     "under12px": 6,
+     "icons": 5,
+     "text": "ROCKVILLE FAVOURITES\nTHE MEALS EVERYONE TALKS ABOUT.\n\nBig on flavour, generous by nature. Meet the orders our regulars keep coming back for.\n\nSEE EVERYTHING\nCAMPUS CLASSIC\n\nQuarter loaf filled with seasoned chips, polony, cheese, egg, atchar and our signature Campus sauce.\n\nR45\nADD\nROCKVILLE RUSSIAN\n\nA proper township favourite with chips, grilled Russian, cheese, egg, lettuce and tomato.\n\nR55\nADD\nFEATURED\nBEEF & CHEDDAR\n\nJuicy beef patty, melted cheddar, chips, caramelised onion and Campus sauce.\n\nR70\nADD\nDOUBLE RUSSIAN DELUXE\n\nTwo grilled Russians with chips, cheese, egg, atchar and a generous sauce finish.\n\nR75\nADD"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "MORE FLAVOUR. LESS SPEND.",
+     "top": 4551,
+     "height": 407,
+     "bg": "rgb(241, 0, 31)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Manrope 400",
+       1
+      ],
+      [
+       "Barlow Condensed 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       4
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 6,
+     "smallUppercase": 2,
+     "under12px": 1,
+     "icons": 1,
+     "text": "R58\nTODAY\u2019S CAMPUS DEAL\nMORE FLAVOUR. LESS SPEND.\n\nGet the Solo Campus Combo \u2014 a Campus Classic Kota and a 440ml soft drink \u2014 for only R58.\n\nGRAB THE COMBO\nOnly R58"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "WE DON\u2019T DO SMALL FLAVOUR.",
+     "top": 4958,
+     "height": 1195,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       4
+      ],
+      [
+       "Manrope 400",
+       4
+      ],
+      [
+       "Barlow Condensed 700",
+       3
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "72px",
+       3
+      ],
+      [
+       "24px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0 0 0 / 0.035)",
+       3
+      ],
+      [
+       "rgb(8, 8, 8)",
+       3
+      ],
+      [
+       "oklch(0.556 0 0)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "24px",
+       3
+      ],
+      [
+       "16px",
+       3
+      ]
+     ],
+     "textNodes": 12,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 3,
+     "text": "WHY ROCKSTEADY?\nWE DON\u2019T DO SMALL FLAVOUR.\n\nGood food should fill you up, bring people together and never cost more than it should.\n\n01\nFRESH, EVERY ORDER\n\nYour meal hits the grill when you order. No shortcuts, no warming trays, just fresh flavour.\n\n02\nPORTIONS THAT DELIVER\n\nWe stack generously because a Rocksteady meal should leave you properly satisfied.\n\n03\nPROUDLY ROCKVILLE\n\nLocal heart, local flavour and a warm welcome for every person who walks through our door."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "SOWETO HAS SPOKEN.",
+     "top": 6153,
+     "height": 1309,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       7
+      ],
+      [
+       "Barlow Condensed 700",
+       3
+      ],
+      [
+       "Manrope 700",
+       3
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       6
+      ],
+      [
+       "18px",
+       3
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       8
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "24px",
+       3
+      ]
+     ],
+     "textNodes": 16,
+     "smallUppercase": 5,
+     "under12px": 4,
+     "icons": 16,
+     "text": "WORD ON THE STREET\nSOWETO HAS SPOKEN.\n\nReal reviews from the people who make our campus a community.\n\nREAD ALL REVIEWS\n\u201cThe Full House is genuinely generous and everything tasted fresh. My order was ready when I arrived and the service was warm.\u201d\nN\n\nNaledi M.\n\nVERIFIED LOCAL CUSTOMER\n\n\u201cBest chips in Rockville, and that Campus sauce needs its own fan club. Proper flavour at a price that makes sense.\u201d\nS\n\nSipho K.\n\nVERIFIED LOCAL CUSTOMER\n\n\u201cOrdered the family feast for Sunday lunch and everyone was happy. Easy ordering, big portions and no fuss.\u201d\nT\n\nThandi R.\n\nVERIFIED LOCAL CUSTOMER"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "FIND US IN ROCKVILLE.",
+     "top": 7461,
+     "height": 1151,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Home.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       4
+      ],
+      [
+       "Manrope 800",
+       3
+      ],
+      [
+       "Manrope 700",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       3
+      ],
+      [
+       "12px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       3
+      ],
+      [
+       "rgb(8, 8, 8)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 3,
+     "under12px": 2,
+     "icons": 5,
+     "text": "COME THROUGH\nFIND US IN ROCKVILLE.\n\nCollection is quick, delivery is easy, and there is always something delicious coming off the grill.\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\n063 104 4361\nGET DIRECTIONS\nORDER COLLECTION\n1563 Makapane Street\n\nRockville, Soweto"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 8612,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/menu": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 7099,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "WHAT\u2019S YOUR FLAVOUR?",
+     "top": 0,
+     "height": 447,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nTHE ROCKSTEADY LINE-UP\nWHAT\u2019S YOUR FLAVOUR?\n\nMade fresh. Stacked generously. Customise your meal, add your extras and make it yours."
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "heading": "",
+     "top": 7200,
+     "height": 75,
+     "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.95)",
+     "components": [
+      "src/pages/Menu.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       10
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       10
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       8
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       11
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 10,
+     "under12px": 10,
+     "icons": 2,
+     "text": "ALL\nKOTAS\nDAGWOODS\nBURGERS\nROLLS\nSANDWICHES\nCHIPS & SIDES\nBEVERAGES\nSPECIALS & COMBOS\nFAVOURITES"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "60 DELICIOUS CHOICES",
+     "top": 522,
+     "height": 6794,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Menu.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       120
+      ],
+      [
+       "Manrope 800",
+       73
+      ],
+      [
+       "Manrope 400",
+       61
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       61
+      ],
+      [
+       "20px",
+       60
+      ],
+      [
+       "13px",
+       60
+      ],
+      [
+       "24px",
+       60
+      ],
+      [
+       "9px",
+       12
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       121
+      ],
+      [
+       "rgb(255, 255, 255)",
+       72
+      ],
+      [
+       "oklch(0.556 0 0)",
+       60
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklch(0.708 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       72
+      ],
+      [
+       "16px",
+       60
+      ]
+     ],
+     "textNodes": 255,
+     "smallUppercase": 73,
+     "under12px": 73,
+     "icons": 60,
+     "text": "THE FULL LINE-UP\n\n60 DELICIOUS CHOICES\n\nPrices include all the flavour.\n\nCAMPUS CLASSIC\n\nQuarter loaf filled with seasoned chips, polony, cheese, egg, atchar and our signature Campus sauce.\n\nR45\nADD\nCLASSIC DAGWOOD\n\nThree slices of toast layered with beef, ham, cheese, egg, lettuce, tomato and chips.\n\nR70\nADD\nCAMPUS BEEF BURGER\n\nFlame-grilled beef patty, cheddar, lettuce, tomato, pickle and Campus sauce on a toasted bun.\n\nR55\nADD\nRUSSIAN ROLL\n\nA grilled Russian in a fresh roll with fried onion, mustard and tomato sauce.\n\nR35\nADD\nHAM & CHEESE SANDWICH\n\nThick-cut ham, cheddar, tomato and lettuce on your choice of fresh or toasted bread.\n\nR38\nADD\nSMALL CHIPS\n\nGolden, crisp and finished with our signature chip spice.\n\nR20\nADD\nCOCA-COLA 440ML\n\nIce-cold original Coca-Cola in a 440ml bottle.\n\nR18\nADD\nFEATURED\nSOLO CAMPUS COMBO\n\nCampus Classic Kota with a 440ml soft drink. Your everyday flavour fix.\n\nR58\nADD\nROCKVILLE RUSSIAN\n\nA proper township favourite with chips, grilled Russian, cheese, egg, lettuce and tomato.\n\nR55\nADD\nCHICKEN STACK DAGWOOD\n\nGrilled chicken fillet, cheese, egg, lettuce, tomato and mayo across three toasted layers.\n\nR78\nADD\nCRISPY CHICKEN BURGER\n\nGolden crispy chicken fillet, creamy slaw, cheese and peri-peri mayo on a soft toasted bun.\n\nR60\nADD\nCHICKEN FILLET ROLL\n\nGrilled chicken fillet, lettuce, tomato and creamy mayo in a soft fresh roll.\n\nR48\nADD\nCHICKEN MAYO SANDWICH\n\nCreamy chicken mayo, crisp lettuce and tomato on soft brown or white bread.\n\nR45\nADD\nMEDIUM CHIPS\n\nA generous portion of golden chips with Campus chip spice.\n\nR30\nADD\nFANTA ORANGE 440ML\n\nBright, sparkling orange refreshment served ice-cold.\n\nR18\nADD\nFEATURED\nBURGER NIGHT COMBO\n\nCampus Beef Burger, medium chips and a 440ml soft drink.\n\nR85\nADD\nCHICKEN MAYO CAMPUS\n\nTender chicken mayo, seasoned chips, cheese, lettuce and a cool drizzle of mayo.\n\nR65\nADD\nFEATURED\nDOUBLE BEEF DAGWOOD\n\nTwo seasoned beef patties, double cheddar, egg, onion and smoky Campus sauce.\n\nR95\nADD\nFEATURED\nBIG ROCK DOUBLE\n\nTwo juicy beef patties, double cheese, fried onion, pickles and our bold signature sauce.\n\nR85\nADD\nFEATURED\nSTEAK & ONION ROLL\n\nMarinated steak strips with caramelised onion and BBQ sauce in a toasted roll.\n\nR58\nADD\nFEATURED\nROCKSTEADY CLUB\n\nToasted triple sandwich with chicken, bacon-style macon, egg, cheese and fresh trimmings.\n\nR58\nADD\nLARGE CHIPS\n\nMade for sharing, or not. A large portion of seasoned golden chips.\n\nR40\nADD\nSPRITE 440ML\n\nCrisp lemon-lime sparkle in a 440ml bottle.\n\nR18\nADD\nROCKVILLE DUO\n\nTwo Rockville Russian Kotas and two 440ml soft drinks for the crew.\n\nR130\nADD\nVIENNA VIBE\n\nGrilled viennas, chips, cheese, fried egg, atchar and tomato sauce in fresh white bread.\n\nR58\nADD\nFEATURED\nROCKSTEADY TOWER\n\nThe full tower: beef, chicken, Russian, cheese, egg and fresh trimmings, served with chips.\n\nR110\nADD\nCHEESE & EGG ROLL\n\nMelted cheddar, fried egg and a touch of Campus sauce in a warm roll.\n\nR32\nADD\nCHEESY CHIPS\n\nMedium chips loaded with melted cheddar and Campus sauce.\n\nR42\nADD\nSTONEY GINGER BEER 440ML\n\nBold ginger bite, served chilled.\n\nR18\nADD\nFEATURED\nCAMPUS FAMILY FEAST\n\nTwo beef burgers, two Russian rolls, large chips and four soft drinks.\n\nR240\nADD\nFEATURED\nBEEF & CHEDDAR\n\nJuicy beef patty, melted cheddar, chips, caramelised onion and Campus sauce.\n\nR70\nADD\nLOADED CAMPUS ROLL\n\nRussian, beef patty, cheese, egg, fried onion and all the sauces. Small roll, big appetite.\n\nR65\nADD\nRUSSIAN\n\nOne flame-grilled Russian sausage.\n\nR22\nADD\nSTILL WATER 500ML\n\nRefreshing bottled still water.\n\nR12\nADD\nDOUBLE RUSSIAN DELUXE\n\nTwo grilled Russians with chips, cheese, egg, atchar and a generous sauce finish.\n\nR75\nADD\nVIENNA\n\nOne grilled vienna sausage.\n\nR10\nADD\nFRUIT JUICE 300ML\n\nA chilled fruit juice to complete your meal.\n\nR16\nADD\nWINGMAN KOTA\n\nThree flame-grilled chicken wings, chips, cheese, coleslaw and your choice of sauce.\n\nR78\nADD\nPOLONY\n\nA classic kota filling portion.\n\nR8\nADD\nFEATURED\nBRAAI STEAK KOTA\n\nTender strips of marinated steak, chips, cheese, fried onion and smoky BBQ sauce.\n\nR85\nADD\nCHEESE SLICE\n\nOne slice of creamy cheddar-style cheese.\n\nR10\nADD\nFEATURED\nTHE FULL HOUSE\n\nRussian, beef patty, chicken, chips, cheese, egg, atchar and all the Campus trimmings.\n\nR95\nADD\nFRIED EGG\n\nFresh egg, fried to order.\n\nR8\nADD\nFEATURED\nTHE VICE-CHANCELLOR\n\nOur biggest statement: double meat, double cheese, chips, egg and every signature topping.\n\nR110\nADD\nBEEF PATTY\n\nOne seasoned flame-grilled beef patty.\n\nR28\nADD\nCHICKEN FILLET\n\nOne grilled or crispy chicken fillet.\n\nR30\nADD\nSTEAK STRIPS\n\nA portion of marinated steak strips.\n\nR35\nADD\nMACON\n\nCrispy beef macon strips.\n\nR15\nADD\nCHICKEN WINGS (3)\n\nThree flame-grilled wings in your choice of sauce.\n\nR35\nADD\nATCHAR\n\nA punchy portion of traditional mango atchar.\n\nR8\nADD\nCOLESLAW\n\nCool, crunchy and creamy house coleslaw.\n\nR12\nADD\nLETTUCE\n\nFresh crisp lettuce.\n\nR4\nADD\nTOMATO\n\nFresh sliced tomato.\n\nR5\nADD\nFRIED ONION\n\nSweet caramelised onion portion.\n\nR6\nADD\nPICKLES\n\nTangy sliced pickles.\n\nR5\nADD\nCAMPUS SAUCE\n\nOur creamy, tangy house signature sauce.\n\nR5\nADD\nBBQ SAUCE\n\nSmoky and sweet barbecue sauce.\n\nR5\nADD\nPERI-PERI SAUCE\n\nA fiery chilli kick on the side.\n\nR5\nADD\nMAYONNAISE\n\nA creamy mayo portion.\n\nR4\nADD\nTOMATO SAUCE\n\nThe classic tomato sauce portion.\n\nR4\nADD"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "",
+     "top": 7316,
+     "height": 136,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/pages/Menu.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "30px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 3,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "NEED A LITTLE SOMETHING EXTRA?\n\nOpen any meal to choose your style and add your favourite extras.\n\nCUSTOMISE \u00b7 ADD \u00b7 ENJOY"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 7452,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 18000,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "WHAT\u2019S YOUR FLAVOUR?",
+     "top": 0,
+     "height": 449,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nTHE ROCKSTEADY LINE-UP\nWHAT\u2019S YOUR FLAVOUR?\n\nMade fresh. Stacked generously. Customise your meal, add your extras and make it yours."
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "heading": "",
+     "top": 18101,
+     "height": 171,
+     "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.95)",
+     "components": [
+      "src/pages/Menu.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       10
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       10
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       8
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       11
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 10,
+     "under12px": 10,
+     "icons": 2,
+     "text": "ALL\nKOTAS\nDAGWOODS\nBURGERS\nROLLS\nSANDWICHES\nCHIPS & SIDES\nBEVERAGES\nSPECIALS & COMBOS\nFAVOURITES"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "60 DELICIOUS CHOICES",
+     "top": 620,
+     "height": 27872,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Menu.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       120
+      ],
+      [
+       "Manrope 800",
+       73
+      ],
+      [
+       "Manrope 400",
+       61
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       61
+      ],
+      [
+       "20px",
+       60
+      ],
+      [
+       "13px",
+       60
+      ],
+      [
+       "24px",
+       60
+      ],
+      [
+       "9px",
+       12
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       121
+      ],
+      [
+       "rgb(255, 255, 255)",
+       72
+      ],
+      [
+       "oklch(0.556 0 0)",
+       60
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklch(0.708 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       72
+      ],
+      [
+       "16px",
+       60
+      ]
+     ],
+     "textNodes": 255,
+     "smallUppercase": 73,
+     "under12px": 73,
+     "icons": 60,
+     "text": "THE FULL LINE-UP\n\n60 DELICIOUS CHOICES\nCAMPUS CLASSIC\n\nQuarter loaf filled with seasoned chips, polony, cheese, egg, atchar and our signature Campus sauce.\n\nR45\nADD\nCLASSIC DAGWOOD\n\nThree slices of toast layered with beef, ham, cheese, egg, lettuce, tomato and chips.\n\nR70\nADD\nCAMPUS BEEF BURGER\n\nFlame-grilled beef patty, cheddar, lettuce, tomato, pickle and Campus sauce on a toasted bun.\n\nR55\nADD\nRUSSIAN ROLL\n\nA grilled Russian in a fresh roll with fried onion, mustard and tomato sauce.\n\nR35\nADD\nHAM & CHEESE SANDWICH\n\nThick-cut ham, cheddar, tomato and lettuce on your choice of fresh or toasted bread.\n\nR38\nADD\nSMALL CHIPS\n\nGolden, crisp and finished with our signature chip spice.\n\nR20\nADD\nCOCA-COLA 440ML\n\nIce-cold original Coca-Cola in a 440ml bottle.\n\nR18\nADD\nFEATURED\nSOLO CAMPUS COMBO\n\nCampus Classic Kota with a 440ml soft drink. Your everyday flavour fix.\n\nR58\nADD\nROCKVILLE RUSSIAN\n\nA proper township favourite with chips, grilled Russian, cheese, egg, lettuce and tomato.\n\nR55\nADD\nCHICKEN STACK DAGWOOD\n\nGrilled chicken fillet, cheese, egg, lettuce, tomato and mayo across three toasted layers.\n\nR78\nADD\nCRISPY CHICKEN BURGER\n\nGolden crispy chicken fillet, creamy slaw, cheese and peri-peri mayo on a soft toasted bun.\n\nR60\nADD\nCHICKEN FILLET ROLL\n\nGrilled chicken fillet, lettuce, tomato and creamy mayo in a soft fresh roll.\n\nR48\nADD\nCHICKEN MAYO SANDWICH\n\nCreamy chicken mayo, crisp lettuce and tomato on soft brown or white bread.\n\nR45\nADD\nMEDIUM CHIPS\n\nA generous portion of golden chips with Campus chip spice.\n\nR30\nADD\nFANTA ORANGE 440ML\n\nBright, sparkling orange refreshment served ice-cold.\n\nR18\nADD\nFEATURED\nBURGER NIGHT COMBO\n\nCampus Beef Burger, medium chips and a 440ml soft drink.\n\nR85\nADD\nCHICKEN MAYO CAMPUS\n\nTender chicken mayo, seasoned chips, cheese, lettuce and a cool drizzle of mayo.\n\nR65\nADD\nFEATURED\nDOUBLE BEEF DAGWOOD\n\nTwo seasoned beef patties, double cheddar, egg, onion and smoky Campus sauce.\n\nR95\nADD\nFEATURED\nBIG ROCK DOUBLE\n\nTwo juicy beef patties, double cheese, fried onion, pickles and our bold signature sauce.\n\nR85\nADD\nFEATURED\nSTEAK & ONION ROLL\n\nMarinated steak strips with caramelised onion and BBQ sauce in a toasted roll.\n\nR58\nADD\nFEATURED\nROCKSTEADY CLUB\n\nToasted triple sandwich with chicken, bacon-style macon, egg, cheese and fresh trimmings.\n\nR58\nADD\nLARGE CHIPS\n\nMade for sharing, or not. A large portion of seasoned golden chips.\n\nR40\nADD\nSPRITE 440ML\n\nCrisp lemon-lime sparkle in a 440ml bottle.\n\nR18\nADD\nROCKVILLE DUO\n\nTwo Rockville Russian Kotas and two 440ml soft drinks for the crew.\n\nR130\nADD\nVIENNA VIBE\n\nGrilled viennas, chips, cheese, fried egg, atchar and tomato sauce in fresh white bread.\n\nR58\nADD\nFEATURED\nROCKSTEADY TOWER\n\nThe full tower: beef, chicken, Russian, cheese, egg and fresh trimmings, served with chips.\n\nR110\nADD\nCHEESE & EGG ROLL\n\nMelted cheddar, fried egg and a touch of Campus sauce in a warm roll.\n\nR32\nADD\nCHEESY CHIPS\n\nMedium chips loaded with melted cheddar and Campus sauce.\n\nR42\nADD\nSTONEY GINGER BEER 440ML\n\nBold ginger bite, served chilled.\n\nR18\nADD\nFEATURED\nCAMPUS FAMILY FEAST\n\nTwo beef burgers, two Russian rolls, large chips and four soft drinks.\n\nR240\nADD\nFEATURED\nBEEF & CHEDDAR\n\nJuicy beef patty, melted cheddar, chips, caramelised onion and Campus sauce.\n\nR70\nADD\nLOADED CAMPUS ROLL\n\nRussian, beef patty, cheese, egg, fried onion and all the sauces. Small roll, big appetite.\n\nR65\nADD\nRUSSIAN\n\nOne flame-grilled Russian sausage.\n\nR22\nADD\nSTILL WATER 500ML\n\nRefreshing bottled still water.\n\nR12\nADD\nDOUBLE RUSSIAN DELUXE\n\nTwo grilled Russians with chips, cheese, egg, atchar and a generous sauce finish.\n\nR75\nADD\nVIENNA\n\nOne grilled vienna sausage.\n\nR10\nADD\nFRUIT JUICE 300ML\n\nA chilled fruit juice to complete your meal.\n\nR16\nADD\nWINGMAN KOTA\n\nThree flame-grilled chicken wings, chips, cheese, coleslaw and your choice of sauce.\n\nR78\nADD\nPOLONY\n\nA classic kota filling portion.\n\nR8\nADD\nFEATURED\nBRAAI STEAK KOTA\n\nTender strips of marinated steak, chips, cheese, fried onion and smoky BBQ sauce.\n\nR85\nADD\nCHEESE SLICE\n\nOne slice of creamy cheddar-style cheese.\n\nR10\nADD\nFEATURED\nTHE FULL HOUSE\n\nRussian, beef patty, chicken, chips, cheese, egg, atchar and all the Campus trimmings.\n\nR95\nADD\nFRIED EGG\n\nFresh egg, fried to order.\n\nR8\nADD\nFEATURED\nTHE VICE-CHANCELLOR\n\nOur biggest statement: double meat, double cheese, chips, egg and every signature topping.\n\nR110\nADD\nBEEF PATTY\n\nOne seasoned flame-grilled beef patty.\n\nR28\nADD\nCHICKEN FILLET\n\nOne grilled or crispy chicken fillet.\n\nR30\nADD\nSTEAK STRIPS\n\nA portion of marinated steak strips.\n\nR35\nADD\nMACON\n\nCrispy beef macon strips.\n\nR15\nADD\nCHICKEN WINGS (3)\n\nThree flame-grilled wings in your choice of sauce.\n\nR35\nADD\nATCHAR\n\nA punchy portion of traditional mango atchar.\n\nR8\nADD\nCOLESLAW\n\nCool, crunchy and creamy house coleslaw.\n\nR12\nADD\nLETTUCE\n\nFresh crisp lettuce.\n\nR4\nADD\nTOMATO\n\nFresh sliced tomato.\n\nR5\nADD\nFRIED ONION\n\nSweet caramelised onion portion.\n\nR6\nADD\nPICKLES\n\nTangy sliced pickles.\n\nR5\nADD\nCAMPUS SAUCE\n\nOur creamy, tangy house signature sauce.\n\nR5\nADD\nBBQ SAUCE\n\nSmoky and sweet barbecue sauce.\n\nR5\nADD\nPERI-PERI SAUCE\n\nA fiery chilli kick on the side.\n\nR5\nADD\nMAYONNAISE\n\nA creamy mayo portion.\n\nR4\nADD\nTOMATO SAUCE\n\nThe classic tomato sauce portion.\n\nR4\nADD"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "",
+     "top": 28492,
+     "height": 237,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/pages/Menu.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "30px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 3,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "NEED A LITTLE SOMETHING EXTRA?\n\nOpen any meal to choose your style and add your favourite extras.\n\nCUSTOMISE \u00b7 ADD \u00b7 ENJOY"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 28729,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/about": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 3599,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THIS IS MORE THAN A TAKEAWAY.",
+     "top": 0,
+     "height": 561,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nPROUDLY SOUTH AFRICAN. UNAPOLOGETICALLY SOWETO.\nTHIS IS MORE THAN A TAKEAWAY.\n\nRocksteady Campus is where Rockville comes for generous food, honest value and the kind of welcome that feels like home."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "BORN IN ROCKVILLE. BUILT ON FLAVOUR.",
+     "top": 561,
+     "height": 918,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 400",
+       2
+      ],
+      [
+       "Manrope 700",
+       1
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       2
+      ],
+      [
+       "15px",
+       2
+      ],
+      [
+       "24px",
+       2
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       3
+      ],
+      [
+       "oklch(0.439 0 0)",
+       2
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "32px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 4,
+     "under12px": 2,
+     "icons": 1,
+     "text": "100%\n\nROCKVILLE HEART\n\nPROUDLY\n\nSOWETO\nOUR STORY\nBORN IN ROCKVILLE. BUILT ON FLAVOUR.\n\nRocksteady Campus started with a simple belief: township food deserves to be celebrated. From our home on Makapane Street, we set out to serve the meals our community loves with the care, consistency and generosity they deserve.\n\nEvery kota tells a Soweto story \u2014 resourceful, bold and made to be shared. We honour that story by doing the basics brilliantly: fresh bread, quality fillings, seasoned chips and service with heart.\n\nLOCAL FOOD. LOCAL PEOPLE.\nREAL CONNECTION."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE GRILL IS OUR LOVE LANGUAGE.",
+     "top": 1479,
+     "height": 710,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Manrope 700",
+       1
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       2
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "32px",
+       1
+      ]
+     ],
+     "textNodes": 5,
+     "smallUppercase": 3,
+     "under12px": 1,
+     "icons": 2,
+     "text": "FRESH OFF THE FLAMES\nOUR PASSION FOR GOOD FOOD\nTHE GRILL IS OUR LOVE LANGUAGE.\n\nWe get excited about the sizzle of a fresh patty, perfectly golden chips and that first bite of a fully loaded kota. That passion is in every order, whether it is a quick roll or a feast for the whole crew.\n\nTASTE THE PASSION"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "GOOD INGREDIENTS. NO SHORTCUTS.",
+     "top": 2189,
+     "height": 729,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       4
+      ],
+      [
+       "Barlow Condensed 700",
+       3
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "24px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       3
+      ],
+      [
+       "oklch(0.556 0 0)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "24px",
+       3
+      ]
+     ],
+     "textNodes": 9,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 3,
+     "text": "OUR COMMITMENT TO QUALITY\nGOOD INGREDIENTS. NO SHORTCUTS.\n\nWe choose dependable suppliers, prepare fresh throughout the day and cook every meal to order. Quality is not a slogan here; it is the standard we hold ourselves to, from prep to handover.\n\nQUALITY INGREDIENTS\n\nDependable suppliers, fresh bread, quality fillings and produce prepared with care.\n\nFRESHLY PREPARED\n\nWe cook to order so your meal reaches you hot, crisp and exactly as it should be.\n\nCONSISTENTLY GOOD\n\nThe same attention to flavour and presentation, whether it is your first visit or your fiftieth."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "GENEROUS BY NATURE. AFFORDABLE BY DESIGN.",
+     "top": 2918,
+     "height": 324,
+     "bg": "rgb(241, 0, 31)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 3,
+     "smallUppercase": 1,
+     "under12px": 0,
+     "icons": 2,
+     "text": "GENEROUS BY NATURE. AFFORDABLE BY DESIGN.\n\nWe know value matters. Our menu is built around honest prices and portions that satisfy, so students, families, workers and neighbours can all enjoy a proper meal.\n\nORDER YOUR FAVOURITE"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "ROCKVILLE IS IN EVERY BITE.",
+     "top": 3242,
+     "height": 710,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       1
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "32px",
+       1
+      ]
+     ],
+     "textNodes": 4,
+     "smallUppercase": 2,
+     "under12px": 1,
+     "icons": 1,
+     "text": "OUR COMMUNITY\nROCKVILLE IS IN EVERY BITE.\n\nWe are proud to serve the people who make this place what it is. Rocksteady Campus is a meeting point, a lunch break, a payday treat and a familiar face \u2014 a small business with a big commitment to its neighbourhood.\n\n1563 MAKAPANE STREET \u00b7 OUR HOME"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 3952,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 5448,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THIS IS MORE THAN A TAKEAWAY.",
+     "top": 0,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nPROUDLY SOUTH AFRICAN. UNAPOLOGETICALLY SOWETO.\nTHIS IS MORE THAN A TAKEAWAY.\n\nRocksteady Campus is where Rockville comes for generous food, honest value and the kind of welcome that feels like home."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "BORN IN ROCKVILLE. BUILT ON FLAVOUR.",
+     "top": 547,
+     "height": 1182,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 400",
+       2
+      ],
+      [
+       "Manrope 700",
+       1
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "48px",
+       2
+      ],
+      [
+       "14px",
+       2
+      ],
+      [
+       "15px",
+       2
+      ],
+      [
+       "24px",
+       2
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       3
+      ],
+      [
+       "oklch(0.439 0 0)",
+       2
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "32px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 4,
+     "under12px": 2,
+     "icons": 1,
+     "text": "100%\n\nROCKVILLE HEART\n\nOUR STORY\nBORN IN ROCKVILLE. BUILT ON FLAVOUR.\n\nRocksteady Campus started with a simple belief: township food deserves to be celebrated. From our home on Makapane Street, we set out to serve the meals our community loves with the care, consistency and generosity they deserve.\n\nEvery kota tells a Soweto story \u2014 resourceful, bold and made to be shared. We honour that story by doing the basics brilliantly: fresh bread, quality fillings, seasoned chips and service with heart.\n\nLOCAL FOOD. LOCAL PEOPLE.\nREAL CONNECTION."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE GRILL IS OUR LOVE LANGUAGE.",
+     "top": 1729,
+     "height": 837,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Manrope 700",
+       1
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       2
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "32px",
+       1
+      ]
+     ],
+     "textNodes": 5,
+     "smallUppercase": 3,
+     "under12px": 1,
+     "icons": 2,
+     "text": "FRESH OFF THE FLAMES\nOUR PASSION FOR GOOD FOOD\nTHE GRILL IS OUR LOVE LANGUAGE.\n\nWe get excited about the sizzle of a fresh patty, perfectly golden chips and that first bite of a fully loaded kota. That passion is in every order, whether it is a quick roll or a feast for the whole crew.\n\nTASTE THE PASSION"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "GOOD INGREDIENTS. NO SHORTCUTS.",
+     "top": 2567,
+     "height": 1158,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       4
+      ],
+      [
+       "Barlow Condensed 700",
+       3
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "24px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       3
+      ],
+      [
+       "oklch(0.556 0 0)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "24px",
+       3
+      ]
+     ],
+     "textNodes": 9,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 3,
+     "text": "OUR COMMITMENT TO QUALITY\nGOOD INGREDIENTS. NO SHORTCUTS.\n\nWe choose dependable suppliers, prepare fresh throughout the day and cook every meal to order. Quality is not a slogan here; it is the standard we hold ourselves to, from prep to handover.\n\nQUALITY INGREDIENTS\n\nDependable suppliers, fresh bread, quality fillings and produce prepared with care.\n\nFRESHLY PREPARED\n\nWe cook to order so your meal reaches you hot, crisp and exactly as it should be.\n\nCONSISTENTLY GOOD\n\nThe same attention to flavour and presentation, whether it is your first visit or your fiftieth."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "GENEROUS BY NATURE. AFFORDABLE BY DESIGN.",
+     "top": 3724,
+     "height": 412,
+     "bg": "rgb(241, 0, 31)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "36px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 3,
+     "smallUppercase": 1,
+     "under12px": 0,
+     "icons": 2,
+     "text": "GENEROUS BY NATURE. AFFORDABLE BY DESIGN.\n\nWe know value matters. Our menu is built around honest prices and portions that satisfy, so students, families, workers and neighbours can all enjoy a proper meal.\n\nORDER YOUR FAVOURITE"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "ROCKVILLE IS IN EVERY BITE.",
+     "top": 4136,
+     "height": 817,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/About.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "15px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklch(0.439 0 0)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "32px",
+       1
+      ]
+     ],
+     "textNodes": 4,
+     "smallUppercase": 2,
+     "under12px": 1,
+     "icons": 1,
+     "text": "OUR COMMUNITY\nROCKVILLE IS IN EVERY BITE.\n\nWe are proud to serve the people who make this place what it is. Rocksteady Campus is a meeting point, a lunch break, a payday treat and a familiar face \u2014 a small business with a big commitment to its neighbourhood.\n\n1563 MAKAPANE STREET \u00b7 OUR HOME"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 4954,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/gallery": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 1583,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "LOOKS GOOD. TASTES EVEN BETTER.",
+     "top": 0,
+     "height": 533,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nA TASTE OF THE CAMPUS\nLOOKS GOOD. TASTES EVEN BETTER.\n\nBehind the grill, around the table and everywhere big flavour brings people together."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE VICE-CHANCELLOR KOTA",
+     "top": 533,
+     "height": 1403,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/pages/Gallery.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       8
+      ],
+      [
+       "Barlow Condensed 700",
+       8
+      ],
+      [
+       "Manrope 800",
+       5
+      ]
+     ],
+     "sizes": [
+      [
+       "9px",
+       8
+      ],
+      [
+       "24px",
+       8
+      ],
+      [
+       "10px",
+       5
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       9
+      ],
+      [
+       "rgb(241, 0, 31)",
+       8
+      ],
+      [
+       "oklch(0.556 0 0)",
+       4
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       13
+      ],
+      [
+       "16px",
+       8
+      ]
+     ],
+     "textNodes": 21,
+     "smallUppercase": 13,
+     "under12px": 13,
+     "icons": 8,
+     "text": "ALL\nKOTAS & DAGWOODS\nBURGERS & SANDWICHES\nFOOD PREPARATION\nOUR COMMUNITY\n\nKOTAS & DAGWOODS\n\nTHE VICE-CHANCELLOR KOTA\n\nBURGERS & SANDWICHES\n\nBIG ROCK DOUBLE\n\nKOTAS & DAGWOODS\n\nSTEAK & ONION, STACKED HIGH\n\nFOOD PREPARATION\n\nFRESH OFF THE GRILL\n\nBURGERS & SANDWICHES\n\nMADE FRESH IN ROCKVILLE\n\nFOOD PREPARATION\n\nBEHIND THE FLAVOUR\n\nOUR COMMUNITY\n\nGOOD FOOD, GOOD PEOPLE\n\nOUR COMMUNITY\n\nA TABLE FULL OF FAVOURITES"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 1936,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 3216,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "LOOKS GOOD. TASTES EVEN BETTER.",
+     "top": 0,
+     "height": 503,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nA TASTE OF THE CAMPUS\nLOOKS GOOD. TASTES EVEN BETTER.\n\nBehind the grill, around the table and everywhere big flavour brings people together."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE VICE-CHANCELLOR KOTA",
+     "top": 503,
+     "height": 2219,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/pages/Gallery.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       8
+      ],
+      [
+       "Barlow Condensed 700",
+       8
+      ],
+      [
+       "Manrope 800",
+       5
+      ]
+     ],
+     "sizes": [
+      [
+       "9px",
+       8
+      ],
+      [
+       "24px",
+       8
+      ],
+      [
+       "10px",
+       5
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       9
+      ],
+      [
+       "rgb(241, 0, 31)",
+       8
+      ],
+      [
+       "oklch(0.556 0 0)",
+       4
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       13
+      ],
+      [
+       "16px",
+       8
+      ]
+     ],
+     "textNodes": 21,
+     "smallUppercase": 13,
+     "under12px": 13,
+     "icons": 8,
+     "text": "ALL\nKOTAS & DAGWOODS\nBURGERS & SANDWICHES\nFOOD PREPARATION\nOUR COMMUNITY\n\nKOTAS & DAGWOODS\n\nTHE VICE-CHANCELLOR KOTA\n\nBURGERS & SANDWICHES\n\nBIG ROCK DOUBLE\n\nKOTAS & DAGWOODS\n\nSTEAK & ONION, STACKED HIGH\n\nFOOD PREPARATION\n\nFRESH OFF THE GRILL\n\nBURGERS & SANDWICHES\n\nMADE FRESH IN ROCKVILLE\n\nFOOD PREPARATION\n\nBEHIND THE FLAVOUR\n\nOUR COMMUNITY\n\nGOOD FOOD, GOOD PEOPLE\n\nOUR COMMUNITY\n\nA TABLE FULL OF FAVOURITES"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 2722,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/reviews": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 2013,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE ROCKVILLE REVIEW.",
+     "top": 0,
+     "height": 447,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nREAL PEOPLE. REAL FLAVOUR.\nTHE ROCKVILLE REVIEW.\n\nSee what our customers are saying, then tell us about your Rocksteady experience."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "STRAIGHT FROM THE PEOPLE",
+     "top": 447,
+     "height": 1230,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Reviews.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       17
+      ],
+      [
+       "Manrope 400",
+       16
+      ],
+      [
+       "Barlow Condensed 700",
+       5
+      ],
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       13
+      ],
+      [
+       "12px",
+       11
+      ],
+      [
+       "14px",
+       10
+      ],
+      [
+       "18px",
+       5
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "36px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       12
+      ],
+      [
+       "rgb(8, 8, 8)",
+       7
+      ],
+      [
+       "rgb(241, 0, 31)",
+       6
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+       5
+      ],
+      [
+       "oklch(0.439 0 0)",
+       5
+      ],
+      [
+       "oklch(0.708 0 0)",
+       5
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       17
+      ],
+      [
+       "24px",
+       6
+      ]
+     ],
+     "textNodes": 41,
+     "smallUppercase": 8,
+     "under12px": 13,
+     "icons": 42,
+     "text": "4.8\n\nBased on 5 published reviews\n\nROCKVILLE APPROVED\n5\n4\n4\n1\n3\n0\n2\n0\n1\n0\n\nCUSTOMER STORIES\n\nSTRAIGHT FROM THE PEOPLE\nLATEST FIRST\n\u201cThe Full House is genuinely generous and everything tasted fresh. My order was ready when I arrived and the service was warm.\u201d\n\nORDERED: THE FULL HOUSE\n\nN\n\nNaledi M.\n\n28 October 2026\n\u201cBest chips in Rockville, and that Campus sauce needs its own fan club. Proper flavour at a price that makes sense.\u201d\n\nORDERED: ROCKVILLE RUSSIAN\n\nS\n\nSipho K.\n\n21 October 2026\n\u201cOrdered the family feast for Sunday lunch and everyone was happy. Easy ordering, big portions and no fuss.\u201d\n\nORDERED: CAMPUS FAMILY FEAST\n\nT\n\nThandi R.\n\n14 October 2026\n\u201cThe Big Rock Double lives up to its name. Juicy, fresh and filling. I will definitely be back with the guys.\u201d\n\nORDERED: BIG ROCK DOUBLE\n\nK\n\nKagiso D.\n\n6 October 2026\n\u201cYou can taste that it is made to order. Loved the chicken mayo sandwich and the friendly WhatsApp updates.\u201d\n\nORDERED: CHICKEN MAYO SANDWICH\n\nL\n\nLerato S.\n\n29 September 2026"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "HOW WAS YOUR ROCKSTEADY?",
+     "top": 1677,
+     "height": 690,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Reviews.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       5
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Manrope 400",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       5
+      ],
+      [
+       "12px",
+       2
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       4
+      ],
+      [
+       "oklch(0.556 0 0)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ],
+      [
+       "oklch(0.708 0 0)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       3
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 6,
+     "under12px": 6,
+     "icons": 7,
+     "text": "YOUR TURN\nHOW WAS YOUR ROCKSTEADY?\n\nYour feedback helps us keep the flavour high and the service sharp. Reviews are checked by our team before they appear here.\n\nHonest reviews. Real customers.\nYOUR NAME *\nWHAT DID YOU ORDER?\nYOUR RATING *\nTELL US ABOUT IT *\n0/600\nSUBMIT FOR REVIEW"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 2366,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 4376,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "THE ROCKVILLE REVIEW.",
+     "top": 0,
+     "height": 449,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nREAL PEOPLE. REAL FLAVOUR.\nTHE ROCKVILLE REVIEW.\n\nSee what our customers are saying, then tell us about your Rocksteady experience."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "STRAIGHT FROM THE PEOPLE",
+     "top": 449,
+     "height": 2390,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Reviews.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       17
+      ],
+      [
+       "Manrope 400",
+       16
+      ],
+      [
+       "Barlow Condensed 700",
+       5
+      ],
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       13
+      ],
+      [
+       "12px",
+       11
+      ],
+      [
+       "14px",
+       10
+      ],
+      [
+       "18px",
+       5
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "36px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       12
+      ],
+      [
+       "rgb(8, 8, 8)",
+       7
+      ],
+      [
+       "rgb(241, 0, 31)",
+       6
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+       5
+      ],
+      [
+       "oklch(0.439 0 0)",
+       5
+      ],
+      [
+       "oklch(0.708 0 0)",
+       5
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       17
+      ],
+      [
+       "24px",
+       6
+      ]
+     ],
+     "textNodes": 41,
+     "smallUppercase": 8,
+     "under12px": 13,
+     "icons": 42,
+     "text": "4.8\n\nBased on 5 published reviews\n\nROCKVILLE APPROVED\n5\n4\n4\n1\n3\n0\n2\n0\n1\n0\n\nCUSTOMER STORIES\n\nSTRAIGHT FROM THE PEOPLE\nLATEST FIRST\n\u201cThe Full House is genuinely generous and everything tasted fresh. My order was ready when I arrived and the service was warm.\u201d\n\nORDERED: THE FULL HOUSE\n\nN\n\nNaledi M.\n\n28 October 2026\n\u201cBest chips in Rockville, and that Campus sauce needs its own fan club. Proper flavour at a price that makes sense.\u201d\n\nORDERED: ROCKVILLE RUSSIAN\n\nS\n\nSipho K.\n\n21 October 2026\n\u201cOrdered the family feast for Sunday lunch and everyone was happy. Easy ordering, big portions and no fuss.\u201d\n\nORDERED: CAMPUS FAMILY FEAST\n\nT\n\nThandi R.\n\n14 October 2026\n\u201cThe Big Rock Double lives up to its name. Juicy, fresh and filling. I will definitely be back with the guys.\u201d\n\nORDERED: BIG ROCK DOUBLE\n\nK\n\nKagiso D.\n\n6 October 2026\n\u201cYou can taste that it is made to order. Loved the chicken mayo sandwich and the friendly WhatsApp updates.\u201d\n\nORDERED: CHICKEN MAYO SANDWICH\n\nL\n\nLerato S.\n\n29 September 2026"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "HOW WAS YOUR ROCKSTEADY?",
+     "top": 2839,
+     "height": 1043,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Reviews.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       5
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Manrope 400",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       5
+      ],
+      [
+       "12px",
+       2
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       4
+      ],
+      [
+       "oklch(0.556 0 0)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ],
+      [
+       "oklch(0.708 0 0)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       3
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 10,
+     "smallUppercase": 6,
+     "under12px": 6,
+     "icons": 7,
+     "text": "YOUR TURN\nHOW WAS YOUR ROCKSTEADY?\n\nYour feedback helps us keep the flavour high and the service sharp. Reviews are checked by our team before they appear here.\n\nHonest reviews. Real customers.\nYOUR NAME *\nWHAT DID YOU ORDER?\nYOUR RATING *\nTELL US ABOUT IT *\n0/600\nSUBMIT FOR REVIEW"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 3881,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/contact": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 1921,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "COME THROUGH. SAY HELLO.",
+     "top": 0,
+     "height": 475,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nLET\u2019S TALK FOOD\nCOME THROUGH. SAY HELLO.\n\nFind us in the heart of Rockville, call ahead or send us a WhatsApp. We are ready to make your next favourite meal."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "",
+     "top": 475,
+     "height": 412,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Contact.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       3
+      ],
+      [
+       "Manrope 600",
+       3
+      ],
+      [
+       "Manrope 700",
+       3
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "12px",
+       3
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.708 0 0)",
+       3
+      ],
+      [
+       "rgb(8, 8, 8)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       3
+      ]
+     ],
+     "radii": [
+      [
+       "24px",
+       3
+      ]
+     ],
+     "textNodes": 9,
+     "smallUppercase": 6,
+     "under12px": 3,
+     "icons": 6,
+     "text": "VISIT THE CAMPUS\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\nGET DIRECTIONS\n\nCALL US\n\n063 104 4361\n\nCLICK TO CALL\n\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00 \u00b7 Sunday: Closed\n\nORDER ONLINE"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "LET\u2019S TALK ON WHATSAPP.",
+     "top": 887,
+     "height": 712,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Contact.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       3
+      ],
+      [
+       "Manrope 700",
+       2
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       3
+      ],
+      [
+       "12px",
+       2
+      ],
+      [
+       "10px",
+       2
+      ],
+      [
+       "36px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       5
+      ],
+      [
+       "24px",
+       2
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 3,
+     "under12px": 2,
+     "icons": 7,
+     "text": "Open in Google Maps\n\nNEED A QUICK ANSWER?\n\nLET\u2019S TALK ON WHATSAPP.\n\nAsk about the menu, a large order or your delivery. We will get back to you during opening hours.\n\nCHAT ON WHATSAPP\nhello@rocksteadycampus.co.za\n063 104 4361\n\nFOLLOW THE FLAVOUR"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "SEND US A MESSAGE.",
+     "top": 1599,
+     "height": 676,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Contact.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       4
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       5
+      ],
+      [
+       "72px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       4
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ],
+      [
+       "oklch(0.556 0 0)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       4
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 1,
+     "text": "GENERAL ENQUIRIES\nSEND US A MESSAGE.\n\nPlanning a crew order or have a question? Leave your details and the Campus team will get back to you.\n\nNAME *\nMOBILE NUMBER *\nEMAIL ADDRESS\nMESSAGE *\nSEND ENQUIRY"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 2274,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 3876,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "COME THROUGH. SAY HELLO.",
+     "top": 0,
+     "height": 477,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nLET\u2019S TALK FOOD\nCOME THROUGH. SAY HELLO.\n\nFind us in the heart of Rockville, call ahead or send us a WhatsApp. We are ready to make your next favourite meal."
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "",
+     "top": 477,
+     "height": 804,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Contact.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       3
+      ],
+      [
+       "Manrope 600",
+       3
+      ],
+      [
+       "Manrope 700",
+       3
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "12px",
+       3
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.708 0 0)",
+       3
+      ],
+      [
+       "rgb(8, 8, 8)",
+       3
+      ],
+      [
+       "rgb(241, 0, 31)",
+       3
+      ]
+     ],
+     "radii": [
+      [
+       "24px",
+       3
+      ]
+     ],
+     "textNodes": 9,
+     "smallUppercase": 6,
+     "under12px": 3,
+     "icons": 6,
+     "text": "VISIT THE CAMPUS\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\nGET DIRECTIONS\n\nCALL US\n\n063 104 4361\n\nCLICK TO CALL\n\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00 \u00b7 Sunday: Closed\n\nORDER ONLINE"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "LET\u2019S TALK ON WHATSAPP.",
+     "top": 1281,
+     "height": 1225,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Contact.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       3
+      ],
+      [
+       "Manrope 700",
+       2
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       3
+      ],
+      [
+       "12px",
+       2
+      ],
+      [
+       "10px",
+       2
+      ],
+      [
+       "36px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       5
+      ],
+      [
+       "24px",
+       2
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 3,
+     "under12px": 2,
+     "icons": 7,
+     "text": "Open in Google Maps\n\nNEED A QUICK ANSWER?\n\nLET\u2019S TALK ON WHATSAPP.\n\nAsk about the menu, a large order or your delivery. We will get back to you during opening hours.\n\nCHAT ON WHATSAPP\nhello@rocksteadycampus.co.za\n063 104 4361\n\nFOLLOW THE FLAVOUR"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "SEND US A MESSAGE.",
+     "top": 2506,
+     "height": 876,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Contact.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       4
+      ],
+      [
+       "Manrope 800",
+       2
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.439 0 0)",
+       4
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ],
+      [
+       "oklch(0.556 0 0)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       4
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 1,
+     "text": "GENERAL ENQUIRIES\nSEND US A MESSAGE.\n\nPlanning a crew order or have a question? Leave your details and the Campus team will get back to you.\n\nNAME *\nMOBILE NUMBER *\nEMAIL ADDRESS\nMESSAGE *\nSEND ENQUIRY"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 3381,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/order": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 5535,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       6
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "BUILD YOUR ORDER.",
+     "top": 0,
+     "height": 447,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "96px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nFRESH FOOD, A FEW TAPS AWAY\nBUILD YOUR ORDER.\n\nChoose your favourites, customise every bite and select collection or delivery."
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "heading": "",
+     "top": 447,
+     "height": 48,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/pages/Order.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       3
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       3
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.708 0 0)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 3,
+     "smallUppercase": 2,
+     "under12px": 3,
+     "icons": 2,
+     "text": "1. Build your order\n2. YOUR DETAILS\n3. TRACK & ENJOY"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "YOUR ORDER",
+     "top": 495,
+     "height": 5393,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Order.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       121
+      ],
+      [
+       "Manrope 800",
+       72
+      ],
+      [
+       "Manrope 400",
+       61
+      ],
+      [
+       "Manrope 700",
+       11
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       70
+      ],
+      [
+       "12px",
+       61
+      ],
+      [
+       "16px",
+       60
+      ],
+      [
+       "24px",
+       60
+      ],
+      [
+       "9px",
+       12
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       131
+      ],
+      [
+       "rgb(255, 255, 255)",
+       73
+      ],
+      [
+       "oklch(0.556 0 0)",
+       60
+      ],
+      [
+       "oklch(0.708 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       83
+      ],
+      [
+       "16px",
+       60
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "textNodes": 265,
+     "smallUppercase": 81,
+     "under12px": 82,
+     "icons": 62,
+     "text": "ALL\nKOTAS\nDAGWOODS\nBURGERS\nROLLS\nSANDWICHES\nCHIPS & SIDES\nBEVERAGES\nSPECIALS & COMBOS\nCAMPUS CLASSIC\n\nQuarter loaf filled with seasoned chips, polony, cheese, egg, atchar and our signature Campus sauce.\n\nR45\nADD\nCLASSIC DAGWOOD\n\nThree slices of toast layered with beef, ham, cheese, egg, lettuce, tomato and chips.\n\nR70\nADD\nCAMPUS BEEF BURGER\n\nFlame-grilled beef patty, cheddar, lettuce, tomato, pickle and Campus sauce on a toasted bun.\n\nR55\nADD\nRUSSIAN ROLL\n\nA grilled Russian in a fresh roll with fried onion, mustard and tomato sauce.\n\nR35\nADD\nHAM & CHEESE SANDWICH\n\nThick-cut ham, cheddar, tomato and lettuce on your choice of fresh or toasted bread.\n\nR38\nADD\nSMALL CHIPS\n\nGolden, crisp and finished with our signature chip spice.\n\nR20\nADD\nCOCA-COLA 440ML\n\nIce-cold original Coca-Cola in a 440ml bottle.\n\nR18\nADD\nFEATURED\nSOLO CAMPUS COMBO\n\nCampus Classic Kota with a 440ml soft drink. Your everyday flavour fix.\n\nR58\nADD\nROCKVILLE RUSSIAN\n\nA proper township favourite with chips, grilled Russian, cheese, egg, lettuce and tomato.\n\nR55\nADD\nCHICKEN STACK DAGWOOD\n\nGrilled chicken fillet, cheese, egg, lettuce, tomato and mayo across three toasted layers.\n\nR78\nADD\nCRISPY CHICKEN BURGER\n\nGolden crispy chicken fillet, creamy slaw, cheese and peri-peri mayo on a soft toasted bun.\n\nR60\nADD\nCHICKEN FILLET ROLL\n\nGrilled chicken fillet, lettuce, tomato and creamy mayo in a soft fresh roll.\n\nR48\nADD\nCHICKEN MAYO SANDWICH\n\nCreamy chicken mayo, crisp lettuce and tomato on soft brown or white bread.\n\nR45\nADD\nMEDIUM CHIPS\n\nA generous portion of golden chips with Campus chip spice.\n\nR30\nADD\nFANTA ORANGE 440ML\n\nBright, sparkling orange refreshment served ice-cold.\n\nR18\nADD\nFEATURED\nBURGER NIGHT COMBO\n\nCampus Beef Burger, medium chips and a 440ml soft drink.\n\nR85\nADD\nCHICKEN MAYO CAMPUS\n\nTender chicken mayo, seasoned chips, cheese, lettuce and a cool drizzle of mayo.\n\nR65\nADD\nFEATURED\nDOUBLE BEEF DAGWOOD\n\nTwo seasoned beef patties, double cheddar, egg, onion and smoky Campus sauce.\n\nR95\nADD\nFEATURED\nBIG ROCK DOUBLE\n\nTwo juicy beef patties, double cheese, fried onion, pickles and our bold signature sauce.\n\nR85\nADD\nFEATURED\nSTEAK & ONION ROLL\n\nMarinated steak strips with caramelised onion and BBQ sauce in a toasted roll.\n\nR58\nADD\nFEATURED\nROCKSTEADY CLUB\n\nToasted triple sandwich with chicken, bacon-style macon, egg, cheese and fresh trimmings.\n\nR58\nADD\nLARGE CHIPS\n\nMade for sharing, or not. A large portion of seasoned golden chips.\n\nR40\nADD\nSPRITE 440ML\n\nCrisp lemon-lime sparkle in a 440ml bottle.\n\nR18\nADD\nROCKVILLE DUO\n\nTwo Rockville Russian Kotas and two 440ml soft drinks for the crew.\n\nR130\nADD\nVIENNA VIBE\n\nGrilled viennas, chips, cheese, fried egg, atchar and tomato sauce in fresh white bread.\n\nR58\nADD\nFEATURED\nROCKSTEADY TOWER\n\nThe full tower: beef, chicken, Russian, cheese, egg and fresh trimmings, served with chips.\n\nR110\nADD\nCHEESE & EGG ROLL\n\nMelted cheddar, fried egg and a touch of Campus sauce in a warm roll.\n\nR32\nADD\nCHEESY CHIPS\n\nMedium chips loaded with melted cheddar and Campus sauce.\n\nR42\nADD\nSTONEY GINGER BEER 440ML\n\nBold ginger bite, served chilled.\n\nR18\nADD\nFEATURED\nCAMPUS FAMILY FEAST\n\nTwo beef burgers, two Russian rolls, large chips and four soft drinks.\n\nR240\nADD\nFEATURED\nBEEF & CHEDDAR\n\nJuicy beef patty, melted cheddar, chips, caramelised onion and Campus sauce.\n\nR70\nADD\nLOADED CAMPUS ROLL\n\nRussian, beef patty, cheese, egg, fried onion and all the sauces. Small roll, big appetite.\n\nR65\nADD\nRUSSIAN\n\nOne flame-grilled Russian sausage.\n\nR22\nADD\nSTILL WATER 500ML\n\nRefreshing bottled still water.\n\nR12\nADD\nDOUBLE RUSSIAN DELUXE\n\nTwo grilled Russians with chips, cheese, egg, atchar and a generous sauce finish.\n\nR75\nADD\nVIENNA\n\nOne grilled vienna sausage.\n\nR10\nADD\nFRUIT JUICE 300ML\n\nA chilled fruit juice to complete your meal.\n\nR16\nADD\nWINGMAN KOTA\n\nThree flame-grilled chicken wings, chips, cheese, coleslaw and your choice of sauce.\n\nR78\nADD\nPOLONY\n\nA classic kota filling portion.\n\nR8\nADD\nFEATURED\nBRAAI STEAK KOTA\n\nTender strips of marinated steak, chips, cheese, fried onion and smoky BBQ sauce.\n\nR85\nADD\nCHEESE SLICE\n\nOne slice of creamy cheddar-style cheese.\n\nR10\nADD\nFEATURED\nTHE FULL HOUSE\n\nRussian, beef patty, chicken, chips, cheese, egg, atchar and all the Campus trimmings.\n\nR95\nADD\nFRIED EGG\n\nFresh egg, fried to order.\n\nR8\nADD\nFEATURED\nTHE VICE-CHANCELLOR\n\nOur biggest statement: double meat, double cheese, chips, egg and every signature topping.\n\nR110\nADD\nBEEF PATTY\n\nOne seasoned flame-grilled beef patty.\n\nR28\nADD\nCHICKEN FILLET\n\nOne grilled or crispy chicken fillet.\n\nR30\nADD\nSTEAK STRIPS\n\nA portion of marinated steak strips.\n\nR35\nADD\nMACON\n\nCrispy beef macon strips.\n\nR15\nADD\nCHICKEN WINGS (3)\n\nThree flame-grilled wings in your choice of sauce.\n\nR35\nADD\nATCHAR\n\nA punchy portion of traditional mango atchar.\n\nR8\nADD\nCOLESLAW\n\nCool, crunchy and creamy house coleslaw.\n\nR12\nADD\nLETTUCE\n\nFresh crisp lettuce.\n\nR4\nADD\nTOMATO\n\nFresh sliced tomato.\n\nR5\nADD\nFRIED ONION\n\nSweet caramelised onion portion.\n\nR6\nADD\nPICKLES\n\nTangy sliced pickles.\n\nR5\nADD\nCAMPUS SAUCE\n\nOur creamy, tangy house signature sauce.\n\nR5\nADD\nBBQ SAUCE\n\nSmoky and sweet barbecue sauce.\n\nR5\nADD\nPERI-PERI SAUCE\n\nA fiery chilli kick on the side.\n\nR5\nADD\nMAYONNAISE\n\nA creamy mayo portion.\n\nR4\nADD\nTOMATO SAUCE\n\nThe classic tomato sauce portion.\n\nR4\nADD\nYOUR ORDER\n0 lines\n\nYour cart is empty\n\nAdd something delicious to get started."
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 5888,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 10946,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       6
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "BUILD YOUR ORDER.",
+     "top": 0,
+     "height": 449,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/UI.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 900",
+       2
+      ],
+      [
+       "Manrope 800",
+       1
+      ],
+      [
+       "Manrope 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "288px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.025)",
+       1
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 4,
+     "smallUppercase": 1,
+     "under12px": 1,
+     "icons": 0,
+     "text": "RSC\nFRESH FOOD, A FEW TAPS AWAY\nBUILD YOUR ORDER.\n\nChoose your favourites, customise every bite and select collection or delivery."
+    },
+    {
+     "tag": "div",
+     "id": "",
+     "heading": "",
+     "top": 449,
+     "height": 48,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/pages/Order.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 800",
+       3
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       3
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.708 0 0)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       1
+      ]
+     ],
+     "radii": [],
+     "textNodes": 3,
+     "smallUppercase": 2,
+     "under12px": 3,
+     "icons": 2,
+     "text": "1. Build your order\n2. YOUR DETAILS\n3. TRACK & ENJOY"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "YOUR ORDER",
+     "top": 497,
+     "height": 9955,
+     "bg": "rgb(246, 244, 239)",
+     "components": [
+      "src/components/UI.tsx",
+      "src/pages/Order.tsx"
+     ],
+     "fonts": [
+      [
+       "Barlow Condensed 700",
+       121
+      ],
+      [
+       "Manrope 800",
+       72
+      ],
+      [
+       "Manrope 400",
+       61
+      ],
+      [
+       "Manrope 700",
+       11
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       70
+      ],
+      [
+       "12px",
+       61
+      ],
+      [
+       "16px",
+       60
+      ],
+      [
+       "24px",
+       60
+      ],
+      [
+       "9px",
+       12
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(8, 8, 8)",
+       131
+      ],
+      [
+       "rgb(255, 255, 255)",
+       73
+      ],
+      [
+       "oklch(0.556 0 0)",
+       60
+      ],
+      [
+       "oklch(0.708 0 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       83
+      ],
+      [
+       "16px",
+       60
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "textNodes": 265,
+     "smallUppercase": 81,
+     "under12px": 82,
+     "icons": 62,
+     "text": "ALL\nKOTAS\nDAGWOODS\nBURGERS\nROLLS\nSANDWICHES\nCHIPS & SIDES\nBEVERAGES\nSPECIALS & COMBOS\nCAMPUS CLASSIC\n\nQuarter loaf filled with seasoned chips, polony, cheese, egg, atchar and our signature Campus sauce.\n\nR45\nCLASSIC DAGWOOD\n\nThree slices of toast layered with beef, ham, cheese, egg, lettuce, tomato and chips.\n\nR70\nCAMPUS BEEF BURGER\n\nFlame-grilled beef patty, cheddar, lettuce, tomato, pickle and Campus sauce on a toasted bun.\n\nR55\nRUSSIAN ROLL\n\nA grilled Russian in a fresh roll with fried onion, mustard and tomato sauce.\n\nR35\nHAM & CHEESE SANDWICH\n\nThick-cut ham, cheddar, tomato and lettuce on your choice of fresh or toasted bread.\n\nR38\nSMALL CHIPS\n\nGolden, crisp and finished with our signature chip spice.\n\nR20\nCOCA-COLA 440ML\n\nIce-cold original Coca-Cola in a 440ml bottle.\n\nR18\nFEATURED\nSOLO CAMPUS COMBO\n\nCampus Classic Kota with a 440ml soft drink. Your everyday flavour fix.\n\nR58\nROCKVILLE RUSSIAN\n\nA proper township favourite with chips, grilled Russian, cheese, egg, lettuce and tomato.\n\nR55\nCHICKEN STACK DAGWOOD\n\nGrilled chicken fillet, cheese, egg, lettuce, tomato and mayo across three toasted layers.\n\nR78\nCRISPY CHICKEN BURGER\n\nGolden crispy chicken fillet, creamy slaw, cheese and peri-peri mayo on a soft toasted bun.\n\nR60\nCHICKEN FILLET ROLL\n\nGrilled chicken fillet, lettuce, tomato and creamy mayo in a soft fresh roll.\n\nR48\nCHICKEN MAYO SANDWICH\n\nCreamy chicken mayo, crisp lettuce and tomato on soft brown or white bread.\n\nR45\nMEDIUM CHIPS\n\nA generous portion of golden chips with Campus chip spice.\n\nR30\nFANTA ORANGE 440ML\n\nBright, sparkling orange refreshment served ice-cold.\n\nR18\nFEATURED\nBURGER NIGHT COMBO\n\nCampus Beef Burger, medium chips and a 440ml soft drink.\n\nR85\nCHICKEN MAYO CAMPUS\n\nTender chicken mayo, seasoned chips, cheese, lettuce and a cool drizzle of mayo.\n\nR65\nFEATURED\nDOUBLE BEEF DAGWOOD\n\nTwo seasoned beef patties, double cheddar, egg, onion and smoky Campus sauce.\n\nR95\nFEATURED\nBIG ROCK DOUBLE\n\nTwo juicy beef patties, double cheese, fried onion, pickles and our bold signature sauce.\n\nR85\nFEATURED\nSTEAK & ONION ROLL\n\nMarinated steak strips with caramelised onion and BBQ sauce in a toasted roll.\n\nR58\nFEATURED\nROCKSTEADY CLUB\n\nToasted triple sandwich with chicken, bacon-style macon, egg, cheese and fresh trimmings.\n\nR58\nLARGE CHIPS\n\nMade for sharing, or not. A large portion of seasoned golden chips.\n\nR40\nSPRITE 440ML\n\nCrisp lemon-lime sparkle in a 440ml bottle.\n\nR18\nROCKVILLE DUO\n\nTwo Rockville Russian Kotas and two 440ml soft drinks for the crew.\n\nR130\nVIENNA VIBE\n\nGrilled viennas, chips, cheese, fried egg, atchar and tomato sauce in fresh white bread.\n\nR58\nFEATURED\nROCKSTEADY TOWER\n\nThe full tower: beef, chicken, Russian, cheese, egg and fresh trimmings, served with chips.\n\nR110\nCHEESE & EGG ROLL\n\nMelted cheddar, fried egg and a touch of Campus sauce in a warm roll.\n\nR32\nCHEESY CHIPS\n\nMedium chips loaded with melted cheddar and Campus sauce.\n\nR42\nSTONEY GINGER BEER 440ML\n\nBold ginger bite, served chilled.\n\nR18\nFEATURED\nCAMPUS FAMILY FEAST\n\nTwo beef burgers, two Russian rolls, large chips and four soft drinks.\n\nR240\nFEATURED\nBEEF & CHEDDAR\n\nJuicy beef patty, melted cheddar, chips, caramelised onion and Campus sauce.\n\nR70\nLOADED CAMPUS ROLL\n\nRussian, beef patty, cheese, egg, fried onion and all the sauces. Small roll, big appetite.\n\nR65\nRUSSIAN\n\nOne flame-grilled Russian sausage.\n\nR22\nSTILL WATER 500ML\n\nRefreshing bottled still water.\n\nR12\nDOUBLE RUSSIAN DELUXE\n\nTwo grilled Russians with chips, cheese, egg, atchar and a generous sauce finish.\n\nR75\nVIENNA\n\nOne grilled vienna sausage.\n\nR10\nFRUIT JUICE 300ML\n\nA chilled fruit juice to complete your meal.\n\nR16\nWINGMAN KOTA\n\nThree flame-grilled chicken wings, chips, cheese, coleslaw and your choice of sauce.\n\nR78\nPOLONY\n\nA classic kota filling portion.\n\nR8\nFEATURED\nBRAAI STEAK KOTA\n\nTender strips of marinated steak, chips, cheese, fried onion and smoky BBQ sauce.\n\nR85\nCHEESE SLICE\n\nOne slice of creamy cheddar-style cheese.\n\nR10\nFEATURED\nTHE FULL HOUSE\n\nRussian, beef patty, chicken, chips, cheese, egg, atchar and all the Campus trimmings.\n\nR95\nFRIED EGG\n\nFresh egg, fried to order.\n\nR8\nFEATURED\nTHE VICE-CHANCELLOR\n\nOur biggest statement: double meat, double cheese, chips, egg and every signature topping.\n\nR110\nBEEF PATTY\n\nOne seasoned flame-grilled beef patty.\n\nR28\nCHICKEN FILLET\n\nOne grilled or crispy chicken fillet.\n\nR30\nSTEAK STRIPS\n\nA portion of marinated steak strips.\n\nR35\nMACON\n\nCrispy beef macon strips.\n\nR15\nCHICKEN WINGS (3)\n\nThree flame-grilled wings in your choice of sauce.\n\nR35\nATCHAR\n\nA punchy portion of traditional mango atchar.\n\nR8\nCOLESLAW\n\nCool, crunchy and creamy house coleslaw.\n\nR12\nLETTUCE\n\nFresh crisp lettuce.\n\nR4\nTOMATO\n\nFresh sliced tomato.\n\nR5\nFRIED ONION\n\nSweet caramelised onion portion.\n\nR6\nPICKLES\n\nTangy sliced pickles.\n\nR5\nCAMPUS SAUCE\n\nOur creamy, tangy house signature sauce.\n\nR5\nBBQ SAUCE\n\nSmoky and sweet barbecue sauce.\n\nR5\nPERI-PERI SAUCE\n\nA fiery chilli kick on the side.\n\nR5\nMAYONNAISE\n\nA creamy mayo portion.\n\nR4\nTOMATO SAUCE\n\nThe classic tomato sauce portion.\n\nR4\nYOUR ORDER\n0 lines\n\nYour cart is empty\n\nAdd something delicious to get started."
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 10452,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  },
+  "/login": {
+   "1440": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 547,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       6
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350\nHOME\nMENU\nABOUT\nGALLERY\nREVIEWS\nCONTACT\nORDER NOW"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "YOUR FLAVOUR.\nYOUR CAMPUS.",
+     "top": 0,
+     "height": 900,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/Layout.tsx",
+      "src/pages/Portal.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Manrope 400",
+       3
+      ],
+      [
+       "Barlow Condensed 900",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       5
+      ],
+      [
+       "12px",
+       4
+      ],
+      [
+       "14px",
+       2
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklch(0.556 0 0)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.55)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       2
+      ],
+      [
+       "oklch(0.439 0 0)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "12px",
+       2
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 15,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 6,
+     "text": "YOUR FLAVOUR.\nYOUR CAMPUS.\n\nSave your details, find your favourite orders and follow every meal from the grill to your gate.\n\nFASTER CHECKOUT\nLIVE TRACKING\nCUSTOMER\nADMINISTRATOR\n\nWELCOME BACK\n\nSIGN IN & ORDER\n\nAccess your orders, addresses and Campus profile.\n\nEMAIL ADDRESS\nPASSWORD\nSIGN IN\nForgot password?\n\nNew to Rocksteady? Create an account"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 900,
+     "height": 547,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "48px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ],
+   "390": [
+    {
+     "tag": "header",
+     "id": "",
+     "heading": "",
+     "top": 1339,
+     "height": 103,
+     "bg": "rgba(0, 0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "11px",
+       6
+      ],
+      [
+       "9px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+       6
+      ],
+      [
+       "rgb(255, 255, 255)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "textNodes": 8,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 4,
+     "text": "FREE DELIVERY IN ROCKVILLE ON ORDERS OVER R350"
+    },
+    {
+     "tag": "section",
+     "id": "",
+     "heading": "Your flavour.Your Campus.",
+     "top": 0,
+     "height": 844,
+     "bg": "rgb(255, 255, 255)",
+     "components": [
+      "src/components/Layout.tsx",
+      "src/pages/Portal.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 700",
+       6
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Manrope 400",
+       3
+      ],
+      [
+       "Barlow Condensed 900",
+       2
+      ]
+     ],
+     "sizes": [
+      [
+       "10px",
+       5
+      ],
+      [
+       "12px",
+       4
+      ],
+      [
+       "14px",
+       2
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "60px",
+       1
+      ],
+      [
+       "48px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklch(0.556 0 0)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.55)",
+       2
+      ],
+      [
+       "rgb(241, 0, 31)",
+       2
+      ],
+      [
+       "oklch(0.439 0 0)",
+       2
+      ],
+      [
+       "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+       1
+      ],
+      [
+       "rgb(8, 8, 8)",
+       1
+      ],
+      [
+       "rgb(0, 0, 0)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "12px",
+       2
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 15,
+     "smallUppercase": 8,
+     "under12px": 7,
+     "icons": 6,
+     "text": "CUSTOMER\nADMINISTRATOR\n\nWELCOME BACK\n\nSIGN IN & ORDER\n\nAccess your orders, addresses and Campus profile.\n\nEMAIL ADDRESS\nPASSWORD\nSIGN IN\nForgot password?\n\nNew to Rocksteady? Create an account"
+    },
+    {
+     "tag": "footer",
+     "id": "",
+     "heading": "",
+     "top": 844,
+     "height": 1339,
+     "bg": "rgb(0, 0, 0)",
+     "components": [
+      "src/components/Layout.tsx"
+     ],
+     "fonts": [
+      [
+       "Manrope 400",
+       13
+      ],
+      [
+       "Manrope 800",
+       4
+      ],
+      [
+       "Barlow Condensed 900",
+       1
+      ],
+      [
+       "Manrope 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "14px",
+       12
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "36px",
+       1
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.65)",
+       9
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.35)",
+       5
+      ],
+      [
+       "rgb(255, 255, 255)",
+       3
+      ],
+      [
+       "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       4
+      ],
+      [
+       "8px",
+       1
+      ]
+     ],
+     "textNodes": 19,
+     "smallUppercase": 6,
+     "under12px": 5,
+     "icons": 8,
+     "text": "HUNGRY? YOU KNOW WHAT TO DO.\n\nYour next Rockville favourite is a few taps away.\n\nSTART AN ORDER\n\nBig flavour. Generous portions. Real township taste. Proudly made in Rockville, Soweto.\n\nEXPLORE\nMenu\nAbout\nGallery\nReviews\nContact\nMy account\nFIND US\n\n1563 Makapane Street, Rockville, Soweto, 1818, South Africa\n\n063 104 4361\nOPENING HOURS\n\nMonday \u2013 Saturday: 11:00 \u2013 20:00\nSunday: Closed\n\nWhatsApp us\n\u00a9 2026 ROCKSTEADY CAMPUS. ALL RIGHTS RESERVED.\nROCKVILLE, SOWETO \u00b7 SOUTH AFRICA"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* Design tokens: see DESIGN-SYSTEM.md */
+@theme {
+  --font-sans: "Manrope", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow Condensed Fallback", "Arial Narrow", sans-serif;
+  --color-brand: #f1001f;
+  --color-brand-dark: #c90019;
+  --color-cream: #f6f4ef;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-wght.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/barlow-condensed-latin-600.woff2") format("woff2");
+}
+/* Metric-matched fallbacks so the font swap does not reflow the page. */
+@font-face {
+  font-family: "Manrope Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans");
+  size-adjust: 103.5%;
+  ascent-override: 103%;
+  descent-override: 29%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Barlow Condensed Fallback";
+  src: local("Arial Narrow"), local("Liberation Sans Narrow"), local("Arial");
+  font-weight: 600;
+  size-adjust: 84%;
+  ascent-override: 119%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+html {
+  background: #000;
+  overscroll-behavior: none;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: #0a0a0a;
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button:not(:disabled),
+[role="button"] {
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+::selection {
+  color: #fff;
+  background: var(--color-brand);
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:px-12;
+  }
+  .section {
+    @apply py-14 sm:py-20;
+  }
+  /* Buttons: one height, one radius, sentence case, medium weight. */
+  .btn {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-medium whitespace-nowrap transition-colors disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-primary {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-medium whitespace-nowrap transition-colors disabled:cursor-not-allowed disabled:opacity-45 bg-brand text-white hover:bg-brand-dark;
+  }
+  .btn-dark {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-medium whitespace-nowrap transition-colors disabled:cursor-not-allowed disabled:opacity-45 bg-black text-white hover:bg-neutral-800;
+  }
+  .btn-outline {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-medium whitespace-nowrap transition-colors disabled:cursor-not-allowed disabled:opacity-45 border border-black/20 text-black hover:border-black;
+  }
+  .btn-white {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-medium whitespace-nowrap transition-colors disabled:cursor-not-allowed disabled:opacity-45 border border-white/40 text-white hover:border-white;
+  }
+  .btn-sm {
+    @apply h-9 px-3.5 text-[13px];
+  }
+  .icon-btn {
+    @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors;
+  }
+  /* Filter and option chips: a real on/off state, never decoration. */
+  .chip {
+    @apply inline-flex h-9 shrink-0 items-center justify-center rounded-md border border-black/10 bg-white px-3.5 text-[13px] font-medium whitespace-nowrap text-neutral-700 transition-colors hover:border-black/30;
+  }
+  .chip-active {
+    @apply border-black bg-black text-white hover:border-black;
+  }
+  .tag {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+  }
+  .display-title {
+    @apply font-display text-3xl leading-[1.05] font-semibold uppercase sm:text-4xl lg:text-[40px];
+  }
+  .page-title {
+    @apply font-display text-4xl leading-[1.02] font-semibold uppercase sm:text-5xl lg:text-[56px];
+  }
+  .card-title {
+    @apply font-display text-xl leading-tight font-semibold uppercase;
+  }
+  .lead {
+    @apply text-[15px] leading-7 text-neutral-600;
+  }
+  .card {
+    @apply rounded-lg border border-black/[.07] bg-white shadow-[0_1px_2px_rgba(0,0,0,.05)];
+  }
+  .field {
+    @apply w-full rounded-md border border-black/15 bg-white px-3.5 py-2.5 text-sm text-black transition-colors placeholder:text-neutral-400 focus:border-black focus:outline-none;
+  }
+  .field-label {
+    @apply mb-1.5 block text-[13px] font-medium text-neutral-700;
+  }
+  .admin-field {
+    @apply w-full rounded-md border border-neutral-200 bg-white px-3 py-2.5 text-sm text-neutral-800 transition-colors focus:border-black focus:outline-none;
+  }
+  .admin-label {
+    @apply mb-1.5 block text-[13px] font-medium text-neutral-600;
+  }
+  .admin-card {
+    @apply rounded-lg border border-neutral-200 bg-white;
+  }
+  .rule-list > * + * {
+    @apply border-t border-black/10;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.text-balance {
+  text-wrap: balance;
+}
+/* Vignette that keeps text readable over hero photographs (same values as the original). */
+.hero-vignette {
+  background:
+    linear-gradient(90deg, #000000f5, #000000c7 35%, #00000038 72%, #00000052),
+    linear-gradient(#0000 58%, #000000b8);
+}
+/* Fine paper grain, used on the cream sections only. */
+.paper-texture {
+  background-image: radial-gradient(#00000009 0.6px, #0000 0.6px);
+  background-size: 7px 7px;
+}
+.skeleton {
+  background-color: #e7e5e0;
+}
+@keyframes spin-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader-ring {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ffffff33;
+  border-top-color: #fff;
+  border-radius: 9999px;
+  animation: spin-ring 0.7s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

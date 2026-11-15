@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "slopbench/rocksteady-campus"
+version = "0.1.0"
+description = "Build a multi-page food-ordering website with cart, checkout, customer portal and admin CMS for a Soweto takeaway from a detailed Design Arena brief; graded on brief fulfillment and human-labelled slop patterns."
+authors = []
+keywords = ["frontend", "react", "website", "slop"]
+
+[metadata]
+difficulty = "hard"
+category = "company-local-business"
+tags = ["design-arena", "local-business", "ecommerce", "multi-page"]
+source = "Design Arena webapps tournament 104e4bb6-f582-4005-ade0-55d4a41ccf30 (sites S05 gpt-6-astra-max, S06 kimi-k3.1-pro); golden reference from references/S06"
+
+[agent]
+timeout_sec = 5400.0
+
+[verifier]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+
+[verifier.env]
+
+[solution.env]
