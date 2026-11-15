@@ -19,7 +19,7 @@ Ambiguity flags: **[A]** = I had to interpret the critique; the interpretation i
 | F8 | #126 | Remove the eyebrow badge laid over each service image ("Concrete, pavers and stubborn grime"). | Services.tsx |
 | F9 | #133, #134, #135 | Remove the CTA overlaid on each service image; keep the one in the text column. | Services.tsx |
 | F10 | #136 **[A]** · S14 #338, #340 | "The same card format is repeated so many times… there should just be a carousel." Read as the six full-height service rows. Show services as one row with a service switcher: tabs for the six names plus working previous/next buttons, swipe on touch, no scroll hijacking. All six services and their copy stay reachable. | Services.tsx |
-| F11 | #144 | Remove the pulse ring on the slider handle. | BeforeAfter.tsx |
+| F11 | #144 | Remove the pulse ring and scale loop on the slider handle (and the pulsing icon in the "Drag to reveal" hint, same pattern). | BeforeAfter.tsx |
 | F12 | #150 | "Before" and "After" labels behave differently when the divider passes over them. Render both above the image layers so neither is ever covered. | BeforeAfter.tsx |
 | F13 | #157, #170, #174, #190 · S14 #327 | Before/after pairs are different photos (siding panels, concrete joints and windows don't line up) or the same photo with a dark filter. Make every "before" from its own "after" image: same pixels, with dirt from the original "before" photo (algae, lichen, spotting, leaves) composited on top, so the geometry matches exactly and only the dirt changes. Interior windows and patio get real grime instead of a filter; gutters get the same treatment because they have the same mismatch. The images stay labelled illustrative. **[A]** Katie's #190 asks for "a real image… before and after a cleaning"; only the business can supply real job photos, so this is flagged. | public/images, BeforeAfter.tsx, data/content.ts, tools/make_befores.py |
 | F14 | #230, #239 · S14 #346 | Process markers: replace the glowing gradient icon tile with a white notification-style badge by a plain numbered circle (no glow, no badge). | Process.tsx |
@@ -38,6 +38,7 @@ Ambiguity flags: **[A]** = I had to interpret the critique; the interpretation i
 | F27 | #285 | "Share this website" becomes an icon button with an accessible label and tooltip. | Footer.tsx |
 | F28 | #292 | Remove the spray-canvas overlay drawn over the pressure-washing image (it also shows before the image loads). | Services.tsx |
 | F29 | S14 #318 | Replace em dashes in visible copy (service eyebrows go away with F6; the town confirmation line and FAQ answers get commas or full stops). | data/content.ts, PricingAreas.tsx |
+| F31 | #139 | Before/after tab labels ("House Siding" …) drop from black (900) weight to medium. | BeforeAfter.tsx |
 | F30 | S14 #332 **[A]** | S13 headlines reveal word by word out of a clip mask (`overflow-hidden` per word). Same pattern as S14's "animates up from a bottom line". Keep the per-word stagger but fade/rise without the clip mask. | lib/anim.tsx, Hero.tsx |
 
 Not applied:

@@ -196,7 +196,7 @@ const servicesData = [
       slug: "interior-windows",
       title: "Interior Windows",
       category: "Interior Window Cleaning",
-      before_image: "/images/interior-window-clean.jpg",
+      before_image: "/images/interior-window-before.jpg",
       after_image: "/images/interior-window-clean.jpg",
       alt_text: "Interior residential window in sunlight",
       description:
@@ -222,7 +222,7 @@ const servicesData = [
       slug: "patio",
       title: "Patio",
       category: "Driveway & Patio Cleaning",
-      before_image: "/images/patio-clean.jpg",
+      before_image: "/images/patio-before.jpg",
       after_image: "/images/patio-clean.jpg",
       alt_text: "Residential paved patio",
       description:

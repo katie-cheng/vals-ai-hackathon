@@ -27,8 +27,7 @@ function ComparisonSlider({ active: a }) {
   const b = (g) => {
       const S = y.current?.getBoundingClientRect();
       S && l(Math.min(96, Math.max(4, ((g - S.left) / S.width) * 100)));
-    },
-    v = i.before_image === i.after_image;
+    };
   return (
     <div
       ref={y}
@@ -92,9 +91,6 @@ function ComparisonSlider({ active: a }) {
         />
       </div>
       <Gleams count={8} />
-      <span className="absolute right-4 top-4 rounded-full bg-cyan-300 px-3.5 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-[#04141f] shadow-lg">
-        After
-      </span>
       <div
         className="absolute inset-0 overflow-hidden"
         style={{
@@ -127,30 +123,16 @@ function ComparisonSlider({ active: a }) {
                 ease: EASE,
               }}
               className="absolute inset-0 h-full w-full object-cover"
-              style={
-                v
-                  ? {
-                      filter:
-                        "grayscale(0.75) brightness(0.6) contrast(0.92) sepia(0.25)",
-                    }
-                  : {
-                      filter: "saturate(0.82) brightness(0.88)",
-                    }
-              }
               draggable={false}
             />
           </AnimatePresence>
-          <div
-            className="absolute inset-0 opacity-60"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 45% at 25% 70%, rgba(60,45,25,.5), transparent 65%), radial-gradient(ellipse 55% 40% at 70% 30%, rgba(45,55,35,.45), transparent 65%), radial-gradient(ellipse 40% 35% at 55% 55%, rgba(30,30,30,.4), transparent 60%)",
-            }}
-          />
         </div>
       </div>
-      <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-black/55 px-3.5 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-white backdrop-blur">
+      <span className="absolute left-4 top-4 z-20 rounded-full border border-white/25 bg-black/55 px-3.5 py-1.5 text-[13px] font-bold text-white backdrop-blur">
         Before
+      </span>
+      <span className="absolute right-4 top-4 z-20 rounded-full bg-cyan-300 px-3.5 py-1.5 text-[13px] font-bold text-[#04141f] shadow-lg">
+        After
       </span>
       <div
         className="absolute inset-y-0 z-10"
@@ -167,7 +149,7 @@ function ComparisonSlider({ active: a }) {
                   scale: 1.25,
                 }
               : {
-                  scale: [1, 1.12, 1],
+                  scale: 1,
                 }
           }
           transition={
@@ -176,15 +158,13 @@ function ComparisonSlider({ active: a }) {
                   duration: 0.2,
                 }
               : {
-                  duration: 2.2,
-                  repeat: 1 / 0,
+                  duration: 0.2,
                 }
           }
           className="absolute top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-white/80 bg-gradient-to-br from-cyan-300 to-sky-500 text-[#04141f] shadow-[0_10px_36px_-6px_rgba(34,211,238,1)]"
         >
           <ChevronsLeftRight className="h-6 w-6" strokeWidth={2.8} />
         </motion.div>
-        <span className="absolute top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full border-2 border-cyan-200/60" />
       </div>
       <AnimatePresence>
         {d && (
@@ -202,7 +182,7 @@ function ComparisonSlider({ active: a }) {
             }}
             className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-[#04141f]/70 px-4 py-2 text-[12px] font-bold text-cyan-100 backdrop-blur-xl"
           >
-            <MoveHorizontal className="h-4 w-4 animate-pulse text-cyan-300" />
+            <MoveHorizontal className="h-4 w-4 text-cyan-300" />
             Drag to reveal the clean
           </motion.div>
         )}
@@ -231,12 +211,6 @@ function BeforeAfter() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <Reveal>
-              <p className="mb-4 flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.35em] text-sky-600">
-                <span className="h-px w-10 bg-sky-500" />
-                {" 02 / What to expect"}
-              </p>
-            </Reveal>
             <SplitWords
               text="See what a thorough clean changes."
               as="h2"
@@ -255,7 +229,7 @@ function BeforeAfter() {
               <button
                 key={l.slug}
                 onClick={() => i(u)}
-                className={`group relative overflow-hidden rounded-full px-4 py-2.5 text-[12.5px] font-black transition-all duration-300 ${u === a ? "bg-[#04141f] text-white shadow-[0_12px_30px_-10px_rgba(4,20,31,.6)]" : "bg-white text-slate-600 shadow-sm ring-1 ring-slate-200 hover:ring-sky-400 hover:text-sky-700"}`}
+                className={`group relative overflow-hidden rounded-full px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${u === a ? "bg-[#04141f] text-white shadow-[0_12px_30px_-10px_rgba(4,20,31,.6)]" : "bg-white text-slate-600 shadow-sm ring-1 ring-slate-200 hover:ring-sky-400 hover:text-sky-700"}`}
               >
                 {u === a && (
                   <motion.span
@@ -297,10 +271,7 @@ function BeforeAfter() {
               }}
               className="max-w-2xl"
             >
-              <p className="text-[12px] font-black uppercase tracking-[0.25em] text-sky-500">
-                {r.category}
-              </p>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">
+              <p className="text-[15px] leading-relaxed text-slate-600">
                 {r.description}
               </p>
             </motion.div>
