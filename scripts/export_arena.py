@@ -20,13 +20,15 @@ snap = sqlite3.connect(out / f"arena-{ts}.db")
 src.backup(snap)
 snap.row_factory = sqlite3.Row
 
-votes = [dict(r) for r in snap.execute("SELECT * FROM votes ORDER BY id")]
+cur = snap.execute("SELECT * FROM votes ORDER BY id")
+columns = [c[0] for c in cur.description]
+votes = [dict(r) for r in cur]
 removed = [dict(r) for r in snap.execute("SELECT * FROM removed ORDER BY site_id")]
 sites = {k: {f: v for f, v in s.items() if f not in ("dir", "prompt")} for k, s in app.sites().items()}
 json.dump({"exported_at": ts, "sites": sites, "votes": votes, "removed": removed},
           open(out / f"arena-{ts}.json", "w"), indent=1)
 with open(out / f"arena-{ts}.csv", "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=list(votes[0]))
+    w = csv.DictWriter(f, fieldnames=columns)
     w.writeheader()
     w.writerows(votes)
 print(f"arena-{ts}: {len(votes)} votes, {len(removed)} removed, {len(sites)} sites")
