@@ -14,7 +14,7 @@ function Process() {
     <section
       ref={a}
       id="process"
-      className="relative overflow-hidden py-24 sm:py-32"
+      className="relative overflow-hidden bg-gradient-to-b from-[#04141f] via-[#082230] to-[#04141f] py-24 sm:py-32"
     >
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
@@ -79,7 +79,7 @@ function Process() {
                           duration: 0.35,
                           ease: EASE,
                         }}
-                        className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
+                        className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.05] p-6 transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
                       >
                         <h3 className="font-serif-d text-xl font-medium text-white sm:text-[1.4rem]">
                           {l.title}

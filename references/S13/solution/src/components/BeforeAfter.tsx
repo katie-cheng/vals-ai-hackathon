@@ -114,10 +114,10 @@ function ComparisonSlider({ active: a }) {
           </AnimatePresence>
         </div>
       </div>
-      <span className="absolute left-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3.5 py-1.5 text-[13px] font-medium text-white">
+      <span className="absolute left-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-white">
         Before
       </span>
-      <span className="absolute right-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3.5 py-1.5 text-[13px] font-medium text-white">
+      <span className="absolute right-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-white">
         After
       </span>
       <div

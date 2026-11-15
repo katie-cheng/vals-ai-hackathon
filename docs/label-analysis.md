@@ -26,7 +26,7 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
 ## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
-Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 17 labels (R1–R17, SlopLabel ids 461–477) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 19 labels (R1–R19, SlopLabel ids 461–479) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
 
 | Pattern | Labels | Mechanical? |
 |---|---|---|
@@ -41,8 +41,10 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Animated control misaligned in a state change (FAQ + → × off-centre) | R11 | yes: icon/container centre offset after toggling |
 | Excessive corner rounding everywhere (beyond pills) | R12 | yes: radius ≥ 12px on cards/buttons |
 | Heavy, stacked animation (preloader, smooth-scroll hijack, particles, parallax, magnetic/tilt, per-word reveals, looping effects) | R14 | partly: count of infinite animations, rAF canvases, scroll-linked transforms |
+| Calibration (R18): after R3/R4 stripped every gradient and caps label, the page read as unpolished. Subtle functional gradients (image-to-section fades, faint tonal bands) and a few small-caps meta labels are fine; the slop is decorative glows/gradient text and caps eyebrows on every section | R18 | thresholds, not presence |
 | Paired labels styled inconsistently (Before vs After), blurred overlays | R15 |
 | Light page background exposed on overscroll of a dark site | R16 | yes: `html` background vs body; `overscroll-behavior` | yes: sibling label style diff; `backdrop-filter` |
+| Neon accent palette (saturated cyan on navy) | R19 | yes: accent colour saturation/lightness |
 | Hero image missing on first paint (waits for JS/video poster) | R17 | yes: hero image request start and paint time vs first contentful paint |
 
 ## Other observations

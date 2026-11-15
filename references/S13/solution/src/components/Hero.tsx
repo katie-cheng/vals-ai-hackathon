@@ -51,7 +51,8 @@ function Hero() {
               preload="auto"
             />
           </div>
-          <div className="absolute inset-0 bg-[#04141f]/65" />
+          <div className="absolute inset-0 bg-[#04141f]/60" />
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#04141f]" />
         </div>
         <motion.div
           className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pt-36 sm:px-6 lg:pt-40"
@@ -150,7 +151,7 @@ function Hero() {
           className="absolute inset-x-0 bottom-0 z-10"
           aria-hidden
         >
-          <div className="overflow-hidden border-t border-cyan-300/20 bg-[#04141f]/85 py-3 backdrop-blur-xl">
+          <div className="overflow-hidden border-t border-cyan-300/20 bg-[#04141f]/85 py-3">
             <div className="animate-marquee flex w-max items-center gap-8 whitespace-nowrap pr-8">
               {[0, 1].map((M) => (
                 <div key={M} className="flex items-center gap-8">

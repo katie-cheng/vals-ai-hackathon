@@ -58,7 +58,7 @@ function Field({ label: a, error: i, children: r, htmlFor: l, required: u }) {
 }
 
 const inputClass = (a?: unknown) =>
-  `w-full rounded-lg border bg-white/[0.06] px-4 py-2.5 text-[15px] font-medium text-white placeholder:text-sky-200/30 outline-none backdrop-blur transition-all duration-300 focus:scale-[1.01] ${a ? "border-rose-400/70 focus:border-rose-300 focus:ring-4 focus:ring-rose-400/15" : "border-white/15 hover:border-white/30 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/15"}`;
+  `w-full rounded-lg border bg-white/[0.06] px-4 py-2.5 text-[15px] font-medium text-white placeholder:text-sky-200/30 outline-none transition-all duration-300 focus:scale-[1.01] ${a ? "border-rose-400/70 focus:border-rose-300 focus:ring-4 focus:ring-rose-400/15" : "border-white/15 hover:border-white/30 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/15"}`;
 
 function Quote() {
   const [a, i] = React.useState(EMPTY_FORM),
@@ -198,7 +198,7 @@ function Quote() {
                     duration: 0.3,
                     ease: EASE,
                   }}
-                  className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-300/40"
+                  className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.05] p-4 transition-colors duration-300 hover:border-cyan-300/40"
                 >
                   <span>
                     <span className="block text-[13px] font-medium text-sky-200/70">

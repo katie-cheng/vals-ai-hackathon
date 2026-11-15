@@ -26,7 +26,7 @@ function TownLabel({ town: t }: { town: Town }) {
       textAnchor={left ? "end" : "start"}
       fill="#fff"
       fontSize="13"
-      fontWeight="800"
+      fontWeight="600"
       paintOrder="stroke"
       stroke="#04141f"
       strokeWidth="5"
@@ -94,7 +94,7 @@ function PricingAreas() {
                     className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-cyan-400 transition-transform duration-500 group-hover:scale-x-100"
                     aria-hidden
                   />
-                  <p className="mt-4 text-[14px] font-medium text-slate-600">
+                  <p className="mt-4 text-[12px] font-medium uppercase tracking-[0.08em] text-slate-500">
                     {l.label}
                   </p>
                   <p className="mt-1 text-4xl font-medium tracking-tight text-[#04141f]">
@@ -165,7 +165,7 @@ function PricingAreas() {
                               cy={l.map_y}
                               r="16"
                               fill="none"
-                              stroke="#22d3ee"
+                              stroke="#74a3af"
                               strokeWidth="2"
                             >
                               <animate
@@ -193,7 +193,7 @@ function PricingAreas() {
                           cx={l.map_x}
                           cy={l.map_y}
                           r={h ? 8 : 5}
-                          fill={h ? "#22d3ee" : "rgba(186,230,253,.75)"}
+                          fill={h ? "#74a3af" : "rgba(186,230,253,.75)"}
                           stroke="#04141f"
                           strokeWidth="2"
                           className="transition-all duration-300"

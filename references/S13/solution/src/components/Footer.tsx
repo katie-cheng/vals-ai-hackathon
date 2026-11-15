@@ -93,7 +93,7 @@ function Footer() {
               )}
             </div>
             <nav aria-label="Footer">
-              <p className="mb-4 text-[14px] font-semibold text-sky-200/60">
+              <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.08em] text-sky-200/60">
                 Explore
               </p>
               <ul className="space-y-1">
@@ -118,7 +118,7 @@ function Footer() {
               </ul>
             </nav>
             <div>
-              <p className="mb-4 text-[14px] font-semibold text-sky-200/60">
+              <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.08em] text-sky-200/60">
                 Contact
               </p>
               <ul className="space-y-3 text-[14.5px] font-semibold">

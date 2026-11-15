@@ -52,7 +52,7 @@ function Faq() {
             return (
               <Reveal key={r.id} delay={Math.min(l * 0.04, 0.3)} y={24}>
                 <motion.article
-                  className={`overflow-hidden rounded-lg border backdrop-blur-xl transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "border-white/10 bg-white/[0.04] hover:border-white/25"}`}
+                  className={`overflow-hidden rounded-lg border transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "border-white/10 bg-white/[0.04] hover:border-white/25"}`}
                 >
                   <button
                     onClick={() => i(u ? null : r.id)}

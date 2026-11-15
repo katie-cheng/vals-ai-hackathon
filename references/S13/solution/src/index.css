@@ -4,6 +4,18 @@
   --font-serif: "Fraunces", Georgia, serif;
   --font-display: "Archivo", system-ui, sans-serif;
   --color-abyss: #04141f;
+  /* R19: muted sea-glass accent instead of neon cyan; cool greys instead of sky blues */
+  --color-cyan-100: #dbe9ec;
+  --color-cyan-200: #bcd6dc;
+  --color-cyan-300: #93bcc6;
+  --color-cyan-400: #74a3af;
+  --color-sky-50: #eef3f5;
+  --color-sky-100: #dfe7ea;
+  --color-sky-200: #c4d1d6;
+  --color-sky-300: #a8b8bf;
+  --color-sky-400: #8299a3;
+  --color-sky-500: #627c87;
+  --color-sky-700: #33505c;
 }
 
 html {

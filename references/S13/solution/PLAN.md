@@ -39,14 +39,14 @@ Ambiguity flags: **[A]** = I had to interpret the critique; the interpretation i
 | F28 | #292 | Remove the spray-canvas overlay drawn over the pressure-washing image (it also shows before the image loads). | Services.tsx |
 | F29 | S14 #318 | Replace em dashes in visible copy (service eyebrows go away with F6; the town confirmation line and FAQ answers get commas or full stops). | data/content.ts, PricingAreas.tsx |
 | F31 | #139 | Before/after tab labels ("House Siding" …) drop from black (900) weight to medium. | BeforeAfter.tsx |
-| F30 | S14 #332 **[A]** | S13 headlines reveal word by word out of a clip mask (`overflow-hidden` per word). Same pattern as S14's "animates up from a bottom line". Keep the per-word stagger but fade/rise without the clip mask. | lib/anim.tsx, Hero.tsx |
+| F30 | S14 #332 **[A]** | S13 headlines reveal word by word out of a clip mask (`overflow-hidden` per word). Same pattern as S14's "animates up from a bottom line". Keep the per-word stagger but fade/rise without the clip mask. (Superseded by R14: headings now fade in as a whole line.) | lib/anim.tsx, Hero.tsx |
 
 Not applied:
-- S14 #352 "overuse of icons" has no specific S13 element; flagged for Katie rather than applied site-wide.
+- S14 #352 "overuse of icons": originally left for Katie; now applied site-wide through her R9.
 - S14 #304, #306, #308, #345 and the empty S14 labels: no matching S13 pattern (see CRITIQUES.md).
 - S14 #356 ("there is no map just points"): S13 has the same failure. Its outline and town dots stay at opacity 0 because their `whileInView` reveal never fires. They now animate in on mount and the decorative radial glow behind the map is removed (R3).
 
-Brief guard: the brief asks for unusually heavy animation, before/after comparisons, animated services, process, trust, pricing, service area, FAQ and a working quote form. Hero video, parallax, particles, bubbles, marquee, magnetic buttons, tilt cards, scroll progress, map drawing, slider and accordion all stay; `../verification/REPORT.md` checks every brief requirement.
+Brief guard: the brief asks for unusually heavy animation, before/after comparisons, animated services, process, trust, pricing, service area, FAQ and a working quote form. Round 1 kept all of the animation layers. Round 2 (R3, R14) removed most of the decorative ones on Katie's instruction: particles, bubbles, droplets, parallax, magnetic/tilt and animated gradients. `../verification/REPORT.md` checks every brief requirement and marks the ones deliberately dropped.
 
 ## Round 2: Katie's critiques of the rebuild (chat, 2026-11-15)
 
@@ -70,6 +70,8 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R14 | Animations heavier than needed | No preloader, Lenis, particles, bubbles, droplets, gleams, mouse/scroll parallax, magnetic buttons, tilt cards, word-by-word reveals, floating chips, looping service effects, hover lifts or moving dashed lines. Kept: hero video, marquee, short fade/slide reveals, scroll-filled process line, panel/FAQ/form transitions | round 4 |
 | R16 | White shows on overscroll | `html` gets the navy background and `overscroll-behavior: none` (no bounce past top/bottom) | round 4 |
 | R17 | Hero image not there on first load | Hero photo is preloaded (`<link rel=preload fetchpriority=high>`) and rendered as an `<img>` under the video, so it no longer waits for the video poster | round 4 |
+| R18 | Too stripped back; some subtle gradients and capital labels are fine | Relaxes R3/R4: a dark fade at the foot of the hero, a faint tonal band behind Process; small caps (11–12px, 0.08em) only on meta labels (Before/After chips, footer column headings, price item names). Section eyebrows stay out (F6). Remaining backdrop blur removed except the header | round 5 |
+| R19 | Palette too neon | Tailwind `cyan-*` remapped to a muted sea-glass accent (`#93bcc6`) and `sky-*` to cool greys in `@theme` | round 5 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.

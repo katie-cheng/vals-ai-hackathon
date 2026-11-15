@@ -100,5 +100,17 @@
   "sent_at": "2026-11-15T00:18-08:00",
   "element": "hero background image",
   "comment": "when the page first loads, the hero image doesnt load in immediately"
+ },
+ {
+  "rid": "R18",
+  "sent_at": "2026-11-15T00:22-08:00",
+  "element": "whole page",
+  "comment": "can you add back of professional polish - maybe some subtle gradients are ok and some labels can be capital"
+ },
+ {
+  "rid": "R19",
+  "sent_at": "2026-11-15T00:22-08:00",
+  "element": "color palette",
+  "comment": "I think the color palette should also be a bit less neon"
  }
 ]
