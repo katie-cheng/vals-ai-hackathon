@@ -1,0 +1,15 @@
+[
+ {"rid": "R1", "sent_at": "2026-11-15T00:05-08:00", "element": "section titles (h1/h2/h3)", "comment": "Generally, the titles on this page are too big relative to the subtitle text. decrease title size and weight, they emphasize things that are like not that relevant and emphasize entire phrases."},
+ {"rid": "R2", "sent_at": "2026-11-15T00:05-08:00", "element": "hero h1 line 2", "comment": "\"in its best light\" is also all merged together as words which is a mistake"},
+ {"rid": "R3", "sent_at": "2026-11-15T00:06-08:00", "element": "whole page", "comment": "there should be no gradient/glows on this site"},
+ {"rid": "R4", "sent_at": "2026-11-15T00:06-08:00", "element": "small uppercase labels (Scroll to explore, marquee, logo sub-line)", "comment": "even \"scroll to explore\" should not have uppercase labeling, it should just be normal case and a more normal font for every small uppercase label"},
+ {"rid": "R5", "sent_at": "2026-11-15T00:06-08:00", "element": "hero 'Scroll to explore' cue", "comment": "also you can just get rid of scroll to explore, its useless text"},
+ {"rid": "R6", "sent_at": "2026-11-15T00:07-08:00", "element": "header logo", "comment": "the suds squad logo should not have the uppercase small label nor should it have the glowing gradient"},
+ {"rid": "R7", "sent_at": "2026-11-15T00:08-08:00", "element": "buttons", "comment": "the buttons on this page have too much padding and the buttons should not have bold typeface in them"},
+ {"rid": "R8", "sent_at": "2026-11-15T00:08-08:00", "element": "text with shadow (element not specified)", "comment": "The text should not have this shadow"},
+ {"rid": "R9", "sent_at": "2026-11-15T00:08-08:00", "element": "icons", "comment": "decrease icon usage as much as possible"},
+ {"rid": "R10", "sent_at": "2026-11-15T00:08-08:00", "element": "CTAs", "comment": "Decrease duplicate CTAs that go to the same place on the website"},
+ {"rid": "R11", "sent_at": "2026-11-15T00:09-08:00", "element": "FAQ open/close icon", "comment": "when you click the plus sign to open the FAQ, when it turns into an X, it becomes misaligned and not centered in the circle"},
+ {"rid": "R12", "sent_at": "2026-11-15T00:09-08:00", "element": "all corners", "comment": "The corners on everything should be less rounded"},
+ {"rid": "R13", "sent_at": "2026-11-15T00:10-08:00", "element": "bold text", "comment": "Bold is very overused, get rid of most bold and glow"}
+]

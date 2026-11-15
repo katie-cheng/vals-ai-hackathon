@@ -1,8 +1,7 @@
 import * as React from "react";
 import { SITE, quoteOptions } from "../data/content";
-import { EASE, Magnetic, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords } from "../lib/anim";
 import { submitQuote } from "../lib/api";
-import { Bubbles, ParticleCanvas } from "../lib/fx";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, LoaderCircle, Phone, Send } from "lucide-react";
 
@@ -160,8 +159,6 @@ function Quote() {
     <section id="quote" className="relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
-      <ParticleCanvas density={50} />
-      <Bubbles count={18} className="opacity-50" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
         <div>
           <SplitWords
@@ -197,9 +194,6 @@ function Quote() {
               <Reveal key={O.k} delay={0.25 + G * 0.08}>
                 <motion.a
                   href={O.href}
-                  whileHover={{
-                    x: 8,
-                  }}
                   transition={{
                     duration: 0.3,
                     ease: EASE,
@@ -509,9 +503,6 @@ function Quote() {
                         return (
                           <motion.label
                             key={O}
-                            whileTap={{
-                              scale: 0.95,
-                            }}
                             className={`flex cursor-pointer items-center gap-2 rounded-md px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${G ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-white/[0.05] text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
                           >
                             <input
@@ -679,13 +670,10 @@ function Quote() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <Magnetic strength={0.12} className="mt-6">
+                  <div className="mt-6">
                     <motion.button
                       type="submit"
                       disabled={u === "submitting"}
-                      whileTap={{
-                        scale: 0.97,
-                      }}
                       className="group flex w-full items-center justify-center gap-3 rounded-lg bg-cyan-300 px-5 py-3 text-[15.5px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right disabled:opacity-70"
                     >
                       {u === "submitting" ? (
@@ -699,7 +687,7 @@ function Quote() {
                         </>
                       )}
                     </motion.button>
-                  </Magnetic>
+                  </div>
                   <p
                     id="quote-privacy"
                     className="mt-3 text-center text-[12px] text-sky-200/50"

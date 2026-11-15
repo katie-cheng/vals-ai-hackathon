@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SITE } from "../data/content";
-import { EASE, Magnetic } from "../lib/anim";
+import { EASE } from "../lib/anim";
 import {
   AnimatePresence,
   motion,
@@ -47,7 +47,7 @@ function Logo({ compact: a = false }) {
       className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap"
       aria-label="The Suds Squad, back to top"
     >
-      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-lg bg-cyan-300 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105">
+      <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-lg bg-cyan-300 transition-transform duration-500">
         <Droplets className="h-5 w-5 text-[#04141f]" strokeWidth={2.6} />
       </span>
       {!a && (
@@ -130,14 +130,14 @@ function Header() {
               >
                 {SITE.phoneDisplay}
               </a>
-              <Magnetic strength={0.25}>
+              <div>
                 <a
                   href="#quote"
                   className="group hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-md bg-cyan-300 px-4 py-2 text-[13.5px] font-medium text-[#04141f] transition-all duration-300 sm:inline-flex"
                 >
                   Get a free quote
                 </a>
-              </Magnetic>
+              </div>
               <button
                 onClick={() => l(!r)}
                 className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur transition hover:bg-white/10 xl:hidden"

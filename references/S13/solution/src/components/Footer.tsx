@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SITE } from "../data/content";
-import { Magnetic, Reveal } from "../lib/anim";
-import { Bubbles, WaveDivider } from "../lib/fx";
+import { Reveal } from "../lib/anim";
+import { WaveDivider } from "../lib/fx";
 import { Logo } from "./Header";
 import { motion } from "framer-motion";
 import { ArrowUp, Link2 } from "lucide-react";
@@ -31,7 +31,6 @@ function Footer() {
         flip
       />
       <div className="relative bg-[#06283d]">
-        <Bubbles count={20} className="opacity-60" />
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
         <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-14 sm:px-6 sm:pt-20">
@@ -75,7 +74,7 @@ function Footer() {
                 title="Share this website"
                 className="group mt-5 grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10"
               >
-                <Link2 className="h-4 w-4 text-cyan-300 transition-transform duration-300 group-hover:rotate-[25deg]" />
+                <Link2 className="h-4 w-4 text-cyan-300 transition-transform duration-300" />
               </button>
               {a && (
                 <motion.p
@@ -151,15 +150,15 @@ function Footer() {
             <p className="text-[12.5px] text-sky-200/50">
               © {new Date().getFullYear()} {SITE.name}
             </p>
-            <Magnetic strength={0.3}>
+            <div>
               <a
                 href="#top"
                 aria-label="Back to top"
                 className="group grid h-12 w-12 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:border-cyan-300/60 hover:bg-cyan-300/15"
               >
-                <ArrowUp className="h-5 w-5 text-cyan-300 transition-transform duration-300 group-hover:-translate-y-1" />
+                <ArrowUp className="h-5 w-5 text-cyan-300 transition-transform duration-300" />
               </a>
-            </Magnetic>
+            </div>
           </div>
         </div>
       </div>

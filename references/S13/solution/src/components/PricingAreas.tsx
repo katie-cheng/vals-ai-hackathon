@@ -1,7 +1,6 @@
 import * as React from "react";
 import { prices, towns } from "../data/content";
-import { EASE, Magnetic, Reveal, SplitWords } from "../lib/anim";
-import { Bubbles } from "../lib/fx";
+import { EASE, Reveal, SplitWords } from "../lib/anim";
 import { AnimatePresence, motion } from "framer-motion";
 
 const CT_PATH =
@@ -68,7 +67,6 @@ function PricingAreas() {
             </div>
             <Reveal delay={0.15}>
               <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#04141f] p-6 sm:p-7">
-                <Bubbles count={8} minSize={2} maxSize={10} />
                 <h3 className="font-serif-d relative text-xl font-medium text-white">
                   Larger jobs need a look first.
                 </h3>
@@ -86,10 +84,6 @@ function PricingAreas() {
             {prices.map((l, u) => (
               <Reveal key={l.id} delay={u * 0.07}>
                 <motion.div
-                  whileHover={{
-                    y: -8,
-                    rotate: u % 2 ? 1 : -1,
-                  }}
                   transition={{
                     duration: 0.35,
                     ease: EASE,
@@ -121,7 +115,6 @@ function PricingAreas() {
       <section id="areas" className="relative overflow-hidden py-24 sm:py-32">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
-        <Bubbles count={12} className="opacity-40" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <Reveal className="relative order-2 lg:order-1">
             <div className="glass relative overflow-hidden rounded-lg p-4 sm:p-6">
@@ -156,7 +149,6 @@ function PricingAreas() {
                     stroke="rgba(125,211,252,.35)"
                     strokeWidth="2"
                     strokeDasharray="5 8"
-                    className="animate-flow-dash"
                   />
                   {towns.map((l, u) => {
                     const h = a === l.name;

@@ -1,8 +1,7 @@
 import * as React from "react";
 import { services } from "../data/content";
-import { EASE, Reveal, SplitWords, Tilt } from "../lib/anim";
-import { Bubbles, DropletsFx } from "../lib/fx";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,215 +15,22 @@ import {
 
 const SERVICE_ICONS = [Waves, Sun, Sparkles, Droplets, House, Building2];
 
-function ServiceVisual({ visual: a }) {
-  switch (a) {
-    case "pressure":
-      return (
-        <>
-          <div
-            className="pointer-events-none absolute inset-0 overflow-hidden"
-            aria-hidden
-          >
-            {Array.from({
-              length: 9,
-            }).map((i, r) => (
-              <span
-                key={r}
-                className="animate-drip absolute top-6 rounded-full bg-white/70"
-                style={{
-                  left: `${8 + r * 10.5}%`,
-                  width: 3,
-                  height: 46 + ((r * 29) % 40),
-                  animationDelay: `${(r * 0.37) % 3}s`,
-                }}
-              />
-            ))}
-          </div>
-        </>
-      );
-    case "exterior-window":
-      return (
-        <>
-          <DropletsFx count={12} />
-          <div
-            className="pointer-events-none absolute inset-0 overflow-hidden"
-            aria-hidden
-          >
-            <motion.div
-              className="absolute left-[12%] top-[8%] h-[70%] w-1.5 rounded-full bg-white/70"
-              animate={{
-                x: [0, 190, 0],
-                rotate: [-4, 3, -4],
-              }}
-              transition={{
-                duration: 7,
-                repeat: 1 / 0,
-                ease: "easeInOut",
-              }}
-            >
-              <span className="absolute -left-2 top-0 h-10 w-5 rounded bg-cyan-200/90" />
-            </motion.div>
-          </div>
-        </>
-      );
-    case "interior-window":
-      return (
-        <>
-          <motion.div
-            className="pointer-events-none absolute inset-0 bg-sky-100/50 backdrop-blur-[1.5px]"
-            animate={{
-              opacity: [0.85, 0.12, 0.85],
-            }}
-            transition={{
-              duration: 8,
-              repeat: 1 / 0,
-              ease: "easeInOut",
-            }}
-            aria-hidden
-          />
-          <DropletsFx count={6} className="opacity-50" />
-        </>
-      );
-    case "gutter":
-      return (
-        <>
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 top-[46%] overflow-hidden"
-            aria-hidden
-          >
-            <div className="absolute inset-x-0 top-6 h-10 rounded-full border-y-4 border-white/25 bg-slate-500/60" />
-            <motion.div
-              className="absolute inset-x-[-50%] top-[38px] h-2 opacity-80"
-              style={{
-                background:
-                  "repeating-linear-gradient(90deg, rgba(125,211,252,.9) 0 26px, rgba(255,255,255,.75) 26px 40px, rgba(125,211,252,.9) 40px 66px)",
-              }}
-              animate={{
-                x: ["0%", "6%"],
-              }}
-              transition={{
-                duration: 0.9,
-                repeat: 1 / 0,
-                ease: "linear",
-              }}
-            />
-            {Array.from({
-              length: 5,
-            }).map((i, r) => (
-              <svg
-                key={r}
-                className="animate-leaf absolute top-7"
-                style={{
-                  animationDelay: `${r * 1.35}s`,
-                  animationDuration: `${6 + (r % 3)}s`,
-                }}
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill={r % 2 ? "#bef264" : "#4ade80"}
-              >
-                <path
-                  d="M12 2C7 7 5 12 6 20c8 1 13-1 15-9 1.4-5.6-3-9-9-9zm0 0c-2 4-3 8-2.5 13M12 2c2.5 3.5 3.5 7.5 3 12"
-                  stroke="#166534"
-                  strokeWidth="1"
-                  fillOpacity=".9"
-                />
-              </svg>
-            ))}
-          </div>
-          <Bubbles count={10} minSize={2} maxSize={10} />
-        </>
-      );
-    case "house":
-      return (
-        <>
-          <motion.div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse 90% 60% at 30% 70%, rgba(101,67,33,.5), transparent 60%), radial-gradient(ellipse 70% 50% at 75% 30%, rgba(74,90,46,.45), transparent 60%)",
-            }}
-            animate={{
-              opacity: [0.95, 0.05, 0.95],
-            }}
-            transition={{
-              duration: 9,
-              repeat: 1 / 0,
-              ease: "easeInOut",
-            }}
-            aria-hidden
-          />
-          <DropletsFx count={8} className="opacity-60" />
-        </>
-      );
-    default:
-      return (
-        <>
-          <motion.div
-            className="pointer-events-none absolute inset-0 bg-white/15"
-            animate={{
-              opacity: [0.2, 0.9, 0.2],
-              x: ["-12%", "12%", "-12%"],
-            }}
-            transition={{
-              duration: 7,
-              repeat: 1 / 0,
-              ease: "easeInOut",
-            }}
-            aria-hidden
-          />
-          <motion.div
-            className="pointer-events-none absolute bottom-6 left-6 right-6 h-1.5 rounded-full bg-white/10"
-            aria-hidden
-          >
-            <motion.div
-              className="h-full rounded-full bg-cyan-300"
-              animate={{
-                x: ["-100%", "320%"],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 3.4,
-                repeat: 1 / 0,
-                ease: "easeInOut",
-              }}
-              style={{
-                width: "30%",
-              }}
-            />
-          </motion.div>
-          <Bubbles count={8} minSize={2} maxSize={9} />
-        </>
-      );
-  }
-}
-
 function ServicePanel({ index: a }: { index: number }) {
   const i = services[a],
-    l = React.useRef(null),
-    { scrollYProgress: u } = useScroll({
-      target: l,
-      offset: ["start end", "end start"],
-    }),
-    h = useTransform(u, [0, 1], ["-8%", "8%"]);
+    l = React.useRef(null);
   return (
     <div ref={l} className="persp">
-      <Tilt
-        max={5}
+      <div
         className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.07] backdrop-blur-xl"
       >
         <div className="grid gap-0 lg:grid-cols-2">
           <div className="relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
-            <motion.img
+            <img
               src={i.image_url}
               alt={i.image_alt}
-              style={{
-                y: h,
-              }}
-              className="absolute inset-0 h-[116%] w-full scale-105 object-cover transition-transform duration-700 group-hover:scale-110"
+              className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-[#04141f]/60 " />
-            <ServiceVisual visual={i.visual} />
           </div>
           <div className="relative flex flex-col justify-center gap-5 p-7 sm:p-10">
             <span
@@ -248,7 +54,7 @@ function ServicePanel({ index: a }: { index: number }) {
           className="pointer-events-none absolute inset-0 rounded-lg opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity duration-500 group-hover:opacity-100"
           aria-hidden
         />
-      </Tilt>
+      </div>
     </div>
   );
 }
@@ -364,7 +170,6 @@ function Services() {
     <section id="services" className="relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
-      <Bubbles count={14} className="opacity-50" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-14 max-w-3xl sm:mb-20">
           <SplitWords
@@ -386,4 +191,4 @@ function Services() {
   );
 }
 
-export { SERVICE_ICONS, ServiceVisual, ServicePanel, ServiceSwitcher, Services };
+export { SERVICE_ICONS, ServicePanel, ServiceSwitcher, Services };

@@ -1,6 +1,5 @@
 import { trustItems } from "../data/content";
-import { Reveal, SplitWords, Tilt } from "../lib/anim";
-import { Gleams } from "../lib/fx";
+import { Reveal, SplitWords } from "../lib/anim";
 import {
   CalendarCheck,
   House,
@@ -34,7 +33,6 @@ function Trust() {
         />
         <div className="absolute inset-0 bg-[#04141f]/60" />
       </div>
-      <Gleams count={10} className="opacity-60" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-12 max-w-3xl sm:mb-16">
           <SplitWords
@@ -54,9 +52,9 @@ function Trust() {
           {trustItems.map((a, i) => {
             return (
               <Reveal key={a.id} delay={(i % 3) * 0.1}>
-                <Tilt max={8} className="group h-full">
+                <div className="group h-full">
                   <div
-                    className="relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.08] p-6 backdrop-blur-xl transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:border-cyan-300/40 sm:p-7"
+                    className="relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.08] p-6 backdrop-blur-xl transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-cyan-300/40 sm:p-7"
                     style={{
                       transformStyle: "preserve-3d",
                     }}
@@ -73,7 +71,7 @@ function Trust() {
                       {a.description}
                     </p>
                   </div>
-                </Tilt>
+                </div>
               </Reveal>
             );
           })}

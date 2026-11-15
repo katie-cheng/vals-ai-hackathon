@@ -1,7 +1,6 @@
 import * as React from "react";
 import { SITE, processSteps } from "../data/content";
 import { EASE, Reveal, SplitWords } from "../lib/anim";
-import { Bubbles } from "../lib/fx";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 function Process() {
@@ -17,9 +16,6 @@ function Process() {
       id="process"
       className="relative overflow-hidden py-24 sm:py-32"
     >
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-      </div>
-      <Bubbles count={16} className="opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
           <SplitWords
@@ -36,21 +32,6 @@ function Process() {
           </Reveal>
         </div>
         <div className="relative">
-          <svg
-            className="absolute left-[27px] top-4 hidden h-[calc(100%-2rem)] w-[3px] md:block lg:left-1/2 lg:-translate-x-1/2"
-            aria-hidden
-          >
-            <line
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="100%"
-              stroke="rgba(255,255,255,.7)"
-              strokeWidth="1.5"
-              strokeDasharray="6 10"
-              className="animate-flow-dash"
-            />
-          </svg>
           <div
             className="absolute left-[27px] top-4 hidden h-[calc(100%-2rem)] w-[3px] overflow-hidden rounded-full bg-white/10 md:block lg:left-1/2 lg:-translate-x-1/2"
             aria-hidden
@@ -72,17 +53,17 @@ function Process() {
                 >
                   <motion.div
                     initial={{
-                      scale: 0,
+                      opacity: 0,
                     }}
                     whileInView={{
-                      scale: 1,
+                      opacity: 1,
                     }}
                     viewport={{
                       once: true,
                       margin: "-20% 0px",
                     }}
                     transition={{
-                      duration: 0.7,
+                      duration: 0.4,
                       ease: EASE,
                     }}
                     className="font-serif-d absolute left-0 top-0 z-10 grid h-14 w-14 place-items-center rounded-full border-2 border-cyan-300 bg-[#04141f] text-2xl font-semibold text-cyan-100 md:left-1/2 md:-translate-x-1/2 lg:h-16 lg:w-16"
@@ -94,10 +75,6 @@ function Process() {
                   >
                     <Reveal delay={0.1}>
                       <motion.div
-                        whileHover={{
-                          y: -6,
-                          scale: 1.015,
-                        }}
                         transition={{
                           duration: 0.35,
                           ease: EASE,

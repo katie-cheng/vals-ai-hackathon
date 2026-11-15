@@ -1,7 +1,6 @@
 import * as React from "react";
 import { comparisons } from "../data/content";
 import { EASE, Reveal, SplitWords } from "../lib/anim";
-import { Gleams } from "../lib/fx";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsLeftRight } from "lucide-react";
 
@@ -78,7 +77,6 @@ function ComparisonSlider({ active: a }) {
       </AnimatePresence>
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
-      <Gleams count={8} />
       <div
         className="absolute inset-0 overflow-hidden"
         style={{
@@ -116,10 +114,10 @@ function ComparisonSlider({ active: a }) {
           </AnimatePresence>
         </div>
       </div>
-      <span className="absolute left-4 top-4 z-20 rounded-md border border-white/25 bg-black/55 px-3.5 py-1.5 text-[13px] font-medium text-white backdrop-blur">
+      <span className="absolute left-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3.5 py-1.5 text-[13px] font-medium text-white">
         Before
       </span>
-      <span className="absolute right-4 top-4 z-20 rounded-md bg-cyan-300 px-3.5 py-1.5 text-[13px] font-medium text-[#04141f]">
+      <span className="absolute right-4 top-4 z-20 rounded-md border border-white/25 bg-black/60 px-3.5 py-1.5 text-[13px] font-medium text-white">
         After
       </span>
       <div
@@ -129,30 +127,10 @@ function ComparisonSlider({ active: a }) {
         }}
         aria-hidden
       >
-        <div className="absolute inset-y-0 -left-px w-[3px] bg-cyan-200" />
-        <motion.div
-          animate={
-            u
-              ? {
-                  scale: 1.25,
-                }
-              : {
-                  scale: 1,
-                }
-          }
-          transition={
-            u
-              ? {
-                  duration: 0.2,
-                }
-              : {
-                  duration: 0.2,
-                }
-          }
-          className="absolute top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-white/80 bg-cyan-300 text-[#04141f]"
-        >
-          <ChevronsLeftRight className="h-6 w-6" strokeWidth={2.8} />
-        </motion.div>
+        <div className="absolute inset-y-0 -left-px w-[2px] bg-white/80" />
+        <div className="absolute top-1/2 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-md border border-white/25 bg-black/60 text-white">
+          <ChevronsLeftRight className="h-5 w-5" strokeWidth={2} />
+        </div>
       </div>
       <AnimatePresence>
         {d && (
@@ -168,7 +146,7 @@ function ComparisonSlider({ active: a }) {
             exit={{
               opacity: 0,
             }}
-            className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-md bg-[#04141f]/70 px-4 py-2 text-[12px] font-medium text-cyan-100 backdrop-blur-xl"
+            className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-md border border-white/25 bg-black/60 px-3.5 py-1.5 text-[12.5px] font-medium text-white"
           >
             Drag to reveal the clean
           </motion.div>
@@ -261,7 +239,7 @@ function BeforeAfter() {
               onClick={() =>
                 i((l) => (l - 1 + comparisons.length) % comparisons.length)
               }
-              className="grid h-12 w-12 place-items-center rounded-full bg-[#04141f] text-white transition-all duration-300 hover:scale-105 hover:bg-sky-700"
+              className="grid h-12 w-12 place-items-center rounded-full bg-[#04141f] text-white transition-all duration-300 hover:bg-sky-700"
               aria-label="Previous comparison"
             >
               ←
@@ -278,7 +256,7 @@ function BeforeAfter() {
             </div>
             <button
               onClick={() => i((l) => (l + 1) % comparisons.length)}
-              className="grid h-12 w-12 place-items-center rounded-full bg-[#04141f] text-white transition-all duration-300 hover:scale-105 hover:bg-sky-700"
+              className="grid h-12 w-12 place-items-center rounded-full bg-[#04141f] text-white transition-all duration-300 hover:bg-sky-700"
               aria-label="Next comparison"
             >
               →

@@ -47,3 +47,27 @@ Not applied:
 - S14 #356 ("there is no map just points"): S13 has the same failure. Its outline and town dots stay at opacity 0 because their `whileInView` reveal never fires. They now animate in on mount and the decorative radial glow behind the map is removed (R3).
 
 Brief guard: the brief asks for unusually heavy animation, before/after comparisons, animated services, process, trust, pricing, service area, FAQ and a working quote form. Hero video, parallax, particles, bubbles, marquee, magnetic buttons, tilt cards, scroll progress, map drawing, slider and accordion all stay; `../verification/REPORT.md` checks every brief requirement.
+
+## Round 2: Katie's critiques of the rebuild (chat, 2026-11-15)
+
+Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim comments are in `../inputs/critiques/rebuild-chat.json`.
+
+| ID | Critique (short) | Change | Commit |
+| --- | --- | --- | --- |
+| R1 | Titles too big/heavy vs subtitles | Section h2 ~2.6rem medium serif, hero h1 4.4rem semibold; subtitles up to 17px | round 2 |
+| R2 | "in its best light" words merged | `HeroWords` keeps spaces (later: whole-line fade) | 15b83be, round 2 |
+| R3 | No gradients/glows | All gradient backgrounds/text, glow shadows, blur blobs, radial map glow removed | round 2, map commit |
+| R4 | No small uppercase labels | All uppercase/letter-spaced labels to sentence case, body font | round 2 |
+| R5 | Remove "Scroll to explore" | Removed | round 2 |
+| R6 | Logo: no uppercase sub-label, no glowing gradient | Flat tile, "The Suds Squad / Connecticut" | round 2 |
+| R7 | Buttons too padded, bold | Smaller padding, medium weight | round 3 |
+| R8 | Text shadow | No text/box shadows; outlined "Free quote" background text removed | round 3 |
+| R9 | Fewer icons | Only functional icons kept (menu/close, prev/next, slider, FAQ toggle, share, back to top, spinner, checkbox tick) | round 3 |
+| R10 | Duplicate CTAs | Quote CTA kept in header, hero, mobile menu and the form; service/pricing/process/footer duplicates and hero call button removed | round 3 |
+| R11 | FAQ X off-centre | Lucide `Plus` rotated 45° with no scale; measured centre offset 0px | round 3 |
+| R12 | Corners too round | Cards/panels `rounded-lg`, buttons/chips `rounded-md` | round 3 |
+| R13 | Bold overused | font-black/extrabold/bold to medium; semibold only for h1 and logo | round 3 |
+| R14 | Animations heavier than needed | No preloader, Lenis, particles, bubbles, droplets, gleams, mouse/scroll parallax, magnetic buttons, tilt cards, word-by-word reveals, floating chips, looping service effects, hover lifts or moving dashed lines. Kept: hero video, marquee, short fade/slide reveals, scroll-filled process line, panel/FAQ/form transitions | round 4 |
+| R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
+
+Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.
