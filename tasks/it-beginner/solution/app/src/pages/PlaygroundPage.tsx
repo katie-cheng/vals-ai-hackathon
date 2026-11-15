@@ -16,6 +16,8 @@ export const PlaygroundPage = () => {
   const [$, te] = React.useState(false);
   const [me, ue] = React.useState(null);
   const be = React.useRef(null);
+  // The preview runs after the editors hold the selected snippet, not in the same commit as the selection.
+  const previewPending = React.useRef(true);
   React.useEffect(() => {
     const re = snippets.find((snippet) => snippet.id === i) || PLAYGROUND_TEMPLATES[0];
     M(re.htmlCode);
@@ -23,6 +25,7 @@ export const PlaygroundPage = () => {
     R(re.jsCode);
     V(re.title);
     F([]);
+    previewPending.current = true;
   }, [i]);
   const ne = () => {
     F([]);
@@ -93,8 +96,10 @@ export const PlaygroundPage = () => {
     }
   };
   React.useEffect(() => {
+    if (!previewPending.current) return;
+    previewPending.current = false;
     ne();
-  }, [i]);
+  }, [S, b, _]);
   React.useEffect(() => {
     const re = (Le) => {
       if (Le.data && Le.data.source === "itb-sandbox") {
