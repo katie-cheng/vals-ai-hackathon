@@ -4,7 +4,7 @@ import { QUIZ_QUESTIONS } from "../data/quizzes";
 import { useCourse } from "../context/CourseContext";
 
 export const QuizzesPage = () => {
-  const { quizAttempts } = useCourse();
+  const { quizAttempts, certificates } = useCourse();
   return (
     <div className="container-page page">
       <h1 className="page-title">Chapter quizzes</h1>
@@ -16,6 +16,7 @@ export const QuizzesPage = () => {
         {CHAPTERS.map((chapter) => {
           const questions = QUIZ_QUESTIONS.filter((question) => question.chapterId === chapter.id);
           const attempt = quizAttempts[chapter.id];
+          const certificate: any = certificates.find((item: any) => item.chapterId === chapter.id);
           return (
             <li key={chapter.id} className="grid grid-cols-1 gap-x-8 gap-y-4 py-6 lg:grid-cols-12 lg:items-center">
               <div className="min-w-0 lg:col-span-7">
@@ -33,8 +34,8 @@ export const QuizzesPage = () => {
                     {attempt.passed ? "Passed" : "Needs review"}, {attempt.percentage}%
                   </span>
                 )}
-                {attempt?.passed && (
-                  <Link to={`/certificate/ITB-CH${chapter.id}-PASS`} className="link text-sm">
+                {certificate && (
+                  <Link to={`/certificate/${certificate.certificateCode}`} className="link text-sm">
                     Certificate
                   </Link>
                 )}

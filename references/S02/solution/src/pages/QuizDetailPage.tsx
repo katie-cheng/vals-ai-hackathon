@@ -10,7 +10,8 @@ type Result = { score: number; total: number; percentage: number; passed: boolea
 export const QuizDetailPage = () => {
   const { chapterId } = useParams();
   const id = parseInt(chapterId || "1", 10);
-  const { submitQuiz, claimCertificate } = useCourse();
+  const { submitQuiz, claimCertificate, certificates } = useCourse();
+  const certificate: any = certificates.find((item: any) => item.chapterId === id);
   const chapter = CHAPTERS.find((item) => item.id === id) || CHAPTERS[0];
   const questions = QUIZ_QUESTIONS.filter((question) => question.chapterId === id);
   const [answers, setAnswers] = React.useState<Record<string, string>>({});
@@ -69,8 +70,8 @@ export const QuizDetailPage = () => {
               You scored {result.score} of {result.total} ({result.percentage}%).
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              {result.passed && (
-                <Link to={`/certificate/ITB-CH${id}-CERT`} className="btn btn-primary">
+              {result.passed && certificate && (
+                <Link to={`/certificate/${certificate.certificateCode}`} className="btn btn-primary">
                   View certificate
                 </Link>
               )}

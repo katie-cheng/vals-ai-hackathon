@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu, Search, X } from "lucide-react";
 import { useCourse } from "../context/CourseContext";
 import { Logo } from "./Logo";
+import { Avatar } from "./Avatar";
 
 const NAV_ITEMS = [
   { label: "Dashboard", path: "/dashboard" },
@@ -75,13 +76,7 @@ export const Navbar = () => {
               aria-haspopup="menu"
               aria-expanded={accountOpen}
             >
-              <img
-                src={currentUser.avatarUrl}
-                alt=""
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-full bg-raised object-cover"
-              />
+              <Avatar name={currentUser.fullName} />
             </button>
             {accountOpen && (
               <div role="menu" className="surface absolute right-0 mt-2 w-72 p-4 text-sm shadow-xl shadow-black/40">

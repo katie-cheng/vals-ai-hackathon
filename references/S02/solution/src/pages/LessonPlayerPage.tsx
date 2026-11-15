@@ -1,35 +1,25 @@
 import * as React from "react";
-import confetti from "canvas-confetti";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import {
-  BookOpen,
-  Bookmark,
-  ChevronLeft,
-  ChevronRight,
-  CircleCheck,
-  CircleQuestionMark,
-  Clock,
-  FileText,
-  Maximize2,
-  MessageSquare,
-  Pause,
-  Play,
-  RotateCcw,
-  RotateCw,
-  Terminal,
-  ThumbsUp,
-  Trash2,
-  Volume2,
-  VolumeX,
-} from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { Bookmark, Check, ChevronLeft, ChevronRight, Keyboard, Maximize2, Minimize2, Pause, Play, RotateCcw, RotateCw, Trash2, X } from "lucide-react";
 import { CHAPTERS } from "../data/chapters";
 import { LESSONS } from "../data/lessons";
+import { Avatar } from "../components/Avatar";
 import { useCourse } from "../context/CourseContext";
 
+const SPEEDS = [0.75, 1, 1.25, 1.5, 2];
+const SHORTCUTS = [
+  ["Play or pause", "Space or K"],
+  ["Back 5 seconds", "Left arrow"],
+  ["Forward 5 seconds", "Right arrow"],
+  ["Theater mode", "F"],
+];
+const SCRATCHPAD_READY = "Run the code to see its console output.";
+
+const formatTime = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, "0")}`;
+
 export const LessonPlayerPage = () => {
-  const { id: id2 } = useParams();
-  useNavigate();
-  const d = parseInt(id2 || "1", 10);
+  const { id } = useParams();
+  const lessonId = parseInt(id || "1", 10);
   const {
     progress,
     updateLessonProgress,
@@ -42,772 +32,613 @@ export const LessonPlayerPage = () => {
     addDiscussion,
     addDiscussionReply,
     upvoteDiscussion,
-    currentUser,
   } = useCourse();
-  const U = LESSONS.find((lesson) => lesson.id === d) || LESSONS[0];
-  const V = CHAPTERS.find((chapter) => chapter.id === U.chapterId) || CHAPTERS[0];
-  const k = LESSONS.filter((lesson) => lesson.chapterId === U.chapterId);
-  const [F, $] = React.useState(true);
-  const [te, me] = React.useState(0);
-  const [ue, be] = React.useState(U.durationMinutes * 60);
-  const [ne, pe] = React.useState(1);
-  const [Be, re] = React.useState(false);
-  const [Le, qe] = React.useState(0.8);
-  const [Ye, it] = React.useState(false);
-  const [Ce, X] = React.useState(false);
-  const [le, oe] = React.useState("overview");
-  const [Ee, E] = React.useState(
-    U.interactiveCode?.initialCode || U.codeExample || 'console.log("Hello from Lesson!");',
-  );
-  const [g, Y] = React.useState('Ready. Click "Run Code" to execute in sandbox.');
-  const [G, m] = React.useState("");
-  const [z, q] = React.useState("");
-  const [B, J] = React.useState(null);
-  const [W, ce] = React.useState("");
-  const I = progress[U.id];
-  const K = I?.status === "completed";
-  const De = bookmarks.includes(U.id);
+  const lesson: any = LESSONS.find((item) => item.id === lessonId) || LESSONS[0];
+  const chapter = CHAPTERS.find((item) => item.id === lesson.chapterId) || CHAPTERS[0];
+  const chapterLessons = LESSONS.filter((item) => item.chapterId === lesson.chapterId);
+  const starterCode = lesson.interactiveCode?.initialCode || lesson.codeExample || 'console.log("Hello from Lesson!");';
+  const duration = lesson.durationMinutes * 60;
+
+  const [playing, setPlaying] = React.useState(false);
+  const [position, setPosition] = React.useState(0);
+  const [speed, setSpeed] = React.useState(1);
+  const [theater, setTheater] = React.useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = React.useState(false);
+  const [tab, setTab] = React.useState("overview");
+  const [code, setCode] = React.useState(starterCode);
+  const [output, setOutput] = React.useState(SCRATCHPAD_READY);
+  const [noteDraft, setNoteDraft] = React.useState("");
+  const [noteError, setNoteError] = React.useState("");
+  const [questionDraft, setQuestionDraft] = React.useState("");
+  const [questionError, setQuestionError] = React.useState("");
+  const [replyTo, setReplyTo] = React.useState<string | number | null>(null);
+  const [replyDraft, setReplyDraft] = React.useState("");
+  const [replyError, setReplyError] = React.useState("");
+  const closeShortcutsRef = React.useRef<HTMLButtonElement>(null);
+
+  const lessonProgress = progress[lesson.id];
+  const completed = lessonProgress?.status === "completed";
+  const bookmarked = bookmarks.includes(lesson.id);
+
   React.useEffect(() => {
-    const Q = I?.lastPositionSeconds || 0;
-    me(Q);
-    be(U.durationMinutes * 60);
-    $(true);
-    E(U.interactiveCode?.initialCode || U.codeExample || 'console.log("Hello from Lesson!");');
-    Y('Ready. Click "Run Code" to execute in sandbox.');
-  }, [d]);
+    setPosition(Math.min(lessonProgress?.lastPositionSeconds || 0, duration));
+    setPlaying(false);
+    setCode(starterCode);
+    setOutput(SCRATCHPAD_READY);
+    setNoteError("");
+    setQuestionError("");
+    setReplyTo(null);
+  }, [lessonId]);
+
   React.useEffect(() => {
-    let Q;
-    if (F) {
-      Q = setInterval(() => {
-        me((de) => {
-          const Fe = de + 1 * ne;
-          if (Fe >= ue) {
-            $(false);
-            updateLessonProgress(U.id, 100, ue, "completed");
-            confetti({
-              particleCount: 70,
-              spread: 60,
-              origin: {
-                y: 0.7,
-              },
-            });
-            return ue;
-          }
-          if (Math.floor(Fe) % 10 === 0) {
-            const Qe = Math.round((Fe / ue) * 100);
-            updateLessonProgress(U.id, Qe, Math.floor(Fe));
-          }
-          return Fe;
-        });
-      }, 1e3);
-    }
-    return () => clearInterval(Q);
-  }, [F, ne, ue, U.id]);
-  React.useEffect(() => {
-    const Q = (event) => {
-      const Fe = event.target;
-      if (!(Fe.tagName === "INPUT" || Fe.tagName === "TEXTAREA")) {
-        if (event.code === "Space" || event.key === "k") {
-          event.preventDefault();
-          $((Qe) => !Qe);
-        } else {
-          if (event.code === "ArrowLeft") {
-            event.preventDefault();
-            me((Qe) => Math.max(0, Qe - 5));
-          } else {
-            if (event.code === "ArrowRight") {
-              event.preventDefault();
-              me((Qe) => Math.min(ue, Qe + 5));
-            } else {
-              if (event.key === "m" || event.key === "M") {
-                event.preventDefault();
-                re((Qe) => !Qe);
-              } else {
-                if (event.key === "f" || event.key === "F") {
-                  event.preventDefault();
-                  it((Qe) => !Qe);
-                }
-              }
-            }
-          }
+    if (!playing) return;
+    const timer = setInterval(() => {
+      setPosition((current) => {
+        const next = current + speed;
+        if (next >= duration) {
+          setPlaying(false);
+          updateLessonProgress(lesson.id, 100, duration, "completed");
+          return duration;
         }
+        if (Math.floor(next) % 10 === 0) updateLessonProgress(lesson.id, Math.round((next / duration) * 100), Math.floor(next));
+        return next;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [playing, speed, duration, lesson.id]);
+
+  React.useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement;
+      if (["INPUT", "TEXTAREA", "SELECT", "BUTTON", "A"].includes(target.tagName) || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.code === "Space" || event.key === "k") {
+        event.preventDefault();
+        setPlaying((value) => !value);
+      } else if (event.code === "ArrowLeft") {
+        event.preventDefault();
+        setPosition((value) => Math.max(0, value - 5));
+      } else if (event.code === "ArrowRight") {
+        event.preventDefault();
+        setPosition((value) => Math.min(duration, value + 5));
+      } else if (event.key === "f" || event.key === "F") {
+        event.preventDefault();
+        setTheater((value) => !value);
       }
     };
-    window.addEventListener("keydown", Q);
-    return () => window.removeEventListener("keydown", Q);
-  }, [ue]);
-  const xe = (Q) => {
-    const de = Math.floor(Q / 60);
-    const Fe = Math.floor(Q % 60);
-    return `${de}:${Fe < 10 ? "0" : ""}${Fe}`;
-  };
-  const Ze = () => {
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [duration]);
+
+  React.useEffect(() => {
+    if (!shortcutsOpen) return;
+    closeShortcutsRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setShortcutsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [shortcutsOpen]);
+
+  const runCode = () => {
     try {
-      const Q = [];
-      const de = {
-        log: (...Qe) =>
-          Q.push(Qe.map((Ea) => (typeof Ea == "object" ? JSON.stringify(Ea) : String(Ea))).join(" ")),
-        warn: (...Qe) => Q.push("[WARN] " + Qe.join(" ")),
-        error: (...Qe) => Q.push("[ERROR] " + Qe.join(" ")),
+      const lines: string[] = [];
+      const sandboxConsole = {
+        log: (...args: any[]) => lines.push(args.map((arg) => (typeof arg == "object" ? JSON.stringify(arg) : String(arg))).join(" ")),
+        warn: (...args: any[]) => lines.push("[WARN] " + args.join(" ")),
+        error: (...args: any[]) => lines.push("[ERROR] " + args.join(" ")),
       };
-      new Function("console", Ee)(de);
-      Y(
-        Q.length
-          ? Q.join(`
-`)
-          : "Code executed with no output.",
-      );
-    } catch (error) {
-      Y("Syntax / Runtime Error: " + error.message);
+      new Function("console", code)(sandboxConsole);
+      setOutput(lines.length ? lines.join("\n") : "Code executed with no output.");
+    } catch (error: any) {
+      setOutput("Syntax or runtime error: " + error.message);
     }
   };
-  const Ie = (event) => {
+
+  const submitNote = (event: React.FormEvent) => {
     event.preventDefault();
-    if (G.trim()) {
-      addNote(U.id, G.trim(), Math.floor(te));
-      m("");
-    }
+    if (!noteDraft.trim()) return setNoteError("Write a note before saving.");
+    addNote(lesson.id, noteDraft.trim(), Math.floor(position));
+    setNoteDraft("");
+    setNoteError("");
   };
-  const Me = (event) => {
+  const submitQuestion = (event: React.FormEvent) => {
     event.preventDefault();
-    if (z.trim()) {
-      addDiscussion(U.id, z.trim());
-      q("");
-    }
+    if (!questionDraft.trim()) return setQuestionError("Write a question before posting.");
+    addDiscussion(lesson.id, questionDraft.trim());
+    setQuestionDraft("");
+    setQuestionError("");
   };
-  const Se = (Q) => {
-    if (W.trim()) {
-      addDiscussionReply(Q, W.trim());
-      ce("");
-      J(null);
-    }
+  const submitReply = (event: React.FormEvent, discussionId: string | number) => {
+    event.preventDefault();
+    if (!replyDraft.trim()) return setReplyError("Write a reply before sending.");
+    addDiscussionReply(discussionId, replyDraft.trim());
+    setReplyDraft("");
+    setReplyError("");
+    setReplyTo(null);
   };
-  const We = discussions.filter((discussion) => discussion.lessonId === U.id);
-  const st = notes.filter((note) => note.lessonId === U.id);
-  const St = LESSONS.find((lesson) => lesson.id === U.id - 1);
-  const la = LESSONS.find((lesson) => lesson.id === U.id + 1);
+
+  const lessonDiscussions = discussions.filter((discussion: any) => discussion.lessonId === lesson.id);
+  const lessonNotes = notes.filter((note: any) => note.lessonId === lesson.id);
+  const previous = LESSONS.find((item) => item.id === lesson.id - 1);
+  const next = LESSONS.find((item) => item.id === lesson.id + 1);
+  const caption = [...lesson.transcript].reverse().find((item: any) => item.timeSeconds <= position) || lesson.transcript[0];
+  const tabs = [
+    { id: "overview", label: "Overview" },
+    { id: "scratchpad", label: "Scratchpad" },
+    { id: "notes", label: `Notes (${lessonNotes.length})` },
+    { id: "discussion", label: `Q&A (${lessonDiscussions.length})` },
+    { id: "transcript", label: "Transcript" },
+  ];
+
   return (
-    <div className={`mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 ${Ye ? "max-w-full" : "max-w-7xl"}`}>
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-        <div className="flex items-center gap-2 text-slate-400">
-          <Link to="/courses" className="hover:text-white transition-colors">
-            Curriculum
-          </Link>
-          <span>{">"}</span>
-          <Link to={`/courses#chapter-${V.id}`} className="text-sky-400 hover:underline">
-            Ch {V.orderIndex}: {V.title}
-          </Link>
-          <span>{">"}</span>
-          <span className="text-slate-200 font-semibold truncate max-w-xs">
-            Lesson {U.orderIndex}: {U.title}
-          </span>
+    <div className="container-page page">
+      <nav aria-label="Breadcrumb" className="flex min-w-0 items-center gap-1.5 text-sm text-ink-3">
+        <Link to="/courses" className="flex-none transition-colors hover:text-ink">
+          Curriculum
+        </Link>
+        <ChevronRight className="h-4 w-4 flex-none" strokeWidth={1.75} aria-hidden="true" />
+        <Link to={`/courses#chapter-${chapter.id}`} className="truncate transition-colors hover:text-ink">
+          {chapter.title}
+        </Link>
+      </nav>
+      <div className="mt-3 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+        <div className="min-w-0">
+          <h1 className="page-title">{lesson.title}</h1>
+          <p className="meta mt-1">
+            Chapter {chapter.orderIndex}, lesson {lesson.orderIndex}, {lesson.durationMinutes} min
+          </p>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => toggleBookmark(U.id)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-colors ${De ? "bg-amber-500/10 border-amber-500/30 text-amber-400 font-bold" : "bg-slate-800 border-slate-700 text-slate-300 hover:text-white"}`}
-          >
-            <Bookmark className={`w-3.5 h-3.5 ${De ? "fill-amber-400" : ""}`} />
-            <span>{De ? "Bookmarked" : "Bookmark"}</span>
+        <div className="flex flex-none flex-wrap items-center gap-2">
+          <button type="button" onClick={() => toggleBookmark(lesson.id)} aria-pressed={bookmarked} className="btn btn-secondary w-[8.5rem]">
+            <Bookmark className={`h-4 w-4 ${bookmarked ? "text-warn" : ""}`} strokeWidth={1.75} fill={bookmarked ? "currentColor" : "none"} aria-hidden="true" />
+            {bookmarked ? "Bookmarked" : "Bookmark"}
           </button>
           <button
-            onClick={() => {
-              const Q = K ? "in_progress" : "completed";
-              updateLessonProgress(U.id, K ? 50 : 100, te, Q);
-              if (!K) {
-                confetti({
-                  particleCount: 50,
-                  spread: 50,
-                });
-              }
-            }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold transition-colors ${K ? "bg-emerald-500/10 border border-emerald-500/30 text-emerald-400" : "bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700"}`}
+            type="button"
+            onClick={() => updateLessonProgress(lesson.id, completed ? 50 : 100, position, completed ? "in_progress" : "completed")}
+            aria-pressed={completed}
+            className="btn btn-secondary w-[8.5rem]"
           >
-            <CircleCheck className="w-3.5 h-3.5" />
-            <span>{K ? "Completed" : "Mark as Done"}</span>
+            {completed && <Check className="h-4 w-4 text-ok" strokeWidth={2} aria-hidden="true" />}
+            {completed ? "Completed" : "Mark as done"}
           </button>
-          <button
-            onClick={() => X(!Ce)}
-            className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white border border-slate-700"
-            title="Keyboard shortcuts"
-          >
-            <CircleQuestionMark className="w-4 h-4" />
+          <button type="button" onClick={() => setShortcutsOpen(true)} className="icon-btn border border-line-strong" aria-label="Keyboard shortcuts">
+            <Keyboard className="h-5 w-5" strokeWidth={1.75} />
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className={Ye ? "lg:col-span-12" : "lg:col-span-8"}>
-          <div className="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden shadow-2xl relative">
-            <div className="relative aspect-video bg-gradient-to-tr from-slate-950 via-slate-900 to-indigo-950/80 flex flex-col items-center justify-center p-6 text-center select-none overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
-              <div className="absolute top-4 left-4 flex items-center gap-2 bg-slate-900/80 border border-slate-800 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-slate-300">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>IT Beginner • Chapter {V.orderIndex}</span>
+
+      <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className={`min-w-0 ${theater ? "lg:col-span-12" : "lg:col-span-8"}`}>
+          <div className="surface overflow-hidden">
+            <button
+              type="button"
+              onClick={() => setPlaying(!playing)}
+              aria-label={playing ? "Pause lesson" : "Play lesson"}
+              className="group relative flex aspect-video w-full flex-col items-center justify-center gap-5 bg-[#080c14] px-6 text-center"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-line-strong text-ink transition-colors group-hover:border-accent group-hover:text-accent">
+                {playing ? <Pause className="h-6 w-6" strokeWidth={1.75} /> : <Play className="ml-0.5 h-6 w-6" strokeWidth={1.75} />}
+              </span>
+              <span className="line-clamp-3 min-h-[4.5rem] max-w-xl text-base text-ink-2 sm:text-lg">{caption?.text}</span>
+            </button>
+            <div className="border-t border-line px-3 py-2">
+              <div className="flex items-center gap-3">
+                <span className="w-10 flex-none font-mono text-[0.8125rem] tabular-nums text-ink-3">{formatTime(position)}</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={duration}
+                  step={1}
+                  value={Math.floor(position)}
+                  onChange={(event) => setPosition(Number(event.target.value))}
+                  aria-label="Seek"
+                  aria-valuetext={`${formatTime(position)} of ${formatTime(duration)}`}
+                  className="h-1 min-w-0 flex-1 cursor-pointer accent-[#7cc4ea]"
+                />
+                <span className="w-10 flex-none text-right font-mono text-[0.8125rem] tabular-nums text-ink-3">{formatTime(duration)}</span>
               </div>
-              <div className="absolute top-4 right-4 text-[11px] font-mono text-slate-400 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-800">
-                {U.videoFilename.substring(0, 24)}...
-              </div>
-              <div className="relative z-10 max-w-lg space-y-3">
-                <span className="text-3xl">{V.icon}</span>
-                <div className="inline-block px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-400 text-xs font-mono font-bold">
-                  LESSON #{U.orderIndex}
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">{U.title}</h2>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto line-clamp-2">
-                  {U.description}
-                </p>
-                <div className="pt-2 flex items-center justify-center gap-2">
-                  <span className="text-[11px] font-mono text-sky-400">
-                    Playing: {xe(te)} / {xe(ue)}
-                  </span>
-                  <span className="text-slate-400">•</span>
-                  <span className="text-[11px] text-slate-400">{ne}x Speed</span>
-                </div>
-              </div>
-              <button
-                onClick={() => $(!F)}
-                className="absolute inset-0 w-full h-full flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors group cursor-pointer"
-              >
-                <div className="w-16 h-16 rounded-full bg-sky-500/90 text-slate-950 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                  {F ? (
-                    <Pause className="w-7 h-7 fill-slate-950" />
-                  ) : (
-                    <Play className="w-7 h-7 fill-slate-950 ml-1" />
-                  )}
-                </div>
-              </button>
-            </div>
-            <div className="p-3 bg-slate-900 border-t border-slate-800 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
-                <span>{xe(te)}</span>
-                <div
-                  className="flex-1 bg-slate-800 h-2 rounded-full cursor-pointer relative overflow-hidden group"
-                  onClick={(event) => {
-                    const de = event.currentTarget.getBoundingClientRect();
-                    const Qe = (event.clientX - de.left) / de.width;
-                    me(Qe * ue);
-                  }}
-                >
-                  <div
-                    className="bg-gradient-to-r from-sky-400 to-indigo-500 h-full rounded-full transition-all"
-                    style={{
-                      width: `${(te / ue) * 100}%`,
-                    }}
-                  />
-                </div>
-                <span>{xe(ue)}</span>
-              </div>
-              <div className="flex items-center justify-between text-xs text-slate-300">
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => $(!F)}
-                    className="p-1.5 rounded-lg hover:bg-slate-800 text-white transition-colors"
-                  >
-                    {F ? <Pause className="w-4 h-4 fill-white" /> : <Play className="w-4 h-4 fill-white" />}
+              <div className="mt-1 flex items-center justify-between gap-2">
+                <div className="flex items-center">
+                  <button type="button" onClick={() => setPlaying(!playing)} className="icon-btn" aria-label={playing ? "Pause" : "Play"}>
+                    {playing ? <Pause className="h-5 w-5" strokeWidth={1.75} /> : <Play className="h-5 w-5" strokeWidth={1.75} />}
                   </button>
-                  <button
-                    onClick={() => me((Q) => Math.max(0, Q - 5))}
-                    className="p-1.5 rounded-lg hover:bg-slate-800 transition-colors"
-                    title="Seek -5s (Left Arrow)"
-                  >
-                    <RotateCcw className="w-4 h-4" />
+                  <button type="button" onClick={() => setPosition((value) => Math.max(0, value - 5))} className="icon-btn" aria-label="Back 5 seconds">
+                    <RotateCcw className="h-5 w-5" strokeWidth={1.75} />
                   </button>
-                  <button
-                    onClick={() => me((Q) => Math.min(ue, Q + 5))}
-                    className="p-1.5 rounded-lg hover:bg-slate-800 transition-colors"
-                    title="Seek +5s (Right Arrow)"
-                  >
-                    <RotateCw className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => re(!Be)}
-                    className="p-1.5 rounded-lg hover:bg-slate-800 transition-colors"
-                    title="Mute/Unmute (M)"
-                  >
-                    {Be ? <VolumeX className="w-4 h-4 text-rose-400" /> : <Volume2 className="w-4 h-4" />}
+                  <button type="button" onClick={() => setPosition((value) => Math.min(duration, value + 5))} className="icon-btn" aria-label="Forward 5 seconds">
+                    <RotateCw className="h-5 w-5" strokeWidth={1.75} />
                   </button>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1 bg-slate-800 px-2 py-0.5 rounded-lg font-mono text-[11px]">
-                    {[0.75, 1, 1.25, 1.5, 2].map((Q) => (
-                      <button
-                        key={Q}
-                        onClick={() => pe(Q)}
-                        className={`px-1 py-0.5 rounded transition-colors ${ne === Q ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"}`}
-                      >
-                        {Q}x
-                      </button>
+                <div className="flex items-center gap-1">
+                  <label htmlFor="player-speed" className="sr-only">
+                    Playback speed
+                  </label>
+                  <select id="player-speed" value={speed} onChange={(event) => setSpeed(Number(event.target.value))} className="field h-9 w-[5.5rem]">
+                    {SPEEDS.map((value) => (
+                      <option key={value} value={value}>
+                        {value}x
+                      </option>
                     ))}
-                  </div>
+                  </select>
                   <button
-                    onClick={() => it(!Ye)}
-                    className="p-1.5 rounded-lg hover:bg-slate-800 transition-colors text-slate-300"
-                    title="Theater Mode (F)"
+                    type="button"
+                    onClick={() => setTheater(!theater)}
+                    aria-pressed={theater}
+                    aria-label="Theater mode"
+                    className="icon-btn hidden lg:inline-flex"
                   >
-                    <Maximize2 className="w-4 h-4" />
+                    {theater ? <Minimize2 className="h-5 w-5" strokeWidth={1.75} /> : <Maximize2 className="h-5 w-5" strokeWidth={1.75} />}
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between pt-4 text-xs font-semibold">
-            {St ? (
-              <Link
-                to={`/lesson/${St.id}`}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition-colors"
-              >
-                <ChevronLeft className="w-4 h-4" />
-                <span>
-                  Prev: #{St.id} {St.title}
-                </span>
+          <div className="mt-4 flex items-start justify-between gap-6 text-sm">
+            {previous ? (
+              <Link to={`/lesson/${previous.id}`} className="flex min-w-0 items-center gap-1 text-ink-3 transition-colors hover:text-ink">
+                <ChevronLeft className="h-4 w-4 flex-none" strokeWidth={1.75} aria-hidden="true" />
+                <span className="truncate">{previous.title}</span>
               </Link>
             ) : (
-              <div />
+              <span />
             )}
-            {la ? (
-              <Link
-                to={`/lesson/${la.id}`}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold transition-all shadow-md"
-              >
-                <span>
-                  Next: #{la.id} {la.title}
-                </span>
-                <ChevronRight className="w-4 h-4" />
+            {next ? (
+              <Link to={`/lesson/${next.id}`} className="flex min-w-0 items-center gap-1 text-accent transition-colors hover:text-accent-hover">
+                <span className="truncate">Next: {next.title}</span>
+                <ChevronRight className="h-4 w-4 flex-none" strokeWidth={1.75} aria-hidden="true" />
               </Link>
             ) : (
-              <Link
-                to={`/quiz/${V.id}`}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition-all shadow-md"
-              >
-                <span>Take Chapter Quiz →</span>
+              <Link to={`/quiz/${chapter.id}`} className="link flex-none">
+                Take the chapter quiz
               </Link>
             )}
           </div>
         </div>
-        {!Ye && (
-          <div className="lg:col-span-4 space-y-4">
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 p-4 space-y-3">
-              <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-sky-400" />
-                  <h3 className="font-bold text-sm text-white">
-                    Chapter {V.orderIndex}: {V.title}
-                  </h3>
-                </div>
-                <span className="text-[11px] font-mono text-slate-400">
-                  {k.filter((Q) => progress[Q.id]?.status === "completed").length} / {k.length}
-                </span>
-              </div>
-              <div className="space-y-1.5 max-h-[380px] overflow-y-auto pr-1">
-                {k.map((Q) => {
-                  const de = Q.id === U.id;
-                  const Fe = progress[Q.id]?.status === "completed";
-                  return (
-                    <Link
-                      key={Q.id}
-                      to={`/lesson/${Q.id}`}
-                      className={`flex items-center justify-between p-2.5 rounded-lg text-xs transition-all ${de ? "bg-sky-500/15 border border-sky-500/40 text-sky-300 font-bold" : Fe ? "bg-slate-850 hover:bg-slate-800 text-slate-300 border border-transparent" : "hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-transparent"}`}
-                    >
-                      <div className="flex items-center gap-2.5 min-w-0 pr-2">
-                        <div
-                          className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] shrink-0 font-bold ${Fe ? "bg-emerald-500/20 text-emerald-400" : de ? "bg-sky-500 text-slate-950" : "bg-slate-800 text-slate-400"}`}
-                        >
-                          {Fe ? "✓" : Q.orderIndex}
-                        </div>
-                        <span className="truncate">{Q.title}</span>
-                      </div>
-                      <span className="text-[10px] font-mono shrink-0 text-slate-400">
-                        {Q.durationMinutes}m
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
-              <div className="pt-2 border-t border-slate-800">
-                <Link
-                  to={`/quiz/${V.id}`}
-                  className="w-full flex items-center justify-between p-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                    <CircleQuestionMark className="w-4 h-4 text-amber-400" />
-                    <span>Chapter {V.orderIndex} Quiz</span>
-                  </span>
-                  <span>→</span>
-                </Link>
-              </div>
+
+        {!theater && (
+          <aside className="lg:col-span-4" aria-labelledby="chapter-lessons-title">
+            <div className="flex items-baseline justify-between gap-4">
+              <h2 id="chapter-lessons-title" className="item-title">
+                {chapter.title}
+              </h2>
+              <span className="meta flex-none tabular-nums">
+                {chapterLessons.filter((item) => progress[item.id]?.status === "completed").length} of {chapterLessons.length}
+              </span>
             </div>
-          </div>
+            <ol className="rows mt-3 max-h-[24rem] overflow-y-auto">
+              {chapterLessons.map((item) => {
+                const isCurrent = item.id === lesson.id;
+                const isDone = progress[item.id]?.status === "completed";
+                return (
+                  <li key={item.id}>
+                    <Link
+                      to={`/lesson/${item.id}`}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={`row-link flex items-center gap-3 px-2 py-2.5 text-sm ${isCurrent ? "bg-raised text-ink" : "text-ink-2"}`}
+                    >
+                      <span className="flex w-5 flex-none justify-center text-[0.8125rem] tabular-nums text-ink-3">
+                        {isDone ? <Check className="h-4 w-4 text-ok" strokeWidth={2} aria-label="Completed" /> : item.orderIndex}
+                      </span>
+                      <span className="min-w-0 flex-1 truncate">{item.title}</span>
+                      <span className="meta flex-none tabular-nums">{item.durationMinutes} min</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ol>
+            <Link to={`/quiz/${chapter.id}`} className="link mt-4 inline-block text-sm">
+              Chapter {chapter.orderIndex} quiz
+            </Link>
+          </aside>
         )}
       </div>
-      <div className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
-        <div className="flex items-center gap-1 p-2 bg-slate-950 border-b border-slate-800 overflow-x-auto text-xs font-semibold">
-          <button
-            onClick={() => oe("overview")}
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg transition-colors ${le === "overview" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"}`}
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>{"Overview & Objectives"}</span>
-          </button>
-          <button
-            onClick={() => oe("scratchpad")}
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg transition-colors ${le === "scratchpad" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"}`}
-          >
-            <Terminal className="w-3.5 h-3.5" />
-            <span>Live Scratchpad</span>
-          </button>
-          <button
-            onClick={() => oe("notes")}
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg transition-colors ${le === "notes" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"}`}
-          >
-            <FileText className="w-3.5 h-3.5" />
-            <span>My Notes ({st.length})</span>
-          </button>
-          <button
-            onClick={() => oe("discussion")}
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg transition-colors ${le === "discussion" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"}`}
-          >
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>
-              {"Q&A Community ("}
-              {We.length})
-            </span>
-          </button>
-          <button
-            onClick={() => oe("transcript")}
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg transition-colors ${le === "transcript" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-white"}`}
-          >
-            <Clock className="w-3.5 h-3.5" />
-            <span>Interactive Transcript</span>
-          </button>
+
+      <div className="mt-12">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Lesson material">
+          {tabs.map((item) => (
+            <button key={item.id} type="button" role="tab" aria-selected={tab === item.id} onClick={() => setTab(item.id)} className="option">
+              {item.label}
+            </button>
+          ))}
         </div>
-        {le === "overview" && (
-          <div className="p-6 space-y-6 text-xs sm:text-sm">
-            <div className="space-y-2">
-              <h3 className="text-base font-bold text-white">Learning Objectives</h3>
-              <ul className="space-y-1.5 text-slate-300">
-                {U.learningObjectives.map((learningObjective, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <CircleCheck className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                    <span>{learningObjective}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {U.codeExample && (
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-base font-bold text-white">Lesson Code Reference</h3>
-                  <button
-                    onClick={() => {
-                      E(U.codeExample);
-                      oe("scratchpad");
-                    }}
-                    className="text-xs text-sky-400 hover:underline flex items-center gap-1"
-                  >
-                    <Terminal className="w-3.5 h-3.5" />
-                    <span>Copy to Scratchpad</span>
-                  </button>
-                </div>
-                <pre className="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-sky-300 overflow-x-auto leading-relaxed">
-                  <code>{U.codeExample}</code>
-                </pre>
-              </div>
-            )}
-            <div className="space-y-2">
-              <h3 className="text-base font-bold text-white">Key Takeaways</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {U.keyTakeaways.map((keyTakeaway, index) => (
-                  <div
-                    key={index}
-                    className="p-3 rounded-lg bg-slate-850 border border-slate-800 text-slate-300 text-xs leading-relaxed"
-                  >
-                    <strong>•</strong> {keyTakeaway}
+
+        <div role="tabpanel" className="mt-8 lg:w-[calc((100%-2rem)*2/3)]">
+          {tab === "overview" && (
+            <div className="space-y-10">
+              <p className="text-ink-2">{lesson.description}</p>
+              <section>
+                <h2 className="section-title">Learning objectives</h2>
+                <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[0.9375rem] text-ink-2 marker:text-ink-3">
+                  {lesson.learningObjectives.map((objective: string, index: number) => (
+                    <li key={index}>{objective}</li>
+                  ))}
+                </ul>
+              </section>
+              {lesson.codeExample && (
+                <section>
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h2 className="section-title">Code reference</h2>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setCode(lesson.codeExample);
+                        setTab("scratchpad");
+                      }}
+                      className="link flex-none text-sm"
+                    >
+                      Open in scratchpad
+                    </button>
                   </div>
-                ))}
-              </div>
+                  <pre className="code-block mt-3">
+                    <code>{lesson.codeExample}</code>
+                  </pre>
+                </section>
+              )}
+              <section>
+                <h2 className="section-title">Key takeaways</h2>
+                <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[0.9375rem] text-ink-2 marker:text-ink-3">
+                  {lesson.keyTakeaways.map((takeaway: string, index: number) => (
+                    <li key={index}>{takeaway}</li>
+                  ))}
+                </ul>
+              </section>
             </div>
-          </div>
-        )}
-        {le === "scratchpad" && (
-          <div className="p-6 space-y-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-base font-bold text-white">Interactive JavaScript Scratchpad</h3>
-                <p className="text-xs text-slate-400">
-                  Test concepts right below the video without opening another tab.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => E(U.interactiveCode?.initialCode || U.codeExample || "")}
-                  className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
-                >
-                  Reset Code
-                </button>
-                <button
-                  onClick={Ze}
-                  className="px-4 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold transition-colors"
-                >
-                  Run Code
-                </button>
-              </div>
-            </div>
-            <textarea
-              value={Ee}
-              onChange={(event) => E(event.target.value)}
-              rows={8}
-              className="w-full p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-sky-200 focus:outline-none focus:border-sky-500 leading-relaxed resize-y"
-              placeholder="Write your JavaScript code here..."
-            />
+          )}
+
+          {tab === "scratchpad" && (
             <div>
-              <p className="text-xs font-bold text-slate-400 mb-1 font-mono">Sandbox Console Output:</p>
-              <pre className="p-3 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-400 whitespace-pre-wrap leading-relaxed min-h-[60px]">
-                {g}
+              <h2 className="section-title">JavaScript scratchpad</h2>
+              <p className="mt-1 text-sm text-ink-3">Test concepts right below the video without opening another tab.</p>
+              <label htmlFor="scratchpad-code" className="sr-only">
+                JavaScript code
+              </label>
+              <textarea
+                id="scratchpad-code"
+                value={code}
+                onChange={(event) => setCode(event.target.value)}
+                rows={10}
+                spellCheck={false}
+                className="field mt-4 bg-[#080c14] font-mono text-[0.8125rem]"
+              />
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                <button type="button" onClick={runCode} className="btn btn-primary">
+                  Run code
+                </button>
+                <button type="button" onClick={() => setCode(starterCode)} className="btn btn-secondary">
+                  Reset code
+                </button>
+              </div>
+              <h3 className="meta mt-6">Console output</h3>
+              <pre className="code-block mt-2 min-h-16 whitespace-pre-wrap" aria-live="polite">
+                {output}
               </pre>
             </div>
-          </div>
-        )}
-        {le === "notes" && (
-          <div className="p-6 space-y-6">
-            <form onSubmit={Ie} className="space-y-3">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-slate-200">
-                  New Note @ <span className="text-sky-400 font-mono">{xe(te)}</span>
-                </span>
-                <span className="text-slate-400">Notes are saved with video timestamp</span>
-              </div>
-              <textarea
-                value={G}
-                onChange={(event) => m(event.target.value)}
-                placeholder="Write your observation or key insight here..."
-                rows={3}
-                className="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-sky-500"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold transition-colors"
-              >
-                Save Timestamped Note
-              </button>
-            </form>
-            <div className="space-y-3">
-              <h4 className="font-bold text-sm text-white">Your Saved Notes for Lesson {U.orderIndex}</h4>
-              {st.length === 0 ? (
-                <p className="text-xs text-slate-400 py-4 text-center">No notes saved yet for this lesson.</p>
-              ) : (
-                st.map((Q) => (
-                  <div
-                    key={Q.id}
-                    className="p-3.5 rounded-xl bg-slate-850 border border-slate-800 text-xs space-y-2"
-                  >
-                    <div className="flex items-center justify-between">
-                      <button
-                        onClick={() => me(Q.timestampSeconds)}
-                        className="font-mono text-sky-400 hover:underline font-bold text-xs"
-                      >
-                        Seek @{xe(Q.timestampSeconds)}
-                      </button>
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-slate-400">{Q.createdAt}</span>
-                        <button
-                          onClick={() => deleteNote(Q.id)}
-                          className="text-slate-400 hover:text-rose-400"
-                          title="Delete note"
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    </div>
-                    <p className="text-slate-200 leading-relaxed">{Q.content}</p>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        )}
-        {le === "discussion" && (
-          <div className="p-6 space-y-6">
-            <form onSubmit={Me} className="space-y-3">
-              <h4 className="font-bold text-sm text-white">Ask a Question or Share Feedback</h4>
-              <textarea
-                value={z}
-                onChange={(event) => q(event.target.value)}
-                placeholder="Have a question about this lesson? Ask the instructor and community..."
-                rows={3}
-                className="w-full p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-sky-500"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold transition-colors"
-              >
-                Post Question
-              </button>
-            </form>
-            <div className="space-y-4">
-              {We.length === 0 ? (
-                <p className="text-xs text-slate-400 text-center py-4">
-                  No questions yet for this lesson. Be the first to ask!
-                </p>
-              ) : (
-                We.map((Q) => (
-                  <div
-                    key={Q.id}
-                    className="p-4 rounded-xl bg-slate-850 border border-slate-800 text-xs space-y-3"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
-                        <img
-                          src={Q.userAvatar}
-                          alt={Q.userName}
-                          className="w-7 h-7 rounded-full object-cover"
-                        />
-                        <div>
-                          <div className="flex items-center gap-1.5">
-                            <span className="font-bold text-white">{Q.userName}</span>
-                            {Q.userRole === "admin" && (
-                              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300">
-                                👨‍🏫 Instructor
-                              </span>
-                            )}
-                          </div>
-                          <span className="text-[10px] text-slate-400">{Q.createdAt}</span>
-                        </div>
-                      </div>
-                      <button
-                        onClick={() => upvoteDiscussion(Q.id)}
-                        className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-colors ${Q.hasUpvoted ? "bg-sky-500/20 text-sky-400" : "bg-slate-800 text-slate-400 hover:text-white"}`}
-                      >
-                        <ThumbsUp className="w-3.5 h-3.5" />
-                        <span>{Q.upvotes}</span>
-                      </button>
-                    </div>
-                    <p className="text-slate-200 leading-relaxed">{Q.content}</p>
-                    {Q.replies.length > 0 && (
-                      <div className="pl-4 border-l-2 border-slate-800 space-y-2 pt-2">
-                        {Q.replies.map((reply) => (
-                          <div
-                            key={reply.id}
-                            className="p-3 rounded-lg bg-slate-900 border border-slate-800 space-y-1"
-                          >
-                            <div className="flex items-center gap-1.5">
-                              <span className="font-bold text-white">{reply.userName}</span>
-                              {reply.userRole === "admin" && (
-                                <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300">
-                                  👨‍🏫 Instructor
-                                </span>
-                              )}
-                              <span className="text-[10px] text-slate-400">• {reply.createdAt}</span>
-                            </div>
-                            <p className="text-slate-300 text-xs leading-relaxed">{reply.content}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    <div className="pt-1">
-                      {B === Q.id ? (
-                        <div className="space-y-2">
-                          <input
-                            type="text"
-                            value={W}
-                            onChange={(event) => ce(event.target.value)}
-                            placeholder="Write a helpful reply..."
-                            className="w-full p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-white"
-                          />
-                          <div className="flex items-center gap-2">
-                            <button
-                              onClick={() => Se(Q.id)}
-                              className="px-3 py-1 rounded bg-sky-500 text-slate-950 text-xs font-bold"
-                            >
-                              Send Reply
-                            </button>
-                            <button
-                              onClick={() => J(null)}
-                              className="px-3 py-1 text-slate-400 hover:text-white text-xs"
-                            >
-                              Cancel
-                            </button>
-                          </div>
-                        </div>
-                      ) : (
-                        <button
-                          onClick={() => J(Q.id)}
-                          className="text-xs font-bold text-sky-400 hover:underline"
-                        >
-                          Reply to thread
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        )}
-        {le === "transcript" && (
-          <div className="p-6 space-y-3">
-            <p className="text-xs text-slate-400">
-              Click any timestamp below to jump the video directly to that sentence:
-            </p>
-            <div className="space-y-2">
-              {U.transcript.map((item, index) => (
-                <button
-                  key={index}
-                  onClick={() => me(item.timeSeconds)}
-                  className="w-full text-left p-3 rounded-lg bg-slate-850 hover:bg-slate-800 border border-slate-800 text-xs text-slate-200 transition-colors flex items-start gap-3 group"
-                >
-                  <span className="font-mono text-sky-400 font-bold shrink-0 group-hover:underline">
-                    {xe(item.timeSeconds)}
-                  </span>
-                  <span className="leading-relaxed">{item.text}</span>
+          )}
+
+          {tab === "notes" && (
+            <div>
+              <form onSubmit={submitNote} noValidate>
+                <label htmlFor="note-draft" className="field-label">
+                  New note at {formatTime(position)}
+                </label>
+                <textarea
+                  id="note-draft"
+                  value={noteDraft}
+                  onChange={(event) => {
+                    setNoteDraft(event.target.value);
+                    setNoteError("");
+                  }}
+                  rows={3}
+                  aria-invalid={noteError ? true : undefined}
+                  aria-describedby={noteError ? "note-error" : "note-hint"}
+                  className="field"
+                />
+                {noteError ? (
+                  <p id="note-error" className="field-error">
+                    {noteError}
+                  </p>
+                ) : (
+                  <p id="note-hint" className="meta mt-1.5">
+                    Notes are saved with the video timestamp.
+                  </p>
+                )}
+                <button type="submit" className="btn btn-primary mt-3">
+                  Save note
                 </button>
-              ))}
+              </form>
+              <h2 className="section-title mt-10">Saved notes</h2>
+              {lessonNotes.length === 0 ? (
+                <p className="mt-3 text-sm text-ink-3">No notes saved yet for this lesson.</p>
+              ) : (
+                <ul className="rows mt-3">
+                  {lessonNotes.map((note: any) => (
+                    <li key={note.id} className="flex items-start gap-3 py-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[0.9375rem] text-ink-2">{note.content}</p>
+                        <p className="meta mt-1">
+                          <button type="button" onClick={() => setPosition(note.timestampSeconds)} className="link">
+                            Jump to {formatTime(note.timestampSeconds)}
+                          </button>
+                          , {note.createdAt}
+                        </p>
+                      </div>
+                      <button type="button" onClick={() => deleteNote(note.id)} className="icon-btn" aria-label="Delete note">
+                        <Trash2 className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-          </div>
-        )}
+          )}
+
+          {tab === "discussion" && (
+            <div>
+              <form onSubmit={submitQuestion} noValidate>
+                <label htmlFor="question-draft" className="field-label">
+                  Ask a question or share feedback
+                </label>
+                <textarea
+                  id="question-draft"
+                  value={questionDraft}
+                  onChange={(event) => {
+                    setQuestionDraft(event.target.value);
+                    setQuestionError("");
+                  }}
+                  rows={3}
+                  aria-invalid={questionError ? true : undefined}
+                  aria-describedby={questionError ? "question-error" : undefined}
+                  className="field"
+                />
+                {questionError && (
+                  <p id="question-error" className="field-error">
+                    {questionError}
+                  </p>
+                )}
+                <button type="submit" className="btn btn-primary mt-3">
+                  Post question
+                </button>
+              </form>
+              {lessonDiscussions.length === 0 ? (
+                <p className="mt-10 text-sm text-ink-3">No questions yet for this lesson.</p>
+              ) : (
+                <ul className="rows mt-10">
+                  {lessonDiscussions.map((discussion: any) => (
+                    <li key={discussion.id} className="py-5">
+                      <div className="flex items-start gap-3">
+                        <Avatar name={discussion.userName} />
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm">
+                            <span className="font-medium text-ink">{discussion.userName}</span>
+                            <span className="meta">
+                              {discussion.userRole === "admin" ? ", instructor" : ""}, {discussion.createdAt}
+                            </span>
+                          </p>
+                          <p className="mt-1 text-[0.9375rem] text-ink-2">{discussion.content}</p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => upvoteDiscussion(discussion.id)}
+                          aria-pressed={!!discussion.hasUpvoted}
+                          aria-label={`Upvote, ${discussion.upvotes} so far`}
+                          className={`btn btn-secondary btn-sm w-[4.5rem] flex-none tabular-nums ${discussion.hasUpvoted ? "border-accent" : ""}`}
+                        >
+                          +1 <span className="text-ink-3">{discussion.upvotes}</span>
+                        </button>
+                      </div>
+                      <div className="ml-11">
+                        {discussion.replies.length > 0 && (
+                          <ul className="mt-4 space-y-3 border-l border-line-strong pl-4">
+                            {discussion.replies.map((reply: any) => (
+                              <li key={reply.id}>
+                                <p className="text-sm">
+                                  <span className="font-medium text-ink">{reply.userName}</span>
+                                  <span className="meta">
+                                    {reply.userRole === "admin" ? ", instructor" : ""}, {reply.createdAt}
+                                  </span>
+                                </p>
+                                <p className="mt-0.5 text-[0.9375rem] text-ink-2">{reply.content}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {replyTo === discussion.id ? (
+                          <form onSubmit={(event) => submitReply(event, discussion.id)} noValidate className="mt-4">
+                            <label htmlFor={`reply-${discussion.id}`} className="sr-only">
+                              Reply to {discussion.userName}
+                            </label>
+                            <input
+                              id={`reply-${discussion.id}`}
+                              type="text"
+                              value={replyDraft}
+                              onChange={(event) => {
+                                setReplyDraft(event.target.value);
+                                setReplyError("");
+                              }}
+                              placeholder="Write a reply"
+                              aria-invalid={replyError ? true : undefined}
+                              className="field"
+                              autoFocus
+                            />
+                            {replyError && <p className="field-error">{replyError}</p>}
+                            <div className="mt-3 flex items-center gap-3">
+                              <button type="submit" className="btn btn-primary btn-sm">
+                                Send reply
+                              </button>
+                              <button type="button" onClick={() => setReplyTo(null)} className="btn btn-secondary btn-sm">
+                                Cancel
+                              </button>
+                            </div>
+                          </form>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setReplyTo(discussion.id);
+                              setReplyDraft("");
+                              setReplyError("");
+                            }}
+                            className="link mt-3 text-sm"
+                          >
+                            Reply
+                          </button>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+
+          {tab === "transcript" && (
+            <div>
+              <p className="text-sm text-ink-3">Select a line to jump the video to that sentence.</p>
+              <ol className="rows mt-4">
+                {lesson.transcript.map((item: any, index: number) => (
+                  <li key={index}>
+                    <button
+                      type="button"
+                      onClick={() => setPosition(item.timeSeconds)}
+                      aria-current={item === caption ? "true" : undefined}
+                      className={`row-link flex w-full items-baseline gap-4 px-2 py-3 text-left text-[0.9375rem] ${item === caption ? "text-ink" : "text-ink-2"}`}
+                    >
+                      <span className="w-10 flex-none font-mono text-[0.8125rem] tabular-nums text-accent">{formatTime(item.timeSeconds)}</span>
+                      <span>{item.text}</span>
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </div>
       </div>
-      {Ce && (
+
+      {shortcutsOpen && (
         <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={() => X(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setShortcutsOpen(false);
+          }}
         >
-          <div
-            className="rounded-2xl bg-slate-900 border border-slate-800 p-6 max-w-sm w-full space-y-4 text-xs"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-              <h3 className="font-bold text-sm text-white">Video Keyboard Shortcuts</h3>
-              <button onClick={() => X(false)} className="text-slate-400 hover:text-white">
-                ✕
+          <div role="dialog" aria-modal="true" aria-labelledby="shortcuts-title" className="surface w-full max-w-sm p-6">
+            <div className="flex items-center justify-between gap-4">
+              <h2 id="shortcuts-title" className="section-title">
+                Keyboard shortcuts
+              </h2>
+              <button ref={closeShortcutsRef} type="button" onClick={() => setShortcutsOpen(false)} className="icon-btn -mr-2" aria-label="Close">
+                <X className="h-5 w-5" strokeWidth={1.75} />
               </button>
             </div>
-            <div className="space-y-2">
-              <div className="flex justify-between py-1 border-b border-slate-800 text-slate-300">
-                <span>Play / Pause</span>
-                <kbd className="px-2 py-0.5 rounded bg-slate-800 text-sky-400 font-mono">Space or K</kbd>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800 text-slate-300">
-                <span>Seek Backward 5s</span>
-                <kbd className="px-2 py-0.5 rounded bg-slate-800 text-sky-400 font-mono">← Arrow</kbd>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800 text-slate-300">
-                <span>Seek Forward 5s</span>
-                <kbd className="px-2 py-0.5 rounded bg-slate-800 text-sky-400 font-mono">→ Arrow</kbd>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800 text-slate-300">
-                <span>Mute / Unmute</span>
-                <kbd className="px-2 py-0.5 rounded bg-slate-800 text-sky-400 font-mono">M</kbd>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800 text-slate-300">
-                <span>Theater Mode</span>
-                <kbd className="px-2 py-0.5 rounded bg-slate-800 text-sky-400 font-mono">F</kbd>
-              </div>
-            </div>
-            <button
-              onClick={() => X(false)}
-              className="w-full py-2 rounded-lg bg-sky-500 text-slate-950 font-bold"
-            >
-              Got it!
-            </button>
+            <dl className="rows mt-4 text-sm">
+              {SHORTCUTS.map(([action, keys]) => (
+                <div key={action} className="flex items-center justify-between gap-4 py-2.5">
+                  <dt className="text-ink-2">{action}</dt>
+                  <dd className="font-mono text-[0.8125rem] text-ink-3">{keys}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       )}

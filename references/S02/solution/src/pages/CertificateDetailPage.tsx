@@ -4,12 +4,26 @@ import { useCourse } from "../context/CourseContext";
 
 export const CertificateDetailPage = () => {
   const { code } = useParams();
-  const { currentUser, certificates } = useCourse();
+  const { certificates } = useCourse();
   const certificate: any = certificates.find((item: any) => item.certificateCode === code);
-  const name = certificate ? certificate.userName : currentUser.fullName;
-  const course = certificate ? certificate.chapterTitle : "Full-Stack Web Development & Engineering";
-  const serial = code || "ITB-CH1-8291X";
-  const issued = certificate ? certificate.issuedAt : "November 6, 2026";
+
+  if (!certificate) {
+    return (
+      <div className="container-page page">
+        <h1 className="page-title">Certificate not found</h1>
+        <p className="lead mt-2">
+          No certificate with the code <span className="break-all font-mono text-[0.9375rem]">{code}</span> is saved in this browser.
+        </p>
+        <Link to="/certificates" className="btn btn-secondary mt-6">
+          All certificates
+        </Link>
+      </div>
+    );
+  }
+  const name = certificate.userName;
+  const course = certificate.chapterTitle;
+  const serial = certificate.certificateCode;
+  const issued = certificate.issuedAt;
 
   return (
     <div className="container-page page">

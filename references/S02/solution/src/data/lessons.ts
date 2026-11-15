@@ -1117,9 +1117,9 @@ clickMe();`,
       "Implement real-time search inputs",
     ],
     codeExample: `const team = [
-  { name: "Alex Chen", role: "Frontend Lead", avatar: "👨‍💻" },
-  { name: "Elena Rostova", role: "UI Designer", avatar: "🎨" },
-  { name: "Marcus Vance", role: "Backend Architect", avatar: "⚙️" }
+  { name: "Alex Chen", role: "Frontend Lead", avatar: "AC" },
+  { name: "Elena Rostova", role: "UI Designer", avatar: "ER" },
+  { name: "Marcus Vance", role: "Backend Architect", avatar: "MV" }
 ];
 
 function renderTeam(members) {
@@ -1268,7 +1268,7 @@ console.log("Repository status:", openSourceRepo);`,
     transcript: [
       {
         timeSeconds: 0,
-        text: "Almost everything we use in web development — Linux, Node, React, Vue, Python — is open source.",
+        text: "Almost everything we use in web development (Linux, Node, React, Vue, Python) is open source.",
       },
     ],
   },

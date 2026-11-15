@@ -120,7 +120,7 @@ export const AdminPage = () => {
             </div>
           </div>
         </div>
-        <div className="surface mt-4 overflow-x-auto">
+        <div className="surface relative mt-4 overflow-x-auto">
           <table className="w-full min-w-[44rem] text-left text-sm">
             <thead>
               <tr className="border-b border-line text-ink-3">

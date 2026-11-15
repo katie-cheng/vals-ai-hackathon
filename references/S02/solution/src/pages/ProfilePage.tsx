@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Avatar } from "../components/Avatar";
 import { useCourse } from "../context/CourseContext";
 
 export const ProfilePage = () => {
@@ -46,14 +47,8 @@ export const ProfilePage = () => {
       <div className="max-w-3xl">
         <h1 className="page-title">Profile</h1>
 
-        <section className="mt-8 flex flex-wrap items-center gap-5">
-          <img
-            src={currentUser.avatarUrl}
-            alt=""
-            width={72}
-            height={72}
-            className="h-[4.5rem] w-[4.5rem] flex-none rounded-full bg-raised object-cover"
-          />
+        <section className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+          <Avatar name={currentUser.fullName} size="lg" />
           <div className="min-w-0 flex-1">
             <h2 className="section-title">{currentUser.fullName}</h2>
             <p className="meta break-all">{currentUser.email}</p>
@@ -65,7 +60,7 @@ export const ProfilePage = () => {
             type="button"
             onClick={() => switchUserRole(otherRole)}
             title="Toggle between Student and Administrator accounts to test admin features"
-            className="btn btn-secondary"
+            className="btn btn-secondary self-start sm:self-auto"
           >
             Switch to {otherRole} view
           </button>

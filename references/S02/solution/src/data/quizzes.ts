@@ -144,7 +144,7 @@ export const QUIZ_QUESTIONS = [
     optionD: "Document Order Map",
     correctOption: "A",
     explanation:
-      "DOM stands for Document Object Model — it represents the page structure as a tree of objects.",
+      "DOM stands for Document Object Model: it represents the page structure as a tree of objects.",
   },
   {
     id: 14,

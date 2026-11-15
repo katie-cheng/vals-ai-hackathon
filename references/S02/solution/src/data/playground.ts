@@ -86,11 +86,11 @@ button:hover {
   color: #f1f5f9;
 }`,
     jsCode: `function calculateGrade(score) {
-  if (score >= 90) return "🌟 Grade A - Outstanding!";
-  if (score >= 80) return "👍 Grade B - Very Good!";
-  if (score >= 70) return "👌 Grade C - Passing Grade";
-  if (score >= 60) return "⚠️ Grade D - Needs Review";
-  return "❌ Grade F - Keep Practicing!";
+  if (score >= 90) return "Grade A - Outstanding!";
+  if (score >= 80) return "Grade B - Very Good!";
+  if (score >= 70) return "Grade C - Passing Grade";
+  if (score >= 60) return "Grade D - Needs Review";
+  return "Grade F - Keep Practicing!";
 }
 
 const check = () => {
@@ -168,7 +168,7 @@ technologies.forEach((tech, index) => {
     title: "4. HTML & CSS Profile Card",
     category: "Web Design",
     htmlCode: `<div class="card">
-  <div class="avatar">👨‍💻</div>
+  <div class="avatar">AC</div>
   <h2>Alex Chen</h2>
   <p class="role">Junior Full-Stack Developer</p>
   <p class="bio">Learning modern web engineering through the IT Beginner curriculum by AjinLab.</p>

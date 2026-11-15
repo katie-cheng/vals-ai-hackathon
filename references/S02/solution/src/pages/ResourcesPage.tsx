@@ -50,22 +50,26 @@ export const ResourcesPage = () => {
         <div className="min-w-0 space-y-12 lg:col-span-8">
           {handbook.subsections.map((subsection: any, index: number) => (
             <section key={`${handbook.id}-${index}`}>
-              <h3 className="item-title">{subsection.heading}</h3>
-              <p className="mt-1 text-sm text-ink-3">{subsection.description}</p>
-              {subsection.codeSnippet && (
-                <div className="relative mt-4">
-                  <pre className="code-block pr-20">
-                    <code>{subsection.codeSnippet}</code>
-                  </pre>
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <h3 className="item-title">{subsection.heading}</h3>
+                  <p className="mt-1 text-sm text-ink-3">{subsection.description}</p>
+                </div>
+                {subsection.codeSnippet && (
                   <button
                     type="button"
                     onClick={() => copy(subsection.codeSnippet, index)}
-                    className="btn btn-secondary btn-sm absolute right-2 top-2 w-[4.5rem]"
+                    className="btn btn-secondary btn-sm w-[4.5rem] flex-none"
                     aria-label={`Copy the ${subsection.heading} snippet`}
                   >
                     {copied === index ? "Copied" : "Copy"}
                   </button>
-                </div>
+                )}
+              </div>
+              {subsection.codeSnippet && (
+                <pre className="code-block mt-4">
+                  <code>{subsection.codeSnippet}</code>
+                </pre>
               )}
               {subsection.tips && (
                 <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-ink-2 marker:text-ink-3">

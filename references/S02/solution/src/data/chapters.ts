@@ -5,7 +5,6 @@ export const CHAPTERS = [
     title: "Getting Started",
     description:
       "Welcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.",
-    icon: "🚀",
     estimatedHours: "1.5 hrs",
     keyConcepts: ["Course Roadmap", "Developer Setup", "Learning Strategies", "Resource Access"],
   },
@@ -15,7 +14,6 @@ export const CHAPTERS = [
     title: "Software Development Basics",
     description:
       "Learn the fundamentals of modern software engineering workflows, Agile methodology, Scrum frameworks, and Jira task tracking.",
-    icon: "⚙️",
     estimatedHours: "2.5 hrs",
     keyConcepts: ["SDLC Workflow", "Agile Principles", "Scrum Sprints", "Jira Backlog & Kanban"],
   },
@@ -25,7 +23,6 @@ export const CHAPTERS = [
     title: "Web Development Fundamentals",
     description:
       "Master how the web works, JavaScript syntax, variables, data types, loops, arrays, functions, and core HTML5 & CSS3 layout techniques.",
-    icon: "🌐",
     estimatedHours: "8.0 hrs",
     keyConcepts: [
       "HTTP & Browser Engine",
@@ -41,7 +38,6 @@ export const CHAPTERS = [
     title: "Frontend Development & Tools",
     description:
       "Build real-world teamable web applications, explore modern JavaScript frameworks, package managers (NPM), semver, and terminal commands.",
-    icon: "🛠️",
     estimatedHours: "7.5 hrs",
     keyConcepts: [
       "Modern Frameworks",
@@ -57,7 +53,6 @@ export const CHAPTERS = [
     title: "Vue.js Framework & Single Page Apps",
     description:
       "Explore modern reactive frontend architecture, Vue component lifecycle, two-way data binding, reactivity, and building complete responsive UIs.",
-    icon: "⚡",
     estimatedHours: "4.0 hrs",
     keyConcepts: [
       "Reactivity System",
@@ -73,7 +68,6 @@ export const CHAPTERS = [
     title: "Full-Stack Architecture & Backend Communication",
     description:
       "Understand client-server architecture, HTTP request-response cycles, RESTful APIs, JSON data exchange, and end-to-end integration.",
-    icon: "🔌",
     estimatedHours: "2.0 hrs",
     keyConcepts: [
       "Client-Server Model",
