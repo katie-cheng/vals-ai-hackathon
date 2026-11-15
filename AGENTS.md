@@ -70,3 +70,6 @@ Harbor task layout: `instruction.md` = brief, `environment/` = Node/Vite React b
 
 ## Shared memory
 `MEMORY.md` is the team's shared memory for both humans and agents. Append one-line entries under the right heading with `[who; YYYY-MM-DD]`. Record decisions, gotchas, and open questions. Don't record task status. Remove entries once they're no longer true.
+
+## Dev / held-out split
+`data/splits.json` splits the 30 Design Arena sites by tournament: 20 dev, 10 held-out (S09–S12, S17–S20, S27–S28; includes 4 models absent from dev). Build and tune graders on dev only. Don't read held-out labels/comments or tune checks while looking at held-out sites; just run frozen graders on them and report metrics. Frozen held-out renders (desktop 1440×900 and mobile 390×844, full-page PNG + rendered HTML) are in `data/snapshots/heldout/`, made by `scripts/snapshot_sites.py`.

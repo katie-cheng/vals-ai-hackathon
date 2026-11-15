@@ -1,0 +1,702 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="theme-color" content="#30271F">
+    <meta name="description" content="Traditional Amazigh family guesthouse in Ghassate near Ouarzazate: homemade breakfast, traditional hammam, garden and almond-tree oasis. Welcome by Mohamed and his family.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gîte chez l'habitant Amazigh — Ghassate, Ouarzazate | Guesthouse in Morocco</title>
+    <script data-arena-recording="true">(function(){
+"use strict";
+var SK="__arena_rec",RRWEB_CDN="https://cdn.jsdelivr.net/npm/rrweb@2.0.0-alpha.4/dist/rrweb.min.js";
+var MAX_RECORDING_MS=600000,MAX_RRWEB_EVENTS=30000,MAX_INTERACTIONS=5000,MAX_CURSOR_POINTS=10000,recStopped=false;
+var stored=null;try{var raw=sessionStorage.getItem(SK);if(raw)stored=JSON.parse(raw);}catch(ex){}
+var meta=stored?stored.m||null:null,rrwebEvents=stored?stored.r||[]:[],rrwebStarted=false,startTime=stored?stored.st||Date.now():Date.now();
+var interactions=stored?stored.i||[]:[],cursorPath=stored?stored.c||[]:[],lastCursorSample=0,lastScrollSample=0;
+var pageHeight=document.documentElement.scrollHeight;
+var viewport={width:window.innerWidth,height:window.innerHeight};
+function isCapped(){if(recStopped)return true;if(Date.now()-startTime>=MAX_RECORDING_MS){recStopped=true;return true;}return false;}
+function persist(){try{var d=JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime});sessionStorage.setItem(SK,d);}catch(ex){rrwebEvents=rrwebEvents.slice(Math.floor(rrwebEvents.length/2));try{sessionStorage.setItem(SK,JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime}));}catch(ex2){}}}
+setInterval(persist,5000);
+window.addEventListener("resize",function(){viewport={width:window.innerWidth,height:window.innerHeight};pageHeight=document.documentElement.scrollHeight;});
+document.addEventListener("click",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var el=e.target;var tag=el.tagName?el.tagName.toLowerCase():"";var text=(el.textContent||"").trim().substring(0,80);var classes=el.className&&typeof el.className==="string"?el.className.substring(0,120):"";interactions.push({type:"click",t:Date.now()-startTime,x:Math.round(e.clientX),y:Math.round(e.clientY),element:{tag:tag,text:text,classes:classes}});},true);
+window.addEventListener("scroll",function(){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var now=Date.now();if(now-lastScrollSample<200)return;lastScrollSample=now;var scrollY=Math.round(window.scrollY||window.pageYOffset||0);var depthPct=pageHeight>viewport.height?Math.min(100,Math.round(((scrollY+viewport.height)/pageHeight)*100)):100;interactions.push({type:"scroll",t:now-startTime,y:scrollY,depth_pct:depthPct});},{passive:true});
+document.addEventListener("mousemove",function(e){if(isCapped()||cursorPath.length>=MAX_CURSOR_POINTS)return;var now=Date.now();if(now-lastCursorSample<250)return;lastCursorSample=now;cursorPath.push([Math.round(e.clientX),Math.round(e.clientY),now-startTime]);},{passive:true});
+document.addEventListener("keydown",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;interactions.push({type:"keydown",t:Date.now()-startTime,key:e.key});},true);
+function buildAnalytics(){if(!meta)return null;var ph=document.documentElement.scrollHeight;var maxScroll=0,clickElements={},firstClick=null,firstScroll=null,totalDistance=0;for(var i=0;i<interactions.length;i++){var ev=interactions[i];if(ev.type==="scroll"){if(ev.depth_pct>maxScroll)maxScroll=ev.depth_pct;if(!firstScroll)firstScroll=ev.t;}if(ev.type==="click"){if(!firstClick)firstClick=ev.t;var key=ev.element.tag+":"+ev.element.text.substring(0,30);clickElements[key]=true;}}for(var j=1;j<cursorPath.length;j++){var dx=cursorPath[j][0]-cursorPath[j-1][0];var dy=cursorPath[j][1]-cursorPath[j-1][1];totalDistance+=Math.sqrt(dx*dx+dy*dy);}var duration=Date.now()-startTime;var clickHeatmap=[];for(var k=0;k<interactions.length;k++){if(interactions[k].type==="click")clickHeatmap.push([interactions[k].x,interactions[k].y]);}return{generation_id:meta.generationId,tournament_id:meta.tournamentId,started_at:new Date(startTime).toISOString(),ended_at:new Date().toISOString(),duration_ms:duration,viewport:viewport,page_height:ph,interactions:interactions,cursor_path:cursorPath,click_heatmap:clickHeatmap,summary:{total_clicks:clickHeatmap.length,total_scrolls:interactions.filter(function(e){return e.type==="scroll";}).length,max_scroll_depth_pct:maxScroll,unique_elements_clicked:Object.keys(clickElements).length,time_to_first_click_ms:firstClick,time_to_first_scroll_ms:firstScroll,cursor_distance_px:Math.round(totalDistance),active_time_ms:duration}};}
+function loadRrweb(){if(rrwebStarted)return;rrwebStarted=true;var s=document.createElement("script");s.src=RRWEB_CDN;s.onload=function(){var rec=(window.rrweb&&window.rrweb.record)||window.rrwebRecord;if(!rec)return;rec({emit:function(event){if(rrwebEvents.length>=MAX_RRWEB_EVENTS||isCapped())return;rrwebEvents.push(event);}});};s.onerror=function(){};document.head.appendChild(s);}
+window.addEventListener("message",function(e){if(!e.data||typeof e.data.type!=="string")return;if(e.data.type==="arena:init"){if(!meta)startTime=Date.now();meta={generationId:e.data.generationId||e.data.modelId,tournamentId:e.data.tournamentId};persist();loadRrweb();if(e.source)e.source.postMessage({type:"arena:init-ack",generationId:meta.generationId},"*");}if(e.data.type==="arena:flush"){var resp={type:"arena:recording-data",generationId:meta?meta.generationId:null,rrwebEvents:rrwebEvents,analytics:buildAnalytics()};try{sessionStorage.removeItem(SK);}catch(ex){}if(e.source)e.source.postMessage(resp,"*");}});
+loadRrweb();
+})();</script>
+  <script data-arena-views="true">(function(){var isTop=false;try{isTop=window.self===window.top;}catch(e){}if(!isTop)return;window.__ARENA_META={generationId:"claude-sonnet-5-5",tournamentId:"d7aa0332-ab63-4633-b425-65a215d554e0"};var payload={tournamentId:"d7aa0332-ab63-4633-b425-65a215d554e0",modelId:"claude-sonnet-5-5"};try{var r=document.referrer;if(r){var u=new URL(r);payload.referrerDomain=u.hostname;}}catch(e){}try{var vid=null;try{vid=localStorage.getItem('arena_vid');}catch(e){}if(!vid){vid=typeof crypto!=="undefined"&&crypto.randomUUID?crypto.randomUUID():(Date.now().toString(36)+Math.random().toString(36).slice(2)).slice(0,32);try{localStorage.setItem('arena_vid',vid);}catch(e){}}if(vid)payload.viewerId=vid;}catch(e){}try{fetch("https://www.designarena.ai/api/agon/page-views",{"method":"POST","headers":{"Content-Type":"application/json"},"body":JSON.stringify(payload),"keepalive":true});}catch(e){}})();</script>
+  <script type="module" crossorigin="" src="/assets/index-By21OUhq.js"></script>
+  <link rel="modulepreload" crossorigin="" href="/assets/react-DStDGd7D.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/motion-BqkojRoZ.js">
+  <link rel="stylesheet" crossorigin="" href="/assets/index-DCOL7Sml.css">
+<meta property="og:title" content="Gîte chez l'habitant Amazigh — Ghassate, Ouarzazate | Guesthouse in Morocco"><meta property="og:description" content="Traditional Amazigh family guesthouse in Ghassate near Ouarzazate: homemade breakfast, traditional hammam, garden and almond-tree oasis. Welcome by Mohamed and his family."><meta property="og:type" content="website"><meta property="og:url" content="https://chez-lhabitant-amazigh-pkj9.arcada.app/en"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Gîte chez l'habitant Amazigh"><meta name="robots" content="index,follow"><link rel="canonical" href="https://chez-lhabitant-amazigh-pkj9.arcada.app/en"><link rel="alternate" hreflang="fr" href="https://chez-lhabitant-amazigh-pkj9.arcada.app/fr"><link rel="alternate" hreflang="en" href="https://chez-lhabitant-amazigh-pkj9.arcada.app/en"><link rel="alternate" hreflang="ar" href="https://chez-lhabitant-amazigh-pkj9.arcada.app/ar"><link rel="alternate" hreflang="x-default" href="https://chez-lhabitant-amazigh-pkj9.arcada.app/fr"><script id="ld-json" type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Gîte chez l'habitant Amazigh","alternateName":"Chez l'habitant AmazighTiken","description":"Traditional Amazigh family guesthouse in Ghassate near Ouarzazate: homemade breakfast, traditional hammam, garden and almond-tree oasis. Welcome by Mohamed and his family.","url":"https://chez-lhabitant-amazigh-pkj9.arcada.app/en","address":{"@type":"PostalAddress","streetAddress":"Commune rurale de Ghassate","addressLocality":"Ouarzazate","postalCode":"45022","addressCountry":"MA"},"geo":{"@type":"GeoCoordinates","latitude":31.178871,"longitude":-6.813136},"hasMap":"https://www.google.com/maps?q=31.178871,-6.813136","knowsLanguage":["ar","fr","en","es","pt"],"checkinTime":"10:00","checkoutTime":"18:00","sameAs":["https://www.booking.com/hotel/ma/chez-l-habitant-amazightiken.fr.html","https://www.airbnb.fr/rooms/956593018740086715"],"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Free Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Free private parking","value":true},{"@type":"LocationFeatureSpecification","name":"Traditional hammam","value":true},{"@type":"LocationFeatureSpecification","name":"Garden","value":true},{"@type":"LocationFeatureSpecification","name":"Terrace","value":true},{"@type":"LocationFeatureSpecification","name":"Fireplace","value":true},{"@type":"LocationFeatureSpecification","name":"Billiards","value":true}]}</script></head>
+  <body>
+    <div id="root"><a href="#main" class="sr-only-focusable fixed start-4 top-4 z-[60] bg-cream px-4 py-2 text-brown shadow" data-source-loc="src/components/Layout.tsx:37:6">Skip to content</a><header class="fixed inset-x-0 top-0 z-50 transition-all duration-500 bg-transparent py-5 text-cream" data-source-loc="src/components/Header.tsx:65:6"><div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 md:px-10" data-source-loc="src/components/Header.tsx:70:8"><a class="group flex flex-col leading-none" aria-label="Gîte chez l'habitant Amazigh — Home" data-source-loc="src/components/Header.tsx:71:10" href="/en" data-discover="true"><span class="font-display text-[1.05rem] italic opacity-90" dir="ltr" data-source-loc="src/components/Header.tsx:72:12">Chez l'habitant</span><span class="font-display mt-0.5 text-2xl uppercase tracking-[0.28em]" dir="ltr" data-source-loc="src/components/Header.tsx:73:12">Amazigh</span></a><nav aria-label="Main navigation" class="hidden items-center gap-7 xl:flex" data-source-loc="src/components/Header.tsx:76:10"><a data-source-loc="src/components/Header.tsx:78:14" class="eyebrow relative py-2 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 rtl:after:origin-right opacity-75 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100" href="/en/story" data-discover="true">Our story</a><a data-source-loc="src/components/Header.tsx:78:14" class="eyebrow relative py-2 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 rtl:after:origin-right opacity-75 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100" href="/en/accommodation" data-discover="true">Accommodation</a><a data-source-loc="src/components/Header.tsx:78:14" class="eyebrow relative py-2 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 rtl:after:origin-right opacity-75 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100" href="/en/gastronomy" data-discover="true">Gastronomy</a><a data-source-loc="src/components/Header.tsx:78:14" class="eyebrow relative py-2 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 rtl:after:origin-right opacity-75 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100" href="/en/experiences" data-discover="true">Experiences</a><a data-source-loc="src/components/Header.tsx:78:14" class="eyebrow relative py-2 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 rtl:after:origin-right opacity-75 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100" href="/en/gallery" data-discover="true">Gallery</a><a data-source-loc="src/components/Header.tsx:78:14" class="eyebrow relative py-2 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 rtl:after:origin-right opacity-75 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100" href="/en/location" data-discover="true">Location</a></nav><div class="flex items-center gap-3" data-source-loc="src/components/Header.tsx:92:10"><div class="hidden sm:block" data-source-loc="src/components/Header.tsx:93:12"><nav aria-label="Language" class="flex items-center gap-1" data-source-loc="src/components/Header.tsx:13:4"><a lang="fr" hreflang="fr" class="min-w-9 px-2 py-1.5 text-center text-[0.78rem] font-semibold tracking-[0.12em] transition-colors text-cream/80 hover:text-cream" data-source-loc="src/components/Header.tsx:15:8" href="/fr" data-discover="true">FR</a><a lang="en" hreflang="en" aria-current="true" class="min-w-9 px-2 py-1.5 text-center text-[0.78rem] font-semibold tracking-[0.12em] transition-colors bg-cream text-brown" data-source-loc="src/components/Header.tsx:15:8" href="/en" data-discover="true">EN</a><a lang="ar" hreflang="ar" class="min-w-9 px-2 py-1.5 text-center text-[0.78rem] font-semibold tracking-[0.12em] transition-colors text-cream/80 hover:text-cream" data-source-loc="src/components/Header.tsx:15:8" href="/ar" data-discover="true">ع</a></nav></div><a class="btn hidden px-5 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] transition-colors md:inline-block border border-cream/70 text-cream hover:bg-cream hover:text-brown" data-source-loc="src/components/Header.tsx:96:12" href="/en/contact" data-discover="true">Request a stay</a><button type="button" class="-me-2 p-2 xl:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" data-source-loc="src/components/Header.tsx:104:12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu size-7" aria-hidden="true" data-source-loc="src/components/Header.tsx:112:49"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></div></header><main id="main" tabindex="-1" class="outline-none" data-source-loc="src/components/Layout.tsx:45:6"><section class="on-dark relative isolate min-h-[100svh] overflow-hidden bg-brown text-cream" aria-labelledby="hero-title" data-source-loc="src/pages/Home.tsx:23:4"><div class="absolute inset-0 -z-10" data-source-loc="src/pages/Home.tsx:27:8"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" class="absolute inset-0 h-full w-full" aria-hidden="true" focusable="false" data-source-loc="src/components/HeroScene.tsx:65:4"><defs data-source-loc="src/components/HeroScene.tsx:72:6"><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1" data-source-loc="src/components/HeroScene.tsx:73:8"><stop offset="0" stop-color="#2a2620" data-source-loc="src/components/HeroScene.tsx:74:10"></stop><stop offset="0.34" stop-color="#5d4236" data-source-loc="src/components/HeroScene.tsx:75:10"></stop><stop offset="0.58" stop-color="#b4704a" data-source-loc="src/components/HeroScene.tsx:76:10"></stop><stop offset="0.72" stop-color="#dcab7c" data-source-loc="src/components/HeroScene.tsx:77:10"></stop><stop offset="0.84" stop-color="#e9cfa5" data-source-loc="src/components/HeroScene.tsx:78:10"></stop></linearGradient></defs><rect width="1600" height="900" fill="url(#sky)" data-source-loc="src/components/HeroScene.tsx:82:6"></rect><g fill="#F7F1E7" data-source-loc="src/components/HeroScene.tsx:85:6"><circle cx="180" cy="90" r="1.8" opacity="0.35" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="340" cy="150" r="1.2" opacity="0.47" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="520" cy="60" r="1.2" opacity="0.59" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="700" cy="120" r="1.8" opacity="0.71" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="880" cy="70" r="1.2" opacity="0.35" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="1180" cy="110" r="1.2" opacity="0.47" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="1400" cy="70" r="1.8" opacity="0.59" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="1500" cy="180" r="1.2" opacity="0.71" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="260" cy="230" r="1.2" opacity="0.35" data-source-loc="src/components/HeroScene.tsx:87:10"></circle><circle cx="1320" cy="230" r="1.8" opacity="0.47" data-source-loc="src/components/HeroScene.tsx:87:10"></circle></g><g data-source-loc="src/components/HeroScene.tsx:92:6" style="transform: none; transform-origin: 50% 50%; transform-box: fill-box;"><circle cx="1010" cy="520" r="250" fill="#F7F1E7" opacity="0.12" data-source-loc="src/components/HeroScene.tsx:93:8" style="animation: 9s ease-in-out 0s infinite normal none running sun-pulse; transform-origin: 1010px 520px;"></circle><circle cx="1010" cy="520" r="165" fill="#F7F1E7" opacity="0.18" data-source-loc="src/components/HeroScene.tsx:94:8"></circle><circle cx="1010" cy="520" r="92" fill="#F7F1E7" opacity="0.95" data-source-loc="src/components/HeroScene.tsx:95:8"></circle></g><g fill="none" stroke="#30271F" stroke-width="2" stroke-linecap="round" opacity="0.55" data-source-loc="src/components/HeroScene.tsx:99:6"><path d="M0 0 q7 -7 14 0 q7 -7 14 0" transform="translate(0 330)" data-source-loc="src/components/HeroScene.tsx:101:10" style="animation: 38s linear 0s infinite normal none running bird;"></path><path d="M0 0 q7 -7 14 0 q7 -7 14 0" transform="translate(0 360)" data-source-loc="src/components/HeroScene.tsx:101:10" style="animation: 46s linear -9s infinite normal none running bird;"></path><path d="M0 0 q7 -7 14 0 q7 -7 14 0" transform="translate(0 300)" data-source-loc="src/components/HeroScene.tsx:101:10" style="animation: 54s linear -21s infinite normal none running bird;"></path></g><g data-source-loc="src/components/HeroScene.tsx:106:6" style="transform: none; transform-origin: 50% 50%; transform-box: fill-box;"><polygon fill="#a06c50" opacity="0.9" points="0,610 140,545 260,585 420,480 540,555 700,505 820,565 980,470 1120,548 1260,490 1400,565 1520,510 1600,550 1600,960 0,960" data-source-loc="src/components/HeroScene.tsx:107:8"></polygon><polygon fill="#c48a62" opacity="0.35" points="980,470 1120,548 1010,560" data-source-loc="src/components/HeroScene.tsx:108:8"></polygon><polygon fill="#c48a62" opacity="0.3" points="420,480 540,555 450,565" data-source-loc="src/components/HeroScene.tsx:109:8"></polygon></g><g data-source-loc="src/components/HeroScene.tsx:113:6" style="transform: none; transform-origin: 50% 50%; transform-box: fill-box;"><polygon fill="#7c4d38" points="0,665 120,625 300,655 480,565 640,645 760,605 900,660 1080,590 1240,655 1380,615 1600,665 1600,960 0,960" data-source-loc="src/components/HeroScene.tsx:114:8"></polygon><polygon fill="#9a6045" opacity="0.5" points="1080,590 1240,655 1130,662" data-source-loc="src/components/HeroScene.tsx:115:8"></polygon><polygon fill="#9a6045" opacity="0.5" points="480,565 640,645 520,652" data-source-loc="src/components/HeroScene.tsx:116:8"></polygon></g><g data-source-loc="src/components/HeroScene.tsx:120:6" style="transform: none; transform-origin: 50% 50%; transform-box: fill-box;"><polygon fill="#46513A" points="0,745 180,710 340,735 520,695 700,740 1000,725 1180,695 1340,730 1500,705 1600,735 1600,960 0,960" data-source-loc="src/components/HeroScene.tsx:121:8"></polygon><g fill="#3a2c22" data-source-loc="src/components/HeroScene.tsx:124:8"><polygon points="696,752 712,572 792,572 806,752" data-source-loc="src/components/HeroScene.tsx:125:10"></polygon><polygon points="894,752 908,592 988,592 1004,752" data-source-loc="src/components/HeroScene.tsx:126:10"></polygon><rect x="740" y="652" width="220" height="100" data-source-loc="src/components/HeroScene.tsx:127:10"></rect><rect x="806" y="604" width="88" height="52" data-source-loc="src/components/HeroScene.tsx:128:10"></rect><rect x="714" y="559" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="734" y="559" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="754" y="559" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="774" y="559" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="910" y="579" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="930" y="579" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="950" y="579" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="970" y="579" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="808" y="591" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="828" y="591" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="848" y="591" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="868" y="591" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect><rect x="888" y="591" width="12" height="13" data-source-loc="src/components/HeroScene.tsx:40:8"></rect></g><g fill="#A65F3F" opacity="0.55" data-source-loc="src/components/HeroScene.tsx:134:8"><polygon points="1004,752 988,592 976,592 988,752" data-source-loc="src/components/HeroScene.tsx:135:10"></polygon><polygon points="806,752 792,572 782,572 794,752" data-source-loc="src/components/HeroScene.tsx:136:10"></polygon><rect x="950" y="652" width="10" height="100" data-source-loc="src/components/HeroScene.tsx:137:10"></rect></g><g fill="#D8C2A0" opacity="0.7" data-source-loc="src/components/HeroScene.tsx:140:8"><polygon points="720,620 729,608 738,620" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="739.2,620 748.2,608 757.2,620" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="758.4,620 767.4,608 776.4,620" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="777.6,620 786.6,608 795.6,620" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="916,640 925,628 934,640" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="935.2,640 944.2,628 953.2,640" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="954.4,640 963.4,628 972.4,640" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="973.6,640 982.6,628 991.6,640" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="752,700 762,686 772,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="774.4,700 784.4,686 794.4,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="796.8,700 806.8,686 816.8,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="819.2,700 829.2,686 839.2,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="841.6,700 851.6,686 861.6,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="864,700 874,686 884,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="886.4,700 896.4,686 906.4,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="908.8,700 918.8,686 928.8,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon><polygon points="931.2,700 941.2,686 951.2,700" data-source-loc="src/components/HeroScene.tsx:50:8"></polygon></g><g fill="#F0C58C" data-source-loc="src/components/HeroScene.tsx:146:8"><rect x="746" y="590" width="6" height="20" data-source-loc="src/components/HeroScene.tsx:147:10"></rect><rect x="768" y="590" width="6" height="20" data-source-loc="src/components/HeroScene.tsx:148:10"></rect><rect x="942" y="610" width="6" height="20" data-source-loc="src/components/HeroScene.tsx:149:10"></rect><rect x="964" y="610" width="6" height="20" opacity="0.6" data-source-loc="src/components/HeroScene.tsx:150:10"></rect><rect x="846" y="626" width="6" height="18" data-source-loc="src/components/HeroScene.tsx:151:10"></rect><rect x="868" y="626" width="6" height="18" opacity="0.6" data-source-loc="src/components/HeroScene.tsx:152:10"></rect></g><path d="M836 752 V722 a14 14 0 0 1 28 0 V752Z" fill="#1d1611" data-source-loc="src/components/HeroScene.tsx:154:8"></path></g><path d="M0 805 Q300 765 640 805 T1280 795 T1600 782 L1600 900 L0 900Z" fill="#241c16" data-source-loc="src/components/HeroScene.tsx:158:6"></path><g data-source-loc="src/components/HeroScene.tsx:161:6"><g stroke="#1d1611" stroke-linecap="round" fill="none" data-source-loc="src/components/HeroScene.tsx:162:8"><path d="M190 830 C184 770 200 725 176 668" stroke-width="9" data-source-loc="src/components/HeroScene.tsx:163:10"></path><path d="M182 735 C150 715 128 700 112 676" stroke-width="5" data-source-loc="src/components/HeroScene.tsx:164:10"></path><path d="M190 715 C220 700 240 690 258 668" stroke-width="5" data-source-loc="src/components/HeroScene.tsx:165:10"></path><path d="M178 690 C170 660 176 640 190 620" stroke-width="4" data-source-loc="src/components/HeroScene.tsx:166:10"></path></g><g data-source-loc="src/components/HeroScene.tsx:17:4"><circle cx="285.9359425567585" cy="650.0258294752801" r="8.470847060411096" fill="#F7F1E7" opacity="0.9258741323518327" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="117.97981370340064" cy="640.8406267411806" r="14.02463621555328" fill="#F2E2D6" opacity="0.8885700542745834" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="144.78974491032724" cy="592.8446238013987" r="14.801089072414758" fill="#F7F1E7" opacity="0.8548462890040561" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="155.88525212037595" cy="586.9369617152803" r="5.6466476364495675" fill="#E3BFB0" opacity="0.8735791324764296" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="267.64174496813143" cy="617.0815128048592" r="6.474037995072117" fill="#E3BFB0" opacity="0.9646336467048466" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="146.61801347834134" cy="591.8828898756838" r="11.929192830742517" fill="#F2E2D6" opacity="0.9616668322139111" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="135.57988870570685" cy="682.5725165539673" r="15.046051466880414" fill="#EBD3C6" opacity="0.81051463834058" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="158.69054575382165" cy="698.9117772508055" r="8.538480815979169" fill="#F2E2D6" opacity="0.8914741389746537" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="166.56664758642557" cy="577.3519792620687" r="5.70347365988742" fill="#EBD3C6" opacity="0.8921260046140533" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="108.43937447738733" cy="647.1940778922926" r="7.315398795823938" fill="#F2E2D6" opacity="0.7909759678235054" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="137.03032514669675" cy="684.3218409572603" r="12.973052427147564" fill="#F2E2D6" opacity="0.88297097098359" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="215.582226096554" cy="692.9561222537833" r="8.403128066475622" fill="#EBD3C6" opacity="0.8647900585129765" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="140.08499556831632" cy="699.5162633069084" r="12.36852494382162" fill="#F7F1E7" opacity="0.9612989568163631" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="81.01808854184398" cy="669.0211447728666" r="12.621563167890127" fill="#E3BFB0" opacity="0.8832487052523054" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="88.40599193668841" cy="647.9816321688503" r="16.274871223862164" fill="#EBD3C6" opacity="0.9216463511452511" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="179.40443296041025" cy="709.9050064927509" r="9.207054628252102" fill="#EBD3C6" opacity="0.8582863653994038" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="208.67933791545695" cy="579.6167964261538" r="6.33288690199413" fill="#F2E2D6" opacity="0.7955459843720738" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="143.94403872164946" cy="666.9367652560588" r="5.93460786429663" fill="#F2E2D6" opacity="0.8240010990425954" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="151.75370997603434" cy="628.0493966596706" r="10.485280831796379" fill="#E3BFB0" opacity="0.8075590154599017" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="271.5709900998075" cy="615.3279818052407" r="15.686893713368935" fill="#F2E2D6" opacity="0.9615524617969547" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="184.0476640407922" cy="609.0604247466862" r="5.125839199988022" fill="#F7F1E7" opacity="0.7952079678282216" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="266.70294878470645" cy="650.6111276281665" r="7.776515363507453" fill="#E3BFB0" opacity="0.8778721666129978" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="159.39490258633742" cy="614.7480223076769" r="15.5850432520593" fill="#F7F1E7" opacity="0.8547890078227864" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="209.90681489289366" cy="633.4133905540947" r="10.871127243965052" fill="#F7F1E7" opacity="0.9625981666171907" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="110.86251473079055" cy="593.0730956263324" r="5.251966474812447" fill="#F2E2D6" opacity="0.8176268070541572" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="261.40822158613344" cy="638.5250460148629" r="13.152507599585231" fill="#EBD3C6" opacity="0.8245553510864781" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="201.16375343383461" cy="706.804732800954" r="5.628144998688386" fill="#F2E2D6" opacity="0.9201405851730524" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="162.56107433972707" cy="596.2045688221049" r="5.392772272594993" fill="#F7F1E7" opacity="0.9638059232419413" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="242.3595799242953" cy="697.4903153579182" r="15.71627564236175" fill="#F7F1E7" opacity="0.9566271359069526" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="250.8409384517895" cy="590.3937777862126" r="16.451489177952975" fill="#F2E2D6" opacity="0.8639203690028939" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="181.05696400655106" cy="716.7030105275255" r="15.58658770712706" fill="#EBD3C6" opacity="0.8269495433819942" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="94.0472157512313" cy="691.4410435799222" r="11.705314286710056" fill="#EBD3C6" opacity="0.9043021941970123" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="173.94336053958975" cy="604.9407211826333" r="13.702390254198006" fill="#EBD3C6" opacity="0.8197252538611417" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="138.55979548468326" cy="721.8667628227689" r="16.929766697743688" fill="#E3BFB0" opacity="0.9544382497616468" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="222.96218386885306" cy="632.8492750541909" r="12.742584913729303" fill="#F7F1E7" opacity="0.8794889911259423" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="89.26857763096262" cy="625.7736077362368" r="16.34918693764991" fill="#EBD3C6" opacity="0.817430197687289" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="137.50842988647088" cy="660.4808031410362" r="12.951345309569822" fill="#E3BFB0" opacity="0.8923044771256898" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="84.02245100902849" cy="647.1198027317017" r="9.349438358423708" fill="#F2E2D6" opacity="0.7852037701990491" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="155.4568197363558" cy="704.8665801250338" r="7.433074022115277" fill="#E3BFB0" opacity="0.838180944955145" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="188.03676873652554" cy="713.2537354596931" r="10.150050793914172" fill="#F7F1E7" opacity="0.9345763415792737" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="226.68884185241407" cy="582.8846748383444" r="15.920221981518177" fill="#E3BFB0" opacity="0.9717775357065513" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="275.1630167880252" cy="660.7689195662701" r="12.21251195409569" fill="#E3BFB0" opacity="0.9596398764286562" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="219.61146115663098" cy="656.6460683612688" r="5.963247380185171" fill="#F7F1E7" opacity="0.7969692329289105" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="265.7212302037615" cy="653.6272554973867" r="16.348979837586153" fill="#F7F1E7" opacity="0.806729365276852" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="206.82220920572718" cy="711.3700529670865" r="7.919109669438665" fill="#EBD3C6" opacity="0.9787912489090034" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="99.88679513192639" cy="679.9993118301965" r="14.29212605328497" fill="#EBD3C6" opacity="0.8632874537289957" data-source-loc="src/components/HeroScene.tsx:22:10"></circle></g><g stroke="#1d1611" stroke-linecap="round" fill="none" data-source-loc="src/components/HeroScene.tsx:170:8"><path d="M430 836 C426 800 436 770 420 736" stroke-width="6" data-source-loc="src/components/HeroScene.tsx:171:10"></path><path d="M426 770 C404 756 392 746 382 730" stroke-width="3.5" data-source-loc="src/components/HeroScene.tsx:172:10"></path><path d="M428 756 C448 746 460 738 470 722" stroke-width="3.5" data-source-loc="src/components/HeroScene.tsx:173:10"></path></g><g data-source-loc="src/components/HeroScene.tsx:17:4"><circle cx="488.767326662246" cy="728.0444494337102" r="15.412541192409154" fill="#E3BFB0" opacity="0.8176223970554978" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="371.562423630765" cy="699.6620222997688" r="8.073908646659842" fill="#EBD3C6" opacity="0.9057101629168821" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="490.59443781154823" cy="743.5057487626999" r="10.40326721724427" fill="#E3BFB0" opacity="0.8045388671053004" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="443.2223684692006" cy="738.6083293762337" r="6.939942920524574" fill="#F7F1E7" opacity="0.8607373975224211" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="432.8795775224441" cy="696.1523638769295" r="9.422113996392222" fill="#E3BFB0" opacity="0.9339009401145401" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="489.55648406050636" cy="747.0327574347824" r="13.787578497815485" fill="#E3BFB0" opacity="0.9250004966417332" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="432.0574945326726" cy="730.5901291202907" r="11.138154400641243" fill="#F2E2D6" opacity="0.8715439152080043" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="457.0797680210801" cy="711.5865481208713" r="15.615442459113376" fill="#F2E2D6" opacity="0.9144224170170934" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="449.09841569770805" cy="764.2837037401159" r="7.11042099083813" fill="#F2E2D6" opacity="0.9163780139352922" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="392.70788288204596" cy="723.8143058890412" r="11.946196398647684" fill="#E3BFB0" opacity="0.8129279036567807" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="438.2945194430083" cy="733.0492844642089" r="16.91915728703063" fill="#F2E2D6" opacity="0.8889129130439022" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="395.5953099485943" cy="728.4830339182262" r="15.209384210602739" fill="#F7F1E7" opacity="0.8343701756320616" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="481.6804252803395" cy="727.4540396223945" r="15.1055748370528" fill="#E3BFB0" opacity="0.9238968704490893" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="390.58363557131196" cy="755.004076326025" r="15.864689509258316" fill="#F2E2D6" opacity="0.8897461158500483" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="410.06483314581374" cy="726.8112717200141" r="14.824613671586489" fill="#F7F1E7" opacity="0.8049390534357532" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="429.28223763111754" cy="685.0144814359919" r="5.621163890344244" fill="#F2E2D6" opacity="0.8148590962913438" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="386.6666244612474" cy="754.0866844192466" r="8.998660717158263" fill="#EBD3C6" opacity="0.8266379533024859" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="436.73211678129667" cy="760.8862494802212" r="7.8038236040657605" fill="#F2E2D6" opacity="0.9120032973140509" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="464.5437875576916" cy="708.4610030828075" r="9.45584250097707" fill="#F2E2D6" opacity="0.8626770465659696" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="433.5113761620201" cy="688.3318558099575" r="13.060681140106807" fill="#E3BFB0" opacity="0.9246573853908642" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="414.82680510246894" cy="771.8310435590065" r="5.377517611139936" fill="#E3BFB0" opacity="0.8256239036709293" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="492.1590671278537" cy="729.3570383644316" r="13.329546101698229" fill="#F7F1E7" opacity="0.8736164999321256" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="482.32904559739427" cy="743.961733152184" r="12.755129756177897" fill="#E3BFB0" opacity="0.8043670235614917" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="411.0109400250967" cy="701.1989643318337" r="10.613381737483088" fill="#F7F1E7" opacity="0.9277944998515719" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="479.60680394137415" cy="705.0575967490227" r="5.755899435613211" fill="#E3BFB0" opacity="0.8928804213487361" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="476.26596971540846" cy="705.1440645952704" r="5.457522798755693" fill="#F2E2D6" opacity="0.9136660534456988" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="387.4906718058221" cy="698.647953650311" r="6.884435007241028" fill="#EBD3C6" opacity="0.8004217555191571" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="458.66754764271286" cy="755.0211985925707" r="6.178316828960848" fill="#EBD3C6" opacity="0.9314177697258236" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="414.3182353540613" cy="735.786092970705" r="13.148826927085246" fill="#F7F1E7" opacity="0.9098814077208577" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="368.5514042786032" cy="703.4166958346669" r="15.354467533858928" fill="#EBD3C6" opacity="0.8317611071018141" data-source-loc="src/components/HeroScene.tsx:22:10"></circle></g><g stroke="#1d1611" stroke-linecap="round" fill="none" data-source-loc="src/components/HeroScene.tsx:177:8"><path d="M1440 826 C1446 780 1430 742 1452 696" stroke-width="8" data-source-loc="src/components/HeroScene.tsx:178:10"></path><path d="M1438 760 C1470 744 1490 730 1506 706" stroke-width="5" data-source-loc="src/components/HeroScene.tsx:179:10"></path><path d="M1440 744 C1410 728 1394 716 1380 694" stroke-width="5" data-source-loc="src/components/HeroScene.tsx:180:10"></path></g><g data-source-loc="src/components/HeroScene.tsx:17:4"><circle cx="1530.9350487308334" cy="690.0384597314127" r="14.874430261435387" fill="#F2E2D6" opacity="0.9651948172647458" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1490.9086429498614" cy="644.109740029865" r="14.902895830481217" fill="#F2E2D6" opacity="0.8102015293670832" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1533.0743943785421" cy="684.3757347835422" r="14.630593992425682" fill="#EBD3C6" opacity="0.9190002510873604" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1510.7696615995824" cy="650.1140679602142" r="6.200917043910285" fill="#F2E2D6" opacity="0.9537898175360541" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1358.8453250032285" cy="720.3311974512695" r="12.880356283746991" fill="#F7F1E7" opacity="0.7800339152291733" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1472.216770899462" cy="664.4653070131885" r="11.011358115832655" fill="#EBD3C6" opacity="0.8030955454735975" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1494.4780386894697" cy="631.2400106239335" r="9.942667008324216" fill="#E3BFB0" opacity="0.8938128998817997" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1440.8970499643688" cy="723.6216331584881" r="15.000035807490383" fill="#F2E2D6" opacity="0.9298805438632896" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1467.2289835180688" cy="750.9539946067287" r="9.735022517605707" fill="#F2E2D6" opacity="0.8739482943098511" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1489.5825598076576" cy="678.8674595095595" r="11.01431205497525" fill="#E3BFB0" opacity="0.9146696546624132" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1491.0986379863698" cy="682.7397008781546" r="6.092811648820351" fill="#E3BFB0" opacity="0.9140889461655999" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1475.3658011537314" cy="724.9680965525981" r="13.034380700471234" fill="#F2E2D6" opacity="0.9374672516039269" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1450.9629163578045" cy="636.7424189192116" r="13.541546326634982" fill="#F7F1E7" opacity="0.9452694912303887" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1385.7507239422066" cy="712.8725381653933" r="7.154331596711959" fill="#EBD3C6" opacity="0.9717475955483947" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1345.6781034051542" cy="685.8911759334358" r="12.224760842718894" fill="#F2E2D6" opacity="0.95734322359538" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1493.264217920274" cy="698.1033752990439" r="12.81310145725785" fill="#F2E2D6" opacity="0.7825318214693403" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1451.8375089674626" cy="633.4903344946459" r="7.475361394207329" fill="#F2E2D6" opacity="0.8374425424984121" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1476.6585954399936" cy="739.3853625042243" r="10.164271754365668" fill="#F2E2D6" opacity="0.8902877554579525" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1543.9436545419546" cy="703.9283728661511" r="11.758378690814952" fill="#E3BFB0" opacity="0.9168953145452732" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1506.2257277277142" cy="689.3996262086114" r="16.275659754197726" fill="#E3BFB0" opacity="0.860026000440145" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1474.897558642305" cy="688.0588300955285" r="13.805129951615939" fill="#EBD3C6" opacity="0.9796719404120668" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1385.8381374580997" cy="709.56045193814" r="10.156385679874928" fill="#F2E2D6" opacity="0.8760483094640527" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1370.7237959486724" cy="719.4487164376894" r="7.515080322059878" fill="#E3BFB0" opacity="0.8046081574117842" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1472.4024356356338" cy="683.467375625447" r="14.189236314212192" fill="#EBD3C6" opacity="0.9191108808471923" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1477.1442841294072" cy="739.1667055241762" r="5.4679377437270595" fill="#EBD3C6" opacity="0.8498783560375481" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1452.1915588155573" cy="721.0316557130478" r="6.426085540490305" fill="#EBD3C6" opacity="0.8056027949281063" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1377.7054477279019" cy="680.4948502602933" r="16.45226929285775" fill="#F2E2D6" opacity="0.7831182295671835" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1514.7563631878882" cy="702.6448101742435" r="16.01514851582716" fill="#E3BFB0" opacity="0.9784967146054812" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1415.0265053714882" cy="649.239682110959" r="7.758797618335856" fill="#F2E2D6" opacity="0.9365932523986262" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1409.7820875778114" cy="750.3554792418018" r="9.12419418443385" fill="#EBD3C6" opacity="0.8501378281881454" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1515.4013292443567" cy="700.1471809580474" r="12.66080574100912" fill="#E3BFB0" opacity="0.8100491520483505" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1480.2987373414612" cy="742.0523934672759" r="10.59558367691523" fill="#F7F1E7" opacity="0.8679897892363275" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1453.7785703728216" cy="720.9301704839424" r="5.733010469687181" fill="#E3BFB0" opacity="0.8537754715362336" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1432.869598195817" cy="638.1428430389178" r="15.155281009297148" fill="#EBD3C6" opacity="0.8468138923745732" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1426.045844853804" cy="640.8302512521283" r="7.3790862675561435" fill="#F7F1E7" opacity="0.9647652693137203" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1445.7979642486232" cy="651.5670500607459" r="14.077061454837267" fill="#F7F1E7" opacity="0.9637989386951541" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1355.0067716127082" cy="671.7942916152574" r="11.19535557571366" fill="#F7F1E7" opacity="0.8742797432600332" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1473.4819027686983" cy="627.7398001610037" r="14.791814099803393" fill="#EBD3C6" opacity="0.8182355733199377" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1499.6798459426705" cy="728.7031134757838" r="14.66142319111286" fill="#E3BFB0" opacity="0.9451931835945633" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1507.0280012851563" cy="692.4974431903561" r="7.7072371902943" fill="#E3BFB0" opacity="0.9242132058033843" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1480.8330383295297" cy="683.1252988495157" r="14.994697965676615" fill="#EBD3C6" opacity="0.7933011376609105" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1452.9836561742618" cy="619.2550798956689" r="13.25180791714397" fill="#EBD3C6" opacity="0.8564740561847334" data-source-loc="src/components/HeroScene.tsx:22:10"></circle></g><g data-source-loc="src/components/HeroScene.tsx:17:4"><circle cx="1148.9270500736736" cy="800.006779446248" r="14.33631933046162" fill="#EBD3C6" opacity="0.9127672373808615" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1129.2711193152838" cy="809.2512221574899" r="9.731883008714657" fill="#EBD3C6" opacity="0.9146928959104167" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1142.2188417715884" cy="786.9847177860395" r="6.857920762019158" fill="#F7F1E7" opacity="0.833461634976288" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1092.9546746437993" cy="783.7068276189848" r="5.461891167295995" fill="#F2E2D6" opacity="0.8468422374565547" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1136.9650246418787" cy="811.6930599924243" r="16.338598571101763" fill="#E3BFB0" opacity="0.8261668904369389" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1088.4204031191018" cy="782.7399566330762" r="8.235137733849825" fill="#F7F1E7" opacity="0.8811905943985942" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1069.0259738196248" cy="790.2452805125918" r="8.747179616007191" fill="#F7F1E7" opacity="0.9160818845555949" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1097.7502250181697" cy="789.3528448501867" r="14.384629155867387" fill="#F2E2D6" opacity="0.9453386707094859" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1114.2598666038868" cy="832.3424785421948" r="12.35962404437328" fill="#F2E2D6" opacity="0.83151857468441" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1097.51741295565" cy="810.2308684086738" r="10.082427711302813" fill="#EBD3C6" opacity="0.8164114055749135" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1124.8220405586353" cy="781.586370619129" r="7.266466016198011" fill="#EBD3C6" opacity="0.9392649792872975" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1125.6479534863959" cy="780.5779468676383" r="10.85937719033973" fill="#E3BFB0" opacity="0.8405643274826597" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1075.6698954806332" cy="796.4197501610514" r="11.977517816217166" fill="#E3BFB0" opacity="0.9666421120116879" data-source-loc="src/components/HeroScene.tsx:22:10"></circle><circle cx="1082.8886691609064" cy="803.6779121346304" r="10.443973689753538" fill="#E3BFB0" opacity="0.8537490751536089" data-source-loc="src/components/HeroScene.tsx:22:10"></circle></g></g><g fill="#F7F1E7" opacity="0.7" data-source-loc="src/components/HeroScene.tsx:188:6"><ellipse cx="300" cy="520" rx="4" ry="2.4" data-source-loc="src/components/HeroScene.tsx:190:10" style="animation: 6s ease-in-out 0s infinite normal none running float-y;"></ellipse><ellipse cx="520" cy="600" rx="4" ry="2.4" data-source-loc="src/components/HeroScene.tsx:190:10" style="animation: 7s ease-in-out -4s infinite normal none running float-y;"></ellipse><ellipse cx="1230" cy="560" rx="4" ry="2.4" data-source-loc="src/components/HeroScene.tsx:190:10" style="animation: 8s ease-in-out -8s infinite normal none running float-y;"></ellipse><ellipse cx="1330" cy="640" rx="4" ry="2.4" data-source-loc="src/components/HeroScene.tsx:190:10" style="animation: 9s ease-in-out -2s infinite normal none running float-y;"></ellipse></g></svg></div><div class="absolute inset-0 -z-10 bg-gradient-to-r from-brown/75 via-brown/25 to-transparent rtl:bg-gradient-to-l" aria-hidden="true" data-source-loc="src/pages/Home.tsx:31:6"></div><div class="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-brown/80 to-transparent" aria-hidden="true" data-source-loc="src/pages/Home.tsx:32:6"></div><div class="grain absolute inset-0 -z-10" aria-hidden="true" data-source-loc="src/pages/Home.tsx:33:6"></div><div class="mx-auto max-w-7xl px-6 md:px-10 flex min-h-[100svh] flex-col justify-end pb-14 pt-36 md:pb-20" data-source-loc="src/pages/Home.tsx:35:6"><div class="flex items-center gap-4" data-source-loc="src/pages/Home.tsx:36:8" style="opacity: 1; transform: none;"><span class="tifinagh text-3xl text-accent" aria-hidden="true" data-source-loc="src/pages/Home.tsx:37:10">ⴰⵣⵓⵍ</span><span class="h-px w-12 bg-accent/60" aria-hidden="true" data-source-loc="src/pages/Home.tsx:38:10"></span><p class="eyebrow text-cream/90" data-source-loc="src/pages/Home.tsx:39:10">Ghassate · Ouarzazate · Morocco</p></div><h1 id="hero-title" class="mt-6" lang="fr" data-source-loc="src/pages/Home.tsx:42:8"><span class="font-display block text-[clamp(2.2rem,6vw,5rem)] italic leading-none text-cream/95" data-source-loc="src/pages/Home.tsx:43:10" style="opacity: 1; transform: none;">Chez l'habitant</span><span class="font-display -ms-1 block text-[clamp(4.2rem,17vw,15rem)] uppercase leading-[0.82] tracking-[0.02em]" data-source-loc="src/pages/Home.tsx:51:10" style="opacity: 1; transform: none;">Amazigh</span></h1><div class="mt-8 grid items-end gap-10 md:grid-cols-[1fr_auto]" data-source-loc="src/pages/Home.tsx:61:8" style="opacity: 1; transform: none;"><div data-source-loc="src/pages/Home.tsx:67:10"><p class="max-w-xl text-lg leading-relaxed text-cream/90 md:text-xl" data-source-loc="src/pages/Home.tsx:68:12">A family home at the foot of the mountains, at the edge of an almond-tree oasis. Mohamed, his wife and their two sons welcome you the way they welcome their own.</p><div class="mt-8 flex flex-wrap gap-3" data-source-loc="src/pages/Home.tsx:69:12"><a class="btn inline-flex items-center justify-center gap-3 px-6 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 border border-cream bg-cream text-brown hover:bg-accent hover:border-accent " data-source-loc="src/components/ui/ButtonLink.tsx:35:6" href="/en/contact" data-discover="true"><span data-source-loc="src/components/ui/ButtonLink.tsx:36:8">Request a stay</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 shrink-0 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/components/ui/ButtonLink.tsx:37:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a class="btn inline-flex items-center justify-center gap-3 px-6 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 border border-cream/60 text-cream hover:bg-cream hover:text-brown " data-source-loc="src/components/ui/ButtonLink.tsx:35:6" href="/en/accommodation" data-discover="true"><span data-source-loc="src/components/ui/ButtonLink.tsx:36:8">Discover the house</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 shrink-0 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/components/ui/ButtonLink.tsx:37:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div><a href="https://www.booking.com/hotel/ma/chez-l-habitant-amazightiken.fr.html" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-5 border border-cream/30 bg-brown/40 px-6 py-4 backdrop-blur-sm transition-colors hover:bg-brown/70" aria-label="Booking.com: 9.4/10, 51 reviews" data-source-loc="src/pages/Home.tsx:75:10"><span class="numeral text-6xl leading-none" dir="ltr" data-source-loc="src/pages/Home.tsx:82:12">9.4</span><span class="eyebrow leading-snug text-cream/85" data-source-loc="src/pages/Home.tsx:83:12"><span class="block" data-source-loc="src/pages/Home.tsx:84:14">Booking.com</span><span class="block text-accent" data-source-loc="src/pages/Home.tsx:85:14">51 reviews</span></span></a></div><div class="mt-10 hidden items-center gap-3 text-cream/70 md:flex" aria-hidden="true" data-source-loc="src/pages/Home.tsx:90:8"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down size-4 animate-bounce" aria-hidden="true" data-source-loc="src/pages/Home.tsx:91:10"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg><span class="eyebrow" data-source-loc="src/pages/Home.tsx:92:10">Scroll</span></div></div></section><section class="mx-auto max-w-7xl px-6 md:px-10 py-24 md:py-36" data-source-loc="src/pages/Home.tsx:102:4"><div class="grid items-center gap-14 md:grid-cols-12 md:gap-8" data-source-loc="src/pages/Home.tsx:103:6"><div class="relative md:col-span-5" data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><div class="absolute -bottom-6 -end-6 -z-10 size-40 rotate-45 border border-primary/40 md:size-56" aria-hidden="true" data-source-loc="src/pages/Home.tsx:105:10"></div><div class="relative overflow-hidden w-full arch  bg-secondary text-cream pattern-light" role="img" aria-label="The family home" data-source-loc="src/components/ui/Photo.tsx:55:4" style="aspect-ratio: 4 / 5;"><div class="absolute inset-3 border border-current opacity-25" aria-hidden="true" data-source-loc="src/components/ui/Photo.tsx:56:6"></div><div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center" data-source-loc="src/components/ui/Photo.tsx:57:6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house size-6 opacity-70" aria-hidden="true" data-source-loc="src/components/ui/Photo.tsx:58:8"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span class="font-display text-xl italic leading-tight md:text-2xl" data-source-loc="src/components/ui/Photo.tsx:61:12">The family home</span><span class="eyebrow opacity-70" data-source-loc="src/components/ui/Photo.tsx:62:12">Photograph coming soon</span></div></div></div><div class="md:col-span-6 md:col-start-7" data-source-loc="src/pages/Home.tsx:108:8"><div data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="eyebrow mb-5 text-primary-deep" data-source-loc="src/pages/Home.tsx:110:12">The house</p><h2 class="font-display text-[clamp(2.4rem,5vw,4.5rem)]" data-source-loc="src/pages/Home.tsx:111:12">A door left open onto the valley.</h2></div><div data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="font-display mt-10 text-2xl italic leading-snug text-foreground/90 md:text-3xl" data-source-loc="src/pages/Home.tsx:114:12">In Ghassate, a rural commune near Ouarzazate, Mohamed's home opens onto a garden, a terrace and mountains that change colour with the light of the day.</p><p class="mt-6 max-w-xl text-muted" data-source-loc="src/pages/Home.tsx:115:12">There is no reception desk or hotel corridor here: you share the large traditional living room, taste the morning bread, and let yourself be guided to the hammam, the garden and the old village.</p><a class="link-line mt-10 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary-deep rtl:tracking-normal" data-source-loc="src/pages/Home.tsx:116:12" href="/en/story" data-discover="true">Our story<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/pages/Home.tsx:118:14"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div></div></section><section class="bg-accent-soft" data-source-loc="src/pages/Home.tsx:130:4"><svg aria-hidden="true" focusable="false" class="block h-4 w-full  " preserveAspectRatio="none" data-source-loc="src/components/ui/Band.tsx:7:4"><defs data-source-loc="src/components/ui/Band.tsx:13:6"><pattern id="_r_0_" width="32" height="16" patternUnits="userSpaceOnUse" data-source-loc="src/components/ui/Band.tsx:14:8"><polygon points="0,16 16,0 32,16" fill="#A65F3F" data-source-loc="src/components/ui/Band.tsx:15:10"></polygon><polygon points="16,16 24,8 32,16" fill="#F7F1E7" data-source-loc="src/components/ui/Band.tsx:16:10"></polygon><polygon points="0,16 8,8 16,16" fill="#F7F1E7" data-source-loc="src/components/ui/Band.tsx:17:10"></polygon><rect x="0" y="14" width="32" height="2" fill="#A65F3F" data-source-loc="src/components/ui/Band.tsx:18:10"></rect></pattern></defs><rect width="100%" height="16" fill="url(#_r_0_)" data-source-loc="src/components/ui/Band.tsx:21:6"></rect></svg><div class="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28" data-source-loc="src/pages/Home.tsx:132:6"><div class="grid gap-10 md:grid-cols-12" data-source-loc="src/pages/Home.tsx:133:8"><div class="md:col-span-4" data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="eyebrow mb-5 text-primary-deep" data-source-loc="src/pages/Home.tsx:135:12">Hospitality in four gestures</p><h2 class="font-display text-[clamp(2.2rem,4vw,3.6rem)]" data-source-loc="src/pages/Home.tsx:136:12">Sleep, taste, unwind, wander.</h2></div><ul class="md:col-span-8" data-source-loc="src/pages/Home.tsx:138:10"><li data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><a class="group grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-x-4 gap-y-2 border-t border-brown/25 py-7 transition-colors hover:bg-cream/60 md:grid-cols-[5rem_14rem_1fr_auto] md:px-4" data-source-loc="src/pages/Home.tsx:141:16" href="/en/accommodation" data-discover="true"><span class="numeral text-2xl text-primary-deep md:text-3xl" data-source-loc="src/pages/Home.tsx:145:18">01</span><span class="font-display text-3xl md:text-4xl" data-source-loc="src/pages/Home.tsx:146:18">Sleep</span><span class="col-span-2 col-start-2 text-muted md:col-span-1 md:col-start-auto" data-source-loc="src/pages/Home.tsx:147:18">Three bedrooms, a large traditional Moroccan living room, a private bathroom and the calm of a family home.</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5 self-center text-primary-deep transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" aria-hidden="true" data-source-loc="src/pages/Home.tsx:148:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></li><li data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><a class="group grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-x-4 gap-y-2 border-t border-brown/25 py-7 transition-colors hover:bg-cream/60 md:grid-cols-[5rem_14rem_1fr_auto] md:px-4" data-source-loc="src/pages/Home.tsx:141:16" href="/en/gastronomy" data-discover="true"><span class="numeral text-2xl text-primary-deep md:text-3xl" data-source-loc="src/pages/Home.tsx:145:18">02</span><span class="font-display text-3xl md:text-4xl" data-source-loc="src/pages/Home.tsx:146:18">Taste</span><span class="col-span-2 col-start-2 text-muted md:col-span-1 md:col-start-auto" data-source-loc="src/pages/Home.tsx:147:18">Homemade breakfast, bread, garden jams and traditional tagines on request.</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5 self-center text-primary-deep transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" aria-hidden="true" data-source-loc="src/pages/Home.tsx:148:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></li><li data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><a class="group grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-x-4 gap-y-2 border-t border-brown/25 py-7 transition-colors hover:bg-cream/60 md:grid-cols-[5rem_14rem_1fr_auto] md:px-4" data-source-loc="src/pages/Home.tsx:141:16" href="/en/experiences" data-discover="true"><span class="numeral text-2xl text-primary-deep md:text-3xl" data-source-loc="src/pages/Home.tsx:145:18">03</span><span class="font-display text-3xl md:text-4xl" data-source-loc="src/pages/Home.tsx:146:18">Unwind</span><span class="col-span-2 col-start-2 text-muted md:col-span-1 md:col-start-auto" data-source-loc="src/pages/Home.tsx:147:18">Traditional hammam, fireplace, billiards and a terrace facing the mountains.</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5 self-center text-primary-deep transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" aria-hidden="true" data-source-loc="src/pages/Home.tsx:148:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></li><li data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><a class="group grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-x-4 gap-y-2 border-t border-brown/25 py-7 transition-colors hover:bg-cream/60 md:grid-cols-[5rem_14rem_1fr_auto] md:px-4" data-source-loc="src/pages/Home.tsx:141:16" href="/en/experiences" data-discover="true"><span class="numeral text-2xl text-primary-deep md:text-3xl" data-source-loc="src/pages/Home.tsx:145:18">04</span><span class="font-display text-3xl md:text-4xl" data-source-loc="src/pages/Home.tsx:146:18">Wander</span><span class="col-span-2 col-start-2 text-muted md:col-span-1 md:col-start-auto" data-source-loc="src/pages/Home.tsx:147:18">Garden and farm, village walks, the old kasbah and the community museum.</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5 self-center text-primary-deep transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" aria-hidden="true" data-source-loc="src/pages/Home.tsx:148:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></li><li class="border-t border-brown/25" aria-hidden="true" data-source-loc="src/pages/Home.tsx:152:12"></li></ul></div></div></section><section class="on-dark pattern-light relative bg-secondary text-cream" data-source-loc="src/pages/Home.tsx:163:4"><div class="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28" data-source-loc="src/pages/Home.tsx:164:6"><div data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="eyebrow mb-5 text-accent" data-source-loc="src/pages/Home.tsx:166:10">What guests say</p><h2 class="font-display mb-14 max-w-2xl text-[clamp(2.2rem,4.5vw,4rem)]" data-source-loc="src/pages/Home.tsx:167:10">Hospitality praised by our travellers.</h2></div><div class="grid gap-12 md:grid-cols-[auto_1fr] md:gap-20" data-source-loc="src/components/Ratings.tsx:15:4"><div data-source-loc="src/components/Ratings.tsx:16:6"><div class="flex items-baseline gap-3" dir="ltr" data-source-loc="src/components/Ratings.tsx:17:8"><span class="numeral text-[clamp(6rem,16vw,12rem)] font-medium leading-[0.85]" data-source-loc="src/components/Ratings.tsx:18:10">9.4</span><span class="font-display text-3xl text-cream/70" data-source-loc="src/components/Ratings.tsx:19:10">/10</span></div><p class="mt-6 text-sm uppercase tracking-[0.2em] text-accent rtl:tracking-normal" data-source-loc="src/components/Ratings.tsx:21:8">Booking.com · 51 reviews</p><a href="https://www.booking.com/hotel/ma/chez-l-habitant-amazightiken.fr.html" target="_blank" rel="noopener noreferrer" class="link-line mt-4 inline-block text-sm text-cream" data-source-loc="src/components/Ratings.tsx:24:8">Read the reviews on Booking.com</a></div><ul class="grid content-start gap-x-12 gap-y-5 sm:grid-cols-2" data-source-loc="src/components/Ratings.tsx:35:8"><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Staff</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">9.8</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.98);"></div></div></li><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Value for money</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">9.6</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.96);"></div></div></li><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Comfort</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">9.4</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.94);"></div></div></li><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Location</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">9.3</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.93);"></div></div></li><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Facilities</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">9.2</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.92);"></div></div></li><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Cleanliness</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">9.1</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.91);"></div></div></li><li data-source-loc="src/components/Ratings.tsx:39:14"><div class="flex items-baseline justify-between gap-4 text-sm" data-source-loc="src/components/Ratings.tsx:40:16"><span class="text-cream/85" data-source-loc="src/components/Ratings.tsx:41:18">Wi-Fi</span><span class="numeral text-xl" dir="ltr" data-source-loc="src/components/Ratings.tsx:42:18">7.5</span></div><div class="mt-2 h-px w-full bg-cream/25" role="presentation" data-source-loc="src/components/Ratings.tsx:44:16"><div class="h-[3px] -translate-y-px bg-accent" data-source-loc="src/components/Ratings.tsx:45:18" style="transform-origin: left center; transform: scaleX(0.75);"></div></div></li></ul></div><p class="mt-14 max-w-2xl text-sm text-cream/70" data-source-loc="src/pages/Home.tsx:170:8">Scores given by guests on Booking.com. They change as new reviews arrive: the property page on Booking.com remains the reference.</p></div></section><section class="grid md:grid-cols-2" data-source-loc="src/pages/Home.tsx:201:4"><div class="on-dark group relative isolate min-h-[34rem] overflow-hidden text-cream md:min-h-[44rem]" data-source-loc="src/pages/Home.tsx:178:4"><div class="absolute inset-0 -z-10 transition-transform duration-[1500ms] ease-out group-hover:scale-[1.03]" data-source-loc="src/pages/Home.tsx:179:6"><div class="relative overflow-hidden h-full w-full   bg-accent text-brown pattern-dark" role="img" aria-label="Breakfast" data-source-loc="src/components/ui/Photo.tsx:55:4"><div class="absolute inset-3 border border-current opacity-25" aria-hidden="true" data-source-loc="src/components/ui/Photo.tsx:56:6"></div><div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center" data-source-loc="src/components/ui/Photo.tsx:57:6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed size-6 opacity-70" aria-hidden="true" data-source-loc="src/components/ui/Photo.tsx:58:8"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"></path><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"></path><path d="m2.1 21.8 6.4-6.3"></path><path d="m19 5-7 7"></path></svg></div></div></div><div class="absolute inset-0 -z-10 bg-gradient-to-t from-brown/90 via-brown/35 to-transparent" aria-hidden="true" data-source-loc="src/pages/Home.tsx:182:6"></div><div class="flex h-full min-h-[34rem] flex-col justify-end p-8 md:min-h-[44rem] md:p-12" data-source-loc="src/pages/Home.tsx:183:6"><div data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="eyebrow mb-4 text-accent" data-source-loc="src/pages/Home.tsx:185:10">At the table</p><h2 class="font-display max-w-md text-4xl md:text-5xl" data-source-loc="src/pages/Home.tsx:186:10">Morning bread, garden jams.</h2><p class="mt-5 max-w-md text-cream/85" data-source-loc="src/pages/Home.tsx:187:10">A traditional homemade breakfast, seasonal fruit and vegetables, and tagines prepared on request by the family.</p><a class="link-line mt-8 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] rtl:tracking-normal" data-source-loc="src/pages/Home.tsx:188:10" href="/en/gastronomy" data-discover="true">Gastronomy<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/pages/Home.tsx:190:12"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div></div><div class="on-dark group relative isolate min-h-[34rem] overflow-hidden text-cream md:min-h-[44rem]" data-source-loc="src/pages/Home.tsx:178:4"><div class="absolute inset-0 -z-10 transition-transform duration-[1500ms] ease-out group-hover:scale-[1.03]" data-source-loc="src/pages/Home.tsx:179:6"><div class="relative overflow-hidden h-full w-full   bg-brown text-cream pattern-light" role="img" aria-label="The traditional hammam" data-source-loc="src/components/ui/Photo.tsx:55:4"><div class="absolute inset-3 border border-current opacity-25" aria-hidden="true" data-source-loc="src/components/ui/Photo.tsx:56:6"></div><div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center" data-source-loc="src/components/ui/Photo.tsx:57:6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame size-6 opacity-70" aria-hidden="true" data-source-loc="src/components/ui/Photo.tsx:58:8"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div></div></div><div class="absolute inset-0 -z-10 bg-gradient-to-t from-brown/90 via-brown/35 to-transparent" aria-hidden="true" data-source-loc="src/pages/Home.tsx:182:6"></div><div class="flex h-full min-h-[34rem] flex-col justify-end p-8 md:min-h-[44rem] md:p-12" data-source-loc="src/pages/Home.tsx:183:6"><div data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="eyebrow mb-4 text-accent" data-source-loc="src/pages/Home.tsx:185:10">Around the house</p><h2 class="font-display max-w-md text-4xl md:text-5xl" data-source-loc="src/pages/Home.tsx:186:10">A hammam, a garden, a village.</h2><p class="mt-5 max-w-md text-cream/85" data-source-loc="src/pages/Home.tsx:187:10">Between the warmth of the hammam, the garden paths and the lanes of the old kasbah, each day is composed at your own pace.</p><a class="link-line mt-8 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] rtl:tracking-normal" data-source-loc="src/pages/Home.tsx:188:10" href="/en/experiences" data-discover="true">Experiences<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/pages/Home.tsx:190:12"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div></div></section><section class="mx-auto max-w-7xl px-6 md:px-10 py-24 md:py-32" data-source-loc="src/pages/Home.tsx:211:4"><div class="grid items-end gap-10 md:grid-cols-12" data-source-loc="src/pages/Home.tsx:212:6"><div class="md:col-span-6" data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="eyebrow mb-5 text-primary-deep" data-source-loc="src/pages/Home.tsx:214:10">Finding us</p><h2 class="font-display text-[clamp(2.4rem,5vw,4.5rem)]" data-source-loc="src/pages/Home.tsx:215:10">Ghassate, near Ouarzazate.</h2><p class="mt-8 max-w-md text-muted" data-source-loc="src/pages/Home.tsx:216:10">In a landscape of mountains and almond trees, close to Ouarzazate, gateway to southern Morocco.</p><div class="mt-10" data-source-loc="src/pages/Home.tsx:217:10"><a class="btn inline-flex items-center justify-center gap-3 px-6 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 border border-brown/50 text-brown hover:bg-brown hover:text-cream " data-source-loc="src/components/ui/ButtonLink.tsx:35:6" href="/en/location" data-discover="true"><span data-source-loc="src/components/ui/ButtonLink.tsx:36:8">Map and directions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 shrink-0 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/components/ui/ButtonLink.tsx:37:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div></div><div class="md:col-span-6" data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><div class="border-y border-brown/25 py-10" dir="ltr" data-source-loc="src/pages/Home.tsx:222:10"><p class="eyebrow mb-3 text-muted" data-source-loc="src/pages/Home.tsx:223:12">GPS</p><p class="numeral text-[clamp(2.4rem,6vw,5rem)] leading-none" data-source-loc="src/pages/Home.tsx:224:12">31.1789° N</p><p class="numeral mt-1 text-[clamp(2.4rem,6vw,5rem)] leading-none text-primary-deep" data-source-loc="src/pages/Home.tsx:227:12">6.8131° W</p><p class="mt-5 text-sm text-muted" data-source-loc="src/pages/Home.tsx:230:12">Commune rurale de Ghassate, Ouarzazate</p></div></div></div></section><section class="on-dark pattern-light relative bg-primary-deep text-cream" data-source-loc="src/pages/Home.tsx:243:4"><div class="mx-auto max-w-7xl px-6 md:px-10 py-24 text-center md:py-32" data-source-loc="src/pages/Home.tsx:244:6"><div data-source-loc="src/components/ui/Reveal.tsx:15:4" style="opacity: 1; transform: none;"><p class="tifinagh mb-6 text-3xl text-accent" aria-hidden="true" data-source-loc="src/pages/Home.tsx:246:10">ⴰⵣⵓⵍ</p><p class="eyebrow mb-5 text-accent" data-source-loc="src/pages/Home.tsx:247:10">Stay with Mohamed</p><h2 class="font-display mx-auto max-w-3xl text-[clamp(2.4rem,6vw,5rem)]" data-source-loc="src/pages/Home.tsx:248:10">Let us write your stay together.</h2><p class="mx-auto mt-8 max-w-xl text-lg text-cream/85" data-source-loc="src/pages/Home.tsx:249:10">Send your dates: the family will reply to confirm availability, capacity and rates. You can also book through Booking.com or Airbnb.</p><div class="mt-10 flex flex-wrap justify-center gap-3" data-source-loc="src/pages/Home.tsx:250:10"><a class="btn inline-flex items-center justify-center gap-3 px-6 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 border border-cream bg-cream text-brown hover:bg-accent hover:border-accent " data-source-loc="src/components/ui/ButtonLink.tsx:35:6" href="/en/contact" data-discover="true"><span data-source-loc="src/components/ui/ButtonLink.tsx:36:8">Request a stay</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-4 shrink-0 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/components/ui/ButtonLink.tsx:37:18"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="https://www.booking.com/hotel/ma/chez-l-habitant-amazightiken.fr.html" class="btn inline-flex items-center justify-center gap-3 px-6 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 border border-cream/60 text-cream hover:bg-cream hover:text-brown " target="_blank" rel="noopener noreferrer" data-source-loc="src/components/ui/ButtonLink.tsx:43:6"><span data-source-loc="src/components/ui/ButtonLink.tsx:44:8">Book on Booking.com</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-4 shrink-0 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/components/ui/ButtonLink.tsx:45:8"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg><span class="sr-only" data-source-loc="src/components/ui/ButtonLink.tsx:46:8">(opens in a new tab)</span></a><a href="https://www.airbnb.fr/rooms/956593018740086715" class="btn inline-flex items-center justify-center gap-3 px-6 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 border border-cream/60 text-cream hover:bg-cream hover:text-brown " target="_blank" rel="noopener noreferrer" data-source-loc="src/components/ui/ButtonLink.tsx:43:6"><span data-source-loc="src/components/ui/ButtonLink.tsx:44:8">View on Airbnb</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-4 shrink-0 rtl:-scale-x-100" aria-hidden="true" data-source-loc="src/components/ui/ButtonLink.tsx:45:8"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg><span class="sr-only" data-source-loc="src/components/ui/ButtonLink.tsx:46:8">(opens in a new tab)</span></a></div><p class="mx-auto mt-8 max-w-lg text-sm text-cream/70" data-source-loc="src/pages/Home.tsx:256:10">This website shows no real-time availability. Every request is confirmed directly by the host.</p></div></div></section></main><footer class="on-dark relative bg-brown pb-24 text-cream md:pb-0" data-source-loc="src/components/Footer.tsx:12:4"><svg aria-hidden="true" focusable="false" class="block h-4 w-full rotate-180 " preserveAspectRatio="none" data-source-loc="src/components/ui/Band.tsx:7:4"><defs data-source-loc="src/components/ui/Band.tsx:13:6"><pattern id="_r_1_" width="32" height="16" patternUnits="userSpaceOnUse" data-source-loc="src/components/ui/Band.tsx:14:8"><polygon points="0,16 16,0 32,16" fill="#A65F3F" data-source-loc="src/components/ui/Band.tsx:15:10"></polygon><polygon points="16,16 24,8 32,16" fill="#46513A" data-source-loc="src/components/ui/Band.tsx:16:10"></polygon><polygon points="0,16 8,8 16,16" fill="#46513A" data-source-loc="src/components/ui/Band.tsx:17:10"></polygon><rect x="0" y="14" width="32" height="2" fill="#A65F3F" data-source-loc="src/components/ui/Band.tsx:18:10"></rect></pattern></defs><rect width="100%" height="16" fill="url(#_r_1_)" data-source-loc="src/components/ui/Band.tsx:21:6"></rect></svg><div class="mx-auto grid max-w-7xl gap-14 px-6 py-16 md:grid-cols-12 md:px-10 md:py-20" data-source-loc="src/components/Footer.tsx:14:6"><div class="md:col-span-5" data-source-loc="src/components/Footer.tsx:15:8"><p class="font-display text-3xl italic" dir="ltr" data-source-loc="src/components/Footer.tsx:16:10">Chez l'habitant</p><p class="font-display text-5xl uppercase tracking-[0.22em]" dir="ltr" data-source-loc="src/components/Footer.tsx:17:10">Amazigh</p><p class="tifinagh mt-6 text-2xl text-accent" aria-hidden="true" data-source-loc="src/components/Footer.tsx:18:10">ⴰⵣⵓⵍ</p><p class="mt-4 max-w-sm text-cream/75" data-source-loc="src/components/Footer.tsx:19:10">Amazigh family guesthouse in Ghassate, near Ouarzazate, Morocco.</p></div><div class="md:col-span-2" data-source-loc="src/components/Footer.tsx:22:8"><h2 class="eyebrow mb-5 text-accent" data-source-loc="src/components/Footer.tsx:23:10">Explore</h2><ul class="space-y-2.5" data-source-loc="src/components/Footer.tsx:24:10"><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/story" data-discover="true">Our story</a></li><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/accommodation" data-discover="true">Accommodation</a></li><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/gastronomy" data-discover="true">Gastronomy</a></li><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/experiences" data-discover="true">Experiences</a></li><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/gallery" data-discover="true">Gallery</a></li><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/location" data-discover="true">Location</a></li><li data-source-loc="src/components/Footer.tsx:26:14"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:27:16" href="/en/contact" data-discover="true">Contact</a></li><li data-source-loc="src/components/Footer.tsx:30:12"><a class="link-line inline-block" data-source-loc="src/components/Footer.tsx:31:14" href="/en/privacy" data-discover="true">Privacy</a></li></ul></div><div class="md:col-span-2" data-source-loc="src/components/Footer.tsx:36:8"><h2 class="eyebrow mb-5 text-accent" data-source-loc="src/components/Footer.tsx:37:10">Book</h2><ul class="space-y-2.5" data-source-loc="src/components/Footer.tsx:38:10"><li data-source-loc="src/components/Footer.tsx:39:12"><a class="link-line inline-block" href="https://www.booking.com/hotel/ma/chez-l-habitant-amazightiken.fr.html" target="_blank" rel="noopener noreferrer" data-source-loc="src/components/Footer.tsx:39:16">Booking.com</a></li><li data-source-loc="src/components/Footer.tsx:40:12"><a class="link-line inline-block" href="https://www.airbnb.fr/rooms/956593018740086715" target="_blank" rel="noopener noreferrer" data-source-loc="src/components/Footer.tsx:40:16">Airbnb</a></li></ul></div><div class="md:col-span-3" data-source-loc="src/components/Footer.tsx:47:8"><h2 class="eyebrow mb-5 text-accent" data-source-loc="src/components/Footer.tsx:48:10">Find us</h2><address class="not-italic leading-relaxed text-cream/85" data-source-loc="src/components/Footer.tsx:49:10">Commune rurale de Ghassate<br data-source-loc="src/components/Footer.tsx:51:12">Ouarzazate 45022<br data-source-loc="src/components/Footer.tsx:53:12">Maroc</address><a class="link-line inline-block mt-4 text-sm text-accent" href="https://www.google.com/maps?q=31.178871,-6.813136" target="_blank" rel="noopener noreferrer" data-source-loc="src/components/Footer.tsx:56:10">Open in Google Maps</a></div></div><div class="border-t border-cream/15" data-source-loc="src/components/Footer.tsx:62:6"><div class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-cream/60 md:flex-row md:justify-between md:px-10" data-source-loc="src/components/Footer.tsx:63:8"><p data-source-loc="src/components/Footer.tsx:64:10">© 2026 Gîte chez l'habitant Amazigh. All rights reserved.</p><p data-source-loc="src/components/Footer.tsx:67:10">Ratings from Booking.com. No real-time availability: every request is confirmed by the host.</p></div></div></footer><div class="fixed inset-x-0 bottom-0 z-30 border-t border-cream/20 bg-brown/95 p-3 backdrop-blur md:hidden" data-source-loc="src/components/Layout.tsx:22:4"><a class="btn block bg-primary-deep py-3.5 text-center text-[0.78rem] font-semibold uppercase tracking-[0.2em] text-cream" data-source-loc="src/components/Layout.tsx:23:6" href="/en/contact" data-discover="true">Request a stay</a></div></div>
+    <noscript>
+      <h1>Gîte chez l'habitant Amazigh — Ghassate, Ouarzazate, Maroc</h1>
+      <p>Maison d'hôtes familiale amazighe : Mohamed et sa famille vous accueillent. Réservez sur Booking.com ou Airbnb.</p>
+    </noscript>
+      <script data-element-picker="">/**
+ * Agon Element Picker — injected into the preview iframe.
+ *
+ * Two modes, both driven by postMessage from the parent:
+ *
+ * Inspect mode (click-to-select for AI chat prefill):
+ *   Parent -> iframe:  { type: 'inspect:mode', enabled: true/false }
+ *   iframe -> Parent:  { type: 'element:selected', file, line, column, tag, text, classes, id }
+ *
+ * Edit mode (WYSIWYG text editing):
+ *   Parent -> iframe:  { type: 'arena:edit-mode', enabled: true/false }
+ *   Parent -> iframe:  { type: 'arena:set-text', domPath, text }   // undo/redo
+ *   iframe -> Parent:  { type: 'arena:text-edit', source: {file,line,col}|null,
+ *                        tag, oldText, newText, domPath, ts }
+ *
+ * Capability handshake (parent shows edit UI only when the build is tagged):
+ *   Parent -> iframe:  { type: 'arena:init', ... }   (already sent for recording)
+ *   iframe -> Parent:  { type: 'arena:edit-capability', textEdit: true, tagged: bool }
+ *
+ * Source locations come from data-source-loc="file:line:col" attributes added
+ * by the vite source-tags plugin (data-agon-source is read as a legacy fallback).
+ */
+(function () {
+  'use strict';
+
+  // Capability markers — bumped whenever the picker gains behavior that older
+  // baked-in copies lack, so visual_picker_inject._refresh_stale_picker knows
+  // to re-inline this version.
+  //   arena:link-edit     — editing link / <a> text
+  //   arena:textnode-edit — editing a single text node inside a mixed-content
+  //                         element (e.g. <h1>Text<span>..</span></h1>)
+  //   arena:header-edit   — edit `user-select:none` headers/nav; box-only
+  //                         highlight (no source/tag label)
+  //   arena:multirun-edit — patch the exact text run of a multi-run element
+  //                         (e.g. lines split by <br/>), via runIndex
+  // marker: arena:link-edit arena:textnode-edit arena:header-edit arena:multirun-edit
+
+  var SOURCE_ATTR = 'data-source-loc';
+  var LEGACY_SOURCE_ATTR = 'data-agon-source';
+
+  var inspectEnabled = false;
+  var editEnabled = false;
+  var overlay = null;
+  var label = null;
+  var currentTarget = null;
+  var activeEdit = null; // { element, oldText }
+
+  function getSourceAttr(el) {
+    return el.getAttribute(SOURCE_ATTR) || el.getAttribute(LEGACY_SOURCE_ATTR);
+  }
+
+  function createOverlay() {
+    if (overlay) return;
+
+    overlay = document.createElement('div');
+    overlay.id = '__picker-overlay';
+    overlay.style.cssText = [
+      'position: fixed',
+      'pointer-events: none',
+      'z-index: 2147483647',
+      'border: 2px solid #3b82f6',
+      'background: rgba(59, 130, 246, 0.08)',
+      'transition: all 0.05s ease-out',
+      'display: none',
+      'box-sizing: border-box',
+    ].join(';');
+
+    label = document.createElement('div');
+    label.id = '__picker-label';
+    label.style.cssText = [
+      'position: fixed',
+      'pointer-events: none',
+      'z-index: 2147483647',
+      'background: #1e40af',
+      'color: #fff',
+      'font: 11px/1.4 monospace',
+      'padding: 2px 6px',
+      'border-radius: 3px',
+      'white-space: nowrap',
+      'display: none',
+      'max-width: 400px',
+      'overflow: hidden',
+      'text-overflow: ellipsis',
+    ].join(';');
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(label);
+  }
+
+  function removeOverlay() {
+    if (overlay) { overlay.remove(); overlay = null; }
+    if (label) { label.remove(); label = null; }
+  }
+
+  function isPickerNode(el) {
+    return el === overlay || el === label ||
+      el.id === '__picker-overlay' || el.id === '__picker-label';
+  }
+
+  function findSourceAttr(el) {
+    while (el && el !== document.body && el !== document.documentElement) {
+      var src = getSourceAttr(el);
+      if (src) return { element: el, source: src };
+      el = el.parentElement;
+    }
+    return null;
+  }
+
+  function parseSource(sourceStr) {
+    // Format: "relative/path.tsx:line:col"
+    var parts = sourceStr.split(':');
+    if (parts.length < 3) return { file: sourceStr, line: 0, column: 0 };
+    var col = parseInt(parts.pop(), 10);
+    var line = parseInt(parts.pop(), 10);
+    var file = parts.join(':'); // rejoin in case path has colons (unlikely but safe)
+    return { file: file, line: line, column: col };
+  }
+
+  // Stable-enough CSS path so the parent can address this element for undo.
+  function domPath(el) {
+    var segs = [];
+    while (el && el !== document.body && el.parentElement) {
+      var i = 1;
+      var sib = el;
+      while ((sib = sib.previousElementSibling)) i++;
+      segs.unshift(el.tagName.toLowerCase() + ':nth-child(' + i + ')');
+      el = el.parentElement;
+    }
+    return 'body > ' + segs.join(' > ');
+  }
+
+  // An element is whole-text-editable when it owns at least one non-whitespace
+  // text node and no element children — editing such an element via
+  // contenteditable is safe. Mixed-content elements are handled per-text-node
+  // (see resolveEditable / beginEditTextNode) instead.
+  function isTextEditable(el) {
+    if (!el || el.children.length > 0) return false;
+    for (var i = 0; i < el.childNodes.length; i++) {
+      var n = el.childNodes[i];
+      if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) return true;
+    }
+    return false;
+  }
+
+  // The text node directly under a viewport point, if it holds real text.
+  function textNodeAtPoint(x, y) {
+    var node = null;
+    if (document.caretPositionFromPoint) {
+      var cp = document.caretPositionFromPoint(x, y);
+      node = cp && cp.offsetNode;
+    } else if (document.caretRangeFromPoint) {
+      var r = document.caretRangeFromPoint(x, y);
+      node = r && r.startContainer;
+    }
+    if (node && node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+      return node;
+    }
+    return null;
+  }
+
+  // First direct non-whitespace text child of an element, if any.
+  function firstDirectTextNode(el) {
+    if (!el) return null;
+    for (var i = 0; i < el.childNodes.length; i++) {
+      var n = el.childNodes[i];
+      if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) return n;
+    }
+    return null;
+  }
+
+  // Resolve what a hover/click at (x, y) should edit:
+  //   { kind: 'text', textNode, element }  — one text run inside a mixed element
+  //   { kind: 'element', element }         — a whole pure-text element
+  //   null                                 — nothing editable here
+  function resolveEditable(target, x, y) {
+    var tn = textNodeAtPoint(x, y);
+    if (tn) {
+      var p = tn.parentElement;
+      // Only split out an individual text node when the element also has
+      // element children (mixed content); pure-text elements use the cleaner
+      // whole-element path below.
+      if (p && !isPickerNode(p) && p.children.length > 0) {
+        return { kind: 'text', textNode: tn, element: p };
+      }
+    }
+    if (isTextEditable(target)) return { kind: 'element', element: target };
+    // Fallback for mixed-content elements whose caret can't be hit-tested
+    // (e.g. `user-select: none` headers/nav): edit the first direct text run.
+    if (target && !isPickerNode(target) && target.children.length > 0) {
+      var direct = firstDirectTextNode(target);
+      if (direct) return { kind: 'text', textNode: direct, element: target };
+    }
+    return null;
+  }
+
+  // Viewport rect of a text node's contents (falls back to its parent).
+  function rectOfTextNode(tn) {
+    try {
+      var r = document.createRange();
+      r.selectNodeContents(tn);
+      var rect = r.getBoundingClientRect();
+      if (rect && (rect.width || rect.height)) return rect;
+    } catch (e) { /* fall through */ }
+    return tn.parentElement ? tn.parentElement.getBoundingClientRect() : null;
+  }
+
+  function applyHighlight(rect, editable, labelEl, showLabel) {
+    if (!overlay || !rect) return;
+    overlay.style.top = rect.top + 'px';
+    overlay.style.left = rect.left + 'px';
+    overlay.style.width = rect.width + 'px';
+    overlay.style.height = rect.height + 'px';
+    overlay.style.borderColor = editable ? '#10b981' : '#3b82f6';
+    overlay.style.background = editable
+      ? 'rgba(16, 185, 129, 0.08)' : 'rgba(59, 130, 246, 0.08)';
+    overlay.style.display = 'block';
+
+    // Edit mode shows just the highlight box — no source/tag label.
+    if (!showLabel || !label) {
+      if (label) label.style.display = 'none';
+      return;
+    }
+
+    var tag = labelEl ? labelEl.tagName.toLowerCase() : 'text';
+    var src = labelEl ? getSourceAttr(labelEl) : null;
+    var labelText = '<' + tag + '>';
+    if (src) {
+      var parsed = parseSource(src);
+      labelText += '  ' + parsed.file + ':' + parsed.line;
+    }
+    if (editable) labelText += '  ✎';
+    label.textContent = labelText;
+    label.style.background = editable ? '#065f46' : '#1e40af';
+
+    // Position label above the highlight, or below if too close to top
+    var labelTop = rect.top - 22;
+    if (labelTop < 4) labelTop = rect.bottom + 4;
+    label.style.top = labelTop + 'px';
+    label.style.left = Math.max(4, rect.left) + 'px';
+    label.style.display = 'block';
+  }
+
+  function highlightElement(el, editable, showLabel) {
+    if (!el) return;
+    applyHighlight(el.getBoundingClientRect(), editable, el, showLabel);
+  }
+
+  function hideOverlay() {
+    if (overlay) overlay.style.display = 'none';
+    if (label) label.style.display = 'none';
+    currentTarget = null;
+  }
+
+  function postToParent(msg) {
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage(msg, '*');
+    }
+  }
+
+  // ---------------------------------------------------------------- inspect
+
+  function onMouseOver(e) {
+    if (!inspectEnabled && !editEnabled) return;
+    var target = e.target;
+    if (isPickerNode(target)) return;
+    if (activeEdit && target === activeEdit.element) { hideOverlay(); return; }
+
+    if (editEnabled) {
+      // Edit mode: highlight box only, no source/tag label (showLabel=false).
+      var res = resolveEditable(target, e.clientX, e.clientY);
+      if (res) {
+        currentTarget = res.element;
+        if (res.kind === 'text') {
+          applyHighlight(rectOfTextNode(res.textNode), true, res.element, false);
+        } else {
+          highlightElement(res.element, true, false);
+        }
+      } else {
+        currentTarget = target;
+        highlightElement(target, false, false);
+      }
+      return;
+    }
+
+    var found = findSourceAttr(target);
+    if (found) {
+      currentTarget = found.element;
+      highlightElement(found.element, false, true);
+    } else {
+      currentTarget = target;
+      highlightElement(target, false, true);
+    }
+  }
+
+  function onMouseOut(e) {
+    if (!inspectEnabled && !editEnabled) return;
+    var related = e.relatedTarget;
+    if (related === overlay || related === label) return;
+    if (!e.relatedTarget || e.relatedTarget === document) {
+      hideOverlay();
+    }
+  }
+
+  function onInspectClick(e) {
+    if (!inspectEnabled) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    var target = e.target;
+    if (isPickerNode(target)) return;
+
+    var found = findSourceAttr(target);
+    var element = found ? found.element : target;
+    var sourceStr = found ? found.source : null;
+
+    var info = {
+      type: 'element:selected',
+      tag: element.tagName.toLowerCase(),
+      text: (element.textContent || '').trim().substring(0, 200),
+      classes: element.className && typeof element.className === 'string'
+        ? element.className.substring(0, 300) : '',
+      id: element.id || '',
+      file: null,
+      line: null,
+      column: null,
+    };
+
+    if (sourceStr) {
+      var parsed = parseSource(sourceStr);
+      info.file = parsed.file;
+      info.line = parsed.line;
+      info.column = parsed.column;
+    }
+
+    postToParent(info);
+    console.log('[element-picker] Selected:', info);
+  }
+
+  function enableInspect() {
+    if (inspectEnabled) return;
+    if (editEnabled) disableEdit();
+    inspectEnabled = true;
+    createOverlay();
+    document.addEventListener('mouseover', onMouseOver, true);
+    document.addEventListener('mouseout', onMouseOut, true);
+    document.addEventListener('click', onInspectClick, true);
+    document.body.style.cursor = 'crosshair';
+    console.log('[element-picker] Inspect mode ON');
+  }
+
+  function disableInspect() {
+    if (!inspectEnabled) return;
+    inspectEnabled = false;
+    document.removeEventListener('mouseover', onMouseOver, true);
+    document.removeEventListener('mouseout', onMouseOut, true);
+    document.removeEventListener('click', onInspectClick, true);
+    hideOverlay();
+    removeOverlay();
+    document.body.style.cursor = '';
+    console.log('[element-picker] Inspect mode OFF');
+  }
+
+  // ------------------------------------------------------------------- edit
+
+  function commitEdit() {
+    if (!activeEdit) return;
+    // For text-node edits the contenteditable target is a temporary wrapper
+    // span, but the source location + tag belong to the element that owns the
+    // text (sourceEl). childIndex addresses the specific text run for undo.
+    var editEl = activeEdit.element;
+    var srcEl = activeEdit.kind === 'text' ? activeEdit.sourceEl : editEl;
+    var childIndex = activeEdit.kind === 'text' ? activeEdit.childIndex : null;
+    var runIndex = activeEdit.kind === 'text' ? activeEdit.textRunIndex : null;
+    var oldText = activeEdit.oldText;
+    var newText = editEl.textContent;
+    endEdit();
+
+    if (newText === oldText) return;
+
+    var sourceStr = getSourceAttr(srcEl);
+    postToParent({
+      type: 'arena:text-edit',
+      source: sourceStr ? parseSource(sourceStr) : null,
+      tag: srcEl.tagName.toLowerCase(),
+      oldText: oldText,
+      newText: newText,
+      domPath: domPath(srcEl),
+      childIndex: childIndex,
+      runIndex: runIndex,
+      ts: Date.now(),
+    });
+  }
+
+  function cancelEdit() {
+    if (!activeEdit) return;
+    activeEdit.element.textContent = activeEdit.oldText;
+    endEdit();
+  }
+
+  function endEdit() {
+    if (!activeEdit) return;
+    var el = activeEdit.element;
+    el.removeAttribute('contenteditable');
+    el.style.outline = activeEdit.prevOutline;
+    el.style.removeProperty('user-select');
+    el.style.removeProperty('-webkit-user-select');
+    el.removeEventListener('blur', onEditBlur);
+    el.removeEventListener('keydown', onEditKeydown);
+    // Text-node edits: unwrap the temporary span back into a plain text node so
+    // the DOM structure matches the (now-edited) source.
+    if (activeEdit.kind === 'text' && el.parentNode) {
+      el.parentNode.replaceChild(document.createTextNode(el.textContent), el);
+    }
+    // Restore the href we stashed while editing a link (see beginEdit).
+    if (activeEdit.anchor && activeEdit.prevHref != null) {
+      activeEdit.anchor.setAttribute('href', activeEdit.prevHref);
+    }
+    activeEdit = null;
+  }
+
+  function onEditBlur() {
+    commitEdit();
+  }
+
+  function onEditKeydown(e) {
+    e.stopPropagation();
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      commitEdit();
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      cancelEdit();
+    }
+  }
+
+  // Nearest enclosing link whose href should be neutralized while editing, so a
+  // click (caret placement) or Enter (commit) doesn't navigate away. Restored
+  // in endEdit; JS-driven router navigation is suppressed in onEditClick.
+  function stashAnchorHref(el) {
+    var anchor = el.tagName === 'A' ? el : (el.closest ? el.closest('a') : null);
+    var prevHref = anchor && anchor.hasAttribute('href') ? anchor.getAttribute('href') : null;
+    if (anchor && prevHref != null) anchor.removeAttribute('href');
+    return { anchor: prevHref != null ? anchor : null, prevHref: prevHref };
+  }
+
+  // Turn `el` into a focused, select-all contenteditable region.
+  function activateEditable(el) {
+    try {
+      el.setAttribute('contenteditable', 'plaintext-only');
+      if (!el.isContentEditable) el.setAttribute('contenteditable', 'true');
+    } catch (err) {
+      el.setAttribute('contenteditable', 'true');
+    }
+    el.style.outline = '2px solid #10b981';
+    // Headers/nav are frequently `user-select: none`, which also blocks
+    // contenteditable editing; force it on (important beats class styles) for
+    // the duration of the edit. Cleared in endEdit (element) / discarded with
+    // the wrapper (text).
+    el.style.setProperty('user-select', 'text', 'important');
+    el.style.setProperty('-webkit-user-select', 'text', 'important');
+    el.addEventListener('blur', onEditBlur);
+    el.addEventListener('keydown', onEditKeydown);
+    el.focus();
+
+    // Select all text so a replacement starts with a clean slate
+    try {
+      var range = document.createRange();
+      range.selectNodeContents(el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (err) { /* selection is best-effort */ }
+
+    hideOverlay();
+  }
+
+  // Edit a whole pure-text element in place.
+  function beginEdit(el) {
+    if (activeEdit) commitEdit();
+    var href = stashAnchorHref(el);
+    activeEdit = {
+      kind: 'element',
+      element: el,
+      oldText: el.textContent,
+      prevOutline: el.style.outline,
+      anchor: href.anchor,
+      prevHref: href.prevHref,
+    };
+    activateEditable(el);
+  }
+
+  // Edit a single text run inside a mixed-content element (e.g. the leading
+  // text of <h1>Text<span>..</span></h1>). The run is wrapped in a temporary
+  // span so only it becomes editable; the wrapper is removed in endEdit, and
+  // the edit is reported against the owning element's source location.
+  function beginEditTextNode(textNode, sourceEl) {
+    if (activeEdit) commitEdit();
+
+    var parent = textNode.parentElement;
+    var childIndex = Array.prototype.indexOf.call(parent.childNodes, textNode);
+    // Index of this text node among the parent's non-whitespace direct text
+    // runs — lets the server patch the exact run of a multi-run element
+    // (e.g. <h1>A<br/>B<br/>C</h1>), not just the first.
+    var textRunIndex = 0;
+    for (var k = 0; k < parent.childNodes.length; k++) {
+      var cn = parent.childNodes[k];
+      if (cn === textNode) break;
+      if (cn.nodeType === Node.TEXT_NODE && cn.textContent.trim()) textRunIndex++;
+    }
+    var oldText = textNode.textContent;
+    var href = stashAnchorHref(parent);
+
+    var wrap = document.createElement('span');
+    wrap.setAttribute('data-agon-edit-wrap', '');
+    parent.replaceChild(wrap, textNode);
+    wrap.appendChild(textNode);
+
+    activeEdit = {
+      kind: 'text',
+      element: wrap,
+      sourceEl: sourceEl || parent,
+      childIndex: childIndex,
+      textRunIndex: textRunIndex,
+      oldText: oldText,
+      prevOutline: wrap.style.outline,
+      anchor: href.anchor,
+      prevHref: href.prevHref,
+    };
+    activateEditable(wrap);
+  }
+
+  function onEditClick(e) {
+    if (!editEnabled) return;
+
+    var target = e.target;
+    if (isPickerNode(target)) return;
+
+    // Clicks inside the element being edited behave normally (caret moves).
+    // When editing link text, still swallow the event so the app's own click
+    // handlers (e.g. router <Link> navigation) don't fire — caret placement is
+    // the browser default action and survives stopImmediatePropagation.
+    if (activeEdit && (target === activeEdit.element || activeEdit.element.contains(target))) {
+      if (activeEdit.anchor) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+      }
+      return;
+    }
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    if (activeEdit) commitEdit();
+    var res = resolveEditable(target, e.clientX, e.clientY);
+    if (res && res.kind === 'text') {
+      beginEditTextNode(res.textNode, res.element);
+    } else if (res && res.kind === 'element') {
+      beginEdit(res.element);
+    }
+  }
+
+  function enableEdit() {
+    if (editEnabled) return;
+    if (inspectEnabled) disableInspect();
+    editEnabled = true;
+    createOverlay();
+    document.addEventListener('mouseover', onMouseOver, true);
+    document.addEventListener('mouseout', onMouseOut, true);
+    document.addEventListener('click', onEditClick, true);
+    document.body.style.cursor = 'text';
+    console.log('[element-picker] Edit mode ON');
+  }
+
+  function disableEdit() {
+    if (!editEnabled) return;
+    if (activeEdit) commitEdit();
+    editEnabled = false;
+    document.removeEventListener('mouseover', onMouseOver, true);
+    document.removeEventListener('mouseout', onMouseOut, true);
+    document.removeEventListener('click', onEditClick, true);
+    hideOverlay();
+    removeOverlay();
+    document.body.style.cursor = '';
+    console.log('[element-picker] Edit mode OFF');
+  }
+
+  // Parent-driven text set, used for undo/redo of committed edits. When
+  // childIndex is provided the edit targeted a single text run of a
+  // mixed-content element, so only that child node is restored (setting the
+  // element's textContent would clobber its sibling elements).
+  function setText(path, text, childIndex) {
+    var el = null;
+    try { el = document.querySelector(path); } catch (err) { /* bad selector */ }
+    if (!el) {
+      console.warn('[element-picker] arena:set-text target not found:', path);
+      return;
+    }
+    if (activeEdit && activeEdit.element === el) cancelEdit();
+    if (childIndex != null && el.childNodes[childIndex]) {
+      el.childNodes[childIndex].textContent = text;
+    } else {
+      el.textContent = text;
+    }
+  }
+
+  function reportCapability() {
+    var tagged = !!document.querySelector(
+      '[' + SOURCE_ATTR + '], [' + LEGACY_SOURCE_ATTR + ']'
+    );
+    postToParent({ type: 'arena:edit-capability', textEdit: true, tagged: tagged });
+  }
+
+  // ---------------------------------------------------------------- wiring
+
+  window.addEventListener('message', function (e) {
+    if (!e.data || typeof e.data.type !== 'string') return;
+
+    switch (e.data.type) {
+      case 'inspect:mode':
+        if (e.data.enabled) enableInspect();
+        else disableInspect();
+        break;
+      case 'arena:edit-mode':
+        if (e.data.enabled) enableEdit();
+        else disableEdit();
+        break;
+      case 'arena:set-text':
+        setText(e.data.domPath, e.data.text, e.data.childIndex);
+        break;
+      case 'arena:init':
+        reportCapability();
+        break;
+    }
+  });
+
+  // Also support toggling via keyboard for standalone testing:
+  //   Alt+Shift+I — inspect mode, Alt+Shift+E — edit mode
+  document.addEventListener('keydown', function (e) {
+    if (e.altKey && e.shiftKey && e.key === 'I') {
+      inspectEnabled ? disableInspect() : enableInspect();
+    } else if (e.altKey && e.shiftKey && e.key === 'E') {
+      editEnabled ? disableEdit() : enableEdit();
+    }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', reportCapability);
+  } else {
+    reportCapability();
+  }
+
+  console.log('[element-picker] Loaded. inspect:mode / arena:edit-mode (or Alt+Shift+I / Alt+Shift+E).');
+})();
+</script>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;5d76eb236f3342f0954e688be3cb069f&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>

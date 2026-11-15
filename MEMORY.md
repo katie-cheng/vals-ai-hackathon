@@ -26,3 +26,5 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Is the trained classifier worth building before demos, or only the judge plus DOM checks? [Ali; 2026-11-14]
 - SlopLabel Export JSON: `styles` is a dict; Tailwind `rounded-full` shows as borderRadius `1.67772e+07px`; `sites.done`/overall fields unused so far (export 2026-11-15)
 - Eyebrow labels (small caps, letter-spaced text above headings) are the most-flagged pattern, by all three annotators: see docs/label-analysis.md
+- Held-out sites (data/splits.json): grade them only with frozen graders; never tune on them
+- Arcada sites never reach Playwright `networkidle` (animations/polling); use `wait_until="load"` plus a fixed wait
