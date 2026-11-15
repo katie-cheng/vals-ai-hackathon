@@ -33,7 +33,8 @@ function HeroWords({
   return (
     <span className={r} aria-label={a}>
       {words.map((l, u) => (
-        <span key={u} className="inline-block" aria-hidden>
+        <React.Fragment key={u}>
+        <span className="inline-block" aria-hidden>
           <motion.span
             className={`inline-block will-change-transform ${w}`}
             initial={{
@@ -52,8 +53,9 @@ function HeroWords({
           >
             {l}
           </motion.span>
-          {u < words.length - 1 ? <span>{" "}</span> : null}
         </span>
+          {u < words.length - 1 ? " " : null}
+        </React.Fragment>
       ))}
     </span>
   );
