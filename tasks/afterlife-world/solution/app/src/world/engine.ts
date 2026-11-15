@@ -212,6 +212,9 @@ export class Engine {
   }
 
   private plantTrees(count: number) {
+    this.trees.traverse((o) => {
+      if (o instanceof THREE.Mesh) o.geometry.dispose(), (o.material as THREE.Material).dispose();
+    });
     this.trees.clear();
     const r = rng(42);
     let planted = 0;
