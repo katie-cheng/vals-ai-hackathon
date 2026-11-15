@@ -1,0 +1,217 @@
+{
+ "description": "Site splits for grader development. Split is by Design Arena tournament (both sites of a pair stay together). Do not read held-out labels/comments or tune checks on held-out sites; only run frozen graders on them and report metrics.",
+ "dev": [
+  {
+   "site_id": "S01",
+   "tournament": "05097c11-f54e-4ad4-928e-a1236623eecc",
+   "model": "gpt-6-astra",
+   "placement": "1",
+   "url": "https://it-beginner-av4p.arcada.app"
+  },
+  {
+   "site_id": "S02",
+   "tournament": "05097c11-f54e-4ad4-928e-a1236623eecc",
+   "model": "gemini-3.8-flash",
+   "placement": "2",
+   "url": "https://it-beginner-platform-jqu1.arcada.app"
+  },
+  {
+   "site_id": "S03",
+   "tournament": "0c087e06-57d1-4ce1-ba81-ce8ebd53ace6",
+   "model": "gpt-6-astra-max",
+   "placement": "1",
+   "url": "https://zee-beauty-saloon-xnfr.arcada.app"
+  },
+  {
+   "site_id": "S04",
+   "tournament": "0c087e06-57d1-4ce1-ba81-ce8ebd53ace6",
+   "model": "kimi-k3.1-pro",
+   "placement": "2",
+   "url": "https://zee-beauty-saloon-jayu.arcada.app"
+  },
+  {
+   "site_id": "S05",
+   "tournament": "104e4bb6-f582-4005-ade0-55d4a41ccf30",
+   "model": "gpt-6-astra-max",
+   "placement": "1",
+   "url": "https://rocksteady-campus-7zti.arcada.app"
+  },
+  {
+   "site_id": "S06",
+   "tournament": "104e4bb6-f582-4005-ade0-55d4a41ccf30",
+   "model": "kimi-k3.1-pro",
+   "placement": "2",
+   "url": "https://rocksteady-campus-oj1m.arcada.app"
+  },
+  {
+   "site_id": "S07",
+   "tournament": "1325b0c3-5226-4e25-8ff2-d9036d2aa46a",
+   "model": "qwen3.8-max",
+   "placement": "1",
+   "url": "https://lifeos-productivity-1hlc.arcada.app"
+  },
+  {
+   "site_id": "S08",
+   "tournament": "1325b0c3-5226-4e25-8ff2-d9036d2aa46a",
+   "model": "claude-sonnet-5-5",
+   "placement": "2",
+   "url": "https://lifeos-e6jj.arcada.app"
+  },
+  {
+   "site_id": "S13",
+   "tournament": "3628161e-e393-4d07-b3a3-e5546efe4bf5",
+   "model": "muse-spark-1.3-max",
+   "placement": "1",
+   "url": "https://suds-squad-immersive-ann4.arcada.app"
+  },
+  {
+   "site_id": "S14",
+   "tournament": "3628161e-e393-4d07-b3a3-e5546efe4bf5",
+   "model": "gpt-6-luna",
+   "placement": "2",
+   "url": "https://suds-squad-redesign-ew00.arcada.app"
+  },
+  {
+   "site_id": "S15",
+   "tournament": "38d779df-df0c-4746-ada4-638ff03f8a93",
+   "model": "claude-opus-5-5",
+   "placement": "1",
+   "url": "https://pebble-pop-s0kx.arcada.app"
+  },
+  {
+   "site_id": "S16",
+   "tournament": "38d779df-df0c-4746-ada4-638ff03f8a93",
+   "model": "evergreen",
+   "placement": "2",
+   "url": "https://pebble-pop-lmmp.arcada.app"
+  },
+  {
+   "site_id": "S21",
+   "tournament": "7b9d98db-4206-4d31-9dd7-4bcee3c673e4",
+   "model": "gpt-6-astra",
+   "placement": "1",
+   "url": "https://preboards-study-hub-qcyi.arcada.app"
+  },
+  {
+   "site_id": "S22",
+   "tournament": "7b9d98db-4206-4d31-9dd7-4bcee3c673e4",
+   "model": "claude-opus-5-5",
+   "placement": "2",
+   "url": "https://preboards-hub-0nua.arcada.app"
+  },
+  {
+   "site_id": "S23",
+   "tournament": "7fc12f84-7388-418b-a3dc-d21eea3328ee",
+   "model": "qwen3.8-max",
+   "placement": "1",
+   "url": "https://3d-build-revolution-vltn.arcada.app"
+  },
+  {
+   "site_id": "S24",
+   "tournament": "7fc12f84-7388-418b-a3dc-d21eea3328ee",
+   "model": "muse-spark-1.2",
+   "placement": "2",
+   "url": "https://3d-build-revolution-ys9n.arcada.app"
+  },
+  {
+   "site_id": "S25",
+   "tournament": "9361f114-1137-4016-8e30-b5502f25340b",
+   "model": "gpt-6-astra",
+   "placement": "1",
+   "url": "https://jcql-quiz-league-xgw2.arcada.app"
+  },
+  {
+   "site_id": "S26",
+   "tournament": "9361f114-1137-4016-8e30-b5502f25340b",
+   "model": "muse-spark-1.3-max",
+   "placement": "2",
+   "url": "https://jcql-quiz-league-4vad.arcada.app"
+  },
+  {
+   "site_id": "S29",
+   "tournament": "e5009698-82bf-42cd-b1b7-25994511848a",
+   "model": "claude-opus-5-5",
+   "placement": "1",
+   "url": "https://halden-studio-jf05.arcada.app"
+  },
+  {
+   "site_id": "S30",
+   "tournament": "e5009698-82bf-42cd-b1b7-25994511848a",
+   "model": "muse-spark-1.3-max",
+   "placement": "2",
+   "url": "https://kora-growth-agency-br48.arcada.app"
+  }
+ ],
+ "heldout": [
+  {
+   "site_id": "S09",
+   "tournament": "2a5d49ef-429e-4496-8f5a-8a23a4bf2302",
+   "model": "kimi-k3.1-pro",
+   "placement": "1",
+   "url": "https://afterlife-nexus-9wm7.arcada.app"
+  },
+  {
+   "site_id": "S10",
+   "tournament": "2a5d49ef-429e-4496-8f5a-8a23a4bf2302",
+   "model": "claude-sonnet-5-5",
+   "placement": "2",
+   "url": "https://afterlife-world-53em.arcada.app"
+  },
+  {
+   "site_id": "S11",
+   "tournament": "3221e631-35de-41fb-ae3a-a3c843e5eb79",
+   "model": "muse-spark-1.3",
+   "placement": "1",
+   "url": "https://photo-fusion-merger-wm8o.arcada.app"
+  },
+  {
+   "site_id": "S12",
+   "tournament": "3221e631-35de-41fb-ae3a-a3c843e5eb79",
+   "model": "gpt-6.1-sol",
+   "placement": "2",
+   "url": "https://photo-fusion-qofj.arcada.app"
+  },
+  {
+   "site_id": "S17",
+   "tournament": "48a75fbb-eccd-4cba-a096-0745644f346e",
+   "model": "gpt-6-astra-max",
+   "placement": "1",
+   "url": "https://she-salon-studio-7uo0.arcada.app"
+  },
+  {
+   "site_id": "S18",
+   "tournament": "48a75fbb-eccd-4cba-a096-0745644f346e",
+   "model": "muse-spark-1.3",
+   "placement": "2",
+   "url": "https://she-salon-prayagraj-ilrx.arcada.app"
+  },
+  {
+   "site_id": "S19",
+   "tournament": "6ec52011-a188-455f-b698-6c9c1370e722",
+   "model": "qwen3.8-max",
+   "placement": "1",
+   "url": "https://neon-truth-or-dare-zqhy.arcada.app"
+  },
+  {
+   "site_id": "S20",
+   "tournament": "6ec52011-a188-455f-b698-6c9c1370e722",
+   "model": "minimax-m3",
+   "placement": "2",
+   "url": "https://truth-dare-mobile-zs39.arcada.app"
+  },
+  {
+   "site_id": "S27",
+   "tournament": "d7aa0332-ab63-4633-b425-65a215d554e0",
+   "model": "claude-sonnet-5-5",
+   "placement": "1",
+   "url": "https://chez-lhabitant-amazigh-pkj9.arcada.app"
+  },
+  {
+   "site_id": "S28",
+   "tournament": "d7aa0332-ab63-4633-b425-65a215d554e0",
+   "model": "claude-opus-4-8",
+   "placement": "2",
+   "url": "https://chez-habitant-amazigh-a4cq.arcada.app"
+  }
+ ]
+}
