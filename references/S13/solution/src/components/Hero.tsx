@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SITE } from "../data/content";
 import { EASE } from "../lib/anim";
-import { AppWindow, Car, ClipboardCheck, Droplets, Fence, House, SprayCan } from "lucide-react";
+import { AppWindow, ArrowRight, Car, ClipboardCheck, Droplets, Fence, House, SprayCan } from "lucide-react";
 import {
   motion,
   useMotionValue,
@@ -58,7 +58,7 @@ function Hero() {
         <motion.div
           className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 pb-12 pt-28 sm:px-10 lg:px-24 lg:pb-16 lg:pt-28"
         >
-          <h1 className="max-w-4xl text-[11vw] font-light leading-[1.02] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.4rem]">
+          <h1 className="font-serif-d max-w-4xl text-[11vw] font-normal leading-[1.04] tracking-[-0.01em] text-white sm:text-6xl lg:text-[4.4rem]">
             <HeroWords text="Connecticut," delay={0.14} className="block" />
             <HeroWords
               text="in its best light."
@@ -104,9 +104,14 @@ function Hero() {
             <div>
               <a
                 href="#quote"
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-md bg-cyan-300 px-4 py-2 text-[15px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-cyan-300 px-4 py-2 text-[15px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right"
               >
                 Get my free quote
+                <ArrowRight
+                  aria-hidden
+                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                  strokeWidth={1.75}
+                />
               </a>
             </div>
           </motion.div>

@@ -88,6 +88,8 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R33 | Narrower content now that there is less copy | Containers `max-w-7xl` → `max-w-6xl` (1280 → 1152px) and desktop side padding `lg:px-16` → `lg:px-24` (64 → 96px) on every section and the header; mobile/tablet padding unchanged (extends R20) | round 13 |
 | R34 | Hero too tall for its reduced content | Hero `min-h-[108svh]` → `min-h-[max(76svh,560px)]`; content padding `pt-36/lg:pt-40` → `pt-28` with `pb-12/lg:pb-16`; the ribbon stays pinned at the bottom | round 13 |
 | R35 | Too much space between titles and content | Title-block bottom margins cut from 48–80px to 32–48px (`mb-8`, `sm:mb-10`/`sm:mb-12`) in Services, Process, Trust, Before/After and Pricing | round 13 |
+| R36 | Serif for the hero title | Hero h1 back to Fraunces at regular weight (400), matching the section titles; card/step titles and numerals stay thin Inter | round 13 |
+| R37 | Arrow on the hero CTA | Lucide `ArrowRight` (16px, stroke 1.75) on the right of "Get my free quote", nudges 2px on hover; scoped exception to R9 | round 13 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.
