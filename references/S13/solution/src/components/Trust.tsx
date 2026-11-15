@@ -20,7 +20,7 @@ const TRUST_ICONS = {
 
 function Trust() {
   return (
-    <section id="why-us" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="why-us" className="bg-tone-b relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <video
           className="h-full w-full object-cover opacity-20"

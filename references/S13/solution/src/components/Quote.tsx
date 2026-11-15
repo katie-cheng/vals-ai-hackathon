@@ -156,7 +156,7 @@ function Quote() {
       (i(EMPTY_FORM), l({}), b(""), p(""), h("idle"), (S.current = Date.now()));
     };
   return (
-    <section id="quote" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="quote" className="bg-tone-b relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 sm:px-10 lg:px-16 grid-12 split-5-7">

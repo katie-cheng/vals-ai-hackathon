@@ -45,7 +45,7 @@ function PricingAreas() {
     <>
       <section
         id="pricing"
-        className="relative overflow-hidden bg-[#f5fafd] py-24 text-[#04141f] sm:py-32"
+        className="bg-paper relative overflow-hidden py-24 text-[#04141f] sm:py-32"
       >
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
@@ -110,7 +110,7 @@ function PricingAreas() {
           </div>
         </div>
       </section>
-      <section id="areas" className="relative overflow-hidden py-24 sm:py-32">
+      <section id="areas" className="bg-tone-a relative overflow-hidden py-24 sm:py-32">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 sm:px-10 lg:px-16 grid-12 split-7-5 lg:items-center">

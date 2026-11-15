@@ -24,7 +24,7 @@ function Footer() {
       setTimeout(() => i(null), 3200);
     };
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="bg-tone-c relative overflow-hidden">
       <WaveDivider
         color="#06283d"
         className="relative z-10 -mb-px h-16 w-full sm:h-24"

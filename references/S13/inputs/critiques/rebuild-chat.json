@@ -166,5 +166,11 @@
   "sent_at": "2026-11-15T00:37-08:00",
   "element": "hero service ribbon (marquee)",
   "comment": "the ribbon slider can still have uppercase font with icons"
+ },
+ {
+  "rid": "R29",
+  "sent_at": "2026-11-15T00:42-08:00",
+  "element": "section backgrounds",
+  "comment": "add back very subtle gradients / to backgrounds etc"
  }
 ]

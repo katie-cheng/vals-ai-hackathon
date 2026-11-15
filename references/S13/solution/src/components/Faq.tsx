@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 function Faq() {
   const [a, i] = React.useState(faqs[0]?.id ?? null);
   return (
-    <section id="faq" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="faq" className="bg-tone-b relative overflow-hidden py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 sm:px-10 lg:px-16 grid-12 split-5-7">
@@ -24,7 +24,7 @@ function Faq() {
             return (
               <Reveal key={r.id} delay={Math.min(l * 0.04, 0.3)} y={24}>
                 <motion.article
-                  className={`overflow-hidden rounded-lg border transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "border-white/10 bg-white/[0.04] hover:border-white/25"}`}
+                  className={`overflow-hidden rounded-lg border transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "card-tone border-white/10 bg-white/[0.02] hover:border-white/25"}`}
                 >
                   <button
                     onClick={() => i(u ? null : r.id)}
