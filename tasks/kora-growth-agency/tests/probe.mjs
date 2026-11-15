@@ -132,8 +132,8 @@ export function probe(only) {
   for (const h of headingEls) {
     const hs = getComputedStyle(h);
     const ht = clean(h.innerText);
-    // A price with a smaller unit ("$5 each") is not an accented headline.
-    if (/^[+-]?[$€£¥]\s?\d/.test(ht)) continue;
+    // A price with a smaller unit ("$5 each", "+$1 per window") is not an accented headline.
+    if (/^[+-]?[$€£¥]\s?[\d.,]+\s*(each|per \w+|\/\s?\w+|an? \w+)?$/i.test(ht)) continue;
     for (const d of h.querySelectorAll("em,i,span,strong,b,mark")) {
       const dt = clean(d.innerText);
       if (!dt || dt.length >= 0.9 * ht.length || !visible(d)) continue;
