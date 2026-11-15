@@ -4,7 +4,7 @@
 // its page structure, its detail pages, its motion and its contact form.
 import { assignPages, attempt, checkMobileMenu, freshPage, newLines } from "./lib.mjs";
 
-export const SLOP_EXEMPT = {};
+export const SLOP_EXEMPT = { pills: "brief: copy all the components of kora.framer.media, whose buttons are pills", big_rounding: "brief: copy all the components of kora.framer.media, whose cards are rounded" };
 
 // Pages kora.framer.media has as standalone routes; services and pricing are sections there, so either a page or a home section counts.
 const ROLES = {

@@ -4,7 +4,7 @@ import { assignPages, attempt, checkMobileMenu, digits, freshPage, hexDistance, 
 
 export const HANDOFF_URLS = /wa\.me|whatsapp\.com/;
 // Nothing in this brief asks for a pattern that grade.mjs SLOP_CHECKS penalises.
-export const SLOP_EXEMPT = {};
+export const SLOP_EXEMPT = { big_rounding: "brief: stylish cards with subtle shadows and rounded corners" };
 
 const PHONE = "631044361";
 const WHATSAPP = "27631044361";

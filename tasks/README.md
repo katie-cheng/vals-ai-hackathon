@@ -123,7 +123,7 @@ The golden site's points are the uppercase service ribbon Katie kept (7.5), the 
 The brief is S30's, kept verbatim: copy https://kora.framer.media/ with standalone pages.
 `/app` is the bare template. The reference site's pages are home, about, cases (with case detail pages), insights (with posts) and contact; services and pricing are home sections there, so either a page or a section counts.
 Copy is not matched word for word, because the golden reference rewrote it; the checks cover the pages, their detail pages, deep links, scroll-reveal motion, the FAQ, the contact form and its validation, and the mobile menu.
-The golden reference is `references/S30/solution`. Its points come mostly from pills (44) and big rounding (23), which are part of Kora's own design; whether the brief's "copy all the components" should exempt them is still open.
+The golden reference is `references/S30/solution`. `SLOP_EXEMPT` waives pills and big rounding, which are Kora's own components and so asked for by the brief.
 
 ## Running on Valkyrie
 

@@ -4,7 +4,7 @@ import { attempt, checkMobileMenu, digits, freshPage, hexDistance, newLines, nor
 
 export const HANDOFF_URLS = /wa\.me|whatsapp\.com/;
 // Nothing in this brief asks for a pattern that grade.mjs SLOP_CHECKS penalises.
-export const SLOP_EXEMPT = {};
+export const SLOP_EXEMPT = { big_rounding: "brief: elegant rounded corners" };
 
 const PHONE_DIGITS = "3234325141";
 const SERVICES = ["Bridal Makeup", "Party Makeup", "Hair Styling", "Haircuts", "Hair Treatments", "Facial Treatments", "Skincare", "Waxing", "Threading", "Manicure & Pedicure"];
