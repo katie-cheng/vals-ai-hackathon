@@ -6,10 +6,12 @@ The grader in `tests/grade.mjs` scores some criteria automatically; the rest nee
 
 Source: Katie's 130 labels (124 with comments) in `data/sloplabel/sloplabel-2026-11-15T0713Z.json` on branch `devin/1794726836-sloplabel-review-fixes`, covering S01, S02, S05, S06, S13 and S14.
 R18 to R25 (and the extra ids on earlier criteria) come from Katie's 46 chat critiques of the S13 golden rebuild, label ids 461 to 506 under site `S13-ref` in the same export.
+R26 to R30 come from the S02, S06 and S30 golden-reference sessions: Katie's chat critiques of the S02 and S06 rebuilds (label ids 507 to 516 under sites `S02-ref` and `S06-ref`), and the gaps found auditing Ali's S30 reference against all 59 S30 labels.
 Numbers in brackets are label ids, so every criterion can be traced back to the comment that motivated it.
 Criteria that Ali and Aidan independently flagged as well are marked "all three" (see `docs/label-analysis.md`).
 
 The brief always wins: if it asks for something listed here (a footer that repeats contact details, glass, Lucide icons), that is not slop.
+Precedence is: named brief content and behaviour first, then this rubric, then taste. The rubric still governs how a requested element is executed (see R27).
 
 ## Typography and labels
 
@@ -164,6 +166,60 @@ Not automated (judge).
 **R25. The first paint is stable and on-message.**
 No layout shift on load (reserve image space with skeletons, preload fonts with size-matched fallbacks); hero media shows its own first frame right away instead of an unrelated poster; a loader, if any, has no text, is a simple ring, lasts under half a second and fades the page in; overscrolling never shows white. [476 477 485 487 499]
 Automatable: CLS, time to hero image, loader duration, `overscroll-behavior` and the root background colour.
+
+## From the S02, S06 and S30 reviews
+
+Three more goldens were built against R1 to R25 as strictly as possible: It Beginner from S02 plus S01's labels (`references/S02/`), Rocksteady Campus from S06 plus S05's labels (`references/S06/`), and an audit of Ali's Kora Growth Agency reference against all 59 S30 labels (`references/S30/`).
+Katie reviewed the S02 and S06 rebuilds in chat (SlopLabel sites `S02-ref` and `S06-ref`, label ids 507 to 516, also in each package's `inputs/critiques/rebuild-chat.json`).
+Most of her comments were corrections of over-application: the strict pass had stripped colour, weight contrast and brief-requested motion along with the slop.
+The S30 audit found that the labelled patterns recurred all over the page outside the labelled elements, so the merged reference still scored 19 slop points after every label was addressed.
+
+**R26. Fix the pattern, not the instance.**
+A label marks one element, but the pattern is site-wide: the same mono subtitle, pulsing dot, dot separator, odd radius or icon tile appears in every section that was not labelled.
+Before blessing a reference, grep the source and sweep the rendered DOM for each labelled pattern and remove every occurrence; a reference that only fixes the labelled elements is not fixed. [171 188 224 238 240 248 249 267]
+Automatable: run the grader's per-pattern checks on every route, not just `/`, and expect 0 for each pattern that had a label.
+
+**R27. The brief's named treatments stay; the rubric governs their execution.**
+If the brief asks for a treatment by name (gradients over food photos, soft animations, cards with shadows and rounded corners, uppercase headline, bold type, a slider), the reference keeps it and makes it good: low-contrast image-to-colour fades rather than coloured blobs, one shadow and one radius for the cards, one short fade rather than a stack of entrances.
+Dropping a named treatment to satisfy a criterion here is a defect, not a fix. [513 515 516]
+Not automatable beyond brief-fulfilment checks; a reviewer compares the brief's wording with the page.
+
+**R28. De-slopping keeps colour and contrast.**
+Removing slop does not mean removing colour or flattening weight.
+Keep the site's hues where they carry meaning (brand, accents, status, category) and keep them saturated enough to read; grey everything is the opposite failure.
+Vary weight by role across the type scale (light display, regular body, medium UI labels, semibold only for small emphasised text) so hierarchy comes from contrast, and set phrase-length hero titles thin rather than emphasising the whole line. [507 509 510 511 512]
+Partly automatable: count distinct computed weights in use (expect three or four, not one or two); flag a hero heading over about 48px at weight 600 or more; flag an accent palette whose chroma collapsed relative to the original.
+
+**R29. Interaction never moves the rest of the page.**
+Searching, filtering, switching tabs, opening a dialog or swapping a hero slide changes the content in place; the rest of the page does not jump, and route loaders and skeletons hold the space of the content they replace.
+On reload, text must not load in and shift: preload fonts, size fallbacks, reserve media space and gate entrances on readiness (extends R14 and R25 to the interaction and cold-load cases). [400 514]
+Automatable: CLS via `PerformanceObserver` on a throttled cold load of every route, plus bounding-box diffs of untouched elements before and after each control is used.
+
+**R30. Facts and proof are plain and true.**
+Hours, location, contact details, counts and guarantees are set as text, not as an icon card each; captions and "trusted by" lines are not added to make a section look fuller; stats, ratings and avatar stacks exist only if the brief or the source supplies them.
+A floating stat card over an image, a decorative marquee, a rotated label or a "big number" that is not a fact is slop even when the brief allows motion (extends R9, R10 and R17). [348 405 448 453 457]
+Automatable: numeric-only elements over 32px that are not prices or dates; `<img>` avatars repeated with identical alt or source; `position: absolute` cards with numbers overlapping an image; icons per fact row.
+
+### Criteria sharpened by these reviews
+
+- **R8:** icons are allowed, but from one set at one size and stroke, and only on controls, status and category markers; one icon per fact or feature row is decorative. [405 453 457 508]
+- **R13:** the primary CTA keeps its label at every width; it may shrink but must not collapse to a bare icon. [289]
+- **R15:** short opacity fades (about 0.4s, no translate, no stagger beyond a few items) are fine when the brief asks for animation; the slop is stacked, long or scroll-hijacking motion. [513]
+- **R16:** every route counts, not only the home page: a golden has to pass its interaction checks on each page the brief names (S02 has 13, S06 has 7, S30 has 5).
+- **R18:** a second family on small text, especially monospace eyebrows, labels and subtitles, is the same failure as a decorative display face; one display face and one text face, nothing else. [171 224 249 267]
+- **R19:** radius unification is part of the system: one radius for controls, one for cards, full circles for round controls; the "weird edge radius" labels are the symptom. [188 238 240 248]
+- **R22:** one control per carousel, with the pager or arrows but not both, and no pair of differently styled arrow buttons side by side. [395]
+- **Grader notes:** multi-line FAQ questions wrapping inside their button are not broken controls (fixed in the shared verifier, commit 1403cc4); the slop half of the grader must be run on every route in the task's `routes` list, since S02 and S30 moved most of their slop off `/`.
+
+### S02, S06 and S30 goldens: grader results
+
+Slop points from the shared grader, original site versus reference, plus the brief-specific task reward where a task exists.
+
+| Brief | Original slop | Reference slop | Task reward (original / reference) | Checks | Notes |
+| --- | --- | --- | --- | --- | --- |
+| It Beginner (S02, `tasks/it-beginner-platform`) | 31.3 on `/`; 129 across the task's 12 pages | 0 | 0.49 / 1.00 (S01 scores 0.46; bare template 0) | 122/122 interaction, no overflow 360 to 1440, CLS 0 | login and admin out of scope (need a server) |
+| Rocksteady Campus (S06, `tasks/rocksteady-campus`) | 21.84 | 0 | 0.70 / 1.00 | 47/47 interaction (original 40/46, phone overflow on `/order`) | brief-requested gradients over photos kept (R27) |
+| Kora Growth Agency (S30, `tasks/kora-growth-agency`) | 54.56 (Ali's merged reference: 19.32) | 0 | see task README | 20/20 route, 25/25 interaction, CLS 0, box audit clean | audit of Ali's package; removed more than the labels asked for (hero avatar stack, second CTA buttons, footer socials, icon tiles, card boxes), pending Katie's call |
 
 ## S13 golden: review against this rubric
 
