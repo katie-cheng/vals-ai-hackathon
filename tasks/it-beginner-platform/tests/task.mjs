@@ -237,34 +237,32 @@ const about = (p, re) => re.test(p.path) || p.h1.some((h) => re.test(h)) || re.t
 // A lesson page is headed by a lesson title (its h1, or its first heading when it has no h1), possibly with words added. A title of one or two words must open the heading, so that
 // "Certificate of curriculum completion" is not taken for the lesson called "Curriculum".
 // Lesson pages sit at one depth (/lesson/3, or /chapter/basics/lesson/3 under any chapter), so the largest group of such pages
-// at one path depth is taken; that leaves out a curriculum page that happens to be headed like the lesson called "Curriculum".
+// at one path depth is taken.
 function lessonPagesOf(pages) {
-  const groups = new Map();
-  for (const p of pages) {
-    if (p.failed || !LESSONS.some((t) => (p.h1.length ? p.h1 : p.headings.slice(0, 1)).some((h) => (tokens(h)[0] === tokens(t)[0] || tokens(t).length >= 3) && lineMatches(norm(h), t, 0.8, 6))))
-      continue;
-    const key =
-      p.path
-        .replace(/[?#](?!\/).*$/, "")
-        .split("/")
-        .filter(Boolean).length + (p.path.includes("?") ? "?" : "");
-    groups.set(key, [...(groups.get(key) || []), p]);
-  }
-  const group = [...groups.values()].sort((a, b) => b.length - a.length)[0] || [];
-  // Within that depth, a path segment most of the pages share (the "lesson" of /lesson/3) is part of the lesson route,
-  // so a page without it (/course/curriculum) is not a lesson page.
   const segs = (p) =>
     p.path
       .replace(/[?#](?!\/).*$/, "")
       .split("/")
       .filter(Boolean);
-  const fixed = (segs(group[0] || { path: "" }) || []).map((_, i) => {
+  const heads = (p) => (p.h1.length ? p.h1 : p.headings.slice(0, 1));
+  const titleOf = (p) => LESSONS.find((t) => heads(p).some((h) => (tokens(h)[0] === tokens(t)[0] || tokens(t).length >= 3) && lineMatches(norm(h), t, 0.8, 6)));
+  const groups = new Map();
+  for (const p of pages) {
+    if (p.failed || !titleOf(p)) continue;
+    const key = segs(p).length + (p.path.includes("?") ? "?" : "");
+    groups.set(key, [...(groups.get(key) || []), p]);
+  }
+  const group = [...groups.values()].sort((a, b) => b.length - a.length)[0] || [];
+  // When two pages at that depth are headed by the same lesson title (/lesson/7 and /course/curriculum, both "Curriculum"),
+  // the lesson page is the one whose path has more of the segments most of the group shares (the "lesson" of /lesson/3).
+  const fixed = segs(group[0] || { path: "" }).map((_, i) => {
     const counts = new Map();
     for (const p of group) counts.set(segs(p)[i], (counts.get(segs(p)[i]) || 0) + 1);
     const [value, n] = [...counts].sort((a, b) => b[1] - a[1])[0];
     return n > group.length / 2 ? value : null;
   });
-  return group.filter((p) => fixed.every((value, i) => value === null || segs(p)[i] === value));
+  const fit = (p) => fixed.filter((value, i) => value !== null && segs(p)[i] === value).length;
+  return group.filter((p) => !group.some((q) => q !== p && titleOf(q) === titleOf(p) && fit(q) > fit(p)));
 }
 const slim = (p) => ({
   path: p.path,
