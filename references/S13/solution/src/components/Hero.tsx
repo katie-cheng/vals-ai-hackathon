@@ -58,7 +58,7 @@ function Hero() {
         <motion.div
           className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 pt-36 sm:px-10 lg:px-16 lg:pt-40"
         >
-          <h1 className="max-w-4xl text-[11vw] font-semibold leading-[1] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]">
+          <h1 className="max-w-4xl text-[11vw] font-light leading-[1.02] tracking-[-0.03em] text-white sm:text-6xl lg:text-[4.4rem]">
             <HeroWords text="Connecticut," delay={0.14} className="block" />
             <HeroWords
               text="in its best light."

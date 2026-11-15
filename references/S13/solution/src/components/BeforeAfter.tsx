@@ -172,7 +172,7 @@ function BeforeAfter() {
             <SplitWords
               text="See what a thorough clean changes."
               as="h2"
-              className="font-serif-d block text-[1.9rem] font-medium leading-tight sm:text-[2.6rem]"
+              className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight sm:text-[2.6rem]"
             />
             <Reveal delay={0.2}>
               <p className="mt-4 text-[17px] leading-relaxed text-slate-600">

@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794732180.9793453
+   "updated_at": 1794732223.5865679
   }
  ],
  "labels": [
@@ -11692,6 +11692,35 @@
    "shot_status": "none",
    "created_at": 1794732120.0,
    "updated_at": 1794732120.0
+  },
+  {
+   "id": 490,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R30\"]",
+   "comment": "use a thin sans serif font more for more visual hierarchy",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "headings",
+   "component_chain": null,
+   "selector": "h1, h2, h3",
+   "selector_confidence": "manual",
+   "tag": "h2",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"h1 Inter 600; h2/h3 Fraunces 500 serif\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794732180.0,
+   "updated_at": 1794732180.0
   }
  ]
 }

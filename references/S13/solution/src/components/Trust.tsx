@@ -38,7 +38,7 @@ function Trust() {
           <SplitWords
             text="Careful work. Clear communication."
             as="h2"
-            className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
+            className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-sky-100/75">

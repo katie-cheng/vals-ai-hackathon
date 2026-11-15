@@ -55,7 +55,7 @@ function PricingAreas() {
               <SplitWords
                 text="Clear prices for window work."
                 as="h2"
-                className="font-serif-d block text-[1.9rem] font-medium leading-tight sm:text-[2.6rem]"
+                className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight sm:text-[2.6rem]"
               />
               <Reveal delay={0.2}>
                 <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
@@ -65,7 +65,7 @@ function PricingAreas() {
             </div>
             <Reveal delay={0.15}>
               <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#04141f] p-6 sm:p-7">
-                <h3 className="font-serif-d relative text-xl font-medium text-white">
+                <h3 className="relative text-xl font-normal text-white">
                   Larger jobs need a look first.
                 </h3>
                 <p className="relative mt-2 text-[14px] leading-relaxed text-sky-100/75">
@@ -229,7 +229,7 @@ function PricingAreas() {
             <SplitWords
               text="One state. Plenty of dirty windows."
               as="h2"
-              className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
+              className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-[2.6rem]"
             />
             <Reveal delay={0.2}>
               <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-sky-100/75">

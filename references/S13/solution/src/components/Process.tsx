@@ -21,7 +21,7 @@ function Process() {
           <SplitWords
             text="From first message to final check."
             as="h2"
-            className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
+            className="block text-[1.9rem] font-light tracking-[-0.02em] leading-tight text-white sm:text-[2.6rem]"
           />
           <Reveal delay={0.2}>
             <p className="mt-5 text-[17px] leading-relaxed text-sky-100/75">
@@ -65,7 +65,7 @@ function Process() {
                       duration: 0.4,
                       ease: EASE,
                     }}
-                    className="font-serif-d absolute left-0 top-0 z-10 grid h-14 w-14 place-items-center rounded-full border-2 border-cyan-300 bg-[#04141f] text-2xl font-semibold text-cyan-100 md:left-1/2 md:-translate-x-1/2 lg:h-16 lg:w-16"
+                    className="absolute left-0 top-0 z-10 grid h-14 w-14 place-items-center rounded-full border-2 border-cyan-300 bg-[#04141f] text-2xl font-light text-cyan-100 md:left-1/2 md:-translate-x-1/2 lg:h-16 lg:w-16"
                   >
                     {l.step_number}
                   </motion.div>
@@ -80,7 +80,7 @@ function Process() {
                         }}
                         className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.05] p-6 transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
                       >
-                        <h3 className="font-serif-d text-xl font-medium text-white sm:text-[1.4rem]">
+                        <h3 className="text-xl font-normal text-white sm:text-[1.4rem]">
                           {l.title}
                         </h3>
                         <p className="mt-3 text-[14.5px] leading-relaxed text-sky-100/70">
