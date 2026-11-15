@@ -1845,7 +1845,7 @@ index 9c467c0..6fa3d2f 100644
                    {"Meet the team "}
                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
 diff --git a/src/pages/Insights.tsx b/src/pages/Insights.tsx
-index 140dc09..ea77b26 100644
+index 140dc09..c81f4b2 100644
 --- a/src/pages/Insights.tsx
 +++ b/src/pages/Insights.tsx
 @@ -1,7 +1,7 @@
@@ -1951,6 +1951,15 @@ index 140dc09..ea77b26 100644
        />
      </>
    );
+@@ -167,7 +164,7 @@ export function InsightPost() {
+   if (!n) return <Navigate to="/insights" replace={!0} />;
+   const f = insights.findIndex((g) => g.slug === s),
+     h = insights[(f + 1) % insights.length],
+-    m = insights.filter((g) => g.slug !== s).slice(0, 2);
++    m = insights.filter((g) => g.slug !== s && g.slug !== h.slug).slice(0, 2);
+   return (
+     <>
+       <section ref={l} className="relative overflow-hidden bg-pine-950 pt-32 pb-0 text-cream-50 sm:pt-40">
 @@ -185,7 +182,7 @@ export function InsightPost() {
            <Reveal y={16}>
              <Link
