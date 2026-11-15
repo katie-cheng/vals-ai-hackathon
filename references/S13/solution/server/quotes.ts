@@ -35,7 +35,9 @@ function handler(root: string) {
     req.on("end", () => {
       let q: Quote = {};
       try {
-        q = JSON.parse(body || "{}");
+        const parsed: unknown = JSON.parse(body || "{}");
+        if (parsed && typeof parsed === "object" && !Array.isArray(parsed))
+          q = parsed as Quote;
       } catch {
         /* empty */
       }
