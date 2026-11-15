@@ -160,8 +160,14 @@ async function playground(context, url) {
     if (await consoleTab.count()) await consoleTab.click({ timeout: 3000 }).catch(() => {});
     await page.waitForTimeout(800);
     // The editor itself holds the marker, so it must appear in output: a leaf outside the editor, or a sandbox frame, without the code.
-    const outside = await page.evaluate((m) => [...document.querySelectorAll("body *")].some((el) =>
-      el.children.length === 0 && !el.closest("textarea,.cm-editor,.monaco-editor,[contenteditable=true]") && (el.textContent || "").includes(m) && !(el.textContent || "").includes("console.log")), MARKER);
+    const outside = await page.evaluate((m) => {
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        const el = node.parentElement;
+        if (node.textContent.includes(m) && !node.textContent.includes("console.log") && el && !el.closest("textarea,.cm-editor,.monaco-editor,[contenteditable=true],pre[aria-hidden=true]") && el.checkVisibility()) return true;
+      }
+      return false;
+    }, MARKER);
     let framed = false;
     for (const frame of page.frames().slice(1)) {
       framed ||= await frame.evaluate((m) => { const t = document.body?.innerText || ""; return t.includes(m) && !t.includes("console.log"); }, MARKER).catch(() => false);
