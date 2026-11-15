@@ -35,9 +35,6 @@ function Footer() {
         </div>
         <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-10 lg:px-16 sm:pt-20">
           <Reveal>
-            <p className="text-[15px] font-semibold text-cyan-300">
-              A clean home starts with a clear plan.
-            </p>
             <motion.p
               className="font-serif-d mt-4 text-[2.2rem] font-medium leading-tight text-white sm:text-5xl"
               initial={{
@@ -64,10 +61,6 @@ function Footer() {
           <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-[2fr_1fr_1fr] grid-12 split-6-3-3">
             <div>
               <Logo />
-              <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-sky-100/65">
-                Residential window cleaning, gutter care, house washing, and
-                pressure washing throughout Connecticut.
-              </p>
               <button
                 onClick={r}
                 aria-label="Share this website"
@@ -139,11 +132,6 @@ function Footer() {
                   </a>
                 </li>
               </ul>
-              <p className="mt-5 text-[12.5px] leading-relaxed text-sky-200/50">
-                Serving all of Connecticut.
-                <br />
-                Free estimates for every service.
-              </p>
             </div>
           </div>
           <div className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-7 sm:flex-row">

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { SITE } from "../data/content";
 import { EASE } from "../lib/anim";
+import { AppWindow, Car, ClipboardCheck, Droplets, Fence, House, SprayCan } from "lucide-react";
 import {
   motion,
   useMotionValue,
@@ -34,7 +35,7 @@ function Hero() {
         >
           <div className="absolute inset-0">
             <img
-              src="/images/hero-house.jpg"
+              src="/images/hero-wash-first.jpg"
               alt=""
               fetchPriority="high"
               decoding="sync"
@@ -43,7 +44,7 @@ function Hero() {
             <video
               className="relative h-full w-full object-cover"
               src="/videos/hero-wash.mp4"
-              poster="/images/hero-house.jpg"
+              poster="/images/hero-wash-first.jpg"
               autoPlay
               muted
               loop
@@ -82,8 +83,7 @@ function Hero() {
             className="mt-6 max-w-xl text-base leading-relaxed text-sky-100/85 sm:text-lg"
           >
             Window cleaning, gutter care, house washing, and pressure washing
-            for homes across Connecticut. We explain the work, agree on the
-            scope, and clean with attention to the surface.
+            for homes across Connecticut.
           </motion.p>
           <motion.div
             initial={{
@@ -110,72 +110,34 @@ function Hero() {
               </a>
             </div>
           </motion.div>
-          <motion.div
-            className="mt-12 hidden gap-3 lg:flex"
-            aria-hidden
-          >
-            {[
-              {
-                t: "Interior + exterior glass",
-              },
-              {
-                t: "Gutters · Siding · Concrete",
-              },
-              {
-                t: "Streak-aware finish",
-              },
-            ].map((M, H) => (
-              <motion.div
-                key={M.t}
-                initial={{
-                  opacity: 0,
-                  y: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.9,
-                  ease: EASE,
-                  delay: 0.56 + H * 0.15,
-                }}
-                className="glass flex items-center gap-2.5 rounded-lg px-4 py-3 text-[13px] font-medium text-sky-50"
-              >
-                {M.t}
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
-        <motion.div
-          className="absolute inset-x-0 bottom-0 z-10"
-          aria-hidden
-        >
-          <div className="overflow-hidden border-t border-cyan-300/20 bg-[#04141f]/85 py-3">
-            <div className="animate-marquee flex w-max items-center gap-8 whitespace-nowrap pr-8">
+        <div className="absolute inset-x-0 bottom-0 z-10" aria-hidden>
+          <div className="overflow-hidden border-t border-white/10 bg-[#04141f]/85 py-3">
+            <div className="animate-marquee flex w-max items-center gap-10 whitespace-nowrap pr-10">
               {[0, 1].map((M) => (
-                <div key={M} className="flex items-center gap-8">
+                <div key={M} className="flex items-center gap-10">
                   {[
-                    "Pressure washing",
-                    "Window cleaning",
-                    "Gutter cleaning",
-                    "House washing",
-                    "Driveways",
-                    "Patios",
-                    "Free estimates",
-                  ].map((H) => (
+                    { t: "Pressure washing", I: SprayCan },
+                    { t: "Window cleaning", I: AppWindow },
+                    { t: "Gutter cleaning", I: Droplets },
+                    { t: "House washing", I: House },
+                    { t: "Driveways", I: Car },
+                    { t: "Patios", I: Fence },
+                    { t: "Free estimates", I: ClipboardCheck },
+                  ].map(({ t, I }) => (
                     <span
-                      key={H}
-                      className="flex items-center gap-8 text-[14px] font-medium text-cyan-100/80"
+                      key={t}
+                      className="flex items-center gap-2.5 text-[12px] font-medium uppercase tracking-[0.14em] text-cyan-100/75"
                     >
-                      {H}
+                      <I className="h-3.5 w-3.5 text-cyan-300/80" strokeWidth={1.6} />
+                      {t}
                     </span>
                   ))}
                 </div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
   );
 }

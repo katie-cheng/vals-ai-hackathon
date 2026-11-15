@@ -176,9 +176,8 @@ function BeforeAfter() {
             />
             <Reveal delay={0.2}>
               <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
-                Move the control across each image to compare the surface before
-                and after cleaning. These examples illustrate the difference in
-                clarity, color, and visible buildup.
+                What changes in clarity, color, and visible buildup after a
+                thorough clean.
               </p>
             </Reveal>
           </div>

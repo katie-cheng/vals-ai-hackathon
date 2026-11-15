@@ -26,8 +26,7 @@ function Process() {
           <Reveal delay={0.2}>
             <p className="mt-5 text-[17px] leading-relaxed text-sky-100/75">
               You will know what we are cleaning, what it costs, and when we are
-              coming before the work begins. One request can include several
-              services.
+              coming before the work begins.
             </p>
           </Reveal>
         </div>
@@ -87,13 +86,6 @@ function Process() {
                         <p className="mt-3 text-[14.5px] leading-relaxed text-sky-100/70">
                           {l.description}
                         </p>
-                        {u === 1 && (
-                          <p className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium text-sky-200/80">
-                            {
-                              " Complete price confirmed before work is scheduled"
-                            }
-                          </p>
-                        )}
                       </motion.div>
                     </Reveal>
                   </div>
@@ -102,18 +94,6 @@ function Process() {
             })}
           </div>
         </div>
-        <Reveal className="mt-14">
-          <p className="text-[14px] text-sky-100/70">
-            Have photos of the problem areas?{" "}
-            <a
-              href={SITE.smsHref}
-              className="font-medium text-cyan-300 underline decoration-cyan-300/40 underline-offset-4 transition hover:text-cyan-200"
-            >
-              {"Text them to "}
-              {SITE.phoneDisplay}
-            </a>
-          </p>
-        </Reveal>
       </div>
     </section>
   );

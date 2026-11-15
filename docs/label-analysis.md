@@ -26,7 +26,7 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
 ## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
-Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 25 labels (R1–R25, SlopLabel ids 461–485) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 28 labels (R1–R28, SlopLabel ids 461–488) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
 
 | Pattern | Labels | Mechanical? |
 |---|---|---|
@@ -50,6 +50,9 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Redundant navigation: pill/tab row plus prev/next arrows for the same carousel | R22 | yes: a tab/pill group and prev/next buttons controlling the same panel |
 | Inconsistent layout grid: every section picks its own column ratio, gutter and alignment | R23 | yes: column edges and gutters across sections should snap to one shared grid |
 | Logo is a stock icon (e.g. Lucide droplet) in a filled rounded tile rather than a designed mark | R24 | partly: logo svg matches an icon-library glyph |
+| Same point repeated across sections (service list in hero copy + chips + section; "free estimate" and contact details in every section) | R26 | partly: repeated-phrase / n-gram overlap across sections |
+| Exception: uppercase + icons are acceptable in a decorative service ribbon (the "no small caps / fewer icons" rules apply to labels and content, not this band) | R28 | scope note for the eyebrow and icon checks |
+| Media placeholder that differs from the media (a still photo that swaps to an unrelated video) | R27 | yes: compare the poster/placeholder to the video's first frame |
 | Layout shift on load/reload (font swap reflow, slide-in entrances, late state restyle, media without reserved space) | R25 | yes: CLS via PerformanceObserver, plus element movement during the first seconds |
 | Hero image missing on first paint (waits for JS/video poster) | R17 | yes: hero image request start and paint time vs first contentful paint |
 

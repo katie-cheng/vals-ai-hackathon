@@ -59,9 +59,7 @@ function PricingAreas() {
               />
               <Reveal delay={0.2}>
                 <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
-                  Individual window items have set prices. Gutters, siding, and
-                  hard surfaces are quoted after we understand the size,
-                  condition, and access at your property.
+                  Individual window items have set prices.
                 </p>
               </Reveal>
             </div>
@@ -283,12 +281,6 @@ function PricingAreas() {
                 </motion.p>
               )}
             </AnimatePresence>
-            <Reveal delay={0.4}>
-              <p className="mt-4 text-[13px] text-sky-200/60">
-                Do not see your town? The map shows a selection only. Ask about
-                any Connecticut address.
-              </p>
-            </Reveal>
           </div>
         </div>
       </section>

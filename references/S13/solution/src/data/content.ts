@@ -255,7 +255,7 @@ const servicesData = [
       step_number: 3,
       title: "We clean each surface",
       description:
-        "The squad arrives ready to work, using the appropriate method for each surface and paying attention to the finish, not just the fast part.",
+        "The squad arrives ready to work and uses the appropriate method for each surface.",
       tag: "The squad gets to work",
       sort_order: 3,
     },
@@ -274,7 +274,7 @@ const servicesData = [
       id: 1,
       title: "Professional service",
       description:
-        "Clear communication, a defined scope, and respectful work around your home from the first conversation through the final check.",
+        "A defined scope and respectful work around your home.",
       icon: "shield",
       sort_order: 1,
     },
@@ -290,7 +290,7 @@ const servicesData = [
       id: 3,
       title: "Reliable scheduling",
       description:
-        "Your time matters. We agree on the plan, confirm the work, and keep the scheduling process straightforward.",
+        "A confirmed service time, agreed before the day.",
       icon: "calendar",
       sort_order: 3,
     },
@@ -298,7 +298,7 @@ const servicesData = [
       id: 4,
       title: "Quality results",
       description:
-        "We choose the method for the surface and judge the finished result, rather than treating every property like the same quick rinse.",
+        "We judge the finished result, not how quickly we got there.",
       icon: "sparkle",
       sort_order: 4,
     },
@@ -314,7 +314,7 @@ const servicesData = [
       id: 6,
       title: "Interior and exterior glass",
       description:
-        "Both sides of the window count. Interior and exterior washing can be requested together, along with screens and interior mirrors.",
+        "Inside and outside panes can be booked together.",
       icon: "windows",
       sort_order: 6,
     },
@@ -538,7 +538,7 @@ const servicesData = [
       id: 1,
       question: "What areas do you serve?",
       answer:
-        "All of Connecticut. The towns on our interactive map are representative, not exhaustive. If your property has a Connecticut ZIP code, ask us about your clean.",
+        "Anywhere in Connecticut. The service area map shows example towns.",
       sort_order: 1,
     },
     {

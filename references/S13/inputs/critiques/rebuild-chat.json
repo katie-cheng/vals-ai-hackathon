@@ -148,5 +148,23 @@
   "sent_at": "2026-11-15T00:33-08:00",
   "element": "page load",
   "comment": "there is layout shift upon reload - explore using skeletons or placeholders instead"
+ },
+ {
+  "rid": "R26",
+  "sent_at": "2026-11-15T00:36-08:00",
+  "element": "page copy",
+  "comment": "can we generally decrease repetitiveness across the website and cut repeated descriptions"
+ },
+ {
+  "rid": "R27",
+  "sent_at": "2026-11-15T00:36-08:00",
+  "element": "hero",
+  "comment": "when the page first loads you see a house instead of the animation of cleaning"
+ },
+ {
+  "rid": "R28",
+  "sent_at": "2026-11-15T00:37-08:00",
+  "element": "hero service ribbon (marquee)",
+  "comment": "the ribbon slider can still have uppercase font with icons"
  }
 ]

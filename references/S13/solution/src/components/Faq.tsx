@@ -17,34 +17,6 @@ function Faq() {
             as="h2"
             className="font-serif-d block text-[1.9rem] font-medium leading-tight text-white sm:text-[2.6rem]"
           />
-          <Reveal delay={0.2}>
-            <p className="mt-4 text-[17px] leading-relaxed text-sky-100/70">
-              Pricing, service areas, inside glass, screens, mirrors, and
-              multi-service visits are covered here.
-            </p>
-          </Reveal>
-          <Reveal delay={0.3}>
-            <div className="glass mt-8 rounded-lg p-6">
-              <p className="flex items-center gap-2 text-[14px] font-medium text-white">
-                {" Still have a question?"}
-              </p>
-              <div className="mt-3 flex flex-col gap-2 text-[14px] font-semibold">
-                <a
-                  href={SITE.phoneHref}
-                  className="text-cyan-300 transition hover:text-cyan-200"
-                >
-                  {"Call or text "}
-                  {SITE.phoneDisplay}
-                </a>
-                <a
-                  href={SITE.emailHref}
-                  className="break-all text-cyan-300 transition hover:text-cyan-200"
-                >
-                  {SITE.email}
-                </a>
-              </div>
-            </div>
-          </Reveal>
         </div>
         <div className="space-y-3">
           {faqs.map((r, l) => {

@@ -153,9 +153,7 @@ function Services() {
           />
           <Reveal delay={0.25}>
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-sky-100/75">
-              Different materials need different treatment. Choose a service to
-              see what is included, how pricing works, and what to tell us when
-              you request an estimate.
+              Different materials need different treatment.
             </p>
           </Reveal>
         </div>

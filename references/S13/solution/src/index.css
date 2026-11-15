@@ -49,6 +49,18 @@
   line-gap-override: 0%;
 }
 
+@keyframes marquee-x {
+  to {
+    transform: translate(-50%);
+  }
+}
+.animate-marquee {
+  animation: 30s linear infinite marquee-x;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
+
 .skeleton {
   background-color: rgb(255 255 255 / 0.06);
   animation: skeleton-pulse 1.6s ease-in-out infinite;
@@ -106,17 +118,6 @@ body {
 }
 .font-serif-d {
   font-family: var(--font-serif);
-}
-@keyframes marquee-x {
-  0% {
-    transform: translate(0);
-  }
-  to {
-    transform: translate(-50%);
-  }
-}
-.animate-marquee {
-  animation: 30s linear infinite marquee-x;
 }
 .glass {
   -webkit-backdrop-filter: blur(18px);

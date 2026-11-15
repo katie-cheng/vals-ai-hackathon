@@ -692,8 +692,7 @@ function Quote() {
                     id="quote-privacy"
                     className="mt-3 text-center text-[12px] text-sky-200/50"
                   >
-                    Free quotes. Complete pricing is confirmed after viewing the
-                    property. Your request is saved securely.
+                    Your request is saved securely.
                   </p>
                 </motion.form>
               )}
