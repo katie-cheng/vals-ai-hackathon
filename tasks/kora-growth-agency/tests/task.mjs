@@ -67,14 +67,15 @@ async function openDetail(context, listUrl, listPath) {
     const href = await page.evaluate((base) => {
       const a = [...document.querySelectorAll("main a[href], a[href]")].find((a) => {
         const u = new URL(a.href, location.href);
-        return u.origin === location.origin && u.pathname.startsWith(base + "/") && u.pathname.length > base.length + 1;
+        const key = u.hash.length > 2 && u.hash.startsWith("#/") ? u.pathname + u.hash : u.pathname;
+        return u.origin === location.origin && key.startsWith(base + "/") && key.length > base.length + 1;
       });
       return a?.href || null;
     }, base);
     if (!href) return { pass: false, detail: `no link below ${base}/` };
     await page.goto(href, { waitUntil: "load", timeout: 60_000 });
     await page.waitForTimeout(1500);
-    const r = await page.evaluate(() => ({ path: location.pathname, h: document.querySelector("h1,h2,h3,[role=heading]")?.innerText?.trim() || "", len: document.body.innerText.length }));
+    const r = await page.evaluate(() => ({ path: location.hash.length > 2 && location.hash.startsWith("#/") ? location.pathname + location.hash : location.pathname, h: document.querySelector("h1,h2,h3,[role=heading]")?.innerText?.trim() || "", len: document.body.innerText.length }));
     return { pass: r.path !== listPath && !!r.h && r.len > 600, detail: `${r.path}: "${r.h.slice(0, 60)}", ${r.len} chars` };
   } finally {
     await page.close();
