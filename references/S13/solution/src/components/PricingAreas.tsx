@@ -49,7 +49,7 @@ function PricingAreas() {
       >
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <div className="mb-12 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-end">
             <div>
               <SplitWords
@@ -115,7 +115,7 @@ function PricingAreas() {
       <section id="areas" className="relative overflow-hidden py-24 sm:py-32">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 sm:px-10 lg:px-16 lg:grid-cols-2 lg:gap-16">
           <Reveal className="relative order-2 lg:order-1">
             <div className="glass relative overflow-hidden rounded-lg p-4 sm:p-6">
               <div className="relative">

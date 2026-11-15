@@ -105,7 +105,7 @@ function Header() {
           className={`fixed inset-x-0 top-0 z-[80] transition-all duration-500 ${a ? "py-2" : "py-4"}`}
         >
           <div
-            className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-all duration-500 sm:px-6 ${a ? "rounded-lg border border-white/10 bg-[#04141f]/80 py-2 backdrop-blur-2xl" : "border border-transparent bg-transparent py-1"}`}
+            className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-6 transition-all duration-500 sm:px-10 lg:px-16 ${a ? "rounded-lg border border-white/10 bg-[#04141f]/80 py-2 backdrop-blur-2xl" : "border border-transparent bg-transparent py-1"}`}
           >
             <Logo />
             <nav
@@ -150,7 +150,7 @@ function Header() {
             </div>
           </div>
           <div
-            className="mx-auto mt-1 h-[2px] max-w-7xl overflow-hidden rounded-md px-4 sm:px-6"
+            className="mx-auto mt-1 h-[2px] max-w-7xl overflow-hidden rounded-md px-6 sm:px-10 lg:px-16"
             aria-hidden
           >
             <div

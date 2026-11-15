@@ -13,4 +13,4 @@ Every label means "slop". There is no not-slop / unsure verdict, no severity and
 
 The tool itself is in `tools/sloplabel/` (FastAPI + SQLite + plain-JS overlay); see its README for running it against the site mirrors.
 
-`S13-ref` (label ids 461–479, annotator katie, tag `chat`) holds Katie's chat critiques of the S13 golden-reference rebuild (`references/S13/`), kept apart from the original S13/S14 labels. Their crops were captured from the rebuild at commit 15b83be, the state she critiqued; `shot_path` for these is relative to this folder. R16–R19 (overscroll, hero load, polish, palette) have no crop.
+`S13-ref` (label ids 461–480, annotator katie, tag `chat`) holds Katie's chat critiques of the S13 golden-reference rebuild (`references/S13/`), kept apart from the original S13/S14 labels. Their crops were captured from the rebuild at commit 15b83be, the state she critiqued; `shot_path` for these is relative to this folder. R16–R20 (overscroll, hero load, polish, palette, side padding) have no crop.

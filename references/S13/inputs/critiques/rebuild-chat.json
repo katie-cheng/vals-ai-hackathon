@@ -112,5 +112,11 @@
   "sent_at": "2026-11-15T00:22-08:00",
   "element": "color palette",
   "comment": "I think the color palette should also be a bit less neon"
+ },
+ {
+  "rid": "R20",
+  "sent_at": "2026-11-15T00:25-08:00",
+  "element": "page side padding",
+  "comment": "add more side padding to the site - like the left and right should have a bit more room"
  }
 ]

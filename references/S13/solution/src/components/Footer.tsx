@@ -33,7 +33,7 @@ function Footer() {
       <div className="relative bg-[#06283d]">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-14 sm:px-6 sm:pt-20">
+        <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-10 lg:px-16 sm:pt-20">
           <Reveal className="text-center">
             <p className="text-[15px] font-semibold text-cyan-300">
               A clean home starts with a clear plan.

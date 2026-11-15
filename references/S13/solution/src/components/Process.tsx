@@ -16,7 +16,7 @@ function Process() {
       id="process"
       className="relative overflow-hidden bg-gradient-to-b from-[#04141f] via-[#082230] to-[#04141f] py-24 sm:py-32"
     >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
           <SplitWords
             text="From first message to final check."

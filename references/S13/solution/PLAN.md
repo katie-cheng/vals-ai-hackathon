@@ -72,6 +72,7 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R17 | Hero image not there on first load | Hero photo is preloaded (`<link rel=preload fetchpriority=high>`) and rendered as an `<img>` under the video, so it no longer waits for the video poster | round 4 |
 | R18 | Too stripped back; some subtle gradients and capital labels are fine | Relaxes R3/R4: a dark fade at the foot of the hero, a faint tonal band behind Process; small caps (11–12px, 0.08em) only on meta labels (Before/After chips, footer column headings, price item names). Section eyebrows stay out (F6). Remaining backdrop blur removed except the header | round 5 |
 | R19 | Palette too neon | Tailwind `cyan-*` remapped to a muted sea-glass accent (`#93bcc6`) and `sky-*` to cool greys in `@theme` | round 5 |
+| R20 | Not enough side padding | Section and header containers go from `px-4 sm:px-6` to `px-6 sm:px-10 lg:px-16` | round 6 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.
