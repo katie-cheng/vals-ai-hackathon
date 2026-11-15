@@ -11,6 +11,8 @@ const DARE = "Sing the chorus of the last song you listened to";
 const WIDTHS = [[320, 700], [360, 740], [375, 812], [390, 844], [430, 932], [768, 1024], [1024, 768], [1440, 900]];
 const CHAT_MESSAGES = 14;
 
+export const GATE = { minText: 20, minHeight: 400 };
+
 export function requirements(views) {
   const d = views.desktop.facts;
   const act = views.phone?.ok ? views.phone.interactions : {};

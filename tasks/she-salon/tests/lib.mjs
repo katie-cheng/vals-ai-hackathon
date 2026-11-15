@@ -69,7 +69,7 @@ export async function checkMobileMenu(context, url, navItems) {
     [...document.querySelectorAll("a,button")].filter((el) => {
       const r = el.getBoundingClientRect();
       const label = (el.innerText || "").toLowerCase().replace(/[^a-z ]+/g, " ").replace(/\s+/g, " ").trim();
-      return items.includes(label) && r.width > 0 && r.bottom > 0 && r.top < innerHeight && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
+      return items.includes(label) && r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth && el.checkVisibility({ opacityProperty: true, visibilityProperty: true });
     }).length;
   const result = await attempt(async () => {
     const before = await page.evaluate(navVisible, navItems);

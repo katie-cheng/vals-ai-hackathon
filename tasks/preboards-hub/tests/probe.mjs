@@ -117,13 +117,14 @@ export function probe(only) {
     const upper = cs.textTransform === "uppercase" || (letters.length >= 3 && letters === letters.toUpperCase());
     if (fs <= 13 && px(cs.letterSpacing) >= Math.max(0.8, 0.06 * fs) && upper && letters.length >= 3 && words <= 8 && !eyebrowTexts.has(t.toUpperCase()) && !inRibbon(el))
       eyebrowTexts.set(t.toUpperCase(), finding(el, { fontSize: cs.fontSize, letterSpacing: cs.letterSpacing }));
-    if (/^\(?0\d\)?([\s./:)\-–—]|$)/.test(t)) numbered.push(finding(el));
+    if (/^\(?0\d\)?([\s./:)\-–—]|$)/.test(t) && !/^0\d:\d\d/.test(t)) numbered.push(finding(el));
     const dots = (t.match(/[·•]/g) || []).length;
     if (dots) {
       dotSeparators += dots;
       if (dotExamples.length < MAX_EXAMPLES) dotExamples.push(finding(el));
     }
-    const em = t.match(emojiRe);
+    // ★/☆ runs are star ratings, not icons.
+    const em = t.replace(/[★☆]/g, "").match(emojiRe);
     if (em) emoji.push(finding(el, { glyphs: em.join("") }));
   }
 

@@ -26,6 +26,8 @@ const PROBES = () => {
 const fraction = (found, total) => found / Math.max(1, total);
 
 /** Each item: {id, desc, score in [0,1], detail}. */
+export const GATE = { minText: 20, minHeight: 400 };
+
 export function requirements(views) {
   const pages = views.desktop.pages;
   const home = pages[0].facts;
