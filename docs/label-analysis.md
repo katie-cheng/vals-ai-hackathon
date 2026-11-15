@@ -26,7 +26,7 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
 ## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
-Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 24 labels (R1–R24, SlopLabel ids 461–484) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 25 labels (R1–R25, SlopLabel ids 461–485) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
 
 | Pattern | Labels | Mechanical? |
 |---|---|---|
@@ -50,6 +50,7 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Redundant navigation: pill/tab row plus prev/next arrows for the same carousel | R22 | yes: a tab/pill group and prev/next buttons controlling the same panel |
 | Inconsistent layout grid: every section picks its own column ratio, gutter and alignment | R23 | yes: column edges and gutters across sections should snap to one shared grid |
 | Logo is a stock icon (e.g. Lucide droplet) in a filled rounded tile rather than a designed mark | R24 | partly: logo svg matches an icon-library glyph |
+| Layout shift on load/reload (font swap reflow, slide-in entrances, late state restyle, media without reserved space) | R25 | yes: CLS via PerformanceObserver, plus element movement during the first seconds |
 | Hero image missing on first paint (waits for JS/video poster) | R17 | yes: hero image request start and paint time vs first contentful paint |
 
 ## Other observations

@@ -30,7 +30,7 @@ function ComparisonSlider({ active: a }) {
   return (
     <div
       ref={y}
-      className="relative aspect-[4/3] w-full cursor-ew-resize select-none overflow-hidden rounded-lg border border-white/12 sm:aspect-[16/10]"
+      className="skeleton-light relative aspect-[4/3] w-full cursor-ew-resize select-none overflow-hidden rounded-lg border border-white/12 sm:aspect-[16/10]"
       onPointerDown={(g) => {
         (p(false),
           h(true),

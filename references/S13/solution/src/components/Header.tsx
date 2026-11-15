@@ -92,7 +92,7 @@ function Logo({ compact: a = false }) {
 }
 
 function Header() {
-  const [a, i] = React.useState(false),
+  const [a, i] = React.useState(() => window.scrollY > 40),
     [r, l] = React.useState(false),
     [u, h] = React.useState(0),
     { scrollY: d } = useScroll();

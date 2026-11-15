@@ -11,8 +11,8 @@ function SplitWords({ text: a, className: i = "", delay: r = 0, as: u = "span" }
   return (
     <Tag
       className={i}
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-8% 0px" }}
       transition={{ duration: 0.5, ease: EASE, delay: r }}
     >
@@ -24,7 +24,7 @@ function SplitWords({ text: a, className: i = "", delay: r = 0, as: u = "span" }
 function Reveal({
   children: a,
   delay: i = 0,
-  y: r = 16,
+  y: r = 0,
   className: l = "",
   once: u = true,
 }) {

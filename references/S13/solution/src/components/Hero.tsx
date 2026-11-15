@@ -13,8 +13,8 @@ function HeroWords({ text: a, delay: i = 0, className: r = "" }) {
   return (
     <motion.span
       className={r}
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: EASE, delay: i }}
     >
       {a}
@@ -68,7 +68,7 @@ function Hero() {
           <motion.p
             initial={{
               opacity: 0,
-              y: 30,
+              y: 0,
             }}
             animate={{
               opacity: 1,
@@ -88,7 +88,7 @@ function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: 30,
+              y: 0,
             }}
             animate={{
               opacity: 1,
@@ -129,7 +129,7 @@ function Hero() {
                 key={M.t}
                 initial={{
                   opacity: 0,
-                  y: 12,
+                  y: 0,
                 }}
                 animate={{
                   opacity: 1,

@@ -24,7 +24,7 @@ function ServicePanel({ index: a }: { index: number }) {
         className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.07]"
       >
         <div className="grid gap-0 lg:grid-cols-2">
-          <div className="relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
+          <div className="skeleton relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
             <img
               src={i.image_url}
               alt={i.image_alt}

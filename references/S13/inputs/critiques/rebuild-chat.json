@@ -142,5 +142,11 @@
   "sent_at": "2026-11-15T00:33-08:00",
   "element": "logo mark",
   "comment": "make the logo more professional - probably a more detailed svg outline looking logo not just a few elements"
+ },
+ {
+  "rid": "R25",
+  "sent_at": "2026-11-15T00:33-08:00",
+  "element": "page load",
+  "comment": "there is layout shift upon reload - explore using skeletons or placeholders instead"
  }
 ]
