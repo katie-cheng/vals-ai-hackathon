@@ -63,7 +63,7 @@ export function render(canvas: HTMLCanvasElement, photos: Photo[], settings: Set
   ctx.clearRect(0, 0, layout.width, layout.height);
   ctx.imageSmoothingQuality = "high";
   paintBackground(ctx, settings, layout.width, layout.height);
-  const b = settings.border;
+  const b = layout.border;
   // Horizontal and vertical cells already match each photo's shape, so only grid and collage tiles can crop.
   const fit = settings.layout === "horizontal" || settings.layout === "vertical" ? "fill" : settings.fit;
   photos.forEach((photo, i) => {
@@ -71,12 +71,12 @@ export function render(canvas: HTMLCanvasElement, photos: Photo[], settings: Set
     if (!cell) return;
     if (b > 0) {
       ctx.fillStyle = settings.borderColor;
-      roundedRect(ctx, cell, settings.radius);
+      roundedRect(ctx, cell, layout.radius);
       ctx.fill();
     }
     const inner = { x: cell.x + b, y: cell.y + b, w: Math.max(1, cell.w - 2 * b), h: Math.max(1, cell.h - 2 * b) };
     ctx.save();
-    roundedRect(ctx, inner, Math.max(0, settings.radius - b));
+    roundedRect(ctx, inner, Math.max(0, layout.radius - b));
     ctx.clip();
     drawPhoto(ctx, photo, inner, fit);
     ctx.restore();

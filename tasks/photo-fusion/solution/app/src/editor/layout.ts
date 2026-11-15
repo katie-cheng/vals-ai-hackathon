@@ -12,7 +12,12 @@ export interface Plan {
   height: number;
   /** Outer cell of each photo, border included, in photo order. */
   cells: Rect[];
+  /** Border and corner radius after any scaling down to keep room for the photos. */
+  border: number;
+  radius: number;
 }
+
+type Layout = Omit<Plan, "border" | "radius">;
 
 const ratio = (p: Photo) => p.width / p.height;
 
@@ -34,12 +39,42 @@ export function gridColumns(settings: Settings, count: number) {
   return Math.max(1, Math.ceil(Math.sqrt(count)));
 }
 
+const MAX_FIXED_SHARE = 0.5;
+
+/** Share of the image length taken by spacing, margin and borders, along the tighter axis. */
+function fixedShare(n: number, settings: Settings) {
+  const { spacing: g, margin: m, border: b, size: L } = settings;
+  if (settings.layout === "horizontal" || settings.layout === "vertical") return (2 * m + n * 2 * b + g * (n - 1)) / L;
+  if (settings.layout === "grid") {
+    const cols = gridColumns(settings, n);
+    const rows = Math.ceil(n / cols);
+    return Math.max(2 * m + cols * 2 * b + g * (cols - 1), 2 * m + rows * 2 * b + g * (rows - 1)) / L;
+  }
+  const r = settings.shape === "original" ? 3 / 2 : shapeRatio(settings.shape, []);
+  const short = r >= 1 ? L / r : L * r;
+  if (n === 1) return (2 * m + 2 * b) / short;
+  const restCols = n - 1 <= 3 ? 1 : 2;
+  const restRows = Math.ceil((n - 1) / restCols);
+  return Math.max(2 * m + g * restCols + 2 * b * (restCols + 1), 2 * m + g * (restRows - 1) + 2 * b * restRows) / short;
+}
+
+/**
+ * Spacing, margin, border and radius are in output pixels. When together they would take more than half of the
+ * image, they are scaled down in proportion so the photos stay visible and the image keeps the chosen size.
+ */
+export function plan(photos: Photo[], settings: Settings): Plan {
+  const share = photos.length ? fixedShare(photos.length, settings) : 0;
+  const k = share > MAX_FIXED_SHARE ? MAX_FIXED_SHARE / share : 1;
+  const s = k < 1 ? { ...settings, spacing: settings.spacing * k, margin: settings.margin * k, border: settings.border * k, radius: settings.radius * k } : settings;
+  return { ...layout(photos, s), border: s.border, radius: s.radius };
+}
+
 /**
  * Lays the photos out so that the longer side of the merged image equals `settings.size`.
  * Every layout is linear in its free length t (row height, column width or tile width) plus fixed
  * spacing, margin and borders, so t is solved directly from the target size.
  */
-export function plan(photos: Photo[], settings: Settings): Plan {
+function layout(photos: Photo[], settings: Settings): Layout {
   const n = photos.length;
   const { spacing: g, margin: m, border: b, size: L } = settings;
   if (!n) return { width: 0, height: 0, cells: [] };
