@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>SlopLabel · mobile view</title>
+<style>
+  body{margin:0;background:#e5e5e5;font:13px system-ui,-apple-system,"Segoe UI",sans-serif;color:#171717}
+  header{display:flex;gap:10px;align-items:center;padding:8px 14px;background:#111;color:#e5e5e5}
+  header b{color:#fff} header a,header button{color:#e5e5e5;background:#262626;border:0;border-radius:5px;padding:5px 9px;text-decoration:none;font-size:12px;cursor:pointer}
+  main{display:flex;justify-content:center;padding:18px}
+  iframe{border:0;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.25);border-radius:14px}
+</style></head>
+<body>
+<header><b id="sid"></b><span id="ttl"></span><span style="flex:1"></span>
+  <span>Width</span><button data-w="390">390</button><button data-w="430">430</button><button data-w="768">768</button>
+  <a id="desk" href="#">Desktop view</a><a href="/__slop/">All sites</a></header>
+<main><iframe id="f" src="/"></iframe></main>
+<script>
+  const C = __CFG__;
+  const f = document.getElementById('f');
+  const size = (w) => { f.width = w; f.height = Math.min(C.h, innerHeight - 90); };
+  document.getElementById('sid').textContent = C.site_id;
+  document.getElementById('ttl').textContent = `${C.title} · ${C.model}`;
+  document.getElementById('desk').href = `/__slop/open/${C.site_id}?view=desktop`;
+  document.querySelectorAll('[data-w]').forEach((b) => b.onclick = () => size(+b.dataset.w));
+  size(C.w); addEventListener('resize', () => size(f.width));
+</script>
+</body></html>

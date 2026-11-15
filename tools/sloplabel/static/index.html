@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SlopLabel</title>
+<style>
+  :root{--b:#e5e5e5;--m:#737373}
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#171717;background:#fafafa}
+  header{position:sticky;top:0;z-index:5;display:flex;gap:12px;align-items:center;padding:10px 20px;background:#fff;border-bottom:1px solid var(--b)}
+  h1{font-size:16px;margin:0} .grow{flex:1}
+  a{color:#1d4ed8} .m{color:var(--m)}
+  input,select{font:inherit;padding:5px 8px;border:1px solid #d4d4d4;border-radius:6px;background:#fff}
+  .btn{display:inline-block;padding:5px 10px;border:1px solid #d4d4d4;border-radius:6px;background:#fff;color:#171717;text-decoration:none;font-size:13px;cursor:pointer}
+  .btn:hover{background:#f5f5f5} .btn.p{background:#171717;border-color:#171717;color:#fff}
+  main{max-width:1280px;margin:0 auto;padding:16px 20px 60px}
+  .stats{display:flex;gap:18px;margin:4px 0 14px;color:var(--m);font-size:13px}
+  .t{background:#fff;border:1px solid var(--b);border-radius:10px;margin-bottom:14px;overflow:hidden}
+  .th{padding:10px 14px;border-bottom:1px solid var(--b);display:flex;gap:10px;align-items:baseline}
+  .th .pr{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  details summary{cursor:pointer;color:var(--m);font-size:12px}
+  details pre{white-space:pre-wrap;font-size:12px;max-height:280px;overflow:auto;background:#fafafa;border:1px solid var(--b);border-radius:6px;padding:8px;margin:6px 0 0}
+  .pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .s{padding:12px 14px;display:flex;gap:12px;border-right:1px solid var(--b)} .s:last-child{border-right:0}
+  .s img,.s .ph{width:200px;height:125px;object-fit:cover;object-position:top;border:1px solid var(--b);border-radius:6px;flex:none;background:#f5f5f5}
+  .s .info{min-width:0;display:flex;flex-direction:column;gap:4px}
+  .id{font:600 12px ui-monospace,Menlo,monospace;background:#f5f5f5;border-radius:4px;padding:1px 5px}
+  .done{font-size:11px;background:#dcfce7;color:#166534;border-radius:4px;padding:1px 6px}
+  .c{display:inline-flex;gap:8px;font-size:12px} .c span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:4px;margin-right:4px;vertical-align:0}
+  .c .sl::before{background:#e11d48}.c .ns::before{background:#16a34a}.c .un::before{background:#6b7280}
+  .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+  .ov{font-size:12px}
+</style></head>
+<body>
+<header><h1>SlopLabel</h1><span class="m">component-level AI-slop labeling</span><span class="grow"></span>
+  <label class="m">Name <input id="who" placeholder="your name" size="10"></label>
+  <select id="filt"><option value="all">All sites</option><option value="todo">Not done</option><option value="done">Done</option></select>
+  <a class="btn" href="/__slop/labels">All labels</a>
+  <a class="btn" href="/__slop/api/export.csv">Export CSV</a><a class="btn" href="/__slop/api/export.json">Export JSON</a></header>
+<main><div class="stats" id="stats"></div><div id="list"></div></main>
+<script>
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const who = document.getElementById('who');
+who.value = localStorage.getItem('__slop_annotator') || '';
+who.onchange = () => localStorage.setItem('__slop_annotator', who.value.trim());
+const filt = document.getElementById('filt');
+filt.value = localStorage.getItem('__slop_filter') || 'all';
+filt.onchange = () => { localStorage.setItem('__slop_filter', filt.value); render(); };
+let sites = [];
+function title(prompt) {
+  const line = prompt.split('\n').map((l) => l.replace(/^[#*\s]+/, '').trim()).find((l) => l.length > 3) || '';
+  return line.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+}
+function siteCard(s) {
+  const c = s.counts;
+  return `<div class="s">
+    ${s.has_thumb ? `<img src="/__slop/thumb/${s.site_id}.png" loading="lazy" alt="${esc(s.title)} screenshot">` : '<div class="ph"></div>'}
+    <div class="info">
+      <div><span class="id">${s.site_id}</span> <b>${esc(s.title)}</b> ${s.done ? '<span class="done">done</span>' : ''}</div>
+      <div class="m" style="font-size:13px">${esc(s.model)} · arena #${esc(s.placement)}</div>
+      <div class="c"><span class="sl">${c.slop} slop label${c.slop === 1 ? '' : 's'}</span></div>
+      ${s.overall_score ? `<div class="ov m">site slop score ${s.overall_score}/5</div>` : ''}
+      ${s.has_source_loc === false ? '<div class="m" style="font-size:12px">no component map (DOM selectors only)</div>' : ''}
+      <div class="acts"><a class="btn p" href="/__slop/open/${s.site_id}">Label (desktop)</a><a class="btn" href="/__slop/open/${s.site_id}?view=mobile">Mobile</a><a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">Live ↗</a></div>
+    </div></div>`;
+}
+function render() {
+  const groups = new Map();
+  for (const s of sites) { if (!groups.has(s.tournament)) groups.set(s.tournament, []); groups.get(s.tournament).push(s); }
+  const f = filt.value;
+  const out = [];
+  for (const [t, ss] of groups) {
+    const shown = ss.filter((s) => f === 'all' || (f === 'done' ? s.done : !s.done));
+    if (!shown.length) continue;
+    out.push(`<section class="t"><div class="th"><span class="pr"><b>${esc(title(ss[0].prompt))}</b></span><span class="m mono" style="font-size:12px">tournament ${t.slice(0, 8)}</span></div>
+      <div style="padding:6px 14px;border-bottom:1px solid var(--b)"><details><summary>Show prompt</summary><pre>${esc(ss[0].prompt)}</pre></details></div>
+      <div class="pair">${shown.map(siteCard).join('')}</div></section>`);
+  }
+  document.getElementById('list').innerHTML = out.join('') || '<p class="m">Nothing here.</p>';
+  const tot = sites.reduce((a, s) => a + s.counts.slop, 0);
+  document.getElementById('stats').innerHTML = `<span>${sites.length} sites</span><span>${sites.filter((s) => s.done).length} done</span><span>${tot} labels</span>`;
+}
+fetch('/__slop/api/sites').then((r) => r.json()).then((d) => { sites = d; render(); });
+</script>
+</body></html>
