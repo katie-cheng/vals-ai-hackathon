@@ -361,7 +361,15 @@ export async function interactDesktop(context, url, handoffs, pages) {
       const marked = /coming soon|not (yet )?(available|enabled|configured|connected)|unavailable|disabled/i.test(orderText);
       return { pass: !online || marked, detail: `online payment mentioned ${online}, marked unavailable ${marked}` };
     });
-    out.locationAssist = { pass: /use (my |your )?(current )?location|locate me|detect (my )?location|share (my |your )?location/i.test(orderText), detail: orderText ? "" : "checkout not reached" };
+    const locationRe = /use (my |your )?(current )?location|locate me|detect (my )?location|share (my |your )?location/i;
+    out.locationAssist = await attempt(async () => {
+      if (!orderText) return { pass: false, detail: "checkout not reached" };
+      if (locationRe.test(orderText)) return { pass: true, detail: "" };
+      // The location option often appears only once delivery is chosen.
+      await clickText(page, /^\s*(deliver|delivery)\b/i);
+      await page.waitForTimeout(600);
+      return { pass: locationRe.test(await page.evaluate(() => document.body.innerText)), detail: "after choosing delivery" };
+    });
     out.orderPlaced = await attempt(async () => {
       await clickText(page, /^\s*(collect|collection|pick ?up)/i);
       await clickText(page, /cash/i);
@@ -464,12 +472,13 @@ export async function interactDesktop(context, url, handoffs, pages) {
       const findHeadline = () =>
         page.evaluate((needle) => {
           const editable = [...document.querySelectorAll("input,textarea,[contenteditable=true]")];
-          const el = editable.find((e) => (e.value ?? e.innerText ?? "").toLowerCase().includes(needle) && e.getBoundingClientRect().width > 0);
+          // The headline field starts with the headline; other copy can mention "big flavour" too.
+          const el = editable.find((e) => (e.value ?? e.innerText ?? "").trim().toLowerCase().startsWith(needle) && e.getBoundingClientRect().width > 0);
           if (el) el.setAttribute("data-sbf", "headline");
           return !!el;
         }, "big flavour");
       let found = await findHeadline();
-      for (const re of [/content|pages?|website|homepage|home/i, /hero|banner/i, /text|cms|edit/i]) {
+      for (const re of [/content|pages?|website|homepage|home/i, /hero|banner|slides?|media/i, /text|cms|edit/i]) {
         if (found) break;
         const tabs = page.locator("main :is(button,a,[role=tab]):visible, aside :is(button,a,[role=tab]):visible, nav :is(button,a,[role=tab]):visible").filter({ hasText: re });
         for (let i = 0; i < Math.min(3, await tabs.count()) && !found; i++) {
