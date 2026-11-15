@@ -10,5 +10,6 @@ data/snapshots/web/
 data/snapshots/dev/
 reports/
 data/yc/yc-oss-all.json
+!references/S13/verification/reports/
 node_modules/
 dist/

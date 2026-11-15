@@ -1,0 +1,278 @@
+[
+ {
+  "rid": "R1",
+  "sent_at": "2026-11-15T00:05-08:00",
+  "element": "section titles (h1/h2/h3)",
+  "comment": "Generally, the titles on this page are too big relative to the subtitle text. decrease title size and weight, they emphasize things that are like not that relevant and emphasize entire phrases."
+ },
+ {
+  "rid": "R2",
+  "sent_at": "2026-11-15T00:05-08:00",
+  "element": "hero h1 line 2",
+  "comment": "\"in its best light\" is also all merged together as words which is a mistake"
+ },
+ {
+  "rid": "R3",
+  "sent_at": "2026-11-15T00:06-08:00",
+  "element": "whole page",
+  "comment": "there should be no gradient/glows on this site"
+ },
+ {
+  "rid": "R4",
+  "sent_at": "2026-11-15T00:06-08:00",
+  "element": "small uppercase labels (Scroll to explore, marquee, logo sub-line)",
+  "comment": "even \"scroll to explore\" should not have uppercase labeling, it should just be normal case and a more normal font for every small uppercase label"
+ },
+ {
+  "rid": "R5",
+  "sent_at": "2026-11-15T00:06-08:00",
+  "element": "hero 'Scroll to explore' cue",
+  "comment": "also you can just get rid of scroll to explore, its useless text"
+ },
+ {
+  "rid": "R6",
+  "sent_at": "2026-11-15T00:07-08:00",
+  "element": "header logo",
+  "comment": "the suds squad logo should not have the uppercase small label nor should it have the glowing gradient"
+ },
+ {
+  "rid": "R7",
+  "sent_at": "2026-11-15T00:08-08:00",
+  "element": "buttons",
+  "comment": "the buttons on this page have too much padding and the buttons should not have bold typeface in them"
+ },
+ {
+  "rid": "R8",
+  "sent_at": "2026-11-15T00:08-08:00",
+  "element": "text with shadow (element not specified)",
+  "comment": "The text should not have this shadow"
+ },
+ {
+  "rid": "R9",
+  "sent_at": "2026-11-15T00:08-08:00",
+  "element": "icons",
+  "comment": "decrease icon usage as much as possible"
+ },
+ {
+  "rid": "R10",
+  "sent_at": "2026-11-15T00:08-08:00",
+  "element": "CTAs",
+  "comment": "Decrease duplicate CTAs that go to the same place on the website"
+ },
+ {
+  "rid": "R11",
+  "sent_at": "2026-11-15T00:09-08:00",
+  "element": "FAQ open/close icon",
+  "comment": "when you click the plus sign to open the FAQ, when it turns into an X, it becomes misaligned and not centered in the circle"
+ },
+ {
+  "rid": "R12",
+  "sent_at": "2026-11-15T00:09-08:00",
+  "element": "all corners",
+  "comment": "The corners on everything should be less rounded"
+ },
+ {
+  "rid": "R13",
+  "sent_at": "2026-11-15T00:10-08:00",
+  "element": "bold text",
+  "comment": "Bold is very overused, get rid of most bold and glow"
+ },
+ {
+  "rid": "R14",
+  "sent_at": "2026-11-15T00:13-08:00",
+  "element": "all animations",
+  "comment": "do an audit over the animations, make sure they are simpler and a bit less heavy"
+ },
+ {
+  "rid": "R15",
+  "sent_at": "2026-11-15T00:14-08:00",
+  "element": "before/after labels and slider",
+  "comment": "before and after should be the same style in the before and after section - they should both look like before for consistency, and the slider should be the same as well, less blur though"
+ },
+ {
+  "rid": "R16",
+  "sent_at": "2026-11-15T00:16-08:00",
+  "element": "page overscroll",
+  "comment": "when you scroll too far up or down on the page, you see white - this should not be the case\n\nyou should rather not be able to scroll past the top"
+ },
+ {
+  "rid": "R17",
+  "sent_at": "2026-11-15T00:18-08:00",
+  "element": "hero background image",
+  "comment": "when the page first loads, the hero image doesnt load in immediately"
+ },
+ {
+  "rid": "R18",
+  "sent_at": "2026-11-15T00:22-08:00",
+  "element": "whole page",
+  "comment": "can you add back of professional polish - maybe some subtle gradients are ok and some labels can be capital"
+ },
+ {
+  "rid": "R19",
+  "sent_at": "2026-11-15T00:22-08:00",
+  "element": "color palette",
+  "comment": "I think the color palette should also be a bit less neon"
+ },
+ {
+  "rid": "R20",
+  "sent_at": "2026-11-15T00:25-08:00",
+  "element": "page side padding",
+  "comment": "add more side padding to the site - like the left and right should have a bit more room"
+ },
+ {
+  "rid": "R21",
+  "sent_at": "2026-11-15T00:27-08:00",
+  "element": "sans-serif body/UI font",
+  "comment": "can we make the sans serif font something more tasteful like inter-like"
+ },
+ {
+  "rid": "R22",
+  "sent_at": "2026-11-15T00:27-08:00",
+  "element": "service and before/after pill selectors",
+  "comment": "cut all the pill selections if they are navigable through arrows, dont make it repetitive"
+ },
+ {
+  "rid": "R23",
+  "sent_at": "2026-11-15T00:32-08:00",
+  "element": "section layouts",
+  "comment": "the component layout should follow a more consistent grid"
+ },
+ {
+  "rid": "R24",
+  "sent_at": "2026-11-15T00:33-08:00",
+  "element": "logo mark",
+  "comment": "make the logo more professional - probably a more detailed svg outline looking logo not just a few elements"
+ },
+ {
+  "rid": "R25",
+  "sent_at": "2026-11-15T00:33-08:00",
+  "element": "page load",
+  "comment": "there is layout shift upon reload - explore using skeletons or placeholders instead"
+ },
+ {
+  "rid": "R26",
+  "sent_at": "2026-11-15T00:36-08:00",
+  "element": "page copy",
+  "comment": "can we generally decrease repetitiveness across the website and cut repeated descriptions"
+ },
+ {
+  "rid": "R27",
+  "sent_at": "2026-11-15T00:36-08:00",
+  "element": "hero",
+  "comment": "when the page first loads you see a house instead of the animation of cleaning"
+ },
+ {
+  "rid": "R28",
+  "sent_at": "2026-11-15T00:37-08:00",
+  "element": "hero service ribbon (marquee)",
+  "comment": "the ribbon slider can still have uppercase font with icons"
+ },
+ {
+  "rid": "R29",
+  "sent_at": "2026-11-15T00:42-08:00",
+  "element": "section backgrounds",
+  "comment": "add back very subtle gradients / to backgrounds etc"
+ },
+ {
+  "rid": "R30",
+  "sent_at": "2026-11-15T00:43-08:00",
+  "element": "headings",
+  "comment": "use a thin sans serif font more for more visual hierarchy"
+ },
+ {
+  "rid": "R31",
+  "sent_at": "2026-11-15T00:45-08:00",
+  "element": "services carousel image",
+  "comment": "the images in the carousell got tinted over"
+ },
+ {
+  "rid": "R32",
+  "sent_at": "2026-11-15T00:45-08:00",
+  "element": "section headings",
+  "comment": "the serif font was fine in some places"
+ },
+ {
+  "rid": "R33",
+  "sent_at": "2026-11-15T00:46-08:00",
+  "element": "page container",
+  "comment": "since there is less content increase the gutters on left and right of the site even more so content is narrower"
+ },
+ {
+  "rid": "R34",
+  "sent_at": "2026-11-15T00:48-08:00",
+  "element": "hero section",
+  "comment": "the hero is a bit tall now that there is less content on it, condense it a bit more"
+ },
+ {
+  "rid": "R35",
+  "sent_at": "2026-11-15T00:48-08:00",
+  "element": "section title blocks",
+  "comment": "there is a bit too much spacing between titles and the content below it"
+ },
+ {
+  "rid": "R36",
+  "sent_at": "2026-11-15T00:51-08:00",
+  "element": "hero h1",
+  "comment": "use the serif font for the hero title"
+ },
+ {
+  "rid": "R37",
+  "sent_at": "2026-11-15T00:51-08:00",
+  "element": "hero primary CTA",
+  "comment": "the get my free quote should have an arrow on the right side of the button"
+ },
+ {
+  "rid": "R38",
+  "sent_at": "2026-11-15T00:52-08:00",
+  "element": "whole site",
+  "comment": "can you standardize a design system on this site and make the elements and roundings and animations more consistent"
+ },
+ {
+  "rid": "R39",
+  "sent_at": "2026-11-15T00:53-08:00",
+  "element": "page loader",
+  "comment": "i liked having the loader screen before all the elements loaded in, it should just not have any text on it and just a very very simple circle loading animation and be very fast and then fade the page in"
+ },
+ {
+  "rid": "R40",
+  "sent_at": "2026-11-15T00:55-08:00",
+  "element": "process timeline",
+  "comment": "the timeline has a lot of negative space and the left side cards should not be right aligned and the text should prob be a bit more condensed, titles of each card should be serif"
+ },
+ {
+  "rid": "R41",
+  "sent_at": "2026-11-15T00:58-08:00",
+  "element": "section backgrounds and cards",
+  "comment": "instead of gradient, use textures like grain or maybe not have cards at all and just have text with dividers in between"
+ },
+ {
+  "rid": "R42",
+  "sent_at": "2026-11-15T01:00-08:00",
+  "element": "grain texture",
+  "comment": "grain should be used on selective elements not just backgrounds. if its used on backgrounds then anything above it should not have grain and should look like its above it (very slightly transparent/opaque) / also the grain is a bit big"
+ },
+ {
+  "rid": "R43",
+  "sent_at": "2026-11-15T01:03-08:00",
+  "element": "service-town chips",
+  "comment": "make sure all square elements are aligned in a grid"
+ },
+ {
+  "rid": "R44",
+  "sent_at": "2026-11-15T01:04-08:00",
+  "element": "square/box elements (general)",
+  "comment": "this should be a general rule - if anything is shaped like a square, they should be balanced visually"
+ },
+ {
+  "rid": "R45",
+  "sent_at": "2026-11-15T01:04-08:00",
+  "element": "service-area map",
+  "comment": "the map doesnt need to be in a box"
+ },
+ {
+  "rid": "R46",
+  "sent_at": "2026-11-15T01:05-08:00",
+  "element": "hero video vignette",
+  "comment": "the hero graphic can have more vignette"
+ }
+]

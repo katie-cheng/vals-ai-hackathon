@@ -1,0 +1,245 @@
+{
+ "no console errors / page errors @1440": {
+  "pass": true,
+  "detail": {
+   "console": [],
+   "pageerror": [],
+   "failed": []
+  }
+ },
+ "no failed requests @1440": {
+  "pass": true,
+  "detail": []
+ },
+ "no console errors / page errors @390": {
+  "pass": true,
+  "detail": {
+   "console": [],
+   "pageerror": [],
+   "failed": []
+  }
+ },
+ "no failed requests @390": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @360": {
+  "pass": true,
+  "detail": "scrollWidth=360"
+ },
+ "header text on one line @360": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @390": {
+  "pass": true,
+  "detail": "scrollWidth=390"
+ },
+ "header text on one line @390": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @768": {
+  "pass": true,
+  "detail": "scrollWidth=768"
+ },
+ "header text on one line @768": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @1024": {
+  "pass": true,
+  "detail": "scrollWidth=1024"
+ },
+ "header text on one line @1024": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @1097": {
+  "pass": true,
+  "detail": "scrollWidth=1097"
+ },
+ "header text on one line @1097": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @1180": {
+  "pass": true,
+  "detail": "scrollWidth=1180"
+ },
+ "header text on one line @1180": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @1279": {
+  "pass": true,
+  "detail": "scrollWidth=1279"
+ },
+ "header text on one line @1279": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @1280": {
+  "pass": true,
+  "detail": "scrollWidth=1280"
+ },
+ "header text on one line @1280": {
+  "pass": true,
+  "detail": []
+ },
+ "no horizontal overflow @1440": {
+  "pass": true,
+  "detail": "scrollWidth=1440"
+ },
+ "header text on one line @1440": {
+  "pass": true,
+  "detail": []
+ },
+ "every in-page link has a target": {
+  "pass": true,
+  "detail": []
+ },
+ "links": [
+  "#services",
+  "#top",
+  "#results",
+  "#process",
+  "#why-us",
+  "#pricing",
+  "#areas",
+  "#faq",
+  "tel:+18605786207",
+  "#quote",
+  "sms:+18605786207",
+  "mailto:kellen0734@gmail.com"
+ ],
+ "every button/link has an accessible name": {
+  "pass": true,
+  "detail": []
+ },
+ "mobile menu opens and links scroll @390": {
+  "pass": true,
+  "detail": "open=True pricingTop=71"
+ },
+ "mobile menu opens and links scroll @1100": {
+  "pass": true,
+  "detail": "open=True pricingTop=70"
+ },
+ "services: no duplicate pill tabs next to the arrows (R22)": {
+  "pass": true,
+  "detail": ""
+ },
+ "services: next button advances": {
+  "pass": true,
+  "detail": "Pressure Washing -> Exterior Window Cleaning"
+ },
+ "services: previous button goes back": {
+  "pass": true,
+  "detail": "Pressure Washing"
+ },
+ "services: ArrowRight on the focused carousel advances": {
+  "pass": true,
+  "detail": "Exterior Window Cleaning"
+ },
+ "services: every service reachable": {
+  "pass": true,
+  "detail": [
+   "Driveway & Patio Cleaning",
+   "Exterior Window Cleaning",
+   "Gutter Cleaning",
+   "House Washing",
+   "Interior Window Cleaning",
+   "Pressure Washing"
+  ]
+ },
+ "services: swipe left on mobile advances": {
+  "pass": true,
+  "detail": ""
+ },
+ "slider: arrow keys move it": {
+  "pass": true,
+  "detail": "41->21"
+ },
+ "slider: dragging moves it": {
+  "pass": true,
+  "detail": "after drag=20"
+ },
+ "slider: click moves it": {
+  "pass": true,
+  "detail": "80"
+ },
+ "before/after: no duplicate pill tabs next to the arrows (R22)": {
+  "pass": true,
+  "detail": ""
+ },
+ "before/after: 6 comparisons, each with distinct before and after images": {
+  "pass": true,
+  "detail": [
+   [
+    "/images/gallery-window-after.jpg",
+    "/images/gallery-window-before.jpg"
+   ],
+   [
+    "/images/gallery-gutter-after.jpg",
+    "/images/gallery-gutter-before.jpg"
+   ],
+   [
+    "/images/patio-clean.jpg",
+    "/images/patio-before.jpg"
+   ],
+   [
+    "/images/gallery-driveway-after.jpg",
+    "/images/gallery-driveway-before.jpg"
+   ],
+   [
+    "/images/gallery-siding-after.jpg",
+    "/images/gallery-siding-before.jpg"
+   ],
+   [
+    "/images/interior-window-clean.jpg",
+    "/images/interior-window-before.jpg"
+   ]
+  ]
+ },
+ "faq: question toggles open": {
+  "pass": true,
+  "detail": ""
+ },
+ "map: choosing a town labels only that town and confirms it": {
+  "pass": true,
+  "detail": "labels=['Hartford'] conf='Hartford, Capitol Region. Yes, we come to you.'"
+ },
+ "map: clicking a map dot selects it": {
+  "pass": true,
+  "detail": ""
+ },
+ "footer: share button gives feedback": {
+  "pass": true,
+  "detail": "Website link copied."
+ },
+ "quote: empty submit is blocked with field errors": {
+  "pass": true,
+  "detail": "invalid fields=7"
+ },
+ "quote: non-Connecticut ZIP is rejected": {
+  "pass": true,
+  "detail": ""
+ },
+ "quote: valid request reaches the success state": {
+  "pass": true,
+  "detail": "Tell us what needs cleaning.\n\nShare the property details and select every service you want to discuss. We will review the request, look at the property, and confirm the scope and price with you.\n\nCall"
+ },
+ "reduced motion: content visible without waiting, fewer running animations": {
+  "pass": true,
+  "detail": {
+   "no-preference": {
+    "running_animations": 18,
+    "headings_hidden": []
+   },
+   "reduce": {
+    "running_animations": 12,
+    "headings_hidden": []
+   }
+  }
+ }
+}

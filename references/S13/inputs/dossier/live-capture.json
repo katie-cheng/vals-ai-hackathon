@@ -1,0 +1,2338 @@
+{
+ "1440": {
+  "header": {
+   "nav": "visible",
+   "navHeight": 36.25,
+   "menuButton": "hidden",
+   "docWidth": 1440
+  },
+  "sections": [
+   {
+    "tag": "header",
+    "id": "",
+    "top": 13329,
+    "height": 82,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Header.tsx",
+     "src/lib/anim.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 600",
+      8
+     ],
+     [
+      "Archivo 900",
+      3
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "13.5px",
+      8
+     ],
+     [
+      "15px",
+      2
+     ],
+     [
+      "10px",
+      1
+     ],
+     [
+      "13px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.8)",
+      7
+     ],
+     [
+      "rgb(255, 255, 255)",
+      2
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.7)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      19
+     ],
+     [
+      "16px",
+      2
+     ]
+    ],
+    "text": "THE SUDS SQUAD\nCONNECTICUT\nServices\nResults\nProcess\nWhy us\nPricing\nAreas\nFAQ\n860-578-6207\nGet a free quote"
+   },
+   {
+    "tag": "section",
+    "id": "top",
+    "top": 0,
+    "height": 972,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Hero.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      20
+     ],
+     [
+      "Archivo 700",
+      6
+     ],
+     [
+      "Archivo 400",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "13px",
+      17
+     ],
+     [
+      "99.2px",
+      5
+     ],
+     [
+      "15px",
+      2
+     ],
+     [
+      "12px",
+      1
+     ],
+     [
+      "18px",
+      1
+     ],
+     [
+      "11px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.917 -0.0724804 -0.0338613 / 0.8)",
+      14
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      4
+     ],
+     [
+      "oklch(0.977 0.013 236.62)",
+      3
+     ],
+     [
+      "rgb(255, 255, 255)",
+      2
+     ],
+     [
+      "oklch(0.956 0.045 203.388)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.85)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.7)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      44
+     ],
+     [
+      "16px",
+      3
+     ]
+    ],
+    "text": "FREE ESTIMATES \u00b7 ALL OF CONNECTICUT\nConnecticut,\nin\u00a0its\u00a0best\u00a0light.\n\nWindow cleaning, gutter care, house washing, and pressure washing for homes across Connecticut. We explain the work, agree on the scope, and clean with attention to the surface.\n\nGet my free quote\nCall 860-578-6207\nInterior + exterior glass\nGutters \u00b7 Siding \u00b7 Concrete\nStreak-aware finish\nSCROLL TO EXPLORE\nPRESSURE WASHING\nWINDOW CLEANING\nGUTTER CLEANING\nHOUSE WASHING\nDRIVEWAYS\nPATIOS\nFREE ESTIMATES\nPRESSURE WASHING\nWINDOW CLEANING\nGUTTER CLEANING\nHOUSE WASHING\nDRIVEWAYS\nPATIOS\nFREE ESTIMATES"
+   },
+   {
+    "tag": "section",
+    "id": "services",
+    "top": 972,
+    "height": 3655,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Services.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      25
+     ],
+     [
+      "Archivo 500",
+      24
+     ],
+     [
+      "Fraunces 600",
+      15
+     ],
+     [
+      "Archivo 400",
+      13
+     ],
+     [
+      "Fraunces 700",
+      6
+     ]
+    ],
+    "sizes": [
+     [
+      "13.5px",
+      30
+     ],
+     [
+      "11px",
+      12
+     ],
+     [
+      "60px",
+      9
+     ],
+     [
+      "12px",
+      7
+     ],
+     [
+      "88px",
+      6
+     ],
+     [
+      "36px",
+      6
+     ],
+     [
+      "15px",
+      6
+     ],
+     [
+      "11.5px",
+      6
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.977 -0.00715246 -0.0108555 / 0.9)",
+      24
+     ],
+     [
+      "rgb(255, 255, 255)",
+      21
+     ],
+     [
+      "rgb(4, 20, 31)",
+      12
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      7
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      7
+     ],
+     [
+      "oklab(0.999994 0.0000455678 0.0000200868 / 0.06)",
+      6
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      6
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      115
+     ],
+     [
+      "32px",
+      12
+     ],
+     [
+      "4px",
+      1
+     ]
+    ],
+    "text": "01 / CLEANING SERVICES\n\nThe\u00a0right\u00a0clean\u00a0for\u00a0every\u00a0part\u00a0of\u00a0your\u00a0home.\n\nDifferent materials need different treatment. Choose a service to see what is included, how pricing works, and what to tell us when you request an estimate.\n\nCONCRETE, PAVERS AND STUBBORN GRIME\nGet a pressure washing quote\n01\n\n01 \u2014 PRESSURE WASHING\n\nA deeper clean for hard surfaces.\n\nWe lift away layered grime, algae, and stubborn stains with a surface-appropriate approach. Driveways, sidewalks, and other hardscapes get a controlled, even clean rather than an indiscriminate blast of high pressure.\n\nDriveway and sidewalk pressure washing\nTechnique matched to the surface and condition\nCustom quote based on total surface area\nAccessibility and job complexity included in your estimate\nGet a pressure washing quote\n\nCustom quote only. Based on surface area, condition, access, and job requirements.\n\nGLASS, FRAMES AND A CLEARER VIEW\nGet an exterior window quote\n02\n\n02 \u2014 EXTERIOR WINDOW CLEANING\n\nLet Connecticut back into the room.\n\nPollen, water spots, road film, and seasonal residue come off your exterior glass. We work methodically for a crisp, streak-free finish that changes how your home feels from inside and out.\n\nDetailed exterior glass cleaning\nStreak-aware finish and final visual check\nScreen cleaning available for an extra $1 per window\nInterior service can be requested in the same visit\nGet an exterior window quote\n\nFixed individual window prices. A complete quote is confirmed after viewing the property.\n\nCLEAR GLASS, MORE DAYLIGHT\nGet an interior window quote\n03\n\n03 \u2014 INTERIOR WINDOW CLEANING\n\nNothing between you and the sun.\n\nInterior glass collects its own quiet layer of film, handprints, cooking residue, and everyday life. We clean the inside with the same care as the outside, and we can handle interior mirrors too.\n\nInterior window washing, not just the outside\nInterior mirror cleaning available\nCareful work around your furnishings and finishes\nFixed per-item window and mirror pricing\nGet an interior window quote\n\nSmall windows $5, large windows $7, and interior mirrors $5 each. Final quote confirmed on site.\n\nLEAVES REMOVED, FLOW RESTORED\nGet a gutter cleaning quote\n04\n\n04 \u2014 GUTTER CLEANING\n\nYour gutters are not a nature reserve.\n\nWe remove accumulated leaves, twigs, and built-up debris so water can move where it is supposed to go. Every gutter quote reflects your roofline, height, access, and the actual debris up there.\n\nFull removal of leaves, twigs, and debris\nFlow path considered as part of the service\nHeight, stories, and roofline complexity assessed\nNo invented price before we see the property\nGet a gutter cleaning quote\n\nCustom quote only, based on property size, height, stories, access, and accumulated debris.\n\nSIDING WITHOUT THE GREEN TINT\nGet a house washing quote\n05\n\n05 \u2014 HOUSE WASHING\n\nBring your exterior back into focus.\n\nYour siding should not slowly disappear beneath algae and atmospheric grime. We clean house exteriors with attention to the material, the trouble spots, and an even finish from corner to corner.\n\nHouse exterior and siding washing\nSurface type and condition considered first\nDetailed attention to visible buildup\nCustom assessment before any final price\nGet a house washing quote\n\nCustom quote only. Property size, siding, access, stories, and job requirements all matter.\n\nA CLEANER APPROACH AND OUTDOOR SPACE\nGet a driveway or patio quote\n06\n\n06 \u2014 DRIVEWAY & PATIO CLEANING\n\nMake room for everything but the grime.\n\nFrom the first impression at the curb to the space where you relax, we clean hard outdoor surfaces methodically and pay attention to consistent results across the full work area.\n\nDriveway, sidewalk, and patio cleaning requests\nWater movement managed across the work area\nSurface condition reviewed before cleaning\nBundle with house washing in one quote\nGet a driveway or patio quote\n\nCustom quote only, based on surface area, condition, accessibility, and job requirements."
+   },
+   {
+    "tag": "section",
+    "id": "results",
+    "top": 4627,
+    "height": 1439,
+    "bg": "rgb(245, 250, 253)",
+    "components": [
+     "src/components/BeforeAfter.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      10
+     ],
+     [
+      "Fraunces 600",
+      6
+     ],
+     [
+      "Archivo 400",
+      5
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "60px",
+      6
+     ],
+     [
+      "12.5px",
+      6
+     ],
+     [
+      "12px",
+      4
+     ],
+     [
+      "11px",
+      2
+     ],
+     [
+      "16px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "15px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(4, 20, 31)",
+      7
+     ],
+     [
+      "oklch(0.446 0.043 257.281)",
+      7
+     ],
+     [
+      "rgb(255, 255, 255)",
+      4
+     ],
+     [
+      "oklch(0.588 0.158 241.966)",
+      1
+     ],
+     [
+      "oklch(0.956 0.045 203.388)",
+      1
+     ],
+     [
+      "oklch(0.685 0.169 237.323)",
+      1
+     ],
+     [
+      "oklch(0.704 0.04 256.788)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      21
+     ],
+     [
+      "28px",
+      1
+     ]
+    ],
+    "text": "02 / WHAT TO EXPECT\n\nSee\u00a0what\u00a0a\u00a0thorough\u00a0clean\u00a0changes.\n\nMove the control across each image to compare the surface before and after cleaning. These examples illustrate the difference in clarity, color, and visible buildup.\n\nHouse Siding\nDriveway\nExterior Windows\nInterior Windows\nGutters\nPatio\nAFTER\nBEFORE\nDrag to reveal the clean\n\nHOUSE WASHING\n\nSee the visual weight of algae and exterior grime give way to bright, uniform siding. The biggest change is often the one you stopped noticing.\n\n\u2190\n\u2192\n\nIllustrative comparison. Results depend on the material and its condition."
+   },
+   {
+    "tag": "section",
+    "id": "process",
+    "top": 6066,
+    "height": 1801,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Process.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      10
+     ],
+     [
+      "Fraunces 600",
+      10
+     ],
+     [
+      "Archivo 400",
+      6
+     ],
+     [
+      "Archivo 700",
+      2
+     ]
+    ],
+    "sizes": [
+     [
+      "60px",
+      6
+     ],
+     [
+      "12px",
+      5
+     ],
+     [
+      "11px",
+      4
+     ],
+     [
+      "27.2px",
+      4
+     ],
+     [
+      "14.5px",
+      4
+     ],
+     [
+      "14px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "13.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      10
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.7)",
+      5
+     ],
+     [
+      "rgb(4, 20, 31)",
+      4
+     ],
+     [
+      "oklch(0.917 0.08 205.041)",
+      4
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      3
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.8)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      30
+     ],
+     [
+      "16px",
+      4
+     ],
+     [
+      "24px",
+      4
+     ]
+    ],
+    "text": "03 / HOW IT WORKS\n\nFrom\u00a0first\u00a0message\u00a0to\u00a0final\u00a0check.\n\nYou will know what we are cleaning, what it costs, and when we are coming before the work begins. One request can include several services.\n\n1\n\nYOU REACH OUT\n\nRequest your free estimate\n\nTell us what needs attention through the quote form, or simply call or text. Multiple services are welcome in one request.\n\nStart your request\n2\n\nWE MAKE A PLAN\n\nSchedule the right clean\n\nWe review the property and confirm the scope, accurate pricing, and a service time that works. You approve the plan before work begins.\n\nComplete price confirmed before work is scheduled\n\n3\n\nTHE SQUAD GETS TO WORK\n\nWe clean each surface\n\nThe squad arrives ready to work, using the appropriate method for each surface and paying attention to the finish, not just the fast part.\n\n4\n\nYOU ENJOY THE VIEW\n\nReview the finished work\n\nYour windows are clearer, your surfaces are brighter, and your property feels cared for. We check the result and leave the work area tidy.\n\nHave photos of the problem areas? Text them to 860-578-6207"
+   },
+   {
+    "tag": "section",
+    "id": "why-us",
+    "top": 7866,
+    "height": 1270,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Trust.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      15
+     ],
+     [
+      "Archivo 400",
+      11
+     ],
+     [
+      "Fraunces 600",
+      4
+     ]
+    ],
+    "sizes": [
+     [
+      "18px",
+      6
+     ],
+     [
+      "14px",
+      6
+     ],
+     [
+      "12px",
+      5
+     ],
+     [
+      "60px",
+      4
+     ],
+     [
+      "48px",
+      4
+     ],
+     [
+      "13px",
+      4
+     ],
+     [
+      "15.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      14
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.7)",
+      6
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      4
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      4
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "24px",
+      10
+     ],
+     [
+      "16px",
+      6
+     ],
+     [
+      "3.35544e+07px",
+      1
+     ]
+    ],
+    "text": "04 / COMPANY FACTS\n\nCareful\u00a0work.\u00a0Clear\u00a0communication.\n\nGood exterior cleaning is not about using the most pressure. It is about reading the surface, working methodically, and respecting the home around it.\n\n6\n\nCLEANING SPECIALTIES\n\nOne statewide residential squad\n\n4\n\nSIMPLE PROCESS STEPS\n\nFrom estimate to final check\n\n17\n\nTOWNS ON OUR MAP\n\nRepresentative, not exhaustive\n\n1\n\nSTATEWIDE SERVICE AREA\n\nAll of Connecticut\n\nProfessional service\n\nClear communication, a defined scope, and respectful work around your home from the first conversation through the final check.\n\nAttention to detail\n\nEdges, corners, glass clarity, and consistent surfaces matter. The last five percent is where a good clean becomes a great one.\n\nReliable scheduling\n\nYour time matters. We agree on the plan, confirm the work, and keep the scheduling process straightforward.\n\nQuality results\n\nWe choose the method for the surface and judge the finished result, rather than treating every property like the same quick rinse.\n\nResidential focus\n\nOur services are built around Connecticut homes, their materials, their seasons, and the people who live inside them.\n\nInterior and exterior glass\n\nBoth sides of the window count. Interior and exterior washing can be requested together, along with screens and interior mirrors."
+   },
+   {
+    "tag": "section",
+    "id": "pricing",
+    "top": 9137,
+    "height": 765,
+    "bg": "rgb(245, 250, 253)",
+    "components": [
+     "src/components/PricingAreas.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      13
+     ],
+     [
+      "Archivo 400",
+      7
+     ],
+     [
+      "Fraunces 600",
+      6
+     ],
+     [
+      "Archivo 700",
+      6
+     ]
+    ],
+    "sizes": [
+     [
+      "13px",
+      10
+     ],
+     [
+      "12px",
+      6
+     ],
+     [
+      "48px",
+      5
+     ],
+     [
+      "36px",
+      5
+     ],
+     [
+      "13.5px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "11px",
+      1
+     ],
+     [
+      "24px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(4, 20, 31)",
+      11
+     ],
+     [
+      "oklch(0.554 0.046 257.417)",
+      10
+     ],
+     [
+      "oklch(0.704 0.04 256.788)",
+      5
+     ],
+     [
+      "oklch(0.588 0.158 241.966)",
+      1
+     ],
+     [
+      "oklch(0.446 0.043 257.281)",
+      1
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      1
+     ],
+     [
+      "rgb(255, 255, 255)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      11
+     ],
+     [
+      "24px",
+      6
+     ]
+    ],
+    "text": "05 / PRICING\n\nClear\u00a0prices\u00a0for\u00a0window\u00a0work.\n\nIndividual window items have set prices. Gutters, siding, and hard surfaces are quoted after we understand the size, condition, and access at your property.\n\nCUSTOM ESTIMATES\n\nLarger jobs need a look first.\n\nGutter cleaning, house washing, driveways, sidewalks, and patios are priced by the actual job. Size, stories, surface condition, and access all affect the quote.\n\nYour estimate is free, and the complete price is confirmed before work is scheduled.\n\nGet my property quote\n\nSMALL WINDOWS\n\n$5each\n\nStandard small panes, interior or exterior.\n\nLARGE WINDOWS\n\n$7each\n\nLarger residential panes, interior or exterior.\n\nLARGE GLASS DOORS\n\n$20each\n\nSliding and French glass doors.\n\nSCREEN CLEANING\n\n+$1per window\n\nAdd-on to any window cleaning service.\n\nINTERIOR MIRRORS\n\n$5each\n\nBathroom, bedroom, and hallway mirrors."
+   },
+   {
+    "tag": "section",
+    "id": "areas",
+    "top": 9902,
+    "height": 814,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/PricingAreas.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 700",
+      17
+     ],
+     [
+      "Fraunces 600",
+      6
+     ],
+     [
+      "Archivo 800",
+      5
+     ],
+     [
+      "Archivo 900",
+      4
+     ],
+     [
+      "Archivo 400",
+      4
+     ]
+    ],
+    "sizes": [
+     [
+      "12.5px",
+      17
+     ],
+     [
+      "12px",
+      8
+     ],
+     [
+      "48px",
+      6
+     ],
+     [
+      "11px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "13px",
+      1
+     ],
+     [
+      "13.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      18
+     ],
+     [
+      "rgb(255, 255, 255)",
+      11
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      3
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      2
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.5)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      32
+     ],
+     [
+      "32px",
+      1
+     ],
+     [
+      "24px",
+      1
+     ]
+    ],
+    "text": "CONNECTICUT SERVICE MAP\n\nInteractive map of representative Connecticut service towns\n\nHartford\nMeriden\nWallingford\nDanbury\nGreenwich\n\nRepresentative towns, not a complete list\n\n06 / SERVICE AREA\n\nOne\u00a0state.\u00a0Plenty\u00a0of\u00a0dirty\u00a0windows.\n\nWe serve homes throughout Connecticut, from the Capitol Region to the shoreline and Fairfield County. If your property has a Connecticut ZIP code, send us the address.\n\nREPRESENTATIVE SERVICE TOWNS\n\nHartford\nSouthington\nCheshire\nBristol\nMeriden\nWaterbury\nNew Haven\nMiddletown\nWallingford\nFarmington\nAvon\nManchester\nDanbury\nStamford\nNorwalk\nBridgeport\nGreenwich\n\nDo not see your town? The map shows a selection only. Ask about any Connecticut address.\n\nAsk about your property"
+   },
+   {
+    "tag": "section",
+    "id": "faq",
+    "top": 10715,
+    "height": 1211,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Faq.tsx",
+     "src/lib/anim.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      21
+     ],
+     [
+      "Archivo 800",
+      10
+     ],
+     [
+      "Fraunces 600",
+      5
+     ],
+     [
+      "Archivo 400",
+      2
+     ],
+     [
+      "Archivo 600",
+      2
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "12px",
+      11
+     ],
+     [
+      "16px",
+      10
+     ],
+     [
+      "20px",
+      10
+     ],
+     [
+      "48px",
+      5
+     ],
+     [
+      "14px",
+      3
+     ],
+     [
+      "15px",
+      1
+     ],
+     [
+      "14.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      16
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.4)",
+      9
+     ],
+     [
+      "oklch(0.917 0.08 205.041)",
+      9
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      4
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.7)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      11
+     ],
+     [
+      "16px",
+      10
+     ],
+     [
+      "24px",
+      1
+     ]
+    ],
+    "text": "07 / QUESTIONS\n\nUseful\u00a0answers\u00a0before\u00a0you\u00a0book.\n\nPricing, service areas, inside glass, screens, mirrors, and multi-service visits are covered here.\n\nStill have a question?\n\nCall or text 860-578-6207\nkellen0734@gmail.com\n01\nWhat areas do you serve?\n+\n\nAll of Connecticut. The towns on our interactive map are representative, not exhaustive. If your property has a Connecticut ZIP code, ask us about your clean.\n\n02\nWhat does window cleaning cost?\n+\n03\nWhat does gutter cleaning cost?\n+\n04\nWhat does pressure washing cost?\n+\n05\nDo you clean inside windows?\n+\n06\nDo you clean screens and mirrors?\n+\n07\nAre quotes free?\n+\n08\nDo you clean driveways, sidewalks, and patios?\n+\n09\nCan I request multiple services?\n+\n10\nHow do I contact you?\n+"
+   },
+   {
+    "tag": "section",
+    "id": "quote",
+    "top": 11926,
+    "height": 1440,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Quote.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      28
+     ],
+     [
+      "Archivo 400",
+      13
+     ],
+     [
+      "Archivo 700",
+      13
+     ],
+     [
+      "Fraunces 600",
+      5
+     ]
+    ],
+    "sizes": [
+     [
+      "12px",
+      21
+     ],
+     [
+      "15px",
+      8
+     ],
+     [
+      "13px",
+      7
+     ],
+     [
+      "48px",
+      5
+     ],
+     [
+      "12.5px",
+      5
+     ],
+     [
+      "11px",
+      4
+     ],
+     [
+      "16px",
+      4
+     ],
+     [
+      "72px",
+      2
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      13
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.8)",
+      10
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      9
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.8)",
+      7
+     ],
+     [
+      "oklch(0.208 0.042 265.755)",
+      5
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      3
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      2
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.55)",
+      2
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      34
+     ],
+     [
+      "16px",
+      15
+     ],
+     [
+      "12px",
+      3
+     ],
+     [
+      "32px",
+      1
+     ]
+    ],
+    "text": "FREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7\n\nFREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7\n\n08 / FREE ESTIMATE\n\nTell\u00a0us\u00a0what\u00a0needs\u00a0cleaning.\n\nShare the property details and select every service you want to discuss. We will review the request, look at the property, and confirm the scope and price with you.\n\nCALL\n860-578-6207\nTEXT\nSend photos and questions\nEMAIL\nkellen0734@gmail.com\n\nYour details are used only to respond to this request. Submitting the form does not book an appointment.\n\nFree quote request\nCONNECTICUT ONLY\n\nPROPERTY AND CONTACT DETAILS\n\nFULL NAME\n*\nPHONE\n*\nEMAIL\n*\nPROPERTY ADDRESS\n*\nCONNECTICUT TOWN\n*\nCONNECTICUT ZIP\n*\nWHAT CAN WE CLEAN? *\n\nSelect all that apply.\n\nDriveway / Sidewalk Pressure Washing\nWindow Washing (interior/exterior)\nWindow Screen Cleaning\nInterior Mirror Cleaning\nGutter Cleaning\nHouse Exterior Pressure Washing\nPatio Cleaning\nNUMBER OF STORIES\n*\nChoose one\n1 story\n2 stories\n3 stories\n4 or more stories\nPREFERRED CONTACT\nCall me\nText me\nEmail me\nCall me\nText me\nEmail me\nNOTES, ACCESS, AND TROUBLE SPOTS\nSend my free quote request\n\nFree quotes. Complete pricing is confirmed after viewing the property. Your request is saved securely."
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "top": 13366,
+    "height": 863,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Footer.tsx",
+     "src/components/Header.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 600",
+      9
+     ],
+     [
+      "Archivo 900",
+      7
+     ],
+     [
+      "Archivo 400",
+      3
+     ],
+     [
+      "Fraunces 600",
+      2
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "14.5px",
+      8
+     ],
+     [
+      "11px",
+      3
+     ],
+     [
+      "12px",
+      2
+     ],
+     [
+      "96px",
+      2
+     ],
+     [
+      "15px",
+      2
+     ],
+     [
+      "16px",
+      1
+     ],
+     [
+      "10px",
+      1
+     ],
+     [
+      "14px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      6
+     ],
+     [
+      "rgb(255, 255, 255)",
+      3
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.5)",
+      3
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      2
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.8)",
+      2
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.7)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      25
+     ],
+     [
+      "16px",
+      1
+     ]
+    ],
+    "text": "A CLEAN HOME STARTS WITH A CLEAR PLAN.\n\nReady when your home is.\n\nGet a free quote\nTHE SUDS SQUAD\nCONNECTICUT\n\nResidential window cleaning, gutter care, house washing, and pressure washing throughout Connecticut.\n\nShare this website\n\nEXPLORE\n\nServices\nBefore and after\nProcess\nPricing\nService area\nFAQ\n\nCONTACT\n\n860-578-6207\nkellen0734@gmail.com\n\nServing all of Connecticut.\nFree estimates for every service.\n\nTHE SUDS SQUAD\n\nConnecticut window cleaning, gutter cleaning, and pressure washing."
+   }
+  ]
+ },
+ "1280": {
+  "header": {
+   "nav": "visible",
+   "navHeight": 36.25,
+   "menuButton": "hidden",
+   "docWidth": 1280
+  }
+ },
+ "1024": {
+  "header": {
+   "nav": "visible",
+   "navHeight": 56.5,
+   "menuButton": "hidden",
+   "docWidth": 1024
+  }
+ },
+ "768": {
+  "header": {
+   "nav": "hidden",
+   "navHeight": 0,
+   "menuButton": "visible",
+   "docWidth": 768
+  }
+ },
+ "390": {
+  "header": {
+   "nav": "hidden",
+   "navHeight": 0,
+   "menuButton": "visible",
+   "docWidth": 390
+  },
+  "sections": [
+   {
+    "tag": "header",
+    "id": "",
+    "top": 19910,
+    "height": 84,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Header.tsx",
+     "src/lib/anim.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 600",
+      8
+     ],
+     [
+      "Archivo 900",
+      3
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "13.5px",
+      8
+     ],
+     [
+      "15px",
+      2
+     ],
+     [
+      "10px",
+      1
+     ],
+     [
+      "13px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.8)",
+      7
+     ],
+     [
+      "rgb(255, 255, 255)",
+      2
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.7)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      19
+     ],
+     [
+      "16px",
+      2
+     ]
+    ],
+    "text": "THE SUDS SQUAD\nCONNECTICUT"
+   },
+   {
+    "tag": "section",
+    "id": "top",
+    "top": 0,
+    "height": 912,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Hero.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      20
+     ],
+     [
+      "Archivo 700",
+      6
+     ],
+     [
+      "Archivo 400",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "13px",
+      17
+     ],
+     [
+      "52.65px",
+      5
+     ],
+     [
+      "15px",
+      2
+     ],
+     [
+      "12px",
+      1
+     ],
+     [
+      "16px",
+      1
+     ],
+     [
+      "11px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.917 -0.0724804 -0.0338613 / 0.8)",
+      14
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      4
+     ],
+     [
+      "oklch(0.977 0.013 236.62)",
+      3
+     ],
+     [
+      "rgb(255, 255, 255)",
+      2
+     ],
+     [
+      "oklch(0.956 0.045 203.388)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.85)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.7)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      44
+     ],
+     [
+      "16px",
+      3
+     ]
+    ],
+    "text": "FREE ESTIMATES \u00b7 ALL OF CONNECTICUT\nConnecticut,\nin\u00a0its\u00a0best\u00a0light.\n\nWindow cleaning, gutter care, house washing, and pressure washing for homes across Connecticut. We explain the work, agree on the scope, and clean with attention to the surface.\n\nGet my free quote\nCall 860-578-6207\nSCROLL TO EXPLORE\nPRESSURE WASHING\nWINDOW CLEANING\nGUTTER CLEANING\nHOUSE WASHING\nDRIVEWAYS\nPATIOS\nFREE ESTIMATES\nPRESSURE WASHING\nWINDOW CLEANING\nGUTTER CLEANING\nHOUSE WASHING\nDRIVEWAYS\nPATIOS\nFREE ESTIMATES"
+   },
+   {
+    "tag": "section",
+    "id": "services",
+    "top": 912,
+    "height": 5973,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Services.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      25
+     ],
+     [
+      "Archivo 500",
+      24
+     ],
+     [
+      "Fraunces 600",
+      15
+     ],
+     [
+      "Archivo 400",
+      13
+     ],
+     [
+      "Fraunces 700",
+      6
+     ]
+    ],
+    "sizes": [
+     [
+      "13.5px",
+      30
+     ],
+     [
+      "11px",
+      12
+     ],
+     [
+      "36px",
+      9
+     ],
+     [
+      "12px",
+      7
+     ],
+     [
+      "88px",
+      6
+     ],
+     [
+      "30px",
+      6
+     ],
+     [
+      "15px",
+      6
+     ],
+     [
+      "11.5px",
+      6
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.977 -0.00715246 -0.0108555 / 0.9)",
+      24
+     ],
+     [
+      "rgb(255, 255, 255)",
+      21
+     ],
+     [
+      "rgb(4, 20, 31)",
+      12
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      7
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      7
+     ],
+     [
+      "oklab(0.999994 0.0000455678 0.0000200868 / 0.06)",
+      6
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      6
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      115
+     ],
+     [
+      "32px",
+      12
+     ],
+     [
+      "4px",
+      1
+     ]
+    ],
+    "text": "01 / CLEANING SERVICES\n\nThe\u00a0right\u00a0clean\u00a0for\u00a0every\u00a0part\u00a0of\u00a0your\u00a0home.\n\nDifferent materials need different treatment. Choose a service to see what is included, how pricing works, and what to tell us when you request an estimate.\n\nCONCRETE, PAVERS AND STUBBORN GRIME\n01\n\n01 \u2014 PRESSURE WASHING\n\nA deeper clean for hard surfaces.\n\nWe lift away layered grime, algae, and stubborn stains with a surface-appropriate approach. Driveways, sidewalks, and other hardscapes get a controlled, even clean rather than an indiscriminate blast of high pressure.\n\nDriveway and sidewalk pressure washing\nTechnique matched to the surface and condition\nCustom quote based on total surface area\nAccessibility and job complexity included in your estimate\nGet a pressure washing quote\n\nCustom quote only. Based on surface area, condition, access, and job requirements.\n\nGLASS, FRAMES AND A CLEARER VIEW\n02\n\n02 \u2014 EXTERIOR WINDOW CLEANING\n\nLet Connecticut back into the room.\n\nPollen, water spots, road film, and seasonal residue come off your exterior glass. We work methodically for a crisp, streak-free finish that changes how your home feels from inside and out.\n\nDetailed exterior glass cleaning\nStreak-aware finish and final visual check\nScreen cleaning available for an extra $1 per window\nInterior service can be requested in the same visit\nGet an exterior window quote\n\nFixed individual window prices. A complete quote is confirmed after viewing the property.\n\nCLEAR GLASS, MORE DAYLIGHT\n03\n\n03 \u2014 INTERIOR WINDOW CLEANING\n\nNothing between you and the sun.\n\nInterior glass collects its own quiet layer of film, handprints, cooking residue, and everyday life. We clean the inside with the same care as the outside, and we can handle interior mirrors too.\n\nInterior window washing, not just the outside\nInterior mirror cleaning available\nCareful work around your furnishings and finishes\nFixed per-item window and mirror pricing\nGet an interior window quote\n\nSmall windows $5, large windows $7, and interior mirrors $5 each. Final quote confirmed on site.\n\nLEAVES REMOVED, FLOW RESTORED\n04\n\n04 \u2014 GUTTER CLEANING\n\nYour gutters are not a nature reserve.\n\nWe remove accumulated leaves, twigs, and built-up debris so water can move where it is supposed to go. Every gutter quote reflects your roofline, height, access, and the actual debris up there.\n\nFull removal of leaves, twigs, and debris\nFlow path considered as part of the service\nHeight, stories, and roofline complexity assessed\nNo invented price before we see the property\nGet a gutter cleaning quote\n\nCustom quote only, based on property size, height, stories, access, and accumulated debris.\n\nSIDING WITHOUT THE GREEN TINT\n05\n\n05 \u2014 HOUSE WASHING\n\nBring your exterior back into focus.\n\nYour siding should not slowly disappear beneath algae and atmospheric grime. We clean house exteriors with attention to the material, the trouble spots, and an even finish from corner to corner.\n\nHouse exterior and siding washing\nSurface type and condition considered first\nDetailed attention to visible buildup\nCustom assessment before any final price\nGet a house washing quote\n\nCustom quote only. Property size, siding, access, stories, and job requirements all matter.\n\nA CLEANER APPROACH AND OUTDOOR SPACE\n06\n\n06 \u2014 DRIVEWAY & PATIO CLEANING\n\nMake room for everything but the grime.\n\nFrom the first impression at the curb to the space where you relax, we clean hard outdoor surfaces methodically and pay attention to consistent results across the full work area.\n\nDriveway, sidewalk, and patio cleaning requests\nWater movement managed across the work area\nSurface condition reviewed before cleaning\nBundle with house washing in one quote\nGet a driveway or patio quote\n\nCustom quote only, based on surface area, condition, accessibility, and job requirements."
+   },
+   {
+    "tag": "section",
+    "id": "results",
+    "top": 6884,
+    "height": 1120,
+    "bg": "rgb(245, 250, 253)",
+    "components": [
+     "src/components/BeforeAfter.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      10
+     ],
+     [
+      "Fraunces 600",
+      6
+     ],
+     [
+      "Archivo 400",
+      5
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "36px",
+      6
+     ],
+     [
+      "12.5px",
+      6
+     ],
+     [
+      "12px",
+      4
+     ],
+     [
+      "11px",
+      2
+     ],
+     [
+      "16px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "15px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(4, 20, 31)",
+      7
+     ],
+     [
+      "oklch(0.446 0.043 257.281)",
+      7
+     ],
+     [
+      "rgb(255, 255, 255)",
+      4
+     ],
+     [
+      "oklch(0.588 0.158 241.966)",
+      1
+     ],
+     [
+      "oklch(0.956 0.045 203.388)",
+      1
+     ],
+     [
+      "oklch(0.685 0.169 237.323)",
+      1
+     ],
+     [
+      "oklch(0.704 0.04 256.788)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      21
+     ],
+     [
+      "28px",
+      1
+     ]
+    ],
+    "text": "02 / WHAT TO EXPECT\n\nSee\u00a0what\u00a0a\u00a0thorough\u00a0clean\u00a0changes.\n\nMove the control across each image to compare the surface before and after cleaning. These examples illustrate the difference in clarity, color, and visible buildup.\n\nHouse Siding\nDriveway\nExterior Windows\nInterior Windows\nGutters\nPatio\nAFTER\nBEFORE\nDrag to reveal the clean\n\nHOUSE WASHING\n\nSee the visual weight of algae and exterior grime give way to bright, uniform siding. The biggest change is often the one you stopped noticing.\n\n\u2190\n\u2192\n\nIllustrative comparison. Results depend on the material and its condition."
+   },
+   {
+    "tag": "section",
+    "id": "process",
+    "top": 8004,
+    "height": 1894,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Process.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      10
+     ],
+     [
+      "Fraunces 600",
+      10
+     ],
+     [
+      "Archivo 400",
+      6
+     ],
+     [
+      "Archivo 700",
+      2
+     ]
+    ],
+    "sizes": [
+     [
+      "36px",
+      6
+     ],
+     [
+      "12px",
+      5
+     ],
+     [
+      "11px",
+      4
+     ],
+     [
+      "24px",
+      4
+     ],
+     [
+      "14.5px",
+      4
+     ],
+     [
+      "14px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "13.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      10
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.7)",
+      5
+     ],
+     [
+      "rgb(4, 20, 31)",
+      4
+     ],
+     [
+      "oklch(0.917 0.08 205.041)",
+      4
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      3
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.8)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      30
+     ],
+     [
+      "16px",
+      4
+     ],
+     [
+      "24px",
+      4
+     ]
+    ],
+    "text": "03 / HOW IT WORKS\n\nFrom\u00a0first\u00a0message\u00a0to\u00a0final\u00a0check.\n\nYou will know what we are cleaning, what it costs, and when we are coming before the work begins. One request can include several services.\n\n1\n\nYOU REACH OUT\n\nRequest your free estimate\n\nTell us what needs attention through the quote form, or simply call or text. Multiple services are welcome in one request.\n\nStart your request\n2\n\nWE MAKE A PLAN\n\nSchedule the right clean\n\nWe review the property and confirm the scope, accurate pricing, and a service time that works. You approve the plan before work begins.\n\nComplete price confirmed before work is scheduled\n\n3\n\nTHE SQUAD GETS TO WORK\n\nWe clean each surface\n\nThe squad arrives ready to work, using the appropriate method for each surface and paying attention to the finish, not just the fast part.\n\n4\n\nYOU ENJOY THE VIEW\n\nReview the finished work\n\nYour windows are clearer, your surfaces are brighter, and your property feels cared for. We check the result and leave the work area tidy.\n\nHave photos of the problem areas? Text them to 860-578-6207"
+   },
+   {
+    "tag": "section",
+    "id": "why-us",
+    "top": 9898,
+    "height": 2336,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Trust.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      15
+     ],
+     [
+      "Archivo 400",
+      11
+     ],
+     [
+      "Fraunces 600",
+      4
+     ]
+    ],
+    "sizes": [
+     [
+      "36px",
+      8
+     ],
+     [
+      "18px",
+      6
+     ],
+     [
+      "14px",
+      6
+     ],
+     [
+      "12px",
+      5
+     ],
+     [
+      "13px",
+      4
+     ],
+     [
+      "15.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      14
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.7)",
+      6
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      4
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      4
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "24px",
+      10
+     ],
+     [
+      "16px",
+      6
+     ],
+     [
+      "3.35544e+07px",
+      1
+     ]
+    ],
+    "text": "04 / COMPANY FACTS\n\nCareful\u00a0work.\u00a0Clear\u00a0communication.\n\nGood exterior cleaning is not about using the most pressure. It is about reading the surface, working methodically, and respecting the home around it.\n\n6\n\nCLEANING SPECIALTIES\n\nOne statewide residential squad\n\n4\n\nSIMPLE PROCESS STEPS\n\nFrom estimate to final check\n\n17\n\nTOWNS ON OUR MAP\n\nRepresentative, not exhaustive\n\n1\n\nSTATEWIDE SERVICE AREA\n\nAll of Connecticut\n\nProfessional service\n\nClear communication, a defined scope, and respectful work around your home from the first conversation through the final check.\n\nAttention to detail\n\nEdges, corners, glass clarity, and consistent surfaces matter. The last five percent is where a good clean becomes a great one.\n\nReliable scheduling\n\nYour time matters. We agree on the plan, confirm the work, and keep the scheduling process straightforward.\n\nQuality results\n\nWe choose the method for the surface and judge the finished result, rather than treating every property like the same quick rinse.\n\nResidential focus\n\nOur services are built around Connecticut homes, their materials, their seasons, and the people who live inside them.\n\nInterior and exterior glass\n\nBoth sides of the window count. Interior and exterior washing can be requested together, along with screens and interior mirrors."
+   },
+   {
+    "tag": "section",
+    "id": "pricing",
+    "top": 12234,
+    "height": 1784,
+    "bg": "rgb(245, 250, 253)",
+    "components": [
+     "src/components/PricingAreas.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      13
+     ],
+     [
+      "Archivo 400",
+      7
+     ],
+     [
+      "Fraunces 600",
+      6
+     ],
+     [
+      "Archivo 700",
+      6
+     ]
+    ],
+    "sizes": [
+     [
+      "36px",
+      10
+     ],
+     [
+      "13px",
+      10
+     ],
+     [
+      "12px",
+      6
+     ],
+     [
+      "13.5px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "11px",
+      1
+     ],
+     [
+      "24px",
+      1
+     ],
+     [
+      "14px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(4, 20, 31)",
+      11
+     ],
+     [
+      "oklch(0.554 0.046 257.417)",
+      10
+     ],
+     [
+      "oklch(0.704 0.04 256.788)",
+      5
+     ],
+     [
+      "oklch(0.588 0.158 241.966)",
+      1
+     ],
+     [
+      "oklch(0.446 0.043 257.281)",
+      1
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      1
+     ],
+     [
+      "rgb(255, 255, 255)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      11
+     ],
+     [
+      "24px",
+      6
+     ]
+    ],
+    "text": "05 / PRICING\n\nClear\u00a0prices\u00a0for\u00a0window\u00a0work.\n\nIndividual window items have set prices. Gutters, siding, and hard surfaces are quoted after we understand the size, condition, and access at your property.\n\nCUSTOM ESTIMATES\n\nLarger jobs need a look first.\n\nGutter cleaning, house washing, driveways, sidewalks, and patios are priced by the actual job. Size, stories, surface condition, and access all affect the quote.\n\nYour estimate is free, and the complete price is confirmed before work is scheduled.\n\nGet my property quote\n\nSMALL WINDOWS\n\n$5each\n\nStandard small panes, interior or exterior.\n\nLARGE WINDOWS\n\n$7each\n\nLarger residential panes, interior or exterior.\n\nLARGE GLASS DOORS\n\n$20each\n\nSliding and French glass doors.\n\nSCREEN CLEANING\n\n+$1per window\n\nAdd-on to any window cleaning service.\n\nINTERIOR MIRRORS\n\n$5each\n\nBathroom, bedroom, and hallway mirrors."
+   },
+   {
+    "tag": "section",
+    "id": "areas",
+    "top": 14019,
+    "height": 1265,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/PricingAreas.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 700",
+      17
+     ],
+     [
+      "Fraunces 600",
+      6
+     ],
+     [
+      "Archivo 800",
+      5
+     ],
+     [
+      "Archivo 900",
+      4
+     ],
+     [
+      "Archivo 400",
+      4
+     ]
+    ],
+    "sizes": [
+     [
+      "12.5px",
+      17
+     ],
+     [
+      "12px",
+      8
+     ],
+     [
+      "36px",
+      6
+     ],
+     [
+      "11px",
+      2
+     ],
+     [
+      "15.5px",
+      1
+     ],
+     [
+      "13px",
+      1
+     ],
+     [
+      "13.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      18
+     ],
+     [
+      "rgb(255, 255, 255)",
+      11
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      3
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      2
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.5)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      32
+     ],
+     [
+      "32px",
+      1
+     ],
+     [
+      "24px",
+      1
+     ]
+    ],
+    "text": "CONNECTICUT SERVICE MAP\n\nInteractive map of representative Connecticut service towns\n\nHartford\nMeriden\nWallingford\nDanbury\nGreenwich\n\nRepresentative towns, not a complete list\n\n06 / SERVICE AREA\n\nOne\u00a0state.\u00a0Plenty\u00a0of\u00a0dirty\u00a0windows.\n\nWe serve homes throughout Connecticut, from the Capitol Region to the shoreline and Fairfield County. If your property has a Connecticut ZIP code, send us the address.\n\nREPRESENTATIVE SERVICE TOWNS\n\nHartford\nSouthington\nCheshire\nBristol\nMeriden\nWaterbury\nNew Haven\nMiddletown\nWallingford\nFarmington\nAvon\nManchester\nDanbury\nStamford\nNorwalk\nBridgeport\nGreenwich\n\nDo not see your town? The map shows a selection only. Ask about any Connecticut address.\n\nAsk about your property"
+   },
+   {
+    "tag": "section",
+    "id": "faq",
+    "top": 15284,
+    "height": 1579,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Faq.tsx",
+     "src/lib/anim.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      21
+     ],
+     [
+      "Archivo 800",
+      10
+     ],
+     [
+      "Fraunces 600",
+      5
+     ],
+     [
+      "Archivo 400",
+      2
+     ],
+     [
+      "Archivo 600",
+      2
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "12px",
+      11
+     ],
+     [
+      "15px",
+      11
+     ],
+     [
+      "20px",
+      10
+     ],
+     [
+      "36px",
+      5
+     ],
+     [
+      "14px",
+      3
+     ],
+     [
+      "14.5px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      16
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.4)",
+      9
+     ],
+     [
+      "oklch(0.917 0.08 205.041)",
+      9
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      4
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.7)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      11
+     ],
+     [
+      "16px",
+      10
+     ],
+     [
+      "24px",
+      1
+     ]
+    ],
+    "text": "07 / QUESTIONS\n\nUseful\u00a0answers\u00a0before\u00a0you\u00a0book.\n\nPricing, service areas, inside glass, screens, mirrors, and multi-service visits are covered here.\n\nStill have a question?\n\nCall or text 860-578-6207\nkellen0734@gmail.com\n01\nWhat areas do you serve?\n+\n\nAll of Connecticut. The towns on our interactive map are representative, not exhaustive. If your property has a Connecticut ZIP code, ask us about your clean.\n\n02\nWhat does window cleaning cost?\n+\n03\nWhat does gutter cleaning cost?\n+\n04\nWhat does pressure washing cost?\n+\n05\nDo you clean inside windows?\n+\n06\nDo you clean screens and mirrors?\n+\n07\nAre quotes free?\n+\n08\nDo you clean driveways, sidewalks, and patios?\n+\n09\nCan I request multiple services?\n+\n10\nHow do I contact you?\n+"
+   },
+   {
+    "tag": "section",
+    "id": "quote",
+    "top": 16863,
+    "height": 2562,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Quote.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 900",
+      28
+     ],
+     [
+      "Archivo 400",
+      13
+     ],
+     [
+      "Archivo 700",
+      13
+     ],
+     [
+      "Fraunces 600",
+      5
+     ]
+    ],
+    "sizes": [
+     [
+      "12px",
+      21
+     ],
+     [
+      "15px",
+      8
+     ],
+     [
+      "13px",
+      7
+     ],
+     [
+      "36px",
+      5
+     ],
+     [
+      "12.5px",
+      5
+     ],
+     [
+      "11px",
+      4
+     ],
+     [
+      "16px",
+      4
+     ],
+     [
+      "50.7px",
+      2
+     ]
+    ],
+    "colors": [
+     [
+      "rgb(255, 255, 255)",
+      13
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.8)",
+      10
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      9
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.8)",
+      7
+     ],
+     [
+      "oklch(0.208 0.042 265.755)",
+      5
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.6)",
+      3
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      2
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.55)",
+      2
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      34
+     ],
+     [
+      "16px",
+      15
+     ],
+     [
+      "12px",
+      3
+     ],
+     [
+      "32px",
+      1
+     ]
+    ],
+    "text": "FREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7\n\nFREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7 FREE QUOTE \u00b7\n\n08 / FREE ESTIMATE\n\nTell\u00a0us\u00a0what\u00a0needs\u00a0cleaning.\n\nShare the property details and select every service you want to discuss. We will review the request, look at the property, and confirm the scope and price with you.\n\nCALL\n860-578-6207\nTEXT\nSend photos and questions\nEMAIL\nkellen0734@gmail.com\n\nYour details are used only to respond to this request. Submitting the form does not book an appointment.\n\nFree quote request\nCONNECTICUT ONLY\n\nPROPERTY AND CONTACT DETAILS\n\nFULL NAME\n*\nPHONE\n*\nEMAIL\n*\nPROPERTY ADDRESS\n*\nCONNECTICUT TOWN\n*\nCONNECTICUT ZIP\n*\nWHAT CAN WE CLEAN? *\n\nSelect all that apply.\n\nDriveway / Sidewalk Pressure Washing\nWindow Washing (interior/exterior)\nWindow Screen Cleaning\nInterior Mirror Cleaning\nGutter Cleaning\nHouse Exterior Pressure Washing\nPatio Cleaning\nNUMBER OF STORIES\n*\nChoose one\n1 story\n2 stories\n3 stories\n4 or more stories\nPREFERRED CONTACT\nCall me\nText me\nEmail me\nCall me\nText me\nEmail me\nNOTES, ACCESS, AND TROUBLE SPOTS\nSend my free quote request\n\nFree quotes. Complete pricing is confirmed after viewing the property. Your request is saved securely."
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "top": 19425,
+    "height": 1329,
+    "bg": "rgba(0, 0, 0, 0)",
+    "components": [
+     "src/components/Footer.tsx",
+     "src/components/Header.tsx",
+     "src/lib/anim.tsx",
+     "src/lib/fx.tsx"
+    ],
+    "fonts": [
+     [
+      "Archivo 600",
+      9
+     ],
+     [
+      "Archivo 900",
+      7
+     ],
+     [
+      "Archivo 400",
+      3
+     ],
+     [
+      "Fraunces 600",
+      2
+     ],
+     [
+      "Archivo 700",
+      1
+     ]
+    ],
+    "sizes": [
+     [
+      "14.5px",
+      8
+     ],
+     [
+      "11px",
+      3
+     ],
+     [
+      "12px",
+      2
+     ],
+     [
+      "44.85px",
+      2
+     ],
+     [
+      "15px",
+      2
+     ],
+     [
+      "16px",
+      1
+     ],
+     [
+      "10px",
+      1
+     ],
+     [
+      "14px",
+      1
+     ]
+    ],
+    "colors": [
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.75)",
+      6
+     ],
+     [
+      "rgb(255, 255, 255)",
+      3
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.5)",
+      3
+     ],
+     [
+      "oklch(0.865 0.127 207.078)",
+      2
+     ],
+     [
+      "oklab(0.951 -0.0142275 -0.0217618 / 0.8)",
+      2
+     ],
+     [
+      "rgba(0, 0, 0, 0)",
+      1
+     ],
+     [
+      "rgb(4, 20, 31)",
+      1
+     ],
+     [
+      "oklab(0.901 -0.0365776 -0.045012 / 0.7)",
+      1
+     ]
+    ],
+    "radii": [
+     [
+      "3.35544e+07px",
+      25
+     ],
+     [
+      "16px",
+      1
+     ]
+    ],
+    "text": "A CLEAN HOME STARTS WITH A CLEAR PLAN.\n\nReady when your home is.\n\nGet a free quote\nTHE SUDS SQUAD\nCONNECTICUT\n\nResidential window cleaning, gutter care, house washing, and pressure washing throughout Connecticut.\n\nShare this website\n\nEXPLORE\n\nServices\nBefore and after\nProcess\nPricing\nService area\nFAQ\n\nCONTACT\n\n860-578-6207\nkellen0734@gmail.com\n\nServing all of Connecticut.\nFree estimates for every service.\n\nTHE SUDS SQUAD\n\nConnecticut window cleaning, gutter cleaning, and pressure washing."
+   }
+  ]
+ }
+}
