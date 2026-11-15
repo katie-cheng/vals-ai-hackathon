@@ -9,3 +9,4 @@ data/models/*.npz
 data/snapshots/web/
 data/snapshots/dev/
 reports/
+data/yc/yc-oss-all.json

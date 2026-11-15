@@ -4,7 +4,7 @@ Sets (stratified by industry, seed 0):
   pre2022: batches <= 2021, rendered from the Internet Archive snapshot closest to 2021-07-01 (pre-ChatGPT human-made reference set)
   current: batches 2024+, rendered live (in-the-wild mix)
 
-Source list: data/yc/yc-oss-all.json from https://yc-oss.github.io/api/companies/all.json
+Source list: data/yc/yc-oss-all.json, downloaded from https://yc-oss.github.io/api/companies/all.json if missing (git-ignored)
 Output: data/snapshots/yc/<set>/<slug>/{desktop,mobile}.{png,html}, meta.json; plus data/yc/<set>.jsonl
 Usage: python3 scripts/scrape_yc.py pre2022|current [--n 200] [--workers 4]
 """
@@ -43,7 +43,10 @@ def stratified(pool, n, seed=0):
     return order
 
 
-companies = json.load(open(ROOT / "data/yc/yc-oss-all.json"))
+YC_LIST = ROOT / "data/yc/yc-oss-all.json"
+if not YC_LIST.exists():
+    urllib.request.urlretrieve("https://yc-oss.github.io/api/companies/all.json", YC_LIST)
+companies = json.load(open(YC_LIST))
 if args.set == "pre2022":
     pool = [c for c in companies if c.get("website") and year(c) and year(c) <= 2021]
 else:
