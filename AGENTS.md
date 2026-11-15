@@ -30,6 +30,7 @@ Built-in harnesses: Claude Code (`claude_code-v1.0.0`), Codex (`codex-v1.0.0`), 
 ## What exists
 | Path | What |
 | --- | --- |
+| `tasks/` | Harbor tasks with their verifiers (first: `zee-beauty-salon`); layout, reward and the golden-reference workflow in `tasks/README.md`. |
 | `data/website-prompts-db/` | 1 shared system prompt + 26 scenario briefs (verbatim), 191 extracted requirements, as SQLite/JSON/JSONL/CSV. Rebuild with `python3 build_db.py`. |
 | `docs/sessions.md` | Summary of the Devin sessions so far. |
 | `docs/grader-design.md` | Grader and classifier design notes (from the Claude discussion). |
@@ -84,7 +85,7 @@ Harbor task layout: `instruction.md` = brief, `environment/` = Node/Vite React b
 `data/splits.json` splits the 30 Design Arena sites by tournament: 20 dev, 10 held-out (S09–S12, S17–S20, S27–S28; includes 4 models absent from dev). Build and tune graders on dev only. Don't read held-out labels/comments or tune checks while looking at held-out sites; just run frozen graders on them and report metrics. Frozen held-out renders (desktop 1440×900 and mobile 390×844, full-page PNG + rendered HTML) are in `data/snapshots/heldout/`, made by `scripts/snapshot_sites.py`.
 
 ## Slop Arena (pairwise votes)
-App: https://slop-arena--wtj4qv7i.preview.devinapps.com (code in `arena/app.py`, served from Ali's session `3dc261cee00b4a5ea9c21e19dc95ff29`; votes in `~/slopbench-arena-data/arena.db` on that VM, export at `/api/export`).
+App: https://slop-arena--wtj4qv7i.preview.devinapps.com (code in `arena/app.py`, served from Ali's session `3dc261cee00b4a5ea9c21e19dc95ff29`; votes in `~/slopbench-arena-data/arena.db` on that VM, export at `/api/export`). Snapshots of the votes are committed to `data/arena/` by `scripts/export_arena.py`; rerun it and commit after voting sessions).
 - **Votes:** left/right = that site is sloppier; "both slop" / "neither slop" are ties (0.5 in Bradley–Terry and in model training); skip. Results page fits a Bradley–Terry slop score per site and per model/source.
 - **Site pool:** Design Arena sites (`data/snapshots/{dev,heldout}`), YC homepages (`data/snapshots/yc/{pre2022,current}`; pre2022 = Internet Archive snapshot nearest 2021-07-01), Lovable showcase/templates, and web references (`data/snapshots/web/{curated-top,osm-local,personal-sites}`).
 - **Picker order:** (1) frozen test-set pairs from `data/testset.json` until each has `TEST_VOTERS`=2 votes; (2) otherwise a category by `CATEGORY_WEIGHTS` (same_prompt 0.15, arena_cross 0.2, arena_vs_web 0.35, web_web 0.3), favouring sites this voter has seen least and avoiding repeats within their last 4 pairs. `SPLIT_WEIGHTS` downweights pre-2022 YC to 0.1 (team found too many old sites).
