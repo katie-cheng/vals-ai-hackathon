@@ -366,7 +366,17 @@ function TeamRow(props: {
         </button>
       </div>
       <div className="row-actions">
-        <button type="button" className="btn btn-quiet" onClick={() => setEditing(true)} aria-label={`Edit ${team.name}`}>
+        <button
+          type="button"
+          className="btn btn-quiet"
+          onClick={() => {
+            setName(team.name);
+            setLogo(team.logo);
+            setError("");
+            setEditing(true);
+          }}
+          aria-label={`Edit ${team.name}`}
+        >
           Edit
         </button>
         {confirming ? (
