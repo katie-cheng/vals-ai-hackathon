@@ -30,7 +30,7 @@ const servicesData = [
       eyebrow: "Glass, frames and a clearer view",
       headline: "Let Connecticut back into the room.",
       description:
-        "Pollen, water spots, road film, and seasonal residue come off your exterior glass. We work methodically for a crisp, streak-free finish that changes how your home feels from inside and out.",
+        "Pollen, water spots, road film, and seasonal residue come off your exterior glass. We work methodically for a crisp, streak-free finish that changes how your home feels from inside and out. Screen cleaning is available for an extra $1 per window, and interior glass can be added to the same visit.",
       details: [
         "Detailed exterior glass cleaning",
         "Streak-aware finish and final visual check",
@@ -133,7 +133,7 @@ const servicesData = [
       eyebrow: "A cleaner approach and outdoor space",
       headline: "Make room for everything but the grime.",
       description:
-        "From the first impression at the curb to the space where you relax, we clean hard outdoor surfaces methodically and pay attention to consistent results across the full work area.",
+        "From the first impression at the curb to the space where you relax, we clean hard outdoor surfaces methodically and pay attention to consistent results across the full work area. Patio cleaning can be bundled with house washing in one quote.",
       details: [
         "Driveway, sidewalk, and patio cleaning requests",
         "Water movement managed across the work area",

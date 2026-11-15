@@ -1,11 +1,11 @@
 import * as React from "react";
 import { services } from "../data/content";
 import { EASE, Reveal, SplitWords, Tilt } from "../lib/anim";
-import { Bubbles, DropletsFx, SprayCanvas } from "../lib/fx";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { Bubbles, DropletsFx } from "../lib/fx";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import {
+  ArrowLeft,
   ArrowRight,
-  ArrowUpRight,
   Building2,
   Droplets,
   House,
@@ -21,7 +21,6 @@ function ServiceVisual({ visual: a }) {
     case "pressure":
       return (
         <>
-          <SprayCanvas />
           <div
             className="pointer-events-none absolute inset-0 overflow-hidden"
             aria-hidden
@@ -237,116 +236,174 @@ function ServiceVisual({ visual: a }) {
   }
 }
 
-function ServiceRow({ index: a }) {
+function ServicePanel({ index: a }: { index: number }) {
   const i = services[a],
-    Icon = SERVICE_ICONS[a % SERVICE_ICONS.length],
     l = React.useRef(null),
     { scrollYProgress: u } = useScroll({
       target: l,
       offset: ["start end", "end start"],
     }),
-    h = useTransform(u, [0, 1], ["-8%", "8%"]),
-    d = a % 2 === 1;
+    h = useTransform(u, [0, 1], ["-8%", "8%"]);
   return (
     <div ref={l} className="persp">
-      <Reveal>
-        <Tilt
-          max={5}
-          className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl"
-        >
-          <div className="grid gap-0 lg:grid-cols-2 ">
-            <div
-              className={`relative min-h-[300px] overflow-hidden lg:min-h-[420px] ${d ? "lg:order-2" : ""}`}
+      <Tilt
+        max={5}
+        className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl"
+      >
+        <div className="grid gap-0 lg:grid-cols-2">
+          <div className="relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
+            <motion.img
+              src={i.image_url}
+              alt={i.image_alt}
+              style={{
+                y: h,
+              }}
+              className="absolute inset-0 h-[116%] w-full scale-105 object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#04141f]/90 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[#04141f]/40" />
+            <ServiceVisual visual={i.visual} />
+          </div>
+          <div className="relative flex flex-col justify-center gap-5 p-7 sm:p-10">
+            <span
+              className="font-serif-d pointer-events-none absolute right-6 top-4 text-[5.5rem] font-bold leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-cyan-300/10"
+              aria-hidden
             >
-              <motion.img
-                src={i.image_url}
-                alt={i.image_alt}
-                loading="lazy"
-                style={{
-                  y: h,
-                }}
-                className="absolute inset-0 h-[116%] w-full scale-105 object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#04141f]/90 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[#04141f]/40" />
-              <ServiceVisual visual={i.visual} />
-              <div className="animate-float-y-sm absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/20 bg-[#04141f]/60 px-4 py-2 backdrop-blur-xl">
-                <Icon className="h-4 w-4 text-cyan-300" />
-                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white">
-                  {i.eyebrow}
-                </span>
-              </div>
-              <div className="absolute bottom-5 right-5 hidden items-center gap-2 rounded-full bg-cyan-300 px-4 py-2 text-[12px] font-black text-[#04141f] opacity-0 transition-all duration-500 group-hover:opacity-100 lg:flex">
-                {i.quote_label} <ArrowUpRight className="h-3.5 w-3.5" />
-              </div>
-            </div>
-            <div
-              className={`relative flex flex-col justify-center gap-5 p-7 sm:p-10 ${d ? "lg:order-1" : ""}`}
-            >
-              <span
-                className="font-serif-d pointer-events-none absolute right-6 top-4 text-[5.5rem] font-bold leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-cyan-300/10"
-                aria-hidden
+              {String(a + 1).padStart(2, "0")}
+            </span>
+            <h3 className="font-serif-d text-3xl font-semibold leading-tight text-white sm:text-4xl">
+              {i.name}
+            </h3>
+            <p className="text-[15px] leading-relaxed text-sky-100/75">
+              {i.description}
+            </p>
+            <p className="text-[13.5px] leading-snug text-sky-200/70">
+              {i.price_note}
+            </p>
+            <div className="mt-1">
+              <a
+                href="#quote"
+                className="shine-sweep group/btn inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13.5px] font-black text-[#04141f] transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_12px_30px_-8px_rgba(34,211,238,.8)]"
               >
-                {String(a + 1).padStart(2, "0")}
-              </span>
-              <p className="text-[11px] font-black uppercase tracking-[0.3em] text-cyan-300">
-                {String(a + 1).padStart(2, "0")}
-                {" — "}
-                {i.name}
-              </p>
-              <h3 className="font-serif-d text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                {i.headline}
-              </h3>
-              <p className="text-[15px] leading-relaxed text-sky-100/75">
-                {i.description}
-              </p>
-              <ul className="grid gap-2.5 sm:grid-cols-2">
-                {i.details.map((p, y) => (
-                  <motion.li
-                    key={p}
-                    initial={{
-                      opacity: 0,
-                      x: -14,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      delay: 0.15 + y * 0.08,
-                      duration: 0.5,
-                      ease: EASE,
-                    }}
-                    className="flex items-start gap-2 text-[13.5px] font-medium text-sky-50/90"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_8px_rgba(34,211,238,.9)]" />
-                    {p}
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="mt-1 flex flex-wrap items-center gap-3">
-                <a
-                  href="#quote"
-                  className="shine-sweep group/btn inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13.5px] font-black text-[#04141f] transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_10px_30px_-8px_rgba(34,211,238,.8)]"
-                >
-                  {i.quote_label}
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                </a>
-                <p className="max-w-[240px] text-[11.5px] leading-snug text-sky-200/60">
-                  {i.price_note}
-                </p>
-              </div>
+                {i.quote_label}
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+              </a>
             </div>
           </div>
-          <div
-            className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity duration-500 group-hover:opacity-100"
-            aria-hidden
-          />
-        </Tilt>
-      </Reveal>
+        </div>
+        <div
+          className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity duration-500 group-hover:opacity-100"
+          aria-hidden
+        />
+      </Tilt>
     </div>
+  );
+}
+
+function ServiceSwitcher() {
+  const [active, setActive] = React.useState(0),
+    [dir, setDir] = React.useState(1),
+    n = services.length,
+    tabs = React.useRef<(HTMLButtonElement | null)[]>([]),
+    swipe = React.useRef<{ x: number; y: number } | null>(null),
+    go = (k: number, focus = false) => {
+      const next = (k + n) % n;
+      setDir(next > active || (active === n - 1 && next === 0) ? 1 : -1);
+      setActive(next);
+      if (focus) tabs.current[next]?.focus();
+    };
+  React.useEffect(() => {
+    services.forEach((sv) => {
+      new Image().src = sv.image_url;
+    });
+  }, []);
+  return (
+    <Reveal>
+      <div
+        role="tablist"
+        aria-label="Cleaning services"
+        className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowRight") (e.preventDefault(), go(active + 1, true));
+          if (e.key === "ArrowLeft") (e.preventDefault(), go(active - 1, true));
+        }}
+      >
+        {services.map((sv, k) => {
+          const Icon = SERVICE_ICONS[k % SERVICE_ICONS.length],
+            on = k === active;
+          return (
+            <button
+              key={sv.slug}
+              ref={(el) => {
+                tabs.current[k] = el;
+              }}
+              id={`service-tab-${sv.slug}`}
+              role="tab"
+              aria-selected={on}
+              aria-controls="service-panel"
+              tabIndex={on ? 0 : -1}
+              onClick={() => go(k)}
+              className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2.5 text-[13.5px] font-semibold transition-all duration-300 ${on ? "border-cyan-300 bg-cyan-300 text-[#04141f]" : "border-white/15 bg-white/5 text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
+            >
+              <Icon className={`h-4 w-4 ${on ? "text-[#04141f]" : "text-cyan-300"}`} />
+              {sv.name}
+            </button>
+          );
+        })}
+      </div>
+      <div
+        id="service-panel"
+        role="tabpanel"
+        aria-labelledby={`service-tab-${services[active].slug}`}
+        className="relative"
+        onPointerDown={(e) => {
+          if (e.pointerType !== "mouse") swipe.current = { x: e.clientX, y: e.clientY };
+        }}
+        onPointerUp={(e) => {
+          const s0 = swipe.current;
+          swipe.current = null;
+          if (!s0) return;
+          const dx = e.clientX - s0.x;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(e.clientY - s0.y))
+            go(active + (dx < 0 ? 1 : -1));
+        }}
+      >
+        <AnimatePresence mode="wait" initial={false} custom={dir}>
+          <motion.div
+            key={active}
+            custom={dir}
+            initial={{ opacity: 0, x: dir * 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: dir * -40 }}
+            transition={{ duration: 0.45, ease: EASE }}
+          >
+            <ServicePanel index={active} />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <div className="mt-6 flex items-center justify-between gap-4">
+        <p className="text-[13.5px] font-semibold text-sky-200/70" aria-live="polite">
+          {active + 1} of {n}
+        </p>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={() => go(active - 1)}
+            aria-label="Previous service"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => go(active + 1)}
+            aria-label="Next service"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+    </Reveal>
   );
 }
 
@@ -373,12 +430,6 @@ function Services() {
       <Bubbles count={14} className="opacity-50" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-14 max-w-3xl sm:mb-20">
-          <Reveal>
-            <p className="mb-4 flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.35em] text-cyan-300">
-              <span className="h-px w-10 bg-cyan-300" />
-              {" 01 / Cleaning services"}
-            </p>
-          </Reveal>
           <SplitWords
             text="The right clean for every part of your home."
             as="h2"
@@ -392,14 +443,10 @@ function Services() {
             </p>
           </Reveal>
         </div>
-        <div className="space-y-8 lg:space-y-12">
-          {services.map((a, i) => (
-            <ServiceRow key={services[i].slug} index={i} />
-          ))}
-        </div>
+        <ServiceSwitcher />
       </div>
     </section>
   );
 }
 
-export { SERVICE_ICONS, ServiceVisual, ServiceRow, Services };
+export { SERVICE_ICONS, ServiceVisual, ServicePanel, ServiceSwitcher, Services };
