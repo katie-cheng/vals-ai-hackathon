@@ -1,0 +1,104 @@
+# S13 fix plan (written before any code change)
+
+Each S13 critique from `../inputs/critiques/CRITIQUES.md` is mapped to one planned change. Critiques that describe the same
+pattern are grouped; matching S14 labels are listed under the group they join. Anything not named here stays as it is in
+`../inputs/live-app` (layout, copy, assets, animation, behaviour). Commits that implement a group are titled `fix F<n> (#ids): ...`.
+Verdicts are in `../verification/REPORT.md`.
+
+Ambiguity flags: **[A]** = I had to interpret the critique; the interpretation is stated so Katie can overrule it.
+
+| Group | Critiques | Planned change | Files |
+| --- | --- | --- | --- |
+| F1 | #38, #40 · S14 #310, #347 | Remove the hero pill badge "Free estimates · All of Connecticut" and its pinging dot (Katie: "i would just cut"). "Free" is already on the primary CTA and in Pricing. | Hero.tsx |
+| F2 | #46 | The gap is the invisible second headline line: `bg-clip-text text-transparent` sits on the parent while each word is a transformed inline-block, so the gradient never paints. Paint the gradient on each word so "in its best light." is visible and the gap disappears. | Hero.tsx |
+| F3 | #51, #58, #121 · S14 #374, #378, #381, #382 | Header never wraps: show the full link row only from `xl` (1280 px), use the existing menu button below that, `whitespace-nowrap` on logo, phone and CTA, and hide the phone pill when the row is too narrow for it (phone stays in the menu panel). | Header.tsx |
+| F4 | #61, #62 | Hero feature chips use a faster scroll transform (`-220px`) than the CTA row (`-140px`) and slide over it. Give chips and CTAs the same transform so they never overlap. | Hero.tsx |
+| F5 | #73 | The marquee is wrapped in a `scale 0.92 → 1` scroll transform, so it stops short of both edges. Remove the scale so it spans the full width. | Hero.tsx |
+| F6 | #67, #75, #127, #168, #228, #258, #260, #266, #270, #281 · S14 #307, #317, #322, #334, #350 | Small uppercase eyebrows. Remove the numbered section eyebrows ("01 / Cleaning services" … with their dash marks); the h2 already names each section. Service rows: the service name becomes the h3 (#75: "should just be the title"). Process tag pills, the before/after category eyebrow, "Connecticut only", "Representative service towns" and the quote-panel kicker are removed. Labels that must stay (price card names, form field labels, contact card keys) become normal-case text. | Services, BeforeAfter, Process, Trust, PricingAreas, Faq, Quote, Footer |
+| F7 | #107, #131, #297 · S14 #342 | Service rows carry a headline, a description and four bullets that repeat it. Keep name + description + price note; drop the bullet list (facts that only appear in a bullet are folded into the description). This also removes the glowing, misaligned dots (#107) and the left-to-right list entrance (#297). Other left-slide entrances of the same kind become plain fade-ups. | Services.tsx, data/content.ts |
+| F8 | #126 | Remove the eyebrow badge laid over each service image ("Concrete, pavers and stubborn grime"). | Services.tsx |
+| F9 | #133, #134, #135 | Remove the CTA overlaid on each service image; keep the one in the text column. | Services.tsx |
+| F10 | #136 **[A]** · S14 #338, #340 | "The same card format is repeated so many times… there should just be a carousel." Read as the six full-height service rows. Show services as one row with a service switcher: tabs for the six names plus working previous/next buttons, swipe on touch, no scroll hijacking. All six services and their copy stay reachable. | Services.tsx |
+| F11 | #144 | Remove the pulse ring and scale loop on the slider handle (and the pulsing icon in the "Drag to reveal" hint, same pattern). | BeforeAfter.tsx |
+| F12 | #150 | "Before" and "After" labels behave differently when the divider passes over them. Render both above the image layers so neither is ever covered. | BeforeAfter.tsx |
+| F13 | #157, #170, #174, #190 · S14 #327 | Before/after pairs are different photos (siding panels, concrete joints and windows don't line up) or the same photo with a dark filter. Make every "before" from its own "after" image: same pixels, with dirt from the original "before" photo (algae, lichen, spotting, leaves) composited on top, so the geometry matches exactly and only the dirt changes. Interior windows and patio get real grime instead of a filter; gutters get the same treatment because they have the same mismatch. The images stay labelled illustrative. **[A]** Katie's #190 asks for "a real image… before and after a cleaning"; only the business can supply real job photos, so this is flagged. | public/images, BeforeAfter.tsx, data/content.ts, tools/make_befores.py |
+| F14 | #230, #239 · S14 #346 | Process markers: replace the glowing gradient icon tile with a white notification-style badge by a plain numbered circle (no glow, no badge). | Process.tsx |
+| F15 | #235 | Remove the blurred gradient blob in the corner of each process card. | Process.tsx |
+| F16 | #237 | Remove the empty spacer column; place each card with grid column classes instead. | Process.tsx |
+| F17 | #246 | The moving dashed line is drawn on top of the scroll-filled line. Draw it underneath. | Process.tsx |
+| F18 | #255, #256, #258 | Remove the stat tiles ("6 cleaning specialties", "1 statewide service area", …): big numbers without context, top-edge shine, uppercase labels. The facts are already stated in Services/Process/Areas. | Trust.tsx |
+| F19 | #261, #263 | Trust cards: the hover lift moves the element that owns the hover, so the hitbox slides away and the animation loops. Keep the hover target still (outer wrapper) and move only the inner card. | Trust.tsx, lib/anim.tsx |
+| F20 | #262 · S14 #351 | Remove the gradient that slides up on hover in trust cards. | Trust.tsx |
+| F21 | #264 · S14 #363, #369, #371 | Custom estimates card: drop the eyebrow and fold the bold "Your estimate is free…" line into the paragraph, leaving title, one paragraph and the CTA. | PricingAreas.tsx |
+| F22 | #268 | Map town labels sit on top of other dots. Show the label for the selected town only, offset away from neighbouring dots, with a halo. Town chips stay as the full list. | PricingAreas.tsx |
+| F23 | #274, #277 | Map card title "Connecticut service map" + subtitle repeat each other and the paragraph beside the map. Remove both captions (the SVG keeps its accessible label) and the footnote under the map, which repeats "Do not see your town?". | PricingAreas.tsx |
+| F24 | #279 | Remove the blur from the shared `Reveal` entrance (fade-up stays). Applies site-wide because every section uses the same component. | lib/anim.tsx |
+| F25 | #280 | Remove the glowing gradient hairline along the top edge of the quote form panel. | Quote.tsx |
+| F26 | #284, #287 | Footer repeats the name and tagline. Keep the description under the footer logo; the bottom bar keeps only the copyright line and back-to-top. | Footer.tsx |
+| F27 | #285 | "Share this website" becomes an icon button with an accessible label and tooltip. | Footer.tsx |
+| F28 | #292 | Remove the spray-canvas overlay drawn over the pressure-washing image (it also shows before the image loads). | Services.tsx |
+| F29 | S14 #318 | Replace em dashes in visible copy (service eyebrows go away with F6; the town confirmation line and FAQ answers get commas or full stops). | data/content.ts, PricingAreas.tsx |
+| F31 | #139 | Before/after tab labels ("House Siding" …) drop from black (900) weight to medium. | BeforeAfter.tsx |
+| F30 | S14 #332 **[A]** | S13 headlines reveal word by word out of a clip mask (`overflow-hidden` per word). Same pattern as S14's "animates up from a bottom line". Keep the per-word stagger but fade/rise without the clip mask. (Superseded by R14: headings now fade in as a whole line.) | lib/anim.tsx, Hero.tsx |
+
+Not applied:
+- S14 #352 "overuse of icons": originally left for Katie; now applied site-wide through her R9.
+- S14 #304, #306, #308, #345 and the empty S14 labels: no matching S13 pattern (see CRITIQUES.md).
+- S14 #356 ("there is no map just points"): S13 has the same failure. Its outline and town dots stay at opacity 0 because their `whileInView` reveal never fires. They now animate in on mount and the decorative radial glow behind the map is removed (R3).
+
+Brief guard: the brief asks for unusually heavy animation, before/after comparisons, animated services, process, trust, pricing, service area, FAQ and a working quote form. Round 1 kept all of the animation layers. Round 2 (R3, R14) removed most of the decorative ones on Katie's instruction: particles, bubbles, droplets, parallax, magnetic/tilt and animated gradients. `../verification/REPORT.md` checks every brief requirement and marks the ones deliberately dropped.
+
+## Round 2: Katie's critiques of the rebuild (chat, 2026-11-15)
+
+Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim comments are in `../inputs/critiques/rebuild-chat.json`.
+
+| ID | Critique (short) | Change | Commit |
+| --- | --- | --- | --- |
+| R1 | Titles too big/heavy vs subtitles | Section h2 ~2.6rem medium serif, hero h1 4.4rem semibold; subtitles up to 17px | round 2 |
+| R2 | "in its best light" words merged | `HeroWords` keeps spaces (later: whole-line fade) | 15b83be, round 2 |
+| R3 | No gradients/glows | All gradient backgrounds/text, glow shadows, blur blobs, radial map glow removed | round 2, map commit |
+| R4 | No small uppercase labels | All uppercase/letter-spaced labels to sentence case, body font | round 2 |
+| R5 | Remove "Scroll to explore" | Removed | round 2 |
+| R6 | Logo: no uppercase sub-label, no glowing gradient | Flat tile, "The Suds Squad / Connecticut" | round 2 |
+| R7 | Buttons too padded, bold | Smaller padding, medium weight | round 3 |
+| R8 | Text shadow | No text/box shadows; outlined "Free quote" background text removed | round 3 |
+| R9 | Fewer icons | Only functional icons kept (menu/close, prev/next, slider, FAQ toggle, share, back to top, spinner, checkbox tick) | round 3 |
+| R10 | Duplicate CTAs | Quote CTA kept in header, hero, mobile menu and the form; service/pricing/process/footer duplicates and hero call button removed | round 3 |
+| R11 | FAQ X off-centre | Lucide `Plus` rotated 45° with no scale; measured centre offset 0px | round 3 |
+| R12 | Corners too round | Cards/panels `rounded-lg`, buttons/chips `rounded-md` | round 3 |
+| R13 | Bold overused | font-black/extrabold/bold to medium; semibold only for h1 and logo | round 3 |
+| R14 | Animations heavier than needed | No preloader, Lenis, particles, bubbles, droplets, gleams, mouse/scroll parallax, magnetic buttons, tilt cards, word-by-word reveals, floating chips, looping service effects, hover lifts or moving dashed lines. Kept: hero video, marquee, short fade/slide reveals, scroll-filled process line, panel/FAQ/form transitions | round 4 |
+| R16 | White shows on overscroll | `html` gets the navy background and `overscroll-behavior: none` (no bounce past top/bottom) | round 4 |
+| R17 | Hero image not there on first load | Hero photo is preloaded (`<link rel=preload fetchpriority=high>`) and rendered as an `<img>` under the video, so it no longer waits for the video poster | round 4 |
+| R18 | Too stripped back; some subtle gradients and capital labels are fine | Relaxes R3/R4: a dark fade at the foot of the hero, a faint tonal band behind Process; small caps (11–12px, 0.08em) only on meta labels (Before/After chips, footer column headings, price item names). Section eyebrows stay out (F6). Remaining backdrop blur removed except the header | round 5 |
+| R19 | Palette too neon | Tailwind `cyan-*` remapped to a muted sea-glass accent (`#93bcc6`) and `sky-*` to cool greys in `@theme` | round 5 |
+| R20 | Not enough side padding | Section and header containers go from `px-4 sm:px-6` to `px-6 sm:px-10 lg:px-16` | round 6 |
+| R21 | Sans-serif should be more tasteful, Inter-like | Body/UI font Archivo → Inter (variable, bundled via `@fontsource-variable/inter`); Fraunces headings unchanged | round 7 |
+| R22 | Pill selectors duplicate the arrow navigation | Services: pill tablist removed; the panel is a keyboard-focusable carousel (← →, swipe) with prev/next and "n of 6". Before/after: pill row removed; prev/next + dots stay, and the comparison name now sits above its description | round 7 |
+| R23 | Layout should follow a more consistent grid | One 12-column grid with a 32px gutter (`.grid-12` in `index.css`): pricing, FAQ and quote are 5/7, areas 7/5, footer 6/3/3, trust cards 4/4/4, price tiles 32px gutter. Process and footer headings left-aligned like every other section; section intros all `max-w-3xl` | round 8 |
+| R24 | Logo should be a more detailed, professional outline mark | Stock Lucide droplet in a filled tile replaced by a custom line-art `LogoMark` (house with roof, chimney, paned windows, arched door, ground line and a water droplet; one 1.6px stroke, flat accent colour). Same mark in `favicon.svg` | round 8 |
+| R25 | Layout shift on reload; use skeletons/placeholders | Fonts self-hosted in `public/fonts` and preloaded, with metric-matched fallback faces (`Inter Fallback`, `Fraunces Fallback`) so the swap does not reflow; entry animations are opacity-only (no 12–30px slides); header reads `scrollY` on first render instead of restyling after mount; pulsing skeleton backgrounds reserve the service image and before/after frames until the photos paint | round 9 |
+| R26 | Repetitive copy and repeated descriptions | Each point now said once: removed the hero chips (they repeated the service list; the ribbon stays per R28), the hero's "we explain the work" line, the Services "choose a service" sentence and Before/After how-to sentence, Process's "several services" line, its "price confirmed" note and text-photos line (the Quote contact list has both), the Pricing intro's quoting sentence (the panel below says it), the Areas "don't see your town" note, the FAQ intro and contact card, the quote form's free-quote footnote, and the footer tagline, description and coverage lines; trust-card copy rewritten so it no longer repeats Process | round 10 |
+| R27 | Hero shows a house photo before the cleaning video | The hero placeholder/poster is now the video's own first frame (`hero-wash-first.jpg`, preloaded), so first paint is already the cleaning scene and playback continues from it | round 10 |
+| R28 | Ribbon may use uppercase with icons | Service ribbon restored after the R26 cut: uppercase 12px labels with 0.14em tracking, each with a 1.6-stroke line icon in the muted accent; stops under reduced motion. Exception to R4/R9 scoped to this ribbon only | round 10 |
+| R29 | Add back very subtle gradients, to backgrounds etc | Low-contrast tonal gradients (navy #04141f to #072030 at most) on every dark section (`bg-tone-a/b/c`), a paper-to-mist gradient on the light Results and Pricing sections (`bg-paper`), and faint top-light gradients on glass panels and FAQ cards. No glows, gradient text or coloured blobs | round 11 |
+| R30 | Use a thin sans serif more for visual hierarchy | Headings switch from Fraunces/semibold to Inter Light: hero and section titles weight 300 with slight negative tracking, card titles 400, decorative numerals 200; medium stays only on small UI text. Fraunces and its font file removed | round 12 |
+| R31 | Carousel images tinted over | Removed the 60% navy overlay on the service photos; they show at true colour | round 12 |
+| R32 | Serif was fine in some places | Fraunces restored at regular weight (400) for section titles and the footer heading; hero headline, card/step titles and numerals stay Inter Light/Regular (refines R30) | round 12 |
+| R33 | Narrower content now that there is less copy | Containers `max-w-7xl` → `max-w-6xl` (1280 → 1152px) and desktop side padding `lg:px-16` → `lg:px-24` (64 → 96px) on every section and the header; mobile/tablet padding unchanged (extends R20) | round 13 |
+| R34 | Hero too tall for its reduced content | Hero `min-h-[108svh]` → `min-h-[max(76svh,560px)]`; content padding `pt-36/lg:pt-40` → `pt-28` with `pb-12/lg:pb-16`; the ribbon stays pinned at the bottom | round 13 |
+| R35 | Too much space between titles and content | Title-block bottom margins cut from 48–80px to 32–48px (`mb-8`, `sm:mb-10`/`sm:mb-12`) in Services, Process, Trust, Before/After and Pricing | round 13 |
+| R36 | Serif for the hero title | Hero h1 back to Fraunces at regular weight (400), matching the section titles; card/step titles and numerals stay thin Inter | round 13 |
+| R37 | Arrow on the hero CTA | Lucide `ArrowRight` (16px, stroke 1.75) on the right of "Get my free quote", nudges 2px on hover; scoped exception to R9 | round 13 |
+| R38 | Standardize a design system | Tokens in `src/index.css` + `DESIGN-SYSTEM.md`: radii `md` 6px (controls) / `lg` 10px (surfaces) / full (circles); one easing `cubic-bezier(0.16,1,0.3,1)`; CSS transitions 200ms; Framer durations `DUR.base` 0.4s (state) / `DUR.slow` 0.6s (entrances) / `DUR.draw` 1.2s (map outline); `.btn` + `.btn-primary/.btn-secondary/.btn-lg`, `.icon-btn`, `.option/.option-active`, `.surface`. Measured at 1440px: transition timings 6 → 1, button styles 7 → 3 | round 14 |
+| R39 | Bring back a minimal loader | Text-free 22px ring on navy, inlined in `index.html` so it paints before JS; removed when fonts + hero frame are ready or after 400ms max, page fades in over 350ms; skipped under reduced motion | round 14 |
+| R40 | Timeline negative space, right-aligned cards, loose text, sans titles | Process is now a 5/7 split: sticky title and intro on the left, a single left-rail timeline on the right (44px markers, 2px progress line); all cards left-aligned, padding 32px → 20–24px, description gap tightened; card titles in Fraunces 400 | round 14 |
+| R41 | Grain instead of gradients; text with dividers instead of cards | Section gradients (R29) and the hero bottom fade replaced by flat colour + a faint SVG film grain (`.bg-tone-*`, `.bg-paper`); panel/surface gradients flattened. Why us, Process steps, FAQ and Quote contact links are now plain text separated by hairline dividers; only functional frames remain (service carousel, before/after slider, quote form, map, price list) | round 15 |
+| R42 | Grain only on selected elements, finer; anything above grain must look raised | Grain tile 180px → 110px at higher frequency and lower alpha; applied only to `.grain` surfaces (Services, Process, Areas, light Results/Pricing, the hero service ribbon, the footer); Why us, FAQ and Quote are flat. Everything sitting on a background (header bar, carousel panel, form panel, map frame, inputs, chips, secondary and icon buttons) uses one near-opaque raised fill (`--raised`, 92%) so no grain shows through | round 15 |
+| R43 | Box elements not aligned to a grid | Town chips: `flex-wrap` → equal-width grid, 2 columns on mobile / 3 from `sm`; quote-form service options: `flex-wrap` → 1 column on mobile / 2 equal columns from `sm`, full-height cells (preferred-contact was already a 3-column grid) | round 15 |
+| R44 | General rule: square-shaped elements must be visually balanced | Audited every bordered/filled box by sibling group (`verification/tools/box_audit.py`): all circular controls are now 44px (icon buttons, process markers, FAQ toggle, slider handle, which is now a circle); Before/After chips share one fixed width, height and padding; the two header buttons share a min width; price cards reserve the same label height so all five prices sit on one baseline (1024/1440). Audit reports no uneven groups at 1440 or 390 | round 15 |
+| R45 | Map does not need a box | Removed the bordered raised panel around the Connecticut map; it sits directly on the Areas background | round 15 |
+| R46 | Hero graphic needs more vignette | Flat overlay 60% → 45% plus a radial vignette (clear centre, 92% navy at the edges and corners); the one deliberate gradient left after R41, scoped to the hero media | round 15 |
+| R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
+
+Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.
