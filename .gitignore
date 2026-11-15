@@ -4,3 +4,5 @@ data/snapshots/ai/
 .env
 .modal.toml
 logs/
+data/models/*.pkl
+data/models/*.npz

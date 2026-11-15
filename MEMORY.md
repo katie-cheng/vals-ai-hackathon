@@ -30,3 +30,4 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Arcada sites never reach Playwright `networkidle` (animations/polling); use `wait_until="load"` plus a fixed wait
 - Pairwise "which is sloppier" votes (Slop Arena) are the main evaluation signal for graders; YC pre-2022 archived homepages serve as human-made reference sites
 - The session VM has 2 CPUs: run Playwright scrapes sequentially with ≤2 workers
+- Modal (profile `aliahmad`): GPU functions fail with "add a payment method"; CPU containers work (SigLIP so400m embeds ~1.8k crops in ~5 min with 30 parallel cpu=8 containers). [2026-11-14]
