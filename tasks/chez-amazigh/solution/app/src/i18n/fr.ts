@@ -236,7 +236,7 @@ const fr: Dict = {
       past: "Merci de choisir une date à partir d'aujourd'hui.",
       order: "La date de départ doit être postérieure à la date d'arrivée.",
       guests: "Merci d'indiquer au moins un voyageur.",
-      reply: "Merci d'indiquer une adresse e-mail ou un numéro de téléphone valide.",
+      reply: "Indiquez une adresse e-mail pour une réponse par e-mail, ou un numéro de téléphone pour WhatsApp ou un appel.",
       summary: "Merci de corriger les champs signalés.",
     },
     readyTitle: "Merci, votre demande est prête",

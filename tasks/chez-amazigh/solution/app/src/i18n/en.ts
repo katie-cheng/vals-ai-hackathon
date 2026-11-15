@@ -236,7 +236,7 @@ const en = {
       past: "Please choose a date from today onwards.",
       order: "The departure date must be after the arrival date.",
       guests: "Please enter at least one guest.",
-      reply: "Please enter a valid email address or phone number.",
+      reply: "Enter an email address for an email reply, or a phone number for WhatsApp or a call.",
       summary: "Please correct the highlighted fields.",
     },
     readyTitle: "Thank you, your inquiry is ready",

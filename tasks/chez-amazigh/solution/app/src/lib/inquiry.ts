@@ -3,6 +3,17 @@
 export type Inquiry = { arrival: string; departure: string; guests: number; name: string; reply: string; channel: string; message: string; website: string };
 export type InquiryErrors = Partial<Record<keyof Inquiry, "required" | "past" | "order" | "guests" | "reply">>;
 
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const PHONE = /^\+?[\d\s().-]{7,20}$/;
+
+/** The reply channel that fits what the guest typed: an email address means an email reply. */
+export function channelForReply(reply: string, current: string) {
+  const r = reply.trim();
+  if (EMAIL.test(r)) return "email";
+  if (PHONE.test(r) && current === "email") return "whatsapp";
+  return current;
+}
+
 const LIMITS = { name: 80, reply: 120, message: 1000 };
 
 /** Trims, drops control characters and caps lengths, so the composed message stays plain text. */
@@ -26,7 +37,7 @@ export function validate(i: Inquiry): InquiryErrors {
   if (!i.name.trim()) e.name = "required";
   const reply = i.reply.trim();
   if (!reply) e.reply = "required";
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(reply) && !/^\+?[\d\s().-]{7,20}$/.test(reply)) e.reply = "reply";
+  else if (!(i.channel === "email" ? EMAIL : PHONE).test(reply)) e.reply = "reply";
   return e;
 }
 

@@ -2,7 +2,7 @@ import { useId, useRef, useState, type FormEvent } from "react";
 import { Minus, Plus } from "lucide-react";
 import { hasChannel, site, whatsappUrl } from "../config/site";
 import { useLang } from "../i18n/LanguageContext";
-import { clean, nights, today, validate, type Inquiry, type InquiryErrors } from "../lib/inquiry";
+import { channelForReply, clean, nights, today, validate, type Inquiry, type InquiryErrors } from "../lib/inquiry";
 
 const EMPTY: Inquiry = { arrival: "", departure: "", guests: 2, name: "", reply: "", channel: "whatsapp", message: "", website: "" };
 
@@ -130,7 +130,7 @@ export default function InquiryForm() {
         <div className="field">
           <label htmlFor={`${id}-reply`}>{c.reply}</label>
           <input id={`${id}-reply`} name="email" type="text" autoComplete="email" required maxLength={120} value={data.reply}
-            aria-invalid={!!errors.reply} aria-describedby={err("reply")} onChange={(e) => set("reply", e.target.value)} />
+            aria-invalid={!!errors.reply} aria-describedby={err("reply")} onChange={(e) => { set("reply", e.target.value); set("channel", channelForReply(e.target.value, data.channel)); }} />
           {errorText("reply")}
         </div>
         <div className="field">
