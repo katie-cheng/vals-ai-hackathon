@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794732352.945054
+   "updated_at": 1794732391.2326636
   }
  ],
  "labels": [
@@ -11779,6 +11779,35 @@
    "shot_status": "none",
    "created_at": 1794732300.0,
    "updated_at": 1794732300.0
+  },
+  {
+   "id": 493,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R33\"]",
+   "comment": "since there is less content increase the gutters on left and right of the site even more so content is narrower",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "page container",
+   "component_chain": null,
+   "selector": ".max-w-7xl",
+   "selector_confidence": "manual",
+   "tag": "div",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"containers max-width 1280px with 64px desktop padding (R20)\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794732360.0,
+   "updated_at": 1794732360.0
   }
  ]
 }

@@ -190,5 +190,11 @@
   "sent_at": "2026-11-15T00:45-08:00",
   "element": "section headings",
   "comment": "the serif font was fine in some places"
+ },
+ {
+  "rid": "R33",
+  "sent_at": "2026-11-15T00:46-08:00",
+  "element": "page container",
+  "comment": "since there is less content increase the gutters on left and right of the site even more so content is narrower"
  }
 ]

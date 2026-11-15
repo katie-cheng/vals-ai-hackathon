@@ -26,7 +26,7 @@ Source: `data/sloplabel/export-2026-11-15T0208Z.json` (Export JSON from the Slop
 | Fake/mismatched imagery (before/after not same scene) | katie | 4 | no: judge |
 
 ## Rebuild critiques (site `S13-ref`, katie via chat, 2026-11-15)
-Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 32 labels (R1–R32, SlopLabel ids 461–492) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
+Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 54 original labels had been applied. These 33 labels (R1–R33, SlopLabel ids 461–493) are stored as their own site `S13-ref` so they don't mix with the original S13/S14 labels. Several restate patterns above for a cleaner page, which means the pattern was still visible after the first fix pass. New or broadened patterns:
 
 | Pattern | Labels | Mechanical? |
 |---|---|---|
@@ -45,7 +45,7 @@ Katie critiqued the S13 golden-reference rebuild (`references/S13/`) after the 5
 | Paired labels styled inconsistently (Before vs After), blurred overlays | R15 |
 | Light page background exposed on overscroll of a dark site | R16 | yes: `html` background vs body; `overscroll-behavior` | yes: sibling label style diff; `backdrop-filter` |
 | Neon accent palette (saturated cyan on navy) | R19 | yes: accent colour saturation/lightness |
-| Cramped side padding (content close to viewport edges) | R20 | yes: container padding / content inset at each width |
+| Cramped side padding (content close to viewport edges) | R20, R33 | yes: container padding / content inset at each width |
 | Characterful/wide grotesk body font where a neutral sans (Inter-like) reads more professional | R21 | partly: computed body font-family vs a neutral-sans allowlist; taste call otherwise |
 | Redundant navigation: pill/tab row plus prev/next arrows for the same carousel | R22 | yes: a tab/pill group and prev/next buttons controlling the same panel |
 | Inconsistent layout grid: every section picks its own column ratio, gutter and alignment | R23 | yes: column edges and gutters across sections should snap to one shared grid |

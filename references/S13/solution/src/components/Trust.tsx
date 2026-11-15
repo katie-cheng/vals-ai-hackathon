@@ -33,7 +33,7 @@ function Trust() {
         />
         <div className="absolute inset-0 bg-[#04141f]/60" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+      <div className="relative mx-auto max-w-6xl px-6 sm:px-10 lg:px-24">
         <div className="mb-12 max-w-3xl sm:mb-16">
           <SplitWords
             text="Careful work. Clear communication."

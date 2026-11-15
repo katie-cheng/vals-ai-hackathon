@@ -33,7 +33,7 @@ function Footer() {
       <div className="relative bg-[#06283d]">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-10 lg:px-16 sm:pt-20">
+        <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-14 sm:px-10 lg:px-24 sm:pt-20">
           <Reveal>
             <motion.p
               className="font-serif-d mt-4 text-[2.2rem] font-normal leading-tight text-white sm:text-5xl"
