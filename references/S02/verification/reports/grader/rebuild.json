@@ -1,0 +1,206 @@
+{
+ "site": "rebuild (solution)",
+ "route": "/",
+ "slop_points": 0,
+ "slop_score": 1,
+ "slop": [
+  {
+   "id": "eyebrows",
+   "about": "small uppercase letter-spaced label text (unique strings)",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "heading_accents",
+   "about": "headings with an italic / recoloured / different-font accent span",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "dot_separators",
+   "about": "\u00b7 and \u2022 separator glyphs",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "pills",
+   "about": "fully rounded pill buttons and badges",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "big_rounding",
+   "about": "large containers with radius >= 24px",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "numbered_markers",
+   "about": "01 / 02 / 03 section, step or menu markers",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "em_dashes_per_1k_words",
+   "about": "em dashes per 1000 words of copy",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "emoji_icons",
+   "about": "emoji and dingbat glyphs used as icons",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "gradient_text",
+   "about": "gradient-filled text",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "pulsing_dots",
+   "about": "small infinitely animated dots",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "tiny_text_share",
+   "about": "share of copy words set below 12px",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "duplicate_ctas",
+   "about": "the same call to action twice within one block",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "phone": 0,
+    "tablet": 0,
+    "laptop": 0,
+    "desktop": 0,
+    "wide": 0
+   },
+   "examples": []
+  },
+  {
+   "id": "broken_controls",
+   "about": "buttons, nav links or the logo whose label wraps or overflows at some width from 360 to 1920px",
+   "value": 0,
+   "points": 0,
+   "by_width": {
+    "360": 0,
+    "390": 0,
+    "414": 0,
+    "480": 0,
+    "540": 0,
+    "600": 0,
+    "680": 0,
+    "768": 0,
+    "820": 0,
+    "900": 0,
+    "960": 0,
+    "1024": 0,
+    "1100": 0,
+    "1180": 0,
+    "1280": 0,
+    "1366": 0,
+    "1440": 0,
+    "1536": 0,
+    "1680": 0,
+    "1920": 0
+   },
+   "examples": []
+  }
+ ],
+ "note": "Diagnostic only. The grader renders the landing route. Its requirements half is the zee-beauty-salon brief and does not apply to S02, so reward and requirements are omitted."
+}

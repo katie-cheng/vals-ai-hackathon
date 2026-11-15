@@ -2641,6 +2641,37 @@ index e068c2c..976e47d 100644
        )}
      </header>
    );
+diff --git a/src/context/CourseContext.tsx b/src/context/CourseContext.tsx
+index f9034fb..0051bf5 100644
+--- a/src/context/CourseContext.tsx
++++ b/src/context/CourseContext.tsx
+@@ -1,3 +1,4 @@
++import { CHAPTERS } from "../data/chapters";
+ import * as React from "react";
+ import { LESSONS } from "../data/lessons";
+ import { QUIZ_QUESTIONS } from "../data/quizzes";
+@@ -250,7 +251,7 @@ export const CourseProvider = ({ children }) => {
+         progressPercent: 0,
+         lastPositionSeconds: 0,
+       };
+-      const B = m || (Y >= 90 ? "completed" : Y > 5 ? "in_progress" : q.status);
++      const B = m || (q.status === "completed" || Y >= 90 ? "completed" : Y > 5 ? "in_progress" : q.status);
+       return {
+         ...z,
+         [g]: {
+@@ -457,6 +458,12 @@ export const CourseProvider = ({ children }) => {
+     return Math.round((G / Y.length) * 100);
+   };
+   const E = (g) => Ee(g) === 100;
++  // Finishing every lesson of a chapter earns its certificate, as the certificates page says (passing the quiz is the other way).
++  React.useEffect(() => {
++    for (const chapter of CHAPTERS) {
++      if (Ee(chapter.id) === 100) it(chapter.id, chapter.title, "chapter");
++    }
++  }, [i]);
+   return (
+     <CourseContext.Provider
+       value={{
 diff --git a/src/data/chapters.ts b/src/data/chapters.ts
 index d381ac4..64d163e 100644
 --- a/src/data/chapters.ts
@@ -5174,7 +5205,7 @@ index b8b06a0..1c2a5ff 100644
        </section>
      </div>
 diff --git a/src/pages/LessonPlayerPage.tsx b/src/pages/LessonPlayerPage.tsx
-index 60edc29..02939b7 100644
+index 60edc29..8a5d285 100644
 --- a/src/pages/LessonPlayerPage.tsx
 +++ b/src/pages/LessonPlayerPage.tsx
 @@ -1,35 +1,25 @@
@@ -5366,7 +5397,7 @@ index 60edc29..02939b7 100644
 +          updateLessonProgress(lesson.id, 100, duration, "completed");
 +          return duration;
          }
-+        if (Math.floor(next) % 10 === 0) updateLessonProgress(lesson.id, Math.round((next / duration) * 100), Math.floor(next));
++        if (Math.floor(next / 10) > Math.floor(current / 10)) updateLessonProgress(lesson.id, Math.round((next / duration) * 100), Math.floor(next));
 +        return next;
 +      });
 +    }, 1000);

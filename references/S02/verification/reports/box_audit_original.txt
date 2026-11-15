@@ -1,0 +1,32 @@
+## / @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "40px r12px": "6: w-10 h-10 rounded-xl bg-sky-50 | w-10 h-10 rounded-xl bg-indigo | w-10 h-10 rounded-xl bg-emeral | w-10 h-10 rounded-xl bg-amber-", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /dashboard @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+{"parent": null, "cls": "flex items-center gap-2", "n": 2, "ws": [123, 147], "hs": [34], "pads": ["8px/12px"], "text": ["Playground", "Certificates (1)"]}
+## /courses @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "48px r12px": "6: w-12 h-12 rounded-xl bg-slate-", "24px r3.35544e+07px": "42: w-6 h-6 rounded-full flex item", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+{"parent": null, "cls": "flex items-center gap-2 overflow-x-auto pb-2 text-xs scrollbar-thin", "n": 6, "ws": [190, 286, 307, 292, 334, 425], "hs": [28], "pads": ["6px/12px"], "text": ["\ud83d\ude80", "\u2699\ufe0f", "\ud83c\udf10", "\ud83d\udee0\ufe0f"]}
+## /lesson/1 @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "30px r8px": "1: p-1.5 rounded-lg bg-slate-800 ", "64px r3.35544e+07px": "1: w-16 h-16 rounded-full bg-sky-", "21px r4px": "1: px-1 py-0.5 rounded transition", "20px r3.35544e+07px": "3: w-5 h-5 rounded-full flex item", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /playground @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+{"parent": null, "cls": "flex items-center gap-2 flex-wrap", "n": 2, "ws": [139, 134], "hs": [34], "pads": ["8px/14px"], "text": ["Save Snippet", "Export .html"]}
+{"parent": null, "cls": "flex items-center gap-2 overflow-x-auto pb-2 text-xs scrollbar-thin", "n": 3, "ws": [256, 234, 188], "hs": [30], "pads": ["6px/12px"], "text": ["2. Conditionals & ", "3. Arrays & Loops ", "4. HTML & CSS Prof"]}
+## /search @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+{"parent": null, "cls": "flex items-center gap-1.5 flex-wrap", "n": 6, "ws": [68, 62], "hs": [30], "pads": ["6px/10px"], "text": ["\ud83d\ude80", "\u2699\ufe0f", "\ud83c\udf10", "\ud83d\udee0\ufe0f"]}
+## /quizzes @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /quiz/1 @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "24px r3.35544e+07px": "3: w-6 h-6 rounded-full bg-slate-", "20px r6px": "12: w-5 h-5 rounded-md bg-slate-80", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /certificates @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /certificate/ITB-CH1-8291X @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /resources @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+{"parent": null, "cls": "flex items-center gap-2 overflow-x-auto pb-2 text-xs scrollbar-thin", "n": 3, "ws": [225, 295, 282], "hs": [34], "pads": ["8px/16px"], "text": ["\ud83c\udf10 HTML5 & CSS3 Re", "\u2699\ufe0f Agile, Scrum & ", "\ud83d\udcbb Command Line (C"]}
+## /admin @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}
+## /profile @ 1440
+{"squares": {"20px r4px": "1: text-[10px] px-1.5 py-0.5 roun", "16px r3.35544e+07px": "1: inline-block w-2 h-2 rounded-f"}}

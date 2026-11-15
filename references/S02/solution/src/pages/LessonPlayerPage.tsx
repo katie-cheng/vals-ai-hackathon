@@ -80,7 +80,7 @@ export const LessonPlayerPage = () => {
           updateLessonProgress(lesson.id, 100, duration, "completed");
           return duration;
         }
-        if (Math.floor(next) % 10 === 0) updateLessonProgress(lesson.id, Math.round((next / duration) * 100), Math.floor(next));
+        if (Math.floor(next / 10) > Math.floor(current / 10)) updateLessonProgress(lesson.id, Math.round((next / duration) * 100), Math.floor(next));
         return next;
       });
     }, 1000);

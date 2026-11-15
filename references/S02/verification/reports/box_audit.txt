@@ -1,0 +1,60 @@
+## / @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /dashboard @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /courses @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+{"parent": null, "cls": "mt-8 flex flex-wrap gap-2", "n": 7, "ws": [108, 93, 96, 95], "hs": [36], "pads": ["0px/14px"], "text": ["All chapters", "Chapter 1", "Chapter 2", "Chapter 3"]}
+## /lesson/1 @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju", "40px r6px": "1: Keyboard shortcuts", "56px r3.35544e+07px": "1: flex h-14 w-14 items-center ju"}}
+{"parent": null, "cls": "flex flex-wrap gap-2", "n": 5, "ws": [92, 107, 89, 80, 96], "hs": [36], "pads": ["0px/14px"], "text": ["Overview", "Scratchpad", "Notes (1)", "Q&A (1)"]}
+## /playground @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+{"parent": null, "cls": "flex flex-wrap items-center gap-2 sm:col-span-4 sm:justify-end", "n": 2, "ws": [91, 142], "hs": [40], "pads": ["0px/16px"], "text": ["Save", "Export .html"]}
+## /search @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /quizzes @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /quiz/1 @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /certificates @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /certificate/ITB-CH1-8291X @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /resources @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+{"parent": null, "cls": "mt-8 flex flex-wrap gap-2", "n": 4, "ws": [269, 203, 267, 256], "hs": [36], "pads": ["0px/14px"], "text": ["JavaScript Fundame", "HTML5 & CSS3 Refer", "Agile, Scrum & Jir", "Command Line (CLI)"]}
+## /admin @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /profile @ 1440
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju", "72px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## / @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /dashboard @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /courses @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+{"parent": null, "cls": "mt-8 flex flex-wrap gap-2", "n": 7, "ws": [108, 93, 96, 95], "hs": [36], "pads": ["0px/14px"], "text": ["All chapters", "Chapter 1", "Chapter 2", "Chapter 3"]}
+## /lesson/1 @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju", "40px r6px": "1: Keyboard shortcuts", "56px r3.35544e+07px": "1: flex h-14 w-14 items-center ju"}}
+{"parent": null, "cls": "flex flex-wrap gap-2", "n": 5, "ws": [92, 107, 89, 80, 96], "hs": [36], "pads": ["0px/14px"], "text": ["Overview", "Scratchpad", "Notes (1)", "Q&A (1)"]}
+## /playground @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+{"parent": null, "cls": "flex flex-wrap items-center gap-2 sm:col-span-4 sm:justify-end", "n": 2, "ws": [91, 142], "hs": [40], "pads": ["0px/16px"], "text": ["Save", "Export .html"]}
+## /search @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /quizzes @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /quiz/1 @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /certificates @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /certificate/ITB-CH1-8291X @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /resources @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+{"parent": null, "cls": "mt-8 flex flex-wrap gap-2", "n": 4, "ws": [269, 203, 267, 256], "hs": [36], "pads": ["0px/14px"], "text": ["JavaScript Fundame", "HTML5 & CSS3 Refer", "Agile, Scrum & Jir", "Command Line (CLI)"]}
+## /admin @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju"}}
+## /profile @ 390
+{"squares": {"32px r3.35544e+07px": "1: flex flex-none items-center ju", "72px r3.35544e+07px": "1: flex flex-none items-center ju"}}

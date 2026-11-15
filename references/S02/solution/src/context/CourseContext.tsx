@@ -1,3 +1,4 @@
+import { CHAPTERS } from "../data/chapters";
 import * as React from "react";
 import { LESSONS } from "../data/lessons";
 import { QUIZ_QUESTIONS } from "../data/quizzes";
@@ -250,7 +251,7 @@ export const CourseProvider = ({ children }) => {
         progressPercent: 0,
         lastPositionSeconds: 0,
       };
-      const B = m || (Y >= 90 ? "completed" : Y > 5 ? "in_progress" : q.status);
+      const B = m || (q.status === "completed" || Y >= 90 ? "completed" : Y > 5 ? "in_progress" : q.status);
       return {
         ...z,
         [g]: {
@@ -457,6 +458,12 @@ export const CourseProvider = ({ children }) => {
     return Math.round((G / Y.length) * 100);
   };
   const E = (g) => Ee(g) === 100;
+  // Finishing every lesson of a chapter earns its certificate, as the certificates page says (passing the quiz is the other way).
+  React.useEffect(() => {
+    for (const chapter of CHAPTERS) {
+      if (Ee(chapter.id) === 100) it(chapter.id, chapter.title, "chapter");
+    }
+  }, [i]);
   return (
     <CourseContext.Provider
       value={{
