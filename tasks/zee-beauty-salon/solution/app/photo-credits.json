@@ -1,0 +1,222 @@
+[
+  {
+    "file": "hero.jpg",
+    "slot": "hero",
+    "source_page": "https://www.pexels.com/photo/elegant-indian-bride-with-traditional-jewelry-30825617/",
+    "photographer": "AMA INTERNATIONAL ACADEMY",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Woman with soft pink and gold glam makeup and traditional kundan jewellery, eyes closed"
+  },
+  {
+    "file": "about.jpg",
+    "slot": "about",
+    "source_page": "https://unsplash.com/photos/hairstylist-creating-an-updo-for-a-seated-client-g0cSOCHaHiY",
+    "photographer": "Alexander Mass",
+    "license": "Unsplash License",
+    "width": 939,
+    "height": 1600,
+    "alt": "Stylist pinning a bridal updo with a crystal hair accessory in a warm, softly lit salon"
+  },
+  {
+    "file": "service-bridal-makeup.jpg",
+    "slot": "service-bridal-makeup",
+    "source_page": "https://www.pexels.com/photo/closeup-of-a-woman-getting-traditional-makeup-5491494/",
+    "photographer": "Nishant Aneja",
+    "license": "Pexels License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Makeup artist applying eyeliner to a bride wearing a gold maang tikka"
+  },
+  {
+    "file": "service-party-makeup.jpg",
+    "slot": "service-party-makeup",
+    "source_page": "https://www.pexels.com/photo/elegant-south-asian-bride-in-traditional-attire-3460676/",
+    "photographer": "Qazi Ikram haq",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Woman in an embroidered lavender outfit with smoky evening makeup and a maang tikka"
+  },
+  {
+    "file": "service-hair-styling.jpg",
+    "slot": "service-hair-styling",
+    "source_page": "https://www.pexels.com/photo/close-up-of-women-hairdressing-10028673/",
+    "photographer": "Deni Priyo",
+    "license": "Pexels License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Stylist blow-drying long dark hair with a round brush"
+  },
+  {
+    "file": "service-haircuts.jpg",
+    "slot": "service-haircuts",
+    "source_page": "https://www.pexels.com/photo/person-cutting-hair-3356170/",
+    "photographer": "Engin Akyurt",
+    "license": "Pexels License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Stylist trimming wet dark hair with scissors and a comb"
+  },
+  {
+    "file": "service-hair-treatments.jpg",
+    "slot": "service-hair-treatments",
+    "source_page": "https://www.pexels.com/photo/hairdresser-washing-customer-hair-23349891/",
+    "photographer": "Oleskandra Biliak",
+    "license": "Pexels License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Hair treatment being worked through a client's wet hair at the wash basin"
+  },
+  {
+    "file": "service-facial-treatments.jpg",
+    "slot": "service-facial-treatments",
+    "source_page": "https://unsplash.com/photos/woman-receiving-facial-mask-treatment-at-spa-Pe9IXUuC6QU",
+    "photographer": "Rosa Rafael",
+    "license": "Unsplash License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Beautician brushing a clay mask onto a client's face during a facial"
+  },
+  {
+    "file": "service-skincare.jpg",
+    "slot": "service-skincare",
+    "source_page": "https://www.pexels.com/photo/a-woman-applying-cream-on-face-6810869/",
+    "photographer": "Yaroslav Shuraev",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Woman smoothing moisturiser onto her face in warm light"
+  },
+  {
+    "file": "service-waxing.jpg",
+    "slot": "service-waxing",
+    "source_page": "https://www.pexels.com/photo/woman-doing-depilation-on-leg-with-wax-strip-6763618/",
+    "photographer": "Tima Miroshnichenko",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Wax strip being applied to a lower leg"
+  },
+  {
+    "file": "service-threading.jpg",
+    "slot": "service-threading",
+    "source_page": "https://www.pexels.com/photo/a-side-view-of-a-woman-having-a-threading-procedure-8558244/",
+    "photographer": "Nataliya Vaitkevich",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Side view of a woman having her eyebrows shaped with threading"
+  },
+  {
+    "file": "service-manicure-pedicure.jpg",
+    "slot": "service-manicure-pedicure",
+    "source_page": "https://www.pexels.com/photo/a-person-getting-a-nail-polish-4677845/",
+    "photographer": "Leeloo The First",
+    "license": "Pexels License",
+    "width": 1068,
+    "height": 1600,
+    "alt": "Manicurist painting a client's nails with dark polish"
+  },
+  {
+    "file": "gallery-makeup-1.jpg",
+    "slot": "gallery-makeup-1",
+    "source_page": "https://www.pexels.com/photo/a-beautiful-woman-wearing-maang-tikka-11742214/",
+    "photographer": "Imad Clicks",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Close-up of shimmering green eye makeup with a gold maang tikka"
+  },
+  {
+    "file": "gallery-makeup-2.jpg",
+    "slot": "gallery-makeup-2",
+    "source_page": "https://unsplash.com/photos/a-makeup-artist-applies-blush-to-a-womans-face-tKUG1Ckuryw",
+    "photographer": "Alexander Mass",
+    "license": "Unsplash License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Makeup artist sweeping pink blush onto a woman in a white robe"
+  },
+  {
+    "file": "gallery-bridal-1.jpg",
+    "slot": "gallery-bridal-1",
+    "source_page": "https://www.pexels.com/photo/elegant-south-asian-bride-in-traditional-attire-33023960/",
+    "photographer": "Aalamgir Studio",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Bride in a red dupatta and gold jewellery looking down, with henna on her hands"
+  },
+  {
+    "file": "gallery-bridal-2.jpg",
+    "slot": "gallery-bridal-2",
+    "source_page": "https://unsplash.com/photos/a-woman-in-a-red-and-gold-bridal-outfit-wN2ijql9HOs",
+    "photographer": "Naeem Ad",
+    "license": "Unsplash License",
+    "width": 1094,
+    "height": 1600,
+    "alt": "Smiling bride in a red and gold embroidered lehenga with a matha patti and gold choker"
+  },
+  {
+    "file": "gallery-hair-1.jpg",
+    "slot": "gallery-hair-1",
+    "source_page": "https://www.pexels.com/photo/woman-posing-at-in-a-hair-salon-20046793/",
+    "photographer": "TONI&GUY PONDICHERRY",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Smiling woman with a glossy, wavy blow-dry in a salon"
+  },
+  {
+    "file": "gallery-hair-2.jpg",
+    "slot": "gallery-hair-2",
+    "source_page": "https://www.pexels.com/photo/a-person-holding-a-woman-s-hair-6435273/",
+    "photographer": "Vanshika Chawla",
+    "license": "Pexels License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Stylist's hands pinning a bride's hair into an updo"
+  },
+  {
+    "file": "gallery-treatments-1.jpg",
+    "slot": "gallery-treatments-1",
+    "source_page": "https://www.pexels.com/photo/relaxing-spa-facial-treatment-session-37229301/",
+    "photographer": "DΛVΞ GΛRCIΛ",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Facial mask being brushed onto a relaxed client's face"
+  },
+  {
+    "file": "gallery-treatments-2.jpg",
+    "slot": "gallery-treatments-2",
+    "source_page": "https://www.pexels.com/photo/threading-technique-by-professional-beautician-29588099/",
+    "photographer": "Alexander Mass",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Beautician holding a twisted thread ready for eyebrow threading"
+  },
+  {
+    "file": "gallery-interior-1.jpg",
+    "slot": "gallery-interior-1",
+    "source_page": "https://www.pexels.com/photo/serene-spa-interior-with-massage-table-and-candle-35884502/",
+    "photographer": "Marine Fougère",
+    "license": "Pexels License",
+    "width": 1067,
+    "height": 1600,
+    "alt": "Calm treatment room with a gold wavy mirror, a candle and a rolled towel"
+  },
+  {
+    "file": "gallery-interior-2.jpg",
+    "slot": "gallery-interior-2",
+    "source_page": "https://www.pexels.com/photo/spacious-modern-lobby-with-stylish-furniture-6899544/",
+    "photographer": "Max Vakhtbovych",
+    "license": "Pexels License",
+    "width": 1600,
+    "height": 1066,
+    "alt": "Bright reception lounge with a grey velvet sofa, blush cushions and rose-gold pendant lights"
+  }
+]

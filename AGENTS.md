@@ -30,6 +30,7 @@ Built-in harnesses: Claude Code (`claude_code-v1.0.0`), Codex (`codex-v1.0.0`), 
 ## What exists
 | Path | What |
 | --- | --- |
+| `tasks/` | Harbor tasks with their verifiers (first: `zee-beauty-salon`); layout, reward and the golden-reference workflow in `tasks/README.md`. |
 | `data/website-prompts-db/` | 1 shared system prompt + 26 scenario briefs (verbatim), 191 extracted requirements, as SQLite/JSON/JSONL/CSV. Rebuild with `python3 build_db.py`. |
 | `docs/sessions.md` | Summary of the Devin sessions so far. |
 | `docs/grader-design.md` | Grader and classifier design notes (from the Claude discussion). |
