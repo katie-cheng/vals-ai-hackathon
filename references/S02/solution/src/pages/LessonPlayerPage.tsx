@@ -40,7 +40,7 @@ export const LessonPlayerPage = () => {
   const duration = lesson.durationMinutes * 60;
 
   const [playing, setPlaying] = React.useState(false);
-  const [position, setPosition] = React.useState(0);
+  const [position, setPosition] = React.useState(() => Math.min(progress[lessonId]?.lastPositionSeconds || 0, duration));
   const [speed, setSpeed] = React.useState(1);
   const [theater, setTheater] = React.useState(false);
   const [shortcutsOpen, setShortcutsOpen] = React.useState(false);
@@ -220,7 +220,7 @@ export const LessonPlayerPage = () => {
               <span className="flex h-14 w-14 items-center justify-center rounded-full border border-line-strong text-ink transition-colors group-hover:border-accent group-hover:text-accent">
                 {playing ? <Pause className="h-6 w-6" strokeWidth={1.75} /> : <Play className="ml-0.5 h-6 w-6" strokeWidth={1.75} />}
               </span>
-              <span className="line-clamp-3 min-h-[4.5rem] max-w-xl text-base text-ink-2 sm:text-lg">{caption?.text}</span>
+              <span className="line-clamp-3 h-[4.875rem] max-w-xl text-base text-ink-2 sm:h-[5.25rem] sm:text-lg">{caption?.text}</span>
             </button>
             <div className="border-t border-line px-3 py-2">
               <div className="flex items-center gap-3">

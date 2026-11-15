@@ -40,5 +40,11 @@
   "sent_at": "2026-11-15T02:33-08:00",
   "element": "motion, whole site",
   "comment": "you can bring back soft animations if that is what the spec asked for"
+ },
+ {
+  "rid": "R8",
+  "sent_at": "2026-11-15T02:34-08:00",
+  "element": "all routes, on reload",
+  "comment": "there is layout shift on reload where the text loads in and shifts"
  }
 ]
