@@ -6,7 +6,7 @@ Design Arena webapps tournament `6ec52011-a188-455f-b698-6c9c1370e722` (S19 qwen
 
 | Build | Reward | Requirements | Task | Slop points | Gate |
 | --- | --- | --- | --- | --- | --- |
-| Golden (`solution/app`) | 1.00 | 1.00 | 1.00 (31/31) | 0 | 1 |
+| Golden (`solution/app`) | 1.00 | 1.00 | 1.00 (30/30) | 0 | 1 |
 | Starter stand-in (`environment/app`) | 0.76 | 0.53 | 0.48 | 0 | 1 |
 | S19 qwen3.8-max (live URL) | 0.00 | 0 | 0 | 0 | 0 |
 | S20 minimax-m3 (live URL) | 0.22 | 0.15 | 0.07 | 35.6 | 1 |
