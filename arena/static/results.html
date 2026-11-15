@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slop Arena results</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header class="top"><h1>Slop Arena</h1><span class="muted">Results</span><nav><a href="/">Vote</a><a href="/api/export">Export JSON</a></nav></header>
+<main class="results">
+<div class="stats" id="stats"></div>
+<p class="muted">Score is a Bradley–Terry log-strength fitted to all votes (ties count half). Higher = sloppier. "human:yc-pre2022" are YC homepages as archived in 2021; "human:yc-current" are live homepages of 2025–26 YC companies.</p>
+<h2>By model</h2><table id="models"></table>
+<h2>By site</h2><table id="sites"></table>
+</main>
+<script>
+fetch('/api/results').then(r=>r.json()).then(d=>{
+  const st=[['Votes',d.votes],['Skips',d.skips],['Voters',Object.keys(d.voters).length],['Sites available',d.sites_available],
+    ['Pairs with 2+ voters',d.pairs_multi_voter],['Agreement on those',d.pair_agreement==null?'–':Math.round(d.pair_agreement*100)+'%']];
+  document.getElementById('stats').innerHTML=st.map(([k,v])=>`<div><span class="muted">${k}</span><b>${v}</b></div>`).join('');
+  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('models').innerHTML='<tr><th>Model</th><th class="num">Sites</th><th class="num">Mean score</th></tr>'+
+    d.models.map(m=>`<tr><td>${esc(m.model)}</td><td class="num">${m.sites}</td><td class="num">${m.mean_score.toFixed(2)}</td></tr>`).join('');
+  document.getElementById('sites').innerHTML='<tr><th>Site</th><th>Split</th><th>Model</th><th class="num">Score</th><th class="num">Votes</th><th class="num">Broken</th><th class="num">Ship yes/no</th></tr>'+
+    d.sites.map(s=>`<tr><td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.id)}</a></td><td>${esc(s.split)}</td><td>${esc(s.model)}</td><td class="num">${s.score.toFixed(2)}</td><td class="num">${s.votes}</td><td class="num">${s.broken}</td><td class="num">${s.ship_yes}/${s.ship_no}</td></tr>`).join('');
+});
+</script></body></html>
