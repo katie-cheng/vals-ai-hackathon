@@ -11,12 +11,13 @@ import json
 import mimetypes
 import os
 import re
+import secrets
 import sqlite3
 import time
 from contextlib import asynccontextmanager
 from functools import lru_cache
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 import httpx
 from fastapi import FastAPI, HTTPException, Request
@@ -133,7 +134,11 @@ class Shooter:
     async def capture(self, label_id: int):
         with db() as con:
             r = con.execute("SELECT * FROM labels WHERE id=?", (label_id,)).fetchone()
-        if not r or not self.browser:
+        if not r:
+            return
+        if not self.browser:
+            with db() as con:
+                con.execute("UPDATE labels SET shot_status='failed: no browser' WHERE id=?", (label_id,))
             return
         lab = row_to_label(r)
         async with self.sem:
@@ -167,8 +172,9 @@ class Shooter:
                 )
                 await page.wait_for_timeout(900)
                 SHOTS.mkdir(parents=True, exist_ok=True)
-                shot = SHOTS / f"{label_id}.png"
-                ctx_shot = SHOTS / f"{label_id}_ctx.png"
+                tok = secrets.token_hex(4)
+                shot = SHOTS / f"{label_id}.{tok}.tmp.png"
+                ctx_shot = SHOTS / f"{label_id}.{tok}_ctx.tmp.png"
                 if found:
                     el = page.locator("[data-slop-capture='1']").first
                     box = await el.bounding_box()
@@ -204,15 +210,21 @@ class Shooter:
             with db() as con:
                 now = con.execute("SELECT loc, loc_index, selector, page_path FROM labels WHERE id=?", (label_id,)).fetchone()
                 if not now or tuple(now) != (lab.get("loc"), lab.get("loc_index"), lab.get("selector"), lab.get("page_path")):
-                    if not now:  # label deleted (or re-targeted) while we were capturing
-                        for f in (shot, ctx_shot):
-                            if f:
-                                f.unlink(missing_ok=True)
+                    # label deleted or re-targeted while we were capturing: discard this capture
+                    for f in (shot, ctx_shot):
+                        if f:
+                            f.unlink(missing_ok=True)
                     return
+                final_shot, final_ctx = SHOTS / f"{label_id}.png", SHOTS / f"{label_id}_ctx.png"
+                for tmp, final in ((shot, final_shot), (ctx_shot, final_ctx)):
+                    if tmp and tmp.exists():
+                        tmp.replace(final)
+                    else:
+                        final.unlink(missing_ok=True)
                 con.execute(
                     "UPDATE labels SET shot_path=?, ctx_path=?, shot_status=? WHERE id=?",
-                    (str(shot) if shot and shot.exists() else None,
-                     str(ctx_shot) if ctx_shot and ctx_shot.exists() else None, status, label_id),
+                    (str(final_shot) if final_shot.exists() else None,
+                     str(final_ctx) if final_ctx.exists() else None, status, label_id),
                 )
 
 
@@ -269,12 +281,16 @@ def static_file(name: str):
 @app.get("/__slop/open/{site_id}")
 def open_site(site_id: str, view: str = "desktop", focus: int | None = None):
     get_site(site_id)
-    target = "/" if view == "desktop" else f"/__slop/frame/{site_id}?w=390&h=844"
+    page_path = "/"
     if focus is not None:
         with db() as con:
             r = con.execute("SELECT page_path FROM labels WHERE id=?", (focus,)).fetchone()
-        if r and r["page_path"] and view == "desktop":
-            target = r["page_path"]
+        if r and r["page_path"]:
+            page_path = r["page_path"]
+    if view == "desktop":
+        target = page_path
+    else:
+        target = f"/__slop/frame/{site_id}?w=390&h=844&p={quote(page_path, safe='/#?=&')}"
     resp = RedirectResponse(target, status_code=302, headers=NO_STORE)
     resp.set_cookie("slop_site", site_id, samesite="lax", path="/")
     if focus is not None:
@@ -283,10 +299,12 @@ def open_site(site_id: str, view: str = "desktop", focus: int | None = None):
 
 
 @app.get("/__slop/frame/{site_id}")
-def frame_page(site_id: str, w: int = 390, h: int = 844):
+def frame_page(site_id: str, w: int = 390, h: int = 844, p: str = "/"):
     site = get_site(site_id)
+    if not p.startswith("/") or p.startswith("//"):
+        p = "/"
     html = (ROOT / "static/frame.html").read_text()
-    html = html.replace("__CFG__", json.dumps({"site_id": site_id, "title": site["title"], "model": site["model"], "w": w, "h": h}))
+    html = html.replace("__CFG__", json.dumps({"site_id": site_id, "title": site["title"], "model": site["model"], "w": w, "h": h, "path": p}))
     resp = HTMLResponse(html, headers=NO_STORE)
     resp.set_cookie("slop_site", site_id, samesite="lax", path="/")
     return resp
@@ -430,7 +448,7 @@ def delete_label(label_id: int):
 
 
 @app.post("/__slop/api/labels/{label_id}/recapture")
-def recapture(label_id: int):
+async def recapture(label_id: int):
     with db() as con:
         con.execute("UPDATE labels SET shot_status='pending' WHERE id=?", (label_id,))
     schedule_capture(label_id)

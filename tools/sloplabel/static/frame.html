@@ -11,10 +11,11 @@
 <header><b id="sid"></b><span id="ttl"></span><span style="flex:1"></span>
   <span>Width</span><button data-w="390">390</button><button data-w="430">430</button><button data-w="768">768</button>
   <a id="desk" href="#">Desktop view</a><a href="/__slop/">All sites</a></header>
-<main><iframe id="f" src="/"></iframe></main>
+<main><iframe id="f"></iframe></main>
 <script>
   const C = __CFG__;
   const f = document.getElementById('f');
+  f.src = C.path || '/';
   const size = (w) => { f.width = w; f.height = Math.min(C.h, innerHeight - 90); };
   document.getElementById('sid').textContent = C.site_id;
   document.getElementById('ttl').textContent = `${C.title} · ${C.model}`;

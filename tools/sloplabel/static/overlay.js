@@ -183,7 +183,9 @@
     if (l.selector) { try { return document.querySelector(l.selector); } catch (_) {} }
     return null;
   }
-  const onThisPage = (l) => { try { return new URL(l.page_path || '/', location.origin).pathname === location.pathname; } catch (_) { return true; } };
+  // hash-routed apps (S25 etc.) put the route in the fragment: compare it too when either side uses '#/…'
+  const routeKey = (u) => u.pathname + ((u.hash.startsWith('#/') || location.hash.startsWith('#/')) ? u.hash : '');
+  const onThisPage = (l) => { try { return routeKey(new URL(l.page_path || '/', location.origin)) === routeKey(location); } catch (_) { return true; } };
 
   // ------------------------------------------------------------------ state
   const S = {
