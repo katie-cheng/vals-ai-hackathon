@@ -365,8 +365,8 @@ export async function interactDesktop(context, url, handoffs, pages) {
     out.locationAssist = await attempt(async () => {
       if (!orderText) return { pass: false, detail: "checkout not reached" };
       if (locationRe.test(orderText)) return { pass: true, detail: "" };
-      // The location option often appears only once delivery is chosen.
-      await clickText(page, /^\s*(deliver|delivery)\b/i);
+      // The location option often appears only once delivery is chosen, and that option's text can run into its note ("DeliveryFree over R300").
+      await clickText(page, /^\s*deliver/i);
       await page.waitForTimeout(600);
       return { pass: locationRe.test(await page.evaluate(() => document.body.innerText)), detail: "after choosing delivery" };
     });
@@ -477,16 +477,22 @@ export async function interactDesktop(context, url, handoffs, pages) {
           if (el) el.setAttribute("data-sbf", "headline");
           return !!el;
         }, "big flavour");
-      let found = await findHeadline();
-      for (const re of [/content|pages?|website|homepage|home/i, /hero|banner|slides?|media/i, /text|cms|edit/i]) {
-        if (found) break;
+      // Each section tab is followed by a look for a hero/slider sub-tab, since many editors nest the hero there.
+      const tryTabs = async (re, inner) => {
         const tabs = page.locator("main :is(button,a,[role=tab]):visible, aside :is(button,a,[role=tab]):visible, nav :is(button,a,[role=tab]):visible").filter({ hasText: re });
-        for (let i = 0; i < Math.min(3, await tabs.count()) && !found; i++) {
+        for (let i = 0; i < Math.min(3, await tabs.count()); i++) {
           await tabs.nth(i).click({ timeout: 3000 }).catch(() => {});
           await page.waitForTimeout(700);
-          found = await findHeadline();
+          if ((await findHeadline()) || (inner && (await inner()))) return true;
         }
-      }
+        return false;
+      };
+      const hero = () => tryTabs(/hero|banner|slides?|slider/i);
+      const found =
+        (await findHeadline()) ||
+        (await hero()) ||
+        (await tryTabs(/content|pages?|website|homepage|home/i, hero)) ||
+        (await tryTabs(/media|text|cms|edit/i, hero));
       if (!found) return { pass: false, detail: "no editable field holding the hero headline" };
       await page.locator('[data-sbf="headline"]').fill(CMS_MARK);
       await page.locator('[data-sbf="headline"]').press("Tab");

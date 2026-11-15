@@ -3,6 +3,8 @@
 # a grader crash writes no reward, so Harbor reports a verifier error instead of blaming the agent.
 set -uo pipefail
 OUT=/logs/verifier
+# The grader's own browsers, copied in the image; the agent may have replaced the ones in /ms-playwright.
+export PLAYWRIGHT_BROWSERS_PATH=/opt/verifier/browsers
 mkdir -p "$OUT"
 
 cd /app
