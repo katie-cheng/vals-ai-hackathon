@@ -1,327 +1,125 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-import { CountUp, Reveal, SplitText, Stagger, StaggerItem } from "../components/motion";
-import { caseStudies, services } from "../data/content";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
-import { CTASection } from "../components/shared";
+import { ArrowUpRight, Check } from "lucide-react";
+import { CountUp, Heading, Reveal, Stagger, StaggerItem } from "../components/motion";
+import { CaseCard, CtaBanner, NextLink, PageHero } from "../components/shared";
+import { caseStudies, services } from "../data/content";
 
 export function Services() {
-  const s = useRef(null),
-    { scrollYProgress: n } = useScroll({
-      target: s,
-      offset: ["start start", "end start"],
-    }),
-    l = useTransform(n, [0, 1], ["0%", "30%"]),
-    r = useTransform(n, [0, 0.8], [1, 0]);
   return (
     <>
-      <section ref={s} className="relative overflow-hidden pt-36 pb-14 sm:pt-44">
-        <div className="dot-grid-dark pointer-events-none absolute inset-0 opacity-60" />
-        <motion.div
-          style={{
-            y: l,
-            opacity: r,
-          }}
-          className="container-x relative"
-        >
-          <SplitText text="Six practices. One growth team." as="h1" className="display-lg mt-6 max-w-4xl" />
-          <Reveal delay={0.25}>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
-              Every engagement blends the practices your funnel actually needs, staffed senior-only, run in
-              weekly sprints, measured in revenue.
-            </p>
-          </Reveal>
-        </motion.div>
-      </section>
-      <section className="container-x pb-24">
-        <Stagger className="flex flex-col gap-5" gap={0.08}>
-          {services.map((d, f) => (
-            <StaggerItem key={d.slug}>
-              <Link
-                to={`/services/${d.slug}`}
-                className="group grid overflow-hidden rounded-[1.75rem] border border-ink-900/10 bg-white/70 transition-all duration-500 hover:-translate-y-1 hover:border-pine-700/30 hover:shadow-[0_30px_70px_-28px_rgba(29,74,47,0.4)] lg:grid-cols-[1fr_1.1fr]"
-              >
-                <div className="zoom-img relative min-h-60 overflow-hidden lg:min-h-72">
-                  <img
-                    src={d.image}
-                    alt={d.name}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                  <span className="absolute top-5 left-5 rounded-full bg-ink-950/60 px-4 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
-                    0{f + 1}
-                  </span>
-                </div>
-                <div className="flex flex-col justify-center p-7 sm:p-10">
-                  <div className="flex items-center gap-3">
-                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-pine-700/10 text-pine-700 transition-all duration-500 group-hover:bg-pine-700 group-hover:text-cream-50">
-                      <d.icon className="h-5 w-5" />
-                    </span>
-                    <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{d.name}</h2>
-                  </div>
-                  <p className="mt-3 text-[15px] leading-relaxed font-medium text-pine-800">{d.tagline}</p>
-                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-500">{d.description[0]}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {d.deliverables.slice(0, 3).map((h) => (
-                      <span
-                        key={h}
-                        className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-ink-700"
-                      >
-                        {h}
-                      </span>
-                    ))}
-                    <span className="rounded-full bg-cream-100 px-3.5 py-1.5 text-xs font-semibold text-pine-700">
-                      +{d.deliverables.length - 3}
-                      {" more"}
-                    </span>
-                  </div>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink-900">
-                    Explore service
-                    <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-900 text-cream-50 transition-all duration-300 group-hover:bg-pine-600">
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                    </span>
-                  </span>
-                </div>
-              </Link>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
-      <CTASection
-        title="Not sure which practice you need?"
+      <PageHero
+        title="Six practices. One growth team."
+        copy="Every engagement blends the practices your funnel actually needs, staffed senior-only, run in weekly sprints, measured in revenue."
       />
+      <section className="container-x pb-[clamp(4rem,7vw,6.5rem)]">
+        <ul className="border-t border-ink-900/15">
+          {services.map((s) => (
+            <li key={s.slug} className="border-b border-ink-900/15">
+              <Reveal>
+                <Link to={`/services/${s.slug}`} className="group grid gap-x-8 gap-y-5 py-8 lg:grid-cols-12 lg:items-center">
+                  <div className="aspect-[3/2] overflow-hidden rounded-lg bg-cream-200 lg:col-span-4">
+                    <img src={s.image} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
+                  </div>
+                  <div className="lg:col-span-7 lg:col-start-6">
+                    <h2 className="display-md decoration-1 underline-offset-4 group-hover:underline">{s.name}</h2>
+                    <p className="mt-3 text-[17px] leading-relaxed text-ink-700">{s.tagline}</p>
+                    <p className="mt-3 text-[15px] text-ink-500">{s.deliverables.slice(0, 3).join(", ")}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <CtaBanner title="Not sure which practice you need?" />
     </>
   );
 }
+
 export function ServiceDetail() {
-  const { slug: s } = useParams(),
-    n = services.find((x) => x.slug === s),
-    l = useRef(null),
-    { scrollYProgress: r } = useScroll({
-      target: l,
-      offset: ["start start", "end start"],
-    }),
-    d = useTransform(r, [0, 1], ["0%", "25%"]);
-  if (!n) return <Navigate to="/services" replace={!0} />;
-  const f = services.findIndex((x) => x.slug === s),
-    h = services[(f + 1) % services.length],
-    m = caseStudies.filter((x) => x.services.includes(n.name)).slice(0, 2),
-    g = (m.length ? m : caseStudies.slice(0, 2)).slice(0, 2);
+  const { slug } = useParams();
+  const service: any = services.find((s) => s.slug === slug);
+  if (!service) return <Navigate to="/services" replace={true} />;
+  const next = services[(services.indexOf(service) + 1) % services.length];
+  const related = caseStudies.filter((c) => c.services.includes(service.name));
+  const proof = (related.length ? related : caseStudies).slice(0, 2);
   return (
     <>
-      <section
-        ref={l}
-        className="relative overflow-hidden bg-pine-950 pt-32 pb-16 text-cream-50 sm:pt-40 sm:pb-20"
-      >
-        <motion.div
-          style={{
-            y: d,
-          }}
-          className="absolute inset-0"
-        >
-          <img src={n.image} alt="" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-pine-950/60 via-pine-950/80 to-pine-950" />
-        </motion.div>
-        <div className="dot-grid pointer-events-none absolute inset-0 opacity-40" />
-        <div className="container-x relative">
-          <Reveal y={16}>
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 text-[13px] font-bold text-cream-50/60 transition-colors hover:text-cream-50"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {" All services"}
-            </Link>
-          </Reveal>
-          <div className="mt-8 flex items-center gap-4">
-            <Reveal y={16}>
-              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-mint-300 text-pine-950">
-                <n.icon className="h-7 w-7" />
-              </span>
-            </Reveal>
-            <Reveal y={16} delay={0.05}>
-              <p className="text-xs font-bold text-mint-300">
-                Service 0{f + 1}
-                {" / 06"}
-              </p>
-            </Reveal>
-          </div>
-          <SplitText text={n.name} as="h1" className="display-lg mt-4 max-w-4xl" delay={0.1} />
-          <Reveal delay={0.25}>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed font-medium text-cream-50/70 sm:text-lg">
-              {n.tagline}
-            </p>
-          </Reveal>
-          <Reveal delay={0.35}>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-cream-50 px-7 py-3.5 text-sm font-bold text-pine-950 transition-colors hover:bg-mint-300"
-              >
-                {"Start this engagement "}
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-              <Link
-                to="/pricing"
-                className="inline-flex items-center gap-2 rounded-full border border-cream-50/25 px-7 py-3.5 text-sm font-bold transition-colors hover:border-cream-50/60"
-              >
-                See pricing
-              </Link>
+      <PageHero title={service.name} copy={service.tagline}>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link to="/contact" className="btn btn-primary">
+            Start this engagement
+            <ArrowUpRight className="h-4 w-4" aria-hidden={true} />
+          </Link>
+          <Link to="/pricing" className="btn btn-secondary">
+            See pricing
+          </Link>
+        </div>
+      </PageHero>
+      <section className="container-x">
+        <div className="aspect-[21/9] overflow-hidden rounded-lg bg-cream-200">
+          <img src={service.image} alt="" className="h-full w-full object-cover" />
+        </div>
+        <dl className="grid gap-x-8 gap-y-6 py-10 sm:grid-cols-3">
+          {service.outcomes.map((o: any) => (
+            <div key={o.label} className="flex flex-col-reverse justify-end justify-end border-t border-ink-900/15 pt-4">
+              <dt className="mt-1 text-[15px] text-ink-500">{o.label}</dt>
+              <dd className="figure text-[2.5rem] leading-none">
+                <CountUp value={o.value} decimals={o.decimals ?? 0} prefix={o.prefix ?? ""} suffix={o.suffix ?? ""} />
+              </dd>
             </div>
-          </Reveal>
-        </div>
-      </section>
-      <section className="border-b border-ink-900/8 bg-cream-50">
-        <div className="container-x grid gap-8 py-12 sm:grid-cols-3">
-          {n.outcomes.map((x, y) => (
-            <Reveal key={x.label} delay={y * 0.08} className="text-center sm:text-left">
-              <p className="text-4xl font-bold tracking-tight text-pine-800 tabular-nums sm:text-5xl">
-                <CountUp
-                  value={x.value}
-                  decimals={x.decimals ?? 0}
-                  prefix={x.prefix ?? ""}
-                  suffix={x.suffix ?? ""}
-                />
-              </p>
-              <p className="mx-auto mt-2 max-w-56 text-[13px] leading-snug font-medium text-ink-500 sm:mx-0">
-                {x.label}
-              </p>
-            </Reveal>
           ))}
-        </div>
+        </dl>
       </section>
       <section className="container-x section-pad">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <SplitText text="What this actually looks like." as="h2" className="display-md mt-5" />
-            {n.description.map((x, y) => (
-              <Reveal key={y} delay={0.1 + y * 0.08}>
-                <p className="mt-5 text-[15px] leading-relaxed text-ink-500 sm:text-base">{x}</p>
-              </Reveal>
-            ))}
-            <div className="mt-10">
-              <h3 className="text-sm font-bold text-ink-400">
-                How we run it
-              </h3>
-              <Stagger className="mt-5 grid gap-3 sm:grid-cols-2" gap={0.08}>
-                {n.process.map((x, y) => (
-                  <StaggerItem key={x.title}>
-                    <div className="h-full rounded-2xl border border-ink-900/10 bg-white/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-pine-700/30">
-                      <span className="text-xs font-bold text-pine-600">
-                        {"STEP "}
-                        {y + 1}
-                      </span>
-                      <h4 className="mt-1 text-lg font-bold">{x.title}</h4>
-                      <p className="mt-2 text-sm leading-relaxed text-ink-500">{x.desc}</p>
-                    </div>
-                  </StaggerItem>
-                ))}
-              </Stagger>
+        <div className="grid gap-x-8 gap-y-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <Heading text="What this actually looks like." className="display-md" />
+            <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-ink-700">
+              {service.description.map((d: string) => (
+                <p key={d}>{d}</p>
+              ))}
             </div>
+            <h3 className="display-sm mt-12">How we run it</h3>
+            <ol className="mt-4 border-t border-ink-900/15">
+              {service.process.map((p: any) => (
+                <li key={p.title} className="grid gap-x-8 gap-y-1 border-b border-ink-900/15 py-4 sm:grid-cols-7">
+                  <h4 className="text-[17px] sm:col-span-2">{p.title}</h4>
+                  <p className="text-[15px] leading-relaxed text-ink-500 sm:col-span-5">{p.desc}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <Reveal delay={0.15}>
-              <div className="rounded-[1.75rem] bg-ink-900 p-7 text-cream-50 sm:p-9">
-                <h3 className="text-lg font-bold">What's included</h3>
-                <ul className="mt-5 flex flex-col gap-3">
-                  {n.deliverables.map((x) => (
-                    <li key={x} className="flex items-start gap-3 text-sm font-medium text-cream-50/85">
-                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300/20 text-mint-300">
-                        <Check className="h-3 w-3" strokeWidth={3} />
-                      </span>
-                      {x}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/contact"
-                  className="mt-7 flex items-center justify-center gap-2 rounded-full bg-cream-50 py-3.5 text-sm font-bold text-ink-900 transition-colors hover:bg-mint-300"
-                >
-                  {"Book a scoping call "}
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </Reveal>
+          <div className="lg:col-span-4 lg:col-start-9">
+            <h3 className="display-sm">What's included</h3>
+            <ul className="mt-4 flex flex-col gap-3 border-t border-ink-900/15 pt-5">
+              {service.deliverables.map((d: string) => (
+                <li key={d} className="flex items-start gap-2.5 text-[15px] text-ink-700">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-pine-700" aria-hidden={true} />
+                  {d}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
-      <section className="container-x pb-24">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <SplitText text="This practice, in the wild." as="h2" className="display-md mt-4" />
-          </div>
-          <Reveal delay={0.1} className="hidden sm:block">
-            <Link
-              to="/work"
-              className="group inline-flex items-center gap-2 text-sm font-bold text-pine-700"
-            >
-              {"All case studies "}
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </Reveal>
+      <section className="container-x pb-[clamp(4rem,7vw,6.5rem)]">
+        <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+          <Heading text="This practice, in the wild." className="display-md" />
+          <Link to="/work" className="text-link text-[15px]">
+            All case studies
+          </Link>
         </div>
-        <Stagger className="mt-10 grid gap-5 md:grid-cols-2" gap={0.1}>
-          {g.map((x) => (
-            <StaggerItem key={x.slug}>
-              <Link
-                to={`/work/${x.slug}`}
-                className="zoom-img group block overflow-hidden rounded-3xl bg-white shadow-[0_10px_40px_-20px_rgba(14,16,14,0.25)] transition-all duration-500 hover:-translate-y-1.5"
-              >
-                <div className="relative h-60 overflow-hidden">
-                  <img src={x.image} alt={x.client} className="h-full w-full object-cover" loading="lazy" />
-                  <span className="absolute top-4 left-4 rounded-full bg-ink-950/60 px-3.5 py-1.5 text-xs font-bold text-cream-50 backdrop-blur-md">
-                    {x.client}
-                  </span>
-                </div>
-                <div className="p-6 sm:p-7">
-                  <h3 className="text-lg leading-snug font-bold transition-colors group-hover:text-pine-700">
-                    {x.title}
-                  </h3>
-                  <div className="mt-4 flex gap-6 border-t border-ink-900/10 pt-4">
-                    {x.metrics.slice(0, 2).map((y) => (
-                      <div key={y.label}>
-                        <p className="text-xl font-bold tabular-nums">
-                          <CountUp
-                            value={y.value}
-                            decimals={y.decimals ?? 0}
-                            prefix={y.prefix ?? ""}
-                            suffix={y.suffix ?? ""}
-                          />
-                        </p>
-                        <p className="text-[11px] font-medium text-ink-500">{y.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Link>
+        <Stagger className="mt-10 grid gap-x-8 gap-y-12 md:grid-cols-2">
+          {proof.map((c) => (
+            <StaggerItem key={c.slug}>
+              <CaseCard study={c} />
             </StaggerItem>
           ))}
         </Stagger>
       </section>
-      <section className="container-x pb-24">
-        <Reveal>
-          <Link
-            to={`/services/${h.slug}`}
-            className="group relative flex items-center justify-between gap-6 overflow-hidden rounded-[2rem] bg-pine-800 p-8 text-cream-50 sm:p-12"
-          >
-            <div className="dot-grid absolute inset-0 opacity-60" />
-            <img
-              src={h.image}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-25"
-            />
-            <div className="relative">
-              <p className="text-xs font-bold text-mint-300">Next service</p>
-              <p className="display-md mt-2">{h.name}</p>
-            </div>
-            <span className="relative grid h-16 w-16 shrink-0 place-items-center rounded-full bg-cream-50 text-ink-900 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-8deg]">
-              <ArrowRight className="h-6 w-6" />
-            </span>
-          </Link>
-        </Reveal>
-      </section>
-      <CTASection />
+      <NextLink to={`/services/${next.slug}`} label="Next service" title={next.name} />
+      <CtaBanner />
     </>
   );
 }
