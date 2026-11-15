@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SlopLabel · all labels</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#171717;background:#fafafa}
+  header{position:sticky;top:0;z-index:5;display:flex;gap:10px;align-items:center;padding:10px 20px;background:#fff;border-bottom:1px solid #e5e5e5;flex-wrap:wrap}
+  h1{font-size:16px;margin:0} .m{color:#737373} a{color:#1d4ed8}
+  select{font:inherit;padding:5px 8px;border:1px solid #d4d4d4;border-radius:6px;background:#fff}
+  .btn{display:inline-block;padding:4px 9px;border:1px solid #d4d4d4;border-radius:6px;background:#fff;color:#171717;text-decoration:none;font-size:12px;cursor:pointer}
+  .btn:hover{background:#f5f5f5}
+  main{max-width:1280px;margin:0 auto;padding:16px 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+  .l{background:#fff;border:1px solid #e5e5e5;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .l .img{height:200px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #e5e5e5;overflow:hidden}
+  .l .img img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in}
+  .l .b{padding:10px 12px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .v{font-size:11px;font-weight:600;color:#fff;border-radius:4px;padding:1px 6px}
+  .slop{background:#e11d48}.not_slop{background:#16a34a}.unsure{background:#6b7280}
+  .mono{font:12px ui-monospace,Menlo,monospace}
+  .chip{display:inline-block;background:#f5f5f5;border-radius:4px;padding:1px 6px;font-size:12px;margin:0 3px 3px 0}
+  .acts{display:flex;gap:6px;margin-top:auto;padding-top:6px}
+  dialog{border:0;padding:0;border-radius:8px;max-width:92vw;max-height:92vh} dialog img{display:block;max-width:92vw;max-height:92vh}
+</style></head>
+<body>
+<header><h1>All labels</h1><a href="/__slop/">← sites</a><span style="flex:1"></span>
+  <select id="fs"><option value="">all sites</option></select>
+  <select id="fa"><option value="">all annotators</option></select>
+  <span class="m" id="n"></span></header>
+<main id="g"></main>
+<dialog id="dlg"><img id="dimg" alt=""></dialog>
+<script>
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let labels = [], sites = {};
+const sel = (id) => document.getElementById(id);
+function opts(id, vals) { const s = sel(id); const cur = s.value; s.length = 1; vals.forEach((v) => s.add(new Option(v, v))); s.value = cur; }
+async function load() {
+  const [l, s] = await Promise.all([fetch('/__slop/api/labels').then((r) => r.json()), fetch('/__slop/api/sites').then((r) => r.json())]);
+  labels = l; sites = Object.fromEntries(s.map((x) => [x.site_id, x]));
+  opts('fs', [...new Set(l.map((x) => x.site_id))]);
+  opts('fa', [...new Set(l.map((x) => x.annotator).filter(Boolean))]);
+  render();
+}
+function render() {
+  const f = { s: sel('fs').value, a: sel('fa').value };
+  const rows = labels.filter((l) => (!f.s || l.site_id === f.s) && (!f.a || l.annotator === f.a));
+  sel('n').textContent = `${rows.length} labels`;
+  sel('g').innerHTML = rows.map((l) => {
+    const s = sites[l.site_id] || {};
+    return `<div class="l">
+      <div class="img">${l.shot_url ? `<img src="${l.shot_url}" data-ctx="${l.ctx_url || ''}" alt="labeled element">` : `<span class="m">${esc(l.shot_status || 'no screenshot')}</span>`}</div>
+      <div class="b">
+        <div><b>${esc(l.site_id)}</b> <span class="m">${esc(s.title)} · ${esc(s.model)}</span></div>
+        <div class="mono m">${esc(l.loc || l.selector)} &lt;${esc(l.tag)}&gt; · ${l.viewport_w}px</div>
+        <div>${esc(l.comment)}</div>
+        <div class="m" style="font-size:12px">${esc(l.annotator)} · ${new Date(l.created_at * 1000).toLocaleString()}</div>
+        <div class="acts"><a class="btn" href="/__slop/open/${l.site_id}?view=${l.viewport_w < 700 ? 'mobile' : 'desktop'}&focus=${l.id}">Open in site</a>
+          ${l.ctx_url ? `<button class="btn" data-ctx="${l.ctx_url}">Context shot</button>` : ''}
+          <button class="btn" data-re="${l.id}">Re-capture</button><button class="btn" data-del="${l.id}" style="color:#be123c">Delete</button></div>
+      </div></div>`;
+  }).join('') || '<p class="m">No labels yet.</p>';
+}
+['fs', 'fa'].forEach((id) => sel(id).onchange = render);
+sel('g').onclick = async (e) => {
+  const t = e.target;
+  if (t.tagName === 'IMG' || t.dataset.ctx) { sel('dimg').src = t.dataset.ctx && t.tagName !== 'IMG' ? t.dataset.ctx : t.src; sel('dlg').showModal(); }
+  if (t.dataset.re) { await fetch(`/__slop/api/labels/${t.dataset.re}/recapture`, { method: 'POST' }); t.textContent = 'queued…'; setTimeout(load, 6000); }
+  if (t.dataset.del && confirm('Delete label?')) { await fetch(`/__slop/api/labels/${t.dataset.del}`, { method: 'DELETE' }); load(); }
+};
+sel('dlg').onclick = () => sel('dlg').close();
+load();
+</script>
+</body></html>

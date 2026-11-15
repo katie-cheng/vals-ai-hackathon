@@ -25,6 +25,8 @@ Team: Ali, Katie, Aidan. Append one-line entries as `- text [who; YYYY-MM-DD]`. 
 - Cross-origin pages can't be inspected from an overlay; SlopLabel serves local mirrors instead [Katie; 2026-11-14]
 - `katie-cheng/vals-ai-hackathon` is the SlopBench repo; the old Total Benchmark Island code was removed [Ali; 2026-11-15]
 - Hackathon README must start with a one-paragraph, entirely human-written overview [Aidan; 2026-11-14]
+- SlopLabel DB exports (JSON/CSV/SQLite) and all element screenshots live in `data/sloplabel/`; the tool source is in `tools/sloplabel/`. Labels are slop-only (no verdict/severity/tags; comment optional). [devin for Katie; 2026-11-15]
+- `harbor-tasks/v1-deb-html/` holds Aidan's 26 v1 DEB tasks (single-file HTML, render-only verifier). Kept as a draft reference; the real tasks should be multi-file React with slop graders. [devin for Katie; 2026-11-15]
 
 ## Open questions
 - How to use Design Arena votes: sanity-check hit rate, fit per-check weights via logistic regression on DOM-feature differences (controlling for broken/brief-ignoring sites), optionally pretrain the probe. Blocked on how many tournaments/votes the arena API exposes [Ali; 2026-11-14]
