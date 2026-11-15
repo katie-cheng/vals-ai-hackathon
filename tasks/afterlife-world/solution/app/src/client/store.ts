@@ -140,7 +140,7 @@ export async function boot() {
   started = true;
   bus.on((e) => {
     if (e.t === "changed") {
-      if (state.account && e.ids.includes(state.account.id)) void refreshAccount();
+      if (state.account && e.ids.includes(state.account.id)) void refreshAccount(), void refreshNotes(), void refreshMarket();
       if (e.ids.includes("market")) void refreshMarket();
       if (e.ids.includes("plots")) void refreshPlots();
       if (e.ids.some((i) => i !== state.account?.id && state.profiles[i])) {
