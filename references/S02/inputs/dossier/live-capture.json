@@ -1,0 +1,7472 @@
+{
+ "routes": {
+  "/": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 2864,
+     "components": [
+      "src/App.tsx",
+      "src/pages/LandingPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       32
+      ],
+      [
+       "ui-sans-serif 700",
+       28
+      ],
+      [
+       "ui-monospace 400",
+       27
+      ],
+      [
+       "ui-sans-serif 600",
+       8
+      ],
+      [
+       "ui-sans-serif 900",
+       6
+      ],
+      [
+       "ui-sans-serif 500",
+       6
+      ],
+      [
+       "ui-sans-serif 800",
+       3
+      ],
+      [
+       "ui-monospace 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       46
+      ],
+      [
+       "11px",
+       22
+      ],
+      [
+       "24px",
+       9
+      ],
+      [
+       "18px",
+       8
+      ],
+      [
+       "14px",
+       8
+      ],
+      [
+       "10px",
+       7
+      ],
+      [
+       "16px",
+       6
+      ],
+      [
+       "60px",
+       2
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       34
+      ],
+      [
+       "rgb(255, 255, 255)",
+       21
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       13
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       11
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       7
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       5
+      ],
+      [
+       "oklch(0.879 0.169 91.605)",
+       3
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       17
+      ],
+      [
+       "4px",
+       9
+      ],
+      [
+       "16px",
+       7
+      ],
+      [
+       "3.35544e+07px",
+       6
+      ],
+      [
+       "8px",
+       6
+      ],
+      [
+       "24px",
+       2
+      ]
+     ],
+     "gradients": 4,
+     "blurs": 2,
+     "uppercase": 2,
+     "animations": {},
+     "text": "Production-Grade Full-Stack Curriculum \u2022 42 Lessons\nMaster Full-Stack Web Development from Zero to Production.\n\nModeled after leading LMS platforms (Coursera, Scrimba, Udemy). Engineered specifically for the AjinLab IT Beginner curriculum: 42 video lessons across 6 chapters, in-browser live code sandbox, chapter quizzes, and verifiable printable certificates of completion.\n\nResume Lesson 4\nExplore 6 Chapters\nInteractive Sandbox\n\n42\n\nVideo Lessons\n\n6\n\nStructured Chapters\n\n100%\n\nFree & Open Source\n\nin-lesson-scratchpad.js\nLive Evaluation\n\n// Chapter 3: Web Development Fundamentals\n\nconst platform = \"IT Beginner\";\n\nconst curriculum = {\n\nlessons: 42,\n\nframework: \"Vue.js + REST APIs\",\n\nhasQuizzes: true,\n\nprintableCertificate: true\n\n};\n\nconsole.log(\"Ready to learn full-stack web tech!\");\n\nPress \"Run JavaScript\" to evaluate\nRun JS\n\nGold Seal Credentials\n\nVerifiable Code\n\nTabbed Code Sandbox\n\nHTML \u2022 CSS \u2022 JS\n\nENGINEERED FOR STUDENT SUCCESS\n\nEverything you need to master modern software development\n\nNo fragmented YouTube tutorials or outdated text blogs. Every lesson is integrated with active learning tools.\n\nEnhanced Video Player\n\nAuto-resume from your exact second, 1.25x / 1.5x / 2x playback speed, power-user keyboard shortcuts (Space, \u2190, \u2192), and interactive transcript jump links.\n\nIn-Browser Code Sandbox\n\nTabbed editor for HTML, CSS, and JavaScript with isolated sandboxed iframe preview, console log capture, and 4 course practice presets saved directly in your browser.\n\nChapter Assessments\n\nMulti-question chapter quizzes with instant visual feedback, comprehensive technical explanations, score tracking, and automated certificate issuance upon passing.\n\nVerifiable Certificates\n\nUnlock official gold-sealed completion credentials with unique verification serial codes and print-optimized PDF layout to showcase on LinkedIn or your portfolio.\n\nCommunity Q&A & Notes\n\nPost lesson-specific questions with verified instructor badges, upvote peer solutions, and create timestamped notes that jump the video to that exact second.\n\nCheatsheets & Handbooks\n\nInstant syntax references covering JavaScript ES6+, HTML5 semantic tags, CSS Box Model & Flexbox, Agile & Scrum ceremonies, and Command Line / NPM commands.\n\nCOMPLETE SYLLABUS\n42 Lessons across 6 Structured Chapters\n\nClick any chapter below to explore the detailed lesson curriculum and key concepts.\n\nView Full Interactive Catalog\n\ud83d\ude80\nChapter 1\n\u2022 3 Lessons\n\u2022 1.5 hrs\nGetting Started\n\nWelcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.\n\n1. Welcome & Course Overview\n12m \u2192\n2. Curriculum & Learning Path\n15m \u2192\n3. How to Access Course Resources\n10m \u2192\nKey Concepts:\nCourse Roadmap\nDeveloper Setup\nLearning Strategies\nResource Access\nTake Chapter 1 Assessment \u2192\n\u2699\ufe0f\nChapter 2\n\u2022 3 Lessons\n\u2022 2.5 hrs\nSoftware Development Basics\n\ud83c\udf10\nChapter 3\n\u2022 16 Lessons\n\u2022 8.0 hrs\nWeb Development Fundamentals\n\ud83d\udee0\ufe0f\nChapter 4\n\u2022 14 Lessons\n\u2022 7.5 hrs\nFrontend Development & Tools\n\u26a1\nChapter 5\n\u2022 5 Lessons\n\u2022 4.0 hrs\nVue.js Framework & Single Page Apps\n\ud83d\udd0c\nChapter 6\n\u2022 1 Lessons\n\u2022 2.0 hrs\nFull-Stack Architecture & Backend Communication\nStart Your Daily Study Streak Today\nReady to code your first web application?\n\nJump straight into Lesson 1 or continue from where you paused. All progress, notes, code snippets, and certificates are saved automatically in your browser.\n\nStart From Lesson 1 (Welcome)\nOpen Student Learning Hub"
+    },
+    {
+     "region": "footer",
+     "top": 2929,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 5001,
+     "components": [
+      "src/App.tsx",
+      "src/pages/LandingPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       32
+      ],
+      [
+       "ui-sans-serif 700",
+       28
+      ],
+      [
+       "ui-monospace 400",
+       27
+      ],
+      [
+       "ui-sans-serif 600",
+       8
+      ],
+      [
+       "ui-sans-serif 900",
+       6
+      ],
+      [
+       "ui-sans-serif 500",
+       6
+      ],
+      [
+       "ui-sans-serif 800",
+       3
+      ],
+      [
+       "ui-monospace 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       47
+      ],
+      [
+       "11px",
+       22
+      ],
+      [
+       "14px",
+       13
+      ],
+      [
+       "24px",
+       10
+      ],
+      [
+       "10px",
+       7
+      ],
+      [
+       "18px",
+       6
+      ],
+      [
+       "36px",
+       2
+      ],
+      [
+       "16px",
+       2
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       34
+      ],
+      [
+       "rgb(255, 255, 255)",
+       21
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       13
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       11
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       7
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       5
+      ],
+      [
+       "oklch(0.879 0.169 91.605)",
+       3
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       17
+      ],
+      [
+       "4px",
+       9
+      ],
+      [
+       "16px",
+       7
+      ],
+      [
+       "3.35544e+07px",
+       6
+      ],
+      [
+       "8px",
+       6
+      ],
+      [
+       "24px",
+       2
+      ]
+     ],
+     "gradients": 4,
+     "blurs": 2,
+     "uppercase": 2,
+     "animations": {},
+     "text": "Production-Grade Full-Stack Curriculum \u2022 42 Lessons\nMaster Full-Stack Web Development from Zero to Production.\n\nModeled after leading LMS platforms (Coursera, Scrimba, Udemy). Engineered specifically for the AjinLab IT Beginner curriculum: 42 video lessons across 6 chapters, in-browser live code sandbox, chapter quizzes, and verifiable printable certificates of completion.\n\nResume Lesson 4\nExplore 6 Chapters\nInteractive Sandbox\n\n42\n\nVideo Lessons\n\n6\n\nStructured Chapters\n\n100%\n\nFree & Open Source\n\nin-lesson-scratchpad.js\nLive Evaluation\n\n// Chapter 3: Web Development Fundamentals\n\nconst platform = \"IT Beginner\";\n\nconst curriculum = {\n\nlessons: 42,\n\nframework: \"Vue.js + REST APIs\",\n\nhasQuizzes: true,\n\nprintableCertificate: true\n\n};\n\nconsole.log(\"Ready to learn full-stack web tech!\");\n\nPress \"Run JavaScript\" to evaluate\nRun JS\n\nGold Seal Credentials\n\nVerifiable Code\n\nTabbed Code Sandbox\n\nHTML \u2022 CSS \u2022 JS\n\nENGINEERED FOR STUDENT SUCCESS\n\nEverything you need to master modern software development\n\nNo fragmented YouTube tutorials or outdated text blogs. Every lesson is integrated with active learning tools.\n\nEnhanced Video Player\n\nAuto-resume from your exact second, 1.25x / 1.5x / 2x playback speed, power-user keyboard shortcuts (Space, \u2190, \u2192), and interactive transcript jump links.\n\nIn-Browser Code Sandbox\n\nTabbed editor for HTML, CSS, and JavaScript with isolated sandboxed iframe preview, console log capture, and 4 course practice presets saved directly in your browser.\n\nChapter Assessments\n\nMulti-question chapter quizzes with instant visual feedback, comprehensive technical explanations, score tracking, and automated certificate issuance upon passing.\n\nVerifiable Certificates\n\nUnlock official gold-sealed completion credentials with unique verification serial codes and print-optimized PDF layout to showcase on LinkedIn or your portfolio.\n\nCommunity Q&A & Notes\n\nPost lesson-specific questions with verified instructor badges, upvote peer solutions, and create timestamped notes that jump the video to that exact second.\n\nCheatsheets & Handbooks\n\nInstant syntax references covering JavaScript ES6+, HTML5 semantic tags, CSS Box Model & Flexbox, Agile & Scrum ceremonies, and Command Line / NPM commands.\n\nCOMPLETE SYLLABUS\n42 Lessons across 6 Structured Chapters\n\nClick any chapter below to explore the detailed lesson curriculum and key concepts.\n\nView Full Interactive Catalog\n\ud83d\ude80\nChapter 1\n\u2022 3 Lessons\n\u2022 1.5 hrs\nGetting Started\n\nWelcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.\n\n1. Welcome & Course Overview\n12m \u2192\n2. Curriculum & Learning Path\n15m \u2192\n3. How to Access Course Resources\n10m \u2192\nKey Concepts:\nCourse Roadmap\nDeveloper Setup\nLearning Strategies\nResource Access\nTake Chapter 1 Assessment \u2192\n\u2699\ufe0f\nChapter 2\n\u2022 3 Lessons\n\u2022 2.5 hrs\nSoftware Development Basics\n\ud83c\udf10\nChapter 3\n\u2022 16 Lessons\n\u2022 8.0 hrs\nWeb Development Fundamentals\n\ud83d\udee0\ufe0f\nChapter 4\n\u2022 14 Lessons\n\u2022 7.5 hrs\nFrontend Development & Tools\n\u26a1\nChapter 5\n\u2022 5 Lessons\n\u2022 4.0 hrs\nVue.js Framework & Single Page Apps\n\ud83d\udd0c\nChapter 6\n\u2022 1 Lessons\n\u2022 2.0 hrs\nFull-Stack Architecture & Backend Communication\nStart Your Daily Study Streak Today\nReady to code your first web application?\n\nJump straight into Lesson 1 or continue from where you paused. All progress, notes, code snippets, and certificates are saved automatically in your browser.\n\nStart From Lesson 1 (Welcome)\nOpen Student Learning Hub"
+    },
+    {
+     "region": "footer",
+     "top": 5066,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/dashboard": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1079,
+     "components": [
+      "src/App.tsx",
+      "src/pages/DashboardPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       35
+      ],
+      [
+       "ui-sans-serif 700",
+       29
+      ],
+      [
+       "ui-sans-serif 600",
+       16
+      ],
+      [
+       "ui-monospace 700",
+       8
+      ],
+      [
+       "ui-sans-serif 900",
+       4
+      ],
+      [
+       "ui-sans-serif 800",
+       3
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       53
+      ],
+      [
+       "11px",
+       16
+      ],
+      [
+       "14px",
+       12
+      ],
+      [
+       "20px",
+       6
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "24px",
+       5
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       34
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       19
+      ],
+      [
+       "rgb(255, 255, 255)",
+       13
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       10
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklab(0.828 0.018348 0.188107 / 0.9)",
+       6
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       5
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       15
+      ],
+      [
+       "12px",
+       14
+      ],
+      [
+       "8px",
+       7
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "16px",
+       1
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "gradients": 2,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "STUDENT DASHBOARD\nActive Learner\nWelcome back, Alex Chen!\n\nPick up right where you left off. You are 7% through the IT Beginner curriculum.\n\nPlayground\nCertificates (1)\nCompleted\n\n3 / 42\n\nDaily Streak\n\n5 Days\n\nConsistent daily study logged\n\nIn-Progress\n\n1\n\nLectures started & tracked\n\nEarned Credentials\n\n1\n\nCertificates unlocked\n\nResume Your Lecture\nLesson #4 of 42\nSoftware Development Workflow\n\nUnderstand the end-to-end software development lifecycle from requirements to deployment.\n\nDuration: 18 min\nChapter: 2\nJump into Lesson \u2192\nCurriculum Chapters\nView All \u2192\n\ud83d\ude80\nChapter 1\nGetting Started\n100%\n3 Lessons\nSyllabus\n\u2022\nQuiz\n\u2699\ufe0f\nChapter 2\nSoftware Development Basics\n0%\n3 Lessons\nSyllabus\n\u2022\nQuiz\n\ud83c\udf10\nChapter 3\nWeb Development Fundamentals\n0%\n16 Lessons\nSyllabus\n\u2022\nQuiz\n\ud83d\udee0\ufe0f\nChapter 4\nFrontend Development & Tools\n0%\n14 Lessons\nSyllabus\n\u2022\nQuiz\n\u26a1\nChapter 5\nVue.js Framework & Single Page Apps\n0%\n5 Lessons\nSyllabus\n\u2022\nQuiz\n\ud83d\udd0c\nChapter 6\nFull-Stack Architecture & Backend Communication\n0%\n1 Lessons\nSyllabus\n\u2022\nQuiz\nBookmarked Lectures\n3\nLesson 4\nVariables & Data Types\nLesson 14\nCSS: Selectors, Box Model & Flexbox\nLesson 16\nBuilding a Complete Website with HTML, CSS & JS\nRecent Study Notes\n2\nLesson 1\n@2:00\n2026-11-04 14:30\n\nRemember: Consistency and typing code out by hand is 10x better than passive viewing.\n\nLesson 4\n@3:00\n2026-11-05 10:15\n\nSDLC: Requirements -> System Architecture -> Coding -> QA Testing -> Deployment.\n\nDeveloper Cheatsheets\n\nNeed a quick refresher on JavaScript array methods, Flexbox centering, or Git commands?\n\nBrowse Technical Cheatsheets \u2192"
+    },
+    {
+     "region": "footer",
+     "top": 1144,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 2524,
+     "components": [
+      "src/App.tsx",
+      "src/pages/DashboardPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       35
+      ],
+      [
+       "ui-sans-serif 700",
+       29
+      ],
+      [
+       "ui-sans-serif 600",
+       16
+      ],
+      [
+       "ui-monospace 700",
+       8
+      ],
+      [
+       "ui-sans-serif 900",
+       4
+      ],
+      [
+       "ui-sans-serif 800",
+       3
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       56
+      ],
+      [
+       "11px",
+       16
+      ],
+      [
+       "14px",
+       9
+      ],
+      [
+       "20px",
+       7
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "24px",
+       5
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       34
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       19
+      ],
+      [
+       "rgb(255, 255, 255)",
+       13
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       10
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklab(0.828 0.018348 0.188107 / 0.9)",
+       6
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       5
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       15
+      ],
+      [
+       "12px",
+       14
+      ],
+      [
+       "8px",
+       7
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "16px",
+       1
+      ],
+      [
+       "6px",
+       1
+      ]
+     ],
+     "gradients": 2,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "STUDENT DASHBOARD\nActive Learner\nWelcome back, Alex Chen!\n\nPick up right where you left off. You are 7% through the IT Beginner curriculum.\n\nPlayground\nCertificates (1)\nCompleted\n\n3 / 42\n\nDaily Streak\n\n5 Days\n\nConsistent daily study logged\n\nIn-Progress\n\n1\n\nLectures started & tracked\n\nEarned Credentials\n\n1\n\nCertificates unlocked\n\nResume Your Lecture\nLesson #4 of 42\nSoftware Development Workflow\n\nUnderstand the end-to-end software development lifecycle from requirements to deployment.\n\nDuration: 18 min\nChapter: 2\nJump into Lesson \u2192\nCurriculum Chapters\nView All \u2192\n\ud83d\ude80\nChapter 1\nGetting Started\n100%\n3 Lessons\nSyllabus\n\u2022\nQuiz\n\u2699\ufe0f\nChapter 2\nSoftware Development Basics\n0%\n3 Lessons\nSyllabus\n\u2022\nQuiz\n\ud83c\udf10\nChapter 3\nWeb Development Fundamentals\n0%\n16 Lessons\nSyllabus\n\u2022\nQuiz\n\ud83d\udee0\ufe0f\nChapter 4\nFrontend Development & Tools\n0%\n14 Lessons\nSyllabus\n\u2022\nQuiz\n\u26a1\nChapter 5\nVue.js Framework & Single Page Apps\n0%\n5 Lessons\nSyllabus\n\u2022\nQuiz\n\ud83d\udd0c\nChapter 6\nFull-Stack Architecture & Backend Communication\n0%\n1 Lessons\nSyllabus\n\u2022\nQuiz\nBookmarked Lectures\n3\nLesson 4\nVariables & Data Types\nLesson 14\nCSS: Selectors, Box Model & Flexbox\nLesson 16\nBuilding a Complete Website with HTML, CSS & JS\nRecent Study Notes\n2\nLesson 1\n@2:00\n2026-11-04 14:30\n\nRemember: Consistency and typing code out by hand is 10x better than passive viewing.\n\nLesson 4\n@3:00\n2026-11-05 10:15\n\nSDLC: Requirements -> System Architecture -> Coding -> QA Testing -> Deployment.\n\nDeveloper Cheatsheets\n\nNeed a quick refresher on JavaScript array methods, Flexbox centering, or Git commands?\n\nBrowse Technical Cheatsheets \u2192"
+    },
+    {
+     "region": "footer",
+     "top": 2589,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/courses": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 3782,
+     "components": [
+      "src/App.tsx",
+      "src/pages/CoursesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       111
+      ],
+      [
+       "ui-sans-serif 600",
+       89
+      ],
+      [
+       "ui-sans-serif 700",
+       62
+      ],
+      [
+       "ui-sans-serif 900",
+       6
+      ],
+      [
+       "ui-monospace 700",
+       6
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       114
+      ],
+      [
+       "11px",
+       64
+      ],
+      [
+       "14px",
+       55
+      ],
+      [
+       "10px",
+       29
+      ],
+      [
+       "24px",
+       12
+      ],
+      [
+       "30px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       105
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       60
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       42
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       28
+      ],
+      [
+       "rgb(255, 255, 255)",
+       13
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       10
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       6
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       91
+      ],
+      [
+       "3.35544e+07px",
+       55
+      ],
+      [
+       "12px",
+       55
+      ],
+      [
+       "4px",
+       28
+      ],
+      [
+       "16px",
+       6
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "CURRICULUM CATALOG\n6 Chapters \u2022 42 Lessons\nFull-Stack Course Curriculum\n\nProgress sequentially through the 6 structured chapters. Watch lectures, run code in the live sandbox, test your knowledge with quizzes, and claim verified credentials.\n\nAll Chapters (6)\n\ud83d\ude80\nCh 1: Getting Started\n\u2699\ufe0f\nCh 2: Software Development Basics\n\ud83c\udf10\nCh 3: Web Development Fundamentals\n\ud83d\udee0\ufe0f\nCh 4: Frontend Development & Tools\n\u26a1\nCh 5: Vue.js Framework & Single Page Apps\n\ud83d\udd0c\nCh 6: Full-Stack Architecture & Backend Communication\n\ud83d\ude80\nChapter 1\n\u2022 3 Lessons\n\u2022 1.5 hrs\nGetting Started\n\nWelcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.\n\nCompletion\n\n3 / 3 (100%)\n\nChapter Quiz\nCertificate\nWelcome & Course Overview\n12 min\n\u2022 Completed\nWatch\nCurriculum & Learning Path\n15 min\n\u2022 Completed\nWatch\nHow to Access Course Resources\n10 min\n\u2022 Completed\nWatch\nKey Topics:\nCourse Roadmap\nDeveloper Setup\nLearning Strategies\nResource Access\n\u2699\ufe0f\nChapter 2\n\u2022 3 Lessons\n\u2022 2.5 hrs\nSoftware Development Basics\n\nLearn the fundamentals of modern software engineering workflows, Agile methodology, Scrum frameworks, and Jira task tracking.\n\nCompletion\n\n0 / 3 (0%)\n\nChapter Quiz\n1\nSoftware Development Workflow\n18 min\n\u2022 In Progress\nWatch\n2\nWhat Is Agile and Scrum\n22 min\nWatch\n3\nBacklog and Scrum Board in Jira\n20 min\nWatch\nKey Topics:\nSDLC Workflow\nAgile Principles\nScrum Sprints\nJira Backlog & Kanban\n\ud83c\udf10\nChapter 3\n\u2022 16 Lessons\n\u2022 8.0 hrs\nWeb Development Fundamentals\n\nMaster how the web works, JavaScript syntax, variables, data types, loops, arrays, functions, and core HTML5 & CSS3 layout techniques.\n\nCompletion\n\n0 / 16 (0%)\n\nChapter Quiz\n1\nChapter Introduction: Web Fundamentals\n10 min\nWatch\n2\nHow Websites Work\n24 min\nWatch\n3\nWhat Is JavaScript\n16 min\nWatch\n4\nVariables & Data Types\n25 min\nWatch\n5\nHow to Execute JavaScript\n14 min\nWatch\n6\nConditionals & Comparators\n28 min\nWatch\n7\nObjects\n26 min\nWatch\n8\nArrays\n24 min\nWatch\n9\nLoops\n26 min\nWatch\n10\nFunctions\n30 min\nWatch\n11\nBuilt-in Functions & Array Methods\n32 min\nWatch\n12\nIntro to HTML & CSS\n18 min\nWatch\n13\nHTML: Elements, Semantics & Forms\n26 min\nWatch\n14\nCSS: Selectors, Box Model & Flexbox\n34 min\nWatch\n15\nHTML Head Tags & Meta Attributes\n16 min\nWatch\n16\nBuilding a Complete Website with HTML, CSS & JS\n38 min\nWatch\nKey Topics:\nHTTP & Browser Engine\nJavaScript ES6+\nHTML5 Semantics\nCSS3 & Flexbox\nDOM Manipulation\n\ud83d\udee0\ufe0f\nChapter 4\n\u2022 14 Lessons\n\u2022 7.5 hrs\nFrontend Development & Tools\n\nBuild real-world teamable web applications, explore modern JavaScript frameworks, package managers (NPM), semver, and terminal commands.\n\nCompletion\n\n0 / 14 (0%)\n\nChapter Quiz\n1\nChapter Introduction: Frontend Development & Tools\n12 min\nWatch\n2\nDevelop Teamable Demo App with HTML, CSS & JS\n35 min\nWatch\n3\nJavaScript Frameworks Overview\n22 min\nWatch\n4\nMaintaining JS Framework Projects\n18 min\nWatch\n5\nOpen Source Explained\n16 min\nWatch\n6\nLibraries Explained\n18 min\nWatch\n7\nNPM Registry\n20 min\nWatch\n8\nVersioning in Software Development (SemVer)\n18 min\nWatch\n9\nHow to Use Libraries in JS Applications\n22 min\nWatch\n10\nNPM CLI Essential Commands\n20 min\nWatch\n11\nCommand Line & Operating System Basics\n24 min\nWatch\n12\nInstall NPM on macOS\n15 min\nWatch\n13\nInstall NPM on Windows\n16 min\nWatch\n14\nInstall JS Libraries with NPM\n22 min\nWatch\nKey Topics:\nModern Frameworks\nNPM Registry & CLI\nSemantic Versioning\nTerminal Basics\nLibrary Integration\n\u26a1\nChapter 5\n\u2022 5 Lessons\n\u2022 4.0 hrs\nVue.js Framework & Single Page Apps\n\nExplore modern reactive frontend architecture, Vue component lifecycle, two-way data binding, reactivity, and building complete responsive UIs.\n\nCompletion\n\n0 / 5 (0%)\n\nChapter Quiz\n1\nChapter Introduction: Vue.js Framework\n14 min\nWatch\n2\nVue.js Tutorial Part 1: Core Concepts & Directives\n30 min\nWatch\n3\nVue.js Tutorial Part 2: Reactive State & Computed Properties\n32 min\nWatch\n4\nImplement Frontend with HTML, CSS & Vue.js Part 1\n36 min\nWatch\n5\nImplement Frontend with HTML, CSS & Vue.js Part 2\n38 min\nWatch\nKey Topics:\nReactivity System\nDirectives (v-bind, v-model)\nComponent State\nEvent Handling\nResponsive UI\n\ud83d\udd0c\nChapter 6\n\u2022 1 Lessons\n\u2022 2.0 hrs\nFull-Stack Architecture & Backend Communication\n\nUnderstand client-server architecture, HTTP request-response cycles, RESTful APIs, JSON data exchange, and end-to-end integration.\n\nCompletion\n\n0 / 1 (0%)\n\nChapter Quiz\n1\nFrontend & Backend Communication Explained\n42 min\nWatch\nKey Topics:\nClient-Server Model\nHTTP Verbs (GET/POST/PUT/DELETE)\nRESTful Endpoints\nJSON Payloads\nCORS & Security"
+    },
+    {
+     "region": "footer",
+     "top": 3847,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 6126,
+     "components": [
+      "src/App.tsx",
+      "src/pages/CoursesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       111
+      ],
+      [
+       "ui-sans-serif 600",
+       89
+      ],
+      [
+       "ui-sans-serif 700",
+       62
+      ],
+      [
+       "ui-sans-serif 900",
+       6
+      ],
+      [
+       "ui-monospace 700",
+       6
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       162
+      ],
+      [
+       "11px",
+       64
+      ],
+      [
+       "10px",
+       29
+      ],
+      [
+       "14px",
+       7
+      ],
+      [
+       "24px",
+       6
+      ],
+      [
+       "20px",
+       6
+      ],
+      [
+       "30px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       105
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       60
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       42
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       28
+      ],
+      [
+       "rgb(255, 255, 255)",
+       13
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       10
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       6
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       91
+      ],
+      [
+       "3.35544e+07px",
+       55
+      ],
+      [
+       "12px",
+       55
+      ],
+      [
+       "4px",
+       28
+      ],
+      [
+       "16px",
+       6
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "CURRICULUM CATALOG\n6 Chapters \u2022 42 Lessons\nFull-Stack Course Curriculum\n\nProgress sequentially through the 6 structured chapters. Watch lectures, run code in the live sandbox, test your knowledge with quizzes, and claim verified credentials.\n\nAll Chapters (6)\n\ud83d\ude80\nCh 1: Getting Started\n\u2699\ufe0f\nCh 2: Software Development Basics\n\ud83c\udf10\nCh 3: Web Development Fundamentals\n\ud83d\udee0\ufe0f\nCh 4: Frontend Development & Tools\n\u26a1\nCh 5: Vue.js Framework & Single Page Apps\n\ud83d\udd0c\nCh 6: Full-Stack Architecture & Backend Communication\n\ud83d\ude80\nChapter 1\n\u2022 3 Lessons\n\u2022 1.5 hrs\nGetting Started\n\nWelcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.\n\nChapter Quiz\nCertificate\nWelcome & Course Overview\n12 min\n\u2022 Completed\nWatch\nCurriculum & Learning Path\n15 min\n\u2022 Completed\nWatch\nHow to Access Course Resources\n10 min\n\u2022 Completed\nWatch\nKey Topics:\nCourse Roadmap\nDeveloper Setup\nLearning Strategies\nResource Access\n\u2699\ufe0f\nChapter 2\n\u2022 3 Lessons\n\u2022 2.5 hrs\nSoftware Development Basics\n\nLearn the fundamentals of modern software engineering workflows, Agile methodology, Scrum frameworks, and Jira task tracking.\n\nChapter Quiz\n1\nSoftware Development Workflow\n18 min\n\u2022 In Progress\nWatch\n2\nWhat Is Agile and Scrum\n22 min\nWatch\n3\nBacklog and Scrum Board in Jira\n20 min\nWatch\nKey Topics:\nSDLC Workflow\nAgile Principles\nScrum Sprints\nJira Backlog & Kanban\n\ud83c\udf10\nChapter 3\n\u2022 16 Lessons\n\u2022 8.0 hrs\nWeb Development Fundamentals\n\nMaster how the web works, JavaScript syntax, variables, data types, loops, arrays, functions, and core HTML5 & CSS3 layout techniques.\n\nChapter Quiz\n1\nChapter Introduction: Web Fundamentals\n10 min\nWatch\n2\nHow Websites Work\n24 min\nWatch\n3\nWhat Is JavaScript\n16 min\nWatch\n4\nVariables & Data Types\n25 min\nWatch\n5\nHow to Execute JavaScript\n14 min\nWatch\n6\nConditionals & Comparators\n28 min\nWatch\n7\nObjects\n26 min\nWatch\n8\nArrays\n24 min\nWatch\n9\nLoops\n26 min\nWatch\n10\nFunctions\n30 min\nWatch\n11\nBuilt-in Functions & Array Methods\n32 min\nWatch\n12\nIntro to HTML & CSS\n18 min\nWatch\n13\nHTML: Elements, Semantics & Forms\n26 min\nWatch\n14\nCSS: Selectors, Box Model & Flexbox\n34 min\nWatch\n15\nHTML Head Tags & Meta Attributes\n16 min\nWatch\n16\nBuilding a Complete Website with HTML, CSS & JS\n38 min\nWatch\nKey Topics:\nHTTP & Browser Engine\nJavaScript ES6+\nHTML5 Semantics\nCSS3 & Flexbox\nDOM Manipulation\n\ud83d\udee0\ufe0f\nChapter 4\n\u2022 14 Lessons\n\u2022 7.5 hrs\nFrontend Development & Tools\n\nBuild real-world teamable web applications, explore modern JavaScript frameworks, package managers (NPM), semver, and terminal commands.\n\nChapter Quiz\n1\nChapter Introduction: Frontend Development & Tools\n12 min\nWatch\n2\nDevelop Teamable Demo App with HTML, CSS & JS\n35 min\nWatch\n3\nJavaScript Frameworks Overview\n22 min\nWatch\n4\nMaintaining JS Framework Projects\n18 min\nWatch\n5\nOpen Source Explained\n16 min\nWatch\n6\nLibraries Explained\n18 min\nWatch\n7\nNPM Registry\n20 min\nWatch\n8\nVersioning in Software Development (SemVer)\n18 min\nWatch\n9\nHow to Use Libraries in JS Applications\n22 min\nWatch\n10\nNPM CLI Essential Commands\n20 min\nWatch\n11\nCommand Line & Operating System Basics\n24 min\nWatch\n12\nInstall NPM on macOS\n15 min\nWatch\n13\nInstall NPM on Windows\n16 min\nWatch\n14\nInstall JS Libraries with NPM\n22 min\nWatch\nKey Topics:\nModern Frameworks\nNPM Registry & CLI\nSemantic Versioning\nTerminal Basics\nLibrary Integration\n\u26a1\nChapter 5\n\u2022 5 Lessons\n\u2022 4.0 hrs\nVue.js Framework & Single Page Apps\n\nExplore modern reactive frontend architecture, Vue component lifecycle, two-way data binding, reactivity, and building complete responsive UIs.\n\nChapter Quiz\n1\nChapter Introduction: Vue.js Framework\n14 min\nWatch\n2\nVue.js Tutorial Part 1: Core Concepts & Directives\n30 min\nWatch\n3\nVue.js Tutorial Part 2: Reactive State & Computed Properties\n32 min\nWatch\n4\nImplement Frontend with HTML, CSS & Vue.js Part 1\n36 min\nWatch\n5\nImplement Frontend with HTML, CSS & Vue.js Part 2\n38 min\nWatch\nKey Topics:\nReactivity System\nDirectives (v-bind, v-model)\nComponent State\nEvent Handling\nResponsive UI\n\ud83d\udd0c\nChapter 6\n\u2022 1 Lessons\n\u2022 2.0 hrs\nFull-Stack Architecture & Backend Communication\n\nUnderstand client-server architecture, HTTP request-response cycles, RESTful APIs, JSON data exchange, and end-to-end integration.\n\nChapter Quiz\n1\nFrontend & Backend Communication Explained\n42 min\nWatch\nKey Topics:\nClient-Server Model\nHTTP Verbs (GET/POST/PUT/DELETE)\nRESTful Endpoints\nJSON Payloads\nCORS & Security"
+    },
+    {
+     "region": "footer",
+     "top": 6191,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/lesson/1": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1281,
+     "components": [
+      "src/App.tsx",
+      "src/pages/LessonPlayerPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       18
+      ],
+      [
+       "ui-sans-serif 700",
+       16
+      ],
+      [
+       "ui-monospace 400",
+       11
+      ],
+      [
+       "ui-sans-serif 600",
+       6
+      ],
+      [
+       "ui-monospace 700",
+       3
+      ],
+      [
+       "ui-sans-serif 900",
+       1
+      ],
+      [
+       "JetBrains Mono 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       29
+      ],
+      [
+       "11px",
+       10
+      ],
+      [
+       "10px",
+       6
+      ],
+      [
+       "14px",
+       5
+      ],
+      [
+       "16px",
+       4
+      ],
+      [
+       "30px",
+       2
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       20
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       14
+      ],
+      [
+       "rgb(255, 255, 255)",
+       5
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       4
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       4
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       3
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       2
+      ],
+      [
+       "oklch(0.879 0.169 91.605)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       21
+      ],
+      [
+       "3.35544e+07px",
+       8
+      ],
+      [
+       "4px",
+       7
+      ],
+      [
+       "16px",
+       3
+      ],
+      [
+       "12px",
+       2
+      ]
+     ],
+     "gradients": 3,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "Curriculum\n>\nCh 1: Getting Started\n>\nLesson 1: Welcome & Course Overview\nBookmark\nCompleted\nIT Beginner \u2022 Chapter 1\n0001_1_Welcome_Course_Ov...\n\ud83d\ude80LESSON #1\nWelcome & Course Overview\n\nGet introduced to the IT Beginner curriculum and understand what you will build step-by-step.\n\nPlaying: 12:00 / 12:00\n\u2022\n1x Speed\n12:00\n12:00\n0.75x\n1x\n1.25x\n1.5x\n2x\nNext: #2 Curriculum & Learning Path\nChapter 1: Getting Started\n3 / 3\n\u2713\nWelcome & Course Overview\n12m\n\u2713\nCurriculum & Learning Path\n15m\n\u2713\nHow to Access Course Resources\n10m\nChapter 1 Quiz\n\u2192\nOverview & Objectives\nLive Scratchpad\nMy Notes (1)\nQ&A Community (1)\nInteractive Transcript\nLearning Objectives\nUnderstand the complete 6-chapter journey from zero to full-stack foundation\nLearn the active recall and hands-on coding method for maximum retention\nSet up your learning mindset for software engineering success\nLesson Code Reference\nCopy to Scratchpad\n// Welcome to IT Beginner!\nconsole.log(\"Hello, Future Developer!\");\nconst student = {\n  status: \"Ready to Learn\",\n  goal: \"Full-Stack Web Proficiency\",\n  startedAt: new Date().getFullYear()\n};\nconsole.table(student);\nKey Takeaways\n\u2022 No prior math or coding experience is required to begin.\n\u2022 Consistency and daily coding beats long passive video marathons.\n\u2022 You will build functional projects from scratch across every chapter."
+    },
+    {
+     "region": "footer",
+     "top": 1346,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1633,
+     "components": [
+      "src/App.tsx",
+      "src/pages/LessonPlayerPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       18
+      ],
+      [
+       "ui-sans-serif 700",
+       16
+      ],
+      [
+       "ui-monospace 400",
+       11
+      ],
+      [
+       "ui-sans-serif 600",
+       6
+      ],
+      [
+       "ui-monospace 700",
+       3
+      ],
+      [
+       "ui-sans-serif 900",
+       1
+      ],
+      [
+       "JetBrains Mono 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       33
+      ],
+      [
+       "11px",
+       10
+      ],
+      [
+       "10px",
+       6
+      ],
+      [
+       "16px",
+       4
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       20
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       14
+      ],
+      [
+       "rgb(255, 255, 255)",
+       5
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       4
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       4
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       3
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       2
+      ],
+      [
+       "oklch(0.879 0.169 91.605)",
+       2
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       21
+      ],
+      [
+       "3.35544e+07px",
+       8
+      ],
+      [
+       "4px",
+       7
+      ],
+      [
+       "16px",
+       3
+      ],
+      [
+       "12px",
+       2
+      ]
+     ],
+     "gradients": 3,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "Curriculum\n>\nCh 1: Getting Started\n>\nLesson 1: Welcome & Course Overview\nBookmark\nCompleted\nIT Beginner \u2022 Chapter 1\n0001_1_Welcome_Course_Ov...\n\ud83d\ude80LESSON #1\nWelcome & Course Overview\n\nGet introduced to the IT Beginner curriculum and understand what you will build step-by-step.\n\nPlaying: 12:00 / 12:00\n\u2022\n1x Speed\n12:00\n12:00\n0.75x\n1x\n1.25x\n1.5x\n2x\nNext: #2 Curriculum & Learning Path\nChapter 1: Getting Started\n3 / 3\n\u2713\nWelcome & Course Overview\n12m\n\u2713\nCurriculum & Learning Path\n15m\n\u2713\nHow to Access Course Resources\n10m\nChapter 1 Quiz\n\u2192\nOverview & Objectives\nLive Scratchpad\nMy Notes (1)\nQ&A Community (1)\nInteractive Transcript\nLearning Objectives\nUnderstand the complete 6-chapter journey from zero to full-stack foundation\nLearn the active recall and hands-on coding method for maximum retention\nSet up your learning mindset for software engineering success\nLesson Code Reference\nCopy to Scratchpad\n// Welcome to IT Beginner!\nconsole.log(\"Hello, Future Developer!\");\nconst student = {\n  status: \"Ready to Learn\",\n  goal: \"Full-Stack Web Proficiency\",\n  startedAt: new Date().getFullYear()\n};\nconsole.table(student);\nKey Takeaways\n\u2022 No prior math or coding experience is required to begin.\n\u2022 Consistency and daily coding beats long passive video marathons.\n\u2022 You will build functional projects from scratch across every chapter."
+    },
+    {
+     "region": "footer",
+     "top": 1698,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/playground": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 828,
+     "components": [
+      "src/App.tsx",
+      "src/pages/PlaygroundPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       7
+      ],
+      [
+       "ui-monospace 400",
+       5
+      ],
+      [
+       "ui-sans-serif 500",
+       4
+      ],
+      [
+       "ui-sans-serif 400",
+       3
+      ],
+      [
+       "ui-sans-serif 600",
+       3
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       14
+      ],
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       2
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       10
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       3
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.673 0.182 276.935)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       7
+      ],
+      [
+       "12px",
+       3
+      ],
+      [
+       "16px",
+       3
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "4px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "IN-BROWSER IDE\nIsolated Sandbox\nInteractive Code Playground\n\nWrite live HTML, CSS, and JavaScript with instant iframe preview and terminal console output.\n\nRun Code\nSave Snippet\nExport .html\nCourse Presets:\n1. Variables & Data Types\n2. Conditionals & Logic (Score Grader)\n3. Arrays & Loops (Tech Stack List)\n4. HTML & CSS Profile Card\nHTML\nCSS\nJavaScript\nLive Preview\nRefresh DOM\nTerminal Output\nClear Console\n> Welcome to IT Beginner!\n> Total Curriculum Lessons: 42"
+    },
+    {
+     "region": "footer",
+     "top": 893,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1496,
+     "components": [
+      "src/App.tsx",
+      "src/pages/PlaygroundPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       7
+      ],
+      [
+       "ui-monospace 400",
+       5
+      ],
+      [
+       "ui-sans-serif 500",
+       4
+      ],
+      [
+       "ui-sans-serif 400",
+       3
+      ],
+      [
+       "ui-sans-serif 600",
+       3
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       15
+      ],
+      [
+       "11px",
+       6
+      ],
+      [
+       "10px",
+       2
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       10
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       3
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.673 0.182 276.935)",
+       1
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       7
+      ],
+      [
+       "12px",
+       3
+      ],
+      [
+       "16px",
+       3
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "4px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "IN-BROWSER IDE\nIsolated Sandbox\nInteractive Code Playground\n\nWrite live HTML, CSS, and JavaScript with instant iframe preview and terminal console output.\n\nRun Code\nSave Snippet\nExport .html\nCourse Presets:\n1. Variables & Data Types\n2. Conditionals & Logic (Score Grader)\n3. Arrays & Loops (Tech Stack List)\n4. HTML & CSS Profile Card\nHTML\nCSS\nJavaScript\nLive Preview\nRefresh DOM\nTerminal Output\nClear Console\n> Welcome to IT Beginner!\n> Total Curriculum Lessons: 42"
+    },
+    {
+     "region": "footer",
+     "top": 1561,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/search": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 4191,
+     "components": [
+      "src/App.tsx",
+      "src/pages/SearchPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       133
+      ],
+      [
+       "ui-sans-serif 400",
+       132
+      ],
+      [
+       "ui-sans-serif 500",
+       12
+      ],
+      [
+       "ui-sans-serif 600",
+       3
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       148
+      ],
+      [
+       "14px",
+       85
+      ],
+      [
+       "11px",
+       42
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "30px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       100
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       87
+      ],
+      [
+       "rgb(255, 255, 255)",
+       44
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       42
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       3
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "4px",
+       46
+      ],
+      [
+       "12px",
+       43
+      ],
+      [
+       "8px",
+       8
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "COURSE SEARCH\nMulti-Criteria Filter\nSearch Curriculum & Lectures\n\nInstantly filter all 42 lessons by keyword, chapter, and learning progress status.\n\nChapter:\nAll (6)\n\ud83d\ude80\nCh 1\n\u2699\ufe0f\nCh 2\n\ud83c\udf10\nCh 3\n\ud83d\udee0\ufe0f\nCh 4\n\u26a1\nCh 5\n\ud83d\udd0c\nCh 6\nStatus:\nAll Lessons\nCompleted Only\nIn Progress\nBookmarked\nFound 42 matching lectures\n\ud83d\ude80\nCh 1 \u2022 Lesson 1\nCompleted\nWelcome & Course Overview\n\nGet introduced to the IT Beginner curriculum and understand what you will build step-by-step.\n\n12 min\nWatch Lesson\n\ud83d\ude80\nCh 1 \u2022 Lesson 2\nCompleted\nCurriculum & Learning Path\n\nA deep breakdown of every module, milestone, and project you will complete.\n\n15 min\nWatch Lesson\n\ud83d\ude80\nCh 1 \u2022 Lesson 3\nCompleted\nHow to Access Course Resources\n\nLearn how to download code templates, access cheatsheets, and use the interactive playground.\n\n10 min\nWatch Lesson\n\u2699\ufe0f\nCh 2 \u2022 Lesson 1\nIn Progress\nSoftware Development Workflow\n\nUnderstand the end-to-end software development lifecycle from requirements to deployment.\n\n18 min\nWatch Lesson\n\u2699\ufe0f\nCh 2 \u2022 Lesson 2\nWhat Is Agile and Scrum\n\nMaster Agile principles, Scrum roles, ceremonies, artifacts, and sprint planning.\n\n22 min\nWatch Lesson\n\u2699\ufe0f\nCh 2 \u2022 Lesson 3\nBacklog and Scrum Board in Jira\n\nLearn how software engineers use Jira for backlog grooming, user stories, epics, and Kanban boards.\n\n20 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 1\nChapter Introduction: Web Fundamentals\n\nOverview of web technologies: clients, servers, browsers, HTML, CSS, and JavaScript.\n\n10 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 2\nHow Websites Work\n\nDeep dive into DNS lookup, IP addresses, client-server requests, and browser rendering engines.\n\n24 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 3\nWhat Is JavaScript\n\nHistory, runtime environments (Browser vs Node.js), ECMAScript standards, and modern JS capabilities.\n\n16 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 4\nVariables & Data Types\n\nMaster const and let, primitive types (string, number, boolean, null, undefined, symbol), and type coercion.\n\n25 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 5\nHow to Execute JavaScript\n\nDifferent ways to run JS: browser console, inline scripts, external .js files, and Node.js CLI.\n\n14 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 6\nConditionals & Comparators\n\nIf-else statements, switch statements, ternary operator, and strict equality (=== vs ==).\n\n28 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 7\nObjects\n\nObject literals, key-value pairs, nested objects, object destructuring, and Object methods.\n\n26 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 8\nArrays\n\nWorking with arrays: push, pop, shift, unshift, slice, splice, and array destructuring.\n\n24 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 9\nLoops\n\nMaster for loops, while loops, do-while loops, for...of, and for...in.\n\n26 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 10\nFunctions\n\nFunction declarations, function expressions, arrow functions, parameters, and return values.\n\n30 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 11\nBuilt-in Functions & Array Methods\n\nEssential built-in methods: map, filter, reduce, forEach, find, Math, and Date.\n\n32 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 12\nIntro to HTML & CSS\n\nHow markup defines document structure and stylesheets control presentation and responsive layout.\n\n18 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 13\nHTML: Elements, Semantics & Forms\n\nDeep dive into semantic HTML5 tags: header, main, nav, section, article, forms, inputs, and buttons.\n\n26 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 14\nCSS: Selectors, Box Model & Flexbox\n\nMaster the CSS Box Model (margin, border, padding, content), Flexbox layout, and CSS variables.\n\n34 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 15\nHTML Head Tags & Meta Attributes\n\nDocument head anatomy: viewport, charset, SEO meta tags, OpenGraph previews, and favicon links.\n\n16 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 16\nBuilding a Complete Website with HTML, CSS & JS\n\nCombine all Chapter 3 concepts to build an interactive, responsive project with DOM manipulation.\n\n38 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 1\nChapter Introduction: Frontend Development & Tools\n\nWelcome to modern frontend workflows: package managers, open source, libraries, and command lines.\n\n12 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 2\nDevelop Teamable Demo App with HTML, CSS & JS\n\nConstruct a responsive team collaboration app featuring member cards, filtering, and role badges.\n\n35 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 3\nJavaScript Frameworks Overview\n\nCompare React, Vue, Angular, and Svelte: component architecture, virtual DOM, and reactive state.\n\n22 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 4\nMaintaining JS Framework Projects\n\nProject structure, folder organization, linting with ESLint, code formatting with Prettier, and git hygiene.\n\n18 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 5\nOpen Source Explained\n\nOpen source software, licensing (MIT, Apache, GPL), GitHub repositories, and contributing.\n\n16 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 6\nLibraries Explained\n\nWhat are libraries, how they differ from frameworks (Inversion of Control), and when to use them.\n\n18 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 7\nNPM Registry\n\nExplore npmjs.com, package discovery, package.json dependencies, and npm audit.\n\n20 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 8\nVersioning in Software Development (SemVer)\n\nSemantic Versioning rules: MAJOR.MINOR.PATCH, caret (^) vs tilde (~), and breaking changes.\n\n18 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 9\nHow to Use Libraries in JS Applications\n\nImporting modules (ESM import vs CommonJS require), bundling, and tree-shaking.\n\n22 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 10\nNPM CLI Essential Commands\n\nMaster npm init, npm install, npm run build, npm test, and package scripts.\n\n20 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 11\nCommand Line & Operating System Basics\n\nTerminal navigation: pwd, cd, ls, mkdir, rm, touch, and environment variables.\n\n24 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 12\nInstall NPM on macOS\n\nStep-by-step Node.js and NPM setup on macOS using Node Version Manager (NVM) and Homebrew.\n\n15 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 13\nInstall NPM on Windows\n\nStep-by-step Node.js and NPM setup on Windows 11/10 via official installer and nvm-windows.\n\n16 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 14\nInstall JS Libraries with NPM\n\nHands-on practice installing third-party packages, importing them, and managing package-lock.json.\n\n22 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 1\nChapter Introduction: Vue.js Framework\n\nIntroduction to Vue.js: progressive adoption, Single File Components (.vue), and reactive data binding.\n\n14 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 2\nVue.js Tutorial Part 1: Core Concepts & Directives\n\nInterpolation ({{ }}), directives (v-bind, v-model, v-if, v-else, v-for), and event handling (@click).\n\n30 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 3\nVue.js Tutorial Part 2: Reactive State & Computed Properties\n\nComposition API (ref, reactive), computed properties, watch, and component props.\n\n32 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 4\nImplement Frontend with HTML, CSS & Vue.js Part 1\n\nScaffold a real-world single page app with Vue: component hierarchy, navigation, and reactive data store.\n\n36 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 5\nImplement Frontend with HTML, CSS & Vue.js Part 2\n\nComplete the production-grade frontend UI: search filtering, responsive mobile drawer, and animations.\n\n38 min\nWatch Lesson\n\ud83d\udd0c\nCh 6 \u2022 Lesson 1\nFrontend & Backend Communication Explained\n\nDeep dive into HTTP methods, JSON data exchange, REST APIs, client-server architecture, and async fetch.\n\n42 min\nWatch Lesson"
+    },
+    {
+     "region": "footer",
+     "top": 4256,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 8536,
+     "components": [
+      "src/App.tsx",
+      "src/pages/SearchPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       133
+      ],
+      [
+       "ui-sans-serif 400",
+       132
+      ],
+      [
+       "ui-sans-serif 500",
+       12
+      ],
+      [
+       "ui-sans-serif 600",
+       3
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       149
+      ],
+      [
+       "14px",
+       84
+      ],
+      [
+       "11px",
+       42
+      ],
+      [
+       "10px",
+       5
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       100
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       87
+      ],
+      [
+       "rgb(255, 255, 255)",
+       44
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       42
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       3
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "4px",
+       46
+      ],
+      [
+       "12px",
+       43
+      ],
+      [
+       "8px",
+       8
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "COURSE SEARCH\nMulti-Criteria Filter\nSearch Curriculum & Lectures\n\nInstantly filter all 42 lessons by keyword, chapter, and learning progress status.\n\nChapter:\nAll (6)\n\ud83d\ude80\nCh 1\n\u2699\ufe0f\nCh 2\n\ud83c\udf10\nCh 3\n\ud83d\udee0\ufe0f\nCh 4\n\u26a1\nCh 5\n\ud83d\udd0c\nCh 6\nStatus:\nAll Lessons\nCompleted Only\nIn Progress\nBookmarked\nFound 42 matching lectures\n\ud83d\ude80\nCh 1 \u2022 Lesson 1\nCompleted\nWelcome & Course Overview\n\nGet introduced to the IT Beginner curriculum and understand what you will build step-by-step.\n\n12 min\nWatch Lesson\n\ud83d\ude80\nCh 1 \u2022 Lesson 2\nCompleted\nCurriculum & Learning Path\n\nA deep breakdown of every module, milestone, and project you will complete.\n\n15 min\nWatch Lesson\n\ud83d\ude80\nCh 1 \u2022 Lesson 3\nCompleted\nHow to Access Course Resources\n\nLearn how to download code templates, access cheatsheets, and use the interactive playground.\n\n10 min\nWatch Lesson\n\u2699\ufe0f\nCh 2 \u2022 Lesson 1\nIn Progress\nSoftware Development Workflow\n\nUnderstand the end-to-end software development lifecycle from requirements to deployment.\n\n18 min\nWatch Lesson\n\u2699\ufe0f\nCh 2 \u2022 Lesson 2\nWhat Is Agile and Scrum\n\nMaster Agile principles, Scrum roles, ceremonies, artifacts, and sprint planning.\n\n22 min\nWatch Lesson\n\u2699\ufe0f\nCh 2 \u2022 Lesson 3\nBacklog and Scrum Board in Jira\n\nLearn how software engineers use Jira for backlog grooming, user stories, epics, and Kanban boards.\n\n20 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 1\nChapter Introduction: Web Fundamentals\n\nOverview of web technologies: clients, servers, browsers, HTML, CSS, and JavaScript.\n\n10 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 2\nHow Websites Work\n\nDeep dive into DNS lookup, IP addresses, client-server requests, and browser rendering engines.\n\n24 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 3\nWhat Is JavaScript\n\nHistory, runtime environments (Browser vs Node.js), ECMAScript standards, and modern JS capabilities.\n\n16 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 4\nVariables & Data Types\n\nMaster const and let, primitive types (string, number, boolean, null, undefined, symbol), and type coercion.\n\n25 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 5\nHow to Execute JavaScript\n\nDifferent ways to run JS: browser console, inline scripts, external .js files, and Node.js CLI.\n\n14 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 6\nConditionals & Comparators\n\nIf-else statements, switch statements, ternary operator, and strict equality (=== vs ==).\n\n28 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 7\nObjects\n\nObject literals, key-value pairs, nested objects, object destructuring, and Object methods.\n\n26 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 8\nArrays\n\nWorking with arrays: push, pop, shift, unshift, slice, splice, and array destructuring.\n\n24 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 9\nLoops\n\nMaster for loops, while loops, do-while loops, for...of, and for...in.\n\n26 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 10\nFunctions\n\nFunction declarations, function expressions, arrow functions, parameters, and return values.\n\n30 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 11\nBuilt-in Functions & Array Methods\n\nEssential built-in methods: map, filter, reduce, forEach, find, Math, and Date.\n\n32 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 12\nIntro to HTML & CSS\n\nHow markup defines document structure and stylesheets control presentation and responsive layout.\n\n18 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 13\nHTML: Elements, Semantics & Forms\n\nDeep dive into semantic HTML5 tags: header, main, nav, section, article, forms, inputs, and buttons.\n\n26 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 14\nCSS: Selectors, Box Model & Flexbox\n\nMaster the CSS Box Model (margin, border, padding, content), Flexbox layout, and CSS variables.\n\n34 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 15\nHTML Head Tags & Meta Attributes\n\nDocument head anatomy: viewport, charset, SEO meta tags, OpenGraph previews, and favicon links.\n\n16 min\nWatch Lesson\n\ud83c\udf10\nCh 3 \u2022 Lesson 16\nBuilding a Complete Website with HTML, CSS & JS\n\nCombine all Chapter 3 concepts to build an interactive, responsive project with DOM manipulation.\n\n38 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 1\nChapter Introduction: Frontend Development & Tools\n\nWelcome to modern frontend workflows: package managers, open source, libraries, and command lines.\n\n12 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 2\nDevelop Teamable Demo App with HTML, CSS & JS\n\nConstruct a responsive team collaboration app featuring member cards, filtering, and role badges.\n\n35 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 3\nJavaScript Frameworks Overview\n\nCompare React, Vue, Angular, and Svelte: component architecture, virtual DOM, and reactive state.\n\n22 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 4\nMaintaining JS Framework Projects\n\nProject structure, folder organization, linting with ESLint, code formatting with Prettier, and git hygiene.\n\n18 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 5\nOpen Source Explained\n\nOpen source software, licensing (MIT, Apache, GPL), GitHub repositories, and contributing.\n\n16 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 6\nLibraries Explained\n\nWhat are libraries, how they differ from frameworks (Inversion of Control), and when to use them.\n\n18 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 7\nNPM Registry\n\nExplore npmjs.com, package discovery, package.json dependencies, and npm audit.\n\n20 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 8\nVersioning in Software Development (SemVer)\n\nSemantic Versioning rules: MAJOR.MINOR.PATCH, caret (^) vs tilde (~), and breaking changes.\n\n18 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 9\nHow to Use Libraries in JS Applications\n\nImporting modules (ESM import vs CommonJS require), bundling, and tree-shaking.\n\n22 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 10\nNPM CLI Essential Commands\n\nMaster npm init, npm install, npm run build, npm test, and package scripts.\n\n20 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 11\nCommand Line & Operating System Basics\n\nTerminal navigation: pwd, cd, ls, mkdir, rm, touch, and environment variables.\n\n24 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 12\nInstall NPM on macOS\n\nStep-by-step Node.js and NPM setup on macOS using Node Version Manager (NVM) and Homebrew.\n\n15 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 13\nInstall NPM on Windows\n\nStep-by-step Node.js and NPM setup on Windows 11/10 via official installer and nvm-windows.\n\n16 min\nWatch Lesson\n\ud83d\udee0\ufe0f\nCh 4 \u2022 Lesson 14\nInstall JS Libraries with NPM\n\nHands-on practice installing third-party packages, importing them, and managing package-lock.json.\n\n22 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 1\nChapter Introduction: Vue.js Framework\n\nIntroduction to Vue.js: progressive adoption, Single File Components (.vue), and reactive data binding.\n\n14 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 2\nVue.js Tutorial Part 1: Core Concepts & Directives\n\nInterpolation ({{ }}), directives (v-bind, v-model, v-if, v-else, v-for), and event handling (@click).\n\n30 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 3\nVue.js Tutorial Part 2: Reactive State & Computed Properties\n\nComposition API (ref, reactive), computed properties, watch, and component props.\n\n32 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 4\nImplement Frontend with HTML, CSS & Vue.js Part 1\n\nScaffold a real-world single page app with Vue: component hierarchy, navigation, and reactive data store.\n\n36 min\nWatch Lesson\n\u26a1\nCh 5 \u2022 Lesson 5\nImplement Frontend with HTML, CSS & Vue.js Part 2\n\nComplete the production-grade frontend UI: search filtering, responsive mobile drawer, and animations.\n\n38 min\nWatch Lesson\n\ud83d\udd0c\nCh 6 \u2022 Lesson 1\nFrontend & Backend Communication Explained\n\nDeep dive into HTTP methods, JSON data exchange, REST APIs, client-server architecture, and async fetch.\n\n42 min\nWatch Lesson"
+    },
+    {
+     "region": "footer",
+     "top": 8601,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/quizzes": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 798,
+     "components": [
+      "src/App.tsx",
+      "src/pages/QuizzesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-monospace 400",
+       23
+      ],
+      [
+       "ui-sans-serif 700",
+       22
+      ],
+      [
+       "ui-sans-serif 400",
+       13
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       44
+      ],
+      [
+       "24px",
+       6
+      ],
+      [
+       "16px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       30
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       7
+      ],
+      [
+       "rgb(255, 255, 255)",
+       7
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       6
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "16px",
+       6
+      ],
+      [
+       "12px",
+       6
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ],
+      [
+       "4px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "KNOWLEDGE ASSESSMENTS\n6 Chapter Quizzes\nInteractive Chapter Quizzes\n\nTest your technical understanding after completing each chapter. Earn over 66% to pass, inspect detailed explanations, and qualify for verifiable certificates.\n\n\ud83d\ude80\nChapter 1\n\u2713 Passed (100%)\nGetting Started\n\nWelcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nRetake Quiz\nView Credential\n\u2699\ufe0f\nChapter 2\nNot attempted\nSoftware Development Basics\n\nLearn the fundamentals of modern software engineering workflows, Agile methodology, Scrum frameworks, and Jira task tracking.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\ud83c\udf10\nChapter 3\nNot attempted\nWeb Development Fundamentals\n\nMaster how the web works, JavaScript syntax, variables, data types, loops, arrays, functions, and core HTML5 & CSS3 layout techniques.\n\n7 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\ud83d\udee0\ufe0f\nChapter 4\nNot attempted\nFrontend Development & Tools\n\nBuild real-world teamable web applications, explore modern JavaScript frameworks, package managers (NPM), semver, and terminal commands.\n\n5 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\u26a1\nChapter 5\nNot attempted\nVue.js Framework & Single Page Apps\n\nExplore modern reactive frontend architecture, Vue component lifecycle, two-way data binding, reactivity, and building complete responsive UIs.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\ud83d\udd0c\nChapter 6\nNot attempted\nFull-Stack Architecture & Backend Communication\n\nUnderstand client-server architecture, HTTP request-response cycles, RESTful APIs, JSON data exchange, and end-to-end integration.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment"
+    },
+    {
+     "region": "footer",
+     "top": 863,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 2098,
+     "components": [
+      "src/App.tsx",
+      "src/pages/QuizzesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-monospace 400",
+       23
+      ],
+      [
+       "ui-sans-serif 700",
+       22
+      ],
+      [
+       "ui-sans-serif 400",
+       13
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       45
+      ],
+      [
+       "24px",
+       7
+      ],
+      [
+       "16px",
+       6
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       30
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       7
+      ],
+      [
+       "rgb(255, 255, 255)",
+       7
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       6
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "16px",
+       6
+      ],
+      [
+       "12px",
+       6
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ],
+      [
+       "4px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "KNOWLEDGE ASSESSMENTS\n6 Chapter Quizzes\nInteractive Chapter Quizzes\n\nTest your technical understanding after completing each chapter. Earn over 66% to pass, inspect detailed explanations, and qualify for verifiable certificates.\n\n\ud83d\ude80\nChapter 1\n\u2713 Passed (100%)\nGetting Started\n\nWelcome to the course! Get an overview of the curriculum and learn how to access all learning materials and tools.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nRetake Quiz\nView Credential\n\u2699\ufe0f\nChapter 2\nNot attempted\nSoftware Development Basics\n\nLearn the fundamentals of modern software engineering workflows, Agile methodology, Scrum frameworks, and Jira task tracking.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\ud83c\udf10\nChapter 3\nNot attempted\nWeb Development Fundamentals\n\nMaster how the web works, JavaScript syntax, variables, data types, loops, arrays, functions, and core HTML5 & CSS3 layout techniques.\n\n7 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\ud83d\udee0\ufe0f\nChapter 4\nNot attempted\nFrontend Development & Tools\n\nBuild real-world teamable web applications, explore modern JavaScript frameworks, package managers (NPM), semver, and terminal commands.\n\n5 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\u26a1\nChapter 5\nNot attempted\nVue.js Framework & Single Page Apps\n\nExplore modern reactive frontend architecture, Vue component lifecycle, two-way data binding, reactivity, and building complete responsive UIs.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment\n\ud83d\udd0c\nChapter 6\nNot attempted\nFull-Stack Architecture & Backend Communication\n\nUnderstand client-server architecture, HTTP request-response cycles, RESTful APIs, JSON data exchange, and end-to-end integration.\n\n3 Assessment Questions\n\u2022\nPassing score: 66%\nStart Assessment"
+    },
+    {
+     "region": "footer",
+     "top": 2163,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/quiz/1": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1074,
+     "components": [
+      "src/App.tsx",
+      "src/pages/QuizDetailPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       22
+      ],
+      [
+       "ui-sans-serif 400",
+       18
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ],
+      [
+       "ui-sans-serif 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       24
+      ],
+      [
+       "10px",
+       12
+      ],
+      [
+       "16px",
+       3
+      ],
+      [
+       "24px",
+       2
+      ],
+      [
+       "14px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       13
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       12
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       8
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       4
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       13
+      ],
+      [
+       "6px",
+       12
+      ],
+      [
+       "16px",
+       4
+      ],
+      [
+       "3.35544e+07px",
+       3
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {},
+     "text": "Back to All Quizzes\n3 Questions\n\ud83d\ude80\nChapter 1 Assessment\nGetting Started Quiz\n\nAnswer all questions below. Immediate feedback and detailed explanations will be provided after submission.\n\nAnswered: 0 / 3\nPassing mark: 66%\n1\nWhat is the primary prerequisite to start this IT Beginner course?\nA\nAdvanced mathematics degree\nB\nNo prior programming experience needed\nC\n10 years of Linux experience\nD\nExpert knowledge of C++\n2\nWhy is hands-on coding recommended while watching course videos?\nA\nIt is required by the video player\nB\nIt builds muscle memory and real-world problem solving\nC\nIt speeds up video buffering\nD\nIt avoids reading documentation\n3\nHow should you organize your course files and exercises?\nA\nSave everything directly onto Desktop loosely\nB\nIn a dedicated, structured directory organized by lesson or chapter\nC\nDelete files immediately after running\nD\nStore them on USB drives only\n\u2190 Cancel Assessment\nAnswer all questions (0/3)"
+    },
+    {
+     "region": "footer",
+     "top": 1139,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1572,
+     "components": [
+      "src/App.tsx",
+      "src/pages/QuizDetailPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       22
+      ],
+      [
+       "ui-sans-serif 400",
+       18
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ],
+      [
+       "ui-sans-serif 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       25
+      ],
+      [
+       "10px",
+       12
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "24px",
+       2
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       13
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       12
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       8
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       4
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       13
+      ],
+      [
+       "6px",
+       12
+      ],
+      [
+       "16px",
+       4
+      ],
+      [
+       "3.35544e+07px",
+       3
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {},
+     "text": "Back to All Quizzes\n3 Questions\n\ud83d\ude80\nChapter 1 Assessment\nGetting Started Quiz\n\nAnswer all questions below. Immediate feedback and detailed explanations will be provided after submission.\n\nAnswered: 0 / 3\nPassing mark: 66%\n1\nWhat is the primary prerequisite to start this IT Beginner course?\nA\nAdvanced mathematics degree\nB\nNo prior programming experience needed\nC\n10 years of Linux experience\nD\nExpert knowledge of C++\n2\nWhy is hands-on coding recommended while watching course videos?\nA\nIt is required by the video player\nB\nIt builds muscle memory and real-world problem solving\nC\nIt speeds up video buffering\nD\nIt avoids reading documentation\n3\nHow should you organize your course files and exercises?\nA\nSave everything directly onto Desktop loosely\nB\nIn a dedicated, structured directory organized by lesson or chapter\nC\nDelete files immediately after running\nD\nStore them on USB drives only\n\u2190 Cancel Assessment\nAnswer all questions (0/3)"
+    },
+    {
+     "region": "footer",
+     "top": 1637,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/certificates": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 966,
+     "components": [
+      "src/App.tsx",
+      "src/pages/CertificatesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       43
+      ],
+      [
+       "ui-sans-serif 700",
+       14
+      ],
+      [
+       "ui-sans-serif 800",
+       2
+      ],
+      [
+       "ui-monospace 400",
+       2
+      ],
+      [
+       "ui-monospace 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       29
+      ],
+      [
+       "11px",
+       13
+      ],
+      [
+       "14px",
+       7
+      ],
+      [
+       "20px",
+       6
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "18px",
+       2
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       26
+      ],
+      [
+       "rgb(255, 255, 255)",
+       11
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       8
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       7
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       1
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       13
+      ],
+      [
+       "12px",
+       7
+      ],
+      [
+       "16px",
+       1
+      ],
+      [
+       "4px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "VERIFIABLE CREDENTIALS\nGold Seal Accreditation\nStudent Certificates & Credentials\n\nVerifiable certificates are awarded upon completing 100% of chapter lessons or passing chapter assessments. Share your credentials online or print official PDF copies.\n\nYour Earned Certificates (1)\nITB-CH1-8291X\nVerified\nGetting Started\n\nAwarded to Alex Chen for successful curriculum mastery.\n\nIssued: November 5, 2026\n\nView Official Certificate\nAjinLab Accredited\nCurriculum Certificate Progress\n\ud83d\ude80\nChapter 1\nUnlocked\n\nGetting Started\n\nLessons: 100%\nQuiz: Passed \u2713\nView Chapter\nTake Quiz\n\u2699\ufe0f\nChapter 2\nLocked\n\nSoftware Development Basics\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\ud83c\udf10\nChapter 3\nLocked\n\nWeb Development Fundamentals\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\ud83d\udee0\ufe0f\nChapter 4\nLocked\n\nFrontend Development & Tools\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\u26a1\nChapter 5\nLocked\n\nVue.js Framework & Single Page Apps\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\ud83d\udd0c\nChapter 6\nLocked\n\nFull-Stack Architecture & Backend Communication\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz"
+    },
+    {
+     "region": "footer",
+     "top": 1031,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1772,
+     "components": [
+      "src/App.tsx",
+      "src/pages/CertificatesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       43
+      ],
+      [
+       "ui-sans-serif 700",
+       14
+      ],
+      [
+       "ui-sans-serif 800",
+       2
+      ],
+      [
+       "ui-monospace 400",
+       2
+      ],
+      [
+       "ui-monospace 700",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       30
+      ],
+      [
+       "11px",
+       13
+      ],
+      [
+       "20px",
+       6
+      ],
+      [
+       "14px",
+       6
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "18px",
+       2
+      ],
+      [
+       "24px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       26
+      ],
+      [
+       "rgb(255, 255, 255)",
+       11
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       8
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       7
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       6
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       1
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       13
+      ],
+      [
+       "12px",
+       7
+      ],
+      [
+       "16px",
+       1
+      ],
+      [
+       "4px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "VERIFIABLE CREDENTIALS\nGold Seal Accreditation\nStudent Certificates & Credentials\n\nVerifiable certificates are awarded upon completing 100% of chapter lessons or passing chapter assessments. Share your credentials online or print official PDF copies.\n\nYour Earned Certificates (1)\nITB-CH1-8291X\nVerified\nGetting Started\n\nAwarded to Alex Chen for successful curriculum mastery.\n\nIssued: November 5, 2026\n\nView Official Certificate\nAjinLab Accredited\nCurriculum Certificate Progress\n\ud83d\ude80\nChapter 1\nUnlocked\n\nGetting Started\n\nLessons: 100%\nQuiz: Passed \u2713\nView Chapter\nTake Quiz\n\u2699\ufe0f\nChapter 2\nLocked\n\nSoftware Development Basics\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\ud83c\udf10\nChapter 3\nLocked\n\nWeb Development Fundamentals\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\ud83d\udee0\ufe0f\nChapter 4\nLocked\n\nFrontend Development & Tools\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\u26a1\nChapter 5\nLocked\n\nVue.js Framework & Single Page Apps\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz\n\ud83d\udd0c\nChapter 6\nLocked\n\nFull-Stack Architecture & Backend Communication\n\nLessons: 0%\nQuiz: Pending\nView Chapter\nTake Quiz"
+    },
+    {
+     "region": "footer",
+     "top": 1837,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/resources": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 2080,
+     "components": [
+      "src/App.tsx",
+      "src/pages/ResourcesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       12
+      ],
+      [
+       "ui-sans-serif 400",
+       8
+      ],
+      [
+       "ui-monospace 400",
+       6
+      ],
+      [
+       "JetBrains Mono 400",
+       3
+      ],
+      [
+       "ui-monospace 700",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       23
+      ],
+      [
+       "18px",
+       3
+      ],
+      [
+       "14px",
+       2
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "10px",
+       1
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "24px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.746 0.16 232.661)",
+       8
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       7
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "rgb(255, 255, 255)",
+       5
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       3
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       2
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       9
+      ],
+      [
+       "16px",
+       4
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "DEVELOPER CHEATSHEETS\nCourse Handbook\nCourse Resources & Cheatsheets\n\nQuick reference guides, syntax summaries, and copyable snippets covering every topic taught across the IT Beginner curriculum.\n\n\u26a1 JavaScript Fundamentals Handbook\n\ud83c\udf10 HTML5 & CSS3 Reference\n\u2699\ufe0f Agile, Scrum & Jira Quick Reference\n\ud83d\udcbb Command Line (CLI) & NPM Guide\nChapter 3 Handbook\n\u2022\nProgramming Logic\n\u26a1 JavaScript Fundamentals Handbook\n\nThe essential modern JavaScript syntax, variable scoping, array manipulation, and DOM methods.\n\nVariables & Declarations (ES6+)\n\nModern JavaScript eliminates \"var\" in favor of block-scoped declarations.\n\nSyntax Reference:\nCopy Snippet\n// const: preferred for all variables that will not be reassigned\nconst course = \"IT Beginner\";\nconst maxScore = 100;\n\n// let: used only when variable must be reassigned\nlet completedLessons = 0;\ncompletedLessons += 1;\n\n// Primitive Data Types\nconst name = \"Alex\";        // String\nconst streak = 7;           // Number\nconst isActive = true;      // Boolean\nconst empty = null;         // Null (explicit empty value)\nlet notSet;                 // Undefined\nBest Practices & Tips:\nDefault to const; change to let only when reassignment is needed.\nNever use var in modern codebases.\nStrict Equality & Conditionals\n\nAlways use triple equals (===) to prevent unexpected type coercion bugs.\n\nSyntax Reference:\nCopy Snippet\n// Strict equality checks value AND type\n5 === 5;     // true\n5 === \"5\";   // false (number vs string)\n5 == \"5\";    // true (type coercion - avoid!)\n\n// Logical operators\nif (score >= 90 && attendance >= 80) {\n  console.log(\"Certificate with Distinction\");\n} else if (score >= 70) {\n  console.log(\"Passed Course\");\n} else {\n  console.log(\"Review Lessons\");\n}\nBest Practices & Tips:\nUse ternary operator (condition ? exprIfTrue : exprIfFalse) for inline assignments.\nEssential Array Methods\n\nFunctional array methods for transforming, filtering, and aggregating data.\n\nSyntax Reference:\nCopy Snippet\nconst fruits = [\"Apple\", \"Banana\", \"Cherry\"];\n\nfruits.push(\"Mango\");   // Append to end\nfruits.pop();           // Remove last item\n\n// .map() - transform each item into a new array\nconst upper = fruits.map(f => f.toUpperCase());\n\n// .filter() - return items matching condition\nconst bFruits = fruits.filter(f => f.startsWith(\"B\"));\n\n// .reduce() - calculate single aggregated value\nconst numbers = [10, 20, 30];\nconst sum = numbers.reduce((acc, curr) => acc + curr, 0);"
+    },
+    {
+     "region": "footer",
+     "top": 2145,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       6
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 2341,
+     "components": [
+      "src/App.tsx",
+      "src/pages/ResourcesPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 700",
+       12
+      ],
+      [
+       "ui-sans-serif 400",
+       8
+      ],
+      [
+       "ui-monospace 400",
+       6
+      ],
+      [
+       "JetBrains Mono 400",
+       3
+      ],
+      [
+       "ui-monospace 700",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 900",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       25
+      ],
+      [
+       "18px",
+       3
+      ],
+      [
+       "24px",
+       2
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "10px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.746 0.16 232.661)",
+       8
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       7
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "rgb(255, 255, 255)",
+       5
+      ],
+      [
+       "oklch(0.828 0.111 230.318)",
+       3
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       2
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       9
+      ],
+      [
+       "16px",
+       4
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 1,
+     "animations": {},
+     "text": "DEVELOPER CHEATSHEETS\nCourse Handbook\nCourse Resources & Cheatsheets\n\nQuick reference guides, syntax summaries, and copyable snippets covering every topic taught across the IT Beginner curriculum.\n\n\u26a1 JavaScript Fundamentals Handbook\n\ud83c\udf10 HTML5 & CSS3 Reference\n\u2699\ufe0f Agile, Scrum & Jira Quick Reference\n\ud83d\udcbb Command Line (CLI) & NPM Guide\nChapter 3 Handbook\n\u2022\nProgramming Logic\n\u26a1 JavaScript Fundamentals Handbook\n\nThe essential modern JavaScript syntax, variable scoping, array manipulation, and DOM methods.\n\nVariables & Declarations (ES6+)\n\nModern JavaScript eliminates \"var\" in favor of block-scoped declarations.\n\nSyntax Reference:\nCopy Snippet\n// const: preferred for all variables that will not be reassigned\nconst course = \"IT Beginner\";\nconst maxScore = 100;\n\n// let: used only when variable must be reassigned\nlet completedLessons = 0;\ncompletedLessons += 1;\n\n// Primitive Data Types\nconst name = \"Alex\";        // String\nconst streak = 7;           // Number\nconst isActive = true;      // Boolean\nconst empty = null;         // Null (explicit empty value)\nlet notSet;                 // Undefined\nBest Practices & Tips:\nDefault to const; change to let only when reassignment is needed.\nNever use var in modern codebases.\nStrict Equality & Conditionals\n\nAlways use triple equals (===) to prevent unexpected type coercion bugs.\n\nSyntax Reference:\nCopy Snippet\n// Strict equality checks value AND type\n5 === 5;     // true\n5 === \"5\";   // false (number vs string)\n5 == \"5\";    // true (type coercion - avoid!)\n\n// Logical operators\nif (score >= 90 && attendance >= 80) {\n  console.log(\"Certificate with Distinction\");\n} else if (score >= 70) {\n  console.log(\"Passed Course\");\n} else {\n  console.log(\"Review Lessons\");\n}\nBest Practices & Tips:\nUse ternary operator (condition ? exprIfTrue : exprIfFalse) for inline assignments.\nEssential Array Methods\n\nFunctional array methods for transforming, filtering, and aggregating data.\n\nSyntax Reference:\nCopy Snippet\nconst fruits = [\"Apple\", \"Banana\", \"Cherry\"];\n\nfruits.push(\"Mango\");   // Append to end\nfruits.pop();           // Remove last item\n\n// .map() - transform each item into a new array\nconst upper = fruits.map(f => f.toUpperCase());\n\n// .filter() - return items matching condition\nconst bFruits = fruits.filter(f => f.startsWith(\"B\"));\n\n// .reduce() - calculate single aggregated value\nconst numbers = [10, 20, 30];\nconst sum = numbers.reduce((acc, curr) => acc + curr, 0);"
+    },
+    {
+     "region": "footer",
+     "top": 2406,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/admin": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 942,
+     "components": [
+      "src/App.tsx",
+      "src/pages/AdminPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       25
+      ],
+      [
+       "ui-sans-serif 700",
+       17
+      ],
+      [
+       "ui-sans-serif 600",
+       13
+      ],
+      [
+       "ui-monospace 400",
+       12
+      ],
+      [
+       "ui-monospace 700",
+       6
+      ],
+      [
+       "ui-sans-serif 900",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       53
+      ],
+      [
+       "10px",
+       12
+      ],
+      [
+       "11px",
+       6
+      ],
+      [
+       "24px",
+       5
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       30
+      ],
+      [
+       "rgb(255, 255, 255)",
+       15
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       12
+      ],
+      [
+       "oklch(0.827 0.119 306.383)",
+       10
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       5
+      ],
+      [
+       "oklch(0.714 0.203 305.504)",
+       2
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       13
+      ],
+      [
+       "4px",
+       12
+      ],
+      [
+       "12px",
+       6
+      ],
+      [
+       "8px",
+       2
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 7,
+     "animations": {},
+     "text": "You are currently in Student Mode. Toggle to Admin Mode to activate administrator actions.\nSwitch to Admin Mode\nCONTROL CENTER\nSystem Telemetry & Student Roster\nAdministrator Control Suite\n\nReal-time metrics, student enrollment roster, role elevation, and course engagement tracking for the IT Beginner platform.\n\nTotal Students\n\n1,480\n\n+12% this week\nLesson Completions\n\n18,420\n\nAcross 42 lessons\nQuiz Pass Rate\n\n89.2%\n\n6 Chapter Quizzes\nCertificates Issued\n\n340\n\nVerifiable Credentials\nCommunity Q&A\n\n420\n\nThreaded Discussions\nEnrolled Student Roster\n\nManage student access, view learning progress, and elevate roles.\n\nStudent Name\tRole\tCompleted\tQuizzes\tNotes\tJoined\tAction\n\nAlex Chen (You)\n\nalex.chen@itbeginner.com\n\n\tSTUDENT\t\n3 / 42\n\t1 / 6\t2\t2026-10-18\tToggle Role\n\nDavid Miller\n\ndavid.miller@gmail.com\n\n\tSTUDENT\t\n18 / 42\n\t3 / 6\t7\t2026-10-20\tToggle Role\n\nSamantha Ray\n\nsamantha.ray@techmail.io\n\n\tSTUDENT\t\n42 / 42\n\t6 / 6\t19\t2026-10-15\tToggle Role\n\nKenji Sato\n\nkenji.sato@yahoo.co.jp\n\n\tSTUDENT\t\n24 / 42\n\t4 / 6\t11\t2026-10-22\tToggle Role\n\nElena Rostova\n\nelena.rostova@designlab.de\n\n\tSTUDENT\t\n31 / 42\n\t5 / 6\t14\t2026-10-19\tToggle Role\n\nCourse Admin (AjinLab)\n\nadmin@itbeginner.com\n\n\tADMIN\t\n42 / 42\n\t6 / 6\t45\t2026-10-01\tToggle Role"
+    },
+    {
+     "region": "footer",
+     "top": 1007,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 1455,
+     "components": [
+      "src/App.tsx",
+      "src/pages/AdminPage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       25
+      ],
+      [
+       "ui-sans-serif 700",
+       17
+      ],
+      [
+       "ui-sans-serif 600",
+       13
+      ],
+      [
+       "ui-monospace 400",
+       12
+      ],
+      [
+       "ui-monospace 700",
+       6
+      ],
+      [
+       "ui-sans-serif 900",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       54
+      ],
+      [
+       "10px",
+       12
+      ],
+      [
+       "24px",
+       6
+      ],
+      [
+       "11px",
+       6
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       30
+      ],
+      [
+       "rgb(255, 255, 255)",
+       15
+      ],
+      [
+       "oklch(0.968 0.007 247.896)",
+       12
+      ],
+      [
+       "oklch(0.827 0.119 306.383)",
+       10
+      ],
+      [
+       "oklch(0.869 0.022 252.894)",
+       5
+      ],
+      [
+       "oklch(0.714 0.203 305.504)",
+       2
+      ],
+      [
+       "oklch(0.765 0.177 163.223)",
+       2
+      ],
+      [
+       "oklch(0.129 0.042 264.695)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "3.35544e+07px",
+       13
+      ],
+      [
+       "4px",
+       12
+      ],
+      [
+       "12px",
+       6
+      ],
+      [
+       "8px",
+       2
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 7,
+     "animations": {},
+     "text": "You are currently in Student Mode. Toggle to Admin Mode to activate administrator actions.\nSwitch to Admin Mode\nCONTROL CENTER\nSystem Telemetry & Student Roster\nAdministrator Control Suite\n\nReal-time metrics, student enrollment roster, role elevation, and course engagement tracking for the IT Beginner platform.\n\nTotal Students\n\n1,480\n\n+12% this week\nLesson Completions\n\n18,420\n\nAcross 42 lessons\nQuiz Pass Rate\n\n89.2%\n\n6 Chapter Quizzes\nCertificates Issued\n\n340\n\nVerifiable Credentials\nCommunity Q&A\n\n420\n\nThreaded Discussions\nEnrolled Student Roster\n\nManage student access, view learning progress, and elevate roles.\n\nStudent Name\tRole\tCompleted\tQuizzes\tNotes\tJoined\tAction\n\nAlex Chen (You)\n\nalex.chen@itbeginner.com\n\n\tSTUDENT\t\n3 / 42\n\t1 / 6\t2\t2026-10-18\tToggle Role\n\nDavid Miller\n\ndavid.miller@gmail.com\n\n\tSTUDENT\t\n18 / 42\n\t3 / 6\t7\t2026-10-20\tToggle Role\n\nSamantha Ray\n\nsamantha.ray@techmail.io\n\n\tSTUDENT\t\n42 / 42\n\t6 / 6\t19\t2026-10-15\tToggle Role\n\nKenji Sato\n\nkenji.sato@yahoo.co.jp\n\n\tSTUDENT\t\n24 / 42\n\t4 / 6\t11\t2026-10-22\tToggle Role\n\nElena Rostova\n\nelena.rostova@designlab.de\n\n\tSTUDENT\t\n31 / 42\n\t5 / 6\t14\t2026-10-19\tToggle Role\n\nCourse Admin (AjinLab)\n\nadmin@itbeginner.com\n\n\tADMIN\t\n42 / 42\n\t6 / 6\t45\t2026-10-01\tToggle Role"
+    },
+    {
+     "region": "footer",
+     "top": 1520,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  },
+  "/profile": {
+   "1440": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\nSearch 42 lessons...\n/\nDashboard\nCurriculum\nPlayground\nCheatsheets\nQuizzes\nCertificates\n5d Streak\nStudent View\n(Switch)\n\nAlex Chen\n\nStudent"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 645,
+     "components": [
+      "src/App.tsx",
+      "src/pages/ProfilePage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       8
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 900",
+       4
+      ],
+      [
+       "ui-sans-serif 600",
+       3
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "24px",
+       4
+      ],
+      [
+       "10px",
+       2
+      ],
+      [
+       "30px",
+       1
+      ],
+      [
+       "14px",
+       1
+      ],
+      [
+       "20px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       8
+      ],
+      [
+       "rgb(255, 255, 255)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       2
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       2
+      ],
+      [
+       "oklch(0.714 0.203 305.504)",
+       1
+      ],
+      [
+       "oklch(0.81 0.117 11.638)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       7
+      ],
+      [
+       "16px",
+       2
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 2,
+     "animations": {},
+     "text": "ACCOUNT & CREDENTIALS\nStudent Profile Settings\n\nManage your personal profile, credentials showcase, and learning data.\n\nAlex Chen\n\nalex.chen@itbeginner.com\n\nSTUDENT\n\ud83d\udd25 5 Day Streak\nEnrolled: 2026-10-18\nToggle to Admin Mode\n\n3 / 42\n\nLessons Completed\n\n7%\n\nCurriculum Mastery\n\n1\n\nEarned Certificates\n\n2\n\nPersonal Notes\n\nData & Privacy Options\n\nExport your learning milestones, saved code snippets, and timestamped notes to JSON, or reset all course progress.\n\nExport Learning Data (.json)\nReset All Progress"
+    },
+    {
+     "region": "footer",
+     "top": 710,
+     "height": 376,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ],
+   "390": [
+    {
+     "region": "header",
+     "top": 0,
+     "height": 65,
+     "components": [
+      "src/components/Navbar.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 600",
+       7
+      ],
+      [
+       "ui-sans-serif 500",
+       3
+      ],
+      [
+       "ui-sans-serif 700",
+       2
+      ],
+      [
+       "ui-sans-serif 400",
+       2
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       10
+      ],
+      [
+       "10px",
+       3
+      ],
+      [
+       "11px",
+       2
+      ],
+      [
+       "18px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.869 0.022 252.894)",
+       7
+      ],
+      [
+       "oklch(0.704 0.04 256.788)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       2
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       1
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       10
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       2
+      ],
+      [
+       "12px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 1,
+     "uppercase": 0,
+     "animations": {
+      "pulse": 1
+     },
+     "text": "IT Beginner\nLMS\n\nAjinLab Platform\n\n5d Streak"
+    },
+    {
+     "region": "main",
+     "top": 65,
+     "height": 980,
+     "components": [
+      "src/App.tsx",
+      "src/pages/ProfilePage.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       8
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 900",
+       4
+      ],
+      [
+       "ui-sans-serif 600",
+       3
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       11
+      ],
+      [
+       "24px",
+       5
+      ],
+      [
+       "10px",
+       2
+      ],
+      [
+       "20px",
+       1
+      ],
+      [
+       "11px",
+       1
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       8
+      ],
+      [
+       "rgb(255, 255, 255)",
+       4
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       3
+      ],
+      [
+       "oklch(0.828 0.189 84.429)",
+       2
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       2
+      ],
+      [
+       "oklch(0.714 0.203 305.504)",
+       1
+      ],
+      [
+       "oklch(0.81 0.117 11.638)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "12px",
+       7
+      ],
+      [
+       "16px",
+       2
+      ],
+      [
+       "4px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 0,
+     "blurs": 0,
+     "uppercase": 2,
+     "animations": {},
+     "text": "ACCOUNT & CREDENTIALS\nStudent Profile Settings\n\nManage your personal profile, credentials showcase, and learning data.\n\nAlex Chen\n\nalex.chen@itbeginner.com\n\nSTUDENT\n\ud83d\udd25 5 Day Streak\nEnrolled: 2026-10-18\nToggle to Admin Mode\n\n3 / 42\n\nLessons Completed\n\n7%\n\nCurriculum Mastery\n\n1\n\nEarned Certificates\n\n2\n\nPersonal Notes\n\nData & Privacy Options\n\nExport your learning milestones, saved code snippets, and timestamped notes to JSON, or reset all course progress.\n\nExport Learning Data (.json)\nReset All Progress"
+    },
+    {
+     "region": "footer",
+     "top": 1045,
+     "height": 942,
+     "components": [
+      "src/components/Footer.tsx"
+     ],
+     "fonts": [
+      [
+       "ui-sans-serif 400",
+       21
+      ],
+      [
+       "ui-sans-serif 700",
+       5
+      ],
+      [
+       "ui-sans-serif 800",
+       1
+      ],
+      [
+       "ui-sans-serif 600",
+       1
+      ],
+      [
+       "ui-monospace 400",
+       1
+      ]
+     ],
+     "sizes": [
+      [
+       "12px",
+       22
+      ],
+      [
+       "11px",
+       3
+      ],
+      [
+       "14px",
+       3
+      ],
+      [
+       "16px",
+       1
+      ]
+     ],
+     "colors": [
+      [
+       "oklch(0.704 0.04 256.788)",
+       23
+      ],
+      [
+       "oklch(0.929 0.013 255.508)",
+       4
+      ],
+      [
+       "rgb(255, 255, 255)",
+       1
+      ],
+      [
+       "oklch(0.746 0.16 232.661)",
+       1
+      ]
+     ],
+     "radii": [
+      [
+       "8px",
+       2
+      ],
+      [
+       "3.35544e+07px",
+       1
+      ]
+     ],
+     "gradients": 1,
+     "blurs": 0,
+     "uppercase": 0,
+     "animations": {
+      "ping": 1
+     },
+     "text": "IT Beginner\n\nProduction-grade educational learning platform reconstructed for the AjinLab IT Beginner curriculum. 42 lessons, in-browser code sandbox, interactive quizzes, and verifiable credentials.\n\nFull-Stack Modern SPA | React 19 + TypeScript\nCourse Curriculum\nCh 1: \ud83d\ude80 Getting Started (3 Lessons)\nCh 2: \u2699\ufe0f Software Development Basics (3 Lessons)\nCh 3: \ud83c\udf10 Web Dev Fundamentals (16 Lessons)\nCh 4: \ud83d\udee0\ufe0f Frontend Development & Tools (14 Lessons)\nCh 5: \u26a1 Vue.js Framework & Reactive Apps (5 Lessons)\nCh 6: \ud83d\udd0c Full-Stack Architecture (1 Lesson)\nDeveloper Tools\nLive Code Playground & Sandbox\n\u26a1 JavaScript Handbook\n\ud83c\udf10 HTML5 & CSS3 Flexbox Reference\n\u2699\ufe0f Agile & Scrum Quick Guide\n\ud83d\udcbb CLI & NPM Command Cheat Sheet\nPrintable Verifiable Certificates\nOpen Source & License\n\nOpen source educational software licensed under the permissive MIT License.\n\nOriginal Repository:\n\nAjinLab/it-beginner-website\n\nMIT License \u2022 Free for Learners\n\n\u00a9 2026 AjinLab IT Beginner. Reconstructed into a production-grade educational platform.\n\nSyllabus\nPlayground\nQuizzes\nVerify Credentials"
+    }
+   ]
+  }
+ },
+ "header": {
+  "1440": {
+   "headerHeight": 65,
+   "navVisible": true,
+   "navRight": 1248,
+   "rowScrollWidth": 1509,
+   "docWidth": 1589,
+   "viewport": 1440,
+   "wrapped": []
+  },
+  "1280": {
+   "headerHeight": 65,
+   "navVisible": true,
+   "navRight": 1168,
+   "rowScrollWidth": 1509,
+   "docWidth": 1509,
+   "viewport": 1280,
+   "wrapped": []
+  },
+  "1024": {
+   "headerHeight": 65,
+   "navVisible": true,
+   "navRight": 1168,
+   "rowScrollWidth": 1439,
+   "docWidth": 1439,
+   "viewport": 1024,
+   "wrapped": []
+  },
+  "768": {
+   "headerHeight": 65,
+   "navVisible": false,
+   "navRight": 0,
+   "rowScrollWidth": 768,
+   "docWidth": 768,
+   "viewport": 768,
+   "wrapped": []
+  },
+  "390": {
+   "headerHeight": 65,
+   "navVisible": false,
+   "navRight": 0,
+   "rowScrollWidth": 390,
+   "docWidth": 390,
+   "viewport": 390,
+   "wrapped": []
+  },
+  "360": {
+   "headerHeight": 65,
+   "navVisible": false,
+   "navRight": 0,
+   "rowScrollWidth": 368,
+   "docWidth": 368,
+   "viewport": 360,
+   "wrapped": []
+  }
+ }
+}
