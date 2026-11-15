@@ -76,7 +76,7 @@ function finish(level: LevelConfig, daily: boolean, result: "complete" | "failed
 export function Gameplay({ param }: { param: string }) {
   const [attempt, setAttempt] = useState(0);
   const daily = param === "daily";
-  const level = daily ? dailyLevel(todayKey()) : (getLevel(Number(param)) ?? getLevel(1)!);
+  const level = useMemo(() => (daily ? dailyLevel(todayKey()) : (getLevel(Number(param)) ?? getLevel(1)!)), [daily, param]);
   const unlocked = daily || level.id <= getSave().unlocked;
   useEffect(() => {
     if (!unlocked) navigate(`/level/${level.id}`, true);
