@@ -96,7 +96,8 @@ async function openPage(context, url) {
 
 /** A page's identity: its path, plus the route for hash routers (#/menu). Plain #section anchors stay on the same page. */
 function pageKey(u) {
-  return (u.hash.startsWith("#/") ? u.pathname + u.hash : u.pathname).replace(/\/+$/, "") || "/";
+  const route = u.hash.startsWith("#/") ? u.hash.replace(/\/+$/, "") : "";
+  return route && route !== "#" ? u.pathname + route : u.pathname.replace(/\/+$/, "") || "/";
 }
 
 /** Home first, then same-origin pages linked from the home page at desktop width (header, nav and footer links first). */
