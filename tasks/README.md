@@ -125,6 +125,27 @@ The brief is S30's, kept verbatim: copy https://kora.framer.media/ with standalo
 Copy is not matched word for word, because the golden reference rewrote it; the checks cover the pages, their detail pages, deep links, scroll-reveal motion, the FAQ, the contact form and its validation, and the mobile menu.
 The golden reference is `references/S30/solution`. `SLOP_EXEMPT` waives pills and big rounding, which are Kora's own components and so asked for by the brief.
 
+## it-beginner-platform status
+
+The brief is S01/S02's, kept verbatim: one sentence asking to improve or reconstruct github.com/AjinLab/it-beginner-website and make it production ready.
+That repository (commit `eeb90a3`, MIT, an Express + EJS + SQLite learning platform) is vendored at `environment/source/` and copied to `/source` in the image, so the task needs no GitHub access; `/app` is the bare template.
+The brief names no requirements, so the checklist is what the source site contains: its 6 chapters, 42 lessons and 18 quiz questions (from `db/database.js`), and what a learner can do on it (lesson pages with a player, mark complete, notes, dashboard, quiz with a score, certificates, playground, search, cheatsheets).
+The source's login, registration and admin suite need a server, so the delivery header asks for a client-side app with state in the browser and no sign-in wall, and the checklist leaves them out.
+`task.mjs` crawls every page linked from the home page (up to 120, so all 42 lessons), finds pages by what they show rather than by route, and matches titles loosely, since both arena sites extended some lesson titles.
+The golden reference is `references/S02/solution` (Katie's critique-driven rebuild).
+
+| Site | reward | task | baseline | slop | slop points |
+| --- | --- | --- | --- | --- | --- |
+| bare template | 0 | 0 | 0 | 0 | |
+| S01 gpt-6-astra (live site) | 0.46 | 0.76 | 1.00 | 0.14 | 94.4 |
+| S02 gemini-3.8-flash (`references/S02/inputs/live-app`, reconstructed) | 0.49 | 0.88 | 0.87 | 0.10 | 129.0 |
+| golden reference (`solution/app`) | 1.00 | 1.00 | 1.00 | 1.00 | 0 |
+
+S02 is graded from its reconstruction because the deployed site returns 404 for deep links, which fails every inner page for a reason the task's own static server (which falls back to `index.html`) would not.
+S02's points come mostly from emoji icons (67), `·` separators (32.5) and broken controls (16); it overflows at 1280 and 1440px, its player's play button has no readable name, and its search is behind a button rather than a link, so a crawler never reaches it.
+S01's come mostly from eyebrows (37), emoji icons (32.6) and tiny text (12.1, 62% of its text); it shows 3 of the source's 18 quiz questions, has no code cheatsheets or full curriculum list, and its search does not find the Vue lessons.
+The checklist was tuned on these two sites only, so expect some checks to miss a correct site built another way (a quiz or search with unusual controls); `details.json` gives the reason for each failed check.
+
 ## Running on Valkyrie
 
 `scripts/valkyrie_runs.sh` pushes every task folder here as `deb/slopbench@v1` and starts one run per model on `terminus2` at `reasoning_effort=high`, so all models share a harness.
