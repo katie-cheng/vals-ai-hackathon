@@ -90,6 +90,8 @@ Logged as site `S13-ref` (separate from the original S13/S14 labels). Verbatim c
 | R35 | Too much space between titles and content | Title-block bottom margins cut from 48–80px to 32–48px (`mb-8`, `sm:mb-10`/`sm:mb-12`) in Services, Process, Trust, Before/After and Pricing | round 13 |
 | R36 | Serif for the hero title | Hero h1 back to Fraunces at regular weight (400), matching the section titles; card/step titles and numerals stay thin Inter | round 13 |
 | R37 | Arrow on the hero CTA | Lucide `ArrowRight` (16px, stroke 1.75) on the right of "Get my free quote", nudges 2px on hover; scoped exception to R9 | round 13 |
+| R38 | Standardize a design system | Tokens in `src/index.css` + `DESIGN-SYSTEM.md`: radii `md` 6px (controls) / `lg` 10px (surfaces) / full (circles); one easing `cubic-bezier(0.16,1,0.3,1)`; CSS transitions 200ms; Framer durations `DUR.base` 0.4s (state) / `DUR.slow` 0.6s (entrances) / `DUR.draw` 1.2s (map outline); `.btn` + `.btn-primary/.btn-secondary/.btn-lg`, `.icon-btn`, `.option/.option-active`, `.surface`. Measured at 1440px: transition timings 6 → 1, button styles 7 → 3 | round 14 |
+| R39 | Bring back a minimal loader | Text-free 22px ring on navy, inlined in `index.html` so it paints before JS; removed when fonts + hero frame are ready or after 400ms max, page fades in over 350ms; skipped under reduced motion | round 14 |
 | R15 | Before/after labels and slider inconsistent | "After" label styled like "Before"; handle and hint use the same dark chip; no backdrop blur | round 4 |
 
 Brief tension: the brief asks for unusually heavy animation. R14 deliberately trades that for restraint; the remaining motion still covers the brief's hero video, marquee, scroll reveals, before/after slider and animated process line.

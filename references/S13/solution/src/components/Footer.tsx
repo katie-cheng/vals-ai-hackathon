@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SITE } from "../data/content";
-import { Reveal } from "../lib/anim";
+import { Reveal, DUR } from "../lib/anim";
 import { WaveDivider } from "../lib/fx";
 import { Logo } from "./Header";
 import { motion } from "framer-motion";
@@ -49,7 +49,7 @@ function Footer() {
                 once: true,
               }}
               transition={{
-                duration: 1,
+                duration: DUR.slow,
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
@@ -65,9 +65,9 @@ function Footer() {
                 onClick={r}
                 aria-label="Share this website"
                 title="Share this website"
-                className="group mt-5 grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-300/10"
+                className="icon-btn group mt-5"
               >
-                <Link2 className="h-4 w-4 text-cyan-300 transition-transform duration-300" />
+                <Link2 className="h-4 w-4 text-cyan-300 transition-transform" />
               </button>
               {a && (
                 <motion.p
@@ -101,9 +101,9 @@ function Footer() {
                   <li key={u}>
                     <a
                       href={u}
-                      className="group inline-flex items-center gap-0 text-[14.5px] font-semibold text-sky-100/75 transition-colors duration-300 hover:text-white"
+                      className="group inline-flex items-center gap-0 text-[14.5px] font-semibold text-sky-100/75 transition-colors hover:text-white"
                     >
-                      <span className="h-px w-0 bg-cyan-300 transition-all duration-300 group-hover:mr-2 group-hover:w-5" />
+                      <span className="h-px w-0 bg-cyan-300 transition-all group-hover:mr-2 group-hover:w-5" />
                       {l}
                     </a>
                   </li>
@@ -142,9 +142,9 @@ function Footer() {
               <a
                 href="#top"
                 aria-label="Back to top"
-                className="group grid h-12 w-12 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:border-cyan-300/60 hover:bg-cyan-300/15"
+                className="icon-btn group"
               >
-                <ArrowUp className="h-5 w-5 text-cyan-300 transition-transform duration-300" />
+                <ArrowUp className="h-5 w-5 text-cyan-300 transition-transform" />
               </a>
             </div>
           </div>

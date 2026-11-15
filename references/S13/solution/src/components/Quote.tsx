@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SITE, quoteOptions } from "../data/content";
-import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords, DUR } from "../lib/anim";
 import { submitQuote } from "../lib/api";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, LoaderCircle, Phone, Send } from "lucide-react";
@@ -58,7 +58,7 @@ function Field({ label: a, error: i, children: r, htmlFor: l, required: u }) {
 }
 
 const inputClass = (a?: unknown) =>
-  `w-full rounded-lg border bg-white/[0.06] px-4 py-2.5 text-[15px] font-medium text-white placeholder:text-sky-200/30 outline-none transition-all duration-300 focus:scale-[1.01] ${a ? "border-rose-400/70 focus:border-rose-300 focus:ring-4 focus:ring-rose-400/15" : "border-white/15 hover:border-white/30 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/15"}`;
+  `w-full rounded-md border bg-white/[0.06] px-4 py-2.5 text-[15px] text-white placeholder:text-sky-200/30 outline-none transition ${a ? "border-rose-400/70 focus:border-rose-300 focus:ring-4 focus:ring-rose-400/15" : "border-white/15 hover:border-white/30 focus:border-cyan-300 focus:ring-4 focus:ring-cyan-300/15"}`;
 
 function Quote() {
   const [a, i] = React.useState(EMPTY_FORM),
@@ -195,10 +195,10 @@ function Quote() {
                 <motion.a
                   href={O.href}
                   transition={{
-                    duration: 0.3,
+                    duration: DUR.base,
                     ease: EASE,
                   }}
-                  className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.05] p-4 transition-colors duration-300 hover:border-cyan-300/40"
+                  className="surface group flex items-center gap-4 p-4 hover:border-cyan-300/40"
                 >
                   <span>
                     <span className="block text-[13px] font-medium text-sky-200/70">
@@ -237,7 +237,7 @@ function Quote() {
                     scale: 1,
                   }}
                   transition={{
-                    duration: 0.6,
+                    duration: DUR.slow,
                     ease: EASE,
                   }}
                   className="flex min-h-[480px] flex-col items-center justify-center text-center outline-none"
@@ -253,7 +253,7 @@ function Quote() {
                     }}
                     transition={{
                       delay: 0.15,
-                      duration: 0.7,
+                      duration: DUR.slow,
                       ease: EASE,
                     }}
                     className="grid h-20 w-20 place-items-center rounded-full bg-cyan-300"
@@ -274,7 +274,7 @@ function Quote() {
                     }}
                     transition={{
                       delay: 0.35,
-                      duration: 0.5,
+                      duration: DUR.base,
                       ease: EASE,
                     }}
                     className="mt-6 text-3xl font-light text-white"
@@ -292,7 +292,7 @@ function Quote() {
                     }}
                     transition={{
                       delay: 0.45,
-                      duration: 0.5,
+                      duration: DUR.base,
                       ease: EASE,
                     }}
                     className="mt-3 max-w-sm text-[15px] leading-relaxed text-sky-100/80"
@@ -310,7 +310,7 @@ function Quote() {
                     transition={{
                       delay: 0.6,
                     }}
-                    className="mt-4 rounded-md border border-cyan-300/30 bg-cyan-300/10 px-5 py-2 text-[13px] font-semibold text-cyan-200"
+                    className="mt-4 rounded-md border border-cyan-300/30 bg-cyan-300/10 px-3.5 py-2 text-[13px] font-medium text-cyan-200"
                   >
                     {"Your reference: "}
                     {y}
@@ -346,7 +346,7 @@ function Quote() {
                       delay: 0.8,
                     }}
                     onClick={Y}
-                    className="mt-7 rounded-md border border-white/20 px-4 py-2 text-[13.5px] font-medium text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+                    className="btn btn-secondary mt-7"
                   >
                     Start another request
                   </motion.button>
@@ -503,7 +503,7 @@ function Quote() {
                         return (
                           <motion.label
                             key={O}
-                            className={`flex cursor-pointer items-center gap-2 rounded-md px-4 py-2.5 text-[13px] font-medium transition-all duration-300 ${G ? "bg-cyan-300 text-[#04141f]" : "border border-white/15 bg-white/[0.05] text-sky-100/80 hover:border-cyan-300/50 hover:text-white"}`}
+                            className={`option cursor-pointer ${G ? "option-active" : ""}`}
                           >
                             <input
                               type="checkbox"
@@ -594,7 +594,7 @@ function Quote() {
                                 preferredContact: O.v,
                               }))
                             }
-                            className={`flex items-center justify-center gap-1.5 rounded-lg border px-2 py-3.5 text-[12.5px] font-medium transition-all duration-300 ${a.preferredContact === O.v ? "border-cyan-300 bg-cyan-300/15 text-cyan-200" : "border-white/15 bg-white/[0.05] text-sky-100/70 hover:border-white/30"}`}
+                            className={`option justify-center ${a.preferredContact === O.v ? "option-active" : ""}`}
                             aria-pressed={a.preferredContact === O.v}
                           > {O.t}
                           </button>
@@ -665,7 +665,7 @@ function Quote() {
                           opacity: 0,
                         }}
                         role="alert"
-                        className="mt-4 flex items-center gap-2.5 rounded-lg border border-rose-400/40 bg-rose-500/10 px-4 py-3 text-[13.5px] font-semibold text-rose-200"
+                        className="mt-4 flex items-center gap-2.5 rounded-md border border-rose-400/40 bg-rose-500/10 px-4 py-3 text-[13.5px] font-medium text-rose-200"
                       > {d}
                       </motion.div>
                     )}
@@ -674,7 +674,7 @@ function Quote() {
                     <motion.button
                       type="submit"
                       disabled={u === "submitting"}
-                      className="group flex w-full items-center justify-center gap-3 rounded-lg bg-cyan-300 px-5 py-3 text-[15.5px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right disabled:opacity-70"
+                      className="btn btn-primary btn-lg group w-full disabled:opacity-70"
                     >
                       {u === "submitting" ? (
                         <>

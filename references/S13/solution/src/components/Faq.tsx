@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Plus } from "lucide-react";
 import { SITE, faqs } from "../data/content";
-import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords, DUR } from "../lib/anim";
 import { AnimatePresence, motion } from "framer-motion";
 
 function Faq() {
@@ -24,7 +24,7 @@ function Faq() {
             return (
               <Reveal key={r.id} delay={Math.min(l * 0.04, 0.3)} y={24}>
                 <motion.article
-                  className={`overflow-hidden rounded-lg border transition-colors duration-300 ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "card-tone border-white/10 bg-white/[0.02] hover:border-white/25"}`}
+                  className={`overflow-hidden rounded-lg border transition-colors ${u ? "border-cyan-300/40 bg-cyan-300/[0.07]" : "surface hover:border-cyan-300/40"}`}
                 >
                   <button
                     onClick={() => i(u ? null : r.id)}
@@ -45,10 +45,10 @@ function Faq() {
                         rotate: u ? 45 : 0,
                       }}
                       transition={{
-                        duration: 0.35,
+                        duration: DUR.base,
                         ease: EASE,
                       }}
-                      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors duration-300 ${u ? "bg-cyan-300 text-[#04141f]" : "bg-white/10 text-cyan-200"}`}
+                      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-colors ${u ? "bg-cyan-300 text-[#04141f]" : "bg-white/10 text-cyan-200"}`}
                     >
                       <Plus className="h-4 w-4" strokeWidth={2.25} />
                     </motion.span>
@@ -70,7 +70,7 @@ function Faq() {
                           opacity: 0,
                         }}
                         transition={{
-                          duration: 0.45,
+                          duration: DUR.base,
                           ease: EASE,
                         }}
                       >

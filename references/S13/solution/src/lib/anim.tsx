@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 const EASE = [0.16, 1, 0.3, 1],
+  DUR = { base: 0.4, slow: 0.6, draw: 1.2 },
   REDUCED =
     typeof window < "u" &&
     !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -14,7 +15,7 @@ function SplitWords({ text: a, className: i = "", delay: r = 0, as: u = "span" }
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-8% 0px" }}
-      transition={{ duration: 0.5, ease: EASE, delay: r }}
+      transition={{ duration: DUR.slow, ease: EASE, delay: r }}
     >
       {a}
     </Tag>
@@ -44,7 +45,7 @@ function Reveal({
         margin: "-10% 0px",
       }}
       transition={{
-        duration: 0.5,
+        duration: DUR.slow,
         ease: EASE,
         delay: i,
       }}
@@ -82,4 +83,4 @@ function CountUp({ to: a, suffix: i = "", duration: r = 1.8 }) {
   );
 }
 
-export { EASE, REDUCED, SplitWords, Reveal, CountUp };
+export { EASE, DUR, REDUCED, SplitWords, Reveal, CountUp };

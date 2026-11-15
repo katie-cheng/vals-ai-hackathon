@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SITE, processSteps } from "../data/content";
-import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords, DUR } from "../lib/anim";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 function Process() {
@@ -62,7 +62,7 @@ function Process() {
                       margin: "-20% 0px",
                     }}
                     transition={{
-                      duration: 0.4,
+                      duration: DUR.base,
                       ease: EASE,
                     }}
                     className="absolute left-0 top-0 z-10 grid h-14 w-14 place-items-center rounded-full border-2 border-cyan-300 bg-[#04141f] text-2xl font-light text-cyan-100 md:left-1/2 md:-translate-x-1/2 lg:h-16 lg:w-16"
@@ -75,10 +75,10 @@ function Process() {
                     <Reveal delay={0.1}>
                       <motion.div
                         transition={{
-                          duration: 0.35,
+                          duration: DUR.base,
                           ease: EASE,
                         }}
-                        className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.05] p-6 transition-colors duration-300 hover:border-cyan-300/40 sm:p-8"
+                        className="surface group relative overflow-hidden p-6 hover:border-cyan-300/40 sm:p-8"
                       >
                         <h3 className="text-xl font-normal text-white sm:text-[1.4rem]">
                           {l.title}

@@ -54,7 +54,7 @@ function Trust() {
               <Reveal key={a.id} delay={(i % 3) * 0.1}>
                 <div className="group h-full">
                   <div
-                    className="relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.08] p-6 transition-[transform,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-cyan-300/40 sm:p-7"
+                    className="surface relative h-full overflow-hidden p-6 group-hover:border-cyan-300/40 sm:p-7"
                     style={{
                       transformStyle: "preserve-3d",
                     }}

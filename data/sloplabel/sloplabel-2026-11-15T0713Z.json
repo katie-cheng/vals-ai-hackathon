@@ -495,7 +495,7 @@
    "overall_verdict": null,
    "overall_score": null,
    "overall_comment": "Chat critiques by katie of the S13 rebuild after the 54 original labels were applied. See references/S13/solution/PLAN.md round 2.",
-   "updated_at": 1794732746.1324158
+   "updated_at": 1794732818.2966156
   }
  ],
  "labels": [
@@ -11953,6 +11953,35 @@
    "shot_status": "none",
    "created_at": 1794732720.0,
    "updated_at": 1794732720.0
+  },
+  {
+   "id": 499,
+   "site_id": "S13-ref",
+   "annotator": "katie",
+   "verdict": "slop",
+   "severity": null,
+   "tags": "[\"chat\", \"R39\"]",
+   "comment": "i liked having the loader screen before all the elements loaded in, it should just not have any text on it and just a very very simple circle loading animation and be very fast and then fade the page in",
+   "page_path": "/",
+   "viewport_w": 1440,
+   "viewport_h": 900,
+   "scroll_y": 0.0,
+   "loc": null,
+   "loc_index": null,
+   "component": "page loader",
+   "component_chain": null,
+   "selector": "#boot-loader",
+   "selector_confidence": "manual",
+   "tag": "div",
+   "text": "",
+   "rect": null,
+   "styles": "{\"before\": \"no loader (removed in R14)\"}",
+   "html": "",
+   "shot_path": null,
+   "ctx_path": null,
+   "shot_status": "none",
+   "created_at": 1794732780.0,
+   "updated_at": 1794732780.0
   }
  ]
 }

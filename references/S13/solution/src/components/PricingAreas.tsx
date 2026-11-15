@@ -1,6 +1,6 @@
 import * as React from "react";
 import { prices, towns } from "../data/content";
-import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords, DUR } from "../lib/anim";
 import { AnimatePresence, motion } from "framer-motion";
 
 const CT_PATH =
@@ -83,13 +83,13 @@ function PricingAreas() {
               <Reveal key={l.id} delay={u * 0.07}>
                 <motion.div
                   transition={{
-                    duration: 0.35,
+                    duration: DUR.base,
                     ease: EASE,
                   }}
-                  className="group relative h-full overflow-hidden rounded-lg bg-white p-6 ring-1 ring-slate-200/80 transition-shadow duration-300"
+                  className="group relative h-full overflow-hidden rounded-lg bg-white p-6 ring-1 ring-slate-200/80 transition-shadow"
                 >
                   <div
-                    className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-cyan-400 transition-transform duration-500 group-hover:scale-x-100"
+                    className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-cyan-400 transition-transform group-hover:scale-x-100"
                     aria-hidden
                   />
                   <p className="mt-4 text-[12px] font-medium uppercase tracking-[0.08em] text-slate-500">
@@ -137,7 +137,7 @@ function PricingAreas() {
                       opacity: 1,
                     }}
                     transition={{
-                      duration: 2.2,
+                      duration: DUR.draw,
                       ease: EASE,
                     }}
                   />
@@ -194,7 +194,7 @@ function PricingAreas() {
                           fill={h ? "#74a3af" : "rgba(186,230,253,.75)"}
                           stroke="#04141f"
                           strokeWidth="2"
-                          className="transition-all duration-300"
+                          className="transition-all"
                           initial={{
                             scale: 0,
                             opacity: 0,
@@ -208,7 +208,7 @@ function PricingAreas() {
                           }}
                           transition={{
                             delay: 0.4 + u * 0.06,
-                            duration: 0.4,
+                            duration: DUR.base,
                             ease: EASE,
                           }}
                         />
@@ -247,7 +247,7 @@ function PricingAreas() {
                   <button
                     key={l.id}
                     onClick={() => i(l.name)}
-                    className={`flex items-center gap-1.5 rounded-md px-3.5 py-2 text-[12.5px] font-medium transition-all duration-300 ${a === l.name ? "scale-105 bg-cyan-300 text-[#04141f]" : "border border-white/12 bg-white/5 text-sky-100/75 hover:border-cyan-300/50 hover:text-white"}`}
+                    className={`option ${a === l.name ? "option-active" : ""}`}
                   >
                     {l.name}
                   </button>
@@ -271,7 +271,7 @@ function PricingAreas() {
                     y: -8,
                   }}
                   transition={{
-                    duration: 0.35,
+                    duration: DUR.base,
                     ease: EASE,
                   }}
                   className="mt-4 flex items-center gap-2 text-[14px] font-medium text-cyan-200"

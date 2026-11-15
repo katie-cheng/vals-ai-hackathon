@@ -226,5 +226,11 @@
   "sent_at": "2026-11-15T00:52-08:00",
   "element": "whole site",
   "comment": "can you standardize a design system on this site and make the elements and roundings and animations more consistent"
+ },
+ {
+  "rid": "R39",
+  "sent_at": "2026-11-15T00:53-08:00",
+  "element": "page loader",
+  "comment": "i liked having the loader screen before all the elements loaded in, it should just not have any text on it and just a very very simple circle loading animation and be very fast and then fade the page in"
  }
 ]

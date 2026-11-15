@@ -1,6 +1,6 @@
 import * as React from "react";
 import { services } from "../data/content";
-import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords, DUR } from "../lib/anim";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -21,7 +21,7 @@ function ServicePanel({ index: a }: { index: number }) {
   return (
     <div ref={l} className="persp">
       <div
-        className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.07]"
+        className="surface group relative overflow-hidden"
       >
         <div className="grid gap-0 lg:grid-cols-2">
           <div className="skeleton relative min-h-[300px] overflow-hidden lg:min-h-[420px]">
@@ -33,7 +33,7 @@ function ServicePanel({ index: a }: { index: number }) {
           </div>
           <div className="relative flex flex-col justify-center gap-5 p-7 sm:p-10">
             <span
-              className="pointer-events-none absolute right-6 top-4 text-[5.5rem] font-extralight leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-cyan-300/10"
+              className="pointer-events-none absolute right-6 top-4 text-[5.5rem] font-extralight leading-none text-white/[0.06] transition-colors group-hover:text-cyan-300/10"
               aria-hidden
             >
               {String(a + 1).padStart(2, "0")}
@@ -50,7 +50,7 @@ function ServicePanel({ index: a }: { index: number }) {
           </div>
         </div>
         <div
-          className="pointer-events-none absolute inset-0 rounded-lg opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 rounded-lg opacity-0 ring-1 ring-inset ring-cyan-300/40 transition-opacity group-hover:opacity-100"
           aria-hidden
         />
       </div>
@@ -105,7 +105,7 @@ function ServiceSwitcher() {
             initial={{ opacity: 0, x: dir * 40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: dir * -40 }}
-            transition={{ duration: 0.45, ease: EASE }}
+            transition={{ duration: DUR.base, ease: EASE }}
           >
             <ServicePanel index={active} />
           </motion.div>
@@ -120,7 +120,7 @@ function ServiceSwitcher() {
             type="button"
             onClick={() => go(active - 1)}
             aria-label="Previous service"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+            className="icon-btn"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -128,7 +128,7 @@ function ServiceSwitcher() {
             type="button"
             onClick={() => go(active + 1)}
             aria-label="Next service"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-cyan-300/60 hover:bg-cyan-300/10"
+            className="icon-btn"
           >
             <ArrowRight className="h-5 w-5" />
           </button>

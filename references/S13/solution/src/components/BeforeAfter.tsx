@@ -1,6 +1,6 @@
 import * as React from "react";
 import { comparisons } from "../data/content";
-import { EASE, Reveal, SplitWords } from "../lib/anim";
+import { EASE, Reveal, SplitWords, DUR } from "../lib/anim";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsLeftRight } from "lucide-react";
 
@@ -30,7 +30,7 @@ function ComparisonSlider({ active: a }) {
   return (
     <div
       ref={y}
-      className="skeleton-light relative aspect-[4/3] w-full cursor-ew-resize select-none overflow-hidden rounded-lg border border-white/12 sm:aspect-[16/10]"
+      className="skeleton-light relative aspect-[4/3] w-full cursor-ew-resize select-none overflow-hidden rounded-lg border border-white/10 sm:aspect-[16/10]"
       onPointerDown={(g) => {
         (p(false),
           h(true),
@@ -68,7 +68,7 @@ function ComparisonSlider({ active: a }) {
             opacity: 0,
           }}
           transition={{
-            duration: 0.7,
+            duration: DUR.slow,
             ease: EASE,
           }}
           className="absolute inset-0 h-full w-full object-cover"
@@ -105,7 +105,7 @@ function ComparisonSlider({ active: a }) {
                 opacity: 0,
               }}
               transition={{
-                duration: 0.7,
+                duration: DUR.slow,
                 ease: EASE,
               }}
               className="absolute inset-0 h-full w-full object-cover"
@@ -202,7 +202,7 @@ function BeforeAfter() {
                 y: -10,
               }}
               transition={{
-                duration: 0.45,
+                duration: DUR.base,
                 ease: EASE,
               }}
               className="max-w-2xl"
@@ -220,7 +220,7 @@ function BeforeAfter() {
               onClick={() =>
                 i((l) => (l - 1 + comparisons.length) % comparisons.length)
               }
-              className="grid h-12 w-12 place-items-center rounded-full bg-[#04141f] text-white transition-all duration-300 hover:bg-sky-700"
+              className="icon-btn icon-btn-solid"
               aria-label="Previous comparison"
             >
               ←
@@ -231,13 +231,13 @@ function BeforeAfter() {
                   key={l.slug}
                   onClick={() => i(u)}
                   aria-label={`Show ${l.title}`}
-                  className={`h-2 rounded-full transition-all duration-400 ${u === a ? "w-8 bg-sky-500" : "w-2 bg-slate-300 hover:bg-sky-300"}`}
+                  className={`h-2 rounded-full transition-all ${u === a ? "w-8 bg-sky-500" : "w-2 bg-slate-300 hover:bg-sky-300"}`}
                 />
               ))}
             </div>
             <button
               onClick={() => i((l) => (l + 1) % comparisons.length)}
-              className="grid h-12 w-12 place-items-center rounded-full bg-[#04141f] text-white transition-all duration-300 hover:bg-sky-700"
+              className="icon-btn icon-btn-solid"
               aria-label="Next comparison"
             >
               →

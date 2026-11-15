@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SITE } from "../data/content";
-import { EASE } from "../lib/anim";
+import { EASE, DUR } from "../lib/anim";
 import { AppWindow, ArrowRight, Car, ClipboardCheck, Droplets, Fence, House, SprayCan } from "lucide-react";
 import {
   motion,
@@ -16,7 +16,7 @@ function HeroWords({ text: a, delay: i = 0, className: r = "" }) {
       className={r}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: EASE, delay: i }}
+      transition={{ duration: DUR.slow, ease: EASE, delay: i }}
     >
       {a}
     </motion.span>
@@ -76,7 +76,7 @@ function Hero() {
               y: 0,
             }}
             transition={{
-              duration: 1,
+              duration: DUR.slow,
               ease: EASE,
               delay: 0.42,
             }}
@@ -95,7 +95,7 @@ function Hero() {
               y: 0,
             }}
             transition={{
-              duration: 1,
+              duration: DUR.slow,
               ease: EASE,
               delay: 0.48,
             }}
@@ -104,12 +104,12 @@ function Hero() {
             <div>
               <a
                 href="#quote"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-cyan-300 px-4 py-2 text-[15px] font-medium text-[#04141f] transition-all duration-500 hover:bg-right"
+                className="btn btn-primary btn-lg group"
               >
                 Get my free quote
                 <ArrowRight
                   aria-hidden
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                   strokeWidth={1.75}
                 />
               </a>
