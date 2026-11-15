@@ -6,7 +6,7 @@ from flask import Flask, abort, g, jsonify, request, send_file, send_from_direct
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SNAP = ROOT / "data/snapshots"
 DB = pathlib.Path(os.environ.get("ARENA_DB", pathlib.Path.home() / "slopbench-arena-data/arena.db"))
-CATEGORY_WEIGHTS = {"same_prompt": 0.3, "arena_cross": 0.25, "arena_vs_yc": 0.3, "yc_yc": 0.15}
+CATEGORY_WEIGHTS = {"same_prompt": 0.3, "arena_cross": 0.25, "arena_vs_web": 0.3, "web_web": 0.15}
 
 app = Flask(__name__, static_folder="static")
 
@@ -41,7 +41,7 @@ def close_db(_):
 _sites, _sites_at, _lock = {}, 0.0, threading.Lock()
 
 
-def usable_yc(meta):
+def usable_capture(meta):
     st = (meta.get("stats") or {}).get("desktop") or {}
     return (meta.get("views", {}).get("desktop") == "ok" and st.get("text_len", 0) >= 200
             and st.get("height", 0) >= 600 and st.get("stylesheets", 0) > 0 and not st.get("blank"))
@@ -67,28 +67,36 @@ def sites():
         for yset in ("pre2022", "current"):
             for m in (SNAP / "yc" / yset).glob("*/meta.json"):
                 meta = json.load(open(m))
-                if not usable_yc(meta):
+                if not usable_capture(meta):
                     continue
                 sid = ("ycp-" if yset == "pre2022" else "ycc-") + meta["slug"]
-                out[sid] = dict(id=sid, kind="yc", split=yset, group=sid, model=f"human:yc-{yset}",
+                out[sid] = dict(id=sid, kind="web", split=f"yc-{yset}", group=sid,
+                                model="human:yc-pre2022" if yset == "pre2022" else "yc-current",
                                 url=meta["render_url"], name=meta["name"], batch=meta["batch"],
                                 industry=meta.get("industry"), dir=str(m.parent))
+        for m in (SNAP / "ai").glob("*/*/meta.json"):
+            meta = json.load(open(m))
+            if not usable_capture(meta):
+                continue
+            sid = f"ai-{meta['source']}-{meta['slug']}"
+            out[sid] = dict(id=sid, kind="web", split=meta["source"], group=sid, model=f"ai:{meta['source']}",
+                            url=meta["render_url"], dir=str(m.parent))
         _sites, _sites_at = out, time.time()
         return out
 
 
 def candidate_pairs(S):
     arena = [s for s in S.values() if s["kind"] == "arena"]
-    yc = [s for s in S.values() if s["kind"] == "yc"]
+    web = [s for s in S.values() if s["kind"] == "web"]
     cats = defaultdict(list)
     for i, a in enumerate(arena):
         for b in arena[i + 1:]:
             cats["same_prompt" if a["group"] == b["group"] else "arena_cross"].append((a["id"], b["id"]))
-        for b in yc:
-            cats["arena_vs_yc"].append((a["id"], b["id"]))
-    for i, a in enumerate(yc):
-        for b in yc[i + 1:]:
-            cats["yc_yc"].append((a["id"], b["id"]))
+        for b in web:
+            cats["arena_vs_web"].append((a["id"], b["id"]))
+    for i, a in enumerate(web):
+        for b in web[i + 1:]:
+            cats["web_web"].append((a["id"], b["id"]))
     return cats
 
 
