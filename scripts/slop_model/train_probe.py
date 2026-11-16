@@ -29,7 +29,8 @@ def load():
     z = np.load(ROOT / "emb.npz")
     by = collections.defaultdict(dict)
     for o, sl, e in zip(z["owner"], z["slot"], z["emb"]):
-        by[str(o)][int(sl)] = e
+        if str(o) in d["sites"]:  # embeddings of sites since removed from the arena are skipped
+            by[str(o)][int(sl)] = e
     feats = {}
     for k, v in by.items():
         desk = [v[i] for i in (0, 1, 2) if i in v]
