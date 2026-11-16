@@ -190,8 +190,33 @@ function baseline(views) {
   ];
 }
 
+/**
+ * Gives every context a 5s limit on requests to other hosts, then an empty reply: the sandbox network may hang, which
+ * would hold back the load event. A host that failed once gets the empty reply straight away.
+ */
+function limitExternalRequests(browser, url) {
+  const origin = new URL(url).origin;
+  const deadHosts = new Set();
+  const newContext = browser.newContext.bind(browser);
+  browser.newContext = async (options) => {
+    const context = await newContext(options);
+    await context.route((u) => u.origin !== origin, async (route) => {
+      const host = new URL(route.request().url()).host;
+      try {
+        if (deadHosts.has(host)) throw new Error("unreachable");
+        await route.fulfill({ response: await route.fetch({ timeout: 5_000 }) });
+      } catch {
+        deadHosts.add(host);
+        await route.fulfill({ status: 200, body: "" }).catch(() => {});
+      }
+    });
+    return context;
+  };
+}
+
 async function grade(url, out) {
   const browser = await chromium.launch();
+  limitExternalRequests(browser, url);
   const views = {};
   let sweep;
   let pages = [{ url, path: "/", labels: ["home"] }];
@@ -270,13 +295,17 @@ async function grade(url, out) {
     : [];
   const requirementsScore = mean([...taskReqs, ...baseReqs].map((r) => r.score));
   const points = slop.reduce((total, s) => total + s.points, 0);
-  const slopScore = gate ? 1 / (1 + points / SLOP_HALF_POINTS) : 0;
+  const slopRaw = gate ? 1 / (1 + points / SLOP_HALF_POINTS) : 0;
+  const taskScore = mean(taskReqs.map((r) => r.score));
+  // A page that does little of the brief has little room for slop, so slop credit is scaled by how much of the task it met.
+  const slopScore = slopRaw * taskScore;
   const reward = {
     reward: round(gate * (requirementsScore + slopScore) / 2),
     requirements: round(requirementsScore),
-    task: round(mean(taskReqs.map((r) => r.score))),
+    task: round(taskScore),
     baseline: round(mean(baseReqs.map((r) => r.score))),
     slop: round(slopScore),
+    slop_raw: round(slopRaw),
     slop_points: round(points),
     gate,
   };

@@ -35,7 +35,7 @@ A task's `tests/task.mjs` exports:
 
 ## Reward
 
-`/logs/verifier/reward.json` holds `reward = gate × (requirements + slop) / 2`, plus the components.
+`/logs/verifier/reward.json` holds `reward = gate × (requirements + slop) / 2`, where `slop = task × 1/(1 + points/15)` (`slop_raw` is the unscaled part), plus the components.
 
 | Field | Scope | What it is |
 | --- | --- | --- |
