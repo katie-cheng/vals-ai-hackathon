@@ -8,9 +8,7 @@ Models are now good enough at the first half, that the second half is what separ
 
 Most front-end benchmarks score functional correctness or are Arena-based and ask people to vote on screenshots, neither of which tells you precisely whether a page is bad. Our tasks require agents to work through website creation, and are evaluated based on their ability to create functional front-ends that follow artistic principles.
 
-Our custom tools for slop labeling:
-https://slop-arena--wtj4qv7i.preview.devinapps.com/
-https://sloplabel--wm4k90m1.preview.devinapps.com/__slop/labels
+Slides: https://docs.google.com/presentation/d/1skuIBEcV7tadep3QLYgjxYX-23vrtHrjJw1zR5dlIb0/edit?slide=id.h599627603b9e87fb_7_18#slide=id.h599627603b9e87fb_7_18
 
 ## Running the tasks
 
